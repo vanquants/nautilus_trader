@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1627375467064,
+  "lastUpdate": 1627417236700,
   "repoUrl": "https://github.com/nautechsystems/nautilus_trader",
   "entries": {
     "Benchmark with pytest-benchmark": [
@@ -28301,6 +28301,373 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0",
             "extra": "mean: 10.833247630000642 usec\nrounds: 1"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "chris@cjdsellers.io",
+            "name": "cjdsellers",
+            "username": "cjdsellers"
+          },
+          "committer": {
+            "email": "chris@cjdsellers.io",
+            "name": "cjdsellers",
+            "username": "cjdsellers"
+          },
+          "distinct": true,
+          "id": "7b360c0a6f6d3e9a92d8ce9f44f6689793678531",
+          "message": "Reconfigure isort and black",
+          "timestamp": "2021-07-28T06:01:26+10:00",
+          "tree_id": "886acec4a247d7ec6deecc83642a09ba5fdb1e81",
+          "url": "https://github.com/nautechsystems/nautilus_trader/commit/7b360c0a6f6d3e9a92d8ce9f44f6689793678531"
+        },
+        "date": 1627417234897,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_perf_backtest.py::TestBacktestEnginePerformance::test_run_with_empty_strategy",
+            "value": 0.28090130446487105,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 3.559969228 sec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_backtest.py::TestBacktestEnginePerformance::test_run_for_tick_processing",
+            "value": 0.34204220396912605,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 2.9236158240000805 sec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_backtest.py::TestBacktestEnginePerformance::test_run_with_ema_cross_strategy",
+            "value": 0.10567196734183532,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 9.463247681999974 sec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_clock.py::TestLiveClockPerformance::test_utc_now",
+            "value": 6019347.6278730845,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 166.1309600012828 nsec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_clock.py::TestLiveClockPerformance::test_unix_timestamp",
+            "value": 6573546.248808032,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 152.12488999850393 nsec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_clock.py::TestLiveClockPerformance::test_unix_timestamp_ns",
+            "value": 6803931.447732487,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 146.9738499986306 nsec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_clock.py::TestClockPerformanceTests::test_advance_time",
+            "value": 7910282.211955194,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 126.41774000030635 nsec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_clock.py::TestClockPerformanceTests::test_iteratively_advance_time",
+            "value": 192.19200750586822,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 5.203129999927114 msec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_correctness.py::TestCorrectnessConditionPerformance::test_condition_none",
+            "value": 10970983.613553954,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 91.14952999880188 nsec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_correctness.py::TestCorrectnessConditionPerformance::test_condition_true",
+            "value": 11747913.277059184,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 85.12149999887697 nsec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_correctness.py::TestCorrectnessConditionPerformance::test_condition_valid_string",
+            "value": 5663154.548126168,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 176.5800299995135 nsec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_correctness.py::TestCorrectnessConditionPerformance::test_condition_type_or_none",
+            "value": 10628173.971262755,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 94.08954000036829 nsec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_decimal.py::TestDecimalPerformance::test_make_builtin_decimal",
+            "value": 2593286.4129550876,
+            "unit": "iter/sec",
+            "range": "stddev: 9.39279533351099e-7",
+            "extra": "mean: 385.61108985277315 nsec\nrounds: 100000"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_decimal.py::TestDecimalPerformance::test_make_decimal",
+            "value": 919475.4822044647,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0000022345862569394915",
+            "extra": "mean: 1.0875765796413361 usec\nrounds: 100000"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_decimal.py::TestDecimalPerformance::test_make_price",
+            "value": 737786.9094920483,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0000024643345842479777",
+            "extra": "mean: 1.355404910461857 usec\nrounds: 100000"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_decimal.py::TestDecimalPerformance::test_make_price_from_float",
+            "value": 662571.5681306351,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000005693339372848987",
+            "extra": "mean: 1.5092709197006116 usec\nrounds: 100000"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_decimal.py::TestDecimalPerformance::test_float_comparisons",
+            "value": 3681036.7004922,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0000014864275109069621",
+            "extra": "mean: 271.6625997959454 nsec\nrounds: 100000"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_decimal.py::TestDecimalPerformance::test_decimal_comparisons",
+            "value": 1184903.1531655765,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000002447098627159735",
+            "extra": "mean: 843.9508303513321 nsec\nrounds: 100000"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_decimal.py::TestDecimalPerformance::test_builtin_decimal_comparisons",
+            "value": 2490645.694481149,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000001479575127895731",
+            "extra": "mean: 401.50231011011783 nsec\nrounds: 100000"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_decimal.py::TestDecimalPerformance::test_float_arithmetic",
+            "value": 4002712.553423577,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0000013966980956795265",
+            "extra": "mean: 249.8305803010226 nsec\nrounds: 100000"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_decimal.py::TestDecimalPerformance::test_builtin_decimal_arithmetic",
+            "value": 1328747.7703918223,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0000017362989693966162",
+            "extra": "mean: 752.588280697637 nsec\nrounds: 100000"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_decimal.py::TestDecimalPerformance::test_decimal_arithmetic",
+            "value": 757888.9436315589,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0000037202362364034567",
+            "extra": "mean: 1.3194545301166727 usec\nrounds: 100000"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_decimal.py::TestDecimalPerformance::test_decimal_arithmetic_with_floats",
+            "value": 819993.4342315458,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000002725060080292538",
+            "extra": "mean: 1.2195219598766016 usec\nrounds: 100000"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_experiments.py::TestPerformanceExperiments::test_builtin_arithmetic",
+            "value": 7207119.9425467905,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 138.75168000140548 nsec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_experiments.py::TestPerformanceExperiments::test_class_name",
+            "value": 4074129.6029376243,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 245.45120000084353 nsec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_experiments.py::TestPerformanceExperiments::test_is_instance",
+            "value": 7211121.741936158,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 138.67467999943983 nsec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_experiments.py::TestPerformanceExperiments::test_is_message_type",
+            "value": 9941889.655104715,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 100.58449999860386 nsec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_fill_model.py::TestFillModelPerformance::test_is_limit_filled",
+            "value": 5362220.11350707,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 186.48992000180442 nsec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_fill_model.py::TestFillModelPerformance::test_is_stop_filled",
+            "value": 5263270.639537122,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 189.99592999989545 nsec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_functions.py::TestFunctionPerformance::test_np_mean",
+            "value": 138459.3667796135,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 7.222335500000554 usec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_functions.py::TestFunctionPerformance::test_np_std",
+            "value": 35361.6429924766,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 28.279228999986117 usec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_functions.py::TestFunctionPerformance::test_fast_mean",
+            "value": 2032997.9144263298,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 491.88442000058785 nsec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_functions.py::TestFunctionPerformance::test_fast_std",
+            "value": 1222816.7530093505,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 817.7840200005448 nsec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_live_execution.py::TestLiveExecutionPerformance::test_execute_command",
+            "value": 56319.19058955518,
+            "unit": "iter/sec",
+            "range": "stddev: 0.00007085601907438632",
+            "extra": "mean: 17.755937000015365 usec\nrounds: 100"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_live_execution.py::TestLiveExecutionPerformance::test_submit_order",
+            "value": 12154.457228352245,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0001310356326294025",
+            "extra": "mean: 82.27434439995704 usec\nrounds: 100"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_live_execution.py::TestLiveExecutionPerformance::test_submit_order_end_to_end",
+            "value": 4.078937141559046,
+            "unit": "iter/sec",
+            "range": "stddev: 0.21396770629339412",
+            "extra": "mean: 245.16190500003177 msec\nrounds: 10"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_objects.py::TestObjectPerformance::test_make_symbol",
+            "value": 1793863.0688716858,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 557.4561499997799 nsec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_objects.py::TestObjectPerformance::test_make_instrument_id",
+            "value": 1580409.0721405488,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 632.7475699981733 nsec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_objects.py::TestObjectPerformance::test_instrument_id_to_str",
+            "value": 6590096.337397146,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 151.7428499982998 nsec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_objects.py::TestObjectPerformance::test_build_bar_no_checking",
+            "value": 2114904.092909241,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 472.83467999932327 nsec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_objects.py::TestObjectPerformance::test_build_bar_with_checking",
+            "value": 2155991.9695427096,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 463.82361999803834 nsec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_order.py::TestOrderPerformance::test_order_id_generator",
+            "value": 270583.5702106355,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 3.69571588999861 usec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_order.py::TestOrderPerformance::test_market_order_creation",
+            "value": 50094.21996407182,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 19.96238290000747 usec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_order.py::TestOrderPerformance::test_limit_order_creation",
+            "value": 39269.57969166095,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 25.46500390001256 usec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_orderbook.py::test_orderbook_updates",
+            "value": 3.2077360472410708,
+            "unit": "iter/sec",
+            "range": "stddev: 0.005907244466042503",
+            "extra": "mean: 311.7463485999997 msec\nrounds: 10"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_queues.py::TestPythonDequePerformance::test_append",
+            "value": 8289000.992917751,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 120.64180000152193 nsec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_queues.py::TestPythonDequePerformance::test_peek",
+            "value": 4592096.4693025425,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 217.76545999955488 nsec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_serialization.py::TestSerializationPerformance::test_serialize_submit_order",
+            "value": 266998.1003090157,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 3.7453449999929944 usec\nrounds: 1"
+          },
+          {
+            "name": "tests/performance_tests/test_perf_xrate_calculator.py::TestExchangeRateCalculatorPerformanceTests::test_get_xrate",
+            "value": 96190.58004148485,
+            "unit": "iter/sec",
+            "range": "stddev: 0",
+            "extra": "mean: 10.396028380000644 usec\nrounds: 1"
           }
         ]
       }
