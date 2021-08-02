@@ -3103,7 +3103,7 @@ any other reason that an otherwise valid order is not able to be submitted.</p>
 <li><p><strong>client_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID.</p></li>
 <li><p><strong>venue_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a>) – The venue order ID.</p></li>
 <li><p><strong>execution_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.ExecutionId" title="nautilus_trader.model.identifiers.ExecutionId"><em>ExecutionId</em></a>) – The execution ID.</p></li>
-<li><p><strong>position_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId"><em>PositionId</em></a>) – The position ID associated with the order.</p></li>
+<li><p><strong>position_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId"><em>PositionId</em></a><em>, </em><em>optional</em>) – The position ID associated with the order.</p></li>
 <li><p><strong>order_side</strong> (<em>OrderType</em>) – The execution order side.</p></li>
 <li><p><strong>order_side</strong> – The execution order type.</p></li>
 <li><p><strong>last_qty</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The fill quantity for this execution.</p></li>
@@ -11017,7 +11017,7 @@ decimal precision.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">AccountId</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">issuer</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">number</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.identifiers.AccountId" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.identifiers.Identifier" title="nautilus_trader.model.identifiers.Identifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.identifiers.Identifier</span></code></a></p>
 <p>Represents a valid account ID.</p>
-<p>The issuer and ID combination must be unique at the firm level.</p>
+<p>The issuer and number ID combination must be unique at the firm level.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.AccountId.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.identifiers.AccountId.__init__" title="Permalink to this definition">¶</a></dt>
@@ -11094,7 +11094,7 @@ correctly formatted with two valid strings either side of a hyphen.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ClientId</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.identifiers.ClientId" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.identifiers.ComponentId" title="nautilus_trader.model.identifiers.ComponentId"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.identifiers.ComponentId</span></code></a></p>
 <p>Represents a system client ID.</p>
-<p>The ID value must be unique per data or execution engine.</p>
+<p>The ID value must be unique at the trader level.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.ClientId.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.identifiers.ClientId.__init__" title="Permalink to this definition">¶</a></dt>
@@ -11160,7 +11160,7 @@ correctly formatted with two valid strings either side of a hyphen.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ClientOrderLinkId</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.identifiers.ClientOrderLinkId" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.identifiers.Identifier" title="nautilus_trader.model.identifiers.Identifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.identifiers.Identifier</span></code></a></p>
 <p>Represents a valid client order link ID.</p>
-<p>The ID value must be unique at the account level.</p>
+<p>The ID value must be unique for a trading venue.</p>
 <p>Permits order originators to tie together groups of orders in which trades
 resulting from orders are associated for a specific purpose, for example the
 calculation of average execution price for a customer or to associate lists
@@ -11199,7 +11199,7 @@ submitted to a broker as waves of a larger program trade.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ComponentId</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.identifiers.ComponentId" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.identifiers.Identifier" title="nautilus_trader.model.identifiers.Identifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.identifiers.Identifier</span></code></a></p>
 <p>Represents a valid component ID.</p>
-<p>The name must be unique at the trader level.</p>
+<p>The ID value must be unique at the trader level.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.ComponentId.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.identifiers.ComponentId.__init__" title="Permalink to this definition">¶</a></dt>
@@ -11454,6 +11454,8 @@ with an order ID tag number separated by a hyphen.</p>
 <p>Represents a valid ticker symbol ID for a tradeable financial market
 instrument.</p>
 <p>The ID value must be unique for a trading venue.</p>
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Ticker_symbol">https://en.wikipedia.org/wiki/Ticker_symbol</a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.Symbol.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.identifiers.Symbol.__init__" title="Permalink to this definition">¶</a></dt>
