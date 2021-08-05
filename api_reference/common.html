@@ -100,6 +100,7 @@
 <li class="toctree-l1"><a class="reference internal" href="backtest.html">Backtest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cache.html">Cache</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Common</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.common.actor">Actor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.common.clock">Clock</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.common.component">Component</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.common.factories">Factories</a></li>
@@ -202,6 +203,1000 @@ implementations which can control many <cite>Timer</cite> instances.</p>
 <p>Common logging components.</p>
 <p>A high performance <cite>Queue</cite>.</p>
 <p>Common <cite>UUID</cite> factory.</p>
+<div class="section" id="module-nautilus_trader.common.actor">
+<span id="actor"></span><h2>Actor<a class="headerlink" href="#module-nautilus_trader.common.actor" title="Permalink to this headline">¶</a></h2>
+<p>The <cite>TradingStrategy</cite> class allows traders to implement their own customized trading strategies.</p>
+<p>A user can inherit from <cite>TradingStrategy</cite> and optionally override any of the
+“on” named event methods. The class is not entirely initialized in a stand-alone
+way, the intended usage is to pass strategies to a <cite>Trader</cite> so that they can be
+fully “wired” into the platform. Exceptions will be raised if a <cite>TradingStrategy</cite>
+attempts to operate without a managing <cite>Trader</cite> instance.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Actor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ComponentId</span> <span class="pre">component_id=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.actor.Actor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.common.component.Component" title="nautilus_trader.common.component.Component"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.component.Component</span></code></a></p>
+<p>The abstract base class for all actor components.</p>
+<p>This class should not be used directly, but through a concrete subclass.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Actor</span></code> class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ComponentId" title="nautilus_trader.model.identifiers.ComponentId"><em>ComponentId</em></a><em>, </em><em>optional</em>) – The component ID. If None is passed then the identifier will be
+taken from <cite>type(self).__name__</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.cache">
+<span class="sig-name descname"><span class="pre">cache</span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.cache" title="Permalink to this definition">¶</a></dt>
+<dd><p>The read-only cache for the actor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>CacheFacade</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.dispose">
+<span class="sig-name descname"><span class="pre">dispose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.dispose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dispose of the component.</p>
+<p>This method is idempotent and irreversible. No other methods should be
+called after disposal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not override.</p>
+<p>Exceptions raised will be caught, logged, and reraised.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_bar">
+<span class="sig-name descname"><span class="pre">handle_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Bar</span> <span class="pre">bar</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">is_historical=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle the given bar data.</p>
+<p>Calls <cite>on_bar</cite> if state is <cite>RUNNING</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The bar received.</p></li>
+<li><p><strong>is_historical</strong> (<em>bool</em>) – If bar is historical then it won’t be passed to <cite>on_bar</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_bars">
+<span class="sig-name descname"><span class="pre">handle_bars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">bars</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_bars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle the given bar data by handling each bar individually.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bars</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a><em>]</em>) – The bars to handle.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_data">
+<span class="sig-name descname"><span class="pre">handle_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Data</span> <span class="pre">data</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle the given data.</p>
+<p>Calls <cite>on_data</cite> if state is <cite>RUNNING</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>Data</em>) – The received data.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_event">
+<span class="sig-name descname"><span class="pre">handle_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Event</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle the given event.</p>
+<p>Calls <cite>on_event</cite> if state is <cite>RUNNING</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.message.Event" title="nautilus_trader.core.message.Event"><em>Event</em></a>) – The received event.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_instrument">
+<span class="sig-name descname"><span class="pre">handle_instrument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_instrument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle the given instrument.</p>
+<p>Calls <cite>on_instrument</cite> if state is <cite>RUNNING</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>instrument</strong> (<em>Instrument</em>) – The received instrument.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_instrument_close_price">
+<span class="sig-name descname"><span class="pre">handle_instrument_close_price</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentClosePrice</span> <span class="pre">update</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_instrument_close_price" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle the given instrument close price update.</p>
+<p>Calls <cite>on_instrument_close_price</cite> if .state is <cite>RUNNING</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>update</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.venue.InstrumentClosePrice" title="nautilus_trader.model.data.venue.InstrumentClosePrice"><em>InstrumentClosePrice</em></a>) – The received update.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_instrument_status_update">
+<span class="sig-name descname"><span class="pre">handle_instrument_status_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentStatusUpdate</span> <span class="pre">update</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_instrument_status_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle the given instrument status update.</p>
+<p>Calls <cite>on_instrument_status_update</cite> if state is <cite>RUNNING</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>update</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.venue.InstrumentStatusUpdate" title="nautilus_trader.model.data.venue.InstrumentStatusUpdate"><em>InstrumentStatusUpdate</em></a>) – The received update.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_order_book">
+<span class="sig-name descname"><span class="pre">handle_order_book</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">OrderBook</span> <span class="pre">order_book</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_order_book" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle the given order book snapshot.</p>
+<p>Calls <cite>on_order_book</cite> if state is <cite>RUNNING</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>order_book</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.orderbook.book.OrderBook" title="nautilus_trader.model.orderbook.book.OrderBook"><em>OrderBook</em></a>) – The received order book.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_order_book_delta">
+<span class="sig-name descname"><span class="pre">handle_order_book_delta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">OrderBookData</span> <span class="pre">data</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_order_book_delta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle the given order book data.</p>
+<p>Calls <cite>on_order_book_delta</cite> if state is <cite>RUNNING</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>{OrderBookDelta</em><em>, </em><a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.OrderBookDeltas" title="nautilus_trader.model.orderbook.data.OrderBookDeltas"><em>OrderBookDeltas</em></a><em>, </em><em>OrderBookSnapshot}</em>) – The received order book data.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_quote_tick">
+<span class="sig-name descname"><span class="pre">handle_quote_tick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">QuoteTick</span> <span class="pre">tick</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">is_historical=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_quote_tick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle the given tick.</p>
+<p>Calls <cite>on_quote_tick</cite> if state is <cite>RUNNING</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a>) – The received tick.</p></li>
+<li><p><strong>is_historical</strong> (<em>bool</em>) – If tick is historical then it won’t be passed to <cite>on_quote_tick</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_quote_ticks">
+<span class="sig-name descname"><span class="pre">handle_quote_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">ticks</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_quote_ticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle the given tick data by handling each tick individually.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ticks</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a><em>]</em>) – The received ticks.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_trade_tick">
+<span class="sig-name descname"><span class="pre">handle_trade_tick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">TradeTick</span> <span class="pre">tick</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">is_historical=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_trade_tick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle the given tick.</p>
+<p>Calls <cite>on_trade_tick</cite> if state is <cite>RUNNING</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a>) – The received trade tick.</p></li>
+<li><p><strong>is_historical</strong> (<em>bool</em>) – If tick is historical then it won’t be passed to <cite>on_trade_tick</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_trade_ticks">
+<span class="sig-name descname"><span class="pre">handle_trade_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">ticks</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_trade_ticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle the given tick data by handling each tick individually.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ticks</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a><em>]</em>) – The received ticks.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_venue_status_update">
+<span class="sig-name descname"><span class="pre">handle_venue_status_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">VenueStatusUpdate</span> <span class="pre">update</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_venue_status_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle the given venue status update.</p>
+<p>Calls <cite>on_venue_status_update</cite> if state is <cite>RUNNING</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>update</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.venue.VenueStatusUpdate" title="nautilus_trader.model.data.venue.VenueStatusUpdate"><em>VenueStatusUpdate</em></a>) – The received update.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The components ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>ComponentId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.msgbus">
+<span class="sig-name descname"><span class="pre">msgbus</span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.msgbus" title="Permalink to this definition">¶</a></dt>
+<dd><p>The message bus for the actor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>MessageBus</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.on_bar">
+<span class="sig-name descname"><span class="pre">on_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Bar</span> <span class="pre">bar</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.on_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actions to be performed when running and receives a bar.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The bar received.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.on_data">
+<span class="sig-name descname"><span class="pre">on_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Data</span> <span class="pre">data</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.on_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actions to be performed when running and receives generic data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>Data</em>) – The data received.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.on_dispose">
+<span class="sig-name descname"><span class="pre">on_dispose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.on_dispose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actions to be performed on dispose.</p>
+<p>Cleanup any resources used by the strategy here.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+<p>Should be overridden in the strategy implementation.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.on_event">
+<span class="sig-name descname"><span class="pre">on_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Event</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.on_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actions to be performed running and receives an event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.message.Event" title="nautilus_trader.core.message.Event"><em>Event</em></a>) – The event received.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.on_instrument">
+<span class="sig-name descname"><span class="pre">on_instrument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.on_instrument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actions to be performed when running and receives an instrument.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument received.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.on_instrument_close_price">
+<span class="sig-name descname"><span class="pre">on_instrument_close_price</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentClosePrice</span> <span class="pre">update</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.on_instrument_close_price" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actions to be performed when running and receives an instrument close
+price update.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>update</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.venue.InstrumentClosePrice" title="nautilus_trader.model.data.venue.InstrumentClosePrice"><em>InstrumentClosePrice</em></a>) – The update received.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.on_instrument_status_update">
+<span class="sig-name descname"><span class="pre">on_instrument_status_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentStatusUpdate</span> <span class="pre">update</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.on_instrument_status_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actions to be performed when running and receives an instrument status
+update.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>update</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.venue.InstrumentStatusUpdate" title="nautilus_trader.model.data.venue.InstrumentStatusUpdate"><em>InstrumentStatusUpdate</em></a>) – The update received.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.on_order_book">
+<span class="sig-name descname"><span class="pre">on_order_book</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">OrderBook</span> <span class="pre">order_book</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.on_order_book" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actions to be performed when running and receives an order book snapshot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>order_book</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.orderbook.book.OrderBook" title="nautilus_trader.model.orderbook.book.OrderBook"><em>OrderBook</em></a>) – The order book received.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.on_order_book_delta">
+<span class="sig-name descname"><span class="pre">on_order_book_delta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">OrderBookData</span> <span class="pre">data</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.on_order_book_delta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actions to be performed when running and receives an order book delta.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.OrderBookData" title="nautilus_trader.model.orderbook.data.OrderBookData"><em>OrderBookData</em></a>) – The order book snapshot / operations received.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.on_quote_tick">
+<span class="sig-name descname"><span class="pre">on_quote_tick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">QuoteTick</span> <span class="pre">tick</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.on_quote_tick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actions to be performed when running and receives a quote tick.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a>) – The tick received.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.on_reset">
+<span class="sig-name descname"><span class="pre">on_reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.on_reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actions to be performed on reset.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+<p>Should be overridden in the strategy implementation.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.on_resume">
+<span class="sig-name descname"><span class="pre">on_resume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.on_resume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actions to be performed on resume.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.on_start">
+<span class="sig-name descname"><span class="pre">on_start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.on_start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actions to be performed on start.</p>
+<p>The intent is that this method is called once per fresh trading session
+when the component is initially started.</p>
+<p>It is recommended to subscribe/request data here.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+<p>Should be overridden in the implementation.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.on_stop">
+<span class="sig-name descname"><span class="pre">on_stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.on_stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actions to be performed on stopped.</p>
+<p>The intent is that this method is called every time the strategy is
+paused, and also when it is done for day.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+<p>Should be overridden in the implementation.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.on_trade_tick">
+<span class="sig-name descname"><span class="pre">on_trade_tick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">TradeTick</span> <span class="pre">tick</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.on_trade_tick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actions to be performed when running and receives a trade tick.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a>) – The tick received.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.on_venue_status_update">
+<span class="sig-name descname"><span class="pre">on_venue_status_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">VenueStatusUpdate</span> <span class="pre">update</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.on_venue_status_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actions to be performed when running and receives a venue status update.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>update</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.venue.VenueStatusUpdate" title="nautilus_trader.model.data.venue.VenueStatusUpdate"><em>VenueStatusUpdate</em></a>) – The update received.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.publish_data">
+<span class="sig-name descname"><span class="pre">publish_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Data</span> <span class="pre">data</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.publish_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Publish the given data to the message bus.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>Data</em>) – The data to publish.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.register_base">
+<span class="sig-name descname"><span class="pre">register_base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></em>, <em class="sig-param"><span class="pre">CacheFacade</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">Clock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.register_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register the component with a trader.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trader_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId"><em>TraderId</em></a>) – The trader ID for the strategy.</p></li>
+<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus" title="nautilus_trader.msgbus.message_bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the strategy.</p></li>
+<li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.base.CacheFacade" title="nautilus_trader.cache.base.CacheFacade"><em>CacheFacade</em></a>) – The read-only cache for the strategy.</p></li>
+<li><p><strong>clock</strong> (<a class="reference internal" href="#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the strategy.</p></li>
+<li><p><strong>logger</strong> (<a class="reference internal" href="#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the strategy.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.request_bars">
+<span class="sig-name descname"><span class="pre">request_bars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">BarType</span> <span class="pre">bar_type</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">from_datetime=None</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">to_datetime=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.request_bars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Request historical bars for the given parameters.</p>
+<p>If datetimes are <cite>None</cite> then will request the most recent data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type for the request.</p></li>
+<li><p><strong>from_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified from datetime for the data.</p></li>
+<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If None then will default
+to the current datetime.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Always limited to the bar capacity of the <cite>DataEngine</cite> cache.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.request_data">
+<span class="sig-name descname"><span class="pre">request_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">data_type</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.request_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Request custom data for the given data type from the given data client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID.</p></li>
+<li><p><strong>data_type</strong> (<em>DataType</em>) – The data type for the request.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.request_quote_ticks">
+<span class="sig-name descname"><span class="pre">request_quote_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">from_datetime=None</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">to_datetime=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.request_quote_ticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Request historical quote ticks for the given parameters.</p>
+<p>If datetimes are <cite>None</cite> then will request the most recent data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument ID for the request.</p></li>
+<li><p><strong>from_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified from datetime for the data.</p></li>
+<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If None then will default
+to the current datetime.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Always limited to the tick capacity of the <cite>DataEngine</cite> cache.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.request_trade_ticks">
+<span class="sig-name descname"><span class="pre">request_trade_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">from_datetime=None</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">to_datetime=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.request_trade_ticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Request historical trade ticks for the given parameters.</p>
+<p>If datetimes are <cite>None</cite> then will request the most recent data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument ID for the request.</p></li>
+<li><p><strong>from_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified from datetime for the data.</p></li>
+<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If None then will default
+to the current datetime.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Always limited to the tick capacity of the <cite>DataEngine</cite> cache.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the component.</p>
+<p>All stateful fields are reset to their initial value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not override.</p>
+<p>Exceptions raised will be caught, logged, and reraised.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.resume">
+<span class="sig-name descname"><span class="pre">resume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.resume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resume the component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not override.</p>
+<p>Exceptions raised will be caught, logged, and reraised.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current strategy state.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not override.</p>
+<p>Exceptions raised will be caught, logged, and reraised.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.state">
+<span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>The components current state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>ComponentState</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop the component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not override.</p>
+<p>Exceptions raised will be caught, logged, and reraised.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.subscribe_bars">
+<span class="sig-name descname"><span class="pre">subscribe_bars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">BarType</span> <span class="pre">bar_type</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.subscribe_bars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscribe to streaming <cite>Bar</cite> data for the given bar type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type to subscribe to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.subscribe_data">
+<span class="sig-name descname"><span class="pre">subscribe_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">data_type</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.subscribe_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscribe to data of the given data type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID.</p></li>
+<li><p><strong>data_type</strong> (<em>DataType</em>) – The data type to subscribe to.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.subscribe_instrument">
+<span class="sig-name descname"><span class="pre">subscribe_instrument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.subscribe_instrument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscribe to update <cite>Instrument</cite> data for the given instrument ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the subscription.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.subscribe_instrument_close_prices">
+<span class="sig-name descname"><span class="pre">subscribe_instrument_close_prices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.subscribe_instrument_close_prices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscribe to closing prices for the given instrument id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument to subscribe to status updates for.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.subscribe_instrument_status_updates">
+<span class="sig-name descname"><span class="pre">subscribe_instrument_status_updates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.subscribe_instrument_status_updates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscribe to status updates of the given instrument id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument to subscribe to status updates for.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.subscribe_instruments">
+<span class="sig-name descname"><span class="pre">subscribe_instruments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.subscribe_instruments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscribe to update <cite>Instrument</cite> data for the given venue.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a>) – The venue for the subscription.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.subscribe_order_book_deltas">
+<span class="sig-name descname"><span class="pre">subscribe_order_book_deltas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BookLevel</span> <span class="pre">level=BookLevel.L2</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">kwargs=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.subscribe_order_book_deltas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscribe to the order book deltas stream, being a snapshot then deltas
+<cite>OrderBookData</cite> for the given instrument ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The order book instrument ID to subscribe to.</p></li>
+<li><p><strong>level</strong> (<em>BookLevel</em>) – The order book level (L1, L2, L3).</p></li>
+<li><p><strong>kwargs</strong> (<em>dict</em><em>, </em><em>optional</em>) – The keyword arguments for exchange specific parameters.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.subscribe_order_book_snapshots">
+<span class="sig-name descname"><span class="pre">subscribe_order_book_snapshots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BookLevel</span> <span class="pre">level=BookLevel.L2</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">depth=0</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">interval_ms=1000</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">kwargs=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.subscribe_order_book_snapshots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscribe to <cite>OrderBook</cite> snapshots for the given instrument ID.</p>
+<p>The <cite>DataEngine</cite> will only maintain one order book for each instrument.
+Because of this - the level, depth and kwargs for the stream will be set
+as per the last subscription request (this will also affect all subscribers).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The order book instrument ID to subscribe to.</p></li>
+<li><p><strong>level</strong> (<em>BookLevel</em>) – The order book level (L1, L2, L3).</p></li>
+<li><p><strong>depth</strong> (<em>int</em><em>, </em><em>optional</em>) – The maximum depth for the order book. A depth of 0 is maximum depth.</p></li>
+<li><p><strong>interval_ms</strong> (<em>int</em>) – The order book snapshot interval in milliseconds.</p></li>
+<li><p><strong>kwargs</strong> (<em>dict</em><em>, </em><em>optional</em>) – The keyword arguments for exchange specific parameters.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If depth is negative (&lt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If interval_ms is not positive (&gt; 0).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.subscribe_quote_ticks">
+<span class="sig-name descname"><span class="pre">subscribe_quote_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.subscribe_quote_ticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscribe to streaming <cite>QuoteTick</cite> data for the given instrument ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument to subscribe to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.subscribe_strategy_data">
+<span class="sig-name descname"><span class="pre">subscribe_strategy_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">type</span> <span class="pre">data_type=None</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.subscribe_strategy_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscribe to strategy data of the given data type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_type</strong> (<em>type</em><em>, </em><em>optional</em>) – The strategy data type to subscribe to.</p></li>
+<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID filter for the subscription.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.subscribe_trade_ticks">
+<span class="sig-name descname"><span class="pre">subscribe_trade_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.subscribe_trade_ticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscribe to streaming <cite>TradeTick</cite> data for the given instrument ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument to subscribe to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.subscribe_venue_status_updates">
+<span class="sig-name descname"><span class="pre">subscribe_venue_status_updates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.subscribe_venue_status_updates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscribe to status updates of the given venue.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a>) – The venue to subscribe to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.trader_id">
+<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.trader_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The trader ID associated with the actor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>TraderId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.unsubscribe_bars">
+<span class="sig-name descname"><span class="pre">unsubscribe_bars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">BarType</span> <span class="pre">bar_type</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.unsubscribe_bars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsubscribe from streaming <cite>Bar</cite> data for the given bar type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type to unsubscribe from.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.unsubscribe_data">
+<span class="sig-name descname"><span class="pre">unsubscribe_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">data_type</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.unsubscribe_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsubscribe from data of the given data type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID.</p></li>
+<li><p><strong>data_type</strong> (<em>DataType</em>) – The data type to unsubscribe from.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.unsubscribe_instrument">
+<span class="sig-name descname"><span class="pre">unsubscribe_instrument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.unsubscribe_instrument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsubscribe from update <cite>Instrument</cite> data for the given instrument ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument to unsubscribe from.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.unsubscribe_instruments">
+<span class="sig-name descname"><span class="pre">unsubscribe_instruments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.unsubscribe_instruments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsubscribe from update <cite>Instrument</cite> data for the given venue.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a>) – The venue for the subscription.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.unsubscribe_order_book_deltas">
+<span class="sig-name descname"><span class="pre">unsubscribe_order_book_deltas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.unsubscribe_order_book_deltas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsubscribe the order book deltas stream for the given instrument ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The order book instrument to subscribe to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.unsubscribe_order_book_snapshots">
+<span class="sig-name descname"><span class="pre">unsubscribe_order_book_snapshots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">interval_ms=1000</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.unsubscribe_order_book_snapshots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsubscribe from order book snapshots for the given instrument ID.</p>
+<p>The interval must match the previously subscribed interval.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The order book instrument to subscribe to.</p></li>
+<li><p><strong>interval_ms</strong> (<em>int</em>) – The order book snapshot interval in milliseconds.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.unsubscribe_quote_ticks">
+<span class="sig-name descname"><span class="pre">unsubscribe_quote_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.unsubscribe_quote_ticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsubscribe from streaming <cite>QuoteTick</cite> data for the given instrument ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument to unsubscribe from.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.unsubscribe_strategy_data">
+<span class="sig-name descname"><span class="pre">unsubscribe_strategy_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">type</span> <span class="pre">data_type</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.unsubscribe_strategy_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsubscribe from strategy data of the given data type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_type</strong> (<em>type</em>) – The strategy data type to unsubscribe from.</p></li>
+<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID filter for the subscription.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.unsubscribe_trade_ticks">
+<span class="sig-name descname"><span class="pre">unsubscribe_trade_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.unsubscribe_trade_ticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsubscribe from streaming <cite>TradeTick</cite> data for the given instrument ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument ID to unsubscribe from.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="module-nautilus_trader.common.clock">
 <span id="clock"></span><h2>Clock<a class="headerlink" href="#module-nautilus_trader.common.clock" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
