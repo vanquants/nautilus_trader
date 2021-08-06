@@ -390,12 +390,12 @@ called after disposal.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_order_book_delta">
-<span class="sig-name descname"><span class="pre">handle_order_book_delta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">OrderBookData</span> <span class="pre">data</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_order_book_delta" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">handle_order_book_delta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">OrderBookData</span> <span class="pre">delta</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_order_book_delta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handle the given order book data.</p>
 <p>Calls <cite>on_order_book_delta</cite> if state is <cite>RUNNING</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data</strong> (<em>{OrderBookDelta</em><em>, </em><a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.OrderBookDeltas" title="nautilus_trader.model.orderbook.data.OrderBookDeltas"><em>OrderBookDeltas</em></a><em>, </em><em>OrderBookSnapshot}</em>) – The received order book data.</p>
+<dd class="field-odd"><p><strong>delta</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.OrderBookDelta" title="nautilus_trader.model.orderbook.data.OrderBookDelta"><em>OrderBookDelta</em></a><em>, </em><a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.OrderBookDeltas" title="nautilus_trader.model.orderbook.data.OrderBookDeltas"><em>OrderBookDeltas</em></a><em>, </em><a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.OrderBookSnapshot" title="nautilus_trader.model.orderbook.data.OrderBookSnapshot"><em>OrderBookSnapshot</em></a>) – The order book delta received.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -631,11 +631,11 @@ update.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.on_order_book_delta">
-<span class="sig-name descname"><span class="pre">on_order_book_delta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">OrderBookData</span> <span class="pre">data</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.on_order_book_delta" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">on_order_book_delta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">OrderBookData</span> <span class="pre">delta</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.on_order_book_delta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Actions to be performed when running and receives an order book delta.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.OrderBookData" title="nautilus_trader.model.orderbook.data.OrderBookData"><em>OrderBookData</em></a>) – The order book snapshot / operations received.</p>
+<dd class="field-odd"><p><strong>delta</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.OrderBookDelta" title="nautilus_trader.model.orderbook.data.OrderBookDelta"><em>OrderBookDelta</em></a><em>, </em><a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.OrderBookDeltas" title="nautilus_trader.model.orderbook.data.OrderBookDeltas"><em>OrderBookDeltas</em></a><em>, </em><a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.OrderBookSnapshot" title="nautilus_trader.model.orderbook.data.OrderBookSnapshot"><em>OrderBookSnapshot</em></a>) – The order book delta received.</p>
 </dd>
 </dl>
 <div class="admonition warning">
