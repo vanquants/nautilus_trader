@@ -575,7 +575,7 @@ deterministic state value.</p>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Finite-state_machine">https://en.wikipedia.org/wiki/Finite-state_machine</a></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.core.fsm.FiniteStateMachine">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">FiniteStateMachine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dict</span> <span class="pre">state_transition_table</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">initial_state</span></em>, <em class="sig-param"><span class="pre">trigger_parser=str</span></em>, <em class="sig-param"><span class="pre">state_parser=str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.fsm.FiniteStateMachine" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">FiniteStateMachine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dict</span> <span class="pre">state_transition_table,</span> <span class="pre">int</span> <span class="pre">initial_state,</span> <span class="pre">trigger_parser:</span> <span class="pre">Callable[[int],</span> <span class="pre">str]</span> <span class="pre">=</span> <span class="pre">str,</span> <span class="pre">state_parser:</span> <span class="pre">Callable[[int],</span> <span class="pre">str]</span> <span class="pre">=</span> <span class="pre">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.fsm.FiniteStateMachine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a generic finite state machine.</p>
 <dl class="py method">
@@ -588,9 +588,9 @@ deterministic state value.</p>
 <li><p><strong>state_transition_table</strong> (<em>dict of tuples and states</em>) – The state-transition table for the FSM consisting of a tuple of
 starting state and trigger as keys, and resulting states as values.</p></li>
 <li><p><strong>initial_state</strong> (<em>int / C Enum</em>) – The initial state for the FSM.</p></li>
-<li><p><strong>trigger_parser</strong> (<em>callable</em><em>, </em><em>optional</em>) – The trigger parser needed to convert C Enum ints into strings.
+<li><p><strong>trigger_parser</strong> (<em>Callable</em><em>[</em><em>[</em><em>int</em><em>]</em><em>, </em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The trigger parser needed to convert C Enum ints into strings.
 If None then will just print the integer.</p></li>
-<li><p><strong>state_parser</strong> (<em>callable</em><em>, </em><em>optional</em>) – The state parser needed to convert C Enum ints into strings.
+<li><p><strong>state_parser</strong> (<em>Callable</em><em>[</em><em>[</em><em>int</em><em>]</em><em>, </em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The state parser needed to convert C Enum ints into strings.
 If None then will just print the integer.</p></li>
 </ul>
 </dd>
@@ -598,8 +598,8 @@ If None then will just print the integer.</p></li>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If state_transition_table is empty.</p></li>
 <li><p><strong>ValueError</strong> – If state_transition_table key not tuple.</p></li>
-<li><p><strong>ValueError</strong> – If trigger_parser not callable or None.</p></li>
-<li><p><strong>ValueError</strong> – If state_parser not callable or None.</p></li>
+<li><p><strong>ValueError</strong> – If trigger_parser not of type Callable or None.</p></li>
+<li><p><strong>ValueError</strong> – If state_parser not of type Callable or None.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1100,7 +1100,7 @@ inferred as zero.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The callback to receive the response.</p></li>
+<li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The delegate to call with the response.</p></li>
 <li><p><strong>request_id</strong> (<a class="reference internal" href="#nautilus_trader.core.uuid.UUID" title="nautilus_trader.core.uuid.UUID"><em>UUID</em></a>) – The request ID.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the request object was initialized.</p></li>
 </ul>
@@ -1114,7 +1114,7 @@ inferred as zero.</p>
 <dd><p>The callback for the response.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>callable</cite></p>
+<dd class="field-odd"><p><cite>Callable</cite></p>
 </dd>
 </dl>
 </dd></dl>

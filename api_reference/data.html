@@ -198,7 +198,7 @@ trading operations.</p>
 <span id="aggregation"></span><h2>Aggregation<a class="headerlink" href="#module-nautilus_trader.data.aggregation" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.data.aggregation.BarAggregator">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BarAggregator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em>, <em class="sig-param"><span class="pre">BarType</span> <span class="pre">bar_type</span></em>, <em class="sig-param"><span class="pre">handler:</span> <span class="pre">callable</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">use_previous_close</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.BarAggregator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BarAggregator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument,</span> <span class="pre">BarType</span> <span class="pre">bar_type,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Bar],</span> <span class="pre">None],</span> <span class="pre">Logger</span> <span class="pre">logger,</span> <span class="pre">bool</span> <span class="pre">use_previous_close</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.BarAggregator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a means of aggregating specified bars and sending to a registered handler.</p>
 <dl class="py method">
@@ -210,7 +210,7 @@ trading operations.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the aggregator.</p></li>
 <li><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type for the aggregator.</p></li>
-<li><p><strong>handler</strong> (<em>callable</em>) – The bar handler for the aggregator.</p></li>
+<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a><em>]</em><em>, </em><em>None</em><em>]</em>) – The bar handler for the aggregator.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the aggregator.</p></li>
 <li><p><strong>use_previous_close</strong> (<em>bool</em>) – If the previous close price should set the open price of a new bar.</p></li>
 </ul>
@@ -408,7 +408,7 @@ trading operations.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.data.aggregation.BulkTickBarBuilder">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BulkTickBarBuilder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em>, <em class="sig-param"><span class="pre">BarType</span> <span class="pre">bar_type</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">callback:</span> <span class="pre">callable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.BulkTickBarBuilder" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BulkTickBarBuilder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument,</span> <span class="pre">BarType</span> <span class="pre">bar_type,</span> <span class="pre">Logger</span> <span class="pre">logger,</span> <span class="pre">callback:</span> <span class="pre">Callable[[Bar],</span> <span class="pre">None]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.BulkTickBarBuilder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a temporary builder for tick bars from a bulk tick order.</p>
 <dl class="py method">
@@ -421,12 +421,12 @@ trading operations.</p>
 <li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the aggregator.</p></li>
 <li><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar_type to build.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the bar aggregator.</p></li>
-<li><p><strong>callback</strong> (<em>callable</em>) – The callback to send the built bars to.</p></li>
+<li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a><em>]</em><em>, </em><em>None</em><em>]</em>) – The delegate to call with the built bars.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If callback is not of type callable.</p></li>
+<li><p><strong>ValueError</strong> – If callback is not of type Callable.</p></li>
 <li><p><strong>ValueError</strong> – If instrument.id != bar_type.instrument_id.</p></li>
 </ul>
 </dd>
@@ -478,7 +478,7 @@ trading operations.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.data.aggregation.TickBarAggregator">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TickBarAggregator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em>, <em class="sig-param"><span class="pre">BarType</span> <span class="pre">bar_type</span></em>, <em class="sig-param"><span class="pre">handler:</span> <span class="pre">callable</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.TickBarAggregator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TickBarAggregator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument,</span> <span class="pre">BarType</span> <span class="pre">bar_type,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Bar],</span> <span class="pre">None],</span> <span class="pre">Logger</span> <span class="pre">logger</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.TickBarAggregator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.data.aggregation.BarAggregator" title="nautilus_trader.data.aggregation.BarAggregator"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.data.aggregation.BarAggregator</span></code></a></p>
 <p>Provides a means of building tick bars from ticks.</p>
 <p>When received tick count reaches the step threshold of the bar
@@ -492,7 +492,7 @@ specification, then a bar is created and sent to the handler.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the aggregator.</p></li>
 <li><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type for the aggregator.</p></li>
-<li><p><strong>handler</strong> (<em>callable</em>) – The bar handler for the aggregator.</p></li>
+<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a><em>]</em><em>, </em><em>None</em><em>]</em>) – The bar handler for the aggregator.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the aggregator.</p></li>
 </ul>
 </dd>
@@ -539,7 +539,7 @@ specification, then a bar is created and sent to the handler.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.data.aggregation.TimeBarAggregator">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TimeBarAggregator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em>, <em class="sig-param"><span class="pre">BarType</span> <span class="pre">bar_type</span></em>, <em class="sig-param"><span class="pre">handler:</span> <span class="pre">callable</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">use_previous_close</span></em>, <em class="sig-param"><span class="pre">Clock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.TimeBarAggregator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TimeBarAggregator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument,</span> <span class="pre">BarType</span> <span class="pre">bar_type,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Bar],</span> <span class="pre">None],</span> <span class="pre">bool</span> <span class="pre">use_previous_close,</span> <span class="pre">Clock</span> <span class="pre">clock,</span> <span class="pre">Logger</span> <span class="pre">logger</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.TimeBarAggregator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.data.aggregation.BarAggregator" title="nautilus_trader.data.aggregation.BarAggregator"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.data.aggregation.BarAggregator</span></code></a></p>
 <p>Provides a means of building time bars from ticks with an internal timer.</p>
 <p>When the time reaches the next time interval of the bar specification, then
@@ -553,7 +553,7 @@ a bar is created and sent to the handler.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the aggregator.</p></li>
 <li><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type for the aggregator.</p></li>
-<li><p><strong>handler</strong> (<em>callable</em>) – The bar handler for the aggregator.</p></li>
+<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a><em>]</em><em>, </em><em>None</em><em>]</em>) – The bar handler for the aggregator.</p></li>
 <li><p><strong>use_previous_close</strong> (<em>bool</em>) – If the previous close should set the next open.</p></li>
 <li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the aggregator.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the aggregator.</p></li>
@@ -664,7 +664,7 @@ a bar is created and sent to the handler.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.data.aggregation.ValueBarAggregator">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ValueBarAggregator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em>, <em class="sig-param"><span class="pre">BarType</span> <span class="pre">bar_type</span></em>, <em class="sig-param"><span class="pre">handler:</span> <span class="pre">callable</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.ValueBarAggregator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ValueBarAggregator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument,</span> <span class="pre">BarType</span> <span class="pre">bar_type,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Bar],</span> <span class="pre">None],</span> <span class="pre">Logger</span> <span class="pre">logger</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.ValueBarAggregator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.data.aggregation.BarAggregator" title="nautilus_trader.data.aggregation.BarAggregator"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.data.aggregation.BarAggregator</span></code></a></p>
 <p>Provides a means of building value bars from ticks.</p>
 <p>When received value reaches the step threshold of the bar
@@ -678,7 +678,7 @@ specification, then a bar is created and sent to the handler.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the aggregator.</p></li>
 <li><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type for the aggregator.</p></li>
-<li><p><strong>handler</strong> (<em>callable</em>) – The bar handler for the aggregator.</p></li>
+<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a><em>]</em><em>, </em><em>None</em><em>]</em>) – The bar handler for the aggregator.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the aggregator.</p></li>
 </ul>
 </dd>
@@ -736,7 +736,7 @@ specification, then a bar is created and sent to the handler.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.data.aggregation.VolumeBarAggregator">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">VolumeBarAggregator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em>, <em class="sig-param"><span class="pre">BarType</span> <span class="pre">bar_type</span></em>, <em class="sig-param"><span class="pre">handler:</span> <span class="pre">callable</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.VolumeBarAggregator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">VolumeBarAggregator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument,</span> <span class="pre">BarType</span> <span class="pre">bar_type,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Bar],</span> <span class="pre">None],</span> <span class="pre">Logger</span> <span class="pre">logger</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.VolumeBarAggregator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.data.aggregation.BarAggregator" title="nautilus_trader.data.aggregation.BarAggregator"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.data.aggregation.BarAggregator</span></code></a></p>
 <p>Provides a means of building volume bars from ticks.</p>
 <p>When received volume reaches the step threshold of the bar
@@ -750,7 +750,7 @@ specification, then a bar is created and sent to the handler.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the aggregator.</p></li>
 <li><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type for the aggregator.</p></li>
-<li><p><strong>handler</strong> (<em>callable</em>) – The bar handler for the aggregator.</p></li>
+<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a><em>]</em><em>, </em><em>None</em><em>]</em>) – The bar handler for the aggregator.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the aggregator.</p></li>
 </ul>
 </dd>
@@ -1581,7 +1581,7 @@ called after disposal.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.data.messages.DataRequest">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">DataRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">data_type</span></em>, <em class="sig-param"><span class="pre">callback:</span> <span class="pre">callable</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">request_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.messages.DataRequest" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">DataRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id,</span> <span class="pre">DataType</span> <span class="pre">data_type,</span> <span class="pre">callback:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None],</span> <span class="pre">UUID</span> <span class="pre">request_id,</span> <span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.messages.DataRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="core.html#nautilus_trader.core.message.Request" title="nautilus_trader.core.message.Request"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Request</span></code></a></p>
 <p>Represents a request for data.</p>
 <dl class="py method">
@@ -1593,7 +1593,7 @@ called after disposal.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID for the request.</p></li>
 <li><p><strong>data_type</strong> (<em>type</em>) – The data type for the request.</p></li>
-<li><p><strong>callback</strong> (<em>callable</em>) – The callback to receive the data.</p></li>
+<li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The delegate to call with the data.</p></li>
 <li><p><strong>request_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID" title="nautilus_trader.core.uuid.UUID"><em>UUID</em></a>) – The request ID.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the request object was initialized.</p></li>
 </ul>
@@ -1607,7 +1607,7 @@ called after disposal.</p>
 <dd><p>The callback for the response.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>callable</cite></p>
+<dd class="field-odd"><p><cite>Callable</cite></p>
 </dd>
 </dl>
 </dd></dl>

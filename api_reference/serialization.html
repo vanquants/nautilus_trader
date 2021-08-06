@@ -281,19 +281,19 @@ beside the built-in <cite>MessagePack</cite> specification serializers.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.base.register_serializable_object">
-<span class="sig-name descname"><span class="pre">register_serializable_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">callable</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.serialization.base.register_serializable_object" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">register_serializable_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.serialization.base.register_serializable_object" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the given object with the global serialization object maps.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>obj</strong> (<em>object</em>) – The object to register.</p></li>
-<li><p><strong>to_dict</strong> (<em>callable</em>) – The delegate to instantiate a dict of primitive types from the object.</p></li>
-<li><p><strong>from_dict</strong> (<em>callable</em>) – The delegate to instantiate the object from a dict of primitive types.</p></li>
+<li><p><strong>to_dict</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – The delegate to instantiate a dict of primitive types from the object.</p></li>
+<li><p><strong>from_dict</strong> (<em>Callable</em><em>[</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>, </em><em>Any</em><em>]</em>) – The delegate to instantiate the object from a dict of primitive types.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>TypeError</strong> – If <cite>to_dict</cite> or <cite>from_dict</cite> are not of type callable.</p></li>
+<li><p><strong>TypeError</strong> – If <cite>to_dict</cite> or <cite>from_dict</cite> are not of type Callable.</p></li>
 <li><p><strong>KeyError</strong> – If obj already registered with the global object maps.</p></li>
 </ul>
 </dd>

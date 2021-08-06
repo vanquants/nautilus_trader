@@ -1317,22 +1317,22 @@ the target timezone).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.clock.Clock.register_default_handler">
-<span class="sig-name descname"><span class="pre">register_default_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">callable</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.Clock.register_default_handler" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">register_default_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">TimeEvent</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.Clock.register_default_handler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the given handler as the clocks default handler.</p>
 <dl class="simple">
-<dt>handler<span class="classifier">callable</span></dt><dd><p>The handler to register.</p>
+<dt>handler<span class="classifier">Callable[[TimeEvent], None]</span></dt><dd><p>The handler to register.</p>
 </dd>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – If handler is not of type callable.</p>
+<dd class="field-odd"><p><strong>TypeError</strong> – If handler is not of type Callable.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.clock.Clock.set_time_alert">
-<span class="sig-name descname"><span class="pre">set_time_alert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">name</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">alert_time</span></em>, <em class="sig-param"><span class="pre">handler:</span> <span class="pre">callable</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.Clock.set_time_alert" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_time_alert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">name,</span> <span class="pre">datetime</span> <span class="pre">alert_time,</span> <span class="pre">handler:</span> <span class="pre">Callable[[TimeEvent],</span> <span class="pre">None]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.Clock.set_time_alert" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set a time alert for the given time.</p>
 <p>When the time is reached the handler will be passed the <cite>TimeEvent</cite>
 containing the timers unique name. If no handler is passed then the
@@ -1342,14 +1342,14 @@ default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – The name for the alert (must be unique for this clock).</p></li>
 <li><p><strong>alert_time</strong> (<em>datetime</em>) – The time for the alert.</p></li>
-<li><p><strong>handler</strong> (<em>callable</em><em>, </em><em>optional</em>) – The handler to receive time events.</p></li>
+<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent"><em>TimeEvent</em></a><em>]</em><em>, </em><em>None</em><em>]</em><em>, </em><em>optional</em>) – The handler to receive time events.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
 <li><p><strong>ValueError</strong> – If alert_time is not &gt;= the clocks current time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type callable or None.</p></li>
+<li><p><strong>TypeError</strong> – If handler is not of type Callable or None.</p></li>
 <li><p><strong>ValueError</strong> – If handler is None and no default handler is registered.</p></li>
 </ul>
 </dd>
@@ -1358,7 +1358,7 @@ default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.clock.Clock.set_timer">
-<span class="sig-name descname"><span class="pre">set_timer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">name</span></em>, <em class="sig-param"><span class="pre">timedelta</span> <span class="pre">interval</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">start_time=None</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">stop_time=None</span></em>, <em class="sig-param"><span class="pre">handler:</span> <span class="pre">callable</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.Clock.set_timer" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_timer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">name,</span> <span class="pre">timedelta</span> <span class="pre">interval,</span> <span class="pre">datetime</span> <span class="pre">start_time=None,</span> <span class="pre">datetime</span> <span class="pre">stop_time=None,</span> <span class="pre">handler:</span> <span class="pre">Callable[[TimeEvent],</span> <span class="pre">None]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.Clock.set_timer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set a timer to run.</p>
 <p>The timer will run from the start time (optionally until the stop time).
 When the intervals are reached the handlers will be passed the
@@ -1371,7 +1371,7 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <li><p><strong>interval</strong> (<em>timedelta</em>) – The time interval for the timer.</p></li>
 <li><p><strong>start_time</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The start time for the timer (if None then starts immediately).</p></li>
 <li><p><strong>stop_time</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The stop time for the timer (if None then repeats indefinitely).</p></li>
-<li><p><strong>handler</strong> (<em>callable</em><em>, </em><em>optional</em>) – The handler to receive time events.</p></li>
+<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent"><em>TimeEvent</em></a><em>]</em><em>, </em><em>None</em><em>]</em><em>, </em><em>optional</em>) – The handler to receive time events.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -1380,7 +1380,7 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <li><p><strong>ValueError</strong> – If interval is not positive (&gt; 0).</p></li>
 <li><p><strong>ValueError</strong> – If stop_time is not None and stop_time &lt; time_now.</p></li>
 <li><p><strong>ValueError</strong> – If stop_time is not None and start_time + interval &gt; stop_time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type callable or None.</p></li>
+<li><p><strong>TypeError</strong> – If handler is not of type Callable or None.</p></li>
 <li><p><strong>ValueError</strong> – If handler is None and no default handler is registered.</p></li>
 </ul>
 </dd>
@@ -1588,22 +1588,22 @@ the target timezone).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.clock.LiveClock.register_default_handler">
-<span class="sig-name descname"><span class="pre">register_default_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">callable</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.LiveClock.register_default_handler" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">register_default_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">TimeEvent</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.LiveClock.register_default_handler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the given handler as the clocks default handler.</p>
 <dl class="simple">
-<dt>handler<span class="classifier">callable</span></dt><dd><p>The handler to register.</p>
+<dt>handler<span class="classifier">Callable[[TimeEvent], None]</span></dt><dd><p>The handler to register.</p>
 </dd>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – If handler is not of type callable.</p>
+<dd class="field-odd"><p><strong>TypeError</strong> – If handler is not of type Callable.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.clock.LiveClock.set_time_alert">
-<span class="sig-name descname"><span class="pre">set_time_alert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">name</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">alert_time</span></em>, <em class="sig-param"><span class="pre">handler:</span> <span class="pre">callable</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.LiveClock.set_time_alert" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_time_alert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">name,</span> <span class="pre">datetime</span> <span class="pre">alert_time,</span> <span class="pre">handler:</span> <span class="pre">Callable[[TimeEvent],</span> <span class="pre">None]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.LiveClock.set_time_alert" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set a time alert for the given time.</p>
 <p>When the time is reached the handler will be passed the <cite>TimeEvent</cite>
 containing the timers unique name. If no handler is passed then the
@@ -1613,14 +1613,14 @@ default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – The name for the alert (must be unique for this clock).</p></li>
 <li><p><strong>alert_time</strong> (<em>datetime</em>) – The time for the alert.</p></li>
-<li><p><strong>handler</strong> (<em>callable</em><em>, </em><em>optional</em>) – The handler to receive time events.</p></li>
+<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent"><em>TimeEvent</em></a><em>]</em><em>, </em><em>None</em><em>]</em><em>, </em><em>optional</em>) – The handler to receive time events.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
 <li><p><strong>ValueError</strong> – If alert_time is not &gt;= the clocks current time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type callable or None.</p></li>
+<li><p><strong>TypeError</strong> – If handler is not of type Callable or None.</p></li>
 <li><p><strong>ValueError</strong> – If handler is None and no default handler is registered.</p></li>
 </ul>
 </dd>
@@ -1629,7 +1629,7 @@ default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.clock.LiveClock.set_timer">
-<span class="sig-name descname"><span class="pre">set_timer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">name</span></em>, <em class="sig-param"><span class="pre">timedelta</span> <span class="pre">interval</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">start_time=None</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">stop_time=None</span></em>, <em class="sig-param"><span class="pre">handler:</span> <span class="pre">callable</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.LiveClock.set_timer" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_timer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">name,</span> <span class="pre">timedelta</span> <span class="pre">interval,</span> <span class="pre">datetime</span> <span class="pre">start_time=None,</span> <span class="pre">datetime</span> <span class="pre">stop_time=None,</span> <span class="pre">handler:</span> <span class="pre">Callable[[TimeEvent],</span> <span class="pre">None]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.LiveClock.set_timer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set a timer to run.</p>
 <p>The timer will run from the start time (optionally until the stop time).
 When the intervals are reached the handlers will be passed the
@@ -1642,7 +1642,7 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <li><p><strong>interval</strong> (<em>timedelta</em>) – The time interval for the timer.</p></li>
 <li><p><strong>start_time</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The start time for the timer (if None then starts immediately).</p></li>
 <li><p><strong>stop_time</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The stop time for the timer (if None then repeats indefinitely).</p></li>
-<li><p><strong>handler</strong> (<em>callable</em><em>, </em><em>optional</em>) – The handler to receive time events.</p></li>
+<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent"><em>TimeEvent</em></a><em>]</em><em>, </em><em>None</em><em>]</em><em>, </em><em>optional</em>) – The handler to receive time events.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -1651,7 +1651,7 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <li><p><strong>ValueError</strong> – If interval is not positive (&gt; 0).</p></li>
 <li><p><strong>ValueError</strong> – If stop_time is not None and stop_time &lt; time_now.</p></li>
 <li><p><strong>ValueError</strong> – If stop_time is not None and start_time + interval &gt; stop_time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type callable or None.</p></li>
+<li><p><strong>TypeError</strong> – If handler is not of type Callable or None.</p></li>
 <li><p><strong>ValueError</strong> – If handler is None and no default handler is registered.</p></li>
 </ul>
 </dd>
@@ -1875,15 +1875,15 @@ the target timezone).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.clock.TestClock.register_default_handler">
-<span class="sig-name descname"><span class="pre">register_default_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">callable</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.TestClock.register_default_handler" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">register_default_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">TimeEvent</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.TestClock.register_default_handler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the given handler as the clocks default handler.</p>
 <dl class="simple">
-<dt>handler<span class="classifier">callable</span></dt><dd><p>The handler to register.</p>
+<dt>handler<span class="classifier">Callable[[TimeEvent], None]</span></dt><dd><p>The handler to register.</p>
 </dd>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – If handler is not of type callable.</p>
+<dd class="field-odd"><p><strong>TypeError</strong> – If handler is not of type Callable.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1901,7 +1901,7 @@ the target timezone).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.clock.TestClock.set_time_alert">
-<span class="sig-name descname"><span class="pre">set_time_alert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">name</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">alert_time</span></em>, <em class="sig-param"><span class="pre">handler:</span> <span class="pre">callable</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.TestClock.set_time_alert" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_time_alert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">name,</span> <span class="pre">datetime</span> <span class="pre">alert_time,</span> <span class="pre">handler:</span> <span class="pre">Callable[[TimeEvent],</span> <span class="pre">None]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.TestClock.set_time_alert" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set a time alert for the given time.</p>
 <p>When the time is reached the handler will be passed the <cite>TimeEvent</cite>
 containing the timers unique name. If no handler is passed then the
@@ -1911,14 +1911,14 @@ default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – The name for the alert (must be unique for this clock).</p></li>
 <li><p><strong>alert_time</strong> (<em>datetime</em>) – The time for the alert.</p></li>
-<li><p><strong>handler</strong> (<em>callable</em><em>, </em><em>optional</em>) – The handler to receive time events.</p></li>
+<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent"><em>TimeEvent</em></a><em>]</em><em>, </em><em>None</em><em>]</em><em>, </em><em>optional</em>) – The handler to receive time events.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
 <li><p><strong>ValueError</strong> – If alert_time is not &gt;= the clocks current time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type callable or None.</p></li>
+<li><p><strong>TypeError</strong> – If handler is not of type Callable or None.</p></li>
 <li><p><strong>ValueError</strong> – If handler is None and no default handler is registered.</p></li>
 </ul>
 </dd>
@@ -1927,7 +1927,7 @@ default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.clock.TestClock.set_timer">
-<span class="sig-name descname"><span class="pre">set_timer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">name</span></em>, <em class="sig-param"><span class="pre">timedelta</span> <span class="pre">interval</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">start_time=None</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">stop_time=None</span></em>, <em class="sig-param"><span class="pre">handler:</span> <span class="pre">callable</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.TestClock.set_timer" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_timer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">name,</span> <span class="pre">timedelta</span> <span class="pre">interval,</span> <span class="pre">datetime</span> <span class="pre">start_time=None,</span> <span class="pre">datetime</span> <span class="pre">stop_time=None,</span> <span class="pre">handler:</span> <span class="pre">Callable[[TimeEvent],</span> <span class="pre">None]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.TestClock.set_timer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set a timer to run.</p>
 <p>The timer will run from the start time (optionally until the stop time).
 When the intervals are reached the handlers will be passed the
@@ -1940,7 +1940,7 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <li><p><strong>interval</strong> (<em>timedelta</em>) – The time interval for the timer.</p></li>
 <li><p><strong>start_time</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The start time for the timer (if None then starts immediately).</p></li>
 <li><p><strong>stop_time</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The stop time for the timer (if None then repeats indefinitely).</p></li>
-<li><p><strong>handler</strong> (<em>callable</em><em>, </em><em>optional</em>) – The handler to receive time events.</p></li>
+<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent"><em>TimeEvent</em></a><em>]</em><em>, </em><em>None</em><em>]</em><em>, </em><em>optional</em>) – The handler to receive time events.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -1949,7 +1949,7 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <li><p><strong>ValueError</strong> – If interval is not positive (&gt; 0).</p></li>
 <li><p><strong>ValueError</strong> – If stop_time is not None and stop_time &lt; time_now.</p></li>
 <li><p><strong>ValueError</strong> – If stop_time is not None and start_time + interval &gt; stop_time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type callable or None.</p></li>
+<li><p><strong>TypeError</strong> – If handler is not of type Callable or None.</p></li>
 <li><p><strong>ValueError</strong> – If handler is None and no default handler is registered.</p></li>
 </ul>
 </dd>
@@ -3234,7 +3234,7 @@ item.</p>
 <span id="throttler"></span><h2>Throttler<a class="headerlink" href="#module-nautilus_trader.common.throttler" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.common.throttler.Throttler">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Throttler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">name</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">limit</span></em>, <em class="sig-param"><span class="pre">timedelta</span> <span class="pre">interval</span></em>, <em class="sig-param"><span class="pre">output_send:</span> <span class="pre">callable</span></em>, <em class="sig-param"><span class="pre">output_drop:</span> <span class="pre">callable</span></em>, <em class="sig-param"><span class="pre">Clock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.throttler.Throttler" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Throttler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">name,</span> <span class="pre">int</span> <span class="pre">limit,</span> <span class="pre">timedelta</span> <span class="pre">interval,</span> <span class="pre">output_send:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None],</span> <span class="pre">output_drop:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None],</span> <span class="pre">Clock</span> <span class="pre">clock,</span> <span class="pre">Logger</span> <span class="pre">logger</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.throttler.Throttler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a generic throttler which can either buffer or drop messages.</p>
 <p>Will throttle messages to the given maximum limit-interval rate.
@@ -3258,8 +3258,8 @@ upstream.</p>
 <li><p><strong>name</strong> (<em>str</em>) – The unique name of the throttler.</p></li>
 <li><p><strong>limit</strong> (<em>int</em>) – The limit setting for the throttling.</p></li>
 <li><p><strong>interval</strong> (<em>timedelta</em>) – The interval setting for the throttling.</p></li>
-<li><p><strong>output_send</strong> (<em>callable</em>) – The output handler to send messages from the throttler.</p></li>
-<li><p><strong>output_drop</strong> (<em>callable</em><em>, </em><em>optional</em>) – The output handler to drop messages from the throttler.
+<li><p><strong>output_send</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The output handler to send messages from the throttler.</p></li>
+<li><p><strong>output_drop</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em><em>, </em><em>optional</em>) – The output handler to drop messages from the throttler.
 If None then messages will be buffered.</p></li>
 <li><p><strong>clock</strong> (<a class="reference internal" href="#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the throttler.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the throttler.</p></li>
@@ -3270,8 +3270,8 @@ If None then messages will be buffered.</p></li>
 <li><p><strong>ValueError</strong> – If name is not a valid string.</p></li>
 <li><p><strong>ValueError</strong> – If limit is not positive (&gt; 0).</p></li>
 <li><p><strong>ValueError</strong> – If interval is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If output_send is not of type callable.</p></li>
-<li><p><strong>ValueError</strong> – If output_drop is not of type callable or None.</p></li>
+<li><p><strong>ValueError</strong> – If output_send is not of type Callable.</p></li>
+<li><p><strong>ValueError</strong> – If output_drop is not of type Callable or None.</p></li>
 </ul>
 </dd>
 </dl>
@@ -3383,7 +3383,7 @@ If None then messages will be buffered.</p></li>
 <span id="timer"></span><h2>Timer<a class="headerlink" href="#module-nautilus_trader.common.timer" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.common.timer.LiveTimer">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LiveTimer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">name</span></em>, <em class="sig-param"><span class="pre">callback:</span> <span class="pre">callable</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">interval_ns</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">now_ns</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">start_time_ns</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">stop_time_ns=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.LiveTimer" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LiveTimer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">name,</span> <span class="pre">callback:</span> <span class="pre">Callable[[TimeEvent],</span> <span class="pre">None],</span> <span class="pre">int64_t</span> <span class="pre">interval_ns,</span> <span class="pre">int64_t</span> <span class="pre">now_ns,</span> <span class="pre">int64_t</span> <span class="pre">start_time_ns,</span> <span class="pre">int64_t</span> <span class="pre">stop_time_ns=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.LiveTimer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.common.timer.Timer" title="nautilus_trader.common.timer.Timer"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.timer.Timer</span></code></a></p>
 <p>The abstract base class for all live timers.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
@@ -3395,7 +3395,7 @@ If None then messages will be buffered.</p></li>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – The name for the timer.</p></li>
-<li><p><strong>callback</strong> (<em>callable</em>) – The function to call at the next time.</p></li>
+<li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent"><em>TimeEvent</em></a><em>]</em><em>, </em><em>None</em><em>]</em>) – The delegate to call at the next time.</p></li>
 <li><p><strong>interval_ns</strong> (<em>int64</em>) – The time interval for the timer.</p></li>
 <li><p><strong>now_ns</strong> (<em>int64</em>) – The datetime now (UTC).</p></li>
 <li><p><strong>start_time_ns</strong> (<em>int64</em>) – The start datetime for the timer (UTC).</p></li>
@@ -3403,7 +3403,7 @@ If None then messages will be buffered.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – If callback is not of type callable.</p>
+<dd class="field-even"><p><strong>TypeError</strong> – If callback is not of type Callable.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3534,7 +3534,7 @@ If None then messages will be buffered.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.common.timer.LoopTimer">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LoopTimer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">loop</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">name</span></em>, <em class="sig-param"><span class="pre">callback:</span> <span class="pre">callable</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">interval_ns</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">now_ns</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">start_time_ns</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">stop_time_ns=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.LoopTimer" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LoopTimer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">loop,</span> <span class="pre">unicode</span> <span class="pre">name,</span> <span class="pre">callback:</span> <span class="pre">Callable[[TimeEvent],</span> <span class="pre">None],</span> <span class="pre">int64_t</span> <span class="pre">interval_ns,</span> <span class="pre">int64_t</span> <span class="pre">now_ns,</span> <span class="pre">int64_t</span> <span class="pre">start_time_ns,</span> <span class="pre">int64_t</span> <span class="pre">stop_time_ns=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.LoopTimer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.common.timer.LiveTimer" title="nautilus_trader.common.timer.LiveTimer"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.timer.LiveTimer</span></code></a></p>
 <p>Provides an event loop based timer for live trading.</p>
 <dl class="py method">
@@ -3546,7 +3546,7 @@ If None then messages will be buffered.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>loop</strong> (<em>asyncio.AbstractEventLoop</em>) – The event loop to run the timer on.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – The name for the timer.</p></li>
-<li><p><strong>callback</strong> (<em>callable</em>) – The function to call at the next time.</p></li>
+<li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent"><em>TimeEvent</em></a><em>]</em><em>, </em><em>None</em><em>]</em>) – The delegate to call at the next time.</p></li>
 <li><p><strong>interval_ns</strong> (<em>int64</em>) – The time interval for the timer.</p></li>
 <li><p><strong>now_ns</strong> (<em>int64</em>) – The datetime now (UTC).</p></li>
 <li><p><strong>start_time_ns</strong> (<em>int64</em>) – The start datetime for the timer (UTC).</p></li>
@@ -3554,7 +3554,7 @@ If None then messages will be buffered.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – If callback is not of type callable.</p>
+<dd class="field-even"><p><strong>TypeError</strong> – If callback is not of type Callable.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3685,7 +3685,7 @@ If None then messages will be buffered.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.common.timer.TestTimer">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TestTimer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">name</span></em>, <em class="sig-param"><span class="pre">callback:</span> <span class="pre">callable</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">interval_ns</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">start_time_ns</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">stop_time_ns=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.TestTimer" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TestTimer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">name,</span> <span class="pre">callback:</span> <span class="pre">Callable[[TimeEvent],</span> <span class="pre">None],</span> <span class="pre">int64_t</span> <span class="pre">interval_ns,</span> <span class="pre">int64_t</span> <span class="pre">start_time_ns,</span> <span class="pre">int64_t</span> <span class="pre">stop_time_ns=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.TestTimer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.common.timer.Timer" title="nautilus_trader.common.timer.Timer"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.timer.Timer</span></code></a></p>
 <p>Provides a fake timer for backtesting and unit testing.</p>
 <dl class="py method">
@@ -3696,7 +3696,7 @@ If None then messages will be buffered.</p></li>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – The name for the timer.</p></li>
-<li><p><strong>callback</strong> (<em>callable</em>) – The function to call at the next time.</p></li>
+<li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent"><em>TimeEvent</em></a><em>]</em><em>, </em><em>None</em><em>]</em>) – The delegate to call at the next time.</p></li>
 <li><p><strong>interval_ns</strong> (<em>int64</em>) – The time interval for the timer (not negative).</p></li>
 <li><p><strong>start_time_ns</strong> (<em>int64</em>) – The UNIX time (nanoseconds) for timer start.</p></li>
 <li><p><strong>stop_time_ns</strong> (<em>int64</em><em>, </em><em>optional</em>) – The UNIX time (nanoseconds) for timer stop (if 0 then timer is continuous).</p></li>
@@ -3850,7 +3850,7 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.common.timer.ThreadTimer">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ThreadTimer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">name</span></em>, <em class="sig-param"><span class="pre">callback:</span> <span class="pre">callable</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">interval_ns</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">now_ns</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">start_time_ns</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">stop_time_ns=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.ThreadTimer" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ThreadTimer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">name,</span> <span class="pre">callback:</span> <span class="pre">Callable[[TimeEvent],</span> <span class="pre">None],</span> <span class="pre">int64_t</span> <span class="pre">interval_ns,</span> <span class="pre">int64_t</span> <span class="pre">now_ns,</span> <span class="pre">int64_t</span> <span class="pre">start_time_ns,</span> <span class="pre">int64_t</span> <span class="pre">stop_time_ns=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.ThreadTimer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.common.timer.LiveTimer" title="nautilus_trader.common.timer.LiveTimer"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.timer.LiveTimer</span></code></a></p>
 <p>Provides a thread based timer for live trading.</p>
 <dl class="py method">
@@ -3861,7 +3861,7 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – The name for the timer.</p></li>
-<li><p><strong>callback</strong> (<em>callable</em>) – The function to call at the next time.</p></li>
+<li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent"><em>TimeEvent</em></a><em>]</em><em>, </em><em>None</em><em>]</em>) – The delegate to call at the next time.</p></li>
 <li><p><strong>interval_ns</strong> (<em>int64</em>) – The time interval for the timer.</p></li>
 <li><p><strong>now_ns</strong> (<em>int64</em>) – The datetime now (UTC).</p></li>
 <li><p><strong>start_time_ns</strong> (<em>int64</em>) – The start datetime for the timer (UTC).</p></li>
@@ -3869,7 +3869,7 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – If callback is not of type callable.</p>
+<dd class="field-even"><p><strong>TypeError</strong> – If callback is not of type Callable.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -4090,7 +4090,7 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.common.timer.TimeEventHandler">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TimeEventHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TimeEvent</span> <span class="pre">event</span></em>, <em class="sig-param"><span class="pre">handler:</span> <span class="pre">callable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.TimeEventHandler" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TimeEventHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TimeEvent</span> <span class="pre">event,</span> <span class="pre">handler:</span> <span class="pre">Callable[[TimeEvent],</span> <span class="pre">None]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.TimeEventHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Represents a bundled event and handler.</p>
 <dl class="py method">
@@ -4124,7 +4124,7 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.common.timer.Timer">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Timer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">name</span></em>, <em class="sig-param"><span class="pre">callback:</span> <span class="pre">callable</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">interval_ns</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">start_time_ns</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">stop_time_ns=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.Timer" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Timer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">name,</span> <span class="pre">callback:</span> <span class="pre">Callable[[TimeEvent],</span> <span class="pre">None],</span> <span class="pre">int64_t</span> <span class="pre">interval_ns,</span> <span class="pre">int64_t</span> <span class="pre">start_time_ns,</span> <span class="pre">int64_t</span> <span class="pre">stop_time_ns=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.Timer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The abstract base class for all timers.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
@@ -4136,10 +4136,16 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – The name for the timer.</p></li>
-<li><p><strong>callback</strong> (<em>callable</em>) – The function to call at the next time.</p></li>
+<li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent"><em>TimeEvent</em></a><em>]</em><em>, </em><em>None</em><em>]</em>) – The delegate to call at the next time.</p></li>
 <li><p><strong>interval_ns</strong> (<em>int64</em>) – The time interval for the timer (not negative).</p></li>
 <li><p><strong>start_time_ns</strong> (<em>int64</em>) – The UNIX time (nanoseconds) for timer start.</p></li>
 <li><p><strong>stop_time_ns</strong> (<em>int64</em><em>, </em><em>optional</em>) – The UNIX time (nanoseconds) for timer stop (if 0 then timer is continuous).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If name is not a valid string.</p></li>
+<li><p><strong>TypeError</strong> – If callback is not of type Callable.</p></li>
 </ul>
 </dd>
 </dl>

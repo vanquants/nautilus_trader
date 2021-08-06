@@ -779,8 +779,8 @@ be known ahead of parsing).</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>parser</strong> (<em>callable</em>) – The handler which takes byte strings and yields Nautilus objects.</p></li>
-<li><p><strong>line_preprocessor</strong> (<em>callable</em>) – Optional handler to clean log lines prior to processing by <cite>parser</cite></p></li>
+<li><p><strong>parser</strong> (<em>Callable</em>) – The handler which takes byte strings and yields Nautilus objects.</p></li>
+<li><p><strong>line_preprocessor</strong> (<em>Callable</em>) – Optional handler to clean log lines prior to processing by <cite>parser</cite></p></li>
 <li><p><strong>instrument_provider_update</strong> – Optional hook to call before <cite>parser</cite> for the purpose of loading instruments into an InstrumentProvider</p></li>
 </ul>
 </dd>
@@ -831,7 +831,7 @@ be known ahead of parsing).</p></li>
 <li><p><strong>chunk_size</strong> (<em>int</em>) – The chunk size (in bytes) for processing data, -1 for no limit (will chunk per file).</p></li>
 <li><p><strong>compression</strong> (<em>bool</em>) – If compression is used. Defaults to ‘infer’ by file extension.</p></li>
 <li><p><strong>instrument_provider</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.providers.InstrumentProvider" title="nautilus_trader.common.providers.InstrumentProvider"><em>InstrumentProvider</em></a>) – The instrument provider for the loader.</p></li>
-<li><p><strong>file_filter</strong> (<em>callable</em>) – Optional filter to apply to file list (if glob_pattern is not enough)</p></li>
+<li><p><strong>file_filter</strong> (<em>Callable</em>) – Optional filter to apply to file list (if glob_pattern is not enough)</p></li>
 </ul>
 </dd>
 </dl>
