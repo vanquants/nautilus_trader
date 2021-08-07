@@ -371,6 +371,17 @@ called after disposal.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestDataClient.subscribed_generic_data">
+<span class="sig-name descname"><span class="pre">subscribed_generic_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestDataClient.subscribed_generic_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the generic data types subscribed to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>list[DataType]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestDataClient.unsubscribe">
 <span class="sig-name descname"><span class="pre">unsubscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">data_type</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestDataClient.unsubscribe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unsubscribe from the given data type.</p>
@@ -707,10 +718,10 @@ to the current datetime.</p></li>
 <dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_bars">
-<span class="sig-name descname"><span class="pre">subscribed_bars</span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_bars" title="Permalink to this definition">¶</a></dt>
-<dd><p>The bar types subscribed to.</p>
+<span class="sig-name descname"><span class="pre">subscribed_bars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_bars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the bar types subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>list[BarType]</em></p>
@@ -718,10 +729,43 @@ to the current datetime.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_generic_data">
+<span class="sig-name descname"><span class="pre">subscribed_generic_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_generic_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the generic data types subscribed to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>list[DataType]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_instrument_close_prices">
+<span class="sig-name descname"><span class="pre">subscribed_instrument_close_prices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_instrument_close_prices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the close price instruments subscribed to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>list[InstrumentId]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_instrument_status_updates">
+<span class="sig-name descname"><span class="pre">subscribed_instrument_status_updates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_instrument_status_updates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the status update instruments subscribed to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>list[InstrumentId]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_instruments">
-<span class="sig-name descname"><span class="pre">subscribed_instruments</span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_instruments" title="Permalink to this definition">¶</a></dt>
-<dd><p>The instruments subscribed to.</p>
+<span class="sig-name descname"><span class="pre">subscribed_instruments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_instruments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the instruments subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>list[InstrumentId]</em></p>
@@ -729,10 +773,10 @@ to the current datetime.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_order_books">
-<span class="sig-name descname"><span class="pre">subscribed_order_books</span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_order_books" title="Permalink to this definition">¶</a></dt>
-<dd><p>The order books subscribed to.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_order_book_deltas">
+<span class="sig-name descname"><span class="pre">subscribed_order_book_deltas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_order_book_deltas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the order book delta instruments subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>list[InstrumentId]</em></p>
@@ -740,10 +784,21 @@ to the current datetime.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_order_book_snapshots">
+<span class="sig-name descname"><span class="pre">subscribed_order_book_snapshots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_order_book_snapshots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the order book snapshot instruments subscribed to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>list[InstrumentId]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_quote_ticks">
-<span class="sig-name descname"><span class="pre">subscribed_quote_ticks</span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_quote_ticks" title="Permalink to this definition">¶</a></dt>
-<dd><p>The quote tick instruments subscribed to.</p>
+<span class="sig-name descname"><span class="pre">subscribed_quote_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_quote_ticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the quote tick instruments subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>list[InstrumentId]</em></p>
@@ -751,10 +806,10 @@ to the current datetime.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_trade_ticks">
-<span class="sig-name descname"><span class="pre">subscribed_trade_ticks</span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_trade_ticks" title="Permalink to this definition">¶</a></dt>
-<dd><p>The trade tick instruments subscribed to.</p>
+<span class="sig-name descname"><span class="pre">subscribed_trade_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_trade_ticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the trade tick instruments subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>list[InstrumentId]</em></p>

@@ -6389,14 +6389,16 @@
         <li><a href="api_reference/live.html#nautilus_trader.live.execution_engine.LiveExecutionEngine.register_venue_routing">(LiveExecutionEngine method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/data.html#nautilus_trader.data.engine.DataEngine.registered_clients">registered_clients (DataEngine attribute)</a>
+      <li><a href="api_reference/execution.html#nautilus_trader.execution.engine.ExecutionEngine.registered_clients">registered_clients (ExecutionEngine attribute)</a>
 
       <ul>
-        <li><a href="api_reference/execution.html#nautilus_trader.execution.engine.ExecutionEngine.registered_clients">(ExecutionEngine attribute)</a>
-</li>
-        <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.registered_clients">(LiveDataEngine attribute)</a>
-</li>
         <li><a href="api_reference/live.html#nautilus_trader.live.execution_engine.LiveExecutionEngine.registered_clients">(LiveExecutionEngine attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/data.html#nautilus_trader.data.engine.DataEngine.registered_clients">registered_clients() (DataEngine method)</a>
+
+      <ul>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.registered_clients">(LiveDataEngine method)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.registered_indicators">registered_indicators (TradingStrategy attribute)</a>
@@ -7057,8 +7059,6 @@
 </li>
       <li><a href="api_reference/common.html#nautilus_trader.common.factories.OrderFactory.stop_market">stop_market() (OrderFactory method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/common.html#nautilus_trader.common.timer.LiveTimer.stop_time_ns">stop_time_ns (LiveTimer attribute)</a>
 
       <ul>
@@ -7137,6 +7137,8 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.UpdateOrder.strategy_id">(UpdateOrder attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.strategy_id_for_order">strategy_id_for_order() (Cache method)</a>
 
       <ul>
@@ -7339,78 +7341,118 @@
         <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.subscribe_venue_status_updates">(TradingStrategy method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_bars">subscribed_bars (BacktestMarketDataClient attribute)</a>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_bars">subscribed_bars() (BacktestMarketDataClient method)</a>
 
       <ul>
-        <li><a href="api_reference/data.html#nautilus_trader.data.engine.DataEngine.subscribed_bars">(DataEngine attribute)</a>
+        <li><a href="api_reference/data.html#nautilus_trader.data.engine.DataEngine.subscribed_bars">(DataEngine method)</a>
 </li>
-        <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.subscribed_bars">(LiveDataEngine attribute)</a>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.subscribed_bars">(LiveDataEngine method)</a>
 </li>
-        <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveMarketDataClient.subscribed_bars">(LiveMarketDataClient attribute)</a>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveMarketDataClient.subscribed_bars">(LiveMarketDataClient method)</a>
 </li>
-        <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.subscribed_bars">(MarketDataClient attribute)</a>
+        <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.subscribed_bars">(MarketDataClient method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/data.html#nautilus_trader.data.engine.DataEngine.subscribed_generic_data">subscribed_generic_data (DataEngine attribute)</a>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestDataClient.subscribed_generic_data">subscribed_generic_data() (BacktestDataClient method)</a>
 
       <ul>
-        <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.subscribed_generic_data">(LiveDataEngine attribute)</a>
+        <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_generic_data">(BacktestMarketDataClient method)</a>
+</li>
+        <li><a href="api_reference/data.html#nautilus_trader.data.client.DataClient.subscribed_generic_data">(DataClient method)</a>
+</li>
+        <li><a href="api_reference/data.html#nautilus_trader.data.engine.DataEngine.subscribed_generic_data">(DataEngine method)</a>
+</li>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveDataClient.subscribed_generic_data">(LiveDataClient method)</a>
+</li>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.subscribed_generic_data">(LiveDataEngine method)</a>
+</li>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveMarketDataClient.subscribed_generic_data">(LiveMarketDataClient method)</a>
+</li>
+        <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.subscribed_generic_data">(MarketDataClient method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_instruments">subscribed_instruments (BacktestMarketDataClient attribute)</a>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_instrument_close_prices">subscribed_instrument_close_prices() (BacktestMarketDataClient method)</a>
 
       <ul>
-        <li><a href="api_reference/data.html#nautilus_trader.data.engine.DataEngine.subscribed_instruments">(DataEngine attribute)</a>
+        <li><a href="api_reference/data.html#nautilus_trader.data.engine.DataEngine.subscribed_instrument_close_prices">(DataEngine method)</a>
 </li>
-        <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.subscribed_instruments">(LiveDataEngine attribute)</a>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.subscribed_instrument_close_prices">(LiveDataEngine method)</a>
 </li>
-        <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveMarketDataClient.subscribed_instruments">(LiveMarketDataClient attribute)</a>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveMarketDataClient.subscribed_instrument_close_prices">(LiveMarketDataClient method)</a>
 </li>
-        <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.subscribed_instruments">(MarketDataClient attribute)</a>
+        <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.subscribed_instrument_close_prices">(MarketDataClient method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/data.html#nautilus_trader.data.engine.DataEngine.subscribed_order_book_deltas">subscribed_order_book_deltas (DataEngine attribute)</a>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_instrument_status_updates">subscribed_instrument_status_updates() (BacktestMarketDataClient method)</a>
 
       <ul>
-        <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.subscribed_order_book_deltas">(LiveDataEngine attribute)</a>
+        <li><a href="api_reference/data.html#nautilus_trader.data.engine.DataEngine.subscribed_instrument_status_updates">(DataEngine method)</a>
+</li>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.subscribed_instrument_status_updates">(LiveDataEngine method)</a>
+</li>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveMarketDataClient.subscribed_instrument_status_updates">(LiveMarketDataClient method)</a>
+</li>
+        <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.subscribed_instrument_status_updates">(MarketDataClient method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/data.html#nautilus_trader.data.engine.DataEngine.subscribed_order_book_snapshots">subscribed_order_book_snapshots (DataEngine attribute)</a>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_instruments">subscribed_instruments() (BacktestMarketDataClient method)</a>
 
       <ul>
-        <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.subscribed_order_book_snapshots">(LiveDataEngine attribute)</a>
+        <li><a href="api_reference/data.html#nautilus_trader.data.engine.DataEngine.subscribed_instruments">(DataEngine method)</a>
+</li>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.subscribed_instruments">(LiveDataEngine method)</a>
+</li>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveMarketDataClient.subscribed_instruments">(LiveMarketDataClient method)</a>
+</li>
+        <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.subscribed_instruments">(MarketDataClient method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_order_books">subscribed_order_books (BacktestMarketDataClient attribute)</a>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_order_book_deltas">subscribed_order_book_deltas() (BacktestMarketDataClient method)</a>
 
       <ul>
-        <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveMarketDataClient.subscribed_order_books">(LiveMarketDataClient attribute)</a>
+        <li><a href="api_reference/data.html#nautilus_trader.data.engine.DataEngine.subscribed_order_book_deltas">(DataEngine method)</a>
 </li>
-        <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.subscribed_order_books">(MarketDataClient attribute)</a>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.subscribed_order_book_deltas">(LiveDataEngine method)</a>
+</li>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveMarketDataClient.subscribed_order_book_deltas">(LiveMarketDataClient method)</a>
+</li>
+        <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.subscribed_order_book_deltas">(MarketDataClient method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_quote_ticks">subscribed_quote_ticks (BacktestMarketDataClient attribute)</a>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_order_book_snapshots">subscribed_order_book_snapshots() (BacktestMarketDataClient method)</a>
 
       <ul>
-        <li><a href="api_reference/data.html#nautilus_trader.data.engine.DataEngine.subscribed_quote_ticks">(DataEngine attribute)</a>
+        <li><a href="api_reference/data.html#nautilus_trader.data.engine.DataEngine.subscribed_order_book_snapshots">(DataEngine method)</a>
 </li>
-        <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.subscribed_quote_ticks">(LiveDataEngine attribute)</a>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.subscribed_order_book_snapshots">(LiveDataEngine method)</a>
 </li>
-        <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveMarketDataClient.subscribed_quote_ticks">(LiveMarketDataClient attribute)</a>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveMarketDataClient.subscribed_order_book_snapshots">(LiveMarketDataClient method)</a>
 </li>
-        <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.subscribed_quote_ticks">(MarketDataClient attribute)</a>
+        <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.subscribed_order_book_snapshots">(MarketDataClient method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_trade_ticks">subscribed_trade_ticks (BacktestMarketDataClient attribute)</a>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_quote_ticks">subscribed_quote_ticks() (BacktestMarketDataClient method)</a>
 
       <ul>
-        <li><a href="api_reference/data.html#nautilus_trader.data.engine.DataEngine.subscribed_trade_ticks">(DataEngine attribute)</a>
+        <li><a href="api_reference/data.html#nautilus_trader.data.engine.DataEngine.subscribed_quote_ticks">(DataEngine method)</a>
 </li>
-        <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.subscribed_trade_ticks">(LiveDataEngine attribute)</a>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.subscribed_quote_ticks">(LiveDataEngine method)</a>
 </li>
-        <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveMarketDataClient.subscribed_trade_ticks">(LiveMarketDataClient attribute)</a>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveMarketDataClient.subscribed_quote_ticks">(LiveMarketDataClient method)</a>
 </li>
-        <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.subscribed_trade_ticks">(MarketDataClient attribute)</a>
+        <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.subscribed_quote_ticks">(MarketDataClient method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_trade_ticks">subscribed_trade_ticks() (BacktestMarketDataClient method)</a>
+
+      <ul>
+        <li><a href="api_reference/data.html#nautilus_trader.data.engine.DataEngine.subscribed_trade_ticks">(DataEngine method)</a>
+</li>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.subscribed_trade_ticks">(LiveDataEngine method)</a>
+</li>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveMarketDataClient.subscribed_trade_ticks">(LiveMarketDataClient method)</a>
+</li>
+        <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.subscribed_trade_ticks">(MarketDataClient method)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus.subscriptions">subscriptions() (MessageBus method)</a>
