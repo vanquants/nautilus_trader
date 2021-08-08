@@ -938,6 +938,23 @@ called after disposal.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.register_account_type">
+<span class="sig-name descname"><span class="pre">register_account_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">type</span> <span class="pre">account_type</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.register_account_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register the given custom account type associated with the client ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The client identifier to associate with the custom account type.</p></li>
+<li><p><strong>account_type</strong> (<em>type</em>) – The custom account type to register.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If account_type is not a subclass of <cite>Account</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.register_client">
 <span class="sig-name descname"><span class="pre">register_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ExecutionClient</span> <span class="pre">client</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.register_client" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the given execution client with the execution engine.</p>
