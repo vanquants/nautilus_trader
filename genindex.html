@@ -106,6 +106,7 @@
 <li class="toctree-l1"><a class="reference internal" href="api_reference/live.html">Live</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_reference/model.html">Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_reference/msgbus.html">Message Bus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/network.html">Network</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_reference/risk.html">Risk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_reference/serialization.html">Serialization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_reference/trading.html">Trading</a></li>
@@ -362,6 +363,8 @@
 </li>
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.hilbert_transform.HilbertTransform.__init__">(HilbertTransform method)</a>
 </li>
+        <li><a href="api_reference/network.html#nautilus_trader.network.http_client.HTTPClient.__init__">(HTTPClient method)</a>
+</li>
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.average.hma.HullMovingAverage.__init__">(HullMovingAverage method)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.identifiers.Identifier.__init__">(Identifier method)</a>
@@ -558,6 +561,8 @@
 </li>
         <li><a href="api_reference/backtest.html#nautilus_trader.backtest.modules.SimulationModule.__init__">(SimulationModule method)</a>
 </li>
+        <li><a href="api_reference/network.html#nautilus_trader.network.socket.SocketClient.__init__">(SocketClient method)</a>
+</li>
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.spread_analyzer.SpreadAnalyzer.__init__">(SpreadAnalyzer method)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.data.venue.StatusUpdate.__init__">(StatusUpdate method)</a>
@@ -643,6 +648,8 @@
         <li><a href="api_reference/data.html#nautilus_trader.data.aggregation.VolumeBarAggregator.__init__">(VolumeBarAggregator method)</a>
 </li>
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.vwap.VolumeWeightedAveragePrice.__init__">(VolumeWeightedAveragePrice method)</a>
+</li>
+        <li><a href="api_reference/network.html#nautilus_trader.network.ws_client.WebSocketClient.__init__">(WebSocketClient method)</a>
 </li>
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.average.wma.WeightedMovingAverage.__init__">(WeightedMovingAverage method)</a>
 </li>
@@ -1663,12 +1670,12 @@
       </ul></li>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.clear_cache">clear_cache() (Cache method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/trading.html#nautilus_trader.trading.trader.Trader.clear_components">clear_components() (Trader method)</a>
 </li>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.clear_index">clear_index() (Cache method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/trading.html#nautilus_trader.trading.trader.Trader.clear_strategies">clear_strategies() (Trader method)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.events.account.AccountState.client_id">client_id (AccountState attribute)</a>
@@ -1787,6 +1794,8 @@
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.data.bar.Bar.close">close (Bar attribute)</a>
 </li>
+      <li><a href="api_reference/network.html#nautilus_trader.network.ws_client.WebSocketClient.close">close() (WebSocketClient method)</a>
+</li>
       <li><a href="api_reference/model.html#nautilus_trader.model.data.venue.InstrumentClosePrice.close_price">close_price (InstrumentClosePrice attribute)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.data.venue.InstrumentClosePrice.close_type">close_type (InstrumentClosePrice attribute)</a>
@@ -1849,6 +1858,14 @@
 </li>
       <li><a href="api_reference/trading.html#nautilus_trader.trading.trader.Trader.components">components() (Trader method)</a>
 </li>
+      <li><a href="api_reference/network.html#nautilus_trader.network.http_client.HTTPClient.connect">connect() (HTTPClient method)</a>
+
+      <ul>
+        <li><a href="api_reference/network.html#nautilus_trader.network.socket.SocketClient.connect">(SocketClient method)</a>
+</li>
+        <li><a href="api_reference/network.html#nautilus_trader.network.ws_client.WebSocketClient.connect">(WebSocketClient method)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/data.html#nautilus_trader.data.messages.DataResponse.correlation_id">correlation_id (DataResponse attribute)</a>
 
       <ul>
@@ -2077,6 +2094,12 @@
 
       <ul>
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.swings.Swings.direction">(Swings attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/network.html#nautilus_trader.network.socket.SocketClient.disconnect">disconnect() (SocketClient method)</a>
+
+      <ul>
+        <li><a href="api_reference/network.html#nautilus_trader.network.ws_client.WebSocketClient.disconnect">(WebSocketClient method)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/common.html#nautilus_trader.common.actor.Actor.dispose">dispose() (Actor method)</a>
@@ -2663,8 +2686,12 @@
         <li><a href="api_reference/trading.html#nautilus_trader.trading.trader.Trader.generate_positions_report">(Trader method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/common.html#nautilus_trader.common.queue.Queue.get">get() (Queue method)</a>
+      <li><a href="api_reference/network.html#nautilus_trader.network.http_client.HTTPClient.get">get() (HTTPClient method)</a>
+
+      <ul>
+        <li><a href="api_reference/common.html#nautilus_trader.common.queue.Queue.get">(Queue method)</a>
 </li>
+      </ul></li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.execution.BacktestExecClient.get_account">get_account() (BacktestExecClient method)</a>
 
       <ul>
@@ -2995,10 +3022,10 @@
         <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.handle_quote_ticks">(TradingStrategy method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.handle_submit_bracket_order">handle_submit_bracket_order() (SimulatedExchange method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.handle_submit_order">handle_submit_order() (SimulatedExchange method)</a>
 </li>
       <li><a href="api_reference/common.html#nautilus_trader.common.actor.Actor.handle_trade_tick">handle_trade_tick() (Actor method)</a>
@@ -3176,6 +3203,10 @@
       <li><a href="api_reference/indicators.html#nautilus_trader.indicators.hilbert_snr.HilbertSignalNoiseRatio">HilbertSignalNoiseRatio (class in nautilus_trader.indicators.hilbert_snr)</a>
 </li>
       <li><a href="api_reference/indicators.html#nautilus_trader.indicators.hilbert_transform.HilbertTransform">HilbertTransform (class in nautilus_trader.indicators.hilbert_transform)</a>
+</li>
+      <li><a href="api_reference/network.html#nautilus_trader.network.socket.SocketClient.host">host (SocketClient attribute)</a>
+</li>
+      <li><a href="api_reference/network.html#nautilus_trader.network.http_client.HTTPClient">HTTPClient (class in nautilus_trader.network.http_client)</a>
 </li>
       <li><a href="api_reference/indicators.html#nautilus_trader.indicators.average.hma.HullMovingAverage">HullMovingAverage (class in nautilus_trader.indicators.average.hma)</a>
 </li>
@@ -3671,6 +3702,10 @@
         <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveMarketDataClient.is_connected">(LiveMarketDataClient attribute)</a>
 </li>
         <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.is_connected">(MarketDataClient attribute)</a>
+</li>
+        <li><a href="api_reference/network.html#nautilus_trader.network.socket.SocketClient.is_connected">(SocketClient attribute)</a>
+</li>
+        <li><a href="api_reference/network.html#nautilus_trader.network.ws_client.WebSocketClient.is_connected">(WebSocketClient attribute)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/model.html#nautilus_trader.model.currency.Currency.is_crypto">is_crypto() (Currency static method)</a>
@@ -4565,6 +4600,14 @@
 </li>
         <li><a href="api_reference/msgbus.html#module-nautilus_trader.msgbus.message_bus">nautilus_trader.msgbus.message_bus</a>
 </li>
+        <li><a href="api_reference/network.html#module-nautilus_trader.network">nautilus_trader.network</a>
+</li>
+        <li><a href="api_reference/network.html#module-nautilus_trader.network.http_client">nautilus_trader.network.http_client</a>
+</li>
+        <li><a href="api_reference/network.html#module-nautilus_trader.network.socket">nautilus_trader.network.socket</a>
+</li>
+        <li><a href="api_reference/network.html#module-nautilus_trader.network.ws_client">nautilus_trader.network.ws_client</a>
+</li>
         <li><a href="api_reference/risk.html#module-nautilus_trader.risk">nautilus_trader.risk</a>
 </li>
         <li><a href="api_reference/risk.html#module-nautilus_trader.risk.engine">nautilus_trader.risk.engine</a>
@@ -5132,8 +5175,6 @@
         <li><a href="api_reference/indicators.html#module-nautilus_trader.indicators.hilbert_snr">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     nautilus_trader.indicators.hilbert_transform
 
@@ -5148,6 +5189,8 @@
         <li><a href="api_reference/indicators.html#module-nautilus_trader.indicators.keltner_channel">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     nautilus_trader.indicators.keltner_position
 
@@ -5454,6 +5497,34 @@
 
       <ul>
         <li><a href="api_reference/msgbus.html#module-nautilus_trader.msgbus.message_bus">module</a>
+</li>
+      </ul></li>
+      <li>
+    nautilus_trader.network
+
+      <ul>
+        <li><a href="api_reference/network.html#module-nautilus_trader.network">module</a>
+</li>
+      </ul></li>
+      <li>
+    nautilus_trader.network.http_client
+
+      <ul>
+        <li><a href="api_reference/network.html#module-nautilus_trader.network.http_client">module</a>
+</li>
+      </ul></li>
+      <li>
+    nautilus_trader.network.socket
+
+      <ul>
+        <li><a href="api_reference/network.html#module-nautilus_trader.network.socket">module</a>
+</li>
+      </ul></li>
+      <li>
+    nautilus_trader.network.ws_client
+
+      <ul>
+        <li><a href="api_reference/network.html#module-nautilus_trader.network.ws_client">module</a>
 </li>
       </ul></li>
       <li>
@@ -6011,6 +6082,8 @@
       </ul></li>
       <li><a href="api_reference/common.html#nautilus_trader.common.timer.TestTimer.pop_next_event">pop_next_event() (TestTimer method)</a>
 </li>
+      <li><a href="api_reference/network.html#nautilus_trader.network.socket.SocketClient.port">port (SocketClient attribute)</a>
+</li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.engine.BacktestEngine.portfolio">portfolio (BacktestEngine attribute)</a>
 </li>
       <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio">Portfolio (class in nautilus_trader.trading.portfolio)</a>
@@ -6091,10 +6164,10 @@
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.events.position.PositionClosed">PositionClosed (class in nautilus_trader.model.events.position)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/model.html#nautilus_trader.model.events.position.PositionEvent">PositionEvent (class in nautilus_trader.model.events.position)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/model.html#nautilus_trader.model.identifiers.PositionId">PositionId (class in nautilus_trader.model.identifiers)</a>
 </li>
       <li><a href="api_reference/common.html#nautilus_trader.common.generators.PositionIdGenerator">PositionIdGenerator (class in nautilus_trader.common.generators)</a>
@@ -6140,6 +6213,10 @@
       <li><a href="api_reference/risk.html#nautilus_trader.risk.sizing.PositionSizer">PositionSizer (class in nautilus_trader.risk.sizing)</a>
 </li>
       <li><a href="api_reference/execution.html#nautilus_trader.execution.messages.PositionStatusReport">PositionStatusReport (class in nautilus_trader.execution.messages)</a>
+</li>
+      <li><a href="api_reference/network.html#nautilus_trader.network.http_client.HTTPClient.post">post() (HTTPClient method)</a>
+</li>
+      <li><a href="api_reference/network.html#nautilus_trader.network.socket.SocketClient.post_connection">post_connection() (SocketClient method)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.orderbook.book.L1OrderBook.pprint">pprint() (L1OrderBook method)</a>
 
@@ -6419,6 +6496,10 @@
         <li><a href="api_reference/live.html#nautilus_trader.live.execution_engine.LiveExecutionEngine.reconcile_state">(LiveExecutionEngine method)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/network.html#nautilus_trader.network.socket.SocketClient.reconnect">reconnect() (SocketClient method)</a>
+</li>
+      <li><a href="api_reference/network.html#nautilus_trader.network.ws_client.WebSocketClient.recv">recv() (WebSocketClient method)</a>
+</li>
       <li><a href="api_reference/common.html#nautilus_trader.common.throttler.Throttler.recv_count">recv_count (Throttler attribute)</a>
 </li>
       <li><a href="api_reference/infrastructure.html#nautilus_trader.infrastructure.cache.RedisCacheDatabase">RedisCacheDatabase (class in nautilus_trader.infrastructure.cache)</a>
@@ -6830,7 +6911,11 @@
       <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus.send">send() (MessageBus method)</a>
 
       <ul>
+        <li><a href="api_reference/network.html#nautilus_trader.network.socket.SocketClient.send">(SocketClient method)</a>
+</li>
         <li><a href="api_reference/common.html#nautilus_trader.common.throttler.Throttler.send">(Throttler method)</a>
+</li>
+        <li><a href="api_reference/network.html#nautilus_trader.network.ws_client.WebSocketClient.send">(WebSocketClient method)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus.sent_count">sent_count (MessageBus attribute)</a>
@@ -6991,6 +7076,8 @@
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.volatility_ratio.VolatilityRatio.slow_period">(VolatilityRatio attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/network.html#nautilus_trader.network.socket.SocketClient">SocketClient (class in nautilus_trader.network.socket)</a>
+</li>
       <li><a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.sortino_ratio">sortino_ratio() (PerformanceAnalyzer method)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.data.bar.BarType.spec">spec (BarType attribute)</a>
@@ -7006,6 +7093,8 @@
 </li>
       </ul></li>
       <li><a href="api_reference/indicators.html#nautilus_trader.indicators.spread_analyzer.SpreadAnalyzer">SpreadAnalyzer (class in nautilus_trader.indicators.spread_analyzer)</a>
+</li>
+      <li><a href="api_reference/network.html#nautilus_trader.network.socket.SocketClient.ssl">ssl (SocketClient attribute)</a>
 </li>
       <li><a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.stability_of_timeseries">stability_of_timeseries() (PerformanceAnalyzer method)</a>
 </li>
@@ -7046,11 +7135,15 @@
 </li>
         <li><a href="api_reference/risk.html#nautilus_trader.risk.engine.RiskEngine.start">(RiskEngine method)</a>
 </li>
+        <li><a href="api_reference/network.html#nautilus_trader.network.socket.SocketClient.start">(SocketClient method)</a>
+</li>
         <li><a href="api_reference/trading.html#nautilus_trader.trading.trader.Trader.start">(Trader method)</a>
 </li>
         <li><a href="api_reference/live.html#nautilus_trader.live.node.TradingNode.start">(TradingNode method)</a>
 </li>
         <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.start">(TradingStrategy method)</a>
+</li>
+        <li><a href="api_reference/network.html#nautilus_trader.network.ws_client.WebSocketClient.start">(WebSocketClient method)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/common.html#nautilus_trader.common.timer.LiveTimer.start_time_ns">start_time_ns (LiveTimer attribute)</a>
@@ -7174,6 +7267,8 @@
 </li>
         <li><a href="api_reference/risk.html#nautilus_trader.risk.engine.RiskEngine.stop">(RiskEngine method)</a>
 </li>
+        <li><a href="api_reference/network.html#nautilus_trader.network.socket.SocketClient.stop">(SocketClient method)</a>
+</li>
         <li><a href="api_reference/data.html#nautilus_trader.data.aggregation.TimeBarAggregator.stop">(TimeBarAggregator method)</a>
 </li>
         <li><a href="api_reference/trading.html#nautilus_trader.trading.trader.Trader.stop">(Trader method)</a>
@@ -7201,6 +7296,8 @@
         <li><a href="api_reference/common.html#nautilus_trader.common.timer.Timer.stop_time_ns">(Timer attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder">StopLimitOrder (class in nautilus_trader.model.orders.stop_limit)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder">StopMarketOrder (class in nautilus_trader.model.orders.stop_market)</a>
@@ -7267,8 +7364,6 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.UpdateOrder.strategy_id">(UpdateOrder attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.strategy_id_for_order">strategy_id_for_order() (Cache method)</a>
 
       <ul>
@@ -8783,6 +8878,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/common.html#nautilus_trader.common.logging.LoggerAdapter.warning">warning() (LoggerAdapter method)</a>
 </li>
+      <li><a href="api_reference/network.html#nautilus_trader.network.ws_client.WebSocketClient">WebSocketClient (class in nautilus_trader.network.ws_client)</a>
+</li>
       <li><a href="api_reference/indicators.html#nautilus_trader.indicators.average.wma.WeightedMovingAverage">WeightedMovingAverage (class in nautilus_trader.indicators.average.wma)</a>
 </li>
       <li><a href="api_reference/indicators.html#nautilus_trader.indicators.average.wma.WeightedMovingAverage.weights">weights (WeightedMovingAverage attribute)</a>
@@ -8794,6 +8891,8 @@
       <li><a href="api_reference/indicators.html#nautilus_trader.indicators.bid_ask_min_max.WindowedMinMaxPrices">WindowedMinMaxPrices (class in nautilus_trader.indicators.bid_ask_min_max)</a>
 </li>
       <li><a href="api_reference/core.html#nautilus_trader.core.fsm.InvalidStateTrigger.with_traceback">with_traceback() (InvalidStateTrigger method)</a>
+</li>
+      <li><a href="api_reference/network.html#nautilus_trader.network.ws_client.WebSocketClient.ws_url">ws_url (WebSocketClient attribute)</a>
 </li>
   </ul></td>
 </tr></table>

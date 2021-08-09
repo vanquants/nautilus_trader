@@ -137,6 +137,7 @@
 <li class="toctree-l1"><a class="reference internal" href="live.html">Live</a></li>
 <li class="toctree-l1"><a class="reference internal" href="model.html">Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="msgbus.html">Message Bus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="network.html">Network</a></li>
 <li class="toctree-l1"><a class="reference internal" href="risk.html">Risk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serialization.html">Serialization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trading.html">Trading</a></li>
@@ -2092,15 +2093,15 @@ Bar data is dimensionally reduced via fuzzy feature extraction.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.fuzzy_candlesticks.FuzzyCandlesticks.update_raw">
-<span class="sig-name descname"><span class="pre">update_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">open_price</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">high_price</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">low_price</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">close_price</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.indicators.fuzzy_candlesticks.FuzzyCandlesticks.update_raw" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">update_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">open</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">high</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">low</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">close</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.indicators.fuzzy_candlesticks.FuzzyCandlesticks.update_raw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update the indicator with the given raw values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>open_price</strong> (<em>double</em>) – The open price.</p></li>
-<li><p><strong>high_price</strong> (<em>double</em>) – The high price.</p></li>
-<li><p><strong>low_price</strong> (<em>double</em>) – The low price.</p></li>
-<li><p><strong>close_price</strong> (<em>double</em>) – The close price.</p></li>
+<li><p><strong>open</strong> (<em>double</em>) – The open price.</p></li>
+<li><p><strong>high</strong> (<em>double</em>) – The high price.</p></li>
+<li><p><strong>low</strong> (<em>double</em>) – The low price.</p></li>
+<li><p><strong>close</strong> (<em>double</em>) – The close price.</p></li>
 </ul>
 </dd>
 </dl>
@@ -3076,13 +3077,13 @@ volume.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.obv.OnBalanceVolume.update_raw">
-<span class="sig-name descname"><span class="pre">update_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">open_price</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">close_price</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">volume</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.indicators.obv.OnBalanceVolume.update_raw" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">update_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">open</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">close</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">volume</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.indicators.obv.OnBalanceVolume.update_raw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update the indicator with the given raw values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>open_price</strong> (<em>double</em>) – The high price.</p></li>
-<li><p><strong>close_price</strong> (<em>double</em>) – The low price.</p></li>
+<li><p><strong>open</strong> (<em>double</em>) – The high price.</p></li>
+<li><p><strong>close</strong> (<em>double</em>) – The low price.</p></li>
 <li><p><strong>volume</strong> (<em>double</em>) – The close price.</p></li>
 </ul>
 </dd>
