@@ -2167,6 +2167,23 @@ to the end of the data.</p></li>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.apply_account_state">
+<span class="sig-name descname"><span class="pre">apply_account_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">AccountState</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.apply_account_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the given account state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.events.account.AccountState" title="nautilus_trader.model.events.account.AccountState"><em>AccountState</em></a>) – The account state to apply.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If event.account_id does not equal self.account_id.</p></li>
+<li><p><strong>ValueError</strong> – If event.account_type does not equal self.account_type.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.base_currency">
 <span class="sig-name descname"><span class="pre">base_currency</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.base_currency" title="Permalink to this definition">¶</a></dt>
@@ -2181,7 +2198,7 @@ to the end of the data.</p></li>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.calculate_account_state">
 <span class="sig-name descname"><span class="pre">calculate_account_state</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.calculate_account_state" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the account state is calculated on order fill.</p>
+<dd><p>If the account state is calculated.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>bool</cite></p>
@@ -2196,6 +2213,27 @@ to the end of the data.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>command</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.commands.trading.CancelOrder" title="nautilus_trader.model.commands.trading.CancelOrder"><em>CancelOrder</em></a>) – The command to execute.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.create_account">
+<span class="sig-name descname"><span class="pre">create_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">AccountState</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Account</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.create_account" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new account from the given account state event.</p>
+<p>Override for custom accounts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.events.account.AccountState" title="nautilus_trader.model.events.account.AccountState"><em>AccountState</em></a>) – The genesis account state event.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>Account</em></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ValueError</strong> – If event.account_id is not equal to self.account_id.</p></li>
+<li><p><strong>ValueError</strong> – If event.account_type is not equal to self.account_type.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -2221,7 +2259,7 @@ called after disposal.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.generate_account_state">
 <span class="sig-name descname"><span class="pre">generate_account_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">balances</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reported</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">info=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.generate_account_state" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate an <cite>AccountState</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
+<dd><p>Generate an <cite>AccountState</cite> event and publish on the message bus.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2497,17 +2535,6 @@ position ID resolution.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.register_account">
-<span class="sig-name descname"><span class="pre">register_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Account</span> <span class="pre">account</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.register_account" title="Permalink to this definition">¶</a></dt>
-<dd><p>Register the given account with the client.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>account</strong> (<a class="reference internal" href="trading.html#nautilus_trader.trading.account.Account" title="nautilus_trader.trading.account.Account"><em>Account</em></a>) – The account to register.</p>
 </dd>
 </dl>
 </dd></dl>

@@ -248,6 +248,23 @@ trading operations.</p>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.apply_account_state">
+<span class="sig-name descname"><span class="pre">apply_account_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">AccountState</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.apply_account_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the given account state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.events.account.AccountState" title="nautilus_trader.model.events.account.AccountState"><em>AccountState</em></a>) – The account state to apply.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If event.account_id does not equal self.account_id.</p></li>
+<li><p><strong>ValueError</strong> – If event.account_type does not equal self.account_type.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.base_currency">
 <span class="sig-name descname"><span class="pre">base_currency</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.base_currency" title="Permalink to this definition">¶</a></dt>
@@ -262,7 +279,7 @@ trading operations.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.calculate_account_state">
 <span class="sig-name descname"><span class="pre">calculate_account_state</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.calculate_account_state" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the account state is calculated on order fill.</p>
+<dd><p>If the account state is calculated.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>bool</cite></p>
@@ -274,6 +291,27 @@ trading operations.</p>
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.cancel_order">
 <span class="sig-name descname"><span class="pre">cancel_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">CancelOrder</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.cancel_order" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.create_account">
+<span class="sig-name descname"><span class="pre">create_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">AccountState</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Account</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.create_account" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new account from the given account state event.</p>
+<p>Override for custom accounts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.events.account.AccountState" title="nautilus_trader.model.events.account.AccountState"><em>AccountState</em></a>) – The genesis account state event.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>Account</em></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ValueError</strong> – If event.account_id is not equal to self.account_id.</p></li>
+<li><p><strong>ValueError</strong> – If event.account_type is not equal to self.account_type.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -297,7 +335,7 @@ called after disposal.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.generate_account_state">
 <span class="sig-name descname"><span class="pre">generate_account_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">balances</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reported</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">info=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_account_state" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate an <cite>AccountState</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
+<dd><p>Generate an <cite>AccountState</cite> event and publish on the message bus.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -573,17 +611,6 @@ position ID resolution.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.register_account">
-<span class="sig-name descname"><span class="pre">register_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Account</span> <span class="pre">account</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.register_account" title="Permalink to this definition">¶</a></dt>
-<dd><p>Register the given account with the client.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>account</strong> (<a class="reference internal" href="trading.html#nautilus_trader.trading.account.Account" title="nautilus_trader.trading.account.Account"><em>Account</em></a>) – The account to register.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -929,28 +956,11 @@ called after disposal.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.process">
-<span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Event</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.process" title="Permalink to this definition">¶</a></dt>
-<dd><p>Process the given event.</p>
+<span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">OrderEvent</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process the given order event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.message.Event" title="nautilus_trader.core.message.Event"><em>Event</em></a>) – The event to process.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.register_account_type">
-<span class="sig-name descname"><span class="pre">register_account_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">type</span> <span class="pre">account_type</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.register_account_type" title="Permalink to this definition">¶</a></dt>
-<dd><p>Register the given custom account type associated with the client ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The client identifier to associate with the custom account type.</p></li>
-<li><p><strong>account_type</strong> (<em>type</em>) – The custom account type to register.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If account_type is not a subclass of <cite>Account</cite>.</p>
+<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.events.order.OrderEvent" title="nautilus_trader.model.events.order.OrderEvent"><em>OrderEvent</em></a>) – The order event to process.</p>
 </dd>
 </dl>
 </dd></dl>

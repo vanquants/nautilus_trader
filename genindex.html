@@ -870,10 +870,10 @@
 </li>
       <li><a href="api_reference/execution.html#nautilus_trader.execution.messages.ExecutionMassStatus.add_position_report">add_position_report() (ExecutionMassStatus method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.add_positions">add_positions() (PerformanceAnalyzer method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/indicators.html#nautilus_trader.indicators.bid_ask_min_max.WindowedMinMaxPrices.add_price">add_price() (WindowedMinMaxPrices method)</a>
 </li>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.add_quote_tick">add_quote_tick() (Cache method)</a>
@@ -960,6 +960,14 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.apply">(StopLimitOrder method)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.apply">(StopMarketOrder method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.execution.BacktestExecClient.apply_account_state">apply_account_state() (BacktestExecClient method)</a>
+
+      <ul>
+        <li><a href="api_reference/execution.html#nautilus_trader.execution.client.ExecutionClient.apply_account_state">(ExecutionClient method)</a>
+</li>
+        <li><a href="api_reference/live.html#nautilus_trader.live.execution_client.LiveExecutionClient.apply_account_state">(LiveExecutionClient method)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/model.html#nautilus_trader.model.orderbook.book.L1OrderBook.apply_delta">apply_delta() (L1OrderBook method)</a>
@@ -1408,12 +1416,18 @@
         <li><a href="api_reference/risk.html#nautilus_trader.risk.sizing.PositionSizer.calculate">(PositionSizer method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.execution.BacktestExecClient.calculate_account_state">calculate_account_state (BacktestExecClient attribute)</a>
+      <li><a href="api_reference/trading.html#nautilus_trader.trading.account.Account.calculate_account_state">calculate_account_state (Account attribute)</a>
 
       <ul>
+        <li><a href="api_reference/backtest.html#nautilus_trader.backtest.execution.BacktestExecClient.calculate_account_state">(BacktestExecClient attribute)</a>
+</li>
+        <li><a href="api_reference/trading.html#nautilus_trader.trading.account.CashAccount.calculate_account_state">(CashAccount attribute)</a>
+</li>
         <li><a href="api_reference/execution.html#nautilus_trader.execution.client.ExecutionClient.calculate_account_state">(ExecutionClient attribute)</a>
 </li>
         <li><a href="api_reference/live.html#nautilus_trader.live.execution_client.LiveExecutionClient.calculate_account_state">(LiveExecutionClient attribute)</a>
+</li>
+        <li><a href="api_reference/trading.html#nautilus_trader.trading.account.MarginAccount.calculate_account_state">(MarginAccount attribute)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/trading.html#nautilus_trader.trading.account.Account.calculate_commission">calculate_commission() (Account method)</a>
@@ -1424,9 +1438,15 @@
         <li><a href="api_reference/trading.html#nautilus_trader.trading.account.MarginAccount.calculate_commission">(MarginAccount method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.account.MarginAccount.calculate_initial_margin">calculate_initial_margin() (MarginAccount method)</a>
+      <li><a href="api_reference/trading.html#nautilus_trader.trading.account.Account.calculate_margin_initial">calculate_margin_initial() (Account method)</a>
+
+      <ul>
+        <li><a href="api_reference/trading.html#nautilus_trader.trading.account.CashAccount.calculate_margin_initial">(CashAccount method)</a>
 </li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.account.MarginAccount.calculate_maint_margin">calculate_maint_margin() (MarginAccount method)</a>
+        <li><a href="api_reference/trading.html#nautilus_trader.trading.account.MarginAccount.calculate_margin_initial">(MarginAccount method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/trading.html#nautilus_trader.trading.account.MarginAccount.calculate_margin_maint">calculate_margin_maint() (MarginAccount method)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.position.Position.calculate_pnl">calculate_pnl() (Position method)</a>
 </li>
@@ -1672,17 +1692,15 @@
 </li>
       <li><a href="api_reference/trading.html#nautilus_trader.trading.trader.Trader.clear_components">clear_components() (Trader method)</a>
 </li>
-      <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.clear_index">clear_index() (Cache method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.clear_index">clear_index() (Cache method)</a>
+</li>
       <li><a href="api_reference/trading.html#nautilus_trader.trading.trader.Trader.clear_strategies">clear_strategies() (Trader method)</a>
 </li>
-      <li><a href="api_reference/model.html#nautilus_trader.model.events.account.AccountState.client_id">client_id (AccountState attribute)</a>
+      <li><a href="api_reference/data.html#nautilus_trader.data.messages.DataCommand.client_id">client_id (DataCommand attribute)</a>
 
       <ul>
-        <li><a href="api_reference/data.html#nautilus_trader.data.messages.DataCommand.client_id">(DataCommand attribute)</a>
-</li>
         <li><a href="api_reference/data.html#nautilus_trader.data.messages.DataRequest.client_id">(DataRequest attribute)</a>
 </li>
         <li><a href="api_reference/data.html#nautilus_trader.data.messages.DataResponse.client_id">(DataResponse attribute)</a>
@@ -1928,6 +1946,14 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.events.position.PositionClosed.create">(PositionClosed static method)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.events.position.PositionOpened.create">(PositionOpened static method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.execution.BacktestExecClient.create_account">create_account() (BacktestExecClient method)</a>
+
+      <ul>
+        <li><a href="api_reference/execution.html#nautilus_trader.execution.client.ExecutionClient.create_account">(ExecutionClient method)</a>
+</li>
+        <li><a href="api_reference/live.html#nautilus_trader.live.execution_client.LiveExecutionClient.create_account">(LiveExecutionClient method)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.engine.BacktestEngine.created_time">created_time (BacktestEngine attribute)</a>
@@ -3392,16 +3418,6 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.init_id">(StopMarketOrder attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.account.MarginAccount.initial_margin">initial_margin() (MarginAccount method)</a>
-</li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.account.MarginAccount.initial_margins">initial_margins() (MarginAccount method)</a>
-
-      <ul>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.initial_margins">(Portfolio method)</a>
-</li>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.PortfolioFacade.initial_margins">(PortfolioFacade method)</a>
-</li>
-      </ul></li>
       <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.initialize_orders">initialize_orders() (Portfolio method)</a>
 </li>
       <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.initialize_positions">initialize_positions() (Portfolio method)</a>
@@ -3574,14 +3590,14 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.UpdateOrder.instrument_id">(UpdateOrder attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.instrument_ids">instrument_ids() (Cache method)</a>
 
       <ul>
         <li><a href="api_reference/cache.html#nautilus_trader.cache.base.CacheFacade.instrument_ids">(CacheFacade method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/model.html#nautilus_trader.model.data.venue.InstrumentClosePrice">InstrumentClosePrice (class in nautilus_trader.model.data.venue)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.identifiers.InstrumentId">InstrumentId (class in nautilus_trader.model.identifiers)</a>
@@ -4298,18 +4314,28 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.account.MarginAccount.maint_margin">maint_margin() (MarginAccount method)</a>
+      <li><a href="api_reference/trading.html#nautilus_trader.trading.account.MarginAccount.margin_initial">margin_initial() (MarginAccount method)</a>
 </li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.account.MarginAccount.maint_margins">maint_margins() (MarginAccount method)</a>
-
-      <ul>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.maint_margins">(Portfolio method)</a>
+      <li><a href="api_reference/trading.html#nautilus_trader.trading.account.MarginAccount.margin_maint">margin_maint() (MarginAccount method)</a>
 </li>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.PortfolioFacade.maint_margins">(PortfolioFacade method)</a>
-</li>
-      </ul></li>
       <li><a href="api_reference/trading.html#nautilus_trader.trading.account.MarginAccount">MarginAccount (class in nautilus_trader.trading.account)</a>
 </li>
+      <li><a href="api_reference/trading.html#nautilus_trader.trading.account.MarginAccount.margins_initial">margins_initial() (MarginAccount method)</a>
+
+      <ul>
+        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.margins_initial">(Portfolio method)</a>
+</li>
+        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.PortfolioFacade.margins_initial">(PortfolioFacade method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/trading.html#nautilus_trader.trading.account.MarginAccount.margins_maint">margins_maint() (MarginAccount method)</a>
+
+      <ul>
+        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.margins_maint">(Portfolio method)</a>
+</li>
+        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.PortfolioFacade.margins_maint">(PortfolioFacade method)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/common.html#nautilus_trader.common.factories.OrderFactory.market">market() (OrderFactory method)</a>
 </li>
       <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient">MarketDataClient (class in nautilus_trader.data.client)</a>
@@ -6512,20 +6538,6 @@
         <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.register">(TradingStrategy method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.execution.BacktestExecClient.register_account">register_account() (BacktestExecClient method)</a>
-
-      <ul>
-        <li><a href="api_reference/execution.html#nautilus_trader.execution.client.ExecutionClient.register_account">(ExecutionClient method)</a>
-</li>
-        <li><a href="api_reference/live.html#nautilus_trader.live.execution_client.LiveExecutionClient.register_account">(LiveExecutionClient method)</a>
-</li>
-      </ul></li>
-      <li><a href="api_reference/execution.html#nautilus_trader.execution.engine.ExecutionEngine.register_account_type">register_account_type() (ExecutionEngine method)</a>
-
-      <ul>
-        <li><a href="api_reference/live.html#nautilus_trader.live.execution_engine.LiveExecutionEngine.register_account_type">(LiveExecutionEngine method)</a>
-</li>
-      </ul></li>
       <li><a href="api_reference/common.html#nautilus_trader.common.actor.Actor.register_base">register_base() (Actor method)</a>
 
       <ul>
@@ -6936,6 +6948,14 @@
         <li><a href="api_reference/serialization.html#nautilus_trader.serialization.msgpack.serializer.MsgPackEventSerializer.serialize">(MsgPackEventSerializer method)</a>
 </li>
         <li><a href="api_reference/serialization.html#nautilus_trader.serialization.msgpack.serializer.MsgPackInstrumentSerializer.serialize">(MsgPackInstrumentSerializer method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/trading.html#nautilus_trader.trading.account.Account.set_calculate_account_state">set_calculate_account_state() (Account method)</a>
+
+      <ul>
+        <li><a href="api_reference/trading.html#nautilus_trader.trading.account.CashAccount.set_calculate_account_state">(CashAccount method)</a>
+</li>
+        <li><a href="api_reference/trading.html#nautilus_trader.trading.account.MarginAccount.set_calculate_account_state">(MarginAccount method)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/common.html#nautilus_trader.common.generators.ClientOrderIdGenerator.set_count">set_count() (ClientOrderIdGenerator method)</a>
@@ -8530,15 +8550,21 @@
       </ul></li>
       <li><a href="api_reference/model.html#nautilus_trader.model.orderbook.data.Order.update_id">update_id() (Order method)</a>
 </li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.account.MarginAccount.update_initial_margin">update_initial_margin() (MarginAccount method)</a>
-</li>
       <li><a href="api_reference/risk.html#nautilus_trader.risk.sizing.FixedRiskSizer.update_instrument">update_instrument() (FixedRiskSizer method)</a>
 
       <ul>
         <li><a href="api_reference/risk.html#nautilus_trader.risk.sizing.PositionSizer.update_instrument">(PositionSizer method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.account.MarginAccount.update_maint_margin">update_maint_margin() (MarginAccount method)</a>
+      <li><a href="api_reference/trading.html#nautilus_trader.trading.account.Account.update_margin_initial">update_margin_initial() (Account method)</a>
+
+      <ul>
+        <li><a href="api_reference/trading.html#nautilus_trader.trading.account.CashAccount.update_margin_initial">(CashAccount method)</a>
+</li>
+        <li><a href="api_reference/trading.html#nautilus_trader.trading.account.MarginAccount.update_margin_initial">(MarginAccount method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/trading.html#nautilus_trader.trading.account.MarginAccount.update_margin_maint">update_margin_maint() (MarginAccount method)</a>
 </li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.execution.BacktestExecClient.update_order">update_order() (BacktestExecClient method)</a>
 
