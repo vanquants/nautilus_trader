@@ -96,6 +96,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="accounting.html">Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backtest.html">Backtest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cache.html">Cache</a></li>
@@ -816,7 +817,7 @@ could also be possible to write clients for specialized data publishers.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID.</p></li>
-<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus" title="nautilus_trader.msgbus.message_bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the client.</p></li>
+<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the client.</p></li>
 <li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the client.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the client.</p></li>
 <li><p><strong>config</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>object</em><em>]</em><em>, </em><em>optional</em>) – The configuration options.</p></li>
@@ -997,7 +998,7 @@ called after disposal.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID (normally the venue).</p></li>
-<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus" title="nautilus_trader.msgbus.message_bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the client.</p></li>
+<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the client.</p></li>
 <li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.cache.Cache" title="nautilus_trader.cache.cache.Cache"><em>Cache</em></a>) – The cache for the client.</p></li>
 <li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the client.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the client.</p></li>
@@ -1428,7 +1429,7 @@ instances, for the asynchronous ingest of data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus" title="nautilus_trader.msgbus.message_bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the engine.</p></li>
+<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the engine.</p></li>
 <li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.cache.Cache" title="nautilus_trader.cache.cache.Cache"><em>Cache</em></a>) – The cache for the engine.</p></li>
 <li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the engine.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the engine.</p></li>

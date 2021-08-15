@@ -94,6 +94,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/accounting.html">Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_reference/analysis.html">Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_reference/backtest.html">Backtest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_reference/cache.html">Cache</a></li>
@@ -325,8 +326,6 @@
 </li>
         <li><a href="api_reference/serialization.html#nautilus_trader.serialization.base.EventSerializer.__init__">(EventSerializer method)</a>
 </li>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.calculators.ExchangeRateCalculator.__init__">(ExchangeRateCalculator method)</a>
-</li>
         <li><a href="api_reference/execution.html#nautilus_trader.execution.client.ExecutionClient.__init__">(ExecutionClient method)</a>
 </li>
         <li><a href="api_reference/execution.html#nautilus_trader.execution.engine.ExecutionEngine.__init__">(ExecutionEngine method)</a>
@@ -425,7 +424,7 @@
 </li>
         <li><a href="api_reference/core.html#nautilus_trader.core.message.Message.__init__">(Message method)</a>
 </li>
-        <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus.__init__">(MessageBus method)</a>
+        <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.bus.MessageBus.__init__">(MessageBus method)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.objects.Money.__init__">(Money method)</a>
 </li>
@@ -499,10 +498,6 @@
 </li>
         <li><a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.__init__">(PerformanceAnalyzer method)</a>
 </li>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.__init__">(Portfolio method)</a>
-</li>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.PortfolioFacade.__init__">(PortfolioFacade method)</a>
-</li>
         <li><a href="api_reference/model.html#nautilus_trader.model.position.Position.__init__">(Position method)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.events.position.PositionChanged.__init__">(PositionChanged method)</a>
@@ -546,8 +541,6 @@
         <li><a href="api_reference/core.html#nautilus_trader.core.message.Response.__init__">(Response method)</a>
 </li>
         <li><a href="api_reference/risk.html#nautilus_trader.risk.engine.RiskEngine.__init__">(RiskEngine method)</a>
-</li>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.calculators.RolloverInterestCalculator.__init__">(RolloverInterestCalculator method)</a>
 </li>
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.average.sma.SimpleMovingAverage.__init__">(SimpleMovingAverage method)</a>
 </li>
@@ -660,10 +653,6 @@
 
       <ul>
         <li><a href="api_reference/cache.html#nautilus_trader.cache.base.CacheFacade.account">(CacheFacade method)</a>
-</li>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.account">(Portfolio method)</a>
-</li>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.PortfolioFacade.account">(PortfolioFacade method)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.account_for_venue">account_for_venue() (Cache method)</a>
@@ -946,14 +935,6 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.apply">(StopLimitOrder method)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.apply">(StopMarketOrder method)</a>
-</li>
-      </ul></li>
-      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.execution.BacktestExecClient.apply_account_state">apply_account_state() (BacktestExecClient method)</a>
-
-      <ul>
-        <li><a href="api_reference/execution.html#nautilus_trader.execution.client.ExecutionClient.apply_account_state">(ExecutionClient method)</a>
-</li>
-        <li><a href="api_reference/live.html#nautilus_trader.live.execution_client.LiveExecutionClient.apply_account_state">(LiveExecutionClient method)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/model.html#nautilus_trader.model.orderbook.book.L1OrderBook.apply_delta">apply_delta() (L1OrderBook method)</a>
@@ -1324,20 +1305,10 @@
 </li>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.base.CacheFacade">CacheFacade (class in nautilus_trader.cache.base)</a>
 </li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.calculators.RolloverInterestCalculator.calc_overnight_rate">calc_overnight_rate() (RolloverInterestCalculator method)</a>
-</li>
       <li><a href="api_reference/risk.html#nautilus_trader.risk.sizing.FixedRiskSizer.calculate">calculate() (FixedRiskSizer method)</a>
 
       <ul>
         <li><a href="api_reference/risk.html#nautilus_trader.risk.sizing.PositionSizer.calculate">(PositionSizer method)</a>
-</li>
-      </ul></li>
-      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.execution.BacktestExecClient.calculate_account_state">calculate_account_state (BacktestExecClient attribute)</a>
-
-      <ul>
-        <li><a href="api_reference/execution.html#nautilus_trader.execution.client.ExecutionClient.calculate_account_state">(ExecutionClient attribute)</a>
-</li>
-        <li><a href="api_reference/live.html#nautilus_trader.live.execution_client.LiveExecutionClient.calculate_account_state">(LiveExecutionClient attribute)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/model.html#nautilus_trader.model.position.Position.calculate_pnl">calculate_pnl() (Position method)</a>
@@ -1808,14 +1779,6 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.events.position.PositionOpened.create">(PositionOpened static method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.execution.BacktestExecClient.create_account">create_account() (BacktestExecClient method)</a>
-
-      <ul>
-        <li><a href="api_reference/execution.html#nautilus_trader.execution.client.ExecutionClient.create_account">(ExecutionClient method)</a>
-</li>
-        <li><a href="api_reference/live.html#nautilus_trader.live.execution_client.LiveExecutionClient.create_account">(LiveExecutionClient method)</a>
-</li>
-      </ul></li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.engine.BacktestEngine.created_time">created_time (BacktestEngine attribute)</a>
 </li>
       <li><a href="api_reference/common.html#nautilus_trader.common.logging.LoggerAdapter.critical">critical() (LoggerAdapter method)</a>
@@ -1940,7 +1903,7 @@
       </ul></li>
       <li><a href="api_reference/model.html#nautilus_trader.model.orderbook.data.OrderBookDeltas.deltas">deltas (OrderBookDeltas attribute)</a>
 </li>
-      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus.deregister">deregister() (MessageBus method)</a>
+      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.bus.MessageBus.deregister">deregister() (MessageBus method)</a>
 </li>
       <li><a href="api_reference/data.html#nautilus_trader.data.engine.DataEngine.deregister_client">deregister_client() (DataEngine method)</a>
 
@@ -2060,7 +2023,7 @@
 </li>
       <li><a href="api_reference/common.html#nautilus_trader.common.queue.Queue.empty">empty() (Queue method)</a>
 </li>
-      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus.endpoints">endpoints() (MessageBus method)</a>
+      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.bus.MessageBus.endpoints">endpoints() (MessageBus method)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.orders.bracket.BracketOrder.entry">entry (BracketOrder attribute)</a>
 
@@ -2121,8 +2084,6 @@
       <li><a href="api_reference/common.html#nautilus_trader.common.logging.LoggerAdapter.exception">exception() (LoggerAdapter method)</a>
 </li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.exchange_order_book_level">exchange_order_book_level (SimulatedExchange attribute)</a>
-</li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.calculators.ExchangeRateCalculator">ExchangeRateCalculator (class in nautilus_trader.trading.calculators)</a>
 </li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.exec_client">exec_client (SimulatedExchange attribute)</a>
 </li>
@@ -2558,6 +2519,8 @@
         <li><a href="api_reference/common.html#nautilus_trader.common.queue.Queue.get">(Queue method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.execution.BacktestExecClient.get_account">get_account() (BacktestExecClient method)</a>
 
       <ul>
@@ -2568,8 +2531,6 @@
         <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.get_account">(SimulatedExchange method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/common.html#nautilus_trader.common.providers.InstrumentProvider.get_all">get_all() (InstrumentProvider method)</a>
 </li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.get_book">get_book() (SimulatedExchange method)</a>
@@ -2640,10 +2601,6 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.orderbook.book.OrderBook.get_quote_volume_for_price">(OrderBook method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.calculators.ExchangeRateCalculator.get_rate">get_rate() (ExchangeRateCalculator method)</a>
-</li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.calculators.RolloverInterestCalculator.get_rate_data">get_rate_data() (RolloverInterestCalculator method)</a>
-</li>
       <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.get_run_queue_task">get_run_queue_task() (LiveDataEngine method)</a>
 
       <ul>
@@ -3048,7 +3005,7 @@
         <li><a href="api_reference/cache.html#nautilus_trader.cache.base.CacheFacade.has_quote_ticks">(CacheFacade method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus.has_subscribers">has_subscribers() (MessageBus method)</a>
+      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.bus.MessageBus.has_subscribers">has_subscribers() (MessageBus method)</a>
 </li>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.has_trade_ticks">has_trade_ticks() (Cache method)</a>
 
@@ -3252,10 +3209,6 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.init_id">(StopMarketOrder attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.initialize_orders">initialize_orders() (Portfolio method)</a>
-</li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.initialize_positions">initialize_positions() (Portfolio method)</a>
-</li>
       <li><a href="api_reference/indicators.html#nautilus_trader.indicators.average.ama.AdaptiveMovingAverage.initialized">initialized (AdaptiveMovingAverage attribute)</a>
 
       <ul>
@@ -3290,10 +3243,6 @@
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.macd.MovingAverageConvergenceDivergence.initialized">(MovingAverageConvergenceDivergence attribute)</a>
 </li>
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.obv.OnBalanceVolume.initialized">(OnBalanceVolume attribute)</a>
-</li>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.initialized">(Portfolio attribute)</a>
-</li>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.PortfolioFacade.initialized">(PortfolioFacade attribute)</a>
 </li>
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.pressure.Pressure.initialized">(Pressure attribute)</a>
 </li>
@@ -3430,10 +3379,10 @@
         <li><a href="api_reference/cache.html#nautilus_trader.cache.base.CacheFacade.instrument_ids">(CacheFacade method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/model.html#nautilus_trader.model.data.venue.InstrumentClosePrice">InstrumentClosePrice (class in nautilus_trader.model.data.venue)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/model.html#nautilus_trader.model.data.venue.InstrumentClosePrice">InstrumentClosePrice (class in nautilus_trader.model.data.venue)</a>
+</li>
       <li><a href="api_reference/model.html#nautilus_trader.model.identifiers.InstrumentId">InstrumentId (class in nautilus_trader.model.identifiers)</a>
 </li>
       <li><a href="api_reference/common.html#nautilus_trader.common.providers.InstrumentProvider">InstrumentProvider (class in nautilus_trader.common.providers)</a>
@@ -3528,12 +3477,6 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_completed">(StopMarketOrder attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.is_completely_flat">is_completely_flat() (Portfolio method)</a>
-
-      <ul>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.PortfolioFacade.is_completely_flat">(PortfolioFacade method)</a>
-</li>
-      </ul></li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestDataClient.is_connected">is_connected (BacktestDataClient attribute)</a>
 
       <ul>
@@ -3584,12 +3527,6 @@
       </ul></li>
       <li><a href="api_reference/model.html#nautilus_trader.model.currency.Currency.is_fiat">is_fiat() (Currency static method)</a>
 </li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.is_flat">is_flat() (Portfolio method)</a>
-
-      <ul>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.PortfolioFacade.is_flat">(PortfolioFacade method)</a>
-</li>
-      </ul></li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.is_frozen_account">is_frozen_account (SimulatedExchange attribute)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.orders.limit.LimitOrder.is_hidden">is_hidden (LimitOrder attribute)</a>
@@ -3620,18 +3557,6 @@
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.position.Position.is_long">is_long (Position attribute)</a>
 </li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.is_net_long">is_net_long() (Portfolio method)</a>
-
-      <ul>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.PortfolioFacade.is_net_long">(PortfolioFacade method)</a>
-</li>
-      </ul></li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.is_net_short">is_net_short() (Portfolio method)</a>
-
-      <ul>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.PortfolioFacade.is_net_short">(PortfolioFacade method)</a>
-</li>
-      </ul></li>
       <li><a href="api_reference/model.html#nautilus_trader.model.position.Position.is_open">is_open (Position attribute)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.position.Position.is_opposite_side">is_opposite_side() (Position method)</a>
@@ -4138,18 +4063,6 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.margins_initial">margins_initial() (Portfolio method)</a>
-
-      <ul>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.PortfolioFacade.margins_initial">(PortfolioFacade method)</a>
-</li>
-      </ul></li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.margins_maint">margins_maint() (Portfolio method)</a>
-
-      <ul>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.PortfolioFacade.margins_maint">(PortfolioFacade method)</a>
-</li>
-      </ul></li>
       <li><a href="api_reference/common.html#nautilus_trader.common.factories.OrderFactory.market">market() (OrderFactory method)</a>
 </li>
       <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient">MarketDataClient (class in nautilus_trader.data.client)</a>
@@ -4194,7 +4107,7 @@
 </li>
       <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.message_qsize">message_qsize() (LiveDataEngine method)</a>
 </li>
-      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus">MessageBus (class in nautilus_trader.msgbus.message_bus)</a>
+      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.bus.MessageBus">MessageBus (class in nautilus_trader.msgbus.bus)</a>
 </li>
       <li><a href="api_reference/core.html#nautilus_trader.core.datetime.micros_to_nanos">micros_to_nanos() (in module nautilus_trader.core.datetime)</a>
 </li>
@@ -4228,6 +4141,8 @@
     module
 
       <ul>
+        <li><a href="api_reference/accounting.html#module-nautilus_trader.accounting">nautilus_trader.accounting</a>
+</li>
         <li><a href="api_reference/analysis.html#module-nautilus_trader.analysis">nautilus_trader.analysis</a>
 </li>
         <li><a href="api_reference/analysis.html#module-nautilus_trader.analysis.performance">nautilus_trader.analysis.performance</a>
@@ -4438,7 +4353,7 @@
 </li>
         <li><a href="api_reference/msgbus.html#module-nautilus_trader.msgbus">nautilus_trader.msgbus</a>
 </li>
-        <li><a href="api_reference/msgbus.html#module-nautilus_trader.msgbus.message_bus">nautilus_trader.msgbus.message_bus</a>
+        <li><a href="api_reference/msgbus.html#module-nautilus_trader.msgbus.bus">nautilus_trader.msgbus.bus</a>
 </li>
         <li><a href="api_reference/network.html#module-nautilus_trader.network">nautilus_trader.network</a>
 </li>
@@ -4466,11 +4381,7 @@
 </li>
         <li><a href="api_reference/trading.html#module-nautilus_trader.trading">nautilus_trader.trading</a>
 </li>
-        <li><a href="api_reference/trading.html#module-nautilus_trader.trading.calculators">nautilus_trader.trading.calculators</a>
-</li>
         <li><a href="api_reference/trading.html#module-nautilus_trader.trading.filters">nautilus_trader.trading.filters</a>
-</li>
-        <li><a href="api_reference/trading.html#module-nautilus_trader.trading.portfolio">nautilus_trader.trading.portfolio</a>
 </li>
         <li><a href="api_reference/trading.html#module-nautilus_trader.trading.strategy">nautilus_trader.trading.strategy</a>
 </li>
@@ -4593,6 +4504,13 @@
 </li>
       <li><a href="api_reference/common.html#nautilus_trader.common.logging.nautilus_header">nautilus_header() (in module nautilus_trader.common.logging)</a>
 </li>
+      <li>
+    nautilus_trader.accounting
+
+      <ul>
+        <li><a href="api_reference/accounting.html#module-nautilus_trader.accounting">module</a>
+</li>
+      </ul></li>
       <li>
     nautilus_trader.analysis
 
@@ -4999,6 +4917,8 @@
         <li><a href="api_reference/indicators.html#module-nautilus_trader.indicators.fuzzy_candlesticks">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     nautilus_trader.indicators.hilbert_period
 
@@ -5020,8 +4940,6 @@
         <li><a href="api_reference/indicators.html#module-nautilus_trader.indicators.hilbert_transform">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     nautilus_trader.indicators.keltner_channel
 
@@ -5331,10 +5249,10 @@
 </li>
       </ul></li>
       <li>
-    nautilus_trader.msgbus.message_bus
+    nautilus_trader.msgbus.bus
 
       <ul>
-        <li><a href="api_reference/msgbus.html#module-nautilus_trader.msgbus.message_bus">module</a>
+        <li><a href="api_reference/msgbus.html#module-nautilus_trader.msgbus.bus">module</a>
 </li>
       </ul></li>
       <li>
@@ -5429,24 +5347,10 @@
 </li>
       </ul></li>
       <li>
-    nautilus_trader.trading.calculators
-
-      <ul>
-        <li><a href="api_reference/trading.html#module-nautilus_trader.trading.calculators">module</a>
-</li>
-      </ul></li>
-      <li>
     nautilus_trader.trading.filters
 
       <ul>
         <li><a href="api_reference/trading.html#module-nautilus_trader.trading.filters">module</a>
-</li>
-      </ul></li>
-      <li>
-    nautilus_trader.trading.portfolio
-
-      <ul>
-        <li><a href="api_reference/trading.html#module-nautilus_trader.trading.portfolio">module</a>
 </li>
       </ul></li>
       <li>
@@ -5461,24 +5365,6 @@
 
       <ul>
         <li><a href="api_reference/trading.html#module-nautilus_trader.trading.trader">module</a>
-</li>
-      </ul></li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.net_exposure">net_exposure() (Portfolio method)</a>
-
-      <ul>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.PortfolioFacade.net_exposure">(PortfolioFacade method)</a>
-</li>
-      </ul></li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.net_exposures">net_exposures() (Portfolio method)</a>
-
-      <ul>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.PortfolioFacade.net_exposures">(PortfolioFacade method)</a>
-</li>
-      </ul></li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.net_position">net_position() (Portfolio method)</a>
-
-      <ul>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.PortfolioFacade.net_position">(PortfolioFacade method)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/model.html#nautilus_trader.model.position.Position.net_qty">net_qty (Position attribute)</a>
@@ -5916,13 +5802,11 @@
       <li><a href="api_reference/network.html#nautilus_trader.network.socket.SocketClient.port">port (SocketClient attribute)</a>
 </li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.engine.BacktestEngine.portfolio">portfolio (BacktestEngine attribute)</a>
+
+      <ul>
+        <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.portfolio">(TradingStrategy attribute)</a>
 </li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio">Portfolio (class in nautilus_trader.trading.portfolio)</a>
-</li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.portfolio">portfolio (TradingStrategy attribute)</a>
-</li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.PortfolioFacade">PortfolioFacade (class in nautilus_trader.trading.portfolio)</a>
-</li>
+      </ul></li>
       <li><a href="api_reference/model.html#nautilus_trader.model.position.Position">Position (class in nautilus_trader.model.position)</a>
 </li>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.position">position() (Cache method)</a>
@@ -5997,10 +5881,10 @@
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.events.position.PositionEvent">PositionEvent (class in nautilus_trader.model.events.position)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/model.html#nautilus_trader.model.identifiers.PositionId">PositionId (class in nautilus_trader.model.identifiers)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/common.html#nautilus_trader.common.generators.PositionIdGenerator">PositionIdGenerator (class in nautilus_trader.common.generators)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.events.position.PositionOpened">PositionOpened (class in nautilus_trader.model.events.position)</a>
@@ -6171,9 +6055,9 @@
 </li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.process_tick">process_tick() (SimulatedExchange method)</a>
 </li>
-      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus.pub_count">pub_count (MessageBus attribute)</a>
+      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.bus.MessageBus.pub_count">pub_count (MessageBus attribute)</a>
 </li>
-      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus.publish">publish() (MessageBus method)</a>
+      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.bus.MessageBus.publish">publish() (MessageBus method)</a>
 </li>
       <li><a href="api_reference/common.html#nautilus_trader.common.actor.Actor.publish_data">publish_data() (Actor method)</a>
 
@@ -6338,7 +6222,7 @@
       <li><a href="api_reference/model.html#nautilus_trader.model.currency.Currency.register">register() (Currency static method)</a>
 
       <ul>
-        <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus.register">(MessageBus method)</a>
+        <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.bus.MessageBus.register">(MessageBus method)</a>
 </li>
         <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.register">(TradingStrategy method)</a>
 </li>
@@ -6435,7 +6319,7 @@
       </ul></li>
       <li><a href="api_reference/analysis.html#nautilus_trader.analysis.reports.ReportProvider">ReportProvider (class in nautilus_trader.analysis.reports)</a>
 </li>
-      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus.req_count">req_count (MessageBus attribute)</a>
+      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.bus.MessageBus.req_count">req_count (MessageBus attribute)</a>
 </li>
       <li><a href="api_reference/core.html#nautilus_trader.core.message.Request">Request (class in nautilus_trader.core.message)</a>
 </li>
@@ -6456,7 +6340,7 @@
 </li>
         <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.request">(MarketDataClient method)</a>
 </li>
-        <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus.request">(MessageBus method)</a>
+        <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.bus.MessageBus.request">(MessageBus method)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/common.html#nautilus_trader.common.actor.Actor.request_bars">request_bars() (Actor method)</a>
@@ -6509,7 +6393,7 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus.res_count">res_count (MessageBus attribute)</a>
+      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.bus.MessageBus.res_count">res_count (MessageBus attribute)</a>
 </li>
       <li><a href="api_reference/common.html#nautilus_trader.common.actor.Actor.reset">reset() (Actor method)</a>
 
@@ -6596,8 +6480,6 @@
 </li>
         <li><a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.reset">(PerformanceAnalyzer method)</a>
 </li>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.reset">(Portfolio method)</a>
-</li>
         <li><a href="api_reference/common.html#nautilus_trader.common.generators.PositionIdGenerator.reset">(PositionIdGenerator method)</a>
 </li>
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.pressure.Pressure.reset">(Pressure method)</a>
@@ -6640,7 +6522,7 @@
       <ul>
         <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.response">(LiveDataEngine method)</a>
 </li>
-        <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus.response">(MessageBus method)</a>
+        <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.bus.MessageBus.response">(MessageBus method)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/data.html#nautilus_trader.data.engine.DataEngine.response_count">response_count (DataEngine attribute)</a>
@@ -6707,8 +6589,6 @@
 </li>
       <li><a href="api_reference/risk.html#nautilus_trader.risk.engine.RiskEngine">RiskEngine (class in nautilus_trader.risk.engine)</a>
 </li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.calculators.RolloverInterestCalculator">RolloverInterestCalculator (class in nautilus_trader.trading.calculators)</a>
-</li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.engine.BacktestEngine.run">run() (BacktestEngine method)</a>
 </li>
   </ul></td>
@@ -6725,7 +6605,7 @@
       </ul></li>
       <li><a href="api_reference/core.html#nautilus_trader.core.datetime.secs_to_nanos">secs_to_nanos() (in module nautilus_trader.core.datetime)</a>
 </li>
-      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus.send">send() (MessageBus method)</a>
+      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.bus.MessageBus.send">send() (MessageBus method)</a>
 
       <ul>
         <li><a href="api_reference/network.html#nautilus_trader.network.socket.SocketClient.send">(SocketClient method)</a>
@@ -6735,7 +6615,7 @@
         <li><a href="api_reference/network.html#nautilus_trader.network.ws_client.WebSocketClient.send">(WebSocketClient method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus.sent_count">sent_count (MessageBus attribute)</a>
+      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.bus.MessageBus.sent_count">sent_count (MessageBus attribute)</a>
 
       <ul>
         <li><a href="api_reference/common.html#nautilus_trader.common.throttler.Throttler.sent_count">(Throttler attribute)</a>
@@ -7234,7 +7114,7 @@
 </li>
         <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.subscribe">(MarketDataClient method)</a>
 </li>
-        <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus.subscribe">(MessageBus method)</a>
+        <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.bus.MessageBus.subscribe">(MessageBus method)</a>
 </li>
         <li><a href="api_reference/trading.html#nautilus_trader.trading.trader.Trader.subscribe">(Trader method)</a>
 </li>
@@ -7487,7 +7367,7 @@
         <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.subscribed_trade_ticks">(MarketDataClient method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus.subscriptions">subscriptions() (MessageBus method)</a>
+      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.bus.MessageBus.subscriptions">subscriptions() (MessageBus method)</a>
 </li>
       <li><a href="api_reference/indicators.html#nautilus_trader.indicators.swings.Swings">Swings (class in nautilus_trader.indicators.swings)</a>
 </li>
@@ -7705,7 +7585,7 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.objects.Quantity.to_str">(Quantity method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus.topics">topics() (MessageBus method)</a>
+      <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.bus.MessageBus.topics">topics() (MessageBus method)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.objects.AccountBalance.total">total (AccountBalance attribute)</a>
 </li>
@@ -7768,7 +7648,7 @@
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.market.MarketOrder.trader_id">(MarketOrder attribute)</a>
 </li>
-        <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus.trader_id">(MessageBus attribute)</a>
+        <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.bus.MessageBus.trader_id">(MessageBus attribute)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.events.order.OrderAccepted.trader_id">(OrderAccepted attribute)</a>
 </li>
@@ -8145,20 +8025,8 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.events.position.PositionOpened.unrealized_pnl">(PositionOpened attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.unrealized_pnl">unrealized_pnl() (Portfolio method)</a>
-
-      <ul>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.PortfolioFacade.unrealized_pnl">(PortfolioFacade method)</a>
+      <li><a href="api_reference/model.html#nautilus_trader.model.position.Position.unrealized_pnl">unrealized_pnl() (Position method)</a>
 </li>
-        <li><a href="api_reference/model.html#nautilus_trader.model.position.Position.unrealized_pnl">(Position method)</a>
-</li>
-      </ul></li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.unrealized_pnls">unrealized_pnls() (Portfolio method)</a>
-
-      <ul>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.PortfolioFacade.unrealized_pnls">(PortfolioFacade method)</a>
-</li>
-      </ul></li>
       <li><a href="api_reference/data.html#nautilus_trader.data.messages.Unsubscribe">Unsubscribe (class in nautilus_trader.data.messages)</a>
 </li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestDataClient.unsubscribe">unsubscribe() (BacktestDataClient method)</a>
@@ -8174,7 +8042,7 @@
 </li>
         <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.unsubscribe">(MarketDataClient method)</a>
 </li>
-        <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus.unsubscribe">(MessageBus method)</a>
+        <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.bus.MessageBus.unsubscribe">(MessageBus method)</a>
 </li>
         <li><a href="api_reference/trading.html#nautilus_trader.trading.trader.Trader.unsubscribe">(Trader method)</a>
 </li>
@@ -8340,8 +8208,6 @@
 </li>
         <li><a href="api_reference/live.html#nautilus_trader.live.execution_client.LiveExecutionClient.update_order">(LiveExecutionClient method)</a>
 </li>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.update_order">(Portfolio method)</a>
-</li>
         <li><a href="api_reference/infrastructure.html#nautilus_trader.infrastructure.cache.RedisCacheDatabase.update_order">(RedisCacheDatabase method)</a>
 </li>
         <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.update_order">(TradingStrategy method)</a>
@@ -8351,8 +8217,6 @@
 
       <ul>
         <li><a href="api_reference/cache.html#nautilus_trader.cache.database.CacheDatabase.update_position">(CacheDatabase method)</a>
-</li>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.update_position">(Portfolio method)</a>
 </li>
         <li><a href="api_reference/infrastructure.html#nautilus_trader.infrastructure.cache.RedisCacheDatabase.update_position">(RedisCacheDatabase method)</a>
 </li>
@@ -8419,8 +8283,6 @@
         <li><a href="api_reference/infrastructure.html#nautilus_trader.infrastructure.cache.RedisCacheDatabase.update_strategy">(RedisCacheDatabase method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.portfolio.Portfolio.update_tick">update_tick() (Portfolio method)</a>
-</li>
       <li><a href="api_reference/model.html#nautilus_trader.model.orderbook.book.L1OrderBook.update_top">update_top() (L1OrderBook method)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.UpdateOrder">UpdateOrder (class in nautilus_trader.model.commands.trading)</a>

@@ -96,6 +96,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="accounting.html">Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backtest.html">Backtest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cache.html">Cache</a></li>
@@ -208,7 +209,7 @@
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>loop</strong> (<em>asyncio.AbstractEventLoop</em>) – The event loop for the client.</p></li>
 <li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The client ID.</p></li>
-<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus" title="nautilus_trader.msgbus.message_bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the client.</p></li>
+<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the client.</p></li>
 <li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.cache.Cache" title="nautilus_trader.cache.cache.Cache"><em>Cache</em></a>) – The cache for the client.</p></li>
 <li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.LiveClock" title="nautilus_trader.common.clock.LiveClock"><em>LiveClock</em></a>) – The clock for the client.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the client.</p></li>
@@ -395,7 +396,7 @@ called after disposal.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – The client name.</p></li>
 <li><p><strong>config</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>object</em><em>]</em>) – The configuration for the client.</p></li>
-<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus" title="nautilus_trader.msgbus.message_bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the client.</p></li>
+<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the client.</p></li>
 <li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.cache.Cache" title="nautilus_trader.cache.cache.Cache"><em>Cache</em></a>) – The cache for the client.</p></li>
 <li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.LiveClock" title="nautilus_trader.common.clock.LiveClock"><em>LiveClock</em></a>) – The clock for the client.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.LiveLogger" title="nautilus_trader.common.logging.LiveLogger"><em>LiveLogger</em></a>) – The logger for the client.</p></li>
@@ -426,7 +427,7 @@ testing dependency injection.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>loop</strong> (<em>asyncio.AbstractEventLoop</em><em>,</em>) – The event loop for the client.</p></li>
 <li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The client ID.</p></li>
-<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus" title="nautilus_trader.msgbus.message_bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the client.</p></li>
+<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the client.</p></li>
 <li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.cache.Cache" title="nautilus_trader.cache.cache.Cache"><em>Cache</em></a>) – The cache for the client.</p></li>
 <li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.LiveClock" title="nautilus_trader.common.clock.LiveClock"><em>LiveClock</em></a>) – The clock for the client.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the client.</p></li>
@@ -847,7 +848,7 @@ called after disposal.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>loop</strong> (<em>asyncio.AbstractEventLoop</em>) – The event loop for the engine.</p></li>
-<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus" title="nautilus_trader.msgbus.message_bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the engine.</p></li>
+<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the engine.</p></li>
 <li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.cache.Cache" title="nautilus_trader.cache.cache.Cache"><em>Cache</em></a>) – The cache for the engine.</p></li>
 <li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the engine.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the engine.</p></li>
@@ -1321,7 +1322,7 @@ running on.</p>
 <li><p><strong>account_type</strong> (<em>AccountType</em>) – The account type for the client.</p></li>
 <li><p><strong>base_currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The account base currency for the client. Use <code class="docutils literal notranslate"><span class="pre">None</span></code> for multi-currency accounts.</p></li>
 <li><p><strong>instrument_provider</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.providers.InstrumentProvider" title="nautilus_trader.common.providers.InstrumentProvider"><em>InstrumentProvider</em></a>) – The instrument provider for the client.</p></li>
-<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus" title="nautilus_trader.msgbus.message_bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the client.</p></li>
+<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the client.</p></li>
 <li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.cache.Cache" title="nautilus_trader.cache.cache.Cache"><em>Cache</em></a>) – The cache for the client.</p></li>
 <li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.LiveClock" title="nautilus_trader.common.clock.LiveClock"><em>LiveClock</em></a>) – The clock for the client.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the client.</p></li>
@@ -1353,23 +1354,6 @@ running on.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.apply_account_state">
-<span class="sig-name descname"><span class="pre">apply_account_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">AccountState</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.apply_account_state" title="Permalink to this definition">¶</a></dt>
-<dd><p>Apply the given account state.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.events.account.AccountState" title="nautilus_trader.model.events.account.AccountState"><em>AccountState</em></a>) – The account state to apply.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If event.account_id does not equal self.account_id.</p></li>
-<li><p><strong>ValueError</strong> – If event.account_type does not equal self.account_type.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.base_currency">
 <span class="sig-name descname"><span class="pre">base_currency</span></span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.base_currency" title="Permalink to this definition">¶</a></dt>
@@ -1381,42 +1365,10 @@ running on.</p>
 </dl>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.calculate_account_state">
-<span class="sig-name descname"><span class="pre">calculate_account_state</span></span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.calculate_account_state" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the account state is calculated.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>bool</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.cancel_order">
 <span class="sig-name descname"><span class="pre">cancel_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">CancelOrder</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.cancel_order" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.create_account">
-<span class="sig-name descname"><span class="pre">create_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">AccountState</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Account</span></span></span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.create_account" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a new account from the given account state event.</p>
-<p>Override for custom accounts.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.events.account.AccountState" title="nautilus_trader.model.events.account.AccountState"><em>AccountState</em></a>) – The genesis account state event.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Account</em></p>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ValueError</strong> – If event.account_id is not equal to self.account_id.</p></li>
-<li><p><strong>ValueError</strong> – If event.account_type is not equal to self.account_type.</p></li>
-</ul>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1952,7 +1904,7 @@ testing dependency injection.</p></li>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>loop</strong> (<em>asyncio.AbstractEventLoop</em>) – The event loop for the engine.</p></li>
-<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus" title="nautilus_trader.msgbus.message_bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the engine.</p></li>
+<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the engine.</p></li>
 <li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.cache.Cache" title="nautilus_trader.cache.cache.Cache"><em>Cache</em></a>) – The cache for the engine.</p></li>
 <li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the engine.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the engine.</p></li>
@@ -2372,8 +2324,8 @@ overwritten.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>loop</strong> (<em>asyncio.AbstractEventLoop</em>) – The event loop for the engine.</p></li>
-<li><p><strong>portfolio</strong> (<a class="reference internal" href="trading.html#nautilus_trader.trading.portfolio.PortfolioFacade" title="nautilus_trader.trading.portfolio.PortfolioFacade"><em>PortfolioFacade</em></a>) – The portfolio for the engine.</p></li>
-<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus" title="nautilus_trader.msgbus.message_bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the engine.</p></li>
+<li><p><strong>portfolio</strong> (<em>PortfolioFacade</em>) – The portfolio for the engine.</p></li>
+<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the engine.</p></li>
 <li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.base.CacheFacade" title="nautilus_trader.cache.base.CacheFacade"><em>CacheFacade</em></a>) – The read-only cache for the engine.</p></li>
 <li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the engine.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the engine.</p></li>
@@ -2853,7 +2805,7 @@ notional check.</p>
 <li><p><strong>loop</strong> (<em>asyncio.AbstractEventLoop</em>) – The event loop for the clients.</p></li>
 <li><p><strong>data_engine</strong> (<a class="reference internal" href="#nautilus_trader.live.data_engine.LiveDataEngine" title="nautilus_trader.live.data_engine.LiveDataEngine"><em>LiveDataEngine</em></a>) – The data engine for the trading node.</p></li>
 <li><p><strong>exec_engine</strong> (<a class="reference internal" href="#nautilus_trader.live.execution_engine.LiveExecutionEngine" title="nautilus_trader.live.execution_engine.LiveExecutionEngine"><em>LiveExecutionEngine</em></a>) – The execution engine for the trading node.</p></li>
-<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus" title="nautilus_trader.msgbus.message_bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the trading node.</p></li>
+<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the trading node.</p></li>
 <li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.cache.Cache" title="nautilus_trader.cache.cache.Cache"><em>Cache</em></a>) – The cache for building clients.</p></li>
 <li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.LiveClock" title="nautilus_trader.common.clock.LiveClock"><em>LiveClock</em></a>) – The clock for building clients.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.LiveLogger" title="nautilus_trader.common.logging.LiveLogger"><em>LiveLogger</em></a>) – The logger for building clients.</p></li>

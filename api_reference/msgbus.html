@@ -96,6 +96,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="accounting.html">Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backtest.html">Backtest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cache.html">Cache</a></li>
@@ -186,9 +187,9 @@
 <span id="message-bus"></span><h1>Message Bus<a class="headerlink" href="#module-nautilus_trader.msgbus" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
 <h2>Message Bus<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="module-nautilus_trader.msgbus.message_bus"></span><dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.message_bus.MessageBus">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">MessageBus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">Clock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">name=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.msgbus.message_bus.MessageBus" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="module-nautilus_trader.msgbus.bus"></span><dl class="py class">
+<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">MessageBus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">Clock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">name=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a generic message bus to facilitate various messaging patterns.</p>
 <p>The bus provides both a producer and consumer API for PUB/SUB, REQ/REP as
@@ -212,8 +213,8 @@ For example, “c??p” would match both of the above examples and “coop.”</
 as the event loop.</p>
 </div>
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.message_bus.MessageBus.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.msgbus.message_bus.MessageBus.__init__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">MessageBus</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -231,8 +232,8 @@ as the event loop.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.message_bus.MessageBus.deregister">
-<span class="sig-name descname"><span class="pre">deregister</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">endpoint,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None]</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.message_bus.MessageBus.deregister" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.deregister">
+<span class="sig-name descname"><span class="pre">deregister</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">endpoint,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None]</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.deregister" title="Permalink to this definition">¶</a></dt>
 <dd><p>De-register the given handler from the endpoint address.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -253,8 +254,8 @@ as the event loop.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.message_bus.MessageBus.endpoints">
-<span class="sig-name descname"><span class="pre">endpoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.message_bus.MessageBus.endpoints" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.endpoints">
+<span class="sig-name descname"><span class="pre">endpoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.endpoints" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return all endpoint addresses registered with the message bus.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -264,8 +265,8 @@ as the event loop.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.message_bus.MessageBus.has_subscribers">
-<span class="sig-name descname"><span class="pre">has_subscribers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">topic=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.message_bus.MessageBus.has_subscribers" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.has_subscribers">
+<span class="sig-name descname"><span class="pre">has_subscribers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">topic=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.has_subscribers" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the message bus has subscribers for the give topic.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -279,8 +280,8 @@ If None then query is for ALL topics.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.message_bus.MessageBus.pub_count">
-<span class="sig-name descname"><span class="pre">pub_count</span></span><a class="headerlink" href="#nautilus_trader.msgbus.message_bus.MessageBus.pub_count" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.pub_count">
+<span class="sig-name descname"><span class="pre">pub_count</span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.pub_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>The count of messages published by the bus.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -290,8 +291,8 @@ If None then query is for ALL topics.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.message_bus.MessageBus.publish">
-<span class="sig-name descname"><span class="pre">publish</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">topic</span></em>, <em class="sig-param"><span class="pre">msg:</span> <span class="pre">Any</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.message_bus.MessageBus.publish" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.publish">
+<span class="sig-name descname"><span class="pre">publish</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">topic</span></em>, <em class="sig-param"><span class="pre">msg:</span> <span class="pre">Any</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.publish" title="Permalink to this definition">¶</a></dt>
 <dd><p>Publish the given message.</p>
 <p>Subscription handlers will receive the message in priority order
 (highest first).</p>
@@ -306,8 +307,8 @@ If None then query is for ALL topics.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.message_bus.MessageBus.register">
-<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">endpoint,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None]</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.message_bus.MessageBus.register" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">endpoint,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None]</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.register" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the given handler to receive messages at the endpoint address.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -327,8 +328,8 @@ If None then query is for ALL topics.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.message_bus.MessageBus.req_count">
-<span class="sig-name descname"><span class="pre">req_count</span></span><a class="headerlink" href="#nautilus_trader.msgbus.message_bus.MessageBus.req_count" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.req_count">
+<span class="sig-name descname"><span class="pre">req_count</span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.req_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>The count of requests processed by the bus.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -338,8 +339,8 @@ If None then query is for ALL topics.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.message_bus.MessageBus.request">
-<span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">endpoint</span></em>, <em class="sig-param"><span class="pre">Request</span> <span class="pre">request</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.message_bus.MessageBus.request" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.request">
+<span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">endpoint</span></em>, <em class="sig-param"><span class="pre">Request</span> <span class="pre">request</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.request" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handle the given request.</p>
 <p>Will log an error if the correlation ID already exists.</p>
 <dl class="field-list simple">
@@ -353,8 +354,8 @@ If None then query is for ALL topics.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.message_bus.MessageBus.res_count">
-<span class="sig-name descname"><span class="pre">res_count</span></span><a class="headerlink" href="#nautilus_trader.msgbus.message_bus.MessageBus.res_count" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.res_count">
+<span class="sig-name descname"><span class="pre">res_count</span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.res_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>The count of responses processed by the bus.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -364,8 +365,8 @@ If None then query is for ALL topics.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.message_bus.MessageBus.response">
-<span class="sig-name descname"><span class="pre">response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Response</span> <span class="pre">response</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.message_bus.MessageBus.response" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.response">
+<span class="sig-name descname"><span class="pre">response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Response</span> <span class="pre">response</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.response" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handle the given response.</p>
 <p>Will log an error if the correlation ID is not found.</p>
 <dl class="field-list simple">
@@ -376,8 +377,8 @@ If None then query is for ALL topics.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.message_bus.MessageBus.send">
-<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">endpoint</span></em>, <em class="sig-param"><span class="pre">msg:</span> <span class="pre">Any</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.message_bus.MessageBus.send" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.send">
+<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">endpoint</span></em>, <em class="sig-param"><span class="pre">msg:</span> <span class="pre">Any</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.send" title="Permalink to this definition">¶</a></dt>
 <dd><p>Send the given message to the given endpoint address.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -390,8 +391,8 @@ If None then query is for ALL topics.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.message_bus.MessageBus.sent_count">
-<span class="sig-name descname"><span class="pre">sent_count</span></span><a class="headerlink" href="#nautilus_trader.msgbus.message_bus.MessageBus.sent_count" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.sent_count">
+<span class="sig-name descname"><span class="pre">sent_count</span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.sent_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>The count of messages sent through the bus.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -401,8 +402,8 @@ If None then query is for ALL topics.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.message_bus.MessageBus.subscribe">
-<span class="sig-name descname"><span class="pre">subscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">topic,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None],</span> <span class="pre">int</span> <span class="pre">priority=0</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.message_bus.MessageBus.subscribe" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.subscribe">
+<span class="sig-name descname"><span class="pre">subscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">topic,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None],</span> <span class="pre">int</span> <span class="pre">priority=0</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.subscribe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Subscribe to the given message topic with the given callback handler.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -433,8 +434,8 @@ necessary calculations for logically sound behaviour.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.message_bus.MessageBus.subscriptions">
-<span class="sig-name descname"><span class="pre">subscriptions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">topic=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.message_bus.MessageBus.subscriptions" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.subscriptions">
+<span class="sig-name descname"><span class="pre">subscriptions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">topic=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.subscriptions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return all subscriptions matching the given topic.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -448,8 +449,8 @@ If None then query is for ALL topics.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.message_bus.MessageBus.topics">
-<span class="sig-name descname"><span class="pre">topics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.message_bus.MessageBus.topics" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.topics">
+<span class="sig-name descname"><span class="pre">topics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.topics" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return all topics with active subscribers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -459,8 +460,8 @@ If None then query is for ALL topics.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.message_bus.MessageBus.trader_id">
-<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.msgbus.message_bus.MessageBus.trader_id" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.trader_id">
+<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.trader_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>The trader ID associated with the bus.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -470,8 +471,8 @@ If None then query is for ALL topics.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.message_bus.MessageBus.unsubscribe">
-<span class="sig-name descname"><span class="pre">unsubscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">topic,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None]</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.message_bus.MessageBus.unsubscribe" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.unsubscribe">
+<span class="sig-name descname"><span class="pre">unsubscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">topic,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None]</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.unsubscribe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unsubscribe the given callback handler from the given message topic.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>

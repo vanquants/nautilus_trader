@@ -96,6 +96,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="accounting.html">Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backtest.html">Backtest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cache.html">Cache</a></li>
@@ -213,7 +214,7 @@ trading operations.</p>
 <li><p><strong>account_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId"><em>AccountId</em></a>) – The account ID for the client.</p></li>
 <li><p><strong>account_type</strong> (<em>AccountType</em>) – The account type for the client.</p></li>
 <li><p><strong>base_currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The account base currency. Use <code class="docutils literal notranslate"><span class="pre">None</span></code> for multi-currency accounts.</p></li>
-<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus" title="nautilus_trader.msgbus.message_bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the client.</p></li>
+<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the client.</p></li>
 <li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.cache.Cache" title="nautilus_trader.cache.cache.Cache"><em>Cache</em></a>) – The cache for the client.</p></li>
 <li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the client.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the client.</p></li>
@@ -248,23 +249,6 @@ trading operations.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.apply_account_state">
-<span class="sig-name descname"><span class="pre">apply_account_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">AccountState</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.apply_account_state" title="Permalink to this definition">¶</a></dt>
-<dd><p>Apply the given account state.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.events.account.AccountState" title="nautilus_trader.model.events.account.AccountState"><em>AccountState</em></a>) – The account state to apply.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If event.account_id does not equal self.account_id.</p></li>
-<li><p><strong>ValueError</strong> – If event.account_type does not equal self.account_type.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.base_currency">
 <span class="sig-name descname"><span class="pre">base_currency</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.base_currency" title="Permalink to this definition">¶</a></dt>
@@ -276,42 +260,10 @@ trading operations.</p>
 </dl>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.calculate_account_state">
-<span class="sig-name descname"><span class="pre">calculate_account_state</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.calculate_account_state" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the account state is calculated.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>bool</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.cancel_order">
 <span class="sig-name descname"><span class="pre">cancel_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">CancelOrder</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.cancel_order" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.create_account">
-<span class="sig-name descname"><span class="pre">create_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">AccountState</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Account</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.create_account" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a new account from the given account state event.</p>
-<p>Override for custom accounts.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.events.account.AccountState" title="nautilus_trader.model.events.account.AccountState"><em>AccountState</em></a>) – The genesis account state event.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Account</em></p>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ValueError</strong> – If event.account_id is not equal to self.account_id.</p></li>
-<li><p><strong>ValueError</strong> – If event.account_type is not equal to self.account_type.</p></li>
-</ul>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -771,7 +723,7 @@ trading commands and events.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.message_bus.MessageBus" title="nautilus_trader.msgbus.message_bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the engine.</p></li>
+<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the engine.</p></li>
 <li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.cache.Cache" title="nautilus_trader.cache.cache.Cache"><em>Cache</em></a>) – The cache for the engine.</p></li>
 <li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the engine.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the engine.</p></li>
