@@ -1717,7 +1717,7 @@ position ID resolution.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>report</strong> (<a class="reference internal" href="execution.html#nautilus_trader.execution.messages.OrderStatusReport" title="nautilus_trader.execution.messages.OrderStatusReport"><em>OrderStatusReport</em></a>) – The order state report for reconciliation.</p></li>
+<li><p><strong>report</strong> (<a class="reference internal" href="execution.html#nautilus_trader.execution.messages.OrderStatusReport" title="nautilus_trader.execution.messages.OrderStatusReport"><em>OrderStatusReport</em></a>) – The order status report for reconciliation.</p></li>
 <li><p><strong>order</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a><em>, </em><em>optional</em>) – The order for reconciliation. If not supplied then will try to be
 fetched from cache.</p></li>
 <li><p><strong>exec_reports</strong> (<em>list</em><em>[</em><a class="reference internal" href="execution.html#nautilus_trader.execution.messages.ExecutionReport" title="nautilus_trader.execution.messages.ExecutionReport"><em>ExecutionReport</em></a><em>]</em>) – The list of execution reports relating to the order.</p></li>
@@ -2146,7 +2146,7 @@ running on.</p>
 <dd><p>Reconcile the execution engines state with all execution clients.</p>
 <p>The execution engine will collect all cached active orders and send
 those to the relevant execution client(s) for a comparison with the
-exchange(s) order states.</p>
+exchange(s) order status.</p>
 <p>If a cached order does not match the exchanges order status then
 the missing events will be generated. If there is not enough information
 to reconcile a state then errors will be logged.</p>

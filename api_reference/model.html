@@ -8520,7 +8520,7 @@ be executed.</p>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If self.client_order_id is not equal to event.client_order_id.</p></li>
 <li><p><strong>ValueError</strong> – If self.venue_order_id and event.venue_order_id are both not None, and are not equal.</p></li>
-<li><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If event is not a valid trigger from the current order.state.</p></li>
+<li><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If event is not a valid trigger from the current order.status.</p></li>
 <li><p><strong>KeyError</strong> – If event is OrderFilled and event.execution_id already applied to the order.</p></li>
 </ul>
 </dd>
@@ -8617,6 +8617,17 @@ be executed.</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><p><strong>ValueError</strong> – If side is FLAT or invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.info">
+<span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a summary description of the order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>str</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -8727,7 +8738,7 @@ The possible states of completed orders include:
 <dd><p>If the order is pending cancel.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order.state == OrderState.PENDING_CANCEL, else False.</p>
+<dd class="field-odd"><p><em>bool</em> – True if order.status == OrderStatus.PENDING_CANCEL, else False.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -8738,7 +8749,7 @@ The possible states of completed orders include:
 <dd><p>If the order is pending update.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order.state == OrderState.PENDING_UPDATE, else False.</p>
+<dd class="field-odd"><p><em>bool</em> – True if order.status == OrderStatus.PENDING_UPDATE, else False.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -8844,12 +8855,12 @@ The possible states of completed orders include:
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.state">
-<span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.state" title="Permalink to this definition">¶</a></dt>
-<dd><p>The orders current state.</p>
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.status">
+<span class="sig-name descname"><span class="pre">status</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>The orders current status.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>OrderState</em></p>
+<dd class="field-odd"><p><em>OrderStatus</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9034,7 +9045,7 @@ market.</p>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If self.client_order_id is not equal to event.client_order_id.</p></li>
 <li><p><strong>ValueError</strong> – If self.venue_order_id and event.venue_order_id are both not None, and are not equal.</p></li>
-<li><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If event is not a valid trigger from the current order.state.</p></li>
+<li><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If event is not a valid trigger from the current order.status.</p></li>
 <li><p><strong>KeyError</strong> – If event is OrderFilled and event.execution_id already applied to the order.</p></li>
 </ul>
 </dd>
@@ -9157,6 +9168,17 @@ market.</p>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.info">
+<span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a summary description of the order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>str</em></p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.init_event">
 <span class="sig-name descname"><span class="pre">init_event</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.init_event" title="Permalink to this definition">¶</a></dt>
@@ -9274,7 +9296,7 @@ The possible states of completed orders include:
 <dd><p>If the order is pending cancel.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order.state == OrderState.PENDING_CANCEL, else False.</p>
+<dd class="field-odd"><p><em>bool</em> – True if order.status == OrderStatus.PENDING_CANCEL, else False.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -9285,7 +9307,7 @@ The possible states of completed orders include:
 <dd><p>If the order is pending update.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order.state == OrderState.PENDING_UPDATE, else False.</p>
+<dd class="field-odd"><p><em>bool</em> – True if order.status == OrderStatus.PENDING_UPDATE, else False.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -9435,12 +9457,12 @@ The possible states of completed orders include:
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.state">
-<span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.state" title="Permalink to this definition">¶</a></dt>
-<dd><p>The orders current state.</p>
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.status">
+<span class="sig-name descname"><span class="pre">status</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>The orders current status.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>OrderState</em></p>
+<dd class="field-odd"><p><em>OrderStatus</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9637,7 +9659,7 @@ or help protect a profit on a short sale.</p>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If self.client_order_id is not equal to event.client_order_id.</p></li>
 <li><p><strong>ValueError</strong> – If self.venue_order_id and event.venue_order_id are both not None, and are not equal.</p></li>
-<li><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If event is not a valid trigger from the current order.state.</p></li>
+<li><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If event is not a valid trigger from the current order.status.</p></li>
 <li><p><strong>KeyError</strong> – If event is OrderFilled and event.execution_id already applied to the order.</p></li>
 </ul>
 </dd>
@@ -9760,6 +9782,17 @@ or help protect a profit on a short sale.</p>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.info">
+<span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a summary description of the order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>str</em></p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.init_event">
 <span class="sig-name descname"><span class="pre">init_event</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.init_event" title="Permalink to this definition">¶</a></dt>
@@ -9866,7 +9899,7 @@ The possible states of completed orders include:
 <dd><p>If the order is pending cancel.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order.state == OrderState.PENDING_CANCEL, else False.</p>
+<dd class="field-odd"><p><em>bool</em> – True if order.status == OrderStatus.PENDING_CANCEL, else False.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -9877,7 +9910,7 @@ The possible states of completed orders include:
 <dd><p>If the order is pending update.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order.state == OrderState.PENDING_UPDATE, else False.</p>
+<dd class="field-odd"><p><em>bool</em> – True if order.status == OrderStatus.PENDING_UPDATE, else False.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -10016,12 +10049,12 @@ The possible states of completed orders include:
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.state">
-<span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.state" title="Permalink to this definition">¶</a></dt>
-<dd><p>The orders current state.</p>
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.status">
+<span class="sig-name descname"><span class="pre">status</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>The orders current status.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>OrderState</em></p>
+<dd class="field-odd"><p><em>OrderStatus</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -10224,7 +10257,7 @@ trader could “miss the market” altogether.</p>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If self.client_order_id is not equal to event.client_order_id.</p></li>
 <li><p><strong>ValueError</strong> – If self.venue_order_id and event.venue_order_id are both not None, and are not equal.</p></li>
-<li><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If event is not a valid trigger from the current order.state.</p></li>
+<li><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If event is not a valid trigger from the current order.status.</p></li>
 <li><p><strong>KeyError</strong> – If event is OrderFilled and event.execution_id already applied to the order.</p></li>
 </ul>
 </dd>
@@ -10347,6 +10380,17 @@ trader could “miss the market” altogether.</p>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.info">
+<span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a summary description of the order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>str</em></p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.init_event">
 <span class="sig-name descname"><span class="pre">init_event</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.init_event" title="Permalink to this definition">¶</a></dt>
@@ -10464,7 +10508,7 @@ The possible states of completed orders include:
 <dd><p>If the order is pending cancel.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order.state == OrderState.PENDING_CANCEL, else False.</p>
+<dd class="field-odd"><p><em>bool</em> – True if order.status == OrderStatus.PENDING_CANCEL, else False.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -10475,7 +10519,7 @@ The possible states of completed orders include:
 <dd><p>If the order is pending update.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order.state == OrderState.PENDING_UPDATE, else False.</p>
+<dd class="field-odd"><p><em>bool</em> – True if order.status == OrderStatus.PENDING_UPDATE, else False.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -10636,12 +10680,12 @@ The possible states of completed orders include:
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.state">
-<span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.state" title="Permalink to this definition">¶</a></dt>
-<dd><p>The orders current state.</p>
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.status">
+<span class="sig-name descname"><span class="pre">status</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>The orders current status.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>OrderState</em></p>
+<dd class="field-odd"><p><em>OrderStatus</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -12337,6 +12381,17 @@ currency for inverse instruments.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>PositionId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.model.position.Position.info">
+<span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.model.position.Position.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a summary description of the position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>str</em></p>
 </dd>
 </dl>
 </dd></dl>
