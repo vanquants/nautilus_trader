@@ -96,7 +96,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="accounting.html">Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounting.html">Accounting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backtest.html">Backtest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cache.html">Cache</a></li>
@@ -110,9 +110,11 @@
 <li class="toctree-l1"><a class="reference internal" href="model.html">Model</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Message Bus</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">Message Bus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.msgbus.subscription">Subscription</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="network.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="portfolio.html">Portfolio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="risk.html">Risk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serialization.html">Serialization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trading.html">Trading</a></li>
@@ -212,10 +214,7 @@ For example, “c??p” would match both of the above examples and “coop.”</
 <p>This message bus is not thread-safe and must be called from the same thread
 as the event loop.</p>
 </div>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">MessageBus</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">MessageBus</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -229,8 +228,6 @@ as the event loop.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If name is not None and not a valid string.</p>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.deregister">
 <span class="sig-name descname"><span class="pre">deregister</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">endpoint,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None]</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.deregister" title="Permalink to this definition">¶</a></dt>
@@ -486,6 +483,71 @@ If None then query is for ALL topics.</p>
 <li><p><strong>ValueError</strong> – If topic is not a valid string.</p></li>
 <li><p><strong>ValueError</strong> – If handler is not of type Callable.</p></li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-nautilus_trader.msgbus.subscription">
+<span id="subscription"></span><h2>Subscription<a class="headerlink" href="#module-nautilus_trader.msgbus.subscription" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="nautilus_trader.msgbus.subscription.Subscription">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Subscription</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">topic,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None],</span> <span class="pre">int</span> <span class="pre">priority=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.msgbus.subscription.Subscription" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a subscription to a particular topic.</p>
+<p>This is an internal class intended to be used by the message bus to organize
+topics and their subscribers.</p>
+<p class="rubric">Notes</p>
+<p>The subscription equality is determined by the topic and handler,
+priority is not considered (and could change).</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Subscription</span></code> class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>topic</strong> (<em>str</em>) – The topic for the subscription. May include wildcard characters ‘*’ and ‘?’.</p></li>
+<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="core.html#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><em>Message</em></a><em>]</em><em>, </em><em>None</em><em>]</em>) – The handler for the subscription.</p></li>
+<li><p><strong>priority</strong> (<em>int</em>) – The priority for the subscription.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If topic is not a valid string.</p></li>
+<li><p><strong>ValueError</strong> – If handler is not of type Callable.</p></li>
+<li><p><strong>ValueError</strong> – If priority is negative (&lt; 0).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.msgbus.subscription.Subscription.handler">
+<span class="sig-name descname"><span class="pre">handler</span></span><a class="headerlink" href="#nautilus_trader.msgbus.subscription.Subscription.handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>The handler for the subscription.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>Callable</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.msgbus.subscription.Subscription.priority">
+<span class="sig-name descname"><span class="pre">priority</span></span><a class="headerlink" href="#nautilus_trader.msgbus.subscription.Subscription.priority" title="Permalink to this definition">¶</a></dt>
+<dd><p>The priority for the subscription.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>int</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.msgbus.subscription.Subscription.topic">
+<span class="sig-name descname"><span class="pre">topic</span></span><a class="headerlink" href="#nautilus_trader.msgbus.subscription.Subscription.topic" title="Permalink to this definition">¶</a></dt>
+<dd><p>The topic for the subscription.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>str</cite></p>
 </dd>
 </dl>
 </dd></dl>

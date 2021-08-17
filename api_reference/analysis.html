@@ -42,7 +42,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Backtest" href="backtest.html" />
-    <link rel="prev" title="Analysis" href="accounting.html" /> 
+    <link rel="prev" title="Accounting" href="accounting.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,7 +96,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="accounting.html">Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounting.html">Accounting</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Analysis</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.analysis.performance">Performance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.analysis.reports">Reports</a></li>
@@ -114,6 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="model.html">Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="msgbus.html">Message Bus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="network.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="portfolio.html">Portfolio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="risk.html">Risk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serialization.html">Serialization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trading.html">Trading</a></li>
@@ -195,12 +196,7 @@
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a performance analyzer for tracking and generating performance
 metrics and statistics.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">PerformanceAnalyzer</span></code> class.</p>
-</dd></dl>
-
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">PerformanceAnalyzer</span></code> class.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.add_positions">
 <span class="sig-name descname"><span class="pre">add_positions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">positions</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.add_positions" title="Permalink to this definition">¶</a></dt>
@@ -321,7 +317,7 @@ metrics and statistics.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>account</strong> (<em>Account</em>) – The account for the calculations.</p></li>
+<li><p><strong>account</strong> (<a class="reference internal" href="accounting.html#nautilus_trader.accounting.accounts.base.Account" title="nautilus_trader.accounting.accounts.base.Account"><em>Account</em></a>) – The account for the calculations.</p></li>
 <li><p><strong>positions</strong> (<em>dict</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId"><em>PositionId</em></a><em>, </em><a class="reference internal" href="model.html#nautilus_trader.model.position.Position" title="nautilus_trader.model.position.Position"><em>Position</em></a><em>]</em>) – The positions for the calculations.</p></li>
 </ul>
 </dd>
@@ -685,19 +681,14 @@ formatted for printing in the backtest run footer.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ReportProvider</span></span><a class="headerlink" href="#nautilus_trader.analysis.reports.ReportProvider" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides various trading reports.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.analysis.reports.ReportProvider.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.analysis.reports.ReportProvider.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">ReportProvider</span></code> class.</p>
-</dd></dl>
-
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">ReportProvider</span></code> class.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.analysis.reports.ReportProvider.generate_account_report">
 <span class="sig-name descname"><span class="pre">generate_account_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Account</span> <span class="pre">account</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.analysis.reports.ReportProvider.generate_account_report" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate an account report for the given optional time range.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>account</strong> (<em>Account</em>) – The account for the report.</p>
+<dd class="field-odd"><p><strong>account</strong> (<a class="reference internal" href="accounting.html#nautilus_trader.accounting.accounts.base.Account" title="nautilus_trader.accounting.accounts.base.Account"><em>Account</em></a>) – The account for the report.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>pd.DataFrame</em></p>
@@ -759,7 +750,7 @@ formatted for printing in the backtest run footer.</p>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="backtest.html" class="btn btn-neutral float-right" title="Backtest" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="accounting.html" class="btn btn-neutral float-left" title="Analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="accounting.html" class="btn btn-neutral float-left" title="Accounting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

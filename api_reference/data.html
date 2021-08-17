@@ -96,7 +96,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="accounting.html">Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounting.html">Accounting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backtest.html">Backtest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cache.html">Cache</a></li>
@@ -117,6 +117,7 @@
 <li class="toctree-l1"><a class="reference internal" href="model.html">Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="msgbus.html">Message Bus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="network.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="portfolio.html">Portfolio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="risk.html">Risk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serialization.html">Serialization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trading.html">Trading</a></li>
@@ -203,10 +204,7 @@ trading operations.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BarAggregator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument,</span> <span class="pre">BarType</span> <span class="pre">bar_type,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Bar],</span> <span class="pre">None],</span> <span class="pre">Logger</span> <span class="pre">logger,</span> <span class="pre">bool</span> <span class="pre">use_previous_close</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.BarAggregator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a means of aggregating specified bars and sending to a registered handler.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.data.aggregation.BarAggregator.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.BarAggregator.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BarAggregator</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BarAggregator</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -221,8 +219,6 @@ trading operations.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If instrument.id != bar_type.instrument_id.</p>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.data.aggregation.BarAggregator.bar_type">
 <span class="sig-name descname"><span class="pre">bar_type</span></span><a class="headerlink" href="#nautilus_trader.data.aggregation.BarAggregator.bar_type" title="Permalink to this definition">¶</a></dt>
@@ -263,10 +259,7 @@ trading operations.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BarBuilder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em>, <em class="sig-param"><span class="pre">BarType</span> <span class="pre">bar_type</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">use_previous_close=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.BarBuilder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a generic bar builder for aggregation.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.data.aggregation.BarBuilder.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.BarBuilder.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BarBuilder</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BarBuilder</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -279,8 +272,6 @@ trading operations.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If instrument.id != bar_type.instrument_id.</p>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.data.aggregation.BarBuilder.build">
 <span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Bar</span></span></span><a class="headerlink" href="#nautilus_trader.data.aggregation.BarBuilder.build" title="Permalink to this definition">¶</a></dt>
@@ -413,10 +404,7 @@ trading operations.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BulkTickBarBuilder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument,</span> <span class="pre">BarType</span> <span class="pre">bar_type,</span> <span class="pre">Logger</span> <span class="pre">logger,</span> <span class="pre">callback:</span> <span class="pre">Callable[[Bar],</span> <span class="pre">None]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.BulkTickBarBuilder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a temporary builder for tick bars from a bulk tick order.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.data.aggregation.BulkTickBarBuilder.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.BulkTickBarBuilder.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BulkTickBarBuilder</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BulkTickBarBuilder</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -433,8 +421,6 @@ trading operations.</p>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.data.aggregation.BulkTickBarBuilder.receive">
 <span class="sig-name descname"><span class="pre">receive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">ticks</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.BulkTickBarBuilder.receive" title="Permalink to this definition">¶</a></dt>
@@ -454,17 +440,12 @@ trading operations.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BulkTimeBarUpdater</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TimeBarAggregator</span> <span class="pre">aggregator</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.BulkTimeBarUpdater" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a temporary updater for time bars from a bulk tick order.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.data.aggregation.BulkTimeBarUpdater.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.BulkTimeBarUpdater.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BulkTimeBarUpdater</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BulkTimeBarUpdater</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>aggregator</strong> (<a class="reference internal" href="#nautilus_trader.data.aggregation.TimeBarAggregator" title="nautilus_trader.data.aggregation.TimeBarAggregator"><em>TimeBarAggregator</em></a>) – The time bar aggregator to update.</p>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.data.aggregation.BulkTimeBarUpdater.receive">
 <span class="sig-name descname"><span class="pre">receive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">ticks</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.BulkTimeBarUpdater.receive" title="Permalink to this definition">¶</a></dt>
@@ -485,10 +466,7 @@ trading operations.</p>
 <p>Provides a means of building tick bars from ticks.</p>
 <p>When received tick count reaches the step threshold of the bar
 specification, then a bar is created and sent to the handler.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.data.aggregation.TickBarAggregator.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.TickBarAggregator.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">TickBarAggregator</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">TickBarAggregator</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -502,8 +480,6 @@ specification, then a bar is created and sent to the handler.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If instrument.id != bar_type.instrument_id.</p>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.data.aggregation.TickBarAggregator.bar_type">
 <span class="sig-name descname"><span class="pre">bar_type</span></span><a class="headerlink" href="#nautilus_trader.data.aggregation.TickBarAggregator.bar_type" title="Permalink to this definition">¶</a></dt>
@@ -546,10 +522,7 @@ specification, then a bar is created and sent to the handler.</p>
 <p>Provides a means of building time bars from ticks with an internal timer.</p>
 <p>When the time reaches the next time interval of the bar specification, then
 a bar is created and sent to the handler.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.data.aggregation.TimeBarAggregator.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.TimeBarAggregator.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">TimeBarAggregator</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">TimeBarAggregator</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -565,8 +538,6 @@ a bar is created and sent to the handler.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If instrument.id != bar_type.instrument_id.</p>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.data.aggregation.TimeBarAggregator.bar_type">
 <span class="sig-name descname"><span class="pre">bar_type</span></span><a class="headerlink" href="#nautilus_trader.data.aggregation.TimeBarAggregator.bar_type" title="Permalink to this definition">¶</a></dt>
@@ -671,10 +642,7 @@ a bar is created and sent to the handler.</p>
 <p>Provides a means of building value bars from ticks.</p>
 <p>When received value reaches the step threshold of the bar
 specification, then a bar is created and sent to the handler.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.data.aggregation.ValueBarAggregator.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.ValueBarAggregator.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">TickBarAggregator</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">TickBarAggregator</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -688,8 +656,6 @@ specification, then a bar is created and sent to the handler.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If instrument.id != bar_type.instrument_id.</p>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.data.aggregation.ValueBarAggregator.bar_type">
 <span class="sig-name descname"><span class="pre">bar_type</span></span><a class="headerlink" href="#nautilus_trader.data.aggregation.ValueBarAggregator.bar_type" title="Permalink to this definition">¶</a></dt>
@@ -743,10 +709,7 @@ specification, then a bar is created and sent to the handler.</p>
 <p>Provides a means of building volume bars from ticks.</p>
 <p>When received volume reaches the step threshold of the bar
 specification, then a bar is created and sent to the handler.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.data.aggregation.VolumeBarAggregator.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.aggregation.VolumeBarAggregator.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">TickBarAggregator</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">TickBarAggregator</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -760,8 +723,6 @@ specification, then a bar is created and sent to the handler.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If instrument.id != bar_type.instrument_id.</p>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.data.aggregation.VolumeBarAggregator.bar_type">
 <span class="sig-name descname"><span class="pre">bar_type</span></span><a class="headerlink" href="#nautilus_trader.data.aggregation.VolumeBarAggregator.bar_type" title="Permalink to this definition">¶</a></dt>
@@ -809,10 +770,7 @@ could also be possible to write clients for specialized data publishers.</p>
 <dd><p>Bases: <a class="reference internal" href="common.html#nautilus_trader.common.component.Component" title="nautilus_trader.common.component.Component"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.component.Component</span></code></a></p>
 <p>The abstract base class for all data clients.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.data.client.DataClient.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.client.DataClient.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">DataClient</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">DataClient</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -824,8 +782,6 @@ could also be possible to write clients for specialized data publishers.</p>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.data.client.DataClient.dispose">
 <span class="sig-name descname"><span class="pre">dispose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.data.client.DataClient.dispose" title="Permalink to this definition">¶</a></dt>
@@ -990,10 +946,7 @@ called after disposal.</p>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.data.client.DataClient" title="nautilus_trader.data.client.DataClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.data.client.DataClient</span></code></a></p>
 <p>The abstract base class for all market data clients.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.data.client.MarketDataClient.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.client.MarketDataClient.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">MarketDataClient</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">MarketDataClient</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1006,8 +959,6 @@ called after disposal.</p>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.data.client.MarketDataClient.dispose">
 <span class="sig-name descname"><span class="pre">dispose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.data.client.MarketDataClient.dispose" title="Permalink to this definition">¶</a></dt>
@@ -1422,10 +1373,7 @@ just need to override the <cite>execute</cite>, <cite>process</cite>, <cite>send
 <dd><p>Bases: <a class="reference internal" href="common.html#nautilus_trader.common.component.Component" title="nautilus_trader.common.component.Component"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.component.Component</span></code></a></p>
 <p>Provides a high-performance data engine for managing many <cite>DataClient</cite>
 instances, for the asynchronous ingest of data.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.data.engine.DataEngine.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.engine.DataEngine.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">DataEngine</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">DataEngine</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1437,8 +1385,6 @@ instances, for the asynchronous ingest of data.</p>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.data.engine.DataEngine.check_connected">
 <span class="sig-name descname"><span class="pre">check_connected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.data.engine.DataEngine.check_connected" title="Permalink to this definition">¶</a></dt>
@@ -1811,10 +1757,7 @@ called after disposal.</p>
 <dd><p>Bases: <a class="reference internal" href="core.html#nautilus_trader.core.message.Command" title="nautilus_trader.core.message.Command"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Command</span></code></a></p>
 <p>The abstract base class for all data commands.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.data.messages.DataCommand.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.messages.DataCommand.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initializes a new instance of the <cite>DataCommand`</cite> class.</p>
+<p>Initializes a new instance of the <cite>DataCommand`</cite> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1825,8 +1768,6 @@ called after disposal.</p>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.data.messages.DataCommand.category">
 <span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.data.messages.DataCommand.category" title="Permalink to this definition">¶</a></dt>
@@ -1889,10 +1830,7 @@ called after disposal.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">DataRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id,</span> <span class="pre">DataType</span> <span class="pre">data_type,</span> <span class="pre">callback:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None],</span> <span class="pre">UUID</span> <span class="pre">request_id,</span> <span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.messages.DataRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="core.html#nautilus_trader.core.message.Request" title="nautilus_trader.core.message.Request"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Request</span></code></a></p>
 <p>Represents a request for data.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.data.messages.DataRequest.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.messages.DataRequest.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">DataRequest</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">DataRequest</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1904,8 +1842,6 @@ called after disposal.</p>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.data.messages.DataRequest.callback">
 <span class="sig-name descname"><span class="pre">callback</span></span><a class="headerlink" href="#nautilus_trader.data.messages.DataRequest.callback" title="Permalink to this definition">¶</a></dt>
@@ -1979,10 +1915,7 @@ called after disposal.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">DataResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">data_type</span></em>, <em class="sig-param"><span class="pre">data</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">correlation_id</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">response_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.messages.DataResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="core.html#nautilus_trader.core.message.Response" title="nautilus_trader.core.message.Response"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Response</span></code></a></p>
 <p>Represents a response with data.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.data.messages.DataResponse.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.messages.DataResponse.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">DataResponse</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">DataResponse</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1995,8 +1928,6 @@ called after disposal.</p>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.data.messages.DataResponse.category">
 <span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.data.messages.DataResponse.category" title="Permalink to this definition">¶</a></dt>
@@ -2081,10 +2012,7 @@ called after disposal.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Subscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">data_type</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">command_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.messages.Subscribe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.data.messages.DataCommand" title="nautilus_trader.data.messages.DataCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.data.messages.DataCommand</span></code></a></p>
 <p>Represents a command to subscribe to data.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.data.messages.Subscribe.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.messages.Subscribe.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Subscribe</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Subscribe</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2095,8 +2023,6 @@ called after disposal.</p>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.data.messages.Subscribe.category">
 <span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.data.messages.Subscribe.category" title="Permalink to this definition">¶</a></dt>
@@ -2159,10 +2085,7 @@ called after disposal.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Unsubscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">data_type</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">command_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.messages.Unsubscribe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.data.messages.DataCommand" title="nautilus_trader.data.messages.DataCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.data.messages.DataCommand</span></code></a></p>
 <p>Represents a command to unsubscribe from data.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.data.messages.Unsubscribe.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.messages.Unsubscribe.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Unsubscribe</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Unsubscribe</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2173,8 +2096,6 @@ called after disposal.</p>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.data.messages.Unsubscribe.category">
 <span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.data.messages.Unsubscribe.category" title="Permalink to this definition">¶</a></dt>
@@ -2241,10 +2162,7 @@ called after disposal.</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a means of building lists of bars from a given Pandas DataFrame of
 the correct specification.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.data.wrangling.BarDataWrangler.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.wrangling.BarDataWrangler.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BarDataWrangler</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BarDataWrangler</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2262,8 +2180,6 @@ the correct specification.</p>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.data.wrangling.BarDataWrangler.build_bars_all">
 <span class="sig-name descname"><span class="pre">build_bars_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.wrangling.BarDataWrangler.build_bars_all" title="Permalink to this definition">¶</a></dt>
@@ -2305,10 +2221,7 @@ the correct specification.</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a means of building lists of ticks from the given Pandas DataFrames
 of bid and ask data. Provided data can either be tick data or bar data.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.data.wrangling.QuoteTickDataWrangler.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.wrangling.QuoteTickDataWrangler.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">QuoteTickDataWrangler</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">QuoteTickDataWrangler</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2327,8 +2240,6 @@ of bid and ask data. Provided data can either be tick data or bar data.</p>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.data.wrangling.QuoteTickDataWrangler.build_ticks">
 <span class="sig-name descname"><span class="pre">build_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.wrangling.QuoteTickDataWrangler.build_ticks" title="Permalink to this definition">¶</a></dt>
@@ -2364,10 +2275,7 @@ data. If random_seed is None then won’t shuffle.</p></li>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a means of building lists of trade ticks from the given DataFrame
 of data.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.data.wrangling.TradeTickDataWrangler.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.wrangling.TradeTickDataWrangler.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">TradeTickDataWrangler</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">TradeTickDataWrangler</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2379,8 +2287,6 @@ of data.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If processed_data not type None or DataFrame.</p>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.data.wrangling.TradeTickDataWrangler.build_ticks">
 <span class="sig-name descname"><span class="pre">build_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.wrangling.TradeTickDataWrangler.build_ticks" title="Permalink to this definition">¶</a></dt>

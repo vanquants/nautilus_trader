@@ -96,7 +96,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="accounting.html">Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounting.html">Accounting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backtest.html">Backtest</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Cache</a><ul>
@@ -115,6 +115,7 @@
 <li class="toctree-l1"><a class="reference internal" href="model.html">Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="msgbus.html">Message Bus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="network.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="portfolio.html">Portfolio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="risk.html">Risk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serialization.html">Serialization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trading.html">Trading</a></li>
@@ -195,11 +196,6 @@
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CacheFacade</span></span><a class="headerlink" href="#nautilus_trader.cache.base.CacheFacade" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a read-only facade for the common <cite>Cache</cite>.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.cache.base.CacheFacade.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.cache.base.CacheFacade.__init__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.cache.base.CacheFacade.account">
 <span class="sig-name descname"><span class="pre">account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">AccountId</span> <span class="pre">account_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Account</span></span></span><a class="headerlink" href="#nautilus_trader.cache.base.CacheFacade.account" title="Permalink to this definition">¶</a></dt>
@@ -564,10 +560,7 @@
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Cache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">CacheDatabase</span> <span class="pre">database</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">config=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.cache.cache.Cache" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.cache.base.CacheFacade" title="nautilus_trader.cache.base.CacheFacade"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.cache.base.CacheFacade</span></code></a></p>
 <p>Provides a common object cache for market and execution related data.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.cache.cache.Cache.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.cache.cache.Cache.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Cache</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Cache</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -583,8 +576,6 @@
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.cache.cache.Cache.account">
 <span class="sig-name descname"><span class="pre">account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">AccountId</span> <span class="pre">account_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Account</span></span></span><a class="headerlink" href="#nautilus_trader.cache.cache.Cache.account" title="Permalink to this definition">¶</a></dt>
@@ -644,7 +635,7 @@
 <dd><p>Add the given account to the cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>account</strong> (<em>Account</em>) – The account to add.</p>
+<dd class="field-odd"><p><strong>account</strong> (<a class="reference internal" href="accounting.html#nautilus_trader.accounting.accounts.base.Account" title="nautilus_trader.accounting.accounts.base.Account"><em>Account</em></a>) – The account to add.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><p><strong>ValueError</strong> – If account_id is already contained in the cache.</p>
@@ -1954,17 +1945,12 @@ ID (if found).</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The abstract base class for all cache databases.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.cache.database.CacheDatabase.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.cache.database.CacheDatabase.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">CacheDatabase</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">CacheDatabase</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the database.</p>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.cache.database.CacheDatabase.add_account">
 <span class="sig-name descname"><span class="pre">add_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Account</span> <span class="pre">account</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.cache.database.CacheDatabase.add_account" title="Permalink to this definition">¶</a></dt>

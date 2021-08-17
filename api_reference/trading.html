@@ -95,7 +95,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="accounting.html">Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounting.html">Accounting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backtest.html">Backtest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cache.html">Cache</a></li>
@@ -109,12 +109,11 @@
 <li class="toctree-l1"><a class="reference internal" href="model.html">Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="msgbus.html">Message Bus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="network.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="portfolio.html">Portfolio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="risk.html">Risk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serialization.html">Serialization</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Trading</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#calculators">Calculators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.trading.filters">Filters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#portfolio">Portfolio</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.trading.strategy">Strategy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.trading.trader">Trader</a></li>
 </ul>
@@ -192,9 +191,6 @@
 <p>This is a top-level package where the majority of users will interface with the
 framework. Custom trading strategies can be implemented by inheriting from the
 <cite>TradingStrategy</cite> base class.</p>
-<div class="section" id="calculators">
-<h2>Calculators<a class="headerlink" href="#calculators" title="Permalink to this headline">¶</a></h2>
-</div>
 <div class="section" id="module-nautilus_trader.trading.filters">
 <span id="filters"></span><h2>Filters<a class="headerlink" href="#module-nautilus_trader.trading.filters" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
@@ -202,10 +198,7 @@ framework. Custom trading strategies can be implemented by inheriting from the
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">EconomicNewsEventFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">list</span> <span class="pre">currencies</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">impacts</span></em>, <em class="sig-param"><span class="pre">news_data:</span> <span class="pre">pd.DataFrame</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.filters.EconomicNewsEventFilter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides methods to help filter trading strategy rules based on economic news events.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.trading.filters.EconomicNewsEventFilter.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.filters.EconomicNewsEventFilter.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">EconomicNewsEventFilter</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">EconomicNewsEventFilter</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -215,8 +208,6 @@ framework. Custom trading strategies can be implemented by inheriting from the
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.trading.filters.EconomicNewsEventFilter.currencies">
 <span class="sig-name descname"><span class="pre">currencies</span></span><a class="headerlink" href="#nautilus_trader.trading.filters.EconomicNewsEventFilter.currencies" title="Permalink to this definition">¶</a></dt>
@@ -319,11 +310,6 @@ Will return None if no news events match the filter conditions.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ForexSessionFilter</span></span><a class="headerlink" href="#nautilus_trader.trading.filters.ForexSessionFilter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides methods to help filter trading strategy rules dependent on Forex session times.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.trading.filters.ForexSessionFilter.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.filters.ForexSessionFilter.__init__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.trading.filters.ForexSessionFilter.local_from_utc">
 <span class="sig-name descname"><span class="pre">local_from_utc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">session:</span> <span class="pre">ForexSession</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">time_now</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">datetime</span></span></span><a class="headerlink" href="#nautilus_trader.trading.filters.ForexSessionFilter.local_from_utc" title="Permalink to this definition">¶</a></dt>
@@ -451,10 +437,7 @@ Will return None if no news events match the filter conditions.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">NewsEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">impact:</span> <span class="pre">NewsImpact</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">name</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">currency</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.filters.NewsEvent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.data.base.Data</span></code></p>
 <p>Represents an economic news event.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.trading.filters.NewsEvent.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.filters.NewsEvent.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>impact</strong> (<a class="reference internal" href="#nautilus_trader.trading.filters.NewsImpact" title="nautilus_trader.trading.filters.NewsImpact"><em>NewsImpact</em></a>) – The expected impact for the economic news event.</p></li>
@@ -465,8 +448,6 @@ Will return None if no news events match the filter conditions.</p>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.trading.filters.NewsEvent.currency">
 <span class="sig-name descname"><span class="pre">currency</span></span><a class="headerlink" href="#nautilus_trader.trading.filters.NewsEvent.currency" title="Permalink to this definition">¶</a></dt>
@@ -532,9 +513,6 @@ Will return None if no news events match the filter conditions.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="portfolio">
-<h2>Portfolio<a class="headerlink" href="#portfolio" title="Permalink to this headline">¶</a></h2>
-</div>
 <div class="section" id="module-nautilus_trader.trading.strategy">
 <span id="strategy"></span><h2>Strategy<a class="headerlink" href="#module-nautilus_trader.trading.strategy" title="Permalink to this headline">¶</a></h2>
 <p>The <cite>TradingStrategy</cite> class allows traders to implement their own customized trading strategies.</p>
@@ -553,17 +531,12 @@ attempts to operate without a managing <cite>Trader</cite> instance.</p>
 An individual trading strategy can configure its own order management system
 type which determines how positions are handled by the <cite>ExecutionEngine</cite>.</p>
 <ul class="simple">
-<li><p>OMSType.HEDGING: A position ID will be assigned for each new position</p></li>
+<li><p>OMSType.HEDGING: A position ID will be assigned for each new position
+which is opened per instrument.</p></li>
+<li><p>OMSType.NETTING: There will only ever be a single position for the strategy
+per instrument. The position ID will be <cite>{instrument_id}-{strategy_id}</cite>.</p></li>
 </ul>
-<p>which is opened - per instrument.</p>
-<ul class="simple">
-<li><p>OMSType.NETTING: There will only ever be a single position for the strategy</p></li>
-</ul>
-<p>per instrument. The position ID will be <cite>{instrument_id}-{strategy_id}</cite>.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">TradingStrategy</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">TradingStrategy</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -577,8 +550,6 @@ how the <cite>ExecutionEngine</cite> handles position IDs (see docs).</p></li>
 <dd class="field-even"><p><strong>ValueError</strong> – If order_id_tag is not a valid string.</p>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.cache">
 <span class="sig-name descname"><span class="pre">cache</span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.cache" title="Permalink to this definition">¶</a></dt>
@@ -979,7 +950,7 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.oms_type">
 <span class="sig-name descname"><span class="pre">oms_type</span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.oms_type" title="Permalink to this definition">¶</a></dt>
-<dd><p>The order management system type for the strategy.</p>
+<dd><p>The order management system for the strategy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>OMSType</cite></p>
@@ -1282,7 +1253,7 @@ paused, and also when it is done for day.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>trader_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId"><em>TraderId</em></a>) – The trader ID for the strategy.</p></li>
-<li><p><strong>portfolio</strong> (<em>PortfolioFacade</em>) – The read-only portfolio for the strategy.</p></li>
+<li><p><strong>portfolio</strong> (<a class="reference internal" href="portfolio.html#nautilus_trader.portfolio.base.PortfolioFacade" title="nautilus_trader.portfolio.base.PortfolioFacade"><em>PortfolioFacade</em></a>) – The read-only portfolio for the strategy.</p></li>
 <li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the strategy.</p></li>
 <li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.base.CacheFacade" title="nautilus_trader.cache.base.CacheFacade"><em>CacheFacade</em></a>) – The read-only cache for the strategy.</p></li>
 <li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the strategy.</p></li>
@@ -1896,17 +1867,14 @@ a running instance of the platform.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Trader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></em>, <em class="sig-param"><span class="pre">Cache</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">Portfolio</span> <span class="pre">portfolio</span></em>, <em class="sig-param"><span class="pre">DataEngine</span> <span class="pre">data_engine</span></em>, <em class="sig-param"><span class="pre">RiskEngine</span> <span class="pre">risk_engine</span></em>, <em class="sig-param"><span class="pre">ExecutionEngine</span> <span class="pre">exec_engine</span></em>, <em class="sig-param"><span class="pre">Clock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="common.html#nautilus_trader.common.component.Component" title="nautilus_trader.common.component.Component"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.component.Component</span></code></a></p>
 <p>Provides a trader for managing a portfolio of trading strategies.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Trader</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Trader</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>trader_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId"><em>TraderId</em></a>) – The ID for the trader.</p></li>
 <li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the trader.</p></li>
 <li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.cache.Cache" title="nautilus_trader.cache.cache.Cache"><em>Cache</em></a>) – The cache for the trader.</p></li>
-<li><p><strong>portfolio</strong> (<em>Portfolio</em>) – The portfolio for the trader.</p></li>
+<li><p><strong>portfolio</strong> (<a class="reference internal" href="portfolio.html#nautilus_trader.portfolio.portfolio.Portfolio" title="nautilus_trader.portfolio.portfolio.Portfolio"><em>Portfolio</em></a>) – The portfolio for the trader.</p></li>
 <li><p><strong>data_engine</strong> (<a class="reference internal" href="data.html#nautilus_trader.data.engine.DataEngine" title="nautilus_trader.data.engine.DataEngine"><em>DataEngine</em></a>) – The data engine for the trader.</p></li>
 <li><p><strong>risk_engine</strong> (<a class="reference internal" href="risk.html#nautilus_trader.risk.engine.RiskEngine" title="nautilus_trader.risk.engine.RiskEngine"><em>RiskEngine</em></a>) – The risk engine for the trader.</p></li>
 <li><p><strong>exec_engine</strong> (<a class="reference internal" href="execution.html#nautilus_trader.execution.engine.ExecutionEngine" title="nautilus_trader.execution.engine.ExecutionEngine"><em>ExecutionEngine</em></a>) – The execution engine for the trader.</p></li>
@@ -1923,8 +1891,6 @@ a running instance of the platform.</p>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.add_component">
 <span class="sig-name descname"><span class="pre">add_component</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Actor</span> <span class="pre">component</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.add_component" title="Permalink to this definition">¶</a></dt>
@@ -1951,10 +1917,7 @@ a running instance of the platform.</p>
 <dd class="field-odd"><p><strong>components</strong> (<em>list</em><em>[</em><em>TradingStrategies</em><em>]</em>) – The custom components to add and register.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If components is None or empty.</p></li>
-<li><p><strong>TypeError</strong> – If components contains a type other than Actor.</p></li>
-</ul>
+<dd class="field-even"><p><strong>ValueError</strong> – If components is None or empty.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1968,10 +1931,7 @@ a running instance of the platform.</p>
 <dd class="field-odd"><p><strong>strategies</strong> (<em>list</em><em>[</em><em>TradingStrategies</em><em>]</em>) – The trading strategies to add and register.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If strategies is None or empty.</p></li>
-<li><p><strong>TypeError</strong> – If strategies contains a type other than TradingStrategy.</p></li>
-</ul>
+<dd class="field-even"><p><strong>ValueError</strong> – If strategies is None or empty.</p>
 </dd>
 </dl>
 </dd></dl>

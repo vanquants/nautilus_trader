@@ -96,7 +96,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="accounting.html">Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounting.html">Accounting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backtest.html">Backtest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cache.html">Cache</a></li>
@@ -119,6 +119,7 @@
 <li class="toctree-l1"><a class="reference internal" href="model.html">Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="msgbus.html">Message Bus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="network.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="portfolio.html">Portfolio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="risk.html">Risk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serialization.html">Serialization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trading.html">Trading</a></li>
@@ -200,10 +201,7 @@
 <dd><p>Bases: <a class="reference internal" href="data.html#nautilus_trader.data.client.DataClient" title="nautilus_trader.data.client.DataClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.data.client.DataClient</span></code></a></p>
 <p>The abstract base class for all live data clients.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveDataClient.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveDataClient.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LiveDataClient</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LiveDataClient</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -217,8 +215,6 @@
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveDataClient.dispose">
 <span class="sig-name descname"><span class="pre">dispose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveDataClient.dispose" title="Permalink to this definition">¶</a></dt>
@@ -383,11 +379,6 @@ called after disposal.</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a factory for creating <cite>LiveDataClient</cite> instances.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveDataClientFactory.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveDataClientFactory.__init__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveDataClientFactory.create">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">name</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">config</span></em>, <em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></em>, <em class="sig-param"><span class="pre">Cache</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">LiveClock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">LiveLogger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">client_cls=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveDataClientFactory.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a new data client from the given parameters.</p>
@@ -418,10 +409,7 @@ testing dependency injection.</p></li>
 <dd><p>Bases: <a class="reference internal" href="data.html#nautilus_trader.data.client.MarketDataClient" title="nautilus_trader.data.client.MarketDataClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.data.client.MarketDataClient</span></code></a></p>
 <p>The abstract base class for all live data clients.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LiveMarketDataClient</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LiveMarketDataClient</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -435,8 +423,6 @@ testing dependency injection.</p></li>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.dispose">
 <span class="sig-name descname"><span class="pre">dispose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.dispose" title="Permalink to this definition">¶</a></dt>
@@ -840,10 +826,7 @@ called after disposal.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LiveDataEngine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">loop:</span> <span class="pre">asyncio.AbstractEventLoop</span></em>, <em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></em>, <em class="sig-param"><span class="pre">Cache</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">LiveClock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">config=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.data_engine.LiveDataEngine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="data.html#nautilus_trader.data.engine.DataEngine" title="nautilus_trader.data.engine.DataEngine"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.data.engine.DataEngine</span></code></a></p>
 <p>Provides a high-performance asynchronous live data engine.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.live.data_engine.LiveDataEngine.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.data_engine.LiveDataEngine.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LiveDataEngine</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LiveDataEngine</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -856,8 +839,6 @@ called after disposal.</p>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_engine.LiveDataEngine.check_connected">
 <span class="sig-name descname"><span class="pre">check_connected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.live.data_engine.LiveDataEngine.check_connected" title="Permalink to this definition">¶</a></dt>
@@ -1308,10 +1289,7 @@ running on.</p>
 <dd><p>Bases: <a class="reference internal" href="execution.html#nautilus_trader.execution.client.ExecutionClient" title="nautilus_trader.execution.client.ExecutionClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.execution.client.ExecutionClient</span></code></a></p>
 <p>The abstract base class for all live execution clients.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LiveExecutionClient</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LiveExecutionClient</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1330,8 +1308,6 @@ running on.</p>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.account_id">
 <span class="sig-name descname"><span class="pre">account_id</span></span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.account_id" title="Permalink to this definition">¶</a></dt>
@@ -1859,11 +1835,6 @@ fetched from cache.</p></li>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a factory for creating <cite>LiveDataClient</cite> instances.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClientFactory.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClientFactory.__init__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClientFactory.create">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">name</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">config</span></em>, <em class="sig-param"><span class="pre">LiveExecutionEngine</span> <span class="pre">engine</span></em>, <em class="sig-param"><span class="pre">Cache</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">LiveClock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">LiveLogger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">client_cls=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClientFactory.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a new execution client from the given parameters.</p>
@@ -1896,10 +1867,7 @@ testing dependency injection.</p></li>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LiveExecutionEngine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">loop:</span> <span class="pre">asyncio.AbstractEventLoop</span></em>, <em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></em>, <em class="sig-param"><span class="pre">Cache</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">LiveClock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">config=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.execution_engine.LiveExecutionEngine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="execution.html#nautilus_trader.execution.engine.ExecutionEngine" title="nautilus_trader.execution.engine.ExecutionEngine"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.execution.engine.ExecutionEngine</span></code></a></p>
 <p>Provides a high-performance asynchronous live execution engine.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.live.execution_engine.LiveExecutionEngine.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.execution_engine.LiveExecutionEngine.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LiveExecutionEngine</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LiveExecutionEngine</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1912,8 +1880,6 @@ testing dependency injection.</p></li>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_engine.LiveExecutionEngine.check_connected">
 <span class="sig-name descname"><span class="pre">check_connected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.live.execution_engine.LiveExecutionEngine.check_connected" title="Permalink to this definition">¶</a></dt>
@@ -2316,15 +2282,12 @@ overwritten.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LiveRiskEngine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">loop:</span> <span class="pre">asyncio.AbstractEventLoop</span></em>, <em class="sig-param"><span class="pre">PortfolioFacade</span> <span class="pre">portfolio</span></em>, <em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></em>, <em class="sig-param"><span class="pre">CacheFacade</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">LiveClock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">config=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.risk_engine.LiveRiskEngine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="risk.html#nautilus_trader.risk.engine.RiskEngine" title="nautilus_trader.risk.engine.RiskEngine"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.risk.engine.RiskEngine</span></code></a></p>
 <p>Provides a high-performance asynchronous live risk engine.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.live.risk_engine.LiveRiskEngine.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.risk_engine.LiveRiskEngine.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LiveRiskEngine</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LiveRiskEngine</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>loop</strong> (<em>asyncio.AbstractEventLoop</em>) – The event loop for the engine.</p></li>
-<li><p><strong>portfolio</strong> (<em>PortfolioFacade</em>) – The portfolio for the engine.</p></li>
+<li><p><strong>portfolio</strong> (<a class="reference internal" href="portfolio.html#nautilus_trader.portfolio.base.PortfolioFacade" title="nautilus_trader.portfolio.base.PortfolioFacade"><em>PortfolioFacade</em></a>) – The portfolio for the engine.</p></li>
 <li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the engine.</p></li>
 <li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.base.CacheFacade" title="nautilus_trader.cache.base.CacheFacade"><em>CacheFacade</em></a>) – The read-only cache for the engine.</p></li>
 <li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the engine.</p></li>
@@ -2333,8 +2296,6 @@ overwritten.</p>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.risk_engine.LiveRiskEngine.command_count">
 <span class="sig-name descname"><span class="pre">command_count</span></span><a class="headerlink" href="#nautilus_trader.live.risk_engine.LiveRiskEngine.command_count" title="Permalink to this definition">¶</a></dt>
@@ -2646,10 +2607,7 @@ notional check.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TradingNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">object</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.node.TradingNode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides an asynchronous network node for live trading.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.live.node.TradingNode.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">object</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.node.TradingNode.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the TradingNode class.</p>
+<p>Initialize a new instance of the TradingNode class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>config</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>dict</em><em>[</em><em>str</em><em>, </em><em>object</em><em>]</em><em>]</em>) – The configuration for the trading node.</p>
@@ -2658,8 +2616,6 @@ notional check.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If config is None or empty.</p>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py property">
 <dt class="sig sig-object py" id="nautilus_trader.live.node.TradingNode.is_running">
 <em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_running</span></span><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><a class="headerlink" href="#nautilus_trader.live.node.TradingNode.is_running" title="Permalink to this definition">¶</a></dt>
@@ -2795,10 +2751,7 @@ notional check.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TradingNodeBuilder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">loop:</span> <span class="pre">asyncio.AbstractEventLoop</span></em>, <em class="sig-param"><span class="pre">LiveDataEngine</span> <span class="pre">data_engine</span></em>, <em class="sig-param"><span class="pre">LiveExecutionEngine</span> <span class="pre">exec_engine</span></em>, <em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></em>, <em class="sig-param"><span class="pre">Cache</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">LiveClock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">LiveLogger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">LoggerAdapter</span> <span class="pre">log</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.node_builder.TradingNodeBuilder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides building services for a trading node.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.live.node_builder.TradingNodeBuilder.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.node_builder.TradingNodeBuilder.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the TradingNodeBuilder class.</p>
+<p>Initialize a new instance of the TradingNodeBuilder class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2813,8 +2766,6 @@ notional check.</p>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.live.node_builder.TradingNodeBuilder.add_data_client_factory">
 <span class="sig-name descname"><span class="pre">add_data_client_factory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">name</span></em>, <em class="sig-param"><span class="pre">factory</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.live.node_builder.TradingNodeBuilder.add_data_client_factory" title="Permalink to this definition">¶</a></dt>

@@ -96,7 +96,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="accounting.html">Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accounting.html">Accounting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="backtest.html">Backtest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cache.html">Cache</a></li>
@@ -113,6 +113,7 @@
 <li class="toctree-l1"><a class="reference internal" href="model.html">Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="msgbus.html">Message Bus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="network.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="portfolio.html">Portfolio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="risk.html">Risk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serialization.html">Serialization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trading.html">Trading</a></li>
@@ -201,10 +202,7 @@ precision when persisted. If precision to this level is important, then you
 could additionally persist events in another medium/database which can
 properly handle int64 types.</p>
 </div>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.infrastructure.cache.RedisCacheDatabase.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">RedisCacheDatabase</span></code> class.</p>
+<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">RedisCacheDatabase</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -222,15 +220,13 @@ properly handle int64 types.</p>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.infrastructure.cache.RedisCacheDatabase.add_account">
 <span class="sig-name descname"><span class="pre">add_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Account</span> <span class="pre">account</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.add_account" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add the given account to the database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>account</strong> (<em>Account</em>) – The account to add.</p>
+<dd class="field-odd"><p><strong>account</strong> (<a class="reference internal" href="accounting.html#nautilus_trader.accounting.accounts.base.Account" title="nautilus_trader.accounting.accounts.base.Account"><em>Account</em></a>) – The account to add.</p>
 </dd>
 </dl>
 </dd></dl>
