@@ -694,6 +694,17 @@ to the current datetime.</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribe_ticker">
+<span class="sig-name descname"><span class="pre">subscribe_ticker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribe_ticker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscribe to <cite>Ticker</cite> data for the given instrument ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The ticker instrument to subscribe to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribe_trade_ticks">
 <span class="sig-name descname"><span class="pre">subscribe_trade_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribe_trade_ticks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Subscribe to <cite>TradeTick</cite> data for the given instrument ID.</p>
@@ -791,6 +802,17 @@ to the current datetime.</p></li>
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_quote_ticks">
 <span class="sig-name descname"><span class="pre">subscribed_quote_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_quote_ticks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the quote tick instruments subscribed to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>list[InstrumentId]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_tickers">
+<span class="sig-name descname"><span class="pre">subscribed_tickers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_tickers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the ticker instruments subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>list[InstrumentId]</em></p>
@@ -905,6 +927,17 @@ to the current datetime.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument to unsubscribe from.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.unsubscribe_ticker">
+<span class="sig-name descname"><span class="pre">unsubscribe_ticker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.unsubscribe_ticker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsubscribe from <cite>Ticker</cite> data for the given instrument ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The ticker instrument to unsubscribe from.</p>
 </dd>
 </dl>
 </dd></dl>

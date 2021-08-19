@@ -443,6 +443,8 @@
 </li>
       <li><a href="api_reference/trading.html#nautilus_trader.trading.trader.Trader.add_strategy">add_strategy() (Trader method)</a>
 </li>
+      <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.add_ticker">add_ticker() (Cache method)</a>
+</li>
       <li><a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.add_trade">add_trade() (PerformanceAnalyzer method)</a>
 </li>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.add_trade_tick">add_trade_tick() (Cache method)</a>
@@ -2573,6 +2575,12 @@
 </li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.handle_submit_order">handle_submit_order() (SimulatedExchange method)</a>
 </li>
+      <li><a href="api_reference/common.html#nautilus_trader.common.actor.Actor.handle_ticker">handle_ticker() (Actor method)</a>
+
+      <ul>
+        <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.handle_ticker">(TradingStrategy method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/common.html#nautilus_trader.common.actor.Actor.handle_trade_tick">handle_trade_tick() (Actor method)</a>
@@ -2733,6 +2741,12 @@
       </ul></li>
       <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.bus.MessageBus.has_subscribers">has_subscribers() (MessageBus method)</a>
 </li>
+      <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.has_tickers">has_tickers() (Cache method)</a>
+
+      <ul>
+        <li><a href="api_reference/cache.html#nautilus_trader.cache.base.CacheFacade.has_tickers">(CacheFacade method)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.has_trade_ticks">has_trade_ticks() (Cache method)</a>
 
       <ul>
@@ -5431,6 +5445,12 @@
         <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.on_stop">(TradingStrategy method)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/common.html#nautilus_trader.common.actor.Actor.on_ticker">on_ticker() (Actor method)</a>
+
+      <ul>
+        <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.on_ticker">(TradingStrategy method)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/common.html#nautilus_trader.common.actor.Actor.on_trade_tick">on_trade_tick() (Actor method)</a>
 
       <ul>
@@ -6895,8 +6915,6 @@
         <li><a href="api_reference/common.html#nautilus_trader.common.timer.Timer.stop_time_ns">(Timer attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder">StopLimitOrder (class in nautilus_trader.model.orders.stop_limit)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder">StopMarketOrder (class in nautilus_trader.model.orders.stop_market)</a>
@@ -6963,6 +6981,8 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.UpdateOrder.strategy_id">(UpdateOrder attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.strategy_id_for_order">strategy_id_for_order() (Cache method)</a>
 
       <ul>
@@ -7139,6 +7159,18 @@
         <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.subscribe_strategy_data">(TradingStrategy method)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/common.html#nautilus_trader.common.actor.Actor.subscribe_ticker">subscribe_ticker() (Actor method)</a>
+
+      <ul>
+        <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribe_ticker">(BacktestMarketDataClient method)</a>
+</li>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveMarketDataClient.subscribe_ticker">(LiveMarketDataClient method)</a>
+</li>
+        <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.subscribe_ticker">(MarketDataClient method)</a>
+</li>
+        <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.subscribe_ticker">(TradingStrategy method)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/common.html#nautilus_trader.common.actor.Actor.subscribe_trade_ticks">subscribe_trade_ticks() (Actor method)</a>
 
       <ul>
@@ -7267,6 +7299,18 @@
         <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.subscribed_quote_ticks">(MarketDataClient method)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_tickers">subscribed_tickers() (BacktestMarketDataClient method)</a>
+
+      <ul>
+        <li><a href="api_reference/data.html#nautilus_trader.data.engine.DataEngine.subscribed_tickers">(DataEngine method)</a>
+</li>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.subscribed_tickers">(LiveDataEngine method)</a>
+</li>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveMarketDataClient.subscribed_tickers">(LiveMarketDataClient method)</a>
+</li>
+        <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.subscribed_tickers">(MarketDataClient method)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestMarketDataClient.subscribed_trade_ticks">subscribed_trade_ticks() (BacktestMarketDataClient method)</a>
 
       <ul>
@@ -7335,6 +7379,24 @@
 </li>
       <li><a href="api_reference/data.html#nautilus_trader.data.aggregation.TickBarAggregator">TickBarAggregator (class in nautilus_trader.data.aggregation)</a>
 </li>
+      <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.ticker">ticker() (Cache method)</a>
+
+      <ul>
+        <li><a href="api_reference/cache.html#nautilus_trader.cache.base.CacheFacade.ticker">(CacheFacade method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.ticker_count">ticker_count() (Cache method)</a>
+
+      <ul>
+        <li><a href="api_reference/cache.html#nautilus_trader.cache.base.CacheFacade.ticker_count">(CacheFacade method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.tickers">tickers() (Cache method)</a>
+
+      <ul>
+        <li><a href="api_reference/cache.html#nautilus_trader.cache.base.CacheFacade.tickers">(CacheFacade method)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/core.html#nautilus_trader.core.uuid.UUID.time">time (UUID attribute)</a>
 </li>
       <li><a href="api_reference/core.html#nautilus_trader.core.uuid.UUID.time_hi_version">time_hi_version (UUID attribute)</a>
@@ -8077,6 +8139,18 @@
 
       <ul>
         <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_strategy_data">(TradingStrategy method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/common.html#nautilus_trader.common.actor.Actor.unsubscribe_ticker">unsubscribe_ticker() (Actor method)</a>
+
+      <ul>
+        <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestMarketDataClient.unsubscribe_ticker">(BacktestMarketDataClient method)</a>
+</li>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveMarketDataClient.unsubscribe_ticker">(LiveMarketDataClient method)</a>
+</li>
+        <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.unsubscribe_ticker">(MarketDataClient method)</a>
+</li>
+        <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_ticker">(TradingStrategy method)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/common.html#nautilus_trader.common.actor.Actor.unsubscribe_trade_ticks">unsubscribe_trade_ticks() (Actor method)</a>

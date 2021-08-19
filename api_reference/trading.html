@@ -824,6 +824,25 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.handle_ticker">
+<span class="sig-name descname"><span class="pre">handle_ticker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Ticker</span> <span class="pre">ticker</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">is_historical=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.handle_ticker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle the given ticker.</p>
+<p>Calls <cite>on_ticker</cite> if state is <cite>RUNNING</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ticker</strong> (<em>Ticker</em>) – The received ticker.</p></li>
+<li><p><strong>is_historical</strong> (<em>bool</em>) – If ticker is historical then it won’t be passed to <cite>on_ticker</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.handle_trade_tick">
 <span class="sig-name descname"><span class="pre">handle_trade_tick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">TradeTick</span> <span class="pre">tick</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">is_historical=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.handle_trade_tick" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handle the given tick.</p>
@@ -1179,6 +1198,21 @@ paused, and also when it is done for day.</p>
 <p class="admonition-title">Warning</p>
 <p>System method (not intended to be called by user code).</p>
 <p>Should be overridden in the implementation.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.on_ticker">
+<span class="sig-name descname"><span class="pre">on_ticker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Ticker</span> <span class="pre">ticker</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.on_ticker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actions to be performed when running and receives a ticker.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ticker</strong> (<em>Ticker</em>) – The ticker received.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
 </div>
 </dd></dl>
 
@@ -1673,6 +1707,17 @@ as per the last subscription request (this will also affect all subscribers).</p
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.subscribe_ticker">
+<span class="sig-name descname"><span class="pre">subscribe_ticker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.subscribe_ticker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscribe to streaming <cite>Ticker</cite> data for the given instrument ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument to subscribe to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.subscribe_trade_ticks">
 <span class="sig-name descname"><span class="pre">subscribe_trade_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.subscribe_trade_ticks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Subscribe to streaming <cite>TradeTick</cite> data for the given instrument ID.</p>
@@ -1799,6 +1844,17 @@ as per the last subscription request (this will also affect all subscribers).</p
 <li><p><strong>data_type</strong> (<em>type</em>) – The strategy data type to unsubscribe from.</p></li>
 <li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID filter for the subscription.</p></li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_ticker">
+<span class="sig-name descname"><span class="pre">unsubscribe_ticker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_ticker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsubscribe from streaming <cite>Ticker</cite> data for the given instrument ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument to unsubscribe from.</p>
 </dd>
 </dl>
 </dd></dl>

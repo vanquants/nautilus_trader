@@ -629,6 +629,12 @@ called after disposal.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.subscribe_ticker">
+<span class="sig-name descname"><span class="pre">subscribe_ticker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.subscribe_ticker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.subscribe_trade_ticks">
 <span class="sig-name descname"><span class="pre">subscribe_trade_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.subscribe_trade_ticks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
@@ -729,6 +735,17 @@ called after disposal.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.subscribed_tickers">
+<span class="sig-name descname"><span class="pre">subscribed_tickers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.subscribed_tickers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the ticker instruments subscribed to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>list[InstrumentId]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.subscribed_trade_ticks">
 <span class="sig-name descname"><span class="pre">subscribed_trade_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.subscribed_trade_ticks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the trade tick instruments subscribed to.</p>
@@ -801,6 +818,12 @@ called after disposal.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.unsubscribe_quote_ticks">
 <span class="sig-name descname"><span class="pre">unsubscribe_quote_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.unsubscribe_quote_ticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.unsubscribe_ticker">
+<span class="sig-name descname"><span class="pre">unsubscribe_ticker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.unsubscribe_ticker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
@@ -1260,6 +1283,17 @@ running on.</p>
 <dt class="sig sig-object py" id="nautilus_trader.live.data_engine.LiveDataEngine.subscribed_quote_ticks">
 <span class="sig-name descname"><span class="pre">subscribed_quote_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.live.data_engine.LiveDataEngine.subscribed_quote_ticks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the quote tick instruments subscribed to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>list[InstrumentId]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.live.data_engine.LiveDataEngine.subscribed_tickers">
+<span class="sig-name descname"><span class="pre">subscribed_tickers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.live.data_engine.LiveDataEngine.subscribed_tickers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the ticker instruments subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>list[InstrumentId]</em></p>
