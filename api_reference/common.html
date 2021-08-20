@@ -220,13 +220,18 @@ attempts to operate without a managing <cite>Trader</cite> instance.</p>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.common.component.Component" title="nautilus_trader.common.component.Component"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.component.Component</span></code></a></p>
 <p>The abstract base class for all actor components.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Actor</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Actor</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>component_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ComponentId" title="nautilus_trader.model.identifiers.ComponentId"><em>ComponentId</em></a><em>, </em><em>optional</em>) – The component ID. If None is passed then the identifier will be
 taken from <cite>type(self).__name__</cite>.</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.cache">
 <span class="sig-name descname"><span class="pre">cache</span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.cache" title="Permalink to this definition">¶</a></dt>
@@ -1270,7 +1275,12 @@ as per the last subscription request (this will also affect all subscribers).</p
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The abstract base class for all clocks.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Clock</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.clock.Clock.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.clock.Clock.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Clock</span></code> class.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.clock.Clock.cancel_timer">
 <span class="sig-name descname"><span class="pre">cancel_timer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">name</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.Clock.cancel_timer" title="Permalink to this definition">¶</a></dt>
@@ -1530,13 +1540,18 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LiveClock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.clock.LiveClock" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.clock.Clock</span></code></a></p>
 <p>Provides a clock for live trading. All times are timezone aware UTC.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LiveClock</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.clock.LiveClock.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.clock.LiveClock.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LiveClock</span></code> class.</p>
 <p>If loop is None then threads will be used for timers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>loop</strong> (<em>asyncio.AbstractEventLoop</em>) – The event loop for the clocks timers.</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.clock.LiveClock.cancel_timer">
 <span class="sig-name descname"><span class="pre">cancel_timer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">name</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.LiveClock.cancel_timer" title="Permalink to this definition">¶</a></dt>
@@ -1796,12 +1811,17 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TestClock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">int64_t</span> <span class="pre">initial_ns=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.clock.TestClock" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.clock.Clock</span></code></a></p>
 <p>Provides a monotonic clock for backtesting and unit testing.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">TestClock</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.clock.TestClock.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.clock.TestClock.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">TestClock</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>initial_ns</strong> (<em>int64</em>) – The initial UNIX time for the clock (nanoseconds).</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.clock.TestClock.advance_time">
 <span class="sig-name descname"><span class="pre">advance_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">to_time_ns</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.TestClock.advance_time" title="Permalink to this definition">¶</a></dt>
@@ -2093,7 +2113,10 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The abstract base class for all system components.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Component</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.component.Component.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.component.Component.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Component</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2108,6 +2131,8 @@ taken from <cite>type(self).__name__</cite>.</p></li>
 <dd class="field-even"><p><strong>ValueError</strong> – If component_name is not a valid string.</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.component.Component.dispose">
 <span class="sig-name descname"><span class="pre">dispose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.component.Component.dispose" title="Permalink to this definition">¶</a></dt>
@@ -2232,6 +2257,11 @@ called after disposal.</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides generic component Finite-State Machines.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.component.ComponentFSMFactory.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.component.ComponentFSMFactory.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.component.ComponentFSMFactory.get_state_transition_table">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">get_state_transition_table</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.common.component.ComponentFSMFactory.get_state_transition_table" title="Permalink to this definition">¶</a></dt>
 <dd><p>The default state transition table.</p>
@@ -2254,7 +2284,10 @@ called after disposal.</p>
 <p>A factory class which provides different order types.</p>
 <p>The <cite>TraderId</cite> tag and <cite>StrategyId</cite> tag will be inserted into all
 IDs generated.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">OrderFactory</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.factories.OrderFactory.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">OrderFactory</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2268,6 +2301,8 @@ IDs generated.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If initial_count is negative (&lt; 0).</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.factories.OrderFactory.bracket">
 <span class="sig-name descname"><span class="pre">bracket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">entry_order</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">stop_loss</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">take_profit</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">sl_tif=TimeInForce.GTC</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">tp_tif=TimeInForce.GTC</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">BracketOrder</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.bracket" title="Permalink to this definition">¶</a></dt>
@@ -2482,7 +2517,10 @@ given count.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ClientOrderIdGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">Clock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">initial_count=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.generators.ClientOrderIdGenerator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.common.generators.IdentifierGenerator" title="nautilus_trader.common.generators.IdentifierGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.generators.IdentifierGenerator</span></code></a></p>
 <p>Provides a generator for unique ClientOrderId(s).</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">ClientOrderIdGenerator</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.generators.ClientOrderIdGenerator.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.generators.ClientOrderIdGenerator.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">ClientOrderIdGenerator</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2496,6 +2534,8 @@ given count.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If initial_count is negative (&lt; 0).</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.generators.ClientOrderIdGenerator.count">
 <span class="sig-name descname"><span class="pre">count</span></span><a class="headerlink" href="#nautilus_trader.common.generators.ClientOrderIdGenerator.count" title="Permalink to this definition">¶</a></dt>
@@ -2543,7 +2583,10 @@ given count.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">IdentifierGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">Clock</span> <span class="pre">clock</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.generators.IdentifierGenerator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a generator for unique ID strings.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">IdentifierGenerator</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.generators.IdentifierGenerator.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.generators.IdentifierGenerator.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">IdentifierGenerator</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2554,17 +2597,24 @@ given count.</p>
 </dl>
 </dd></dl>
 
+</dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.common.generators.PositionIdGenerator">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">PositionIdGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">Clock</span> <span class="pre">clock</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.generators.PositionIdGenerator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.common.generators.IdentifierGenerator" title="nautilus_trader.common.generators.IdentifierGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.generators.IdentifierGenerator</span></code></a></p>
 <p>Provides a generator for unique PositionId(s).</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">PositionIdGenerator</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.generators.PositionIdGenerator.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.generators.PositionIdGenerator.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">PositionIdGenerator</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>trader_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId"><em>TraderId</em></a>) – The trader ID tag for the generator.</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.generators.PositionIdGenerator.generate">
 <span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">flipped=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PositionId</span></span></span><a class="headerlink" href="#nautilus_trader.common.generators.PositionIdGenerator.generate" title="Permalink to this definition">¶</a></dt>
@@ -2631,7 +2681,10 @@ will be appended with ‘F’.</p></li>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LiveLogger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">loop</span></em>, <em class="sig-param"><span class="pre">LiveClock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id=None</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">system_id=None</span></em>, <em class="sig-param"><span class="pre">LogLevel</span> <span class="pre">level_stdout=LogLevel.INFO</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">bypass=False</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">maxsize=10000</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.logging.LiveLogger" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.logging.Logger</span></code></a></p>
 <p>Provides a high-performance logger which runs on the event loop.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LiveLogger</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.logging.LiveLogger.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.logging.LiveLogger.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LiveLogger</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2645,6 +2698,8 @@ will be appended with ‘F’.</p></li>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.logging.LiveLogger.get_run_task">
 <span class="sig-name descname"><span class="pre">get_run_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">asyncio.Task</span></span></span><a class="headerlink" href="#nautilus_trader.common.logging.LiveLogger.get_run_task" title="Permalink to this definition">¶</a></dt>
@@ -2746,7 +2801,10 @@ will be appended with ‘F’.</p></li>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Clock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id=None</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">system_id=None</span></em>, <em class="sig-param"><span class="pre">LogLevel</span> <span class="pre">level_stdout=LogLevel.INFO</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">bypass=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.logging.Logger" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a high-performance logger.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Logger</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.logging.Logger.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.logging.Logger.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Logger</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2758,6 +2816,8 @@ will be appended with ‘F’.</p></li>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.logging.Logger.is_bypassed">
 <span class="sig-name descname"><span class="pre">is_bypassed</span></span><a class="headerlink" href="#nautilus_trader.common.logging.Logger.is_bypassed" title="Permalink to this definition">¶</a></dt>
@@ -2812,7 +2872,10 @@ will be appended with ‘F’.</p></li>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LoggerAdapter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">component_name</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.logging.LoggerAdapter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides an adapter for a components logger.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LoggerAdapter</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.logging.LoggerAdapter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.logging.LoggerAdapter.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LoggerAdapter</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2821,6 +2884,8 @@ will be appended with ‘F’.</p></li>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.logging.LoggerAdapter.component">
 <span class="sig-name descname"><span class="pre">component</span></span><a class="headerlink" href="#nautilus_trader.common.logging.LoggerAdapter.component" title="Permalink to this definition">¶</a></dt>
@@ -2964,7 +3029,12 @@ will be appended with ‘F’.</p></li>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The abstract base class for all instrument providers.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">InstrumentProvider</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.providers.InstrumentProvider.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.providers.InstrumentProvider.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">InstrumentProvider</span></code> class.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.providers.InstrumentProvider.add">
 <span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.providers.InstrumentProvider.add" title="Permalink to this definition">¶</a></dt>
@@ -3078,12 +3148,17 @@ interrupted between calling qsize() and doing an operation on the Queue.</p>
 <p>This queue is not thread-safe and must be called from the same thread as the
 event loop.</p>
 </div>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Queue</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.queue.Queue.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.queue.Queue.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Queue</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>maxsize</strong> (<em>int</em>) – The maximum capacity of the queue before blocking.</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.queue.Queue.count">
 <span class="sig-name descname"><span class="pre">count</span></span><a class="headerlink" href="#nautilus_trader.common.queue.Queue.count" title="Permalink to this definition">¶</a></dt>
@@ -3257,7 +3332,10 @@ the event loop.</p>
 <p>The internal buffer queue is unbounded and so a bounded queue should be
 upstream.</p>
 </div>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Throttler</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.throttler.Throttler.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.throttler.Throttler.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Throttler</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -3281,6 +3359,8 @@ If None then messages will be buffered.</p></li>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.throttler.Throttler.interval">
 <span class="sig-name descname"><span class="pre">interval</span></span><a class="headerlink" href="#nautilus_trader.common.throttler.Throttler.interval" title="Permalink to this definition">¶</a></dt>
@@ -3391,7 +3471,10 @@ If None then messages will be buffered.</p></li>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.common.timer.Timer" title="nautilus_trader.common.timer.Timer"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.timer.Timer</span></code></a></p>
 <p>The abstract base class for all live timers.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LiveTimer</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.timer.LiveTimer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.LiveTimer.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LiveTimer</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -3407,6 +3490,8 @@ If None then messages will be buffered.</p></li>
 <dd class="field-even"><p><strong>TypeError</strong> – If callback is not of type Callable.</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.timer.LiveTimer.callback">
 <span class="sig-name descname"><span class="pre">callback</span></span><a class="headerlink" href="#nautilus_trader.common.timer.LiveTimer.callback" title="Permalink to this definition">¶</a></dt>
@@ -3536,7 +3621,10 @@ If None then messages will be buffered.</p></li>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LoopTimer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">loop,</span> <span class="pre">unicode</span> <span class="pre">name,</span> <span class="pre">callback:</span> <span class="pre">Callable[[TimeEvent],</span> <span class="pre">None],</span> <span class="pre">int64_t</span> <span class="pre">interval_ns,</span> <span class="pre">int64_t</span> <span class="pre">now_ns,</span> <span class="pre">int64_t</span> <span class="pre">start_time_ns,</span> <span class="pre">int64_t</span> <span class="pre">stop_time_ns=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.LoopTimer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.common.timer.LiveTimer" title="nautilus_trader.common.timer.LiveTimer"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.timer.LiveTimer</span></code></a></p>
 <p>Provides an event loop based timer for live trading.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LoopTimer</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.timer.LoopTimer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.LoopTimer.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LoopTimer</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -3553,6 +3641,8 @@ If None then messages will be buffered.</p></li>
 <dd class="field-even"><p><strong>TypeError</strong> – If callback is not of type Callable.</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.timer.LoopTimer.callback">
 <span class="sig-name descname"><span class="pre">callback</span></span><a class="headerlink" href="#nautilus_trader.common.timer.LoopTimer.callback" title="Permalink to this definition">¶</a></dt>
@@ -3682,7 +3772,10 @@ If None then messages will be buffered.</p></li>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TestTimer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">name,</span> <span class="pre">callback:</span> <span class="pre">Callable[[TimeEvent],</span> <span class="pre">None],</span> <span class="pre">int64_t</span> <span class="pre">interval_ns,</span> <span class="pre">int64_t</span> <span class="pre">start_time_ns,</span> <span class="pre">int64_t</span> <span class="pre">stop_time_ns=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.TestTimer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.common.timer.Timer" title="nautilus_trader.common.timer.Timer"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.timer.Timer</span></code></a></p>
 <p>Provides a fake timer for backtesting and unit testing.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">TestTimer</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.timer.TestTimer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.TestTimer.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">TestTimer</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -3694,6 +3787,8 @@ If None then messages will be buffered.</p></li>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.timer.TestTimer.advance">
 <span class="sig-name descname"><span class="pre">advance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">to_time_ns</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.common.timer.TestTimer.advance" title="Permalink to this definition">¶</a></dt>
@@ -3842,7 +3937,10 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ThreadTimer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">name,</span> <span class="pre">callback:</span> <span class="pre">Callable[[TimeEvent],</span> <span class="pre">None],</span> <span class="pre">int64_t</span> <span class="pre">interval_ns,</span> <span class="pre">int64_t</span> <span class="pre">now_ns,</span> <span class="pre">int64_t</span> <span class="pre">start_time_ns,</span> <span class="pre">int64_t</span> <span class="pre">stop_time_ns=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.ThreadTimer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.common.timer.LiveTimer" title="nautilus_trader.common.timer.LiveTimer"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.timer.LiveTimer</span></code></a></p>
 <p>Provides a thread based timer for live trading.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LiveTimer</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.timer.ThreadTimer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.ThreadTimer.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LiveTimer</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -3858,6 +3956,8 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 <dd class="field-even"><p><strong>TypeError</strong> – If callback is not of type Callable.</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.timer.ThreadTimer.callback">
 <span class="sig-name descname"><span class="pre">callback</span></span><a class="headerlink" href="#nautilus_trader.common.timer.ThreadTimer.callback" title="Permalink to this definition">¶</a></dt>
@@ -3987,7 +4087,10 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TimeEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">name</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">event_id</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">timestamp</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.TimeEvent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="core.html#nautilus_trader.core.message.Event" title="nautilus_trader.core.message.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Event</span></code></a></p>
 <p>Represents a time event occurring at the event timestamp.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">TimeEvent</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.timer.TimeEvent.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.TimeEvent.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">TimeEvent</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -3999,6 +4102,8 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.timer.TimeEvent.category">
 <span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.common.timer.TimeEvent.category" title="Permalink to this definition">¶</a></dt>
@@ -4072,6 +4177,11 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TimeEventHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TimeEvent</span> <span class="pre">event,</span> <span class="pre">handler:</span> <span class="pre">Callable[[TimeEvent],</span> <span class="pre">None]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.TimeEventHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Represents a bundled event and handler.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.timer.TimeEventHandler.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.TimeEventHandler.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.timer.TimeEventHandler.event">
 <span class="sig-name descname"><span class="pre">event</span></span><a class="headerlink" href="#nautilus_trader.common.timer.TimeEventHandler.event" title="Permalink to this definition">¶</a></dt>
@@ -4102,7 +4212,10 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The abstract base class for all timers.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Timer</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.timer.Timer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.Timer.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Timer</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -4120,6 +4233,8 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.timer.Timer.callback">
 <span class="sig-name descname"><span class="pre">callback</span></span><a class="headerlink" href="#nautilus_trader.common.timer.Timer.callback" title="Permalink to this definition">¶</a></dt>
@@ -4241,6 +4356,11 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">UUIDFactory</span></span><a class="headerlink" href="#nautilus_trader.common.uuid.UUIDFactory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a factory which generates version 4 UUID’s.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.uuid.UUIDFactory.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.uuid.UUIDFactory.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.uuid.UUIDFactory.generate">
 <span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UUID</span></span></span><a class="headerlink" href="#nautilus_trader.common.uuid.UUIDFactory.generate" title="Permalink to this definition">¶</a></dt>

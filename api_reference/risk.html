@@ -208,7 +208,10 @@ risk monitoring.</p>
 - ACTIVE (trading is enabled).
 - REDUCING (only new orders or updates which reduce an open position are allowed).
 - HALTED (all trading commands except cancels are denied).</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">RiskEngine</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">RiskEngine</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -221,6 +224,8 @@ risk monitoring.</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.command_count">
 <span class="sig-name descname"><span class="pre">command_count</span></span><a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.command_count" title="Permalink to this definition">¶</a></dt>
@@ -479,12 +484,17 @@ notional check.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">FixedRiskSizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.risk.sizing.FixedRiskSizer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.risk.sizing.PositionSizer" title="nautilus_trader.risk.sizing.PositionSizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.risk.sizing.PositionSizer</span></code></a></p>
 <p>Provides position sizing calculations based on a given risk.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">FixedRiskSizer</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.risk.sizing.FixedRiskSizer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.risk.sizing.FixedRiskSizer.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">FixedRiskSizer</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for position sizing.</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.risk.sizing.FixedRiskSizer.calculate">
 <span class="sig-name descname"><span class="pre">calculate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">entry</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">stop_loss</span></em>, <em class="sig-param"><span class="pre">Money</span> <span class="pre">equity</span></em>, <em class="sig-param"><span class="pre">risk:</span> <span class="pre">Decimal</span></em>, <em class="sig-param"><span class="pre">commission_rate:</span> <span class="pre">Decimal</span> <span class="pre">=</span> <span class="pre">Decimal(0)</span></em>, <em class="sig-param"><span class="pre">exchange_rate:</span> <span class="pre">Decimal</span> <span class="pre">=</span> <span class="pre">Decimal(1)</span></em>, <em class="sig-param"><span class="pre">hard_limit:</span> <span class="pre">Decimal</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">unit_batch_size:</span> <span class="pre">Decimal</span> <span class="pre">=</span> <span class="pre">Decimal(1)</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">units=1</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Quantity</span></span></span><a class="headerlink" href="#nautilus_trader.risk.sizing.FixedRiskSizer.calculate" title="Permalink to this definition">¶</a></dt>
@@ -552,12 +562,17 @@ notional check.</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The abstract base class for all position sizers.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">PositionSizer</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.risk.sizing.PositionSizer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.risk.sizing.PositionSizer.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">PositionSizer</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for position sizing.</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.risk.sizing.PositionSizer.calculate">
 <span class="sig-name descname"><span class="pre">calculate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">entry</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">stop_loss</span></em>, <em class="sig-param"><span class="pre">Money</span> <span class="pre">equity</span></em>, <em class="sig-param"><span class="pre">risk:</span> <span class="pre">Decimal</span></em>, <em class="sig-param"><span class="pre">commission_rate:</span> <span class="pre">Decimal</span> <span class="pre">=</span> <span class="pre">Decimal(0)</span></em>, <em class="sig-param"><span class="pre">exchange_rate:</span> <span class="pre">Decimal</span> <span class="pre">=</span> <span class="pre">Decimal(1)</span></em>, <em class="sig-param"><span class="pre">hard_limit:</span> <span class="pre">Decimal</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">unit_batch_size:</span> <span class="pre">Decimal</span> <span class="pre">=</span> <span class="pre">Decimal(1)</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">units=1</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Quantity</span></span></span><a class="headerlink" href="#nautilus_trader.risk.sizing.PositionSizer.calculate" title="Permalink to this definition">¶</a></dt>

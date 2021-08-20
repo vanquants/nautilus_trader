@@ -198,7 +198,10 @@ framework. Custom trading strategies can be implemented by inheriting from the
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">EconomicNewsEventFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">list</span> <span class="pre">currencies</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">impacts</span></em>, <em class="sig-param"><span class="pre">news_data:</span> <span class="pre">pd.DataFrame</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.filters.EconomicNewsEventFilter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides methods to help filter trading strategy rules based on economic news events.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">EconomicNewsEventFilter</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.filters.EconomicNewsEventFilter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.filters.EconomicNewsEventFilter.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">EconomicNewsEventFilter</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -208,6 +211,8 @@ framework. Custom trading strategies can be implemented by inheriting from the
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.trading.filters.EconomicNewsEventFilter.currencies">
 <span class="sig-name descname"><span class="pre">currencies</span></span><a class="headerlink" href="#nautilus_trader.trading.filters.EconomicNewsEventFilter.currencies" title="Permalink to this definition">¶</a></dt>
@@ -310,6 +315,11 @@ Will return None if no news events match the filter conditions.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ForexSessionFilter</span></span><a class="headerlink" href="#nautilus_trader.trading.filters.ForexSessionFilter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides methods to help filter trading strategy rules dependent on Forex session times.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.filters.ForexSessionFilter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.filters.ForexSessionFilter.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.trading.filters.ForexSessionFilter.local_from_utc">
 <span class="sig-name descname"><span class="pre">local_from_utc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">session:</span> <span class="pre">ForexSession</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">time_now</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">datetime</span></span></span><a class="headerlink" href="#nautilus_trader.trading.filters.ForexSessionFilter.local_from_utc" title="Permalink to this definition">¶</a></dt>
@@ -437,7 +447,10 @@ Will return None if no news events match the filter conditions.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">NewsEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">impact:</span> <span class="pre">NewsImpact</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">name</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">currency</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.filters.NewsEvent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.data.base.Data</span></code></p>
 <p>Represents an economic news event.</p>
-<dl class="field-list simple">
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.filters.NewsEvent.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.filters.NewsEvent.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>impact</strong> (<a class="reference internal" href="#nautilus_trader.trading.filters.NewsImpact" title="nautilus_trader.trading.filters.NewsImpact"><em>NewsImpact</em></a>) – The expected impact for the economic news event.</p></li>
@@ -448,6 +461,8 @@ Will return None if no news events match the filter conditions.</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.trading.filters.NewsEvent.currency">
 <span class="sig-name descname"><span class="pre">currency</span></span><a class="headerlink" href="#nautilus_trader.trading.filters.NewsEvent.currency" title="Permalink to this definition">¶</a></dt>
@@ -536,7 +551,10 @@ which is opened per instrument.</p></li>
 <li><p>OMSType.NETTING: There will only ever be a single position for the strategy
 per instrument. The position ID will be <cite>{instrument_id}-{strategy_id}</cite>.</p></li>
 </ul>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">TradingStrategy</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">TradingStrategy</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -550,6 +568,8 @@ how the <cite>ExecutionEngine</cite> handles position IDs (see docs).</p></li>
 <dd class="field-even"><p><strong>ValueError</strong> – If order_id_tag is not a valid string.</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.cache">
 <span class="sig-name descname"><span class="pre">cache</span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.cache" title="Permalink to this definition">¶</a></dt>
@@ -1923,7 +1943,10 @@ a running instance of the platform.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Trader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></em>, <em class="sig-param"><span class="pre">Cache</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">Portfolio</span> <span class="pre">portfolio</span></em>, <em class="sig-param"><span class="pre">DataEngine</span> <span class="pre">data_engine</span></em>, <em class="sig-param"><span class="pre">RiskEngine</span> <span class="pre">risk_engine</span></em>, <em class="sig-param"><span class="pre">ExecutionEngine</span> <span class="pre">exec_engine</span></em>, <em class="sig-param"><span class="pre">Clock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="common.html#nautilus_trader.common.component.Component" title="nautilus_trader.common.component.Component"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.component.Component</span></code></a></p>
 <p>Provides a trader for managing a portfolio of trading strategies.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Trader</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Trader</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1947,6 +1970,8 @@ a running instance of the platform.</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.add_component">
 <span class="sig-name descname"><span class="pre">add_component</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Actor</span> <span class="pre">component</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.add_component" title="Permalink to this definition">¶</a></dt>

@@ -581,7 +581,10 @@ deterministic state value.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">FiniteStateMachine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dict</span> <span class="pre">state_transition_table,</span> <span class="pre">int</span> <span class="pre">initial_state,</span> <span class="pre">trigger_parser:</span> <span class="pre">Callable[[int],</span> <span class="pre">str]</span> <span class="pre">=</span> <span class="pre">str,</span> <span class="pre">state_parser:</span> <span class="pre">Callable[[int],</span> <span class="pre">str]</span> <span class="pre">=</span> <span class="pre">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.fsm.FiniteStateMachine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a generic finite state machine.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">FiniteStateMachine</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.core.fsm.FiniteStateMachine.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.fsm.FiniteStateMachine.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">FiniteStateMachine</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -603,6 +606,8 @@ If None then will just print the integer.</p></li>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.core.fsm.FiniteStateMachine.state">
 <span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#nautilus_trader.core.fsm.FiniteStateMachine.state" title="Permalink to this definition">¶</a></dt>
@@ -637,6 +642,11 @@ the transition table lookup.</p>
 <em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">InvalidStateTrigger</span></span><a class="headerlink" href="#nautilus_trader.core.fsm.InvalidStateTrigger" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Represents an invalid trigger for the current state.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.core.fsm.InvalidStateTrigger.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.fsm.InvalidStateTrigger.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.core.fsm.InvalidStateTrigger.with_traceback">
 <span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.fsm.InvalidStateTrigger.with_traceback" title="Permalink to this definition">¶</a></dt>
@@ -853,7 +863,10 @@ inferred as zero.</p>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
 <p>The abstract base class for all commands.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Command</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.core.message.Command.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Command.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Command</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -862,6 +875,8 @@ inferred as zero.</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Command.category">
 <span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.core.message.Command.category" title="Permalink to this definition">¶</a></dt>
@@ -903,7 +918,10 @@ inferred as zero.</p>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
 <p>The abstract base class for all documents.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Document</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.core.message.Document.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Document.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Document</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -912,6 +930,8 @@ inferred as zero.</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Document.category">
 <span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.core.message.Document.category" title="Permalink to this definition">¶</a></dt>
@@ -953,7 +973,10 @@ inferred as zero.</p>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
 <p>The abstract base class for all events.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Event</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.core.message.Event.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Event.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Event</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -963,6 +986,8 @@ inferred as zero.</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Event.category">
 <span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.core.message.Event.category" title="Permalink to this definition">¶</a></dt>
@@ -1015,7 +1040,10 @@ inferred as zero.</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The abstract base class for all messages.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Message</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.core.message.Message.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Message.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Message</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1025,6 +1053,8 @@ inferred as zero.</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Message.category">
 <span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.core.message.Message.category" title="Permalink to this definition">¶</a></dt>
@@ -1066,7 +1096,10 @@ inferred as zero.</p>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
 <p>The abstract base class for all requests.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Request</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.core.message.Request.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Request.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Request</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1076,6 +1109,8 @@ inferred as zero.</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Request.callback">
 <span class="sig-name descname"><span class="pre">callback</span></span><a class="headerlink" href="#nautilus_trader.core.message.Request.callback" title="Permalink to this definition">¶</a></dt>
@@ -1128,7 +1163,10 @@ inferred as zero.</p>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
 <p>The abstract base class for all responses.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Response</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.core.message.Response.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Response.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Response</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1138,6 +1176,8 @@ inferred as zero.</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Response.category">
 <span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.core.message.Response.category" title="Permalink to this definition">¶</a></dt>
@@ -1208,7 +1248,10 @@ for generating version 4 random UUIDs as specified in RFC 4122.</p>
 UUID objects are immutable, hashable, and usable as dictionary keys.
 Converting a UUID to a string with str() yields something in the form
 ‘12345678-1234-1234-1234-123456789abc’.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">UUID</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">UUID</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>value</strong> (<em>bytes</em>) – The 16 bytes value to generate the UUID with.</p>
@@ -1217,6 +1260,8 @@ Converting a UUID to a string with str() yields something in the form
 <dd class="field-even"><p><strong>ValueError</strong> – If value length != 16.</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID.bytes">
 <span class="sig-name descname"><span class="pre">bytes</span></span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID.bytes" title="Permalink to this definition">¶</a></dt>

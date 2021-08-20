@@ -202,7 +202,10 @@
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BacktestDataClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></em>, <em class="sig-param"><span class="pre">Cache</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">Clock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">config=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestDataClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="data.html#nautilus_trader.data.client.DataClient" title="nautilus_trader.data.client.DataClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.data.client.DataClient</span></code></a></p>
 <p>Provides an implementation of <cite>DataClient</cite> for backtesting.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BacktestDataClient</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestDataClient.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestDataClient.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BacktestDataClient</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -215,6 +218,8 @@
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestDataClient.dispose">
 <span class="sig-name descname"><span class="pre">dispose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestDataClient.dispose" title="Permalink to this definition">¶</a></dt>
@@ -396,7 +401,10 @@ called after disposal.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BacktestMarketDataClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></em>, <em class="sig-param"><span class="pre">Cache</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">Clock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="data.html#nautilus_trader.data.client.MarketDataClient" title="nautilus_trader.data.client.MarketDataClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.data.client.MarketDataClient</span></code></a></p>
 <p>Provides an implementation of <cite>MarketDataClient</cite> for backtesting.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BacktestDataProducer</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BacktestDataProducer</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -408,6 +416,8 @@ called after disposal.</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.dispose">
 <span class="sig-name descname"><span class="pre">dispose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.dispose" title="Permalink to this definition">¶</a></dt>
@@ -970,7 +980,10 @@ to the current datetime.</p></li>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BacktestDataProducer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">instruments=None</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">generic_data=None</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">order_book_data=None</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">quote_ticks=None</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">trade_ticks=None</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">bars_bid=None</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">bars_ask=None</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">data=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data_producer.BacktestDataProducer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.backtest.data_producer.DataProducerFacade" title="nautilus_trader.backtest.data_producer.DataProducerFacade"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.backtest.data_producer.DataProducerFacade</span></code></a></p>
 <p>Provides a basic data producer for backtesting.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BacktestDataProducer</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data_producer.BacktestDataProducer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data_producer.BacktestDataProducer.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BacktestDataProducer</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -985,6 +998,8 @@ to the current datetime.</p></li>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_producer.BacktestDataProducer.clear">
 <span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_producer.BacktestDataProducer.clear" title="Permalink to this definition">¶</a></dt>
@@ -1053,12 +1068,17 @@ to the current datetime.</p></li>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CachedProducer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">BacktestDataProducer</span> <span class="pre">producer</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data_producer.CachedProducer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.backtest.data_producer.DataProducerFacade" title="nautilus_trader.backtest.data_producer.DataProducerFacade"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.backtest.data_producer.DataProducerFacade</span></code></a></p>
 <p>Cached wrap for the <cite>BacktestDataProducer`</cite> class.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">CachedProducer</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data_producer.CachedProducer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data_producer.CachedProducer.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">CachedProducer</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>producer</strong> (<a class="reference internal" href="#nautilus_trader.backtest.data_producer.BacktestDataProducer" title="nautilus_trader.backtest.data_producer.BacktestDataProducer"><em>BacktestDataProducer</em></a>) – The data producer to cache.</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_producer.CachedProducer.instruments">
 <span class="sig-name descname"><span class="pre">instruments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_producer.CachedProducer.instruments" title="Permalink to this definition">¶</a></dt>
@@ -1111,6 +1131,11 @@ to the current datetime.</p></li>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a read-only facade for data producers.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data_producer.DataProducerFacade.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data_producer.DataProducerFacade.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_producer.DataProducerFacade.instruments">
 <span class="sig-name descname"><span class="pre">instruments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_producer.DataProducerFacade.instruments" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
@@ -1139,7 +1164,10 @@ to the current datetime.</p></li>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a backtest engine to run a portfolio of strategies over historical
 data.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BacktestEngine</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BacktestEngine</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1157,6 +1185,8 @@ data.</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.add_bars">
 <span class="sig-name descname"><span class="pre">add_bars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BarAggregation</span> <span class="pre">aggregation</span></em>, <em class="sig-param"><span class="pre">PriceType</span> <span class="pre">price_type</span></em>, <em class="sig-param"><span class="pre">data:</span> <span class="pre">pd.DataFrame</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.add_bars" title="Permalink to this definition">¶</a></dt>
@@ -1511,7 +1541,10 @@ to the end of the data.</p></li>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">SimulatedExchange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue</span></em>, <em class="sig-param"><span class="pre">VenueType</span> <span class="pre">venue_type</span></em>, <em class="sig-param"><span class="pre">OMSType</span> <span class="pre">oms_type</span></em>, <em class="sig-param"><span class="pre">AccountType</span> <span class="pre">account_type</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">base_currency</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">starting_balances</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">is_frozen_account</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">instruments</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">modules</span></em>, <em class="sig-param"><span class="pre">CacheFacade</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">FillModel</span> <span class="pre">fill_model</span></em>, <em class="sig-param"><span class="pre">TestClock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">BookLevel</span> <span class="pre">exchange_order_book_level=BookLevel.L1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a simulated financial market exchange.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">SimulatedExchange</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">SimulatedExchange</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1539,6 +1572,8 @@ to the end of the data.</p></li>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange.account_type">
 <span class="sig-name descname"><span class="pre">account_type</span></span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange.account_type" title="Permalink to this definition">¶</a></dt>
@@ -1866,7 +1901,10 @@ to the end of the data.</p></li>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BacktestExecClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">SimulatedExchange</span> <span class="pre">exchange</span></em>, <em class="sig-param"><span class="pre">AccountId</span> <span class="pre">account_id</span></em>, <em class="sig-param"><span class="pre">AccountType</span> <span class="pre">account_type</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">base_currency</span></em>, <em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></em>, <em class="sig-param"><span class="pre">Cache</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">TestClock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">is_frozen_account=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="execution.html#nautilus_trader.execution.client.ExecutionClient" title="nautilus_trader.execution.client.ExecutionClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.execution.client.ExecutionClient</span></code></a></p>
 <p>Provides an execution client for the <cite>BacktestEngine</cite>.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BacktestExecClient</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BacktestExecClient</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1882,6 +1920,8 @@ to the end of the data.</p></li>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.account_id">
 <span class="sig-name descname"><span class="pre">account_id</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.account_id" title="Permalink to this definition">¶</a></dt>
@@ -1979,7 +2019,7 @@ called after disposal.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.generate_order_cancel_rejected">
-<span class="sig-name descname"><span class="pre">generate_order_cancel_rejected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">response_to</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">reason</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.generate_order_cancel_rejected" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">generate_order_cancel_rejected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">reason</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.generate_order_cancel_rejected" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate an <cite>OrderCancelRejected</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1988,7 +2028,6 @@ called after disposal.</p>
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID.</p></li>
 <li><p><strong>client_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID.</p></li>
 <li><p><strong>venue_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a>) – The venue order ID.</p></li>
-<li><p><strong>response_to</strong> (<em>str</em>) – The order cancel rejected response.</p></li>
 <li><p><strong>reason</strong> (<em>str</em>) – The order cancel rejected reason.</p></li>
 <li><p><strong>ts_event</strong> (<em>datetime</em>) – The UNIX timestamp (nanoseconds) when the order cancel rejected event occurred.</p></li>
 </ul>
@@ -2145,7 +2184,7 @@ position ID resolution.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.generate_order_update_rejected">
-<span class="sig-name descname"><span class="pre">generate_order_update_rejected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">response_to</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">reason</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.generate_order_update_rejected" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">generate_order_update_rejected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">reason</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.generate_order_update_rejected" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate an <cite>OrderUpdateRejected</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2154,7 +2193,6 @@ position ID resolution.</p></li>
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID.</p></li>
 <li><p><strong>client_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID.</p></li>
 <li><p><strong>venue_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a>) – The venue order ID.</p></li>
-<li><p><strong>response_to</strong> (<em>str</em>) – The order update rejected response.</p></li>
 <li><p><strong>reason</strong> (<em>str</em>) – The order update rejected reason.</p></li>
 <li><p><strong>ts_event</strong> (<em>datetime</em>) – The UNIX timestamp (nanoseconds) when the order update rejection event occurred.</p></li>
 </ul>
@@ -2380,6 +2418,11 @@ position ID resolution.</p></li>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a means of loading bar data pandas DataFrames from CSV files.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.CSVBarDataLoader.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.loaders.CSVBarDataLoader.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.CSVBarDataLoader.load">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.loaders.CSVBarDataLoader.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the bar pandas.DataFrame loaded from the given csv file.</p>
@@ -2400,6 +2443,11 @@ position ID resolution.</p></li>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CSVTickDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.loaders.CSVTickDataLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a means of loading tick data pandas DataFrames from CSV files.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.CSVTickDataLoader.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.loaders.CSVTickDataLoader.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.CSVTickDataLoader.load">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.loaders.CSVTickDataLoader.load" title="Permalink to this definition">¶</a></dt>
@@ -2422,6 +2470,11 @@ position ID resolution.</p></li>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a means of loading bar data pandas DataFrames from parquet files.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.ParquetBarDataLoader.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.loaders.ParquetBarDataLoader.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.ParquetBarDataLoader.load">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.loaders.ParquetBarDataLoader.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the bar pandas.DataFrame loaded from the given parquet file.</p>
@@ -2442,6 +2495,11 @@ position ID resolution.</p></li>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ParquetTickDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.loaders.ParquetTickDataLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a means of loading tick data pandas DataFrames from Parquet files.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.ParquetTickDataLoader.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.loaders.ParquetTickDataLoader.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.ParquetTickDataLoader.load">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.loaders.ParquetTickDataLoader.load" title="Permalink to this definition">¶</a></dt>
@@ -2464,6 +2522,11 @@ position ID resolution.</p></li>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a means of loading quote data pandas DataFrames from Tardis CSV files.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.TardisQuoteDataLoader.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.loaders.TardisQuoteDataLoader.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.TardisQuoteDataLoader.load">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.loaders.TardisQuoteDataLoader.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the quote pandas.DataFrame loaded from the given csv file.</p>
@@ -2484,6 +2547,11 @@ position ID resolution.</p></li>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TardisTradeDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.loaders.TardisTradeDataLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a means of loading trade data pandas DataFrames from Tardis CSV files.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.TardisTradeDataLoader.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.loaders.TardisTradeDataLoader.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.TardisTradeDataLoader.load">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.loaders.TardisTradeDataLoader.load" title="Permalink to this definition">¶</a></dt>
@@ -2509,7 +2577,10 @@ position ID resolution.</p></li>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides probabilistic modeling for order fill dynamics including probability
 of fills and slippage by order type.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">FillModel</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.models.FillModel.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.models.FillModel.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">FillModel</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2526,6 +2597,8 @@ of fills and slippage by order type.</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.models.FillModel.is_limit_filled">
 <span class="sig-name descname"><span class="pre">is_limit_filled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.models.FillModel.is_limit_filled" title="Permalink to this definition">¶</a></dt>
@@ -2602,12 +2675,17 @@ of fills and slippage by order type.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">FXRolloverInterestModule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rate_data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pd.DataFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.modules.FXRolloverInterestModule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.backtest.modules.SimulationModule" title="nautilus_trader.backtest.modules.SimulationModule"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.backtest.modules.SimulationModule</span></code></a></p>
 <p>Provides an FX rollover interest simulation module.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">FXRolloverInterestModule</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.modules.FXRolloverInterestModule.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.modules.FXRolloverInterestModule.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">FXRolloverInterestModule</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>rate_data</strong> (<em>pd.DataFrame</em>) – The interest rate data for the internal rollover interest calculator.</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.modules.FXRolloverInterestModule.log_diagnostics">
 <span class="sig-name descname"><span class="pre">log_diagnostics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">LoggerAdapter</span> <span class="pre">log</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.modules.FXRolloverInterestModule.log_diagnostics" title="Permalink to this definition">¶</a></dt>
@@ -2654,7 +2732,12 @@ of fills and slippage by order type.</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The abstract base class for all simulation modules.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">SimulationModule</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.modules.SimulationModule.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.modules.SimulationModule.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">SimulationModule</span></code> class.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.modules.SimulationModule.log_diagnostics">
 <span class="sig-name descname"><span class="pre">log_diagnostics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">LoggerAdapter</span> <span class="pre">log</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.modules.SimulationModule.log_diagnostics" title="Permalink to this definition">¶</a></dt>

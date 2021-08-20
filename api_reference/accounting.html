@@ -198,7 +198,10 @@
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">AccountState</span> <span class="pre">event</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">calculate_account_state</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The base class for all trading accounts.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Account</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Account</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -210,6 +213,8 @@
 <dd class="field-even"><p><strong>ValueError</strong> – If account_type is not equal to event.account_type.</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.apply">
 <span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">AccountState</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.apply" title="Permalink to this definition">¶</a></dt>
@@ -547,7 +552,10 @@ given balances, therefore we only update included balances.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CashAccount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">AccountState</span> <span class="pre">event</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">calculate_account_state=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.accounting.accounts.cash.CashAccount" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.accounting.accounts.base.Account" title="nautilus_trader.accounting.accounts.base.Account"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.accounting.accounts.base.Account</span></code></a></p>
 <p>Provides a cash account.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">CashAccount</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.cash.CashAccount.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.accounting.accounts.cash.CashAccount.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">CashAccount</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -559,6 +567,8 @@ given balances, therefore we only update included balances.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If event.account_type is not equal to AccountType.CASH.</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.cash.CashAccount.apply">
 <span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">AccountState</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.cash.CashAccount.apply" title="Permalink to this definition">¶</a></dt>
@@ -971,7 +981,10 @@ given balances, therefore we only update included balances.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">MarginAccount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">AccountState</span> <span class="pre">event</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">calculate_account_state=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.accounting.accounts.margin.MarginAccount" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.accounting.accounts.base.Account" title="nautilus_trader.accounting.accounts.base.Account"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.accounting.accounts.base.Account</span></code></a></p>
 <p>Provides a margin account.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">MarginAccount</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.margin.MarginAccount.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.accounting.accounts.margin.MarginAccount.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">MarginAccount</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -983,6 +996,8 @@ given balances, therefore we only update included balances.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If event.account_type is not equal to AccountType.MARGIN.</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.margin.MarginAccount.apply">
 <span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">AccountState</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.margin.MarginAccount.apply" title="Permalink to this definition">¶</a></dt>
@@ -1557,6 +1572,11 @@ given balances, therefore we only update included balances.</p>
 <p>Provides exchange rate calculations between currencies.</p>
 <p>An exchange rate is the value of one asset versus that of another.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.accounting.calculators.ExchangeRateCalculator.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.accounting.calculators.ExchangeRateCalculator.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.accounting.calculators.ExchangeRateCalculator.get_rate">
 <span class="sig-name descname"><span class="pre">get_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">from_currency</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">to_currency</span></em>, <em class="sig-param"><span class="pre">PriceType</span> <span class="pre">price_type</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">bid_quotes</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">ask_quotes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.accounting.calculators.ExchangeRateCalculator.get_rate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the calculated exchange rate for the given price type using the
@@ -1594,12 +1614,17 @@ given dictionary of bid and ask quotes.</p>
 <p>Provides rollover interest rate calculations.</p>
 <p>If rate_data_csv_path is empty then will default to the included short-term
 interest rate data csv (data since 1956).</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">RolloverInterestCalculator</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.accounting.calculators.RolloverInterestCalculator.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.accounting.calculators.RolloverInterestCalculator.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">RolloverInterestCalculator</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>data</strong> (<em>str</em>) – The short term interest rate data.</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.accounting.calculators.RolloverInterestCalculator.calc_overnight_rate">
 <span class="sig-name descname"><span class="pre">calc_overnight_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">date</span> <span class="pre">date</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.accounting.calculators.RolloverInterestCalculator.calc_overnight_rate" title="Permalink to this definition">¶</a></dt>
@@ -1643,6 +1668,11 @@ interest rate data csv (data since 1956).</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">AccountFactory</span></span><a class="headerlink" href="#nautilus_trader.accounting.factory.AccountFactory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a factory for creating different account types.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.accounting.factory.AccountFactory.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.accounting.factory.AccountFactory.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.accounting.factory.AccountFactory.create">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">AccountState</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Account</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.factory.AccountFactory.create" title="Permalink to this definition">¶</a></dt>
@@ -1699,12 +1729,21 @@ order fills.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">AccountsManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">CacheFacade</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">LoggerAdapter</span> <span class="pre">log</span></em>, <em class="sig-param"><span class="pre">Clock</span> <span class="pre">clock</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.accounting.manager.AccountsManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides account management services for a <code class="docutils literal notranslate"><span class="pre">Portfolio</span></code>.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">AccountsManager</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.accounting.manager.AccountsManager.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.accounting.manager.AccountsManager.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">AccountsManager</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.base.CacheFacade" title="nautilus_trader.cache.base.CacheFacade"><em>CacheFacade</em></a>) – The read-only cache for the manager.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.base.CacheFacade" title="nautilus_trader.cache.base.CacheFacade"><em>CacheFacade</em></a>) – The read-only cache for the manager.</p></li>
+<li><p><strong>log</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.LoggerAdapter" title="nautilus_trader.common.logging.LoggerAdapter"><em>LoggerAdapter</em></a>) – The logger for the manager.</p></li>
+<li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the manager.</p></li>
+</ul>
 </dd>
 </dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>

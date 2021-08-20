@@ -227,7 +227,10 @@ rolling window. Developed by Perry Kaufman, the AMA is a moving average
 designed to account for market noise and volatility. The AMA will closely
 follow prices when the price swings are relatively small and the noise is
 low. The AMA will increase lag when the price swings increase.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">AdaptiveMovingAverage</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.average.ama.AdaptiveMovingAverage.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.average.ama.AdaptiveMovingAverage.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">AdaptiveMovingAverage</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -238,6 +241,8 @@ low. The AMA will increase lag when the price swings increase.</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.average.ama.AdaptiveMovingAverage.alpha_diff">
 <span class="sig-name descname"><span class="pre">alpha_diff</span></span><a class="headerlink" href="#nautilus_trader.indicators.average.ama.AdaptiveMovingAverage.alpha_diff" title="Permalink to this definition">¶</a></dt>
@@ -443,7 +448,10 @@ low. The AMA will increase lag when the price swings increase.</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.indicators.average.moving_average.MovingAverage</span></code></p>
 <p>An indicator which calculates an exponential moving average across a
 rolling window.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">ExponentialMovingAverage</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.average.ema.ExponentialMovingAverage.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.average.ema.ExponentialMovingAverage.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">ExponentialMovingAverage</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -455,6 +463,8 @@ rolling window.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If period is not positive (&gt; 0).</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.average.ema.ExponentialMovingAverage.alpha">
 <span class="sig-name descname"><span class="pre">alpha</span></span><a class="headerlink" href="#nautilus_trader.indicators.average.ema.ExponentialMovingAverage.alpha" title="Permalink to this definition">¶</a></dt>
@@ -609,7 +619,10 @@ mid-range or median band. The upper band marks the highest price of a
 instrument_id over N periods while the lower band marks the lowest price of a
 instrument_id over N periods. The area between the upper and lower bands
 represents the Donchian Channel.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">DonchianChannel</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.donchian_channel.DonchianChannel.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.donchian_channel.DonchianChannel.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">DonchianChannel</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>period</strong> (<em>int</em>) – The rolling window period for the indicator (&gt; 0).</p>
@@ -618,6 +631,8 @@ represents the Donchian Channel.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If period is not positive (&gt; 0).</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.donchian_channel.DonchianChannel.handle_bar">
 <span class="sig-name descname"><span class="pre">handle_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Bar</span> <span class="pre">bar</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.indicators.donchian_channel.DonchianChannel.handle_bar" title="Permalink to this definition">¶</a></dt>
@@ -761,7 +776,10 @@ represents the Donchian Channel.</p>
 <p>An indicator which calculates a Hull Moving Average (HMA) across a rolling
 window. The HMA, developed by Alan Hull, is an extremely fast and smooth
 moving average.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">HullMovingAverage</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.average.hma.HullMovingAverage.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.average.hma.HullMovingAverage.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">HullMovingAverage</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -773,6 +791,8 @@ moving average.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If period is not positive (&gt; 0).</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.average.hma.HullMovingAverage.count">
 <span class="sig-name descname"><span class="pre">count</span></span><a class="headerlink" href="#nautilus_trader.indicators.average.hma.HullMovingAverage.count" title="Permalink to this definition">¶</a></dt>
@@ -912,6 +932,11 @@ moving average.</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a factory to construct different moving average indicators.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.average.ma_factory.MovingAverageFactory.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.average.ma_factory.MovingAverageFactory.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.average.ma_factory.MovingAverageFactory.create">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">int</span> <span class="pre">period</span></em>, <em class="sig-param"><span class="pre">ma_type:</span> <span class="pre">MovingAverageType</span></em>, <em class="sig-param"><span class="pre">**kwargs</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">MovingAverage</span></span></span><a class="headerlink" href="#nautilus_trader.indicators.average.ma_factory.MovingAverageFactory.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a moving average indicator corresponding to the given ma_type.</p>
@@ -941,7 +966,10 @@ moving average.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">SimpleMovingAverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">int</span> <span class="pre">period</span></em>, <em class="sig-param"><span class="pre">PriceType</span> <span class="pre">price_type=PriceType.LAST</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.average.sma.SimpleMovingAverage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.indicators.average.moving_average.MovingAverage</span></code></p>
 <p>An indicator which calculates a simple moving average across a rolling window.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">SimpleMovingAverage</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.average.sma.SimpleMovingAverage.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.average.sma.SimpleMovingAverage.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">SimpleMovingAverage</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -953,6 +981,8 @@ moving average.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If period is not positive (&gt; 0).</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.average.sma.SimpleMovingAverage.count">
 <span class="sig-name descname"><span class="pre">count</span></span><a class="headerlink" href="#nautilus_trader.indicators.average.sma.SimpleMovingAverage.count" title="Permalink to this definition">¶</a></dt>
@@ -1091,7 +1121,10 @@ moving average.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">WeightedMovingAverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">int</span> <span class="pre">period</span></em>, <em class="sig-param"><span class="pre">weights=None</span></em>, <em class="sig-param"><span class="pre">PriceType</span> <span class="pre">price_type=PriceType.LAST</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.average.wma.WeightedMovingAverage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.indicators.average.moving_average.MovingAverage</span></code></p>
 <p>An indicator which calculates a weighted moving average across a rolling window.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">SimpleMovingAverage</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.average.wma.WeightedMovingAverage.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.average.wma.WeightedMovingAverage.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">SimpleMovingAverage</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1104,6 +1137,8 @@ moving average.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If period is not positive (&gt; 0).</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.average.wma.WeightedMovingAverage.count">
 <span class="sig-name descname"><span class="pre">count</span></span><a class="headerlink" href="#nautilus_trader.indicators.average.wma.WeightedMovingAverage.count" title="Permalink to this definition">¶</a></dt>
@@ -1254,7 +1289,10 @@ moving average.</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.indicators.base.indicator.Indicator</span></code></p>
 <p>An indicator which calculates the average true range across a rolling window.
 Different moving average types can be selected for the inner calculation.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">AverageTrueRange</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.atr.AverageTrueRange.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.atr.AverageTrueRange.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">AverageTrueRange</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1267,6 +1305,8 @@ use previous price.</p></li>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.atr.AverageTrueRange.handle_bar">
 <span class="sig-name descname"><span class="pre">handle_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Bar</span> <span class="pre">bar</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.indicators.atr.AverageTrueRange.handle_bar" title="Permalink to this definition">¶</a></dt>
@@ -1378,7 +1418,10 @@ use previous price.</p></li>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.indicators.base.indicator.Indicator</span></code></p>
 <p>Given a historic lookback window of bid/ask prices, keep a running
 computation of the min/max values of the bid/ask prices within the window.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BidAskMinMax</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.bid_ask_min_max.BidAskMinMax.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.bid_ask_min_max.BidAskMinMax.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BidAskMinMax</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1387,6 +1430,8 @@ computation of the min/max values of the bid/ask prices within the window.</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.bid_ask_min_max.BidAskMinMax.asks">
 <span class="sig-name descname"><span class="pre">asks</span></span><a class="headerlink" href="#nautilus_trader.indicators.bid_ask_min_max.BidAskMinMax.asks" title="Permalink to this definition">¶</a></dt>
@@ -1502,12 +1547,17 @@ computation of the min/max values of the bid/ask prices within the window.</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Over the course of a defined lookback window, efficiently keep track
 of the min/max values currently in the window.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">WindowedMinMaxPrices</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.bid_ask_min_max.WindowedMinMaxPrices.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.bid_ask_min_max.WindowedMinMaxPrices.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">WindowedMinMaxPrices</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>lookback</strong> (<em>timedelta</em>) – The look back duration in time.</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.bid_ask_min_max.WindowedMinMaxPrices.add_price">
 <span class="sig-name descname"><span class="pre">add_price</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">ts</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.indicators.bid_ask_min_max.WindowedMinMaxPrices.add_price" title="Permalink to this definition">¶</a></dt>
@@ -1576,7 +1626,10 @@ update our running min/max values.</p>
 trend lines plotted two standard deviations (positively and negatively) away
 from a simple moving average (SMA) of a instrument_id’s price, but which can be
 adjusted to user preferences.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BollingerBands</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.bollinger_bands.BollingerBands.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.bollinger_bands.BollingerBands.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BollingerBands</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1592,6 +1645,8 @@ adjusted to user preferences.</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.bollinger_bands.BollingerBands.handle_bar">
 <span class="sig-name descname"><span class="pre">handle_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Bar</span> <span class="pre">bar</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.indicators.bollinger_bands.BollingerBands.handle_bar" title="Permalink to this definition">¶</a></dt>
@@ -1747,7 +1802,10 @@ adjusted to user preferences.</p>
 <p>An indicator which calculates the efficiency ratio across a rolling window.
 The Kaufman Efficiency measures the ratio of the relative market speed in
 relation to the volatility, this could be thought of as a proxy for noise.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">EfficiencyRatio</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.efficiency_ratio.EfficiencyRatio.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.efficiency_ratio.EfficiencyRatio.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">EfficiencyRatio</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>period</strong> (<em>int</em>) – The rolling window period for the indicator (&gt;= 2).</p>
@@ -1756,6 +1814,8 @@ relation to the volatility, this could be thought of as a proxy for noise.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If period is not &gt;= 2.</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.efficiency_ratio.EfficiencyRatio.handle_bar">
 <span class="sig-name descname"><span class="pre">handle_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Bar</span> <span class="pre">bar</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.indicators.efficiency_ratio.EfficiencyRatio.handle_bar" title="Permalink to this definition">¶</a></dt>
@@ -1862,7 +1922,10 @@ relation to the volatility, this could be thought of as a proxy for noise.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">FuzzyCandle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">CandleDirection</span> <span class="pre">direction</span></em>, <em class="sig-param"><span class="pre">CandleSize</span> <span class="pre">size</span></em>, <em class="sig-param"><span class="pre">CandleBodySize</span> <span class="pre">body_size</span></em>, <em class="sig-param"><span class="pre">CandleWickSize</span> <span class="pre">upper_wick_size</span></em>, <em class="sig-param"><span class="pre">CandleWickSize</span> <span class="pre">lower_wick_size</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.fuzzy_candlesticks.FuzzyCandle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Represents a fuzzy candle.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">FuzzyCandle</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.fuzzy_candlesticks.FuzzyCandle.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.fuzzy_candlesticks.FuzzyCandle.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">FuzzyCandle</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1874,6 +1937,8 @@ relation to the volatility, this could be thought of as a proxy for noise.</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.fuzzy_candlesticks.FuzzyCandle.body_size">
 <span class="sig-name descname"><span class="pre">body_size</span></span><a class="headerlink" href="#nautilus_trader.indicators.fuzzy_candlesticks.FuzzyCandle.body_size" title="Permalink to this definition">¶</a></dt>
@@ -1937,7 +2002,10 @@ relation to the volatility, this could be thought of as a proxy for noise.</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.indicators.base.indicator.Indicator</span></code></p>
 <p>An indicator which fuzzifies bar data to produce fuzzy candlesticks.
 Bar data is dimensionally reduced via fuzzy feature extraction.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">FuzzyCandlesticks</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.fuzzy_candlesticks.FuzzyCandlesticks.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.fuzzy_candlesticks.FuzzyCandlesticks.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">FuzzyCandlesticks</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1949,6 +2017,8 @@ Bar data is dimensionally reduced via fuzzy feature extraction.</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.fuzzy_candlesticks.FuzzyCandlesticks.handle_bar">
 <span class="sig-name descname"><span class="pre">handle_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Bar</span> <span class="pre">bar</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.indicators.fuzzy_candlesticks.FuzzyCandlesticks.handle_bar" title="Permalink to this definition">¶</a></dt>
@@ -2075,12 +2145,17 @@ market across a rolling window. One basic definition of a cycle is that the
 phase has a constant rate of change, i.e. A 10 bar cycle changes phase at
 the rate of 36 degrees per bar so that 360 degrees of phase is completed
 (one full cycle) every 10 bars.</p>
-<p>Initialize a new instance of the HilbertPeriod class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.hilbert_period.HilbertPeriod.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.hilbert_period.HilbertPeriod.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the HilbertPeriod class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>period</strong> (<em>int</em>) – The rolling window period for the indicator (&gt; 0).</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.hilbert_period.HilbertPeriod.handle_bar">
 <span class="sig-name descname"><span class="pre">handle_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Bar</span> <span class="pre">bar</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.indicators.hilbert_period.HilbertPeriod.handle_bar" title="Permalink to this definition">¶</a></dt>
@@ -2190,7 +2265,10 @@ the rate of 36 degrees per bar so that 360 degrees of phase is completed
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">HilbertSignalNoiseRatio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">int</span> <span class="pre">period=7</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">range_floor=0.00001</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">amplitude_floor=0.001</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.hilbert_snr.HilbertSignalNoiseRatio" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.indicators.base.indicator.Indicator</span></code></p>
 <p>An indicator which calculates the amplitude of a signal.</p>
-<p>Initialize a new instance of the HilbertSignalNoiseRatio class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.hilbert_snr.HilbertSignalNoiseRatio.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.hilbert_snr.HilbertSignalNoiseRatio.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the HilbertSignalNoiseRatio class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2200,6 +2278,8 @@ the rate of 36 degrees per bar so that 360 degrees of phase is completed
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.hilbert_snr.HilbertSignalNoiseRatio.handle_bar">
 <span class="sig-name descname"><span class="pre">handle_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Bar</span> <span class="pre">bar</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.indicators.hilbert_snr.HilbertSignalNoiseRatio.handle_bar" title="Permalink to this definition">¶</a></dt>
@@ -2313,12 +2393,17 @@ The Hilbert Transform itself, is an all-pass filter used in digital signal
 processing. By using present and prior price differences, and some feedback,
 price values are split into their complex number components of real (in-phase)
 and imaginary (quadrature) parts.</p>
-<p>Initialize a new instance of the HilbertTransform class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.hilbert_transform.HilbertTransform.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.hilbert_transform.HilbertTransform.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the HilbertTransform class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>period</strong> (<em>int</em>) – The rolling window period for the indicator (&gt; 0).</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.hilbert_transform.HilbertTransform.handle_bar">
 <span class="sig-name descname"><span class="pre">handle_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Bar</span> <span class="pre">bar</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.indicators.hilbert_transform.HilbertTransform.handle_bar" title="Permalink to this definition">¶</a></dt>
@@ -2439,7 +2524,10 @@ and imaginary (quadrature) parts.</p>
 central moving average. Traditionally the middle band is an EMA based on the
 typical price (high + low + close) / 3, the upper band is the middle band
 plus the ATR. The lower band is the middle band minus the ATR.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">KeltnerChannel</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.keltner_channel.KeltnerChannel.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.keltner_channel.KeltnerChannel.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">KeltnerChannel</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2452,6 +2540,8 @@ plus the ATR. The lower band is the middle band minus the ATR.</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.keltner_channel.KeltnerChannel.handle_bar">
 <span class="sig-name descname"><span class="pre">handle_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Bar</span> <span class="pre">bar</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.indicators.keltner_channel.KeltnerChannel.handle_bar" title="Permalink to this definition">¶</a></dt>
@@ -2597,7 +2687,10 @@ plus the ATR. The lower band is the middle band minus the ATR.</p>
 <p>An indicator which calculates the relative position of the given price
 within a defined Keltner channel. This provides a measure of the relative
 ‘extension’ of a market from the mean, as a multiple of volatility.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">KeltnerChannel</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.keltner_position.KeltnerPosition.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.keltner_position.KeltnerPosition.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">KeltnerChannel</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2610,6 +2703,8 @@ within a defined Keltner channel. This provides a measure of the relative
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.keltner_position.KeltnerPosition.handle_bar">
 <span class="sig-name descname"><span class="pre">handle_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Bar</span> <span class="pre">bar</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.indicators.keltner_position.KeltnerPosition.handle_bar" title="Permalink to this definition">¶</a></dt>
@@ -2732,7 +2827,10 @@ within a defined Keltner channel. This provides a measure of the relative
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.indicators.base.indicator.Indicator</span></code></p>
 <p>An indicator which calculates the difference between two moving averages.
 Different moving average types can be selected for the inner calculation.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">MovingAverageConvergenceDivergence</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.macd.MovingAverageConvergenceDivergence.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.macd.MovingAverageConvergenceDivergence.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">MovingAverageConvergenceDivergence</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2750,6 +2848,8 @@ Different moving average types can be selected for the inner calculation.</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.macd.MovingAverageConvergenceDivergence.fast_period">
 <span class="sig-name descname"><span class="pre">fast_period</span></span><a class="headerlink" href="#nautilus_trader.indicators.macd.MovingAverageConvergenceDivergence.fast_period" title="Permalink to this definition">¶</a></dt>
@@ -2889,7 +2989,10 @@ Different moving average types can be selected for the inner calculation.</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.indicators.base.indicator.Indicator</span></code></p>
 <p>An indicator which calculates the momentum of relative positive or negative
 volume.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">OnBalanceVolume</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.obv.OnBalanceVolume.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.obv.OnBalanceVolume.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">OnBalanceVolume</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>period</strong> (<em>int</em>) – The period for the indicator, zero indicates no window (&gt;= 0).</p>
@@ -2898,6 +3001,8 @@ volume.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If period is negative (&lt; 0).</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.obv.OnBalanceVolume.handle_bar">
 <span class="sig-name descname"><span class="pre">handle_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Bar</span> <span class="pre">bar</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.indicators.obv.OnBalanceVolume.handle_bar" title="Permalink to this definition">¶</a></dt>
@@ -3009,7 +3114,10 @@ volume.</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.indicators.base.indicator.Indicator</span></code></p>
 <p>An indicator which calculates the relative volume (multiple of average volume)
 to move the market across a relative range (multiple of ATR).</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Pressure</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.pressure.Pressure.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.pressure.Pressure.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Pressure</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -3025,6 +3133,8 @@ to move the market across a relative range (multiple of ATR).</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.pressure.Pressure.handle_bar">
 <span class="sig-name descname"><span class="pre">handle_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Bar</span> <span class="pre">bar</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.indicators.pressure.Pressure.handle_bar" title="Permalink to this definition">¶</a></dt>
@@ -3148,7 +3258,10 @@ to move the market across a relative range (multiple of ATR).</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.indicators.base.indicator.Indicator</span></code></p>
 <p>An indicator which calculates the rate of change of price over a defined period.
 The return output can be simple or log.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">RateOfChange</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.roc.RateOfChange.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.roc.RateOfChange.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">RateOfChange</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -3160,6 +3273,8 @@ The return output can be simple or log.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If period is not &gt; 1.</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.roc.RateOfChange.handle_bar">
 <span class="sig-name descname"><span class="pre">handle_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Bar</span> <span class="pre">bar</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.indicators.roc.RateOfChange.handle_bar" title="Permalink to this definition">¶</a></dt>
@@ -3266,7 +3381,10 @@ The return output can be simple or log.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">RelativeStrengthIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">int</span> <span class="pre">period</span></em>, <em class="sig-param"><span class="pre">ma_type:</span> <span class="pre">MovingAverageType</span> <span class="pre">=</span> <span class="pre">MovingAverageType.EXPONENTIAL</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.rsi.RelativeStrengthIndex" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.indicators.base.indicator.Indicator</span></code></p>
 <p>An indicator which calculates a relative strength index (RSI) across a rolling window.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">RelativeStrengthIndex</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.rsi.RelativeStrengthIndex.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.rsi.RelativeStrengthIndex.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">RelativeStrengthIndex</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -3278,6 +3396,8 @@ The return output can be simple or log.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If period is not positive (&gt; 0).</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.rsi.RelativeStrengthIndex.handle_bar">
 <span class="sig-name descname"><span class="pre">handle_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Bar</span> <span class="pre">bar</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.indicators.rsi.RelativeStrengthIndex.handle_bar" title="Permalink to this definition">¶</a></dt>
@@ -3384,7 +3504,10 @@ The return output can be simple or log.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">SpreadAnalyzer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">capacity</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.spread_analyzer.SpreadAnalyzer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.indicators.base.indicator.Indicator</span></code></p>
 <p>Provides various spread analysis metrics.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">SpreadAnalyzer</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.spread_analyzer.SpreadAnalyzer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.spread_analyzer.SpreadAnalyzer.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">SpreadAnalyzer</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -3396,6 +3519,8 @@ The return output can be simple or log.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If capacity is not positive (&gt; 0).</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.spread_analyzer.SpreadAnalyzer.average">
 <span class="sig-name descname"><span class="pre">average</span></span><a class="headerlink" href="#nautilus_trader.indicators.spread_analyzer.SpreadAnalyzer.average" title="Permalink to this definition">¶</a></dt>
@@ -3519,7 +3644,10 @@ The return output can be simple or log.</p>
 sold.</p>
 <p class="rubric">References</p>
 <p><a class="reference external" href="https://www.forextraders.com/forex-education/forex-indicators/stochastics-indicator-explained/">https://www.forextraders.com/forex-education/forex-indicators/stochastics-indicator-explained/</a></p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Stochastics</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.stochastics.Stochastics.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.stochastics.Stochastics.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Stochastics</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -3534,6 +3662,8 @@ sold.</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.stochastics.Stochastics.handle_bar">
 <span class="sig-name descname"><span class="pre">handle_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Bar</span> <span class="pre">bar</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.indicators.stochastics.Stochastics.handle_bar" title="Permalink to this definition">¶</a></dt>
@@ -3666,12 +3796,17 @@ sold.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Swings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">int</span> <span class="pre">period</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.swings.Swings" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.indicators.base.indicator.Indicator</span></code></p>
 <p>A swing indicator which calculates and stores various swing metrics.</p>
-<p>Initialize a new instance of the Swings class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.swings.Swings.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.swings.Swings.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the Swings class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>period</strong> (<em>int</em>) – The rolling window period for the indicator (&gt; 0).</p>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.swings.Swings.changed">
 <span class="sig-name descname"><span class="pre">changed</span></span><a class="headerlink" href="#nautilus_trader.indicators.swings.Swings.changed" title="Permalink to this definition">¶</a></dt>
@@ -3882,7 +4017,10 @@ sold.</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.indicators.base.indicator.Indicator</span></code></p>
 <p>An indicator which calculates the ratio of different ranges of volatility.
 Different moving average types can be selected for the inner ATR calculations.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">MovingAverageConvergenceDivergence</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.volatility_ratio.VolatilityRatio.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.volatility_ratio.VolatilityRatio.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">MovingAverageConvergenceDivergence</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -3902,6 +4040,8 @@ Different moving average types can be selected for the inner ATR calculations.</
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.volatility_ratio.VolatilityRatio.fast_period">
 <span class="sig-name descname"><span class="pre">fast_period</span></span><a class="headerlink" href="#nautilus_trader.indicators.volatility_ratio.VolatilityRatio.fast_period" title="Permalink to this definition">¶</a></dt>
@@ -4023,7 +4163,12 @@ Different moving average types can be selected for the inner ATR calculations.</
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">VolumeWeightedAveragePrice</span></span><a class="headerlink" href="#nautilus_trader.indicators.vwap.VolumeWeightedAveragePrice" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.indicators.base.indicator.Indicator</span></code></p>
 <p>An indicator which calculates the volume weighted average price for the day.</p>
-<p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">VolumeWeightedAveragePrice</span></code> class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.indicators.vwap.VolumeWeightedAveragePrice.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.indicators.vwap.VolumeWeightedAveragePrice.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">VolumeWeightedAveragePrice</span></code> class.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.indicators.vwap.VolumeWeightedAveragePrice.handle_bar">
 <span class="sig-name descname"><span class="pre">handle_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Bar</span> <span class="pre">bar</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.indicators.vwap.VolumeWeightedAveragePrice.handle_bar" title="Permalink to this definition">¶</a></dt>
