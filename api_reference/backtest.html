@@ -297,7 +297,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestDataClient.is_degraded">
 <span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestDataClient.is_degraded" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DEGRADED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DEGRADED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -308,7 +308,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestDataClient.is_disposed">
 <span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestDataClient.is_disposed" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DISPOSED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -319,7 +319,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestDataClient.is_faulted">
 <span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestDataClient.is_faulted" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is FAULTED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">FAULTED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -330,7 +330,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestDataClient.is_initialized">
 <span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestDataClient.is_initialized" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component has been initialized.</p>
+<dd><p>If the component has been initialized (component.state &gt;= <code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -341,7 +341,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestDataClient.is_running">
 <span class="sig-name descname"><span class="pre">is_running</span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestDataClient.is_running" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the components current state is RUNNING.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -352,7 +352,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestDataClient.is_stopped">
 <span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestDataClient.is_stopped" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is STOPPED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">STOPPED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -606,7 +606,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.is_degraded">
 <span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.is_degraded" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DEGRADED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DEGRADED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -617,7 +617,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.is_disposed">
 <span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.is_disposed" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DISPOSED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -628,7 +628,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.is_faulted">
 <span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.is_faulted" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is FAULTED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">FAULTED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -639,7 +639,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.is_initialized">
 <span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.is_initialized" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component has been initialized.</p>
+<dd><p>If the component has been initialized (component.state &gt;= <code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -650,7 +650,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.is_running">
 <span class="sig-name descname"><span class="pre">is_running</span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.is_running" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the components current state is RUNNING.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -661,7 +661,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.is_stopped">
 <span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.is_stopped" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is STOPPED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">STOPPED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -869,7 +869,7 @@ to the current datetime.</p></li>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The order book instrument to subscribe to.</p></li>
-<li><p><strong>level</strong> (<em>BookLevel</em>) – The order book level (L1, L2, L3).</p></li>
+<li><p><strong>level</strong> (BookLevel {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}) – The order book level.</p></li>
 <li><p><strong>kwargs</strong> (<em>dict</em><em>, </em><em>optional</em>) – The keyword arguments for exchange specific parameters.</p></li>
 </ul>
 </dd>
@@ -884,7 +884,7 @@ to the current datetime.</p></li>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The order book instrument to subscribe to.</p></li>
-<li><p><strong>level</strong> (<em>BookLevel</em>) – The order book level (L1, L2, L3).</p></li>
+<li><p><strong>level</strong> (BookLevel {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}) – The order book level.</p></li>
 <li><p><strong>depth</strong> (<em>int</em><em>, </em><em>optional</em>) – The maximum depth for the order book. A depth of 0 is maximum depth.</p></li>
 <li><p><strong>kwargs</strong> (<em>dict</em><em>, </em><em>optional</em>) – The keyword arguments for exchange specific parameters.</p></li>
 </ul>
@@ -1424,7 +1424,7 @@ data.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If price_type is LAST.</p></li>
+<li><p><strong>ValueError</strong> – If price_type is <code class="docutils literal notranslate"><span class="pre">LAST</span></code>.</p></li>
 <li><p><strong>ValueError</strong> – If data is empty.</p></li>
 </ul>
 </dd>
@@ -1583,7 +1583,7 @@ assumed to be UTC, and are converted to tz-aware in pre-processing).</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a>) – The exchange venue ID.</p></li>
 <li><p><strong>venue_type</strong> (<em>VenueType</em>) – The type of venue (will determine venue -&gt; client_id mapping).</p></li>
-<li><p><strong>oms_type</strong> (<em>OMSType</em>) – The order management system type for the exchange. If HEDGING and
+<li><p><strong>oms_type</strong> (OMSType {<code class="docutils literal notranslate"><span class="pre">HEDGING</span></code>, <code class="docutils literal notranslate"><span class="pre">NETTING</span></code>}) – The order management system type for the exchange. If <code class="docutils literal notranslate"><span class="pre">HEDGING</span></code> and
 no position_id for an order then will generate a new position_id.</p></li>
 <li><p><strong>account_type</strong> (<em>AccountType</em>) – The account type for the client.</p></li>
 <li><p><strong>base_currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The account base currency for the client. Use <code class="docutils literal notranslate"><span class="pre">None</span></code> for multi-currency accounts.</p></li>
@@ -1772,7 +1772,7 @@ to the end of the data.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a>) – The venue to simulate.</p></li>
 <li><p><strong>venue_type</strong> (<em>VenueType</em>) – The venues type.</p></li>
-<li><p><strong>oms_type</strong> (<em>OMSType</em>) – The order management system type used by the exchange (HEDGING or NETTING).</p></li>
+<li><p><strong>oms_type</strong> (<em>OMSType</em>) – The order management system type used by the exchange (<code class="docutils literal notranslate"><span class="pre">HEDGING</span></code> or <code class="docutils literal notranslate"><span class="pre">NETTING</span></code>).</p></li>
 <li><p><strong>account_type</strong> (<em>AccountType</em>) – The account type for the client.</p></li>
 <li><p><strong>base_currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The account base currency for the client. Use <code class="docutils literal notranslate"><span class="pre">None</span></code> for multi-currency accounts.</p></li>
 <li><p><strong>starting_balances</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money"><em>Money</em></a><em>]</em>) – The starting balances for the exchange.</p></li>
@@ -2513,7 +2513,7 @@ position ID resolution.</p></li>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.is_degraded">
 <span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.is_degraded" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DEGRADED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DEGRADED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2524,7 +2524,7 @@ position ID resolution.</p></li>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.is_disposed">
 <span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.is_disposed" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DISPOSED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2535,7 +2535,7 @@ position ID resolution.</p></li>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.is_faulted">
 <span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.is_faulted" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is FAULTED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">FAULTED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2546,7 +2546,7 @@ position ID resolution.</p></li>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.is_initialized">
 <span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.is_initialized" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component has been initialized.</p>
+<dd><p>If the component has been initialized (component.state &gt;= <code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2557,7 +2557,7 @@ position ID resolution.</p></li>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.is_running">
 <span class="sig-name descname"><span class="pre">is_running</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.is_running" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the components current state is RUNNING.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2568,7 +2568,7 @@ position ID resolution.</p></li>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.is_stopped">
 <span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.is_stopped" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is STOPPED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">STOPPED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2924,7 +2924,7 @@ of fills and slippage by order type.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.models.FillModel.is_limit_filled">
 <span class="sig-name descname"><span class="pre">is_limit_filled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.models.FillModel.is_limit_filled" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a value indicating whether a <cite>LIMIT</cite> order filled.</p>
+<dd><p>Return a value indicating whether a <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> order filled.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2935,7 +2935,7 @@ of fills and slippage by order type.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.models.FillModel.is_slipped">
 <span class="sig-name descname"><span class="pre">is_slipped</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.models.FillModel.is_slipped" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a value indicating whether an order fill slipping.</p>
+<dd><p>Return a value indicating whether an order fill slipped.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2946,7 +2946,7 @@ of fills and slippage by order type.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.models.FillModel.is_stop_filled">
 <span class="sig-name descname"><span class="pre">is_stop_filled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.models.FillModel.is_stop_filled" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a value indicating whether a <cite>STOP-MARKET</cite> order filling.</p>
+<dd><p>Return a value indicating whether a <code class="docutils literal notranslate"><span class="pre">STOP-MARKET</span></code> order filled.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -3053,7 +3053,10 @@ of fills and slippage by order type.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">SimulationModule</span></span><a class="headerlink" href="#nautilus_trader.backtest.modules.SimulationModule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The abstract base class for all simulation modules.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.modules.SimulationModule.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.modules.SimulationModule.__init__" title="Permalink to this definition">¶</a></dt>

@@ -200,7 +200,10 @@
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LiveDataClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">loop:</span> <span class="pre">asyncio.AbstractEventLoop</span></em>, <em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></em>, <em class="sig-param"><span class="pre">Cache</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">LiveClock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">config=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveDataClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="data.html#nautilus_trader.data.client.DataClient" title="nautilus_trader.data.client.DataClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.data.client.DataClient</span></code></a></p>
 <p>The abstract base class for all live data clients.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveDataClient.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveDataClient.__init__" title="Permalink to this definition">¶</a></dt>
@@ -297,7 +300,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveDataClient.is_degraded">
 <span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveDataClient.is_degraded" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DEGRADED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DEGRADED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -308,7 +311,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveDataClient.is_disposed">
 <span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveDataClient.is_disposed" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DISPOSED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -319,7 +322,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveDataClient.is_faulted">
 <span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveDataClient.is_faulted" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is FAULTED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">FAULTED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -330,7 +333,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveDataClient.is_initialized">
 <span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveDataClient.is_initialized" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component has been initialized.</p>
+<dd><p>If the component has been initialized (component.state &gt;= <code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -341,7 +344,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveDataClient.is_running">
 <span class="sig-name descname"><span class="pre">is_running</span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveDataClient.is_running" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the components current state is RUNNING.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -352,7 +355,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveDataClient.is_stopped">
 <span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveDataClient.is_stopped" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is STOPPED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">STOPPED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -529,7 +532,10 @@ testing dependency injection.</p></li>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LiveMarketDataClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">loop:</span> <span class="pre">asyncio.AbstractEventLoop</span></em>, <em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></em>, <em class="sig-param"><span class="pre">Cache</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">LiveClock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">config=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="data.html#nautilus_trader.data.client.MarketDataClient" title="nautilus_trader.data.client.MarketDataClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.data.client.MarketDataClient</span></code></a></p>
 <p>The abstract base class for all live data clients.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.__init__" title="Permalink to this definition">¶</a></dt>
@@ -626,7 +632,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.is_degraded">
 <span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.is_degraded" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DEGRADED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DEGRADED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -637,7 +643,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.is_disposed">
 <span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.is_disposed" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DISPOSED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -648,7 +654,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.is_faulted">
 <span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.is_faulted" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is FAULTED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">FAULTED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -659,7 +665,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.is_initialized">
 <span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.is_initialized" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component has been initialized.</p>
+<dd><p>If the component has been initialized (component.state &gt;= <code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -670,7 +676,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.is_running">
 <span class="sig-name descname"><span class="pre">is_running</span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.is_running" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the components current state is RUNNING.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -681,7 +687,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.is_stopped">
 <span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.is_stopped" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is STOPPED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">STOPPED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -1276,7 +1282,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_engine.LiveDataEngine.is_degraded">
 <span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.live.data_engine.LiveDataEngine.is_degraded" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DEGRADED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DEGRADED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -1287,7 +1293,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_engine.LiveDataEngine.is_disposed">
 <span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.live.data_engine.LiveDataEngine.is_disposed" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DISPOSED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -1298,7 +1304,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_engine.LiveDataEngine.is_faulted">
 <span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.live.data_engine.LiveDataEngine.is_faulted" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is FAULTED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">FAULTED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -1309,7 +1315,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_engine.LiveDataEngine.is_initialized">
 <span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.live.data_engine.LiveDataEngine.is_initialized" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component has been initialized.</p>
+<dd><p>If the component has been initialized (component.state &gt;= <code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -1331,7 +1337,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_engine.LiveDataEngine.is_stopped">
 <span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.live.data_engine.LiveDataEngine.is_stopped" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is STOPPED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">STOPPED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -1675,7 +1681,10 @@ running on.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LiveExecutionClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">loop:</span> <span class="pre">asyncio.AbstractEventLoop</span></em>, <em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">VenueType</span> <span class="pre">venue_type</span></em>, <em class="sig-param"><span class="pre">AccountId</span> <span class="pre">account_id</span></em>, <em class="sig-param"><span class="pre">AccountType</span> <span class="pre">account_type</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">base_currency</span></em>, <em class="sig-param"><span class="pre">InstrumentProvider</span> <span class="pre">instrument_provider</span></em>, <em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></em>, <em class="sig-param"><span class="pre">Cache</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">LiveClock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">config=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="execution.html#nautilus_trader.execution.client.ExecutionClient" title="nautilus_trader.execution.client.ExecutionClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.execution.client.ExecutionClient</span></code></a></p>
 <p>The abstract base class for all live execution clients.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.__init__" title="Permalink to this definition">¶</a></dt>
@@ -2101,7 +2110,7 @@ position ID resolution.</p></li>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.is_degraded">
 <span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.is_degraded" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DEGRADED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DEGRADED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2112,7 +2121,7 @@ position ID resolution.</p></li>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.is_disposed">
 <span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.is_disposed" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DISPOSED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2123,7 +2132,7 @@ position ID resolution.</p></li>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.is_faulted">
 <span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.is_faulted" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is FAULTED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">FAULTED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2134,7 +2143,7 @@ position ID resolution.</p></li>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.is_initialized">
 <span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.is_initialized" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component has been initialized.</p>
+<dd><p>If the component has been initialized (component.state &gt;= <code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2145,7 +2154,7 @@ position ID resolution.</p></li>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.is_running">
 <span class="sig-name descname"><span class="pre">is_running</span></span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.is_running" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the components current state is RUNNING.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2156,7 +2165,7 @@ position ID resolution.</p></li>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.is_stopped">
 <span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.is_stopped" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is STOPPED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">STOPPED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2577,7 +2586,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_engine.LiveExecutionEngine.is_degraded">
 <span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.live.execution_engine.LiveExecutionEngine.is_degraded" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DEGRADED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DEGRADED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2588,7 +2597,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_engine.LiveExecutionEngine.is_disposed">
 <span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.live.execution_engine.LiveExecutionEngine.is_disposed" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DISPOSED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2599,7 +2608,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_engine.LiveExecutionEngine.is_faulted">
 <span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.live.execution_engine.LiveExecutionEngine.is_faulted" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is FAULTED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">FAULTED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2610,7 +2619,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_engine.LiveExecutionEngine.is_initialized">
 <span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.live.execution_engine.LiveExecutionEngine.is_initialized" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component has been initialized.</p>
+<dd><p>If the component has been initialized (component.state &gt;= <code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2632,7 +2641,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_engine.LiveExecutionEngine.is_stopped">
 <span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.live.execution_engine.LiveExecutionEngine.is_stopped" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is STOPPED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">STOPPED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2722,7 +2731,7 @@ to reconcile a state then errors will be logged.</p>
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_engine.LiveExecutionEngine.register_client">
 <span class="sig-name descname"><span class="pre">register_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ExecutionClient</span> <span class="pre">client</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.live.execution_engine.LiveExecutionEngine.register_client" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the given execution client with the execution engine.</p>
-<p>If the client.venue_type == BROKERAGE_MULTI_VENUE and a default client
+<p>If the client.venue_type == <code class="docutils literal notranslate"><span class="pre">BROKERAGE_MULTI_VENUE</span></code> and a default client
 has not been previously registered then will be registered as such.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -3051,7 +3060,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.risk_engine.LiveRiskEngine.is_degraded">
 <span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.live.risk_engine.LiveRiskEngine.is_degraded" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DEGRADED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DEGRADED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -3062,7 +3071,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.risk_engine.LiveRiskEngine.is_disposed">
 <span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.live.risk_engine.LiveRiskEngine.is_disposed" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DISPOSED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -3073,7 +3082,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.risk_engine.LiveRiskEngine.is_faulted">
 <span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.live.risk_engine.LiveRiskEngine.is_faulted" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is FAULTED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">FAULTED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -3084,7 +3093,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.risk_engine.LiveRiskEngine.is_initialized">
 <span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.live.risk_engine.LiveRiskEngine.is_initialized" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component has been initialized.</p>
+<dd><p>If the component has been initialized (component.state &gt;= <code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -3106,7 +3115,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.live.risk_engine.LiveRiskEngine.is_stopped">
 <span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.live.risk_engine.LiveRiskEngine.is_stopped" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is STOPPED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">STOPPED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -3354,7 +3363,7 @@ notional check.</p>
 <dd><p>If the trading node is running.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if running, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -3365,7 +3374,7 @@ notional check.</p>
 <dd><p>If the trading node clients are built.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if built, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>

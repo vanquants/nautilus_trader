@@ -256,6 +256,12 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.cache.base.CacheFacade.client_order_ids_active">
+<span class="sig-name descname"><span class="pre">client_order_ids_active</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue=None</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id=None</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">set</span></span></span><a class="headerlink" href="#nautilus_trader.cache.base.CacheFacade.client_order_ids_active" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.cache.base.CacheFacade.client_order_ids_completed">
 <span class="sig-name descname"><span class="pre">client_order_ids_completed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue=None</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id=None</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">set</span></span></span><a class="headerlink" href="#nautilus_trader.cache.base.CacheFacade.client_order_ids_completed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
@@ -328,6 +334,12 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.cache.base.CacheFacade.is_order_active">
+<span class="sig-name descname"><span class="pre">is_order_active</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.cache.base.CacheFacade.is_order_active" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.cache.base.CacheFacade.is_order_completed">
 <span class="sig-name descname"><span class="pre">is_order_completed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.cache.base.CacheFacade.is_order_completed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
@@ -378,6 +390,18 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.cache.base.CacheFacade.orders">
 <span class="sig-name descname"><span class="pre">orders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue=None</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id=None</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.cache.base.CacheFacade.orders" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.cache.base.CacheFacade.orders_active">
+<span class="sig-name descname"><span class="pre">orders_active</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue=None</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id=None</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.cache.base.CacheFacade.orders_active" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.cache.base.CacheFacade.orders_active_count">
+<span class="sig-name descname"><span class="pre">orders_active_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue=None</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id=None</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#nautilus_trader.cache.base.CacheFacade.orders_active_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
@@ -768,9 +792,9 @@ ID.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If oms_type is HEDGING and position.id is already contained in the cache.</p></li>
-<li><p><strong>ValueError</strong> – If oms_type is HEDGING and position.id is already contained in the index_positions.</p></li>
-<li><p><strong>ValueError</strong> – If oms_type is HEDGING and position.id is already contained in the index_positions_open.</p></li>
+<li><p><strong>ValueError</strong> – If oms_type is <code class="docutils literal notranslate"><span class="pre">HEDGING</span></code> and position.id is already contained in the cache.</p></li>
+<li><p><strong>ValueError</strong> – If oms_type is <code class="docutils literal notranslate"><span class="pre">HEDGING</span></code> and position.id is already contained in the index_positions.</p></li>
+<li><p><strong>ValueError</strong> – If oms_type is <code class="docutils literal notranslate"><span class="pre">HEDGING</span></code> and position.id is already contained in the index_positions_open.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1021,6 +1045,24 @@ error is found then a log error message will also be produced.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.cache.cache.Cache.client_order_ids_active">
+<span class="sig-name descname"><span class="pre">client_order_ids_active</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue=None</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id=None</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">set</span></span></span><a class="headerlink" href="#nautilus_trader.cache.cache.Cache.client_order_ids_active" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all active client order IDs with the given query filters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
+<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
+<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>set[ClientOrderId]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.cache.cache.Cache.client_order_ids_completed">
 <span class="sig-name descname"><span class="pre">client_order_ids_completed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue=None</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id=None</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">set</span></span></span><a class="headerlink" href="#nautilus_trader.cache.cache.Cache.client_order_ids_completed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return all completed client order IDs with the given query filters.</p>
@@ -1115,7 +1157,7 @@ error is found then a log error message will also be produced.</p>
 <dd class="field-even"><p><em>Decimal</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If price_type is LAST.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If price_type is <code class="docutils literal notranslate"><span class="pre">LAST</span></code>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1233,6 +1275,20 @@ given instrument ID.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>list[Instrument]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.cache.cache.Cache.is_order_active">
+<span class="sig-name descname"><span class="pre">is_order_active</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.cache.cache.Cache.is_order_active" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a value indicating whether an order with the given ID is active.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>client_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID to check.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1429,6 +1485,42 @@ and is open.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>list[Order]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.cache.cache.Cache.orders_active">
+<span class="sig-name descname"><span class="pre">orders_active</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue=None</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id=None</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.cache.cache.Cache.orders_active" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all active orders with the given query filters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
+<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
+<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>list[Order]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.cache.cache.Cache.orders_active_count">
+<span class="sig-name descname"><span class="pre">orders_active_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue=None</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id=None</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#nautilus_trader.cache.cache.Cache.orders_active_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the count of active orders with the given query filters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
+<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
+<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>int</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2050,7 +2142,10 @@ ID (if found).</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CacheDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.cache.database.CacheDatabase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The abstract base class for all cache databases.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.cache.database.CacheDatabase.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.cache.database.CacheDatabase.__init__" title="Permalink to this definition">¶</a></dt>

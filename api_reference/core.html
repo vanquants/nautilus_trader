@@ -862,7 +862,10 @@ inferred as zero.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">UUID</span> <span class="pre">command_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Command" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
 <p>The abstract base class for all commands.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Command.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Command.__init__" title="Permalink to this definition">¶</a></dt>
@@ -917,7 +920,10 @@ inferred as zero.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Document</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">UUID</span> <span class="pre">document_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Document" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
 <p>The abstract base class for all documents.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Document.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Document.__init__" title="Permalink to this definition">¶</a></dt>
@@ -972,7 +978,10 @@ inferred as zero.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">UUID</span> <span class="pre">event_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Event" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
 <p>The abstract base class for all events.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Event.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Event.__init__" title="Permalink to this definition">¶</a></dt>
@@ -1039,7 +1048,10 @@ inferred as zero.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">MessageCategory</span> <span class="pre">category</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">message_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Message" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The abstract base class for all messages.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Message.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Message.__init__" title="Permalink to this definition">¶</a></dt>
@@ -1095,7 +1107,10 @@ inferred as zero.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">callback:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None],</span> <span class="pre">UUID</span> <span class="pre">request_id,</span> <span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Request" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
 <p>The abstract base class for all requests.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Request.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Request.__init__" title="Permalink to this definition">¶</a></dt>
@@ -1162,7 +1177,10 @@ inferred as zero.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">UUID</span> <span class="pre">correlation_id</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">response_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Response" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
 <p>The abstract base class for all responses.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Response.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Response.__init__" title="Permalink to this definition">¶</a></dt>

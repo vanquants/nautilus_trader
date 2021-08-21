@@ -1674,10 +1674,10 @@
 </li>
       <li><a href="api_reference/trading.html#nautilus_trader.trading.trader.Trader.clear_components">clear_components() (Trader method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.clear_index">clear_index() (Cache method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/accounting.html#nautilus_trader.accounting.accounts.base.Account.clear_margin_init">clear_margin_init() (Account method)</a>
 
       <ul>
@@ -1764,6 +1764,12 @@
 
       <ul>
         <li><a href="api_reference/cache.html#nautilus_trader.cache.base.CacheFacade.client_order_ids">(CacheFacade method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.client_order_ids_active">client_order_ids_active() (Cache method)</a>
+
+      <ul>
+        <li><a href="api_reference/cache.html#nautilus_trader.cache.base.CacheFacade.client_order_ids_active">(CacheFacade method)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.client_order_ids_completed">client_order_ids_completed() (Cache method)</a>
@@ -3714,6 +3720,16 @@
       </ul></li>
       <li><a href="api_reference/core.html#nautilus_trader.core.fsm.InvalidStateTrigger">InvalidStateTrigger</a>
 </li>
+      <li><a href="api_reference/model.html#nautilus_trader.model.orders.limit.LimitOrder.is_active">is_active (LimitOrder attribute)</a>
+
+      <ul>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.market.MarketOrder.is_active">(MarketOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_active">(StopLimitOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_active">(StopMarketOrder attribute)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/model.html#nautilus_trader.model.orders.limit.LimitOrder.is_aggressive">is_aggressive (LimitOrder attribute)</a>
 
       <ul>
@@ -4032,6 +4048,12 @@
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.position.Position.is_opposite_side">is_opposite_side() (Position method)</a>
 </li>
+      <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.is_order_active">is_order_active() (Cache method)</a>
+
+      <ul>
+        <li><a href="api_reference/cache.html#nautilus_trader.cache.base.CacheFacade.is_order_active">(CacheFacade method)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.is_order_completed">is_order_completed() (Cache method)</a>
 
       <ul>
@@ -6220,8 +6242,6 @@
       </ul></li>
       <li><a href="api_reference/model.html#nautilus_trader.model.events.order.OrderInitialized.options">options (OrderInitialized attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/model.html#nautilus_trader.model.orderbook.data.Order">Order (class in nautilus_trader.model.orderbook.data)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.orderbook.data.OrderBookDelta.order">order (OrderBookDelta attribute)</a>
@@ -6230,6 +6250,8 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitOrder.order">(SubmitOrder attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.order">order() (Cache method)</a>
 
       <ul>
@@ -6292,6 +6314,18 @@
 
       <ul>
         <li><a href="api_reference/cache.html#nautilus_trader.cache.base.CacheFacade.orders">(CacheFacade method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.orders_active">orders_active() (Cache method)</a>
+
+      <ul>
+        <li><a href="api_reference/cache.html#nautilus_trader.cache.base.CacheFacade.orders_active">(CacheFacade method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.orders_active_count">orders_active_count() (Cache method)</a>
+
+      <ul>
+        <li><a href="api_reference/cache.html#nautilus_trader.cache.base.CacheFacade.orders_active_count">(CacheFacade method)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.orders_completed">orders_completed() (Cache method)</a>

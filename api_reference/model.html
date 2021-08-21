@@ -621,7 +621,10 @@
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TradingCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">command_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.TradingCommand" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="core.html#nautilus_trader.core.message.Command" title="nautilus_trader.core.message.Command"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Command</span></code></a></p>
 <p>The abstract base class for all trading related commands.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.TradingCommand.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.TradingCommand.__init__" title="Permalink to this definition">¶</a></dt>
@@ -1107,9 +1110,9 @@
 <dd><p>Return a value indicating whether the aggregation method is
 information-driven.</p>
 <ul class="simple">
-<li><p>BarAggregation.TICK_RUNS</p></li>
-<li><p>BarAggregation.VOLUME_RUNS</p></li>
-<li><p>BarAggregation.VALUE_RUNS</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TICK_RUNS</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VOLUME_RUNS</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VALUE_RUNS</span></code></p></li>
 </ul>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1121,15 +1124,15 @@ information-driven.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.data.bar.BarSpecification.is_threshold_aggregated">
 <span class="sig-name descname"><span class="pre">is_threshold_aggregated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.model.data.bar.BarSpecification.is_threshold_aggregated" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a value indicating whether the aggregation method is
+<dd><p>Return a value indicating whether the bar aggregation method is
 threshold-driven.</p>
 <ul class="simple">
-<li><p>BarAggregation.TICK</p></li>
-<li><p>BarAggregation.TICK_IMBALANCE</p></li>
-<li><p>BarAggregation.VOLUME</p></li>
-<li><p>BarAggregation.VOLUME_IMBALANCE</p></li>
-<li><p>BarAggregation.VALUE</p></li>
-<li><p>BarAggregation.VALUE_IMBALANCE</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TICK</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TICK_IMBALANCE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VOLUME</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VOLUME_IMBALANCE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VALUE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VALUE_IMBALANCE</span></code></p></li>
 </ul>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1143,10 +1146,10 @@ threshold-driven.</p>
 <span class="sig-name descname"><span class="pre">is_time_aggregated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.model.data.bar.BarSpecification.is_time_aggregated" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a value indicating whether the aggregation method is time-driven.</p>
 <ul class="simple">
-<li><p>BarAggregation.SECOND</p></li>
-<li><p>BarAggregation.MINUTE</p></li>
-<li><p>BarAggregation.HOUR</p></li>
-<li><p>BarAggregation.DAY</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SECOND</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MINUTE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HOUR</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DAY</span></code></p></li>
 </ul>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1424,7 +1427,10 @@ internally aggregated.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Tick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.data.tick.Tick" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.data.base.Data</span></code></p>
 <p>The abstract base class for all ticks.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.data.tick.Tick.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.data.tick.Tick.__init__" title="Permalink to this definition">¶</a></dt>
@@ -1808,7 +1814,10 @@ internally aggregated.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">StatusUpdate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.data.venue.StatusUpdate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.data.base.Data</span></code></p>
 <p>The abstract base class for all status updates.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.data.venue.StatusUpdate.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.data.venue.StatusUpdate.__init__" title="Permalink to this definition">¶</a></dt>
@@ -2798,7 +2807,10 @@ any other reason that an otherwise valid order is not able to be submitted.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">AccountId</span> <span class="pre">account_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">event_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderEvent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="core.html#nautilus_trader.core.message.Event" title="nautilus_trader.core.message.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Event</span></code></a></p>
 <p>The abstract base class for all order events.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderEvent.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderEvent.__init__" title="Permalink to this definition">¶</a></dt>
@@ -3250,10 +3262,10 @@ any other reason that an otherwise valid order is not able to be submitted.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderFilled.is_buy">
 <span class="sig-name descname"><span class="pre">is_buy</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderFilled.is_buy" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the fill order side is BUY.</p>
+<dd><p>If the fill order side is <code class="docutils literal notranslate"><span class="pre">BUY</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if BUY, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -3261,10 +3273,10 @@ any other reason that an otherwise valid order is not able to be submitted.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderFilled.is_sell">
 <span class="sig-name descname"><span class="pre">is_sell</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderFilled.is_sell" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the fill order side is SELL.</p>
+<dd><p>If the fill order side is <code class="docutils literal notranslate"><span class="pre">SELL</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if SELL, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -3294,7 +3306,7 @@ any other reason that an otherwise valid order is not able to be submitted.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderFilled.liquidity_side">
 <span class="sig-name descname"><span class="pre">liquidity_side</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderFilled.liquidity_side" title="Permalink to this definition">¶</a></dt>
-<dd><p>The liquidity side of the event (MAKER or TAKER).</p>
+<dd><p>The liquidity side of the event (<code class="docutils literal notranslate"><span class="pre">MAKER</span></code> or <code class="docutils literal notranslate"><span class="pre">TAKER</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>LiquiditySide</cite></p>
@@ -4861,7 +4873,7 @@ trading venue.</p>
 <li><p><strong>strategy_id</strong> – The strategy ID associated with the event.</p></li>
 <li><p><strong>entry</strong> (<em>OrderSide</em>) – The position entry order side.</p></li>
 <li><p><strong>side</strong> (<em>PositionSide</em>) – The current position side.</p></li>
-<li><p><strong>net_qty</strong> (<em>Decimal</em>) – The current net quantity (positive for LONG, negative for SHORT).</p></li>
+<li><p><strong>net_qty</strong> (<em>Decimal</em>) – The current net quantity (positive for <code class="docutils literal notranslate"><span class="pre">LONG</span></code>, negative for <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>).</p></li>
 <li><p><strong>quantity</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The current open quantity.</p></li>
 <li><p><strong>peak_qty</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The peak directional quantity reached by the position.</p></li>
 <li><p><strong>last_qty</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The last fill quantity for the position.</p></li>
@@ -5050,7 +5062,7 @@ trading venue.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.events.position.PositionChanged.net_qty">
 <span class="sig-name descname"><span class="pre">net_qty</span></span><a class="headerlink" href="#nautilus_trader.model.events.position.PositionChanged.net_qty" title="Permalink to this definition">¶</a></dt>
-<dd><p>The net quantity (positive for LONG, negative for SHORT).</p>
+<dd><p>The net quantity (positive for <code class="docutils literal notranslate"><span class="pre">LONG</span></code>, negative for <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>Decimal</cite></p>
@@ -5246,7 +5258,7 @@ trading venue.</p>
 <li><p><strong>strategy_id</strong> – The strategy ID associated with the event.</p></li>
 <li><p><strong>entry</strong> (<em>OrderSide</em>) – The position entry order side.</p></li>
 <li><p><strong>side</strong> (<em>PositionSide</em>) – The current position side.</p></li>
-<li><p><strong>net_qty</strong> (<em>Decimal</em>) – The current net quantity (positive for LONG, negative for SHORT).</p></li>
+<li><p><strong>net_qty</strong> (<em>Decimal</em>) – The current net quantity (positive for <code class="docutils literal notranslate"><span class="pre">LONG</span></code>, negative for <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>).</p></li>
 <li><p><strong>quantity</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The current open quantity.</p></li>
 <li><p><strong>peak_qty</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The peak directional quantity reached by the position.</p></li>
 <li><p><strong>last_qty</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The last fill quantity for the position.</p></li>
@@ -5435,7 +5447,7 @@ trading venue.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.events.position.PositionClosed.net_qty">
 <span class="sig-name descname"><span class="pre">net_qty</span></span><a class="headerlink" href="#nautilus_trader.model.events.position.PositionClosed.net_qty" title="Permalink to this definition">¶</a></dt>
-<dd><p>The net quantity (positive for LONG, negative for SHORT).</p>
+<dd><p>The net quantity (positive for <code class="docutils literal notranslate"><span class="pre">LONG</span></code>, negative for <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>Decimal</cite></p>
@@ -5615,7 +5627,10 @@ trading venue.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">PositionEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id,</span> <span class="pre">StrategyId</span> <span class="pre">strategy_id,</span> <span class="pre">InstrumentId</span> <span class="pre">instrument_id,</span> <span class="pre">PositionId</span> <span class="pre">position_id,</span> <span class="pre">AccountId</span> <span class="pre">account_id,</span> <span class="pre">ClientOrderId</span> <span class="pre">from_order,</span> <span class="pre">OrderSide</span> <span class="pre">entry,</span> <span class="pre">PositionSide</span> <span class="pre">side,</span> <span class="pre">net_qty:</span> <span class="pre">Decimal,</span> <span class="pre">Quantity</span> <span class="pre">quantity,</span> <span class="pre">Quantity</span> <span class="pre">peak_qty,</span> <span class="pre">Quantity</span> <span class="pre">last_qty,</span> <span class="pre">Price</span> <span class="pre">last_px,</span> <span class="pre">Currency</span> <span class="pre">currency,</span> <span class="pre">avg_px_open:</span> <span class="pre">Decimal,</span> <span class="pre">avg_px_close:</span> <span class="pre">Optional[Decimal],</span> <span class="pre">realized_points:</span> <span class="pre">Decimal,</span> <span class="pre">realized_return:</span> <span class="pre">Decimal,</span> <span class="pre">Money</span> <span class="pre">realized_pnl,</span> <span class="pre">Money</span> <span class="pre">unrealized_pnl,</span> <span class="pre">UUID</span> <span class="pre">event_id,</span> <span class="pre">int64_t</span> <span class="pre">ts_opened,</span> <span class="pre">int64_t</span> <span class="pre">ts_closed,</span> <span class="pre">int64_t</span> <span class="pre">duration_ns,</span> <span class="pre">int64_t</span> <span class="pre">ts_event,</span> <span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.position.PositionEvent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="core.html#nautilus_trader.core.message.Event" title="nautilus_trader.core.message.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Event</span></code></a></p>
 <p>The abstract base class for all position events.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.events.position.PositionEvent.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.position.PositionEvent.__init__" title="Permalink to this definition">¶</a></dt>
@@ -5631,7 +5646,7 @@ trading venue.</p>
 <li><p><strong>from_order</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID for the order which initially opened the position.</p></li>
 <li><p><strong>entry</strong> (<em>OrderSide</em>) – The position entry order side.</p></li>
 <li><p><strong>side</strong> (<em>PositionSide</em>) – The current position side.</p></li>
-<li><p><strong>net_qty</strong> (<em>Decimal</em>) – The current net quantity (positive for LONG, negative for SHORT).</p></li>
+<li><p><strong>net_qty</strong> (<em>Decimal</em>) – The current net quantity (positive for <code class="docutils literal notranslate"><span class="pre">LONG</span></code>, negative for <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>).</p></li>
 <li><p><strong>quantity</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The current open quantity.</p></li>
 <li><p><strong>peak_qty</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The peak directional quantity reached by the position.</p></li>
 <li><p><strong>last_qty</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The last fill quantity for the position.</p></li>
@@ -5789,7 +5804,7 @@ trading venue.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.events.position.PositionEvent.net_qty">
 <span class="sig-name descname"><span class="pre">net_qty</span></span><a class="headerlink" href="#nautilus_trader.model.events.position.PositionEvent.net_qty" title="Permalink to this definition">¶</a></dt>
-<dd><p>The net quantity (positive for LONG, negative for SHORT).</p>
+<dd><p>The net quantity (positive for <code class="docutils literal notranslate"><span class="pre">LONG</span></code>, negative for <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>Decimal</cite></p>
@@ -5974,7 +5989,7 @@ trading venue.</p>
 <li><p><strong>strategy_id</strong> – The strategy ID associated with the event.</p></li>
 <li><p><strong>entry</strong> (<em>OrderSide</em>) – The position entry order side.</p></li>
 <li><p><strong>side</strong> (<em>PositionSide</em>) – The current position side.</p></li>
-<li><p><strong>net_qty</strong> (<em>Decimal</em>) – The current net quantity (positive for LONG, negative for SHORT).</p></li>
+<li><p><strong>net_qty</strong> (<em>Decimal</em>) – The current net quantity (positive for <code class="docutils literal notranslate"><span class="pre">LONG</span></code>, negative for <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>).</p></li>
 <li><p><strong>quantity</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The current open quantity.</p></li>
 <li><p><strong>peak_qty</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The peak directional quantity reached by the position.</p></li>
 <li><p><strong>last_qty</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The last fill quantity for the position.</p></li>
@@ -6158,7 +6173,7 @@ trading venue.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.events.position.PositionOpened.net_qty">
 <span class="sig-name descname"><span class="pre">net_qty</span></span><a class="headerlink" href="#nautilus_trader.model.events.position.PositionOpened.net_qty" title="Permalink to this definition">¶</a></dt>
-<dd><p>The net quantity (positive for LONG, negative for SHORT).</p>
+<dd><p>The net quantity (positive for <code class="docutils literal notranslate"><span class="pre">LONG</span></code>, negative for <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>Decimal</cite></p>
@@ -6544,7 +6559,7 @@ trading venue.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the book.</p></li>
-<li><p><strong>level</strong> (<em>BookLevel</em>) – The order book level (L1, L2, L3).</p></li>
+<li><p><strong>level</strong> (BookLevel {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}) – The order book level.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -6603,7 +6618,7 @@ trading venue.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L1OrderBook.level">
 <span class="sig-name descname"><span class="pre">level</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L1OrderBook.level" title="Permalink to this definition">¶</a></dt>
-<dd><p>The order book level (L1, L2, L3).</p>
+<dd><p>The order book level (<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>BookLevel</cite></p>
@@ -6934,7 +6949,7 @@ trading venue.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the book.</p></li>
-<li><p><strong>level</strong> (<em>BookLevel</em>) – The order book level (L1, L2, L3).</p></li>
+<li><p><strong>level</strong> (BookLevel {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}) – The order book level.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -6993,7 +7008,7 @@ trading venue.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L2OrderBook.level">
 <span class="sig-name descname"><span class="pre">level</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L2OrderBook.level" title="Permalink to this definition">¶</a></dt>
-<dd><p>The order book level (L1, L2, L3).</p>
+<dd><p>The order book level (<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>BookLevel</cite></p>
@@ -7320,7 +7335,7 @@ This class maps directly to functionality of the <cite>OrderBook</cite> base cla
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the book.</p></li>
-<li><p><strong>level</strong> (<em>BookLevel</em>) – The order book level (L1, L2, L3).</p></li>
+<li><p><strong>level</strong> (BookLevel {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}) – The order book level.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -7379,7 +7394,7 @@ This class maps directly to functionality of the <cite>OrderBook</cite> base cla
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L3OrderBook.level">
 <span class="sig-name descname"><span class="pre">level</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L3OrderBook.level" title="Permalink to this definition">¶</a></dt>
-<dd><p>The order book level (L1, L2, L3).</p>
+<dd><p>The order book level (<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>BookLevel</cite></p>
@@ -7501,7 +7516,7 @@ This class maps directly to functionality of the <cite>OrderBook</cite> base cla
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the book.</p></li>
-<li><p><strong>level</strong> (<em>BookLevel</em>) – The order book level (L1, L2, L3).</p></li>
+<li><p><strong>level</strong> (BookLevel {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}) – The order book level.</p></li>
 <li><p><strong>price_precision</strong> (<em>int</em>) – The price precision for the book.</p></li>
 <li><p><strong>size_precision</strong> (<em>int</em>) – The size precision for the book.</p></li>
 </ul>
@@ -7708,7 +7723,7 @@ This class maps directly to functionality of the <cite>OrderBook</cite> base cla
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the book.</p></li>
-<li><p><strong>level</strong> (<em>BookLevel</em>) – The order book level (L1, L2, L3).</p></li>
+<li><p><strong>level</strong> (BookLevel {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}) – The order book level.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -7767,7 +7782,7 @@ This class maps directly to functionality of the <cite>OrderBook</cite> base cla
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.OrderBook.level">
 <span class="sig-name descname"><span class="pre">level</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.OrderBook.level" title="Permalink to this definition">¶</a></dt>
-<dd><p>The order book level (L1, L2, L3).</p>
+<dd><p>The order book level (<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>BookLevel</cite></p>
@@ -7959,7 +7974,7 @@ This class maps directly to functionality of the <cite>OrderBook</cite> base cla
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.Order.signed_size">
 <span class="sig-name descname"><span class="pre">signed_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.Order.signed_size" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the signed size of the order (negative for SELL).</p>
+<dd><p>Return the signed size of the order (negative for <code class="docutils literal notranslate"><span class="pre">SELL</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>double</em></p>
@@ -8029,7 +8044,10 @@ This class maps directly to functionality of the <cite>OrderBook</cite> base cla
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderBookData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BookLevel</span> <span class="pre">level</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.data.base.Data</span></code></p>
 <p>The abstract base class for all <cite>OrderBook</cite> data.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookData.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookData.__init__" title="Permalink to this definition">¶</a></dt>
@@ -8038,7 +8056,7 @@ This class maps directly to functionality of the <cite>OrderBook</cite> base cla
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the book.</p></li>
-<li><p><strong>level</strong> (<em>BookLevel</em>) – The order book level (L1, L2, L3).</p></li>
+<li><p><strong>level</strong> (BookLevel {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}) – The order book level.</p></li>
 <li><p><strong>ts_event</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the data event occurred.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the data object was initialized.</p></li>
 </ul>
@@ -8105,8 +8123,8 @@ This class maps directly to functionality of the <cite>OrderBook</cite> base cla
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID.</p></li>
-<li><p><strong>level</strong> (<em>BookLevel</em>) – The book level for the delta.</p></li>
-<li><p><strong>delta_type</strong> (<em>DeltaType</em>) – The type of change (ADD, UPDATED, DELETE, CLEAR).</p></li>
+<li><p><strong>level</strong> (BookLevel {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}) – The order book level.</p></li>
+<li><p><strong>delta_type</strong> (DeltaType {<code class="docutils literal notranslate"><span class="pre">ADD</span></code>, <code class="docutils literal notranslate"><span class="pre">UPDATED</span></code>, <code class="docutils literal notranslate"><span class="pre">DELETE</span></code>, <code class="docutils literal notranslate"><span class="pre">CLEAR</span></code>}) – The type of change.</p></li>
 <li><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to apply.</p></li>
 <li><p><strong>ts_event</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the data event occurred.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the data object was initialized.</p></li>
@@ -8198,7 +8216,7 @@ This class maps directly to functionality of the <cite>OrderBook</cite> base cla
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookDelta.type">
 <span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookDelta.type" title="Permalink to this definition">¶</a></dt>
-<dd><p>The type of change (ADD, UPDATED, DELETE, CLEAR).</p>
+<dd><p>The type of change (<code class="docutils literal notranslate"><span class="pre">ADD</span></code>, <code class="docutils literal notranslate"><span class="pre">UPDATED</span></code>, <code class="docutils literal notranslate"><span class="pre">DELETE</span></code>, <code class="docutils literal notranslate"><span class="pre">CLEAR</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>DeltaType</cite></p>
@@ -8221,7 +8239,7 @@ This class maps directly to functionality of the <cite>OrderBook</cite> base cla
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the book.</p></li>
-<li><p><strong>level</strong> (<em>BookLevel</em>) – The order book level (L1, L2, L3).</p></li>
+<li><p><strong>level</strong> (BookLevel {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}) – The order book level.</p></li>
 <li><p><strong>deltas</strong> (<em>list</em><em>[</em><a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookDelta" title="nautilus_trader.model.orderbook.data.OrderBookDelta"><em>OrderBookDelta</em></a><em>]</em>) – The list of order book changes.</p></li>
 <li><p><strong>ts_event</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the data event occurred.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the data object was initialized.</p></li>
@@ -8325,7 +8343,7 @@ This class maps directly to functionality of the <cite>OrderBook</cite> base cla
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the book.</p></li>
-<li><p><strong>level</strong> (<em>BookLevel</em>) – The order book level (L1, L2, L3).</p></li>
+<li><p><strong>level</strong> (BookLevel {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}) – The order book level.</p></li>
 <li><p><strong>bids</strong> (<em>list</em>) – The bids for the snapshot.</p></li>
 <li><p><strong>asks</strong> (<em>list</em>) – The asks for the snapshot.</p></li>
 <li><p><strong>ts_event</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the data event occurred.</p></li>
@@ -8453,7 +8471,7 @@ be executed.</p>
 <li><p><strong>strategy_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a>) – The strategy ID associated with the order.</p></li>
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The order instrument ID.</p></li>
 <li><p><strong>client_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID.</p></li>
-<li><p><strong>order_side</strong> (<em>OrderSide</em>) – The order side (BUY or SELL).</p></li>
+<li><p><strong>order_side</strong> (<em>OrderSide</em>) – The order side (<code class="docutils literal notranslate"><span class="pre">BUY</span></code> or <code class="docutils literal notranslate"><span class="pre">SELL</span></code>).</p></li>
 <li><p><strong>quantity</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The order quantity (&gt; 0).</p></li>
 <li><p><strong>init_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID" title="nautilus_trader.core.uuid.UUID"><em>UUID</em></a>) – The order initialization event ID.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the order was initialized.</p></li>
@@ -8462,7 +8480,7 @@ be executed.</p>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If quantity is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If time_in_force is other than GTC, IOC or FOK.</p></li>
+<li><p><strong>ValueError</strong> – If time_in_force is other than <code class="docutils literal notranslate"><span class="pre">GTC</span></code>, <code class="docutils literal notranslate"><span class="pre">IOC</span></code> or <code class="docutils literal notranslate"><span class="pre">FOK</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -8637,12 +8655,34 @@ be executed.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.is_aggressive">
-<span class="sig-name descname"><span class="pre">is_aggressive</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.is_aggressive" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is aggressive.</p>
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.is_active">
+<span class="sig-name descname"><span class="pre">is_active</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.is_active" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the order is active (<strong>not</strong> completed).</p>
+<p>An order is considered active when its state can change.
+The possible states of active orders include;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SUBMITTED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ACCEPTED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TRIGGERED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_CANCEL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_UPDATE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PARTIALLY_FILLED</span></code></p></li>
+</ul>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order type MARKET, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.is_aggressive">
+<span class="sig-name descname"><span class="pre">is_aggressive</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.is_aggressive" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the order is aggressive (order type is <code class="docutils literal notranslate"><span class="pre">MARKET</span></code>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -8650,10 +8690,10 @@ be executed.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.is_buy">
 <span class="sig-name descname"><span class="pre">is_buy</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.is_buy" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order side is <cite>BUY</cite>.</p>
+<dd><p>If the order side is <code class="docutils literal notranslate"><span class="pre">BUY</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if BUY, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -8661,18 +8701,20 @@ be executed.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.is_completed">
 <span class="sig-name descname"><span class="pre">is_completed</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.is_completed" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is closed/completed.</p>
+<dd><p>If the order is completed (closed).</p>
 <p>An order is considered completed when its state can no longer change.
-The possible states of completed orders include:
-- <cite>INVALID</cite>
-- <cite>DENIED</cite>
-- <cite>REJECTED</cite>
-- <cite>CANCELED</cite>
-- <cite>EXPIRED</cite>
-- <cite>FILLED</cite></p>
+The possible states of completed orders include;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">INVALID</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DENIED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REJECTED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CANCELED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXPIRED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FILLED</span></code></p></li>
+</ul>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if completed, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -8681,13 +8723,15 @@ The possible states of completed orders include:
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.is_inflight">
 <span class="sig-name descname"><span class="pre">is_inflight</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.is_inflight" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the order is in-flight (order request sent to the trading venue).</p>
-<p>An order is considered in-flight when its state is either:
-- <cite>SUBMITTED</cite>.
-- <cite>PENDING_CANCEL</cite>.
-- <cite>PENDING_UPDATE</cite>.</p>
+<p>An order is considered in-flight when its status is any of;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SUBMITTED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_CANCEL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_UPDATE</span></code></p></li>
+</ul>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if in-flight, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -8695,10 +8739,10 @@ The possible states of completed orders include:
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.is_passive">
 <span class="sig-name descname"><span class="pre">is_passive</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.is_passive" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is passive.</p>
+<dd><p>If the order is passive (order type <strong>not</strong> <code class="docutils literal notranslate"><span class="pre">MARKET</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order type not MARKET, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -8706,10 +8750,10 @@ The possible states of completed orders include:
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.is_pending_cancel">
 <span class="sig-name descname"><span class="pre">is_pending_cancel</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.is_pending_cancel" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is pending cancel.</p>
+<dd><p>If current order.status is <code class="docutils literal notranslate"><span class="pre">PENDING_CANCEL</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order.status == OrderStatus.PENDING_CANCEL, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -8717,10 +8761,10 @@ The possible states of completed orders include:
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.is_pending_update">
 <span class="sig-name descname"><span class="pre">is_pending_update</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.is_pending_update" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is pending update.</p>
+<dd><p>If current order.status is <code class="docutils literal notranslate"><span class="pre">PENDING_UPDATE</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order.status == OrderStatus.PENDING_UPDATE, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -8728,10 +8772,10 @@ The possible states of completed orders include:
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.is_sell">
 <span class="sig-name descname"><span class="pre">is_sell</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.is_sell" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order side is <cite>SELL</cite>.</p>
+<dd><p>If the order side is <code class="docutils literal notranslate"><span class="pre">SELL</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if SELL, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -8739,16 +8783,18 @@ The possible states of completed orders include:
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.is_working">
 <span class="sig-name descname"><span class="pre">is_working</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.is_working" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is open/working at the trading venue.</p>
-<p>An order is considered working when its state is either:
-- <cite>ACCEPTED</cite>
-- <cite>TRIGGERED</cite>
-- <cite>PENDING_CANCEL</cite>
-- <cite>PENDING_UPDATE</cite>
-- <cite>PARTIALLY_FILLED</cite></p>
+<dd><p>If the order is working (open) at the trading venue.</p>
+<p>An order is considered working when its status is any of;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ACCEPTED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TRIGGERED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_CANCEL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_UPDATE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PARTIALLY_FILLED</span></code></p></li>
+</ul>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if working, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -8971,7 +9017,7 @@ market.</p>
 <li><p><strong>strategy_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a>) – The strategy ID associated with the order.</p></li>
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The order instrument ID.</p></li>
 <li><p><strong>client_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID.</p></li>
-<li><p><strong>order_side</strong> (<em>OrderSide</em>) – The order side (BUY or SELL).</p></li>
+<li><p><strong>order_side</strong> (<em>OrderSide</em>) – The order side (<code class="docutils literal notranslate"><span class="pre">BUY</span></code> or <code class="docutils literal notranslate"><span class="pre">SELL</span></code>).</p></li>
 <li><p><strong>quantity</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The order quantity (&gt; 0).</p></li>
 <li><p><strong>price</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The order limit price.</p></li>
 <li><p><strong>time_in_force</strong> (<em>TimeInForce</em>) – The order time-in-force.</p></li>
@@ -8986,7 +9032,7 @@ market.</p>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If quantity is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If time_in_force is GTD and expire_time is None.</p></li>
+<li><p><strong>ValueError</strong> – If time_in_force is <code class="docutils literal notranslate"><span class="pre">GTD</span></code> and expire_time is None.</p></li>
 <li><p><strong>ValueError</strong> – If post_only and hidden.</p></li>
 </ul>
 </dd>
@@ -9184,12 +9230,34 @@ market.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.is_aggressive">
-<span class="sig-name descname"><span class="pre">is_aggressive</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.is_aggressive" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is aggressive.</p>
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.is_active">
+<span class="sig-name descname"><span class="pre">is_active</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.is_active" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the order is active (<strong>not</strong> completed).</p>
+<p>An order is considered active when its state can change.
+The possible states of active orders include;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SUBMITTED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ACCEPTED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TRIGGERED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_CANCEL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_UPDATE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PARTIALLY_FILLED</span></code></p></li>
+</ul>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order type MARKET, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.is_aggressive">
+<span class="sig-name descname"><span class="pre">is_aggressive</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.is_aggressive" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the order is aggressive (order type is <code class="docutils literal notranslate"><span class="pre">MARKET</span></code>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9197,10 +9265,10 @@ market.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.is_buy">
 <span class="sig-name descname"><span class="pre">is_buy</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.is_buy" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order side is <cite>BUY</cite>.</p>
+<dd><p>If the order side is <code class="docutils literal notranslate"><span class="pre">BUY</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if BUY, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9208,18 +9276,20 @@ market.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.is_completed">
 <span class="sig-name descname"><span class="pre">is_completed</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.is_completed" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is closed/completed.</p>
+<dd><p>If the order is completed (closed).</p>
 <p>An order is considered completed when its state can no longer change.
-The possible states of completed orders include:
-- <cite>INVALID</cite>
-- <cite>DENIED</cite>
-- <cite>REJECTED</cite>
-- <cite>CANCELED</cite>
-- <cite>EXPIRED</cite>
-- <cite>FILLED</cite></p>
+The possible states of completed orders include;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">INVALID</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DENIED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REJECTED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CANCELED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXPIRED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FILLED</span></code></p></li>
+</ul>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if completed, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9239,13 +9309,15 @@ The possible states of completed orders include:
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.is_inflight">
 <span class="sig-name descname"><span class="pre">is_inflight</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.is_inflight" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the order is in-flight (order request sent to the trading venue).</p>
-<p>An order is considered in-flight when its state is either:
-- <cite>SUBMITTED</cite>.
-- <cite>PENDING_CANCEL</cite>.
-- <cite>PENDING_UPDATE</cite>.</p>
+<p>An order is considered in-flight when its status is any of;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SUBMITTED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_CANCEL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_UPDATE</span></code></p></li>
+</ul>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if in-flight, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9253,10 +9325,10 @@ The possible states of completed orders include:
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.is_passive">
 <span class="sig-name descname"><span class="pre">is_passive</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.is_passive" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is passive.</p>
+<dd><p>If the order is passive (order type <strong>not</strong> <code class="docutils literal notranslate"><span class="pre">MARKET</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order type not MARKET, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9264,10 +9336,10 @@ The possible states of completed orders include:
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.is_pending_cancel">
 <span class="sig-name descname"><span class="pre">is_pending_cancel</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.is_pending_cancel" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is pending cancel.</p>
+<dd><p>If current order.status is <code class="docutils literal notranslate"><span class="pre">PENDING_CANCEL</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order.status == OrderStatus.PENDING_CANCEL, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9275,10 +9347,10 @@ The possible states of completed orders include:
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.is_pending_update">
 <span class="sig-name descname"><span class="pre">is_pending_update</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.is_pending_update" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is pending update.</p>
+<dd><p>If current order.status is <code class="docutils literal notranslate"><span class="pre">PENDING_UPDATE</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order.status == OrderStatus.PENDING_UPDATE, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9308,10 +9380,10 @@ The possible states of completed orders include:
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.is_sell">
 <span class="sig-name descname"><span class="pre">is_sell</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.is_sell" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order side is <cite>SELL</cite>.</p>
+<dd><p>If the order side is <code class="docutils literal notranslate"><span class="pre">SELL</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if SELL, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9319,16 +9391,18 @@ The possible states of completed orders include:
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.is_working">
 <span class="sig-name descname"><span class="pre">is_working</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.is_working" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is open/working at the trading venue.</p>
-<p>An order is considered working when its state is either:
-- <cite>ACCEPTED</cite>
-- <cite>TRIGGERED</cite>
-- <cite>PENDING_CANCEL</cite>
-- <cite>PENDING_UPDATE</cite>
-- <cite>PARTIALLY_FILLED</cite></p>
+<dd><p>If the order is working (open) at the trading venue.</p>
+<p>An order is considered working when its status is any of;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ACCEPTED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TRIGGERED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_CANCEL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_UPDATE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PARTIALLY_FILLED</span></code></p></li>
+</ul>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if working, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9588,7 +9662,7 @@ or help protect a profit on a short sale.</p>
 <li><p><strong>strategy_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a>) – The strategy ID associated with the order.</p></li>
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The order instrument ID.</p></li>
 <li><p><strong>client_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID.</p></li>
-<li><p><strong>order_side</strong> (<em>OrderSide</em>) – The order side (BUY or SELL).</p></li>
+<li><p><strong>order_side</strong> (<em>OrderSide</em>) – The order side (<code class="docutils literal notranslate"><span class="pre">BUY</span></code> or <code class="docutils literal notranslate"><span class="pre">SELL</span></code>).</p></li>
 <li><p><strong>quantity</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The order quantity (&gt; 0).</p></li>
 <li><p><strong>price</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The order stop price.</p></li>
 <li><p><strong>time_in_force</strong> (<em>TimeInForce</em>) – The order time-in-force.</p></li>
@@ -9601,7 +9675,7 @@ or help protect a profit on a short sale.</p>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If quantity is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If time_in_force is GTD and the expire_time is None.</p></li>
+<li><p><strong>ValueError</strong> – If time_in_force is <code class="docutils literal notranslate"><span class="pre">GTD</span></code> and the expire_time is None.</p></li>
 </ul>
 </dd>
 </dl>
@@ -9798,12 +9872,34 @@ or help protect a profit on a short sale.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.is_aggressive">
-<span class="sig-name descname"><span class="pre">is_aggressive</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_aggressive" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is aggressive.</p>
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.is_active">
+<span class="sig-name descname"><span class="pre">is_active</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_active" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the order is active (<strong>not</strong> completed).</p>
+<p>An order is considered active when its state can change.
+The possible states of active orders include;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SUBMITTED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ACCEPTED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TRIGGERED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_CANCEL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_UPDATE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PARTIALLY_FILLED</span></code></p></li>
+</ul>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order type MARKET, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.is_aggressive">
+<span class="sig-name descname"><span class="pre">is_aggressive</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_aggressive" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the order is aggressive (order type is <code class="docutils literal notranslate"><span class="pre">MARKET</span></code>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9811,10 +9907,10 @@ or help protect a profit on a short sale.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.is_buy">
 <span class="sig-name descname"><span class="pre">is_buy</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_buy" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order side is <cite>BUY</cite>.</p>
+<dd><p>If the order side is <code class="docutils literal notranslate"><span class="pre">BUY</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if BUY, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9822,18 +9918,20 @@ or help protect a profit on a short sale.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.is_completed">
 <span class="sig-name descname"><span class="pre">is_completed</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_completed" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is closed/completed.</p>
+<dd><p>If the order is completed (closed).</p>
 <p>An order is considered completed when its state can no longer change.
-The possible states of completed orders include:
-- <cite>INVALID</cite>
-- <cite>DENIED</cite>
-- <cite>REJECTED</cite>
-- <cite>CANCELED</cite>
-- <cite>EXPIRED</cite>
-- <cite>FILLED</cite></p>
+The possible states of completed orders include;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">INVALID</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DENIED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REJECTED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CANCELED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXPIRED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FILLED</span></code></p></li>
+</ul>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if completed, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9842,13 +9940,15 @@ The possible states of completed orders include:
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.is_inflight">
 <span class="sig-name descname"><span class="pre">is_inflight</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_inflight" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the order is in-flight (order request sent to the trading venue).</p>
-<p>An order is considered in-flight when its state is either:
-- <cite>SUBMITTED</cite>.
-- <cite>PENDING_CANCEL</cite>.
-- <cite>PENDING_UPDATE</cite>.</p>
+<p>An order is considered in-flight when its status is any of;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SUBMITTED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_CANCEL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_UPDATE</span></code></p></li>
+</ul>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if in-flight, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9856,10 +9956,10 @@ The possible states of completed orders include:
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.is_passive">
 <span class="sig-name descname"><span class="pre">is_passive</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_passive" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is passive.</p>
+<dd><p>If the order is passive (order type <strong>not</strong> <code class="docutils literal notranslate"><span class="pre">MARKET</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order type not MARKET, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9867,10 +9967,10 @@ The possible states of completed orders include:
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.is_pending_cancel">
 <span class="sig-name descname"><span class="pre">is_pending_cancel</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_pending_cancel" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is pending cancel.</p>
+<dd><p>If current order.status is <code class="docutils literal notranslate"><span class="pre">PENDING_CANCEL</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order.status == OrderStatus.PENDING_CANCEL, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9878,10 +9978,10 @@ The possible states of completed orders include:
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.is_pending_update">
 <span class="sig-name descname"><span class="pre">is_pending_update</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_pending_update" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is pending update.</p>
+<dd><p>If current order.status is <code class="docutils literal notranslate"><span class="pre">PENDING_UPDATE</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order.status == OrderStatus.PENDING_UPDATE, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9900,10 +10000,10 @@ The possible states of completed orders include:
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.is_sell">
 <span class="sig-name descname"><span class="pre">is_sell</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_sell" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order side is <cite>SELL</cite>.</p>
+<dd><p>If the order side is <code class="docutils literal notranslate"><span class="pre">SELL</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if SELL, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9911,16 +10011,18 @@ The possible states of completed orders include:
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.is_working">
 <span class="sig-name descname"><span class="pre">is_working</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_working" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is open/working at the trading venue.</p>
-<p>An order is considered working when its state is either:
-- <cite>ACCEPTED</cite>
-- <cite>TRIGGERED</cite>
-- <cite>PENDING_CANCEL</cite>
-- <cite>PENDING_UPDATE</cite>
-- <cite>PARTIALLY_FILLED</cite></p>
+<dd><p>If the order is working (open) at the trading venue.</p>
+<p>An order is considered working when its status is any of;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ACCEPTED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TRIGGERED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_CANCEL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_UPDATE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PARTIALLY_FILLED</span></code></p></li>
+</ul>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if working, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -10182,7 +10284,7 @@ trader could “miss the market” altogether.</p>
 <li><p><strong>strategy_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a>) – The strategy ID associated with the order.</p></li>
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The order instrument ID.</p></li>
 <li><p><strong>client_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID.</p></li>
-<li><p><strong>order_side</strong> (<em>OrderSide</em>) – The order side (BUY or SELL).</p></li>
+<li><p><strong>order_side</strong> (<em>OrderSide</em>) – The order side (<code class="docutils literal notranslate"><span class="pre">BUY</span></code> or <code class="docutils literal notranslate"><span class="pre">SELL</span></code>).</p></li>
 <li><p><strong>quantity</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The order quantity (&gt; 0).</p></li>
 <li><p><strong>price</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The order limit price.</p></li>
 <li><p><strong>trigger</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The order stop trigger price.</p></li>
@@ -10198,7 +10300,7 @@ trader could “miss the market” altogether.</p>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If quantity is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If time_in_force is GTD and the expire_time is None.</p></li>
+<li><p><strong>ValueError</strong> – If time_in_force is <code class="docutils literal notranslate"><span class="pre">GTD</span></code> and the expire_time is None.</p></li>
 <li><p><strong>ValueError</strong> – If post_only and hidden.</p></li>
 </ul>
 </dd>
@@ -10396,12 +10498,34 @@ trader could “miss the market” altogether.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_aggressive">
-<span class="sig-name descname"><span class="pre">is_aggressive</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_aggressive" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is aggressive.</p>
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_active">
+<span class="sig-name descname"><span class="pre">is_active</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_active" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the order is active (<strong>not</strong> completed).</p>
+<p>An order is considered active when its state can change.
+The possible states of active orders include;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SUBMITTED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ACCEPTED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TRIGGERED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_CANCEL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_UPDATE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PARTIALLY_FILLED</span></code></p></li>
+</ul>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order type MARKET, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_aggressive">
+<span class="sig-name descname"><span class="pre">is_aggressive</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_aggressive" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the order is aggressive (order type is <code class="docutils literal notranslate"><span class="pre">MARKET</span></code>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -10409,10 +10533,10 @@ trader could “miss the market” altogether.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_buy">
 <span class="sig-name descname"><span class="pre">is_buy</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_buy" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order side is <cite>BUY</cite>.</p>
+<dd><p>If the order side is <code class="docutils literal notranslate"><span class="pre">BUY</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if BUY, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -10420,18 +10544,20 @@ trader could “miss the market” altogether.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_completed">
 <span class="sig-name descname"><span class="pre">is_completed</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_completed" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is closed/completed.</p>
+<dd><p>If the order is completed (closed).</p>
 <p>An order is considered completed when its state can no longer change.
-The possible states of completed orders include:
-- <cite>INVALID</cite>
-- <cite>DENIED</cite>
-- <cite>REJECTED</cite>
-- <cite>CANCELED</cite>
-- <cite>EXPIRED</cite>
-- <cite>FILLED</cite></p>
+The possible states of completed orders include;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">INVALID</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DENIED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REJECTED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CANCELED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXPIRED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FILLED</span></code></p></li>
+</ul>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if completed, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -10451,13 +10577,15 @@ The possible states of completed orders include:
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_inflight">
 <span class="sig-name descname"><span class="pre">is_inflight</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_inflight" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the order is in-flight (order request sent to the trading venue).</p>
-<p>An order is considered in-flight when its state is either:
-- <cite>SUBMITTED</cite>.
-- <cite>PENDING_CANCEL</cite>.
-- <cite>PENDING_UPDATE</cite>.</p>
+<p>An order is considered in-flight when its status is any of;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SUBMITTED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_CANCEL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_UPDATE</span></code></p></li>
+</ul>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if in-flight, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -10465,10 +10593,10 @@ The possible states of completed orders include:
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_passive">
 <span class="sig-name descname"><span class="pre">is_passive</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_passive" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is passive.</p>
+<dd><p>If the order is passive (order type <strong>not</strong> <code class="docutils literal notranslate"><span class="pre">MARKET</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order type not MARKET, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -10476,10 +10604,10 @@ The possible states of completed orders include:
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_pending_cancel">
 <span class="sig-name descname"><span class="pre">is_pending_cancel</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_pending_cancel" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is pending cancel.</p>
+<dd><p>If current order.status is <code class="docutils literal notranslate"><span class="pre">PENDING_CANCEL</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order.status == OrderStatus.PENDING_CANCEL, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -10487,10 +10615,10 @@ The possible states of completed orders include:
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_pending_update">
 <span class="sig-name descname"><span class="pre">is_pending_update</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_pending_update" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is pending update.</p>
+<dd><p>If current order.status is <code class="docutils literal notranslate"><span class="pre">PENDING_UPDATE</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if order.status == OrderStatus.PENDING_UPDATE, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -10520,10 +10648,10 @@ The possible states of completed orders include:
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_sell">
 <span class="sig-name descname"><span class="pre">is_sell</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_sell" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order side is <cite>SELL</cite>.</p>
+<dd><p>If the order side is <code class="docutils literal notranslate"><span class="pre">SELL</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if SELL, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -10542,16 +10670,18 @@ The possible states of completed orders include:
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_working">
 <span class="sig-name descname"><span class="pre">is_working</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_working" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the order is open/working at the trading venue.</p>
-<p>An order is considered working when its state is either:
-- <cite>ACCEPTED</cite>
-- <cite>TRIGGERED</cite>
-- <cite>PENDING_CANCEL</cite>
-- <cite>PENDING_UPDATE</cite>
-- <cite>PARTIALLY_FILLED</cite></p>
+<dd><p>If the order is working (open) at the trading venue.</p>
+<p>An order is considered working when its status is any of;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ACCEPTED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TRIGGERED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_CANCEL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PENDING_UPDATE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PARTIALLY_FILLED</span></code></p></li>
+</ul>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if working, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -10950,7 +11080,7 @@ decimal precision.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.currency.Currency.currency_type">
 <span class="sig-name descname"><span class="pre">currency_type</span></span><a class="headerlink" href="#nautilus_trader.model.currency.Currency.currency_type" title="Permalink to this definition">¶</a></dt>
-<dd><p>The currency type (FIAT or CRYPTO).</p>
+<dd><p>The currency type (<code class="docutils literal notranslate"><span class="pre">FIAT</span></code> or <code class="docutils literal notranslate"><span class="pre">CRYPTO</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>CurrencyType</cite></p>
@@ -11315,7 +11445,10 @@ submitted to a broker as waves of a larger program trade.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Identifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.identifiers.Identifier" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The abstract base class for all identifiers.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.Identifier.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.identifiers.Identifier.__init__" title="Permalink to this definition">¶</a></dt>
@@ -11749,7 +11882,6 @@ with an order ID tag number separated by a hyphen.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BaseDecimal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">uint8_t</span> <span class="pre">precision</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.objects.BaseDecimal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The abstract base class for all domain value objects.</p>
-<p>This class should not be used directly, but through a concrete subclass.</p>
 <p>Represents a decimal number with a specified precision and is intended to be
 used as the base class for fundamental domain model value types. The
 specification of precision is more explicit and straight forward than
@@ -11757,6 +11889,10 @@ providing a decimal.Context. The <cite>BaseDecimal</cite> type and its subclasse
 also able to be used as operands for mathematical operations with <cite>float</cite>
 objects. Return values are floats if one of the operands is a float, else
 a decimal.Decimal.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <p class="rubric">References</p>
 <p><a class="reference external" href="https://docs.python.org/3.9/library/decimal.html">https://docs.python.org/3.9/library/decimal.html</a></p>
 <dl class="py method">
@@ -12379,10 +12515,10 @@ currency for inverse instruments.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.is_closed">
 <span class="sig-name descname"><span class="pre">is_closed</span></span><a class="headerlink" href="#nautilus_trader.model.position.Position.is_closed" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the position side is <cite>FLAT</cite>.</p>
+<dd><p>If the position side is <code class="docutils literal notranslate"><span class="pre">FLAT</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if not FLAT, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -12401,10 +12537,10 @@ currency for inverse instruments.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.is_long">
 <span class="sig-name descname"><span class="pre">is_long</span></span><a class="headerlink" href="#nautilus_trader.model.position.Position.is_long" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the position side is <cite>LONG</cite>.</p>
+<dd><p>If the position side is <code class="docutils literal notranslate"><span class="pre">LONG</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if LONG, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -12412,10 +12548,10 @@ currency for inverse instruments.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.is_open">
 <span class="sig-name descname"><span class="pre">is_open</span></span><a class="headerlink" href="#nautilus_trader.model.position.Position.is_open" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the position side is not <cite>FLAT</cite>.</p>
+<dd><p>If the position side is <strong>not</strong> <code class="docutils literal notranslate"><span class="pre">FLAT</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if FLAT, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -12438,10 +12574,10 @@ the current position side.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.is_short">
 <span class="sig-name descname"><span class="pre">is_short</span></span><a class="headerlink" href="#nautilus_trader.model.position.Position.is_short" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the position side is <cite>SHORT</cite>.</p>
+<dd><p>If the position side is <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if SHORT, else False.</p>
+<dd class="field-odd"><p><em>bool</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -12482,7 +12618,7 @@ the current position side.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.net_qty">
 <span class="sig-name descname"><span class="pre">net_qty</span></span><a class="headerlink" href="#nautilus_trader.model.position.Position.net_qty" title="Permalink to this definition">¶</a></dt>
-<dd><p>The current net quantity (positive for LONG, negative for SHORT).</p>
+<dd><p>The current net quantity (positive for <code class="docutils literal notranslate"><span class="pre">LONG</span></code>, negative for <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>Decimal</cite></p>
@@ -12595,7 +12731,7 @@ the current position side.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.side_from_order_side">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">side_from_order_side</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">side</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.position.Position.side_from_order_side" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the position side resulting from the given order side (from FLAT).</p>
+<dd><p>Return the position side resulting from the given order side (from <code class="docutils literal notranslate"><span class="pre">FLAT</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>side</strong> (<em>OrderSide</em>) – The order side</p>

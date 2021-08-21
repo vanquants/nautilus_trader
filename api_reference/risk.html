@@ -202,12 +202,12 @@ within the platform. This includes both pre-trade risk checks and post-trade
 risk monitoring.</p>
 <p>Configuration options:
 - bypass: If True then all risk checks are bypassed (will still check for duplicate IDs).
-- max_order_rate: tuple(int, timedelta). Default=(10, timedelta(seconds=1)).
-- max_notional_per_order: { str: Decimal }. Default = {}.</p>
-<p>Trading states:
-- ACTIVE (trading is enabled).
-- REDUCING (only new orders or updates which reduce an open position are allowed).
-- HALTED (all trading commands except cancels are denied).</p>
+- max_order_rate: tuple(int, timedelta), default=(10, timedelta(seconds=1)).
+- max_notional_per_order: { str: Decimal }, default = {}.</p>
+<p>Possible trading states;
+- <code class="docutils literal notranslate"><span class="pre">ACTIVE</span></code> (trading is enabled).
+- <code class="docutils literal notranslate"><span class="pre">REDUCING</span></code> (only new orders or updates which reduce an open position are allowed).
+- <code class="docutils literal notranslate"><span class="pre">HALTED</span></code> (all trading commands except cancels are denied).</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.__init__" title="Permalink to this definition">¶</a></dt>
@@ -336,7 +336,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.is_degraded">
 <span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.is_degraded" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DEGRADED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DEGRADED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -347,7 +347,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.is_disposed">
 <span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.is_disposed" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DISPOSED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -358,7 +358,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.is_faulted">
 <span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.is_faulted" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is FAULTED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">FAULTED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -369,7 +369,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.is_initialized">
 <span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.is_initialized" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component has been initialized.</p>
+<dd><p>If the component has been initialized (component.state &gt;= <code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -380,7 +380,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.is_running">
 <span class="sig-name descname"><span class="pre">is_running</span></span><a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.is_running" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the components current state is RUNNING.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -391,7 +391,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.risk.engine.RiskEngine.is_stopped">
 <span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.risk.engine.RiskEngine.is_stopped" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is STOPPED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">STOPPED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -672,7 +672,10 @@ notional check.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">PositionSizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.risk.sizing.PositionSizer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The abstract base class for all position sizers.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.risk.sizing.PositionSizer.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.risk.sizing.PositionSizer.__init__" title="Permalink to this definition">¶</a></dt>

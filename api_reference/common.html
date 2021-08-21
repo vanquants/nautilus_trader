@@ -219,7 +219,10 @@ attempts to operate without a managing <cite>Trader</cite> instance.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Actor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ComponentId</span> <span class="pre">component_id=None</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">config=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.actor.Actor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.common.component.Component" title="nautilus_trader.common.component.Component"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.component.Component</span></code></a></p>
 <p>The abstract base class for all actor components.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.__init__" title="Permalink to this definition">¶</a></dt>
@@ -299,7 +302,7 @@ called after faulting.</p>
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_bar">
 <span class="sig-name descname"><span class="pre">handle_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Bar</span> <span class="pre">bar</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">is_historical=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_bar" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handle the given bar data.</p>
-<p>Calls <cite>on_bar</cite> if state is <cite>RUNNING</cite>.</p>
+<p>Calls <cite>on_bar</cite> if state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -333,7 +336,7 @@ called after faulting.</p>
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_data">
 <span class="sig-name descname"><span class="pre">handle_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Data</span> <span class="pre">data</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handle the given data.</p>
-<p>Calls <cite>on_data</cite> if state is <cite>RUNNING</cite>.</p>
+<p>Calls <cite>on_data</cite> if state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>data</strong> (<em>Data</em>) – The received data.</p>
@@ -349,7 +352,7 @@ called after faulting.</p>
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_event">
 <span class="sig-name descname"><span class="pre">handle_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Event</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_event" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handle the given event.</p>
-<p>Calls <cite>on_event</cite> if state is <cite>RUNNING</cite>.</p>
+<p>Calls <cite>on_event</cite> if state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.message.Event" title="nautilus_trader.core.message.Event"><em>Event</em></a>) – The received event.</p>
@@ -365,7 +368,7 @@ called after faulting.</p>
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_instrument">
 <span class="sig-name descname"><span class="pre">handle_instrument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_instrument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handle the given instrument.</p>
-<p>Calls <cite>on_instrument</cite> if state is <cite>RUNNING</cite>.</p>
+<p>Calls <cite>on_instrument</cite> if state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>instrument</strong> (<em>Instrument</em>) – The received instrument.</p>
@@ -381,7 +384,7 @@ called after faulting.</p>
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_instrument_close_price">
 <span class="sig-name descname"><span class="pre">handle_instrument_close_price</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentClosePrice</span> <span class="pre">update</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_instrument_close_price" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handle the given instrument close price update.</p>
-<p>Calls <cite>on_instrument_close_price</cite> if .state is <cite>RUNNING</cite>.</p>
+<p>Calls <cite>on_instrument_close_price</cite> if .state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>update</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.venue.InstrumentClosePrice" title="nautilus_trader.model.data.venue.InstrumentClosePrice"><em>InstrumentClosePrice</em></a>) – The received update.</p>
@@ -397,7 +400,7 @@ called after faulting.</p>
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_instrument_status_update">
 <span class="sig-name descname"><span class="pre">handle_instrument_status_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentStatusUpdate</span> <span class="pre">update</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_instrument_status_update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handle the given instrument status update.</p>
-<p>Calls <cite>on_instrument_status_update</cite> if state is <cite>RUNNING</cite>.</p>
+<p>Calls <cite>on_instrument_status_update</cite> if state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>update</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.venue.InstrumentStatusUpdate" title="nautilus_trader.model.data.venue.InstrumentStatusUpdate"><em>InstrumentStatusUpdate</em></a>) – The received update.</p>
@@ -413,7 +416,7 @@ called after faulting.</p>
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_order_book">
 <span class="sig-name descname"><span class="pre">handle_order_book</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">OrderBook</span> <span class="pre">order_book</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_order_book" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handle the given order book snapshot.</p>
-<p>Calls <cite>on_order_book</cite> if state is <cite>RUNNING</cite>.</p>
+<p>Calls <cite>on_order_book</cite> if state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>order_book</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.orderbook.book.OrderBook" title="nautilus_trader.model.orderbook.book.OrderBook"><em>OrderBook</em></a>) – The received order book.</p>
@@ -429,7 +432,7 @@ called after faulting.</p>
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_order_book_delta">
 <span class="sig-name descname"><span class="pre">handle_order_book_delta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">OrderBookData</span> <span class="pre">delta</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_order_book_delta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handle the given order book data.</p>
-<p>Calls <cite>on_order_book_delta</cite> if state is <cite>RUNNING</cite>.</p>
+<p>Calls <cite>on_order_book_delta</cite> if state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>delta</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.OrderBookDelta" title="nautilus_trader.model.orderbook.data.OrderBookDelta"><em>OrderBookDelta</em></a><em>, </em><a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.OrderBookDeltas" title="nautilus_trader.model.orderbook.data.OrderBookDeltas"><em>OrderBookDeltas</em></a><em>, </em><a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.OrderBookSnapshot" title="nautilus_trader.model.orderbook.data.OrderBookSnapshot"><em>OrderBookSnapshot</em></a>) – The order book delta received.</p>
@@ -445,7 +448,7 @@ called after faulting.</p>
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_quote_tick">
 <span class="sig-name descname"><span class="pre">handle_quote_tick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">QuoteTick</span> <span class="pre">tick</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">is_historical=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_quote_tick" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handle the given tick.</p>
-<p>Calls <cite>on_quote_tick</cite> if state is <cite>RUNNING</cite>.</p>
+<p>Calls <cite>on_quote_tick</cite> if state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -479,7 +482,7 @@ called after faulting.</p>
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_ticker">
 <span class="sig-name descname"><span class="pre">handle_ticker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Ticker</span> <span class="pre">ticker</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">is_historical=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_ticker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handle the given ticker.</p>
-<p>Calls <cite>on_ticker</cite> if state is <cite>RUNNING</cite>.</p>
+<p>Calls <cite>on_ticker</cite> if state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -498,7 +501,7 @@ called after faulting.</p>
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_trade_tick">
 <span class="sig-name descname"><span class="pre">handle_trade_tick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">TradeTick</span> <span class="pre">tick</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">is_historical=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_trade_tick" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handle the given tick.</p>
-<p>Calls <cite>on_trade_tick</cite> if state is <cite>RUNNING</cite>.</p>
+<p>Calls <cite>on_trade_tick</cite> if state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -532,7 +535,7 @@ called after faulting.</p>
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.handle_venue_status_update">
 <span class="sig-name descname"><span class="pre">handle_venue_status_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">VenueStatusUpdate</span> <span class="pre">update</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.handle_venue_status_update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handle the given venue status update.</p>
-<p>Calls <cite>on_venue_status_update</cite> if state is <cite>RUNNING</cite>.</p>
+<p>Calls <cite>on_venue_status_update</cite> if state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>update</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.venue.VenueStatusUpdate" title="nautilus_trader.model.data.venue.VenueStatusUpdate"><em>VenueStatusUpdate</em></a>) – The received update.</p>
@@ -558,7 +561,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.is_degraded">
 <span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.is_degraded" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DEGRADED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DEGRADED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -569,7 +572,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.is_disposed">
 <span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.is_disposed" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DISPOSED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -580,7 +583,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.is_faulted">
 <span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.is_faulted" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is FAULTED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">FAULTED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -591,7 +594,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.is_initialized">
 <span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.is_initialized" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component has been initialized.</p>
+<dd><p>If the component has been initialized (component.state &gt;= <code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -602,7 +605,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.is_running">
 <span class="sig-name descname"><span class="pre">is_running</span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.is_running" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the components current state is RUNNING.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -613,7 +616,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.is_stopped">
 <span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.is_stopped" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is STOPPED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">STOPPED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -1154,7 +1157,7 @@ to the current datetime.</p></li>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The order book instrument ID to subscribe to.</p></li>
-<li><p><strong>level</strong> (<em>BookLevel</em>) – The order book level (L1, L2, L3).</p></li>
+<li><p><strong>level</strong> (BookLevel {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}) – The order book level.</p></li>
 <li><p><strong>kwargs</strong> (<em>dict</em><em>, </em><em>optional</em>) – The keyword arguments for exchange specific parameters.</p></li>
 </ul>
 </dd>
@@ -1172,7 +1175,7 @@ as per the last subscription request (this will also affect all subscribers).</p
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The order book instrument ID to subscribe to.</p></li>
-<li><p><strong>level</strong> (<em>BookLevel</em>) – The order book level (L1, L2, L3).</p></li>
+<li><p><strong>level</strong> (BookLevel {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}) – The order book level.</p></li>
 <li><p><strong>depth</strong> (<em>int</em><em>, </em><em>optional</em>) – The maximum depth for the order book. A depth of 0 is maximum depth.</p></li>
 <li><p><strong>interval_ms</strong> (<em>int</em>) – The order book snapshot interval in milliseconds.</p></li>
 <li><p><strong>kwargs</strong> (<em>dict</em><em>, </em><em>optional</em>) – The keyword arguments for exchange specific parameters.</p></li>
@@ -1397,7 +1400,10 @@ as per the last subscription request (this will also affect all subscribers).</p
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Clock</span></span><a class="headerlink" href="#nautilus_trader.common.clock.Clock" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The abstract base class for all clocks.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.clock.Clock.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.clock.Clock.__init__" title="Permalink to this definition">¶</a></dt>
@@ -2235,12 +2241,15 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Component</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Clock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id=None</span></em>, <em class="sig-param"><span class="pre">ComponentId</span> <span class="pre">component_id=None</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">component_name=None</span></em>, <em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus=None</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">config=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.component.Component" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The abstract base class for all system components.</p>
-<p>This class should not be used directly, but through a concrete subclass.</p>
 <p>A component is not considered initialized until a message bus is wired up
 (this either happens when one is passed to the constructor, or when
 registered with a trader).</p>
 <p>Thus if the component does not receive a message bus through the constructor,
-then it will be in a <cite>PRE_INITIALIZED</cite> state, otherwise <cite>INITIALIZED</cite>.</p>
+then it will be in a <code class="docutils literal notranslate"><span class="pre">PRE_INITIALIZED</span></code> state, otherwise <code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.component.Component.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.component.Component.__init__" title="Permalink to this definition">¶</a></dt>
@@ -2250,8 +2259,8 @@ then it will be in a <cite>PRE_INITIALIZED</cite> state, otherwise <cite>INITIAL
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>clock</strong> (<a class="reference internal" href="#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the component.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the component.</p></li>
-<li><p><strong>component_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ComponentId" title="nautilus_trader.model.identifiers.ComponentId"><em>ComponentId</em></a><em>, </em><em>optional</em>) – The trader ID associated with the component.</p></li>
-<li><p><strong>component_id</strong> – The component ID. If None is passed then the identifier will be
+<li><p><strong>trader_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId"><em>TraderId</em></a><em>, </em><em>optional</em>) – The trader ID associated with the component.</p></li>
+<li><p><strong>component_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ComponentId" title="nautilus_trader.model.identifiers.ComponentId"><em>ComponentId</em></a><em>, </em><em>optional</em>) – The component ID. If None is passed then the identifier will be
 taken from <cite>type(self).__name__</cite>.</p></li>
 <li><p><strong>component_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The custom component name.</p></li>
 <li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a><em>, </em><em>optional</em>) – The message bus for the component (required before initialized).</p></li>
@@ -2330,7 +2339,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.component.Component.is_degraded">
 <span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.common.component.Component.is_degraded" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DEGRADED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DEGRADED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2341,7 +2350,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.component.Component.is_disposed">
 <span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.common.component.Component.is_disposed" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is DISPOSED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2352,7 +2361,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.component.Component.is_faulted">
 <span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.common.component.Component.is_faulted" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is FAULTED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">FAULTED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2363,7 +2372,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.component.Component.is_initialized">
 <span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.common.component.Component.is_initialized" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component has been initialized.</p>
+<dd><p>If the component has been initialized (component.state &gt;= <code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2374,7 +2383,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.component.Component.is_running">
 <span class="sig-name descname"><span class="pre">is_running</span></span><a class="headerlink" href="#nautilus_trader.common.component.Component.is_running" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the components current state is RUNNING.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2385,7 +2394,7 @@ called after faulting.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.component.Component.is_stopped">
 <span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.common.component.Component.is_stopped" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the component current state is STOPPED.</p>
+<dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">STOPPED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2556,8 +2565,8 @@ take-profit price.</p>
 <li><p><strong>entry_order</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The entry parent order for the bracket.</p></li>
 <li><p><strong>stop_loss</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The stop-loss child order stop price.</p></li>
 <li><p><strong>take_profit</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The take-profit child order limit price.</p></li>
-<li><p><strong>sl_tif</strong> (<em>TimeInForce</em><em>, </em><em>optional</em>) – The stop-loss orders time-in-force (DAY or GTC).</p></li>
-<li><p><strong>tp_tif</strong> (<em>TimeInForce</em><em>, </em><em>optional</em>) – The take-profit orders time-in-force (DAY or GTC).</p></li>
+<li><p><strong>sl_tif</strong> (<em>TimeInForce</em><em>, </em><em>optional</em>) – The stop-loss orders time-in-force (<code class="docutils literal notranslate"><span class="pre">DAY</span></code> or <code class="docutils literal notranslate"><span class="pre">GTC</span></code>).</p></li>
+<li><p><strong>tp_tif</strong> (<em>TimeInForce</em><em>, </em><em>optional</em>) – The take-profit orders time-in-force (<code class="docutils literal notranslate"><span class="pre">DAY</span></code> or <code class="docutils literal notranslate"><span class="pre">GTC</span></code>).</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -2565,12 +2574,12 @@ take-profit price.</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ValueError</strong> – If sl_tif is not either DAY or GTC.</p></li>
-<li><p><strong>ValueError</strong> – If tp_tif is not either DAY or GTC.</p></li>
-<li><p><strong>ValueError</strong> – If entry_order.side is BUY and entry_order.price &lt;= stop_loss.price.</p></li>
-<li><p><strong>ValueError</strong> – If entry_order.side is BUY and entry_order.price &gt;= take_profit.price.</p></li>
-<li><p><strong>ValueError</strong> – If entry_order.side is SELL and entry_order.price &gt;= stop_loss.price.</p></li>
-<li><p><strong>ValueError</strong> – If entry_order.side is SELL and entry_order.price &lt;= take_profit.price.</p></li>
+<li><p><strong>ValueError</strong> – If sl_tif is not either <code class="docutils literal notranslate"><span class="pre">DAY</span></code> or <code class="docutils literal notranslate"><span class="pre">GTC</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If tp_tif is not either <code class="docutils literal notranslate"><span class="pre">DAY</span></code> or <code class="docutils literal notranslate"><span class="pre">GTC</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If entry_order.side is <code class="docutils literal notranslate"><span class="pre">BUY</span></code> and entry_order.price &lt;= stop_loss.price.</p></li>
+<li><p><strong>ValueError</strong> – If entry_order.side is <code class="docutils literal notranslate"><span class="pre">BUY</span></code> and entry_order.price &gt;= take_profit.price.</p></li>
+<li><p><strong>ValueError</strong> – If entry_order.side is <code class="docutils literal notranslate"><span class="pre">SELL</span></code> and entry_order.price &gt;= stop_loss.price.</p></li>
+<li><p><strong>ValueError</strong> – If entry_order.side is <code class="docutils literal notranslate"><span class="pre">SELL</span></code> and entry_order.price &lt;= take_profit.price.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2639,7 +2648,7 @@ take-profit price.</p>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ValueError</strong> – If quantity is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If time_in_force is other than GTC, IOC, FOK or OC.</p></li>
+<li><p><strong>ValueError</strong> – If time_in_force is other than <code class="docutils literal notranslate"><span class="pre">GTC</span></code>, <code class="docutils literal notranslate"><span class="pre">IOC</span></code>, <code class="docutils literal notranslate"><span class="pre">FOK</span></code> or <code class="docutils literal notranslate"><span class="pre">OC</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -3292,7 +3301,10 @@ will be appended with ‘F’.</p></li>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">InstrumentProvider</span></span><a class="headerlink" href="#nautilus_trader.common.providers.InstrumentProvider" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The abstract base class for all instrument providers.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.providers.InstrumentProvider.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.providers.InstrumentProvider.__init__" title="Permalink to this definition">¶</a></dt>
@@ -3734,7 +3746,10 @@ If None then messages will be buffered.</p></li>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LiveTimer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">name,</span> <span class="pre">callback:</span> <span class="pre">Callable[[TimeEvent],</span> <span class="pre">None],</span> <span class="pre">int64_t</span> <span class="pre">interval_ns,</span> <span class="pre">int64_t</span> <span class="pre">now_ns,</span> <span class="pre">int64_t</span> <span class="pre">start_time_ns,</span> <span class="pre">int64_t</span> <span class="pre">stop_time_ns=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.LiveTimer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.common.timer.Timer" title="nautilus_trader.common.timer.Timer"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.timer.Timer</span></code></a></p>
 <p>The abstract base class for all live timers.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.timer.LiveTimer.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.LiveTimer.__init__" title="Permalink to this definition">¶</a></dt>
@@ -4475,7 +4490,10 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Timer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">name,</span> <span class="pre">callback:</span> <span class="pre">Callable[[TimeEvent],</span> <span class="pre">None],</span> <span class="pre">int64_t</span> <span class="pre">interval_ns,</span> <span class="pre">int64_t</span> <span class="pre">start_time_ns,</span> <span class="pre">int64_t</span> <span class="pre">stop_time_ns=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.Timer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The abstract base class for all timers.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.timer.Timer.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.timer.Timer.__init__" title="Permalink to this definition">¶</a></dt>
