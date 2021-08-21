@@ -590,6 +590,39 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.is_degraded">
+<span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.is_degraded" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is DEGRADED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.is_disposed">
+<span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.is_disposed" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is DISPOSED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.is_faulted">
+<span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.is_faulted" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is FAULTED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.is_initialized">
 <span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.is_initialized" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the component has been initialized.</p>
@@ -604,6 +637,17 @@ position ID resolution.</p></li>
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.is_running">
 <span class="sig-name descname"><span class="pre">is_running</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.is_running" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the components current state is RUNNING.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.is_stopped">
+<span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.is_stopped" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is STOPPED.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -702,10 +746,21 @@ position ID resolution.</p></li>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.trader_id">
 <span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.trader_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The trader ID associated with the client.</p>
+<dd><p>The trader ID associated with the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>TraderId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.type">
+<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>The components type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>type</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -954,6 +1009,39 @@ called after faulting.</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.is_degraded">
+<span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.is_degraded" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is DEGRADED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.is_disposed">
+<span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.is_disposed" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is DISPOSED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.is_faulted">
+<span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.is_faulted" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is FAULTED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.is_initialized">
 <span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.is_initialized" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the component has been initialized.</p>
@@ -968,6 +1056,17 @@ called after faulting.</p>
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.is_running">
 <span class="sig-name descname"><span class="pre">is_running</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.is_running" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the components current state is RUNNING.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.is_stopped">
+<span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.is_stopped" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is STOPPED.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -1147,6 +1246,28 @@ overwritten.</p>
 <p>Do not override.</p>
 <p>Exceptions raised will be caught, logged, and reraised.</p>
 </div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.trader_id">
+<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.trader_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The trader ID associated with the component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>TraderId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.type">
+<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>The components type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>type</cite></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>

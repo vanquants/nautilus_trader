@@ -556,6 +556,39 @@ called after faulting.</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.is_degraded">
+<span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.is_degraded" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is DEGRADED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.is_disposed">
+<span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.is_disposed" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is DISPOSED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.is_faulted">
+<span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.is_faulted" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is FAULTED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.is_initialized">
 <span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.is_initialized" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the component has been initialized.</p>
@@ -573,6 +606,28 @@ called after faulting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.is_stopped">
+<span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.is_stopped" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is STOPPED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.msgbus">
+<span class="sig-name descname"><span class="pre">msgbus</span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.msgbus" title="Permalink to this definition">¶</a></dt>
+<dd><p>The message bus for the actor (if registered).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>MessageBus</cite> or None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1193,10 +1248,21 @@ as per the last subscription request (this will also affect all subscribers).</p
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.trader_id">
 <span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.trader_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The trader ID associated with the actor.</p>
+<dd><p>The trader ID associated with the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>TraderId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.type">
+<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>The components type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>type</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2166,10 +2232,15 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <span id="component"></span><h2>Component<a class="headerlink" href="#module-nautilus_trader.common.component" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.common.component.Component">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Component</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Clock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">ComponentId</span> <span class="pre">component_id=None</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">component_name=None</span></em>, <em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus=None</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">config=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.component.Component" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Component</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Clock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id=None</span></em>, <em class="sig-param"><span class="pre">ComponentId</span> <span class="pre">component_id=None</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">component_name=None</span></em>, <em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus=None</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">config=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.component.Component" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The abstract base class for all system components.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
+<p>A component is not considered initialized until a message bus is wired up
+(this either happens when one is passed to the constructor, or when
+registered with a trader).</p>
+<p>Thus if the component does not receive a message bus through the constructor,
+then it will be in a <cite>PRE_INITIALIZED</cite> state, otherwise <cite>INITIALIZED</cite>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.component.Component.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.component.Component.__init__" title="Permalink to this definition">¶</a></dt>
@@ -2179,7 +2250,8 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>clock</strong> (<a class="reference internal" href="#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the component.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the component.</p></li>
-<li><p><strong>component_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ComponentId" title="nautilus_trader.model.identifiers.ComponentId"><em>ComponentId</em></a><em>, </em><em>optional</em>) – The component ID. If None is passed then the identifier will be
+<li><p><strong>component_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ComponentId" title="nautilus_trader.model.identifiers.ComponentId"><em>ComponentId</em></a><em>, </em><em>optional</em>) – The trader ID associated with the component.</p></li>
+<li><p><strong>component_id</strong> – The component ID. If None is passed then the identifier will be
 taken from <cite>type(self).__name__</cite>.</p></li>
 <li><p><strong>component_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The custom component name.</p></li>
 <li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a><em>, </em><em>optional</em>) – The message bus for the component (required before initialized).</p></li>
@@ -2256,6 +2328,39 @@ called after faulting.</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.common.component.Component.is_degraded">
+<span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.common.component.Component.is_degraded" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is DEGRADED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.common.component.Component.is_disposed">
+<span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.common.component.Component.is_disposed" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is DISPOSED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.common.component.Component.is_faulted">
+<span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.common.component.Component.is_faulted" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is FAULTED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.common.component.Component.is_initialized">
 <span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.common.component.Component.is_initialized" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the component has been initialized.</p>
@@ -2270,6 +2375,17 @@ called after faulting.</p>
 <dt class="sig sig-object py" id="nautilus_trader.common.component.Component.is_running">
 <span class="sig-name descname"><span class="pre">is_running</span></span><a class="headerlink" href="#nautilus_trader.common.component.Component.is_running" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the components current state is RUNNING.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.common.component.Component.is_stopped">
+<span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.common.component.Component.is_stopped" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is STOPPED.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2351,6 +2467,28 @@ called after faulting.</p>
 <p>Do not override.</p>
 <p>Exceptions raised will be caught, logged, and reraised.</p>
 </div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.common.component.Component.trader_id">
+<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.common.component.Component.trader_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The trader ID associated with the component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>TraderId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.common.component.Component.type">
+<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#nautilus_trader.common.component.Component.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>The components type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>type</cite></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -3093,6 +3231,28 @@ will be appended with ‘F’.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>bool</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.common.logging.LoggerAdapter.system_id">
+<span class="sig-name descname"><span class="pre">system_id</span></span><a class="headerlink" href="#nautilus_trader.common.logging.LoggerAdapter.system_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The loggers system ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>UUID</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.common.logging.LoggerAdapter.trader_id">
+<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.common.logging.LoggerAdapter.trader_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The loggers trader ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>TraderId</cite></p>
 </dd>
 </dl>
 </dd></dl>

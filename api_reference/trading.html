@@ -969,6 +969,39 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.is_degraded">
+<span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.is_degraded" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is DEGRADED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.is_disposed">
+<span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.is_disposed" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is DISPOSED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.is_faulted">
+<span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.is_faulted" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is FAULTED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.is_initialized">
 <span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.is_initialized" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the component has been initialized.</p>
@@ -983,6 +1016,17 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.is_running">
 <span class="sig-name descname"><span class="pre">is_running</span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.is_running" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the components current state is RUNNING.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.is_stopped">
+<span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.is_stopped" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is STOPPED.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -1016,6 +1060,17 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>LoggerAdapter</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.msgbus">
+<span class="sig-name descname"><span class="pre">msgbus</span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.msgbus" title="Permalink to this definition">¶</a></dt>
+<dd><p>The message bus for the actor (if registered).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>MessageBus</cite> or None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1819,10 +1874,21 @@ as per the last subscription request (this will also affect all subscribers).</p
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.trader_id">
 <span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.trader_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The trader ID associated with the actor.</p>
+<dd><p>The trader ID associated with the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>TraderId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.type">
+<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>The components type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>type</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2272,6 +2338,39 @@ called after faulting.</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.is_degraded">
+<span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.is_degraded" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is DEGRADED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.is_disposed">
+<span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.is_disposed" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is DISPOSED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.is_faulted">
+<span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.is_faulted" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is FAULTED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.is_initialized">
 <span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.is_initialized" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the component has been initialized.</p>
@@ -2286,6 +2385,17 @@ called after faulting.</p>
 <dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.is_running">
 <span class="sig-name descname"><span class="pre">is_running</span></span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.is_running" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the components current state is RUNNING.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.is_stopped">
+<span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.is_stopped" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the component current state is STOPPED.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -2413,6 +2523,28 @@ called after faulting.</p>
 <li><p><strong>topic</strong> (<em>str</em>) – The topic for the subscription. May include wildcard glob patterns.</p></li>
 <li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The handler for the subscription.</p></li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.trader_id">
+<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.trader_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The trader ID associated with the component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>TraderId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.type">
+<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>The components type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>type</cite></p>
 </dd>
 </dl>
 </dd></dl>
