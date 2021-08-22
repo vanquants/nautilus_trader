@@ -1200,7 +1200,7 @@ to the current datetime.</p></li>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_producer.BacktestDataProducer">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BacktestDataProducer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">instruments=None</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">generic_data=None</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">order_book_data=None</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">quote_ticks=None</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">trade_ticks=None</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">bars_bid=None</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">bars_ask=None</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">data=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data_producer.BacktestDataProducer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.backtest.data_producer.DataProducerFacade" title="nautilus_trader.backtest.data_producer.DataProducerFacade"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.backtest.data_producer.DataProducerFacade</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.backtest.data_producer.DataProducer" title="nautilus_trader.backtest.data_producer.DataProducer"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.backtest.data_producer.DataProducer</span></code></a></p>
 <p>Provides a basic data producer for backtesting.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_producer.BacktestDataProducer.__init__">
@@ -1288,7 +1288,7 @@ to the current datetime.</p></li>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_producer.CachedProducer">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CachedProducer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">BacktestDataProducer</span> <span class="pre">producer</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data_producer.CachedProducer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.backtest.data_producer.DataProducerFacade" title="nautilus_trader.backtest.data_producer.DataProducerFacade"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.backtest.data_producer.DataProducerFacade</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.backtest.data_producer.DataProducer" title="nautilus_trader.backtest.data_producer.DataProducer"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.backtest.data_producer.DataProducer</span></code></a></p>
 <p>Cached wrap for the <cite>BacktestDataProducer`</cite> class.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_producer.CachedProducer.__init__">
@@ -1348,30 +1348,30 @@ to the current datetime.</p></li>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.data_producer.DataProducerFacade">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">DataProducerFacade</span></span><a class="headerlink" href="#nautilus_trader.backtest.data_producer.DataProducerFacade" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data_producer.DataProducer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">DataProducer</span></span><a class="headerlink" href="#nautilus_trader.backtest.data_producer.DataProducer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a read-only facade for data producers.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.data_producer.DataProducerFacade.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data_producer.DataProducerFacade.__init__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data_producer.DataProducer.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data_producer.DataProducer.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.data_producer.DataProducerFacade.instruments">
-<span class="sig-name descname"><span class="pre">instruments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_producer.DataProducerFacade.instruments" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data_producer.DataProducer.instruments">
+<span class="sig-name descname"><span class="pre">instruments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_producer.DataProducer.instruments" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.data_producer.DataProducerFacade.next">
-<span class="sig-name descname"><span class="pre">next</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Data</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_producer.DataProducerFacade.next" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data_producer.DataProducer.next">
+<span class="sig-name descname"><span class="pre">next</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Data</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_producer.DataProducer.next" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.data_producer.DataProducerFacade.reset">
-<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_producer.DataProducerFacade.reset" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data_producer.DataProducer.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_producer.DataProducer.reset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
@@ -1410,22 +1410,74 @@ data.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.add_bars">
-<span class="sig-name descname"><span class="pre">add_bars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BarAggregation</span> <span class="pre">aggregation</span></em>, <em class="sig-param"><span class="pre">PriceType</span> <span class="pre">price_type</span></em>, <em class="sig-param"><span class="pre">data:</span> <span class="pre">pd.DataFrame</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.add_bars" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add the bar data to the backtest engine.</p>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.add_bar_objects">
+<span class="sig-name descname"><span class="pre">add_bar_objects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">BarType</span> <span class="pre">bar_type</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">bars</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.add_bar_objects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the built bar data objects to the backtest engines. Suitable for
+running externally aggregated bar subscriptions (bar type must <strong>not</strong>
+be <cite>is_internal_aggregation</cite>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the bar data.</p></li>
-<li><p><strong>aggregation</strong> (<em>BarAggregation</em>) – The bar aggregation of the data.</p></li>
-<li><p><strong>price_type</strong> (<em>PriceType</em>) – The price type of the data.</p></li>
+<li><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type of the data.</p></li>
+<li><p><strong>bars</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a><em>]</em>) – The bars to add.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If bar_type.is_internal_aggregation is True.</p></li>
+<li><p><strong>ValueError</strong> – If bars is empty.</p></li>
+<li><p><strong>ValueError</strong> – If instrument_id is not found in the cache.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.add_bars">
+<span class="sig-name descname"><span class="pre">add_bars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em>, <em class="sig-param"><span class="pre">BarType</span> <span class="pre">bar_type</span></em>, <em class="sig-param"><span class="pre">data:</span> <span class="pre">pd.DataFrame</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.add_bars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the bar data to the backtest engine to be converted to <cite>Bar</cite> objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the data.</p></li>
+<li><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type of the data.</p></li>
 <li><p><strong>data</strong> (<em>pd.DataFrame</em>) – The bar data to add.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If bar_type.is_internal_aggregation is True.</p></li>
+<li><p><strong>ValueError</strong> – If bar_type.instrument_id is not equal to instrument.id.</p></li>
+<li><p><strong>ValueError</strong> – If data is empty.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.add_bars_as_ticks">
+<span class="sig-name descname"><span class="pre">add_bars_as_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BarAggregation</span> <span class="pre">aggregation</span></em>, <em class="sig-param"><span class="pre">PriceType</span> <span class="pre">price_type</span></em>, <em class="sig-param"><span class="pre">data:</span> <span class="pre">pd.DataFrame</span></em>, <em class="sig-param"><span class="pre">check_integrity=True</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.add_bars_as_ticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the bar data to the backtest engine to be converted to quote or trade
+ticks as per the price type. Suitable for running internally aggregated
+bar subscriptions.</p>
+<p>The time period between rows should be a round second, minute, hour or
+day for correctness.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the bar data.</p></li>
+<li><p><strong>aggregation</strong> (BarAggregation {<code class="docutils literal notranslate"><span class="pre">SECOND</span></code>, <code class="docutils literal notranslate"><span class="pre">MINUTE</span></code>, <code class="docutils literal notranslate"><span class="pre">HOUR</span></code>, <code class="docutils literal notranslate"><span class="pre">DAY</span></code>}) – The bar aggregation of the data.</p></li>
+<li><p><strong>price_type</strong> (<em>PriceType</em>) – The price type of the data.</p></li>
+<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – The bar data to add.</p></li>
+<li><p><strong>check_integrity</strong> (<em>bool</em>) – If data shape integrity should be checked.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If aggregation is not one of <code class="docutils literal notranslate"><span class="pre">SECOND</span></code>, <code class="docutils literal notranslate"><span class="pre">MINUTE</span></code>, <code class="docutils literal notranslate"><span class="pre">HOUR</span></code>, <code class="docutils literal notranslate"><span class="pre">DAY</span></code>.</p></li>
 <li><p><strong>ValueError</strong> – If price_type is <code class="docutils literal notranslate"><span class="pre">LAST</span></code>.</p></li>
 <li><p><strong>ValueError</strong> – If data is empty.</p></li>
+<li><p><strong>ValueError</strong> – If instrument_id is not found in the cache.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1496,7 +1548,8 @@ data.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.add_quote_ticks">
 <span class="sig-name descname"><span class="pre">add_quote_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">data:</span> <span class="pre">pd.DataFrame</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.add_quote_ticks" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add the quote tick data to the backtest engine.</p>
+<dd><p>Add the quote tick data to the backtest engine to be converted to
+<cite>QuoteTick</cite> objects.</p>
 <p>The format of the dataframe is expected to be a DateTimeIndex (times are
 assumed to be UTC, and are converted to tz-aware in pre-processing).</p>
 <p>With index column named ‘timestamp’, and ‘bid’, ‘ask’ data columns.</p>
@@ -1553,7 +1606,8 @@ assumed to be UTC, and are converted to tz-aware in pre-processing).</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.add_trade_ticks">
 <span class="sig-name descname"><span class="pre">add_trade_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">data:</span> <span class="pre">pd.DataFrame</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.add_trade_ticks" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add the trade tick data to the backtest engine.</p>
+<dd><p>Add the trade tick data to the backtest engine to be converted to
+<cite>TradeTick</cite> objects.</p>
 <p>The format of the dataframe is expected to be a DateTimeIndex (times are
 assumed to be UTC, and are converted to tz-aware in pre-processing).</p>
 <p>With index column named ‘timestamp’, and ‘trade_id’, ‘price’, ‘quantity’,
