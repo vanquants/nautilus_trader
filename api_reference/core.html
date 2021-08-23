@@ -859,7 +859,7 @@ inferred as zero.</p>
 <span id="message"></span><h2>Message<a class="headerlink" href="#module-nautilus_trader.core.message" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Command">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">UUID</span> <span class="pre">command_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Command" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">UUID4</span> <span class="pre">command_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Command" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
 <p>The abstract base class for all commands.</p>
 <div class="admonition warning">
@@ -873,7 +873,7 @@ inferred as zero.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>command_id</strong> (<a class="reference internal" href="#nautilus_trader.core.uuid.UUID" title="nautilus_trader.core.uuid.UUID"><em>UUID</em></a>) – The command ID.</p></li>
+<li><p><strong>command_id</strong> (<em>UUID4</em>) – The command ID.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the command object was initialized.</p></li>
 </ul>
 </dd>
@@ -897,7 +897,7 @@ inferred as zero.</p>
 <dd><p>The message ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID</cite></p>
+<dd class="field-odd"><p><cite>UUID4</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -917,7 +917,7 @@ inferred as zero.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Document">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Document</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">UUID</span> <span class="pre">document_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Document" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Document</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">UUID4</span> <span class="pre">document_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Document" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
 <p>The abstract base class for all documents.</p>
 <div class="admonition warning">
@@ -931,7 +931,7 @@ inferred as zero.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>document_id</strong> (<a class="reference internal" href="#nautilus_trader.core.uuid.UUID" title="nautilus_trader.core.uuid.UUID"><em>UUID</em></a>) – The document ID.</p></li>
+<li><p><strong>document_id</strong> (<em>UUID4</em>) – The document ID.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the document object was initialized.</p></li>
 </ul>
 </dd>
@@ -955,7 +955,7 @@ inferred as zero.</p>
 <dd><p>The message ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID</cite></p>
+<dd class="field-odd"><p><cite>UUID4</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -975,7 +975,7 @@ inferred as zero.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Event">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">UUID</span> <span class="pre">event_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Event" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">UUID4</span> <span class="pre">event_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Event" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
 <p>The abstract base class for all events.</p>
 <div class="admonition warning">
@@ -989,7 +989,7 @@ inferred as zero.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>event_id</strong> (<a class="reference internal" href="#nautilus_trader.core.uuid.UUID" title="nautilus_trader.core.uuid.UUID"><em>UUID</em></a>) – The event ID.</p></li>
+<li><p><strong>event_id</strong> (<em>UUID4</em>) – The event ID.</p></li>
 <li><p><strong>ts_event</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the event occurred.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the event object was initialized.</p></li>
 </ul>
@@ -1014,7 +1014,7 @@ inferred as zero.</p>
 <dd><p>The message ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID</cite></p>
+<dd class="field-odd"><p><cite>UUID4</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1045,7 +1045,7 @@ inferred as zero.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Message">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">MessageCategory</span> <span class="pre">category</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">message_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Message" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">MessageCategory</span> <span class="pre">category</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">message_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Message" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The abstract base class for all messages.</p>
 <div class="admonition warning">
@@ -1060,7 +1060,7 @@ inferred as zero.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>category</strong> (<em>MessageCategory</em>) – The message category.</p></li>
-<li><p><strong>message_id</strong> (<a class="reference internal" href="#nautilus_trader.core.uuid.UUID" title="nautilus_trader.core.uuid.UUID"><em>UUID</em></a>) – The message ID.</p></li>
+<li><p><strong>message_id</strong> (<em>UUID4</em>) – The message ID.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the message object was initialized.</p></li>
 </ul>
 </dd>
@@ -1084,7 +1084,7 @@ inferred as zero.</p>
 <dd><p>The message ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID</cite></p>
+<dd class="field-odd"><p><cite>UUID4</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1104,7 +1104,7 @@ inferred as zero.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Request">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">callback:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None],</span> <span class="pre">UUID</span> <span class="pre">request_id,</span> <span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Request" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">callback:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None],</span> <span class="pre">UUID4</span> <span class="pre">request_id,</span> <span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Request" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
 <p>The abstract base class for all requests.</p>
 <div class="admonition warning">
@@ -1119,7 +1119,7 @@ inferred as zero.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The delegate to call with the response.</p></li>
-<li><p><strong>request_id</strong> (<a class="reference internal" href="#nautilus_trader.core.uuid.UUID" title="nautilus_trader.core.uuid.UUID"><em>UUID</em></a>) – The request ID.</p></li>
+<li><p><strong>request_id</strong> (<em>UUID4</em>) – The request ID.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the request object was initialized.</p></li>
 </ul>
 </dd>
@@ -1154,7 +1154,7 @@ inferred as zero.</p>
 <dd><p>The message ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID</cite></p>
+<dd class="field-odd"><p><cite>UUID4</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1174,7 +1174,7 @@ inferred as zero.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Response">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">UUID</span> <span class="pre">correlation_id</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">response_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Response" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">UUID4</span> <span class="pre">correlation_id</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">response_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Response" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
 <p>The abstract base class for all responses.</p>
 <div class="admonition warning">
@@ -1188,8 +1188,8 @@ inferred as zero.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>correlation_id</strong> (<a class="reference internal" href="#nautilus_trader.core.uuid.UUID" title="nautilus_trader.core.uuid.UUID"><em>UUID</em></a>) – The correlation ID.</p></li>
-<li><p><strong>response_id</strong> (<a class="reference internal" href="#nautilus_trader.core.uuid.UUID" title="nautilus_trader.core.uuid.UUID"><em>UUID</em></a>) – The response ID.</p></li>
+<li><p><strong>correlation_id</strong> (<em>UUID4</em>) – The correlation ID.</p></li>
+<li><p><strong>response_id</strong> (<em>UUID4</em>) – The response ID.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the response object was initialized.</p></li>
 </ul>
 </dd>
@@ -1213,7 +1213,7 @@ inferred as zero.</p>
 <dd><p>The response correlation ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID</cite></p>
+<dd class="field-odd"><p><cite>UUID4</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1224,7 +1224,7 @@ inferred as zero.</p>
 <dd><p>The message ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID</cite></p>
+<dd class="field-odd"><p><cite>UUID4</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1245,231 +1245,12 @@ inferred as zero.</p>
 </div>
 <div class="section" id="module-nautilus_trader.core.uuid">
 <span id="uuid"></span><h2>UUID<a class="headerlink" href="#module-nautilus_trader.core.uuid" title="Permalink to this headline">¶</a></h2>
-<p>UUID objects (universally unique identifiers) according to RFC 4122.
-This module provides immutable UUID objects (class UUID) and the function
+<p>UUID4 objects (universally unique identifiers) according to RFC 4122.
+This module provides immutable UUID4 objects and the function
 for generating version 4 random UUIDs as specified in RFC 4122.</p>
-<dl>
-<dt>Typical usage:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">uuid</span>
-<span class="go"># make a random UUID</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="go">&#39;00010203-0405-0607-0809-0a0b0c0d0e0f&#39;</span>
-</pre></div>
-</div>
-</dd>
-</dl>
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">UUID</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">bytes</span> <span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Represent a UUID version 4 as specified in RFC 4122.
-UUID objects are immutable, hashable, and usable as dictionary keys.
-Converting a UUID to a string with str() yields something in the form
-‘12345678-1234-1234-1234-123456789abc’.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">UUID</span></code> class.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>value</strong> (<em>bytes</em>) – The 16 bytes value to generate the UUID with.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If value length != 16.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID.bytes">
-<span class="sig-name descname"><span class="pre">bytes</span></span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID.bytes" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UUID as a 16-byte string (containing the six integer fields in
-big-endian byte order).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>str</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID.bytes_le">
-<span class="sig-name descname"><span class="pre">bytes_le</span></span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID.bytes_le" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UUID as a 16-byte string (with time_low, time_mid,
-and time_hi_version in little-endian byte order).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>str</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID.clock_seq">
-<span class="sig-name descname"><span class="pre">clock_seq</span></span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID.clock_seq" title="Permalink to this definition">¶</a></dt>
-<dd><p>The 14-bit sequence number.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>int</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID.clock_seq_hi_variant">
-<span class="sig-name descname"><span class="pre">clock_seq_hi_variant</span></span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID.clock_seq_hi_variant" title="Permalink to this definition">¶</a></dt>
-<dd><p>The next 8 bits of the UUID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>int</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID.clock_seq_low">
-<span class="sig-name descname"><span class="pre">clock_seq_low</span></span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID.clock_seq_low" title="Permalink to this definition">¶</a></dt>
-<dd><p>The 60-bit timestamp.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>int</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID.fields">
-<span class="sig-name descname"><span class="pre">fields</span></span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID.fields" title="Permalink to this definition">¶</a></dt>
-<dd><p>A tuple of the six integer fields of the UUID, which are also available
-as six individual attributes and two derived attributes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>tuple</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID.from_str">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">from_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID.from_str" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a UUID parsed from the given hexadecimal UUID string value.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>value</strong> (<em>str</em>) – The string value.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>UUID</em></p>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If value is badly formed (length != 32).</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID.hex">
-<span class="sig-name descname"><span class="pre">hex</span></span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID.hex" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UUID as a 32-character hexadecimal string.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>str</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID.int_val">
-<span class="sig-name descname"><span class="pre">int_val</span></span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID.int_val" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UUID integer value.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int64</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID.node">
-<span class="sig-name descname"><span class="pre">node</span></span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID.node" title="Permalink to this definition">¶</a></dt>
-<dd><p>The last 48 bits of the UUID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>int</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID.time">
-<span class="sig-name descname"><span class="pre">time</span></span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID.time" title="Permalink to this definition">¶</a></dt>
-<dd><p>The 60-bit timestamp.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>int</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID.time_hi_version">
-<span class="sig-name descname"><span class="pre">time_hi_version</span></span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID.time_hi_version" title="Permalink to this definition">¶</a></dt>
-<dd><p>The next 16 bits of the UUID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>int</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID.time_low">
-<span class="sig-name descname"><span class="pre">time_low</span></span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID.time_low" title="Permalink to this definition">¶</a></dt>
-<dd><p>The first 32 bits of the UUID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>int</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID.time_mid">
-<span class="sig-name descname"><span class="pre">time_mid</span></span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID.time_mid" title="Permalink to this definition">¶</a></dt>
-<dd><p>The next 16 bits of the UUID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>int</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID.urn">
-<span class="sig-name descname"><span class="pre">urn</span></span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID.urn" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UUID as a URN as specified in RFC 4122.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>str</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID.value">
-<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID.value" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UUID string value.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>str</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.uuid.uuid4">
-<span class="sig-name descname"><span class="pre">uuid4</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#nautilus_trader.core.uuid.UUID" title="nautilus_trader.core.uuid.UUID"><span class="pre">UUID</span></a></span></span><a class="headerlink" href="#nautilus_trader.core.uuid.uuid4" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">uuid4</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UUID4</span></span></span><a class="headerlink" href="#nautilus_trader.core.uuid.uuid4" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a random UUID version 4.</p>
 </dd></dl>
 

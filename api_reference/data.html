@@ -972,7 +972,7 @@ called after faulting.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.data.client.DataClient.request">
-<span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">data_type</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">correlation_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.data.client.DataClient.request" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">data_type</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">correlation_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.data.client.DataClient.request" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
@@ -1268,25 +1268,25 @@ called after faulting.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.data.client.MarketDataClient.request">
-<span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">datatype</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">correlation_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.data.client.MarketDataClient.request" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">datatype</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">correlation_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.data.client.MarketDataClient.request" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.data.client.MarketDataClient.request_bars">
-<span class="sig-name descname"><span class="pre">request_bars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">BarType</span> <span class="pre">bar_type</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">from_datetime</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">to_datetime</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">limit</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">correlation_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.data.client.MarketDataClient.request_bars" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">request_bars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">BarType</span> <span class="pre">bar_type</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">from_datetime</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">to_datetime</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">limit</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">correlation_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.data.client.MarketDataClient.request_bars" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.data.client.MarketDataClient.request_quote_ticks">
-<span class="sig-name descname"><span class="pre">request_quote_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">from_datetime</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">to_datetime</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">limit</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">correlation_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.data.client.MarketDataClient.request_quote_ticks" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">request_quote_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">from_datetime</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">to_datetime</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">limit</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">correlation_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.data.client.MarketDataClient.request_quote_ticks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.data.client.MarketDataClient.request_trade_ticks">
-<span class="sig-name descname"><span class="pre">request_trade_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">from_datetime</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">to_datetime</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">limit</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">correlation_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.data.client.MarketDataClient.request_trade_ticks" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">request_trade_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">from_datetime</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">to_datetime</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">limit</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">correlation_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.data.client.MarketDataClient.request_trade_ticks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
@@ -2181,7 +2181,7 @@ called after faulting.</p>
 <span id="messages"></span><h2>Messages<a class="headerlink" href="#module-nautilus_trader.data.messages" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.data.messages.DataCommand">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">DataCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">data_type</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">command_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.messages.DataCommand" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">DataCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">data_type</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">command_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.messages.DataCommand" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="core.html#nautilus_trader.core.message.Command" title="nautilus_trader.core.message.Command"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Command</span></code></a></p>
 <p>The abstract base class for all data commands.</p>
 <div class="admonition warning">
@@ -2197,7 +2197,7 @@ called after faulting.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID for the command.</p></li>
 <li><p><strong>data_type</strong> (<em>type</em>) – The data type for the command.</p></li>
-<li><p><strong>command_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID" title="nautilus_trader.core.uuid.UUID"><em>UUID</em></a>) – The command ID.</p></li>
+<li><p><strong>command_id</strong> (<em>UUID4</em>) – The command ID.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the command object was initialized.</p></li>
 </ul>
 </dd>
@@ -2243,7 +2243,7 @@ called after faulting.</p>
 <dd><p>The message ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID</cite></p>
+<dd class="field-odd"><p><cite>UUID4</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2263,7 +2263,7 @@ called after faulting.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.data.messages.DataRequest">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">DataRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id,</span> <span class="pre">DataType</span> <span class="pre">data_type,</span> <span class="pre">callback:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None],</span> <span class="pre">UUID</span> <span class="pre">request_id,</span> <span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.messages.DataRequest" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">DataRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id,</span> <span class="pre">DataType</span> <span class="pre">data_type,</span> <span class="pre">callback:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None],</span> <span class="pre">UUID4</span> <span class="pre">request_id,</span> <span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.messages.DataRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="core.html#nautilus_trader.core.message.Request" title="nautilus_trader.core.message.Request"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Request</span></code></a></p>
 <p>Represents a request for data.</p>
 <dl class="py method">
@@ -2276,7 +2276,7 @@ called after faulting.</p>
 <li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID for the request.</p></li>
 <li><p><strong>data_type</strong> (<em>type</em>) – The data type for the request.</p></li>
 <li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The delegate to call with the data.</p></li>
-<li><p><strong>request_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID" title="nautilus_trader.core.uuid.UUID"><em>UUID</em></a>) – The request ID.</p></li>
+<li><p><strong>request_id</strong> (<em>UUID4</em>) – The request ID.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the request object was initialized.</p></li>
 </ul>
 </dd>
@@ -2333,7 +2333,7 @@ called after faulting.</p>
 <dd><p>The message ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID</cite></p>
+<dd class="field-odd"><p><cite>UUID4</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2353,7 +2353,7 @@ called after faulting.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.data.messages.DataResponse">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">DataResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">data_type</span></em>, <em class="sig-param"><span class="pre">data</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">correlation_id</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">response_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.messages.DataResponse" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">DataResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">data_type</span></em>, <em class="sig-param"><span class="pre">data</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">correlation_id</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">response_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.messages.DataResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="core.html#nautilus_trader.core.message.Response" title="nautilus_trader.core.message.Response"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Response</span></code></a></p>
 <p>Represents a response with data.</p>
 <dl class="py method">
@@ -2366,8 +2366,8 @@ called after faulting.</p>
 <li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID of the response.</p></li>
 <li><p><strong>data_type</strong> (<em>type</em>) – The data type of the response.</p></li>
 <li><p><strong>data</strong> (<em>object</em>) – The data of the response.</p></li>
-<li><p><strong>correlation_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID" title="nautilus_trader.core.uuid.UUID"><em>UUID</em></a>) – The correlation ID.</p></li>
-<li><p><strong>response_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID" title="nautilus_trader.core.uuid.UUID"><em>UUID</em></a>) – The response ID.</p></li>
+<li><p><strong>correlation_id</strong> (<em>UUID4</em>) – The correlation ID.</p></li>
+<li><p><strong>response_id</strong> (<em>UUID4</em>) – The response ID.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the response object was initialized.</p></li>
 </ul>
 </dd>
@@ -2402,7 +2402,7 @@ called after faulting.</p>
 <dd><p>The response correlation ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID</cite></p>
+<dd class="field-odd"><p><cite>UUID4</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2435,7 +2435,7 @@ called after faulting.</p>
 <dd><p>The message ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID</cite></p>
+<dd class="field-odd"><p><cite>UUID4</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2455,7 +2455,7 @@ called after faulting.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.data.messages.Subscribe">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Subscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">data_type</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">command_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.messages.Subscribe" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Subscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">data_type</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">command_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.messages.Subscribe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.data.messages.DataCommand" title="nautilus_trader.data.messages.DataCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.data.messages.DataCommand</span></code></a></p>
 <p>Represents a command to subscribe to data.</p>
 <dl class="py method">
@@ -2467,7 +2467,7 @@ called after faulting.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID for the command.</p></li>
 <li><p><strong>data_type</strong> (<em>type</em>) – The data type for the subscription.</p></li>
-<li><p><strong>command_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID" title="nautilus_trader.core.uuid.UUID"><em>UUID</em></a>) – The command ID.</p></li>
+<li><p><strong>command_id</strong> (<em>UUID4</em>) – The command ID.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the command object was initialized.</p></li>
 </ul>
 </dd>
@@ -2513,7 +2513,7 @@ called after faulting.</p>
 <dd><p>The message ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID</cite></p>
+<dd class="field-odd"><p><cite>UUID4</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2533,7 +2533,7 @@ called after faulting.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.data.messages.Unsubscribe">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Unsubscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">data_type</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">command_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.messages.Unsubscribe" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Unsubscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">data_type</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">command_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.data.messages.Unsubscribe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.data.messages.DataCommand" title="nautilus_trader.data.messages.DataCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.data.messages.DataCommand</span></code></a></p>
 <p>Represents a command to unsubscribe from data.</p>
 <dl class="py method">
@@ -2545,7 +2545,7 @@ called after faulting.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID for the command.</p></li>
 <li><p><strong>data_type</strong> (<em>type</em>) – The data type to unsubscribe from.</p></li>
-<li><p><strong>command_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID" title="nautilus_trader.core.uuid.UUID"><em>UUID</em></a>) – The command ID.</p></li>
+<li><p><strong>command_id</strong> (<em>UUID4</em>) – The command ID.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the command object was initialized.</p></li>
 </ul>
 </dd>
@@ -2591,7 +2591,7 @@ called after faulting.</p>
 <dd><p>The message ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID</cite></p>
+<dd class="field-odd"><p><cite>UUID4</cite></p>
 </dd>
 </dl>
 </dd></dl>

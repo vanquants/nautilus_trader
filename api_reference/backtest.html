@@ -362,13 +362,13 @@ called after faulting.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestDataClient.request">
-<span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">data_type</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">correlation_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestDataClient.request" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">data_type</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">correlation_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestDataClient.request" title="Permalink to this definition">¶</a></dt>
 <dd><p>Request the given data type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data_type</strong> (<em>DataType</em>) – The data type to request.</p></li>
-<li><p><strong>correlation_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID" title="nautilus_trader.core.uuid.UUID"><em>UUID</em></a>) – The correlation ID for the response.</p></li>
+<li><p><strong>correlation_id</strong> (<em>UUID4</em>) – The correlation ID for the response.</p></li>
 </ul>
 </dd>
 </dl>
@@ -671,13 +671,13 @@ called after faulting.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.request">
-<span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">datatype</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">correlation_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.request" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">DataType</span> <span class="pre">datatype</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">correlation_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.request" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.request_bars">
-<span class="sig-name descname"><span class="pre">request_bars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">BarType</span> <span class="pre">bar_type</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">from_datetime</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">to_datetime</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">limit</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">correlation_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.request_bars" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">request_bars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">BarType</span> <span class="pre">bar_type</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">from_datetime</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">to_datetime</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">limit</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">correlation_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.request_bars" title="Permalink to this definition">¶</a></dt>
 <dd><p>Request historical bars for the given parameters from the data engine.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -687,7 +687,7 @@ called after faulting.</p>
 <li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If None then will default
 to the current datetime.</p></li>
 <li><p><strong>limit</strong> (<em>int</em>) – The limit for the number of returned bars.</p></li>
-<li><p><strong>correlation_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID" title="nautilus_trader.core.uuid.UUID"><em>UUID</em></a>) – The correlation ID for the request.</p></li>
+<li><p><strong>correlation_id</strong> (<em>UUID4</em>) – The correlation ID for the request.</p></li>
 </ul>
 </dd>
 </dl>
@@ -695,7 +695,7 @@ to the current datetime.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.request_quote_ticks">
-<span class="sig-name descname"><span class="pre">request_quote_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">from_datetime</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">to_datetime</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">limit</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">correlation_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.request_quote_ticks" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">request_quote_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">from_datetime</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">to_datetime</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">limit</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">correlation_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.request_quote_ticks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Request historical quote ticks for the given parameters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -705,7 +705,7 @@ to the current datetime.</p></li>
 <li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If None then will default
 to the current datetime.</p></li>
 <li><p><strong>limit</strong> (<em>int</em>) – The limit for the number of returned ticks.</p></li>
-<li><p><strong>correlation_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID" title="nautilus_trader.core.uuid.UUID"><em>UUID</em></a>) – The correlation ID for the request.</p></li>
+<li><p><strong>correlation_id</strong> (<em>UUID4</em>) – The correlation ID for the request.</p></li>
 </ul>
 </dd>
 </dl>
@@ -713,7 +713,7 @@ to the current datetime.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data_client.BacktestMarketDataClient.request_trade_ticks">
-<span class="sig-name descname"><span class="pre">request_trade_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">from_datetime</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">to_datetime</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">limit</span></em>, <em class="sig-param"><span class="pre">UUID</span> <span class="pre">correlation_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.request_trade_ticks" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">request_trade_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">from_datetime</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">to_datetime</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">limit</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">correlation_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data_client.BacktestMarketDataClient.request_trade_ticks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Request historical trade ticks for the given parameters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -723,7 +723,7 @@ to the current datetime.</p></li>
 <li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If None then will default
 to the current datetime.</p></li>
 <li><p><strong>limit</strong> (<em>int</em>) – The limit for the number of returned ticks.</p></li>
-<li><p><strong>correlation_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID" title="nautilus_trader.core.uuid.UUID"><em>UUID</em></a>) – The correlation ID for the request.</p></li>
+<li><p><strong>correlation_id</strong> (<em>UUID4</em>) – The correlation ID for the request.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1737,7 +1737,7 @@ called after disposal.</p>
 <dd><p>The backtest engine instance ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID</cite></p>
+<dd class="field-odd"><p><cite>UUID4</cite></p>
 </dd>
 </dl>
 </dd></dl>
