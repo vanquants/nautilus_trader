@@ -873,7 +873,7 @@ inferred as zero.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>command_id</strong> (<em>UUID4</em>) – The command ID.</p></li>
+<li><p><strong>command_id</strong> (<a class="reference internal" href="#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The command ID.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the command object was initialized.</p></li>
 </ul>
 </dd>
@@ -931,7 +931,7 @@ inferred as zero.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>document_id</strong> (<em>UUID4</em>) – The document ID.</p></li>
+<li><p><strong>document_id</strong> (<a class="reference internal" href="#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The document ID.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the document object was initialized.</p></li>
 </ul>
 </dd>
@@ -989,7 +989,7 @@ inferred as zero.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>event_id</strong> (<em>UUID4</em>) – The event ID.</p></li>
+<li><p><strong>event_id</strong> (<a class="reference internal" href="#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The event ID.</p></li>
 <li><p><strong>ts_event</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the event occurred.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the event object was initialized.</p></li>
 </ul>
@@ -1060,7 +1060,7 @@ inferred as zero.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>category</strong> (<em>MessageCategory</em>) – The message category.</p></li>
-<li><p><strong>message_id</strong> (<em>UUID4</em>) – The message ID.</p></li>
+<li><p><strong>message_id</strong> (<a class="reference internal" href="#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The message ID.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the message object was initialized.</p></li>
 </ul>
 </dd>
@@ -1119,7 +1119,7 @@ inferred as zero.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The delegate to call with the response.</p></li>
-<li><p><strong>request_id</strong> (<em>UUID4</em>) – The request ID.</p></li>
+<li><p><strong>request_id</strong> (<a class="reference internal" href="#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The request ID.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the request object was initialized.</p></li>
 </ul>
 </dd>
@@ -1188,8 +1188,8 @@ inferred as zero.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>correlation_id</strong> (<em>UUID4</em>) – The correlation ID.</p></li>
-<li><p><strong>response_id</strong> (<em>UUID4</em>) – The response ID.</p></li>
+<li><p><strong>correlation_id</strong> (<a class="reference internal" href="#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The correlation ID.</p></li>
+<li><p><strong>response_id</strong> (<a class="reference internal" href="#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The response ID.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the response object was initialized.</p></li>
 </ul>
 </dd>
@@ -1248,10 +1248,47 @@ inferred as zero.</p>
 <p>UUID4 objects (universally unique identifiers) according to RFC 4122.
 This module provides immutable UUID4 objects and the function
 for generating version 4 random UUIDs as specified in RFC 4122.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID4">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">UUID4</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a UUID version 4.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID4.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID4.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">UUID4</span></code> class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>str</em>) – </p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If len(value) != 36.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID4.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID4.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>The UUID string value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>str</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.uuid.uuid4">
-<span class="sig-name descname"><span class="pre">uuid4</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UUID4</span></span></span><a class="headerlink" href="#nautilus_trader.core.uuid.uuid4" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">uuid4</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><span class="pre">UUID4</span></a></span></span><a class="headerlink" href="#nautilus_trader.core.uuid.uuid4" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a random UUID version 4.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>UUID4</em></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>

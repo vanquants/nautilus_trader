@@ -2943,7 +2943,7 @@ will be appended with ‘F’.</p></li>
 <li><p><strong>clock</strong> (<a class="reference internal" href="#nautilus_trader.common.clock.LiveClock" title="nautilus_trader.common.clock.LiveClock"><em>LiveClock</em></a>) – The clock for the logger.</p></li>
 <li><p><strong>trader_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId"><em>TraderId</em></a><em>, </em><em>optional</em>) – The trader ID for the logger.</p></li>
 <li><p><strong>host_id</strong> (<em>str</em><em>, </em><em>optional</em>) – The systems unique instantiation ID.</p></li>
-<li><p><strong>instance_id</strong> (<em>UUID4</em><em>, </em><em>optional</em>) – The systems unique instantiation ID.</p></li>
+<li><p><strong>instance_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a><em>, </em><em>optional</em>) – The systems unique instantiation ID.</p></li>
 <li><p><strong>level_stdout</strong> (<em>LogLevel</em>) – The minimum log level for logging messages to stdout.</p></li>
 <li><p><strong>bypass</strong> (<em>bool</em>) – If the logger should be bypassed.</p></li>
 <li><p><strong>maxsize</strong> (<em>int</em><em>, </em><em>optional</em>) – The maximum capacity for the log queue.</p></li>
@@ -3074,7 +3074,7 @@ will be appended with ‘F’.</p></li>
 <li><p><strong>clock</strong> (<a class="reference internal" href="#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the logger.</p></li>
 <li><p><strong>trader_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId"><em>TraderId</em></a><em>, </em><em>optional</em>) – The trader ID for the logger.</p></li>
 <li><p><strong>host_id</strong> (<em>str</em><em>, </em><em>optional</em>) – The host ID.</p></li>
-<li><p><strong>instance_id</strong> (<em>UUID4</em><em>, </em><em>optional</em>) – The instance ID.</p></li>
+<li><p><strong>instance_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a><em>, </em><em>optional</em>) – The instance ID.</p></li>
 <li><p><strong>level_stdout</strong> (<em>LogLevel</em>) – The minimum log level for logging messages to stdout.</p></li>
 <li><p><strong>bypass</strong> (<em>bool</em>) – If the logger should be bypassed.</p></li>
 </ul>
@@ -3885,7 +3885,7 @@ If None then messages will be buffered.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>event_id</strong> (<em>UUID4</em>) – The ID for the time event.</p></li>
+<li><p><strong>event_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The ID for the time event.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the time event object was initialization.</p></li>
 </ul>
 </dd>
@@ -4036,7 +4036,7 @@ If None then messages will be buffered.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>event_id</strong> (<em>UUID4</em>) – The ID for the time event.</p></li>
+<li><p><strong>event_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The ID for the time event.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the time event object was initialization.</p></li>
 </ul>
 </dd>
@@ -4198,7 +4198,7 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>event_id</strong> (<em>UUID4</em>) – The ID for the time event.</p></li>
+<li><p><strong>event_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The ID for the time event.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the time event object was initialization.</p></li>
 </ul>
 </dd>
@@ -4351,7 +4351,7 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>event_id</strong> (<em>UUID4</em>) – The ID for the time event.</p></li>
+<li><p><strong>event_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The ID for the time event.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the time event object was initialization.</p></li>
 </ul>
 </dd>
@@ -4409,7 +4409,7 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – The event name.</p></li>
-<li><p><strong>event_id</strong> (<em>UUID4</em>) – The event ID.</p></li>
+<li><p><strong>event_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The event ID.</p></li>
 <li><p><strong>timestamp</strong> (<em>datetime</em>) – The event timestamp (UTC).</p></li>
 <li><p><strong>ts_event</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the time event occurred.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the event object was initialized.</p></li>
@@ -4631,7 +4631,7 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>event_id</strong> (<em>UUID4</em>) – The ID for the time event.</p></li>
+<li><p><strong>event_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The ID for the time event.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the time event object was initialization.</p></li>
 </ul>
 </dd>
