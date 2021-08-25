@@ -1413,8 +1413,8 @@ data.</p>
 <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.add_bar_objects">
 <span class="sig-name descname"><span class="pre">add_bar_objects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">BarType</span> <span class="pre">bar_type</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">bars</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.add_bar_objects" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add the built bar data objects to the backtest engines. Suitable for
-running externally aggregated bar subscriptions (bar type must <strong>not</strong>
-be <cite>is_internal_aggregation</cite>).</p>
+running externally aggregated bar subscriptions (bar type aggregation
+source must be <code class="docutils literal notranslate"><span class="pre">EXTERNAL</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1424,7 +1424,7 @@ be <cite>is_internal_aggregation</cite>).</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If bar_type.is_internal_aggregation is True.</p></li>
+<li><p><strong>ValueError</strong> – If bar_type.aggregation_source is not equal to <code class="docutils literal notranslate"><span class="pre">EXTERNAL</span></code>.</p></li>
 <li><p><strong>ValueError</strong> – If bars is empty.</p></li>
 <li><p><strong>ValueError</strong> – If instrument_id is not found in the cache.</p></li>
 </ul>
@@ -1446,7 +1446,7 @@ be <cite>is_internal_aggregation</cite>).</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If bar_type.is_internal_aggregation is True.</p></li>
+<li><p><strong>ValueError</strong> – If bar_type.aggregation_source is not equal to <code class="docutils literal notranslate"><span class="pre">EXTERNAL</span></code>.</p></li>
 <li><p><strong>ValueError</strong> – If bar_type.instrument_id is not equal to instrument.id.</p></li>
 <li><p><strong>ValueError</strong> – If data is empty.</p></li>
 </ul>
@@ -1756,7 +1756,13 @@ called after disposal.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.list_venues">
 <span class="sig-name descname"><span class="pre">list_venues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.list_venues" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Return the venues contained within the engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>List[Venue]</em></p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.portfolio">

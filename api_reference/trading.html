@@ -562,6 +562,9 @@ per instrument. The position ID will be <cite>{instrument_id}-{strategy_id}</cit
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>config</strong> (<a class="reference internal" href="#nautilus_trader.trading.strategy.TradingStrategyConfig" title="nautilus_trader.trading.strategy.TradingStrategyConfig"><em>TradingStrategyConfig</em></a>) – The trading strategy configuration.</p>
 </dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>TypeError</strong> – If config is not of type TradingStrategyConfig.</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -2053,7 +2056,7 @@ original <cite>ClientOrderId</cite>.</p>
 <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategyConfig">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TradingStrategyConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_id_tag</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'000'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oms_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">OMSType</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategyConfig" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydantic.main.BaseModel</span></code></p>
-<p>The base model for all trading strategy configs.</p>
+<p>The base model for all trading strategy configurations.</p>
 <dl class="simple">
 <dt>order_id_tag<span class="classifier">str</span></dt><dd><p>The unique order ID tag for the strategy. Must be unique
 amongst all running strategies for a particular trader ID.</p>

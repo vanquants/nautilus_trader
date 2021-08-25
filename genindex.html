@@ -873,10 +873,10 @@
         <li><a href="api_reference/infrastructure.html#nautilus_trader.infrastructure.cache.RedisCacheDatabase.add_position">(RedisCacheDatabase method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.add_position_id">add_position_id() (Cache method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/execution.html#nautilus_trader.execution.messages.ExecutionMassStatus.add_position_report">add_position_report() (ExecutionMassStatus method)</a>
 </li>
       <li><a href="api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.add_positions">add_positions() (PerformanceAnalyzer method)</a>
@@ -922,6 +922,8 @@
       <li><a href="api_reference/common.html#nautilus_trader.common.clock.TestClock.advance_time">advance_time() (TestClock method)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.data.bar.BarSpecification.aggregation">aggregation (BarSpecification attribute)</a>
+</li>
+      <li><a href="api_reference/model.html#nautilus_trader.model.data.bar.BarType.aggregation_source">aggregation_source (BarType attribute)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.data.tick.TradeTick.aggressor_side">aggressor_side (TradeTick attribute)</a>
 </li>
@@ -3799,8 +3801,6 @@
         <li><a href="api_reference/portfolio.html#nautilus_trader.portfolio.base.PortfolioFacade.is_completely_flat">(PortfolioFacade method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestDataClient.is_connected">is_connected (BacktestDataClient attribute)</a>
 
       <ul>
@@ -3825,6 +3825,8 @@
         <li><a href="api_reference/network.html#nautilus_trader.network.ws_client.WebSocketClient.is_connected">(WebSocketClient attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/model.html#nautilus_trader.model.currency.Currency.is_crypto">is_crypto() (Currency static method)</a>
 </li>
       <li><a href="api_reference/core.html#nautilus_trader.core.datetime.is_datetime_utc">is_datetime_utc() (in module nautilus_trader.core.datetime)</a>
@@ -3929,6 +3931,8 @@
         <li><a href="api_reference/common.html#nautilus_trader.common.timer.Timer.is_expired">(Timer attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/model.html#nautilus_trader.model.data.bar.BarType.is_external_aggregation">is_external_aggregation() (BarType method)</a>
+</li>
       <li><a href="api_reference/common.html#nautilus_trader.common.actor.Actor.is_faulted">is_faulted (Actor attribute)</a>
 
       <ul>
@@ -4037,7 +4041,7 @@
         <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.is_initialized">(TradingStrategy attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/model.html#nautilus_trader.model.data.bar.BarType.is_internal_aggregation">is_internal_aggregation (BarType attribute)</a>
+      <li><a href="api_reference/model.html#nautilus_trader.model.data.bar.BarType.is_internal_aggregation">is_internal_aggregation() (BarType method)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.position.Position.is_inverse">is_inverse (Position attribute)</a>
 </li>
@@ -6295,7 +6299,11 @@
 </li>
       <li><a href="api_reference/execution.html#nautilus_trader.execution.messages.ExecutionMassStatus.order_reports">order_reports() (ExecutionMassStatus method)</a>
 </li>
+      <li><a href="api_reference/model.html#nautilus_trader.model.events.order.OrderFilled.order_side">order_side (OrderFilled attribute)</a>
+</li>
       <li><a href="api_reference/execution.html#nautilus_trader.execution.messages.OrderStatusReport.order_status">order_status (OrderStatusReport attribute)</a>
+</li>
+      <li><a href="api_reference/model.html#nautilus_trader.model.events.order.OrderFilled.order_type">order_type (OrderFilled attribute)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.events.order.OrderAccepted">OrderAccepted (class in nautilus_trader.model.events.order)</a>
 </li>
@@ -7411,8 +7419,6 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.market.MarketOrder.side">(MarketOrder attribute)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.orderbook.data.Order.side">(Order attribute)</a>
-</li>
-        <li><a href="api_reference/model.html#nautilus_trader.model.events.order.OrderFilled.side">(OrderFilled attribute)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.events.order.OrderInitialized.side">(OrderInitialized attribute)</a>
 </li>
@@ -8807,8 +8813,6 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.market.MarketOrder.type">(MarketOrder attribute)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.orderbook.data.OrderBookDelta.type">(OrderBookDelta attribute)</a>
-</li>
-        <li><a href="api_reference/model.html#nautilus_trader.model.events.order.OrderFilled.type">(OrderFilled attribute)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.events.order.OrderInitialized.type">(OrderInitialized attribute)</a>
 </li>
