@@ -758,12 +758,7 @@ ID.</p>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If order.client_order_id is already contained in the cache.</p></li>
-<li><p><strong>ValueError</strong> – If order.client_order_id is already contained in the index_orders.</p></li>
-<li><p><strong>ValueError</strong> – If order.client_order_id is already contained in the index_order_position.</p></li>
-<li><p><strong>ValueError</strong> – If order.client_order_id is already contained in the index_order_strategy.</p></li>
-</ul>
+<dd class="field-even"><p><strong>ValueError</strong> – If order.client_order_id is already contained in the cache.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -791,11 +786,7 @@ ID.</p>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If oms_type is <code class="docutils literal notranslate"><span class="pre">HEDGING</span></code> and position.id is already contained in the cache.</p></li>
-<li><p><strong>ValueError</strong> – If oms_type is <code class="docutils literal notranslate"><span class="pre">HEDGING</span></code> and position.id is already contained in the index_positions.</p></li>
-<li><p><strong>ValueError</strong> – If oms_type is <code class="docutils literal notranslate"><span class="pre">HEDGING</span></code> and position.id is already contained in the index_positions_open.</p></li>
-</ul>
+<dd class="field-even"><p><strong>ValueError</strong> – If oms_type is <code class="docutils literal notranslate"><span class="pre">HEDGING</span></code> and position.id is already contained in the cache.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1014,8 +1005,7 @@ error is found then a log error message will also be produced.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.cache.cache.Cache.client_order_id">
 <span class="sig-name descname"><span class="pre">client_order_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ClientOrderId</span></span></span><a class="headerlink" href="#nautilus_trader.cache.cache.Cache.client_order_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the client order ID matching the given order ID
-(if found).</p>
+<dd><p>Return the client order ID matching the given order ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>venue_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a>) – The venue assigned order ID.</p>
@@ -1700,8 +1690,7 @@ and is open.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.cache.cache.Cache.position_id">
 <span class="sig-name descname"><span class="pre">position_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PositionId</span></span></span><a class="headerlink" href="#nautilus_trader.cache.cache.Cache.position_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the position ID associated with the given client order
-ID (if found).</p>
+<dd><p>Return the position ID associated with the given client order ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>client_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID associated with the position.</p>
@@ -1931,8 +1920,7 @@ ID (if found).</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.cache.cache.Cache.strategy_id_for_order">
 <span class="sig-name descname"><span class="pre">strategy_id_for_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">StrategyId</span></span></span><a class="headerlink" href="#nautilus_trader.cache.cache.Cache.strategy_id_for_order" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the strategy ID associated with the given ID
-(if found).</p>
+<dd><p>Return the strategy ID associated with the given ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>client_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID associated with the strategy.</p>
@@ -1946,8 +1934,7 @@ ID (if found).</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.cache.cache.Cache.strategy_id_for_position">
 <span class="sig-name descname"><span class="pre">strategy_id_for_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">PositionId</span> <span class="pre">position_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">StrategyId</span></span></span><a class="headerlink" href="#nautilus_trader.cache.cache.Cache.strategy_id_for_position" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the strategy ID associated with the given ID
-(if found).</p>
+<dd><p>Return the strategy ID associated with the given ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>position_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId"><em>PositionId</em></a>) – The position ID associated with the strategy.</p>
@@ -2123,8 +2110,7 @@ ID (if found).</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.cache.cache.Cache.venue_order_id">
 <span class="sig-name descname"><span class="pre">venue_order_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">VenueOrderId</span></span></span><a class="headerlink" href="#nautilus_trader.cache.cache.Cache.venue_order_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the order ID matching the given client order ID
-(if found).</p>
+<dd><p>Return the order ID matching the given client order ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>VenueOrderId or None</em></p>

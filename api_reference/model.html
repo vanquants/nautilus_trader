@@ -1053,7 +1053,8 @@
 <dt class="sig sig-object py" id="nautilus_trader.model.data.bar.BarSpecification">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BarSpecification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">int</span> <span class="pre">step</span></em>, <em class="sig-param"><span class="pre">BarAggregation</span> <span class="pre">aggregation</span></em>, <em class="sig-param"><span class="pre">PriceType</span> <span class="pre">price_type</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.data.bar.BarSpecification" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Represents an aggregation specification for generating bars.</p>
+<p>Represents a bar aggregation specification including a step, aggregation
+method/rule and price type.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.data.bar.BarSpecification.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.data.bar.BarSpecification.__init__" title="Permalink to this definition">¶</a></dt>
@@ -1186,7 +1187,8 @@ threshold-driven.</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.data.bar.BarType">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BarType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BarSpecification</span> <span class="pre">bar_spec</span></em>, <em class="sig-param"><span class="pre">AggregationSource</span> <span class="pre">aggregation_source=AggregationSource.EXTERNAL</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.data.bar.BarType" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Represents a bar type being the instrument ID and bar specification of bar data.</p>
+<p>Represents a bar type including the instrument ID, bar specification and
+aggregation source.</p>
 <p class="rubric">Notes</p>
 <p>It is expected that all bar aggregation methods other than time will be
 internally aggregated.</p>
@@ -1199,10 +1201,10 @@ internally aggregated.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The bar types instrument ID.</p></li>
 <li><p><strong>bar_spec</strong> (<a class="reference internal" href="#nautilus_trader.model.data.bar.BarSpecification" title="nautilus_trader.model.data.bar.BarSpecification"><em>BarSpecification</em></a>) – The bar types specification.</p></li>
-<li><p><strong>aggregation_source</strong> (<em>AggregationSource</em><em>, </em><em>default=``EXTERNAL``</em>) – If bars are aggregated internally by the platform. If <code class="docutils literal notranslate"><span class="pre">INTERNAL</span></code>
-the <cite>DataEngine</cite> will subscribe to the necessary ticks and aggregate
-bars accordingly. Else if <code class="docutils literal notranslate"><span class="pre">EXTERNAL</span></code> then bars will be subscribed
-to directly from the data publisher.</p></li>
+<li><p><strong>aggregation_source</strong> (<em>AggregationSource</em><em>, </em><em>default=EXTERNAL</em>) – The bar type aggregation source. If <code class="docutils literal notranslate"><span class="pre">INTERNAL</span></code> the <cite>DataEngine</cite>
+will subscribe to the necessary ticks and aggregate bars accordingly.
+Else if <code class="docutils literal notranslate"><span class="pre">EXTERNAL</span></code> then bars will be subscribed to directly from
+the data publisher.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1250,7 +1252,7 @@ to directly from the data publisher.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.data.bar.BarType.is_external_aggregation">
 <span class="sig-name descname"><span class="pre">is_external_aggregation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.model.data.bar.BarType.is_external_aggregation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a value indicating whether the bar aggregation method is <code class="docutils literal notranslate"><span class="pre">EXTERNAL</span></code>.</p>
+<dd><p>Return a value indicating whether the bar aggregation source is <code class="docutils literal notranslate"><span class="pre">EXTERNAL</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -1261,7 +1263,7 @@ to directly from the data publisher.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.data.bar.BarType.is_internal_aggregation">
 <span class="sig-name descname"><span class="pre">is_internal_aggregation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.model.data.bar.BarType.is_internal_aggregation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a value indicating whether the bar aggregation method is <code class="docutils literal notranslate"><span class="pre">INTERNAL</span></code>.</p>
+<dd><p>Return a value indicating whether the bar aggregation source is <code class="docutils literal notranslate"><span class="pre">INTERNAL</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -6384,8 +6386,8 @@ trading venue.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the book.</p></li>
-<li><p><strong>price_precision</strong> (<em>uint8</em>) – The price precision for the book.</p></li>
-<li><p><strong>size_precision</strong> (<em>uint8</em>) – The size precision for the book.</p></li>
+<li><p><strong>price_precision</strong> (<em>uint8</em>) – The price precision of the books orders.</p></li>
+<li><p><strong>size_precision</strong> (<em>uint8</em>) – The size precision of the books orders.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -6775,8 +6777,8 @@ trading venue.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the book.</p></li>
-<li><p><strong>price_precision</strong> (<em>uint8</em>) – The price precision for the book.</p></li>
-<li><p><strong>size_precision</strong> (<em>uint8</em>) – The size precision for the book.</p></li>
+<li><p><strong>price_precision</strong> (<em>uint8</em>) – The price precision of the books orders.</p></li>
+<li><p><strong>size_precision</strong> (<em>uint8</em>) – The size precision of the books orders.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -7161,8 +7163,8 @@ This class maps directly to functionality of the <cite>OrderBook</cite> base cla
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the book.</p></li>
-<li><p><strong>price_precision</strong> (<em>uint8</em>) – The price precision for the book.</p></li>
-<li><p><strong>size_precision</strong> (<em>uint8</em>) – The size precision for the book.</p></li>
+<li><p><strong>price_precision</strong> (<em>uint8</em>) – The price precision of the books orders.</p></li>
+<li><p><strong>size_precision</strong> (<em>uint8</em>) – The size precision of the books orders.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -7548,8 +7550,8 @@ This class maps directly to functionality of the <cite>OrderBook</cite> base cla
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the book.</p></li>
 <li><p><strong>level</strong> (BookLevel {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}) – The order book level.</p></li>
-<li><p><strong>price_precision</strong> (<em>int</em>) – The price precision for the book.</p></li>
-<li><p><strong>size_precision</strong> (<em>int</em>) – The size precision for the book.</p></li>
+<li><p><strong>price_precision</strong> (<em>int</em>) – The price precision of the books orders.</p></li>
+<li><p><strong>size_precision</strong> (<em>int</em>) – The size precision of the books orders.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -8636,7 +8638,7 @@ be executed.</p>
 <dd class="field-even"><p><em>OrderSide</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If side is FLAT or invalid.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If side is <code class="docutils literal notranslate"><span class="pre">FLAT</span></code> or invalid.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -9211,7 +9213,7 @@ market.</p>
 <dd class="field-even"><p><em>OrderSide</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If side is FLAT or invalid.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If side is <code class="docutils literal notranslate"><span class="pre">FLAT</span></code> or invalid.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -9853,7 +9855,7 @@ or help protect a profit on a short sale.</p>
 <dd class="field-even"><p><em>OrderSide</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If side is FLAT or invalid.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If side is <code class="docutils literal notranslate"><span class="pre">FLAT</span></code> or invalid.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -10479,7 +10481,7 @@ trader could “miss the market” altogether.</p>
 <dd class="field-even"><p><em>OrderSide</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If side is FLAT or invalid.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If side is <code class="docutils literal notranslate"><span class="pre">FLAT</span></code> or invalid.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -12359,7 +12361,7 @@ generated depending on a strategies OMS (Order Management System) settings.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.avg_px_close">
 <span class="sig-name descname"><span class="pre">avg_px_close</span></span><a class="headerlink" href="#nautilus_trader.model.position.Position.avg_px_close" title="Permalink to this definition">¶</a></dt>
-<dd><p>The average closing price.</p>
+<dd><p>The average close price.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>Decimal</cite> or <cite>None</cite></p>
@@ -12649,7 +12651,7 @@ the current position side.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.net_qty">
 <span class="sig-name descname"><span class="pre">net_qty</span></span><a class="headerlink" href="#nautilus_trader.model.position.Position.net_qty" title="Permalink to this definition">¶</a></dt>
-<dd><p>The current net quantity (positive for <code class="docutils literal notranslate"><span class="pre">LONG</span></code>, negative for <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>).</p>
+<dd><p>The current net quantity (positive for position side``LONG``, negative for position side <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>Decimal</cite></p>
