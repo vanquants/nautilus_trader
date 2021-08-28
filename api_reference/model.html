@@ -1085,6 +1085,48 @@ method/rule and price type.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.model.data.bar.BarSpecification.check_information_aggregated">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">check_information_aggregated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">BarAggregation</span> <span class="pre">aggregation</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.data.bar.BarSpecification.check_information_aggregated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the given aggregation is a type of information aggregation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>aggregation</strong> (<em>BarAggregation</em>) – The aggregation type to check.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>bool</em> – True if information aggregated, else False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.model.data.bar.BarSpecification.check_threshold_aggregated">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">check_threshold_aggregated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">BarAggregation</span> <span class="pre">aggregation</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.data.bar.BarSpecification.check_threshold_aggregated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the given aggregation is a type of threshold aggregation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>aggregation</strong> (<em>BarAggregation</em>) – The aggregation type to check.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>bool</em> – True if threshold aggregated, else False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.model.data.bar.BarSpecification.check_time_aggregated">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">check_time_aggregated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">BarAggregation</span> <span class="pre">aggregation</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.data.bar.BarSpecification.check_time_aggregated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the given aggregation is a type of time aggregation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>aggregation</strong> (<em>BarAggregation</em>) – The aggregation type to check.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>bool</em> – True if time aggregated, else False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.data.bar.BarSpecification.from_str">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">from_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">value</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#nautilus_trader.model.data.bar.BarSpecification" title="nautilus_trader.model.data.bar.BarSpecification"><span class="pre">BarSpecification</span></a></span></span><a class="headerlink" href="#nautilus_trader.model.data.bar.BarSpecification.from_str" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a bar specification parsed from the given string.</p>
@@ -1250,8 +1292,8 @@ the data publisher.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.data.bar.BarType.is_external_aggregation">
-<span class="sig-name descname"><span class="pre">is_external_aggregation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.model.data.bar.BarType.is_external_aggregation" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.model.data.bar.BarType.is_externally_aggregated">
+<span class="sig-name descname"><span class="pre">is_externally_aggregated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.model.data.bar.BarType.is_externally_aggregated" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a value indicating whether the bar aggregation source is <code class="docutils literal notranslate"><span class="pre">EXTERNAL</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1261,8 +1303,8 @@ the data publisher.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.data.bar.BarType.is_internal_aggregation">
-<span class="sig-name descname"><span class="pre">is_internal_aggregation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.model.data.bar.BarType.is_internal_aggregation" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.model.data.bar.BarType.is_internally_aggregated">
+<span class="sig-name descname"><span class="pre">is_internally_aggregated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.model.data.bar.BarType.is_internally_aggregated" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a value indicating whether the bar aggregation source is <code class="docutils literal notranslate"><span class="pre">INTERNAL</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
