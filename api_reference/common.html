@@ -672,7 +672,7 @@ called after faulting.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>System method (not intended to be called by user code).</p>
-<p>Should be overridden in the strategy implementation.</p>
+<p>Should be overridden in the actor implementation.</p>
 </div>
 </dd></dl>
 
@@ -684,7 +684,7 @@ called after faulting.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>System method (not intended to be called by user code).</p>
-<p>Should be overridden in the strategy implementation.</p>
+<p>Should be overridden in the actor implementation.</p>
 </div>
 </dd></dl>
 
@@ -707,11 +707,11 @@ called after faulting.</p>
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.on_fault">
 <span class="sig-name descname"><span class="pre">on_fault</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.on_fault" title="Permalink to this definition">¶</a></dt>
 <dd><p>Actions to be performed on fault.</p>
-<p>Cleanup any resources used by the strategy here.</p>
+<p>Cleanup any resources used by the actor here.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>System method (not intended to be called by user code).</p>
-<p>Should be overridden in the strategy implementation.</p>
+<p>Should be overridden in the actor implementation.</p>
 </div>
 </dd></dl>
 
@@ -814,7 +814,7 @@ update.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>System method (not intended to be called by user code).</p>
-<p>Should be overridden in the strategy implementation.</p>
+<p>Should be overridden in the actor implementation.</p>
 </div>
 </dd></dl>
 
@@ -838,7 +838,7 @@ when the component is initially started.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>System method (not intended to be called by user code).</p>
-<p>Should be overridden in the implementation.</p>
+<p>Should be overridden in the actor implementation.</p>
 </div>
 </dd></dl>
 
@@ -851,7 +851,7 @@ paused, and also when it is done for day.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>System method (not intended to be called by user code).</p>
-<p>Should be overridden in the implementation.</p>
+<p>Should be overridden in the actor implementation.</p>
 </div>
 </dd></dl>
 
@@ -918,11 +918,11 @@ paused, and also when it is done for day.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>trader_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId"><em>TraderId</em></a>) – The trader ID for the strategy.</p></li>
-<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the strategy.</p></li>
-<li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.base.CacheFacade" title="nautilus_trader.cache.base.CacheFacade"><em>CacheFacade</em></a>) – The read-only cache for the strategy.</p></li>
-<li><p><strong>clock</strong> (<a class="reference internal" href="#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the strategy.</p></li>
-<li><p><strong>logger</strong> (<a class="reference internal" href="#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the strategy.</p></li>
+<li><p><strong>trader_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId"><em>TraderId</em></a>) – The trader ID for the actor.</p></li>
+<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the actor.</p></li>
+<li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.base.CacheFacade" title="nautilus_trader.cache.base.CacheFacade"><em>CacheFacade</em></a>) – The read-only cache for the actor.</p></li>
+<li><p><strong>clock</strong> (<a class="reference internal" href="#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the actor.</p></li>
+<li><p><strong>logger</strong> (<a class="reference internal" href="#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the actor.</p></li>
 </ul>
 </dd>
 </dl>

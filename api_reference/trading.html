@@ -538,18 +538,20 @@ fully “wired” into the platform. Exceptions will be raised if a <cite>Tradin
 attempts to operate without a managing <cite>Trader</cite> instance.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TradingStrategy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#nautilus_trader.trading.strategy.TradingStrategyConfig" title="nautilus_trader.trading.strategy.TradingStrategyConfig"><span class="pre">TradingStrategyConfig</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">TradingStrategyConfig()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TradingStrategy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#nautilus_trader.trading.strategy.TradingStrategyConfig" title="nautilus_trader.trading.strategy.TradingStrategyConfig"><span class="pre">TradingStrategyConfig</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="common.html#nautilus_trader.common.actor.Actor" title="nautilus_trader.common.actor.Actor"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.actor.Actor</span></code></a></p>
 <p>The abstract base class for all trading strategies.</p>
-<p>Strategy OMS (Order Management System):
-An individual trading strategy can configure its own order management system
-type which determines how positions are handled by the <cite>ExecutionEngine</cite>.</p>
-<ul class="simple">
+<p>A trading strategy can configure its own order management system type, which
+determines how positions are handled by the <cite>ExecutionEngine</cite>.</p>
+<dl class="simple">
+<dt>Strategy OMS (Order Management System) types:</dt><dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">HEDGING</span></code>: A position ID will be assigned for each new position which
 is opened per instrument.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">NETTING</span></code>: There will only ever be a single position for the strategy
 per instrument. The position ID will be <cite>{instrument_id}-{strategy_id}</cite>.</p></li>
 </ul>
+</dd>
+</dl>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
@@ -560,7 +562,7 @@ per instrument. The position ID will be <cite>{instrument_id}-{strategy_id}</cit
 <dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">TradingStrategy</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>config</strong> (<a class="reference internal" href="#nautilus_trader.trading.strategy.TradingStrategyConfig" title="nautilus_trader.trading.strategy.TradingStrategyConfig"><em>TradingStrategyConfig</em></a>) – The trading strategy configuration.</p>
+<dd class="field-odd"><p><strong>config</strong> (<a class="reference internal" href="#nautilus_trader.trading.strategy.TradingStrategyConfig" title="nautilus_trader.trading.strategy.TradingStrategyConfig"><em>TradingStrategyConfig</em></a><em>, </em><em>optional</em>) – The trading strategy configuration.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><p><strong>TypeError</strong> – If config is not of type TradingStrategyConfig.</p>
@@ -1121,7 +1123,7 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>System method (not intended to be called by user code).</p>
-<p>Should be overridden in the strategy implementation.</p>
+<p>Should be overridden in the actor implementation.</p>
 </div>
 </dd></dl>
 
@@ -1133,7 +1135,7 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>System method (not intended to be called by user code).</p>
-<p>Should be overridden in the strategy implementation.</p>
+<p>Should be overridden in the actor implementation.</p>
 </div>
 </dd></dl>
 
@@ -1156,11 +1158,11 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.on_fault">
 <span class="sig-name descname"><span class="pre">on_fault</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.on_fault" title="Permalink to this definition">¶</a></dt>
 <dd><p>Actions to be performed on fault.</p>
-<p>Cleanup any resources used by the strategy here.</p>
+<p>Cleanup any resources used by the actor here.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>System method (not intended to be called by user code).</p>
-<p>Should be overridden in the strategy implementation.</p>
+<p>Should be overridden in the actor implementation.</p>
 </div>
 </dd></dl>
 
@@ -1274,7 +1276,7 @@ update.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>System method (not intended to be called by user code).</p>
-<p>Should be overridden in the strategy implementation.</p>
+<p>Should be overridden in the actor implementation.</p>
 </div>
 </dd></dl>
 
@@ -1314,7 +1316,7 @@ when the component is initially started.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>System method (not intended to be called by user code).</p>
-<p>Should be overridden in the implementation.</p>
+<p>Should be overridden in the actor implementation.</p>
 </div>
 </dd></dl>
 
@@ -1327,7 +1329,7 @@ paused, and also when it is done for day.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>System method (not intended to be called by user code).</p>
-<p>Should be overridden in the implementation.</p>
+<p>Should be overridden in the actor implementation.</p>
 </div>
 </dd></dl>
 
@@ -1438,11 +1440,11 @@ paused, and also when it is done for day.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>trader_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId"><em>TraderId</em></a>) – The trader ID for the strategy.</p></li>
-<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the strategy.</p></li>
-<li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.base.CacheFacade" title="nautilus_trader.cache.base.CacheFacade"><em>CacheFacade</em></a>) – The read-only cache for the strategy.</p></li>
-<li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the strategy.</p></li>
-<li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the strategy.</p></li>
+<li><p><strong>trader_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId"><em>TraderId</em></a>) – The trader ID for the actor.</p></li>
+<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the actor.</p></li>
+<li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.base.CacheFacade" title="nautilus_trader.cache.base.CacheFacade"><em>CacheFacade</em></a>) – The read-only cache for the actor.</p></li>
+<li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the actor.</p></li>
+<li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the actor.</p></li>
 </ul>
 </dd>
 </dl>
