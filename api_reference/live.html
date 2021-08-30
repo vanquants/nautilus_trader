@@ -3536,33 +3536,35 @@ the new model: you should trust this data</p></li>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydantic.main.BaseModel</span></code></p>
 <p>Provides configuration for <code class="docutils literal notranslate"><span class="pre">TradingNode</span></code> instances.</p>
 <dl class="simple">
-<dt>trader_id<span class="classifier">str</span></dt><dd><p>The trader ID for the node (must be a name and ID tag separated by a hyphen)</p>
+<dt>trader_id<span class="classifier">str, default=”TRADER-000”</span></dt><dd><p>The trader ID for the node (must be a name and ID tag separated by a hyphen)</p>
 </dd>
 <dt>log_level<span class="classifier">str, default=”INFO”</span></dt><dd><p>The stdout log level for the node.</p>
 </dd>
-<dt>cache<span class="classifier">CacheConfig, optional</span></dt><dd><p>The cache configuration.</p>
+<dt>cache<span class="classifier">Optional[CacheConfig]</span></dt><dd><p>The cache configuration.</p>
 </dd>
-<dt>cache_database<span class="classifier">CacheDatabaseConfig, optional</span></dt><dd><p>The cache database configuration.</p>
+<dt>cache_database<span class="classifier">Optional[CacheDatabaseConfig]</span></dt><dd><p>The cache database configuration.</p>
 </dd>
-<dt>data_engine<span class="classifier">LiveDataEngineConfig, optional</span></dt><dd><p>The live data engine configuration.</p>
+<dt>data_engine<span class="classifier">Optional[LiveDataEngineConfig]</span></dt><dd><p>The live data engine configuration.</p>
 </dd>
-<dt>risk_engine<span class="classifier">LiveRiskEngineConfig, optional</span></dt><dd><p>The live risk engine configuration.</p>
+<dt>risk_engine<span class="classifier">Optional[LiveRiskEngineConfig]</span></dt><dd><p>The live risk engine configuration.</p>
 </dd>
-<dt>exec_engine<span class="classifier">LiveExecEngineConfig, optional</span></dt><dd><p>The live execution engine configuration.</p>
+<dt>exec_engine<span class="classifier">Optional[LiveExecEngineConfig]</span></dt><dd><p>The live execution engine configuration.</p>
 </dd>
 <dt>loop_debug<span class="classifier">bool, default=False</span></dt><dd><p>If the asyncio event loop should be in debug mode.</p>
 </dd>
-<dt>load_strategy_state<span class="classifier">bool</span></dt><dd><p>If trading strategy state should be loaded from the database on start.</p>
+<dt>load_strategy_state<span class="classifier">bool, default=True</span></dt><dd><p>If trading strategy state should be loaded from the database on start.</p>
 </dd>
-<dt>save_strategy_state<span class="classifier">bool</span></dt><dd><p>If trading strategy state should be saved to the database on stop.</p>
+<dt>save_strategy_state<span class="classifier">bool, default=True</span></dt><dd><p>If trading strategy state should be saved to the database on stop.</p>
 </dd>
-<dt>timeout_connection<span class="classifier">float (seconds)</span></dt><dd><p>The timeout for all clients to connect and initialize.</p>
+<dt>timeout_connection<span class="classifier">PositiveFloat (seconds)</span></dt><dd><p>The timeout for all clients to connect and initialize.</p>
 </dd>
-<dt>timeout_reconciliation<span class="classifier">float (seconds)</span></dt><dd><p>The timeout for execution state to reconcile.</p>
+<dt>timeout_reconciliation<span class="classifier">PositiveFloat (seconds)</span></dt><dd><p>The timeout for execution state to reconcile.</p>
 </dd>
-<dt>timeout_portfolio<span class="classifier">float (seconds)</span></dt><dd><p>The timeout for portfolio to initialize margins and unrealized PnLs.</p>
+<dt>timeout_portfolio<span class="classifier">PositiveFloat (seconds)</span></dt><dd><p>The timeout for portfolio to initialize margins and unrealized PnLs.</p>
 </dd>
-<dt>timeout_disconnection<span class="classifier">float</span></dt><dd><p>The timeout for all engine clients to disconnect.</p>
+<dt>timeout_disconnection<span class="classifier">PositiveFloat (seconds)</span></dt><dd><p>The timeout for all engine clients to disconnect.</p>
+</dd>
+<dt>check_residuals_delay<span class="classifier">PositiveFloat (seconds)</span></dt><dd><p>The delay after stopping the node to check residual state before final shutdown.</p>
 </dd>
 <dt>data_clients<span class="classifier">Dict[str, Dict[str, Any]], optional</span></dt><dd><p>The data client configurations.</p>
 </dd>
