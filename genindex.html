@@ -294,8 +294,6 @@
 </li>
         <li><a href="api_reference/core.html#nautilus_trader.core.message.Command.__init__">(Command method)</a>
 </li>
-        <li><a href="api_reference/serialization.html#nautilus_trader.serialization.base.CommandSerializer.__init__">(CommandSerializer method)</a>
-</li>
         <li><a href="api_reference/common.html#nautilus_trader.common.component.Component.__init__">(Component method)</a>
 </li>
         <li><a href="api_reference/common.html#nautilus_trader.common.component.ComponentFSMFactory.__init__">(ComponentFSMFactory method)</a>
@@ -331,8 +329,6 @@
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.efficiency_ratio.EfficiencyRatio.__init__">(EfficiencyRatio method)</a>
 </li>
         <li><a href="api_reference/core.html#nautilus_trader.core.message.Event.__init__">(Event method)</a>
-</li>
-        <li><a href="api_reference/serialization.html#nautilus_trader.serialization.base.EventSerializer.__init__">(EventSerializer method)</a>
 </li>
         <li><a href="api_reference/accounting.html#nautilus_trader.accounting.calculators.ExchangeRateCalculator.__init__">(ExchangeRateCalculator method)</a>
 </li>
@@ -383,8 +379,6 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.identifiers.InstrumentId.__init__">(InstrumentId method)</a>
 </li>
         <li><a href="api_reference/common.html#nautilus_trader.common.providers.InstrumentProvider.__init__">(InstrumentProvider method)</a>
-</li>
-        <li><a href="api_reference/serialization.html#nautilus_trader.serialization.base.InstrumentSerializer.__init__">(InstrumentSerializer method)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.data.venue.InstrumentStatusUpdate.__init__">(InstrumentStatusUpdate method)</a>
 </li>
@@ -452,11 +446,7 @@
 </li>
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.average.ma_factory.MovingAverageFactory.__init__">(MovingAverageFactory method)</a>
 </li>
-        <li><a href="api_reference/serialization.html#nautilus_trader.serialization.msgpack.serializer.MsgPackCommandSerializer.__init__">(MsgPackCommandSerializer method)</a>
-</li>
-        <li><a href="api_reference/serialization.html#nautilus_trader.serialization.msgpack.serializer.MsgPackEventSerializer.__init__">(MsgPackEventSerializer method)</a>
-</li>
-        <li><a href="api_reference/serialization.html#nautilus_trader.serialization.msgpack.serializer.MsgPackInstrumentSerializer.__init__">(MsgPackInstrumentSerializer method)</a>
+        <li><a href="api_reference/serialization.html#nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.__init__">(MsgPackSerializer method)</a>
 </li>
         <li><a href="api_reference/trading.html#nautilus_trader.trading.filters.NewsEvent.__init__">(NewsEvent method)</a>
 </li>
@@ -569,6 +559,8 @@
         <li><a href="api_reference/risk.html#nautilus_trader.risk.engine.RiskEngineConfig.__init__">(RiskEngineConfig method)</a>
 </li>
         <li><a href="api_reference/accounting.html#nautilus_trader.accounting.calculators.RolloverInterestCalculator.__init__">(RolloverInterestCalculator method)</a>
+</li>
+        <li><a href="api_reference/serialization.html#nautilus_trader.serialization.base.Serializer.__init__">(Serializer method)</a>
 </li>
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.average.sma.SimpleMovingAverage.__init__">(SimpleMovingAverage method)</a>
 </li>
@@ -1865,8 +1857,6 @@
         <li><a href="api_reference/risk.html#nautilus_trader.risk.engine.RiskEngine.command_count">(RiskEngine attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/serialization.html#nautilus_trader.serialization.base.CommandSerializer">CommandSerializer (class in nautilus_trader.serialization.base)</a>
-</li>
       <li><a href="api_reference/execution.html#nautilus_trader.execution.messages.ExecutionReport.commission">commission (ExecutionReport attribute)</a>
 
       <ul>
@@ -2197,20 +2187,12 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/serialization.html#nautilus_trader.serialization.base.CommandSerializer.deserialize">deserialize() (CommandSerializer method)</a>
+      <li><a href="api_reference/serialization.html#nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.deserialize">deserialize() (MsgPackSerializer method)</a>
 
       <ul>
-        <li><a href="api_reference/serialization.html#nautilus_trader.serialization.base.EventSerializer.deserialize">(EventSerializer method)</a>
-</li>
-        <li><a href="api_reference/serialization.html#nautilus_trader.serialization.base.InstrumentSerializer.deserialize">(InstrumentSerializer method)</a>
-</li>
-        <li><a href="api_reference/serialization.html#nautilus_trader.serialization.msgpack.serializer.MsgPackCommandSerializer.deserialize">(MsgPackCommandSerializer method)</a>
-</li>
-        <li><a href="api_reference/serialization.html#nautilus_trader.serialization.msgpack.serializer.MsgPackEventSerializer.deserialize">(MsgPackEventSerializer method)</a>
-</li>
-        <li><a href="api_reference/serialization.html#nautilus_trader.serialization.msgpack.serializer.MsgPackInstrumentSerializer.deserialize">(MsgPackInstrumentSerializer method)</a>
-</li>
         <li><a href="api_reference/serialization.html#nautilus_trader.serialization.arrow.serializer.ParquetSerializer.deserialize">(ParquetSerializer static method)</a>
+</li>
+        <li><a href="api_reference/serialization.html#nautilus_trader.serialization.base.Serializer.deserialize">(Serializer method)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.engine.BacktestEngineConfig.dict">dict() (BacktestEngineConfig method)</a>
@@ -2397,8 +2379,6 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.events">(StopMarketOrder attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/serialization.html#nautilus_trader.serialization.base.EventSerializer">EventSerializer (class in nautilus_trader.serialization.base)</a>
-</li>
       <li><a href="api_reference/common.html#nautilus_trader.common.logging.LoggerAdapter.exception">exception() (LoggerAdapter method)</a>
 </li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.exchange_order_book_level">exchange_order_book_level (SimulatedExchange attribute)</a>
@@ -3813,8 +3793,6 @@
         <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_producer.DataProducer.instruments">(DataProducer method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/serialization.html#nautilus_trader.serialization.base.InstrumentSerializer">InstrumentSerializer (class in nautilus_trader.serialization.base)</a>
-</li>
       <li><a href="api_reference/model.html#nautilus_trader.model.data.venue.InstrumentStatusUpdate">InstrumentStatusUpdate (class in nautilus_trader.model.data.venue)</a>
 </li>
       <li><a href="api_reference/common.html#nautilus_trader.common.throttler.Throttler.interval">interval (Throttler attribute)</a>
@@ -5142,11 +5120,7 @@
         <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.msgbus">(TradingStrategy attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/serialization.html#nautilus_trader.serialization.msgpack.serializer.MsgPackCommandSerializer">MsgPackCommandSerializer (class in nautilus_trader.serialization.msgpack.serializer)</a>
-</li>
-      <li><a href="api_reference/serialization.html#nautilus_trader.serialization.msgpack.serializer.MsgPackEventSerializer">MsgPackEventSerializer (class in nautilus_trader.serialization.msgpack.serializer)</a>
-</li>
-      <li><a href="api_reference/serialization.html#nautilus_trader.serialization.msgpack.serializer.MsgPackInstrumentSerializer">MsgPackInstrumentSerializer (class in nautilus_trader.serialization.msgpack.serializer)</a>
+      <li><a href="api_reference/serialization.html#nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer">MsgPackSerializer (class in nautilus_trader.serialization.msgpack.serializer)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.position.Position.multiplier">multiplier (Position attribute)</a>
 </li>
@@ -7473,22 +7447,16 @@
         <li><a href="api_reference/common.html#nautilus_trader.common.throttler.Throttler.sent_count">(Throttler attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/serialization.html#nautilus_trader.serialization.base.CommandSerializer.serialize">serialize() (CommandSerializer method)</a>
+      <li><a href="api_reference/serialization.html#nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.serialize">serialize() (MsgPackSerializer method)</a>
 
       <ul>
-        <li><a href="api_reference/serialization.html#nautilus_trader.serialization.base.EventSerializer.serialize">(EventSerializer method)</a>
-</li>
-        <li><a href="api_reference/serialization.html#nautilus_trader.serialization.base.InstrumentSerializer.serialize">(InstrumentSerializer method)</a>
-</li>
-        <li><a href="api_reference/serialization.html#nautilus_trader.serialization.msgpack.serializer.MsgPackCommandSerializer.serialize">(MsgPackCommandSerializer method)</a>
-</li>
-        <li><a href="api_reference/serialization.html#nautilus_trader.serialization.msgpack.serializer.MsgPackEventSerializer.serialize">(MsgPackEventSerializer method)</a>
-</li>
-        <li><a href="api_reference/serialization.html#nautilus_trader.serialization.msgpack.serializer.MsgPackInstrumentSerializer.serialize">(MsgPackInstrumentSerializer method)</a>
-</li>
         <li><a href="api_reference/serialization.html#nautilus_trader.serialization.arrow.serializer.ParquetSerializer.serialize">(ParquetSerializer static method)</a>
 </li>
+        <li><a href="api_reference/serialization.html#nautilus_trader.serialization.base.Serializer.serialize">(Serializer method)</a>
+</li>
       </ul></li>
+      <li><a href="api_reference/serialization.html#nautilus_trader.serialization.base.Serializer">Serializer (class in nautilus_trader.serialization.base)</a>
+</li>
       <li><a href="api_reference/common.html#nautilus_trader.common.generators.ClientOrderIdGenerator.set_count">set_count() (ClientOrderIdGenerator method)</a>
 
       <ul>
