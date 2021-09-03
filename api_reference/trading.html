@@ -565,7 +565,7 @@ per instrument. The position ID will be <cite>{instrument_id}-{strategy_id}</cit
 <dd class="field-odd"><p><strong>config</strong> (<a class="reference internal" href="#nautilus_trader.trading.strategy.TradingStrategyConfig" title="nautilus_trader.trading.strategy.TradingStrategyConfig"><em>TradingStrategyConfig</em></a><em>, </em><em>optional</em>) – The trading strategy configuration.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – If config is not of type TradingStrategyConfig.</p>
+<dd class="field-even"><p><strong>TypeError</strong> – If config is not of type <cite>TradingStrategyConfig</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1070,7 +1070,7 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <dd><p>The message bus for the actor (if registered).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>MessageBus</cite> or None</p>
+<dd class="field-odd"><p><cite>MessageBus</cite> or <cite>None</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1520,7 +1520,7 @@ data for the given instrument ID.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type for the request.</p></li>
 <li><p><strong>from_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified from datetime for the data.</p></li>
-<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If None then will default
+<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If <cite>None</cite> then will default
 to the current datetime.</p></li>
 </ul>
 </dd>
@@ -1553,7 +1553,7 @@ to the current datetime.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument ID for the request.</p></li>
 <li><p><strong>from_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified from datetime for the data.</p></li>
-<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If None then will default
+<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If <cite>None</cite> then will default
 to the current datetime.</p></li>
 </ul>
 </dd>
@@ -1572,7 +1572,7 @@ to the current datetime.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument ID for the request.</p></li>
 <li><p><strong>from_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified from datetime for the data.</p></li>
-<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If None then will default
+<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If <cite>None</cite> then will default
 to the current datetime.</p></li>
 </ul>
 </dd>
@@ -2034,7 +2034,7 @@ original <cite>ClientOrderId</cite>.</p>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If trigger is not None and order.type != <code class="docutils literal notranslate"><span class="pre">STOP_LIMIT</span></code>.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If trigger is not <cite>None</cite> and order.type != <code class="docutils literal notranslate"><span class="pre">STOP_LIMIT</span></code>.</p>
 </dd>
 </dl>
 <p class="rubric">References</p>
@@ -2157,9 +2157,9 @@ a running instance of the platform.</p>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If portfolio is not equal to the exec_engine._portfolio.</p></li>
-<li><p><strong>ValueError</strong> – If strategies is None.</p></li>
+<li><p><strong>ValueError</strong> – If strategies is <cite>None</cite>.</p></li>
 <li><p><strong>ValueError</strong> – If strategies list is empty.</p></li>
-<li><p><strong>TypeError</strong> – If strategies list contains a type other than TradingStrategy.</p></li>
+<li><p><strong>TypeError</strong> – If strategies list contains a type other than <cite>TradingStrategy</cite>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2191,7 +2191,7 @@ a running instance of the platform.</p>
 <dd class="field-odd"><p><strong>components</strong> (<em>list</em><em>[</em><em>TradingStrategies</em><em>]</em>) – The custom components to add and register.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If components is None or empty.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If components is <cite>None</cite> or empty.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2205,7 +2205,7 @@ a running instance of the platform.</p>
 <dd class="field-odd"><p><strong>strategies</strong> (<em>list</em><em>[</em><em>TradingStrategies</em><em>]</em>) – The trading strategies to add and register.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If strategies is None or empty.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If strategies is <cite>None</cite> or empty.</p>
 </dd>
 </dl>
 </dd></dl>

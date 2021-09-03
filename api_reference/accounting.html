@@ -237,14 +237,14 @@
 <p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If None then will use the default
+<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <cite>None</cite> then will use the default
 currency (if set).</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>AccountBalance or None</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is None and base_currency is None.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If currency is <cite>None</cite> and base_currency is <cite>None</cite>.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -261,14 +261,14 @@ rather than <cite>Money</cite> of zero amount.</p>
 <p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If None then will use the default
+<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <cite>None</cite> then will use the default
 currency (if set).</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>Money or None</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is None and base_currency is None.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If currency is <cite>None</cite> and base_currency is <cite>None</cite>.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -285,14 +285,14 @@ rather than <cite>Money</cite> of zero amount.</p>
 <p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If None then will use the default
+<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <cite>None</cite> then will use the default
 currency (if set).</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>Money or None</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is None and base_currency is None.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If currency is <cite>None</cite> and base_currency is <cite>None</cite>.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -309,14 +309,14 @@ rather than <cite>Money</cite> of zero amount.</p>
 <p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If None then will use the default
+<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <cite>None</cite> then will use the default
 currency (if set).</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>Money or None</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is None and base_currency is None.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If currency is <cite>None</cite> and base_currency is <cite>None</cite>.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -373,10 +373,10 @@ rather than <cite>Money</cite> of zero amount.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.base_currency">
 <span class="sig-name descname"><span class="pre">base_currency</span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.base_currency" title="Permalink to this definition">¶</a></dt>
-<dd><p>The accounts base currency (None for multi-currency accounts).</p>
+<dd><p>The accounts base currency (<cite>None</cite> for multi-currency accounts).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Currency</cite> or None</p>
+<dd class="field-odd"><p><cite>Currency</cite> or <cite>None</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -591,14 +591,14 @@ given balances, therefore we only update included balances.</p>
 <p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If None then will use the default
+<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <cite>None</cite> then will use the default
 currency (if set).</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>AccountBalance or None</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is None and base_currency is None.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If currency is <cite>None</cite> and base_currency is <cite>None</cite>.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -615,14 +615,14 @@ rather than <cite>Money</cite> of zero amount.</p>
 <p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If None then will use the default
+<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <cite>None</cite> then will use the default
 currency (if set).</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>Money or None</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is None and base_currency is None.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If currency is <cite>None</cite> and base_currency is <cite>None</cite>.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -639,14 +639,14 @@ rather than <cite>Money</cite> of zero amount.</p>
 <p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If None then will use the default
+<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <cite>None</cite> then will use the default
 currency (if set).</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>Money or None</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is None and base_currency is None.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If currency is <cite>None</cite> and base_currency is <cite>None</cite>.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -663,14 +663,14 @@ rather than <cite>Money</cite> of zero amount.</p>
 <p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If None then will use the default
+<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <cite>None</cite> then will use the default
 currency (if set).</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>Money or None</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is None and base_currency is None.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If currency is <cite>None</cite> and base_currency is <cite>None</cite>.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -727,10 +727,10 @@ rather than <cite>Money</cite> of zero amount.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.cash.CashAccount.base_currency">
 <span class="sig-name descname"><span class="pre">base_currency</span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.cash.CashAccount.base_currency" title="Permalink to this definition">¶</a></dt>
-<dd><p>The accounts base currency (None for multi-currency accounts).</p>
+<dd><p>The accounts base currency (<cite>None</cite> for multi-currency accounts).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Currency</cite> or None</p>
+<dd class="field-odd"><p><cite>Currency</cite> or <cite>None</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1020,14 +1020,14 @@ given balances, therefore we only update included balances.</p>
 <p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If None then will use the default
+<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <cite>None</cite> then will use the default
 currency (if set).</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>AccountBalance or None</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is None and base_currency is None.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If currency is <cite>None</cite> and base_currency is <cite>None</cite>.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1044,14 +1044,14 @@ rather than <cite>Money</cite> of zero amount.</p>
 <p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If None then will use the default
+<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <cite>None</cite> then will use the default
 currency (if set).</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>Money or None</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is None and base_currency is None.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If currency is <cite>None</cite> and base_currency is <cite>None</cite>.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1068,14 +1068,14 @@ rather than <cite>Money</cite> of zero amount.</p>
 <p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If None then will use the default
+<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <cite>None</cite> then will use the default
 currency (if set).</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>Money or None</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is None and base_currency is None.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If currency is <cite>None</cite> and base_currency is <cite>None</cite>.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1092,14 +1092,14 @@ rather than <cite>Money</cite> of zero amount.</p>
 <p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If None then will use the default
+<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <cite>None</cite> then will use the default
 currency (if set).</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>Money or None</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is None and base_currency is None.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If currency is <cite>None</cite> and base_currency is <cite>None</cite>.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1156,10 +1156,10 @@ rather than <cite>Money</cite> of zero amount.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.margin.MarginAccount.base_currency">
 <span class="sig-name descname"><span class="pre">base_currency</span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.margin.MarginAccount.base_currency" title="Permalink to this definition">¶</a></dt>
-<dd><p>The accounts base currency (None for multi-currency accounts).</p>
+<dd><p>The accounts base currency (<cite>None</cite> for multi-currency accounts).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Currency</cite> or None</p>
+<dd class="field-odd"><p><cite>Currency</cite> or <cite>None</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1459,7 +1459,7 @@ rather than <cite>Money</cite> of zero amount.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><ul class="simple">
-<li><p><em>TypeError</em> – If leverage is not of type Decimal.</p></li>
+<li><p><em>TypeError</em> – If leverage is not of type <cite>Decimal</cite>.</p></li>
 <li><p><em>ValueError</em> – If leverage is not &gt;= 1.</p></li>
 </ul>
 </p>

@@ -684,7 +684,7 @@ called after faulting.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type for the request.</p></li>
 <li><p><strong>from_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified from datetime for the data.</p></li>
-<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If None then will default
+<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If <cite>None</cite> then will default
 to the current datetime.</p></li>
 <li><p><strong>limit</strong> (<em>int</em>) – The limit for the number of returned bars.</p></li>
 <li><p><strong>correlation_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The correlation ID for the request.</p></li>
@@ -702,7 +702,7 @@ to the current datetime.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument ID for the request.</p></li>
 <li><p><strong>from_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified from datetime for the data.</p></li>
-<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If None then will default
+<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If <cite>None</cite> then will default
 to the current datetime.</p></li>
 <li><p><strong>limit</strong> (<em>int</em>) – The limit for the number of returned ticks.</p></li>
 <li><p><strong>correlation_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The correlation ID for the request.</p></li>
@@ -720,7 +720,7 @@ to the current datetime.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument ID for the request.</p></li>
 <li><p><strong>from_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified from datetime for the data.</p></li>
-<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If None then will default
+<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If <cite>None</cite> then will default
 to the current datetime.</p></li>
 <li><p><strong>limit</strong> (<em>int</em>) – The limit for the number of returned ticks.</p></li>
 <li><p><strong>correlation_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The correlation ID for the request.</p></li>
@@ -1395,7 +1395,7 @@ data.</p>
 <dd class="field-odd"><p><strong>config</strong> (<a class="reference internal" href="#nautilus_trader.backtest.engine.BacktestEngineConfig" title="nautilus_trader.backtest.engine.BacktestEngineConfig"><em>BacktestEngineConfig</em></a><em>, </em><em>optional</em>) – The configuration for the instance.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – If config is not of type BacktestEngineConfig.</p>
+<dd class="field-even"><p><strong>TypeError</strong> – If config is not of type <cite>BacktestEngineConfig</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1628,8 +1628,8 @@ assumed to be UTC, and are converted to tz-aware in pre-processing).</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a>) – The exchange venue ID.</p></li>
 <li><p><strong>venue_type</strong> (<em>VenueType</em>) – The type of venue (will determine venue -&gt; client_id mapping).</p></li>
-<li><p><strong>oms_type</strong> (OMSType {<code class="docutils literal notranslate"><span class="pre">HEDGING</span></code>, <code class="docutils literal notranslate"><span class="pre">NETTING</span></code>}) – The order management system type for the exchange. If <code class="docutils literal notranslate"><span class="pre">HEDGING</span></code> and
-no position_id for an order then will generate a new position_id.</p></li>
+<li><p><strong>oms_type</strong> (OMSType {<code class="docutils literal notranslate"><span class="pre">HEDGING</span></code>, <code class="docutils literal notranslate"><span class="pre">NETTING</span></code>}) – The order management system type for the exchange. If <code class="docutils literal notranslate"><span class="pre">HEDGING</span></code> will
+generate new position IDs.</p></li>
 <li><p><strong>account_type</strong> (<em>AccountType</em>) – The account type for the client.</p></li>
 <li><p><strong>base_currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The account base currency for the client. Use <code class="docutils literal notranslate"><span class="pre">None</span></code> for multi-currency accounts.</p></li>
 <li><p><strong>starting_balances</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money"><em>Money</em></a><em>]</em>) – The starting account balances (specify one for a single asset account).</p></li>
@@ -1780,9 +1780,9 @@ called after disposal.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>start</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The start datetime (UTC) for the backtest run. If None engine runs
+<li><p><strong>start</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The start datetime (UTC) for the backtest run. If <cite>None</cite> engine runs
 from the start of the data.</p></li>
-<li><p><strong>stop</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The stop datetime (UTC) for the backtest run. If None engine runs
+<li><p><strong>stop</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The stop datetime (UTC) for the backtest run. If <cite>None</cite> engine runs
 to the end of the data.</p></li>
 <li><p><strong>strategies</strong> (<em>list</em><em>, </em><em>optional</em>) – The strategies for the backtest run (if None will use previous).</p></li>
 </ul>
@@ -1942,11 +1942,11 @@ the new model: you should trust this data</p></li>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If instruments is empty.</p></li>
-<li><p><strong>ValueError</strong> – If instruments contains a type other than Instrument.</p></li>
+<li><p><strong>ValueError</strong> – If instruments contains a type other than <cite>Instrument</cite>.</p></li>
 <li><p><strong>ValueError</strong> – If starting_balances is empty.</p></li>
-<li><p><strong>ValueError</strong> – If starting_balances contains a type other than Money.</p></li>
+<li><p><strong>ValueError</strong> – If starting_balances contains a type other than <cite>Money</cite>.</p></li>
 <li><p><strong>ValueError</strong> – If base currency and multiple starting balances.</p></li>
-<li><p><strong>ValueError</strong> – If modules contains a type other than SimulationModule.</p></li>
+<li><p><strong>ValueError</strong> – If modules contains a type other than <cite>SimulationModule</cite>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1980,7 +1980,7 @@ the new model: you should trust this data</p></li>
 <dd><p>The account base currency (None for multi-currency accounts).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Currency</cite> or None</p>
+<dd class="field-odd"><p><cite>Currency</cite> or <cite>None</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2328,7 +2328,7 @@ the new model: you should trust this data</p></li>
 <dd><p>The clients account base currency (None for multi-currency accounts).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Currency</cite> or None</p>
+<dd class="field-odd"><p><cite>Currency</cite> or <cite>None</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2869,7 +2869,7 @@ position ID resolution.</p></li>
 <dd><p>The clients venue ID (if not multi-venue brokerage).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Venue</cite> or None</p>
+<dd class="field-odd"><p><cite>Venue</cite> or <cite>None</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -3071,7 +3071,7 @@ of fills and slippage by order type.</p>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If any probability argument is not within range [0, 1].</p></li>
-<li><p><strong>TypeError</strong> – If random_seed is not None and not of type int.</p></li>
+<li><p><strong>TypeError</strong> – If random_seed is not None and not of type <cite>int</cite>.</p></li>
 </ul>
 </dd>
 </dl>

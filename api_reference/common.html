@@ -229,7 +229,7 @@ attempts to operate without a managing <cite>Trader</cite> instance.</p>
 <dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Actor</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>component_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ComponentId" title="nautilus_trader.model.identifiers.ComponentId"><em>ComponentId</em></a><em>, </em><em>optional</em>) – The component ID. If None is passed then the identifier will be
+<dd class="field-odd"><p><strong>component_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ComponentId" title="nautilus_trader.model.identifiers.ComponentId"><em>ComponentId</em></a><em>, </em><em>optional</em>) – The component ID. If <cite>None</cite> is passed then the identifier will be
 taken from <cite>type(self).__name__</cite>.</p>
 </dd>
 </dl>
@@ -630,7 +630,7 @@ called after faulting.</p>
 <dd><p>The message bus for the actor (if registered).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>MessageBus</cite> or None</p>
+<dd class="field-odd"><p><cite>MessageBus</cite> or <cite>None</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -942,7 +942,7 @@ paused, and also when it is done for day.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type for the request.</p></li>
 <li><p><strong>from_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified from datetime for the data.</p></li>
-<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If None then will default
+<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If <cite>None</cite> then will default
 to the current datetime.</p></li>
 </ul>
 </dd>
@@ -975,7 +975,7 @@ to the current datetime.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument ID for the request.</p></li>
 <li><p><strong>from_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified from datetime for the data.</p></li>
-<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If None then will default
+<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If <cite>None</cite> then will default
 to the current datetime.</p></li>
 </ul>
 </dd>
@@ -994,7 +994,7 @@ to the current datetime.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument ID for the request.</p></li>
 <li><p><strong>from_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified from datetime for the data.</p></li>
-<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If None then will default
+<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If <cite>None</cite> then will default
 to the current datetime.</p></li>
 </ul>
 </dd>
@@ -1524,7 +1524,7 @@ the target timezone).</p>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – If handler is not of type Callable.</p>
+<dd class="field-odd"><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1548,8 +1548,8 @@ default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
 <li><p><strong>ValueError</strong> – If alert_time is not &gt;= the clocks current time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type Callable or None.</p></li>
-<li><p><strong>ValueError</strong> – If handler is None and no default handler is registered.</p></li>
+<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <cite>None</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If handler is <cite>None</cite> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1577,10 +1577,10 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
 <li><p><strong>ValueError</strong> – If interval is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not None and stop_time &lt; time_now.</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not None and start_time + interval &gt; stop_time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type Callable or None.</p></li>
-<li><p><strong>ValueError</strong> – If handler is None and no default handler is registered.</p></li>
+<li><p><strong>ValueError</strong> – If stop_time is not <cite>None</cite> and stop_time &lt; time_now.</p></li>
+<li><p><strong>ValueError</strong> – If stop_time is not <cite>None</cite> and start_time + interval &gt; stop_time.</p></li>
+<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <cite>None</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If handler is <cite>None</cite> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1673,7 +1673,7 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dt class="sig sig-object py" id="nautilus_trader.common.clock.LiveClock.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.clock.LiveClock.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LiveClock</span></code> class.</p>
-<p>If loop is None then threads will be used for timers.</p>
+<p>If loop is <cite>None</cite> then threads will be used for timers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>loop</strong> (<em>asyncio.AbstractEventLoop</em>) – The event loop for the clocks timers.</p>
@@ -1795,7 +1795,7 @@ the target timezone).</p>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – If handler is not of type Callable.</p>
+<dd class="field-odd"><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1819,8 +1819,8 @@ default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
 <li><p><strong>ValueError</strong> – If alert_time is not &gt;= the clocks current time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type Callable or None.</p></li>
-<li><p><strong>ValueError</strong> – If handler is None and no default handler is registered.</p></li>
+<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <cite>None</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If handler is <cite>None</cite> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1848,10 +1848,10 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
 <li><p><strong>ValueError</strong> – If interval is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not None and stop_time &lt; time_now.</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not None and start_time + interval &gt; stop_time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type Callable or None.</p></li>
-<li><p><strong>ValueError</strong> – If handler is None and no default handler is registered.</p></li>
+<li><p><strong>ValueError</strong> – If stop_time is not <cite>None</cite> and stop_time &lt; time_now.</p></li>
+<li><p><strong>ValueError</strong> – If stop_time is not <cite>None</cite> and start_time + interval &gt; stop_time.</p></li>
+<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <cite>None</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If handler is <cite>None</cite> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2082,7 +2082,7 @@ the target timezone).</p>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – If handler is not of type Callable.</p>
+<dd class="field-odd"><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2117,8 +2117,8 @@ default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
 <li><p><strong>ValueError</strong> – If alert_time is not &gt;= the clocks current time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type Callable or None.</p></li>
-<li><p><strong>ValueError</strong> – If handler is None and no default handler is registered.</p></li>
+<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <cite>None</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If handler is <cite>None</cite> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2146,10 +2146,10 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
 <li><p><strong>ValueError</strong> – If interval is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not None and stop_time &lt; time_now.</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not None and start_time + interval &gt; stop_time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type Callable or None.</p></li>
-<li><p><strong>ValueError</strong> – If handler is None and no default handler is registered.</p></li>
+<li><p><strong>ValueError</strong> – If stop_time is not <cite>None</cite> and stop_time &lt; time_now.</p></li>
+<li><p><strong>ValueError</strong> – If stop_time is not <cite>None</cite> and start_time + interval &gt; stop_time.</p></li>
+<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <cite>None</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If handler is <cite>None</cite> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2260,7 +2260,7 @@ then it will be in a <code class="docutils literal notranslate"><span class="pre
 <li><p><strong>clock</strong> (<a class="reference internal" href="#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the component.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the component.</p></li>
 <li><p><strong>trader_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId"><em>TraderId</em></a><em>, </em><em>optional</em>) – The trader ID associated with the component.</p></li>
-<li><p><strong>component_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ComponentId" title="nautilus_trader.model.identifiers.ComponentId"><em>ComponentId</em></a><em>, </em><em>optional</em>) – The component ID. If None is passed then the identifier will be
+<li><p><strong>component_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ComponentId" title="nautilus_trader.model.identifiers.ComponentId"><em>ComponentId</em></a><em>, </em><em>optional</em>) – The component ID. If <cite>None</cite> is passed then the identifier will be
 taken from <cite>type(self).__name__</cite>.</p></li>
 <li><p><strong>component_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The custom component name.</p></li>
 <li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a><em>, </em><em>optional</em>) – The message bus for the component (required before initialized).</p></li>
@@ -2621,7 +2621,7 @@ take-profit price.</p>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ValueError</strong> – If quantity is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If time_in_force is GTD and expire_time is None.</p></li>
+<li><p><strong>ValueError</strong> – If time_in_force is GTD and expire_time is <cite>None</cite>.</p></li>
 <li><p><strong>ValueError</strong> – If post_only and hidden.</p></li>
 <li><p><strong>ValueError</strong> – If hidden and post_only.</p></li>
 </ul>
@@ -2699,7 +2699,7 @@ given count.</p>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ValueError</strong> – If quantity is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If time_in_force is GTD and expire_time is None.</p></li>
+<li><p><strong>ValueError</strong> – If time_in_force is GTD and expire_time is <cite>None</cite>.</p></li>
 <li><p><strong>ValueError</strong> – If post_only and hidden.</p></li>
 <li><p><strong>ValueError</strong> – If hidden and post_only.</p></li>
 </ul>
@@ -2730,7 +2730,7 @@ given count.</p>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ValueError</strong> – If quantity is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If time_in_force is GTD and expire_time is None.</p></li>
+<li><p><strong>ValueError</strong> – If time_in_force is GTD and expire_time is <cite>None</cite>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -3013,7 +3013,7 @@ will be appended with ‘F’.</p></li>
 <dd><p>The timestamp (UTC) the logger last blocked.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>datetime</cite> or None</p>
+<dd class="field-odd"><p><cite>datetime</cite> or <cite>None</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -3655,7 +3655,7 @@ upstream.</p>
 <li><p><strong>interval</strong> (<em>timedelta</em>) – The interval setting for the throttling.</p></li>
 <li><p><strong>output_send</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The output handler to send messages from the throttler.</p></li>
 <li><p><strong>output_drop</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em><em>, </em><em>optional</em>) – The output handler to drop messages from the throttler.
-If None then messages will be buffered.</p></li>
+If <cite>None</cite> then messages will be buffered.</p></li>
 <li><p><strong>clock</strong> (<a class="reference internal" href="#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the throttler.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the throttler.</p></li>
 </ul>
@@ -3665,8 +3665,8 @@ If None then messages will be buffered.</p></li>
 <li><p><strong>ValueError</strong> – If name is not a valid string.</p></li>
 <li><p><strong>ValueError</strong> – If limit is not positive (&gt; 0).</p></li>
 <li><p><strong>ValueError</strong> – If interval is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If output_send is not of type Callable.</p></li>
-<li><p><strong>ValueError</strong> – If output_drop is not of type Callable or None.</p></li>
+<li><p><strong>ValueError</strong> – If output_send is not of type <cite>Callable</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If output_drop is not of type <cite>Callable</cite> or <cite>None</cite>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -3801,7 +3801,7 @@ If None then messages will be buffered.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – If callback is not of type Callable.</p>
+<dd class="field-even"><p><strong>TypeError</strong> – If callback is not of type <cite>Callable</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3952,7 +3952,7 @@ If None then messages will be buffered.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – If callback is not of type Callable.</p>
+<dd class="field-even"><p><strong>TypeError</strong> – If callback is not of type <cite>Callable</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -4267,7 +4267,7 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – If callback is not of type Callable.</p>
+<dd class="field-even"><p><strong>TypeError</strong> – If callback is not of type <cite>Callable</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -4546,7 +4546,7 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If name is not a valid string.</p></li>
-<li><p><strong>TypeError</strong> – If callback is not of type Callable.</p></li>
+<li><p><strong>TypeError</strong> – If callback is not of type <cite>Callable</cite>.</p></li>
 </ul>
 </dd>
 </dl>

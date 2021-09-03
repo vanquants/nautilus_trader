@@ -240,7 +240,7 @@ state transitions for both domain entities and common components.</p>
 <dd class="field-even"><p><em>int64</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – If timestamp is None.</p>
+<dd class="field-odd"><p><strong>TypeError</strong> – If timestamp is <cite>None</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -257,7 +257,7 @@ state transitions for both domain entities and common components.</p>
 <dd class="field-even"><p><em>int64</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – If timestamp is None.</p>
+<dd class="field-odd"><p><strong>TypeError</strong> – If timestamp is <cite>None</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -274,7 +274,7 @@ state transitions for both domain entities and common components.</p>
 <dd class="field-even"><p><em>int64</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – If timestamp is None.</p>
+<dd class="field-odd"><p><strong>TypeError</strong> – If timestamp is <cite>None</cite>.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -411,7 +411,7 @@ state transitions for both domain entities and common components.</p>
 <dt class="sig sig-object py" id="nautilus_trader.core.datetime.maybe_dt_to_unix_nanos">
 <span class="sig-name descname"><span class="pre">maybe_dt_to_unix_nanos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">datetime</span> <span class="pre">dt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.datetime.maybe_dt_to_unix_nanos" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the UNIX time (nanoseconds) from the given datetime, or None.</p>
-<p>If dt is None, then will return None.</p>
+<p>If dt is <cite>None</cite>, then will return None.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>dt</strong> (<em>datetime</em><em> or </em><em>None</em>) – The datetime for the timestamp.</p>
@@ -426,7 +426,7 @@ state transitions for both domain entities and common components.</p>
 <dt class="sig sig-object py" id="nautilus_trader.core.datetime.maybe_nanos_to_unix_dt">
 <span class="sig-name descname"><span class="pre">maybe_nanos_to_unix_dt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nanos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.datetime.maybe_nanos_to_unix_dt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the datetime in UTC from the given UNIX time (nanoseconds), or None.</p>
-<p>If nanos is None, then will return None.</p>
+<p>If nanos is <cite>None</cite>, then will return None.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>nanos</strong> (<em>int64</em><em> or </em><em>None</em>) – The UNIX time (nanoseconds) to convert.</p>
@@ -592,17 +592,17 @@ deterministic state value.</p>
 starting state and trigger as keys, and resulting states as values.</p></li>
 <li><p><strong>initial_state</strong> (<em>int / C Enum</em>) – The initial state for the FSM.</p></li>
 <li><p><strong>trigger_parser</strong> (<em>Callable</em><em>[</em><em>[</em><em>int</em><em>]</em><em>, </em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The trigger parser needed to convert C Enum ints into strings.
-If None then will just print the integer.</p></li>
+If <cite>None</cite> then will just print the integer.</p></li>
 <li><p><strong>state_parser</strong> (<em>Callable</em><em>[</em><em>[</em><em>int</em><em>]</em><em>, </em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The state parser needed to convert C Enum ints into strings.
-If None then will just print the integer.</p></li>
+If <cite>None</cite> then will just print the integer.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If state_transition_table is empty.</p></li>
 <li><p><strong>ValueError</strong> – If state_transition_table key not tuple.</p></li>
-<li><p><strong>ValueError</strong> – If trigger_parser not of type Callable or None.</p></li>
-<li><p><strong>ValueError</strong> – If state_parser not of type Callable or None.</p></li>
+<li><p><strong>ValueError</strong> – If trigger_parser not of type <cite>Callable</cite> or <cite>None</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If state_parser not of type <cite>Callable</cite> or <cite>None</cite>.</p></li>
 </ul>
 </dd>
 </dl>
