@@ -1253,7 +1253,7 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/model.html#nautilus_trader.model.objects.BaseDecimal">BaseDecimal (class in nautilus_trader.model.objects)</a>
 </li>
-      <li><a href="api_reference/core.html#nautilus_trader.core.functions.basis_points_as_percentage">basis_points_as_percentage() (in module nautilus_trader.core.functions)</a>
+      <li><a href="api_reference/core.html#nautilus_trader.core.stats.basis_points_as_percentage">basis_points_as_percentage() (in module nautilus_trader.core.stats)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.orderbook.book.L1OrderBook.best_ask_level">best_ask_level() (L1OrderBook method)</a>
 
@@ -1341,9 +1341,9 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.orderbook.data.OrderBookSnapshot.bids">(OrderBookSnapshot attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/core.html#nautilus_trader.core.functions.bisect_double_left">bisect_double_left() (in module nautilus_trader.core.functions)</a>
+      <li><a href="api_reference/core.html#nautilus_trader.core.collections.bisect_left">bisect_left() (in module nautilus_trader.core.collections)</a>
 </li>
-      <li><a href="api_reference/core.html#nautilus_trader.core.functions.bisect_double_right">bisect_double_right() (in module nautilus_trader.core.functions)</a>
+      <li><a href="api_reference/core.html#nautilus_trader.core.collections.bisect_right">bisect_right() (in module nautilus_trader.core.collections)</a>
 </li>
       <li><a href="api_reference/indicators.html#nautilus_trader.indicators.fuzzy_candlesticks.FuzzyCandle.body_size">body_size (FuzzyCandle attribute)</a>
 </li>
@@ -2487,9 +2487,9 @@
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/core.html#nautilus_trader.core.functions.fast_mean">fast_mean() (in module nautilus_trader.core.functions)</a>
+      <li><a href="api_reference/core.html#nautilus_trader.core.stats.fast_mean">fast_mean() (in module nautilus_trader.core.stats)</a>
 </li>
-      <li><a href="api_reference/core.html#nautilus_trader.core.functions.fast_mean_iterated">fast_mean_iterated() (in module nautilus_trader.core.functions)</a>
+      <li><a href="api_reference/core.html#nautilus_trader.core.stats.fast_mean_iterated">fast_mean_iterated() (in module nautilus_trader.core.stats)</a>
 </li>
       <li><a href="api_reference/indicators.html#nautilus_trader.indicators.macd.MovingAverageConvergenceDivergence.fast_period">fast_period (MovingAverageConvergenceDivergence attribute)</a>
 
@@ -2497,9 +2497,9 @@
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.volatility_ratio.VolatilityRatio.fast_period">(VolatilityRatio attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/core.html#nautilus_trader.core.functions.fast_std">fast_std() (in module nautilus_trader.core.functions)</a>
+      <li><a href="api_reference/core.html#nautilus_trader.core.stats.fast_std">fast_std() (in module nautilus_trader.core.stats)</a>
 </li>
-      <li><a href="api_reference/core.html#nautilus_trader.core.functions.fast_std_with_mean">fast_std_with_mean() (in module nautilus_trader.core.functions)</a>
+      <li><a href="api_reference/core.html#nautilus_trader.core.stats.fast_std_with_mean">fast_std_with_mean() (in module nautilus_trader.core.stats)</a>
 </li>
       <li><a href="api_reference/common.html#nautilus_trader.common.actor.Actor.fault">fault() (Actor method)</a>
 
@@ -2595,7 +2595,7 @@
 </li>
       <li><a href="api_reference/trading.html#nautilus_trader.trading.filters.ForexSessionFilter">ForexSessionFilter (class in nautilus_trader.trading.filters)</a>
 </li>
-      <li><a href="api_reference/core.html#nautilus_trader.core.functions.format_bytes">format_bytes() (in module nautilus_trader.core.functions)</a>
+      <li><a href="api_reference/core.html#nautilus_trader.core.text.format_bytes">format_bytes() (in module nautilus_trader.core.text)</a>
 </li>
       <li><a href="api_reference/core.html#nautilus_trader.core.datetime.format_iso8601">format_iso8601() (in module nautilus_trader.core.datetime)</a>
 </li>
@@ -4929,13 +4929,17 @@
 </li>
         <li><a href="api_reference/core.html#module-nautilus_trader.core">nautilus_trader.core</a>
 </li>
+        <li><a href="api_reference/core.html#module-nautilus_trader.core.collections">nautilus_trader.core.collections</a>
+</li>
         <li><a href="api_reference/core.html#module-nautilus_trader.core.datetime">nautilus_trader.core.datetime</a>
 </li>
         <li><a href="api_reference/core.html#module-nautilus_trader.core.fsm">nautilus_trader.core.fsm</a>
 </li>
-        <li><a href="api_reference/core.html#module-nautilus_trader.core.functions">nautilus_trader.core.functions</a>
-</li>
         <li><a href="api_reference/core.html#module-nautilus_trader.core.message">nautilus_trader.core.message</a>
+</li>
+        <li><a href="api_reference/core.html#module-nautilus_trader.core.stats">nautilus_trader.core.stats</a>
+</li>
+        <li><a href="api_reference/core.html#module-nautilus_trader.core.text">nautilus_trader.core.text</a>
 </li>
         <li><a href="api_reference/core.html#module-nautilus_trader.core.uuid">nautilus_trader.core.uuid</a>
 </li>
@@ -5483,6 +5487,13 @@
 </li>
       </ul></li>
       <li>
+    nautilus_trader.core.collections
+
+      <ul>
+        <li><a href="api_reference/core.html#module-nautilus_trader.core.collections">module</a>
+</li>
+      </ul></li>
+      <li>
     nautilus_trader.core.datetime
 
       <ul>
@@ -5497,17 +5508,24 @@
 </li>
       </ul></li>
       <li>
-    nautilus_trader.core.functions
-
-      <ul>
-        <li><a href="api_reference/core.html#module-nautilus_trader.core.functions">module</a>
-</li>
-      </ul></li>
-      <li>
     nautilus_trader.core.message
 
       <ul>
         <li><a href="api_reference/core.html#module-nautilus_trader.core.message">module</a>
+</li>
+      </ul></li>
+      <li>
+    nautilus_trader.core.stats
+
+      <ul>
+        <li><a href="api_reference/core.html#module-nautilus_trader.core.stats">module</a>
+</li>
+      </ul></li>
+      <li>
+    nautilus_trader.core.text
+
+      <ul>
+        <li><a href="api_reference/core.html#module-nautilus_trader.core.text">module</a>
 </li>
       </ul></li>
       <li>
@@ -5671,6 +5689,8 @@
         <li><a href="api_reference/indicators.html#module-nautilus_trader.indicators.efficiency_ratio">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     nautilus_trader.indicators.fuzzy_candlesticks
 
@@ -5678,8 +5698,6 @@
         <li><a href="api_reference/indicators.html#module-nautilus_trader.indicators.fuzzy_candlesticks">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     nautilus_trader.indicators.hilbert_period
 
@@ -6535,7 +6553,7 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/core.html#nautilus_trader.core.functions.pad_string">pad_string() (in module nautilus_trader.core.functions)</a>
+      <li><a href="api_reference/core.html#nautilus_trader.core.text.pad_string">pad_string() (in module nautilus_trader.core.text)</a>
 </li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.loaders.ParquetBarDataLoader">ParquetBarDataLoader (class in nautilus_trader.backtest.loaders)</a>
 </li>
@@ -6793,7 +6811,7 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.objects.Quantity.precision">(Quantity attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/core.html#nautilus_trader.core.functions.precision_from_str">precision_from_str() (in module nautilus_trader.core.functions)</a>
+      <li><a href="api_reference/core.html#nautilus_trader.core.text.precision_from_str">precision_from_str() (in module nautilus_trader.core.text)</a>
 </li>
       <li><a href="api_reference/indicators.html#nautilus_trader.indicators.pressure.Pressure">Pressure (class in nautilus_trader.indicators.pressure)</a>
 </li>
