@@ -893,7 +893,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.data.bar.Bar">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">BarType</span> <span class="pre">bar_type</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">open</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">high</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">low</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">close</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">volume</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">check=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.data.bar.Bar" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.data.base.Data</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.data.Data</span></code></p>
 <p>Represents an aggregated bar.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.data.bar.Bar.__init__">
@@ -1488,7 +1488,7 @@ the data publisher.</p></li>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.data.tick.Tick">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Tick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.data.tick.Tick" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.data.base.Data</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.data.Data</span></code></p>
 <p>The abstract base class for all ticks.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1681,7 +1681,7 @@ the data publisher.</p></li>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.data.venue.InstrumentClosePrice">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">InstrumentClosePrice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">close_price</span></em>, <em class="sig-param"><span class="pre">InstrumentCloseType</span> <span class="pre">close_type</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.data.venue.InstrumentClosePrice" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.data.base.Data</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.data.Data</span></code></p>
 <p>Represents an instruments closing price at a venue.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.data.venue.InstrumentClosePrice.__init__">
@@ -1875,7 +1875,7 @@ the data publisher.</p></li>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.data.venue.StatusUpdate">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">StatusUpdate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.data.venue.StatusUpdate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.data.base.Data</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.data.Data</span></code></p>
 <p>The abstract base class for all status updates.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -8117,7 +8117,7 @@ This class maps directly to functionality of the <cite>OrderBook</cite> base cla
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookData">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderBookData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BookLevel</span> <span class="pre">level</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookData" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.data.base.Data</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.data.Data</span></code></p>
 <p>The abstract base class for all <cite>OrderBook</cite> data.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
