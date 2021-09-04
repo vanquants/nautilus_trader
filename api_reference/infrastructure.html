@@ -269,9 +269,11 @@ the new model: you should trust this data</p></li>
 <p class="admonition-title">Warning</p>
 <p>Redis can only accurately store int64 types to 17 digits of precision.
 Therefore nanosecond timestamp int64’s with 19 digits will lose 2 digits of
-precision when persisted. If precision to this level is important, then you
-could additionally persist events in another medium/database which can
-properly handle int64 types.</p>
+precision when persisted. One way to solve this is to ensure the serializer
+converts timestamp int64’s to strings on the way into Redis, and converts
+timestamp strings back to int64’s on the way out. One way to achieve this is
+to set the <cite>timestamps_as_str</cite> flag to true for the <cite>MsgPackSerializer</cite>, as
+per the default implementations for both <cite>TradingNode</cite> and <cite>BacktestEngine</cite>.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.infrastructure.cache.RedisCacheDatabase.__init__">
