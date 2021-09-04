@@ -530,7 +530,8 @@ Will return None if no news events match the filter conditions.</p>
 </div>
 <div class="section" id="module-nautilus_trader.trading.strategy">
 <span id="strategy"></span><h2>Strategy<a class="headerlink" href="#module-nautilus_trader.trading.strategy" title="Permalink to this headline">¶</a></h2>
-<p>The <cite>TradingStrategy</cite> class allows traders to implement their own customized trading strategies.</p>
+<p>This module defines a trading strategy class which allows users to implement
+their own customized trading strategies</p>
 <p>A user can inherit from <cite>TradingStrategy</cite> and optionally override any of the
 “on” named event methods. The class is not entirely initialized in a stand-alone
 way, the intended usage is to pass strategies to a <cite>Trader</cite> so that they can be
@@ -541,7 +542,8 @@ attempts to operate without a managing <cite>Trader</cite> instance.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TradingStrategy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#nautilus_trader.trading.strategy.TradingStrategyConfig" title="nautilus_trader.trading.strategy.TradingStrategyConfig"><span class="pre">TradingStrategyConfig</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="common.html#nautilus_trader.common.actor.Actor" title="nautilus_trader.common.actor.Actor"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.actor.Actor</span></code></a></p>
 <p>The abstract base class for all trading strategies.</p>
-<p>A trading strategy can configure its own order management system type, which
+<p>This class allows traders to implement their own customized trading strategies.
+A trading strategy can configure its own order management system type, which
 determines how positions are handled by the <cite>ExecutionEngine</cite>.</p>
 <dl class="simple">
 <dt>Strategy OMS (Order Management System) types:</dt><dd><ul class="simple">
@@ -2056,7 +2058,7 @@ original <cite>ClientOrderId</cite>.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategyConfig">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TradingStrategyConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_id_tag</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'000'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oms_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">OMSType</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategyConfig" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TradingStrategyConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_id_tag</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'000'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oms_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'HEDGING'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategyConfig" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydantic.main.BaseModel</span></code></p>
 <p>The base model for all trading strategy configurations.</p>
 <dl class="simple">
