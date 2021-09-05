@@ -224,6 +224,12 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveDataClient.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveDataClient.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveDataClient.degrade">
 <span class="sig-name descname"><span class="pre">degrade</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveDataClient.degrade" title="Permalink to this definition">¶</a></dt>
 <dd><p>Degrade the component.</p>
@@ -237,6 +243,12 @@
 <p>Do not override.</p>
 <p>Exceptions raised will be caught, logged, and reraised.</p>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveDataClient.disconnect">
+<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveDataClient.disconnect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
 <dl class="py method">
@@ -556,6 +568,12 @@ testing dependency injection.</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.degrade">
 <span class="sig-name descname"><span class="pre">degrade</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.degrade" title="Permalink to this definition">¶</a></dt>
 <dd><p>Degrade the component.</p>
@@ -569,6 +587,12 @@ testing dependency injection.</p></li>
 <p>Do not override.</p>
 <p>Exceptions raised will be caught, logged, and reraised.</p>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.disconnect">
+<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.disconnect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
 <dl class="py method">
@@ -862,8 +886,8 @@ called after faulting.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.subscribe_venue_status_update">
-<span class="sig-name descname"><span class="pre">subscribe_venue_status_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.subscribe_venue_status_update" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.subscribe_venue_status_updates">
+<span class="sig-name descname"><span class="pre">subscribe_venue_status_updates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.subscribe_venue_status_updates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
@@ -1077,8 +1101,8 @@ called after faulting.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.unsubscribe_venue_status_update">
-<span class="sig-name descname"><span class="pre">unsubscribe_venue_status_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.unsubscribe_venue_status_update" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.live.data_client.LiveMarketDataClient.unsubscribe_venue_status_updates">
+<span class="sig-name descname"><span class="pre">unsubscribe_venue_status_updates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.live.data_client.LiveMarketDataClient.unsubscribe_venue_status_updates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
@@ -1813,6 +1837,12 @@ the new model: you should trust this data</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.degrade">
 <span class="sig-name descname"><span class="pre">degrade</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.degrade" title="Permalink to this definition">¶</a></dt>
 <dd><p>Degrade the component.</p>
@@ -1826,6 +1856,12 @@ the new model: you should trust this data</p></li>
 <p>Do not override.</p>
 <p>Exceptions raised will be caught, logged, and reraised.</p>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.disconnect">
+<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.disconnect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
 <dl class="py method">
