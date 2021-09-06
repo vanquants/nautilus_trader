@@ -349,6 +349,183 @@
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ModifyOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">trigger</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">command_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.commands.trading.TradingCommand" title="nautilus_trader.model.commands.trading.TradingCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.commands.trading.TradingCommand</span></code></a></p>
+<p>Represents a command to modify the properties of an existing order.</p>
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://www.onixs.biz/fix-dictionary/5.0.SP2/msgType_G_71.html">https://www.onixs.biz/fix-dictionary/5.0.SP2/msgType_G_71.html</a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">ModifyOrder</span></code> class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trader_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId"><em>TraderId</em></a>) – The trader ID for the command.</p></li>
+<li><p><strong>strategy_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a>) – The strategy ID for the command.</p></li>
+<li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the command.</p></li>
+<li><p><strong>client_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a>) – The client order ID to update.</p></li>
+<li><p><strong>venue_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a>) – The venue order ID to update.</p></li>
+<li><p><strong>quantity</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a><em>, </em><em>optional</em>) – The quantity for the order update.</p></li>
+<li><p><strong>price</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a><em>, </em><em>optional</em>) – The price for the order update.</p></li>
+<li><p><strong>trigger</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a><em>, </em><em>optional</em>) – The trigger price for the order update.</p></li>
+<li><p><strong>command_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The command ID.</p></li>
+<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the command object was initialized.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.category">
+<span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.category" title="Permalink to this definition">¶</a></dt>
+<dd><p>The message category.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>MessageCategory</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.client_order_id">
+<span class="sig-name descname"><span class="pre">client_order_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.client_order_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The client order ID associated with the command.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>ClientOrderId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.from_dict">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dict</span> <span class="pre">values</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#nautilus_trader.model.commands.trading.ModifyOrder" title="nautilus_trader.model.commands.trading.ModifyOrder"><span class="pre">ModifyOrder</span></a></span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a modify order command from the given dict values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>values</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>object</em><em>]</em>) – The values for initialization.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>ModifyOrder</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The message ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>UUID4</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.instrument_id">
+<span class="sig-name descname"><span class="pre">instrument_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.instrument_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The instrument ID associated with the command.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>InstrumentId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.price">
+<span class="sig-name descname"><span class="pre">price</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.price" title="Permalink to this definition">¶</a></dt>
+<dd><p>The updated price for the command.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>Price</cite> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.quantity">
+<span class="sig-name descname"><span class="pre">quantity</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.quantity" title="Permalink to this definition">¶</a></dt>
+<dd><p>The updated quantity for the command.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>Quantity</cite> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.strategy_id">
+<span class="sig-name descname"><span class="pre">strategy_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.strategy_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The strategy ID associated with the command.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>StrategyId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.to_dict">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ModifyOrder</span> <span class="pre">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary representation of this object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>dict[str, object]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.trader_id">
+<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.trader_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The trader ID associated with the command.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>TraderId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.trigger">
+<span class="sig-name descname"><span class="pre">trigger</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.trigger" title="Permalink to this definition">¶</a></dt>
+<dd><p>The updated trigger price for the command.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>Price</cite> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.ts_init">
+<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.ts_init" title="Permalink to this definition">¶</a></dt>
+<dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>int64</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.venue_order_id">
+<span class="sig-name descname"><span class="pre">venue_order_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.venue_order_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The venue order ID associated with the command.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>VenueOrderId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitBracketOrder">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">SubmitBracketOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">BracketOrder</span> <span class="pre">bracket_order</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">command_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitBracketOrder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.commands.trading.TradingCommand" title="nautilus_trader.model.commands.trading.TradingCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.commands.trading.TradingCommand</span></code></a></p>
@@ -704,183 +881,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>int64</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.UpdateOrder">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">UpdateOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">trigger</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">command_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.UpdateOrder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.commands.trading.TradingCommand" title="nautilus_trader.model.commands.trading.TradingCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.commands.trading.TradingCommand</span></code></a></p>
-<p>Represents a command to change to parameters of an existing order.</p>
-<p class="rubric">References</p>
-<p><a class="reference external" href="https://www.onixs.biz/fix-dictionary/5.0.SP2/msgType_G_71.html">https://www.onixs.biz/fix-dictionary/5.0.SP2/msgType_G_71.html</a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.UpdateOrder.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.UpdateOrder.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">UpdateOrder</span></code> class.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>trader_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId"><em>TraderId</em></a>) – The trader ID for the command.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a>) – The strategy ID for the command.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the command.</p></li>
-<li><p><strong>client_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a>) – The client order ID to update.</p></li>
-<li><p><strong>venue_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a>) – The venue order ID to update.</p></li>
-<li><p><strong>quantity</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a><em>, </em><em>optional</em>) – The quantity for the order update.</p></li>
-<li><p><strong>price</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a><em>, </em><em>optional</em>) – The price for the order update.</p></li>
-<li><p><strong>trigger</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a><em>, </em><em>optional</em>) – The trigger price for the order update.</p></li>
-<li><p><strong>command_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The command ID.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the command object was initialized.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.UpdateOrder.category">
-<span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.UpdateOrder.category" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message category.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>MessageCategory</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.UpdateOrder.client_order_id">
-<span class="sig-name descname"><span class="pre">client_order_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.UpdateOrder.client_order_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The client order ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>ClientOrderId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.UpdateOrder.from_dict">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dict</span> <span class="pre">values</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#nautilus_trader.model.commands.trading.UpdateOrder" title="nautilus_trader.model.commands.trading.UpdateOrder"><span class="pre">UpdateOrder</span></a></span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.UpdateOrder.from_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return an update order command from the given dict values.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>values</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>object</em><em>]</em>) – The values for initialization.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>UpdateOrder</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.UpdateOrder.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.UpdateOrder.id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID4</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.UpdateOrder.instrument_id">
-<span class="sig-name descname"><span class="pre">instrument_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.UpdateOrder.instrument_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The instrument ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>InstrumentId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.UpdateOrder.price">
-<span class="sig-name descname"><span class="pre">price</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.UpdateOrder.price" title="Permalink to this definition">¶</a></dt>
-<dd><p>The updated price for the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Price</cite> or <cite>None</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.UpdateOrder.quantity">
-<span class="sig-name descname"><span class="pre">quantity</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.UpdateOrder.quantity" title="Permalink to this definition">¶</a></dt>
-<dd><p>The updated quantity for the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Quantity</cite> or <cite>None</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.UpdateOrder.strategy_id">
-<span class="sig-name descname"><span class="pre">strategy_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.UpdateOrder.strategy_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The strategy ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>StrategyId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.UpdateOrder.to_dict">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">UpdateOrder</span> <span class="pre">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.UpdateOrder.to_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a dictionary representation of this object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[str, object]</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.UpdateOrder.trader_id">
-<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.UpdateOrder.trader_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The trader ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>TraderId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.UpdateOrder.trigger">
-<span class="sig-name descname"><span class="pre">trigger</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.UpdateOrder.trigger" title="Permalink to this definition">¶</a></dt>
-<dd><p>The updated trigger price for the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Price</cite> or <cite>None</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.UpdateOrder.ts_init">
-<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.UpdateOrder.ts_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int64</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.UpdateOrder.venue_order_id">
-<span class="sig-name descname"><span class="pre">venue_order_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.UpdateOrder.venue_order_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The venue order ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>VenueOrderId</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -3704,6 +3704,185 @@ order parameters.</p></li>
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderModifyRejected">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderModifyRejected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">AccountId</span> <span class="pre">account_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">reason</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">event_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderModifyRejected" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.events.order.OrderEvent" title="nautilus_trader.model.events.order.OrderEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.events.order.OrderEvent</span></code></a></p>
+<p>Represents an event where a <cite>ModifyOrder</cite> command has been rejected by the
+trading venue.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderModifyRejected.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderModifyRejected.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">OrderModifyRejected</span></code> class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trader_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId"><em>TraderId</em></a>) – The trader ID.</p></li>
+<li><p><strong>strategy_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a>) – The strategy ID.</p></li>
+<li><p><strong>account_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId"><em>AccountId</em></a>) – The account ID.</p></li>
+<li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID.</p></li>
+<li><p><strong>client_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID.</p></li>
+<li><p><strong>venue_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a>) – The venue order ID.</p></li>
+<li><p><strong>reason</strong> (<em>str</em>) – The order update rejected reason.</p></li>
+<li><p><strong>event_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The event ID.</p></li>
+<li><p><strong>ts_event</strong> (<em>datetime</em>) – The UNIX timestamp (nanoseconds) when the order update rejected event occurred.</p></li>
+<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the event object was initialized.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If reason is not a valid string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderModifyRejected.account_id">
+<span class="sig-name descname"><span class="pre">account_id</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderModifyRejected.account_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The account ID associated with the event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>AccountId</cite> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderModifyRejected.category">
+<span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderModifyRejected.category" title="Permalink to this definition">¶</a></dt>
+<dd><p>The message category.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>MessageCategory</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderModifyRejected.client_order_id">
+<span class="sig-name descname"><span class="pre">client_order_id</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderModifyRejected.client_order_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The client order ID associated with the event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>ClientOrderId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderModifyRejected.from_dict">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dict</span> <span class="pre">values</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#nautilus_trader.model.events.order.OrderModifyRejected" title="nautilus_trader.model.events.order.OrderModifyRejected"><span class="pre">OrderModifyRejected</span></a></span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderModifyRejected.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an order update rejected event from the given dict values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>values</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>object</em><em>]</em>) – The values for initialization.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>OrderModifyRejected</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderModifyRejected.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderModifyRejected.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The message ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>UUID4</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderModifyRejected.instrument_id">
+<span class="sig-name descname"><span class="pre">instrument_id</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderModifyRejected.instrument_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The instrument ID associated with the event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>InstrumentId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderModifyRejected.reason">
+<span class="sig-name descname"><span class="pre">reason</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderModifyRejected.reason" title="Permalink to this definition">¶</a></dt>
+<dd><p>The reason for modify order rejection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>str</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderModifyRejected.strategy_id">
+<span class="sig-name descname"><span class="pre">strategy_id</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderModifyRejected.strategy_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The strategy ID associated with the event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>StrategyId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderModifyRejected.to_dict">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">OrderModifyRejected</span> <span class="pre">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderModifyRejected.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary representation of this object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>dict[str, object]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderModifyRejected.trader_id">
+<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderModifyRejected.trader_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The trader ID associated with the event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>TraderId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderModifyRejected.ts_event">
+<span class="sig-name descname"><span class="pre">ts_event</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderModifyRejected.ts_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>The UNIX timestamp (nanoseconds) when the event occurred.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>int64</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderModifyRejected.ts_init">
+<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderModifyRejected.ts_init" title="Permalink to this definition">¶</a></dt>
+<dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>int64</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderModifyRejected.venue_order_id">
+<span class="sig-name descname"><span class="pre">venue_order_id</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderModifyRejected.venue_order_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The venue order ID associated with the event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>VenueOrderId</cite> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderPendingCancel">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderPendingCancel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">AccountId</span> <span class="pre">account_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">event_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderPendingCancel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.events.order.OrderEvent" title="nautilus_trader.model.events.order.OrderEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.events.order.OrderEvent</span></code></a></p>
@@ -3871,7 +4050,7 @@ trading venue.</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderPendingUpdate">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderPendingUpdate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">AccountId</span> <span class="pre">account_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">event_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderPendingUpdate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.events.order.OrderEvent" title="nautilus_trader.model.events.order.OrderEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.events.order.OrderEvent</span></code></a></p>
-<p>Represents an event where an <cite>UpdateOrder</cite> command has been sent to the
+<p>Represents an event where an <cite>ModifyOrder</cite> command has been sent to the
 trading venue.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderPendingUpdate.__init__">
@@ -4524,185 +4703,6 @@ trading venue.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderTriggered.venue_order_id">
 <span class="sig-name descname"><span class="pre">venue_order_id</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderTriggered.venue_order_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The venue order ID associated with the event.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>VenueOrderId</cite> or <cite>None</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderUpdateRejected">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderUpdateRejected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">AccountId</span> <span class="pre">account_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">reason</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">event_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderUpdateRejected" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.events.order.OrderEvent" title="nautilus_trader.model.events.order.OrderEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.events.order.OrderEvent</span></code></a></p>
-<p>Represents an event where an <cite>UpdateOrder</cite> command has been rejected by the
-trading venue.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderUpdateRejected.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderUpdateRejected.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">OrderUpdateRejected</span></code> class.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>trader_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId"><em>TraderId</em></a>) – The trader ID.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a>) – The strategy ID.</p></li>
-<li><p><strong>account_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId"><em>AccountId</em></a>) – The account ID.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID.</p></li>
-<li><p><strong>client_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID.</p></li>
-<li><p><strong>venue_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a>) – The venue order ID.</p></li>
-<li><p><strong>reason</strong> (<em>str</em>) – The order update rejected reason.</p></li>
-<li><p><strong>event_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The event ID.</p></li>
-<li><p><strong>ts_event</strong> (<em>datetime</em>) – The UNIX timestamp (nanoseconds) when the order update rejected event occurred.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the event object was initialized.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If reason is not a valid string.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderUpdateRejected.account_id">
-<span class="sig-name descname"><span class="pre">account_id</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderUpdateRejected.account_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The account ID associated with the event.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>AccountId</cite> or <cite>None</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderUpdateRejected.category">
-<span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderUpdateRejected.category" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message category.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>MessageCategory</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderUpdateRejected.client_order_id">
-<span class="sig-name descname"><span class="pre">client_order_id</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderUpdateRejected.client_order_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The client order ID associated with the event.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>ClientOrderId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderUpdateRejected.from_dict">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dict</span> <span class="pre">values</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#nautilus_trader.model.events.order.OrderUpdateRejected" title="nautilus_trader.model.events.order.OrderUpdateRejected"><span class="pre">OrderUpdateRejected</span></a></span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderUpdateRejected.from_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return an order update rejected event from the given dict values.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>values</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>object</em><em>]</em>) – The values for initialization.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>OrderUpdateRejected</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderUpdateRejected.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderUpdateRejected.id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID4</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderUpdateRejected.instrument_id">
-<span class="sig-name descname"><span class="pre">instrument_id</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderUpdateRejected.instrument_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The instrument ID associated with the event.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>InstrumentId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderUpdateRejected.reason">
-<span class="sig-name descname"><span class="pre">reason</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderUpdateRejected.reason" title="Permalink to this definition">¶</a></dt>
-<dd><p>The reason for order update rejection.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>str</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderUpdateRejected.strategy_id">
-<span class="sig-name descname"><span class="pre">strategy_id</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderUpdateRejected.strategy_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The strategy ID associated with the event.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>StrategyId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderUpdateRejected.to_dict">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">OrderUpdateRejected</span> <span class="pre">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderUpdateRejected.to_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a dictionary representation of this object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[str, object]</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderUpdateRejected.trader_id">
-<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderUpdateRejected.trader_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The trader ID associated with the event.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>TraderId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderUpdateRejected.ts_event">
-<span class="sig-name descname"><span class="pre">ts_event</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderUpdateRejected.ts_event" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UNIX timestamp (nanoseconds) when the event occurred.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int64</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderUpdateRejected.ts_init">
-<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderUpdateRejected.ts_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int64</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderUpdateRejected.venue_order_id">
-<span class="sig-name descname"><span class="pre">venue_order_id</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderUpdateRejected.venue_order_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>The venue order ID associated with the event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>

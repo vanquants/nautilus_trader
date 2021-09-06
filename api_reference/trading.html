@@ -1144,6 +1144,34 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.modify_order">
+<span class="sig-name descname"><span class="pre">modify_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">PassiveOrder</span> <span class="pre">order</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity=None</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price=None</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">trigger=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.modify_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modify the given order with optional parameters and routing instructions.</p>
+<p>An <cite>ModifyOrder</cite> command is created and then sent to the
+<cite>ExecutionEngine</cite>. Either one or both values must differ from the
+original order for the command to be valid.</p>
+<p>Will use an Order Cancel/Replace Request (a.k.a Order Modification)
+for FIX protocols, otherwise if order update is not available with
+the API, then will cancel - then replace with a new order using the
+original <cite>ClientOrderId</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>order</strong> (<em>PassiveOrder</em>) – The order to update.</p></li>
+<li><p><strong>quantity</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a><em>, </em><em>optional</em>) – The updated quantity for the given order.</p></li>
+<li><p><strong>price</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a><em>, </em><em>optional</em>) – The updated price for the given order.</p></li>
+<li><p><strong>trigger</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a><em>, </em><em>optional</em>) – The updated trigger price for the given order.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If trigger is not <cite>None</cite> and order.type != <code class="docutils literal notranslate"><span class="pre">STOP_LIMIT</span></code>.</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://www.onixs.biz/fix-dictionary/5.0.SP2/msgType_G_71.html">https://www.onixs.biz/fix-dictionary/5.0.SP2/msgType_G_71.html</a></p>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.msgbus">
 <span class="sig-name descname"><span class="pre">msgbus</span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.msgbus" title="Permalink to this definition">¶</a></dt>
@@ -2102,34 +2130,6 @@ as per the last subscription request (this will also affect all subscribers).</p
 <dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument ID to unsubscribe from.</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.update_order">
-<span class="sig-name descname"><span class="pre">update_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">PassiveOrder</span> <span class="pre">order</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity=None</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price=None</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">trigger=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.update_order" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update the given order with optional parameters and routing instructions.</p>
-<p>An <cite>UpdateOrder</cite> command is created and then sent to the
-<cite>ExecutionEngine</cite>. Either one or both values must differ from the
-original order for the command to be valid.</p>
-<p>Will use an Order Cancel/Replace Request (a.k.a Order Modification)
-for FIX protocols, otherwise if order update is not available with
-the API, then will cancel - then replace with a new order using the
-original <cite>ClientOrderId</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>order</strong> (<em>PassiveOrder</em>) – The order to update.</p></li>
-<li><p><strong>quantity</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a><em>, </em><em>optional</em>) – The updated quantity for the given order.</p></li>
-<li><p><strong>price</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a><em>, </em><em>optional</em>) – The updated price for the given order.</p></li>
-<li><p><strong>trigger</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a><em>, </em><em>optional</em>) – The updated trigger price for the given order.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If trigger is not <cite>None</cite> and order.type != <code class="docutils literal notranslate"><span class="pre">STOP_LIMIT</span></code>.</p>
-</dd>
-</dl>
-<p class="rubric">References</p>
-<p><a class="reference external" href="https://www.onixs.biz/fix-dictionary/5.0.SP2/msgType_G_71.html">https://www.onixs.biz/fix-dictionary/5.0.SP2/msgType_G_71.html</a></p>
 </dd></dl>
 
 <dl class="py attribute">

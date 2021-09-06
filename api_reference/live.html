@@ -2037,6 +2037,24 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.generate_order_modify_rejected">
+<span class="sig-name descname"><span class="pre">generate_order_modify_rejected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">reason</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.generate_order_modify_rejected" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate an <cite>OrderModifyRejected</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a>) – The strategy ID associated with the event.</p></li>
+<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID.</p></li>
+<li><p><strong>client_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID.</p></li>
+<li><p><strong>venue_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a>) – The venue order ID.</p></li>
+<li><p><strong>reason</strong> (<em>str</em>) – The order update rejected reason.</p></li>
+<li><p><strong>ts_event</strong> (<em>datetime</em>) – The UNIX timestamp (nanoseconds) when the order update rejection event occurred.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.generate_order_pending_cancel">
 <span class="sig-name descname"><span class="pre">generate_order_pending_cancel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.generate_order_pending_cancel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate an <cite>OrderPendingCancel</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
@@ -2130,24 +2148,6 @@ position ID resolution.</p></li>
 <li><p><strong>client_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID.</p></li>
 <li><p><strong>venue_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a>) – The venue order ID.</p></li>
 <li><p><strong>ts_event</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the order triggered event occurred.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.generate_order_update_rejected">
-<span class="sig-name descname"><span class="pre">generate_order_update_rejected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">reason</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.generate_order_update_rejected" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate an <cite>OrderUpdateRejected</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a>) – The strategy ID associated with the event.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID.</p></li>
-<li><p><strong>client_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID.</p></li>
-<li><p><strong>venue_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a>) – The venue order ID.</p></li>
-<li><p><strong>reason</strong> (<em>str</em>) – The order update rejected reason.</p></li>
-<li><p><strong>ts_event</strong> (<em>datetime</em>) – The UNIX timestamp (nanoseconds) when the order update rejection event occurred.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2274,6 +2274,12 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.modify_order">
+<span class="sig-name descname"><span class="pre">modify_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ModifyOrder</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.modify_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.reconcile_state">
 <span class="sig-name descname"><span class="pre">reconcile_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">OrderStatusReport</span> <span class="pre">report</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order=None</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">exec_reports=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.reconcile_state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconcile the given orders state based on the given report.</p>
@@ -2396,12 +2402,6 @@ fetched from cache.</p></li>
 <dd class="field-odd"><p><cite>type</cite></p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.update_order">
-<span class="sig-name descname"><span class="pre">update_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">UpdateOrder</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.update_order" title="Permalink to this definition">¶</a></dt>
-<dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
 <dl class="py attribute">
