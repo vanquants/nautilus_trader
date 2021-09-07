@@ -3480,7 +3480,7 @@ any other reason that an otherwise valid order is not able to be submitted.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderInitialized">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderInitialized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">OrderType</span> <span class="pre">order_type</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">event_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderInitialized" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderInitialized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">OrderType</span> <span class="pre">order_type</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">options</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">event_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderInitialized" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.events.order.OrderEvent" title="nautilus_trader.model.events.order.OrderEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.events.order.OrderEvent</span></code></a></p>
 <p>Represents an event where an order has been initialized.</p>
 <p>This is a seed event which can instantiate any order through a creation
@@ -3502,10 +3502,12 @@ properties as if it had been instantiated locally.</p>
 <li><p><strong>order_type</strong> (<em>OrderType</em>) – The order type.</p></li>
 <li><p><strong>quantity</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The order quantity.</p></li>
 <li><p><strong>time_in_force</strong> (<em>TimeInForce</em>) – The order time-in-force.</p></li>
-<li><p><strong>event_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The event ID.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the event object was initialized.</p></li>
 <li><p><strong>options</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – The order initialization options. Contains mappings for specific
 order parameters.</p></li>
+<li><p><strong>tags</strong> (<em>str</em><em>, </em><em>optional</em>) – The custom user tags for the order. These are optional and can
+contain any arbitrary delimiter if required.</p></li>
+<li><p><strong>event_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The event ID.</p></li>
+<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the event object was initialized.</p></li>
 </ul>
 </dd>
 </dl>
@@ -3620,6 +3622,17 @@ order parameters.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>StrategyId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderInitialized.tags">
+<span class="sig-name descname"><span class="pre">tags</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderInitialized.tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>The order custom user tags.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>str</cite> or <cite>None</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -8526,7 +8539,7 @@ This class maps directly to functionality of the <cite>OrderBook</cite> base cla
 <span id="market-order"></span><h2>Market Order<a class="headerlink" href="#module-nautilus_trader.model.orders.market" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">MarketOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">init_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">MarketOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">init_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.orders.base.Order</span></code></p>
 <p>Represents a market order.</p>
 <p>A market order is an order to buy or sell an instrument immediately. This
@@ -8550,6 +8563,8 @@ be executed.</p>
 <li><p><strong>quantity</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The order quantity (&gt; 0).</p></li>
 <li><p><strong>init_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The order initialization event ID.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the order was initialized.</p></li>
+<li><p><strong>tags</strong> (<em>str</em><em>, </em><em>optional</em>) – The custom user tags for the order. These are optional and can
+contain any arbitrary delimiter if required.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -8980,6 +8995,17 @@ The possible states of completed orders include;</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.tags">
+<span class="sig-name descname"><span class="pre">tags</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>The order custom user tags.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>str</cite> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.time_in_force">
 <span class="sig-name descname"><span class="pre">time_in_force</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.time_in_force" title="Permalink to this definition">¶</a></dt>
 <dd><p>The order time-in-force.</p>
@@ -9074,7 +9100,7 @@ The possible states of completed orders include;</p>
 <span id="limit-order"></span><h2>Limit Order<a class="headerlink" href="#module-nautilus_trader.model.orders.limit" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LimitOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">expire_time</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">init_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">post_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">hidden=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LimitOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">expire_time</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">init_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">post_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">hidden=False</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.orders.base.PassiveOrder</span></code></p>
 <p>Limit orders are used to specify a maximum or minimum price the trader is
 willing to buy or sell at. Traders use this order type to minimise their
@@ -9102,6 +9128,8 @@ market.</p>
 <li><p><strong>post_only</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order will only make a market.</p></li>
 <li><p><strong>reduce_only</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order will only reduce an open position.</p></li>
 <li><p><strong>hidden</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order will be hidden from the public book.</p></li>
+<li><p><strong>tags</strong> (<em>str</em><em>, </em><em>optional</em>) – The custom user tags for the order. These are optional and can
+contain any arbitrary delimiter if required.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -9610,6 +9638,17 @@ The possible states of completed orders include;</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.tags">
+<span class="sig-name descname"><span class="pre">tags</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>The order custom user tags.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>str</cite> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.time_in_force">
 <span class="sig-name descname"><span class="pre">time_in_force</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.time_in_force" title="Permalink to this definition">¶</a></dt>
 <dd><p>The order time-in-force.</p>
@@ -9715,7 +9754,7 @@ The possible states of completed orders include;</p>
 <span id="stop-market-order"></span><h2>Stop-Market Order<a class="headerlink" href="#module-nautilus_trader.model.orders.stop_market" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">StopMarketOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">expire_time</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">init_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">StopMarketOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">expire_time</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">init_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.orders.base.PassiveOrder</span></code></p>
 <p>Represents a stop-market order.</p>
 <p>A stop-market order is an instruction to submit a buy or sell market order
@@ -9745,6 +9784,8 @@ or help protect a profit on a short sale.</p>
 <li><p><strong>init_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The order initialization event ID.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the order was initialized.</p></li>
 <li><p><strong>reduce_only</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order will only reduce an open position.</p></li>
+<li><p><strong>tags</strong> (<em>str</em><em>, </em><em>optional</em>) – The custom user tags for the order. These are optional and can
+contain any arbitrary delimiter if required.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -10230,6 +10271,17 @@ The possible states of completed orders include;</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.tags">
+<span class="sig-name descname"><span class="pre">tags</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>The order custom user tags.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>str</cite> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.time_in_force">
 <span class="sig-name descname"><span class="pre">time_in_force</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.time_in_force" title="Permalink to this definition">¶</a></dt>
 <dd><p>The order time-in-force.</p>
@@ -10335,7 +10387,7 @@ The possible states of completed orders include;</p>
 <span id="stop-limit-order"></span><h2>Stop-Limit Order<a class="headerlink" href="#module-nautilus_trader.model.orders.stop_limit" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">StopLimitOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">trigger</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">expire_time</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">init_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">post_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">hidden=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">StopLimitOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">trigger</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">expire_time</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">init_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">post_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">hidden=False</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.orders.base.PassiveOrder</span></code></p>
 <p>Represents a stop-limit order.</p>
 <p>A stop-limit order is an instruction to submit a buy or sell limit order
@@ -10370,6 +10422,8 @@ trader could “miss the market” altogether.</p>
 <li><p><strong>post_only</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order will only make a market (once triggered).</p></li>
 <li><p><strong>reduce_only</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order will only reduce an open position (once triggered).</p></li>
 <li><p><strong>hidden</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order will be hidden from the public book (once triggered).</p></li>
+<li><p><strong>tags</strong> (<em>str</em><em>, </em><em>optional</em>) – The custom user tags for the order. These are optional and can
+contain any arbitrary delimiter if required.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -10884,6 +10938,17 @@ The possible states of completed orders include;</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>Symbol</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.tags">
+<span class="sig-name descname"><span class="pre">tags</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>The order custom user tags.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>str</cite> or <cite>None</cite></p>
 </dd>
 </dl>
 </dd></dl>

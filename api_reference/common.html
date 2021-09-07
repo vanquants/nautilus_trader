@@ -2620,7 +2620,7 @@ take-profit price.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.factories.OrderFactory.limit">
-<span class="sig-name descname"><span class="pre">limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force=TimeInForce.GTC</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">expire_time=None</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">post_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">hidden=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LimitOrder</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.limit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force=TimeInForce.GTC</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">expire_time=None</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">post_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">hidden=False</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LimitOrder</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.limit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new limit order.</p>
 <p>If the time-in-force is GTD then a valid expire time must be given.</p>
 <dl class="field-list simple">
@@ -2635,6 +2635,8 @@ take-profit price.</p>
 <li><p><strong>post_only</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order will only make a market.</p></li>
 <li><p><strong>reduce_only</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order will only reduce an open position.</p></li>
 <li><p><strong>hidden</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order should be hidden from the public book.</p></li>
+<li><p><strong>tags</strong> (<em>str</em><em>, </em><em>optional</em>) – The custom user tags for the order. These are optional and can
+contain any arbitrary delimiter if required.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -2653,7 +2655,7 @@ take-profit price.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.factories.OrderFactory.market">
-<span class="sig-name descname"><span class="pre">market</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force=TimeInForce.GTC</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">MarketOrder</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.market" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">market</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force=TimeInForce.GTC</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">MarketOrder</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.market" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new market order.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2662,6 +2664,8 @@ take-profit price.</p>
 <li><p><strong>order_side</strong> (<em>OrderSide</em>) – The orders side.</p></li>
 <li><p><strong>quantity</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The orders quantity (&gt; 0).</p></li>
 <li><p><strong>time_in_force</strong> (<em>TimeInForce</em><em>, </em><em>optional</em>) – The orders time-in-force. Often not applicable for market orders.</p></li>
+<li><p><strong>tags</strong> (<em>str</em><em>, </em><em>optional</em>) – The custom user tags for the order. These are optional and can
+contain any arbitrary delimiter if required.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -2697,7 +2701,7 @@ given count.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.factories.OrderFactory.stop_limit">
-<span class="sig-name descname"><span class="pre">stop_limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">trigger</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force=TimeInForce.GTC</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">expire_time=None</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">post_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">hidden=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">StopLimitOrder</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.stop_limit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">stop_limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">trigger</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force=TimeInForce.GTC</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">expire_time=None</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">post_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">hidden=False</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">StopLimitOrder</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.stop_limit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new stop-limit order.</p>
 <p>If the time-in-force is GTD then a valid expire time must be given.</p>
 <dl class="field-list simple">
@@ -2713,6 +2717,8 @@ given count.</p>
 <li><p><strong>post_only</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order will only make a market.</p></li>
 <li><p><strong>reduce_only</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order will only reduce an open position.</p></li>
 <li><p><strong>hidden</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order should be hidden from the public book.</p></li>
+<li><p><strong>tags</strong> (<em>str</em><em>, </em><em>optional</em>) – The custom user tags for the order. These are optional and can
+contain any arbitrary delimiter if required.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -2731,7 +2737,7 @@ given count.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.factories.OrderFactory.stop_market">
-<span class="sig-name descname"><span class="pre">stop_market</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force=TimeInForce.GTC</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">expire_time=None</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">StopMarketOrder</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.stop_market" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">stop_market</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force=TimeInForce.GTC</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">expire_time=None</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">StopMarketOrder</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.stop_market" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new stop-market order.</p>
 <p>If the time-in-force is GTD then a valid expire time must be given.</p>
 <dl class="field-list simple">
@@ -2744,6 +2750,8 @@ given count.</p>
 <li><p><strong>time_in_force</strong> (<em>TimeInForce</em><em>, </em><em>optional</em>) – The orders time-in-force.</p></li>
 <li><p><strong>expire_time</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The order expire time (for GTD orders).</p></li>
 <li><p><strong>reduce_only</strong> (<em>bool</em><em>,</em>) – If the order will only reduce an open position.</p></li>
+<li><p><strong>tags</strong> (<em>str</em><em>, </em><em>optional</em>) – The custom user tags for the order. These are optional and can
+contain any arbitrary delimiter if required.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
