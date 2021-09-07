@@ -4943,7 +4943,7 @@ trading venue.</p>
 <li><p><strong>last_px</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The last fill price for the position (not average price).</p></li>
 <li><p><strong>currency</strong> (<a class="reference internal" href="#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a>) – The position quote currency.</p></li>
 <li><p><strong>avg_px_open</strong> (<em>Decimal</em>) – The average open price.</p></li>
-<li><p><strong>avg_px_close</strong> (<em>Optional</em><em>[</em><em>Decimal</em><em>]</em>) – The average close price.</p></li>
+<li><p><strong>avg_px_close</strong> (<em>Decimal</em><em>, </em><em>optional</em>) – The average close price.</p></li>
 <li><p><strong>realized_points</strong> (<em>Decimal</em>) – The realized points for the position.</p></li>
 <li><p><strong>realized_return</strong> (<em>Decimal</em>) – The realized return for the position.</p></li>
 <li><p><strong>realized_pnl</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money"><em>Money</em></a>) – The realized PnL for the position.</p></li>
@@ -5716,7 +5716,7 @@ trading venue.</p>
 <li><p><strong>last_px</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The last fill price for the position (not average price).</p></li>
 <li><p><strong>currency</strong> (<a class="reference internal" href="#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a>) – The position quote currency.</p></li>
 <li><p><strong>avg_px_open</strong> (<em>Decimal</em>) – The average open price.</p></li>
-<li><p><strong>avg_px_close</strong> (<em>Optional</em><em>[</em><em>Decimal</em><em>]</em>) – The average close price.</p></li>
+<li><p><strong>avg_px_close</strong> (<em>Decimal</em><em>, </em><em>optional</em>) – The average close price.</p></li>
 <li><p><strong>realized_points</strong> (<em>Decimal</em>) – The realized points for the position.</p></li>
 <li><p><strong>realized_return</strong> (<em>Decimal</em>) – The realized return for the position.</p></li>
 <li><p><strong>realized_pnl</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money"><em>Money</em></a>) – The realized PnL for the position.</p></li>
@@ -11180,13 +11180,13 @@ decimal precision.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.currency.Currency.is_crypto">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">is_crypto</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.currency.Currency.is_crypto" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a value indicating whether a currency with the given code is Crypto.</p>
+<dd><p>Return a value indicating whether a currency with the given code is <code class="docutils literal notranslate"><span class="pre">CRYPTO</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>code</strong> (<em>str</em>) – The code of the currency.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>bool</em> – True if Crypto, else False.</p>
+<dd class="field-even"><p><em>bool</em> – True if <code class="docutils literal notranslate"><span class="pre">CRYPTO</span></code>, else False.</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><p><strong>ValueError</strong> – If code is not a valid string.</p>
@@ -11197,13 +11197,13 @@ decimal precision.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.currency.Currency.is_fiat">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">is_fiat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.currency.Currency.is_fiat" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a value indicating whether a currency with the given code is Fiat.</p>
+<dd><p>Return a value indicating whether a currency with the given code is <code class="docutils literal notranslate"><span class="pre">FIAT</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>code</strong> (<em>str</em>) – The code of the currency.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>bool</em> – True if Fiat, else False.</p>
+<dd class="field-even"><p><em>bool</em> – True if <code class="docutils literal notranslate"><span class="pre">FIAT</span></code>, else False.</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><p><strong>ValueError</strong> – If code is not a valid string.</p>

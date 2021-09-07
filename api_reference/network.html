@@ -197,7 +197,7 @@ brokerages, data providers/feeds and other venues or services.</p>
 <dt class="sig sig-object py" id="nautilus_trader.network.http_client.HTTPClient">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">HTTPClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">loop:</span> <span class="pre">asyncio.AbstractEventLoop</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">addresses=None</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">nameservers=None</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">ttl_dns_cache=ONE_DAY</span></em>, <em class="sig-param"><span class="pre">ssl=False</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">connector_kwargs=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.http_client.HTTPClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Provides a low level HTTP2 client.</p>
+<p>Provides a low-level HTTP2 client.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.network.http_client.HTTPClient.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.http_client.HTTPClient.__init__" title="Permalink to this definition">¶</a></dt>
@@ -270,7 +270,7 @@ set self.__traceback__ to tb and return self.</p>
 <dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">SocketClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">host</span></em>, <em class="sig-param"><span class="pre">port</span></em>, <em class="sig-param"><span class="pre">loop:</span> <span class="pre">asyncio.AbstractEventLoop</span></em>, <em class="sig-param"><span class="pre">handler:</span> <span class="pre">Callable</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger:</span> <span class="pre">Logger</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">ssl=True</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">encoding=u'utf-8'</span></em>, <em class="sig-param"><span class="pre">bytes</span> <span class="pre">crlf=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Provides a low level generic socket base client.</p>
+<p>Provides a low-level generic socket base client.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.__init__" title="Permalink to this definition">¶</a></dt>
@@ -386,7 +386,7 @@ set self.__traceback__ to tb and return self.</p>
 <dt class="sig sig-object py" id="nautilus_trader.network.ws_client.WebSocketClient">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">WebSocketClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">ws_url</span></em>, <em class="sig-param"><span class="pre">loop:</span> <span class="pre">asyncio.AbstractEventLoop</span></em>, <em class="sig-param"><span class="pre">handler:</span> <span class="pre">Callable</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger:</span> <span class="pre">Logger</span></em>, <em class="sig-param"><span class="pre">kwargs:</span> <span class="pre">Optional[Dict]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.ws_client.WebSocketClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Provides a low level web socket base client.</p>
+<p>Provides a low-level web socket base client.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.network.ws_client.WebSocketClient.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.ws_client.WebSocketClient.__init__" title="Permalink to this definition">¶</a></dt>
@@ -398,7 +398,7 @@ set self.__traceback__ to tb and return self.</p>
 <li><p><strong>handler</strong> (<em>Callable</em>) – The handler for received raw data.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.LoggerAdapter" title="nautilus_trader.common.logging.LoggerAdapter"><em>LoggerAdapter</em></a>) – The logger adapter for the client.</p></li>
 <li><p><strong>loop</strong> (<em>asyncio.AbstractEventLoop</em><em>, </em><em>optional</em>) – The event loop for the client.</p></li>
-<li><p><strong>kwargs</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – The additional kwargs to pass to aiohttp.ClientSession._ws_connect().</p></li>
+<li><p><strong>kwargs</strong> (<em>dict</em><em>, </em><em>optional</em>) – The additional kwargs to pass to aiohttp.ClientSession._ws_connect().</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
