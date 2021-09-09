@@ -2578,7 +2578,7 @@ IDs generated.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.factories.OrderFactory.bracket_limit">
-<span class="sig-name descname"><span class="pre">bracket_limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">entry</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">stop_loss</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">take_profit</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">tif=TimeInForce.GTC</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">expire_time=None</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">sl_tif=TimeInForce.GTC</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">tp_tif=TimeInForce.GTC</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">OrderList</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.bracket_limit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">bracket_limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">entry</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">stop_loss</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">take_profit</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">tif=TimeInForce.GTC</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">expire_time=None</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">tif_bracket=TimeInForce.GTC</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">OrderList</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.bracket_limit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a bracket order with a LIMIT entry from the given parameters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2591,8 +2591,7 @@ IDs generated.</p>
 <li><p><strong>take_profit</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The take-profit child order limit price.</p></li>
 <li><p><strong>tif</strong> (TimeInForce {<code class="docutils literal notranslate"><span class="pre">DAY</span></code>, <code class="docutils literal notranslate"><span class="pre">GTC</span></code>}, optional) – The entry orders time-in-force .</p></li>
 <li><p><strong>expire_time</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The order expire time (for GTD orders).</p></li>
-<li><p><strong>sl_tif</strong> (TimeInForce {<code class="docutils literal notranslate"><span class="pre">DAY</span></code>, <code class="docutils literal notranslate"><span class="pre">GTC</span></code>}, optional) – The stop-loss orders time-in-force .</p></li>
-<li><p><strong>tp_tif</strong> (TimeInForce {<code class="docutils literal notranslate"><span class="pre">DAY</span></code>, <code class="docutils literal notranslate"><span class="pre">GTC</span></code>}, optional) – The take-profit orders time-in-force.</p></li>
+<li><p><strong>tif_bracket</strong> (TimeInForce {<code class="docutils literal notranslate"><span class="pre">DAY</span></code>, <code class="docutils literal notranslate"><span class="pre">GTC</span></code>}, optional) – The bracket orders time-in-force.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -2600,14 +2599,12 @@ IDs generated.</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ValueError</strong> – If time_in_force is GTD and expire_time is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If sl_tif is not either <code class="docutils literal notranslate"><span class="pre">DAY</span></code> or <code class="docutils literal notranslate"><span class="pre">GTC</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If tp_tif is not either <code class="docutils literal notranslate"><span class="pre">DAY</span></code> or <code class="docutils literal notranslate"><span class="pre">GTC</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If sl_tif is not equal to tp_tif.</p></li>
-<li><p><strong>ValueError</strong> – If entry_order.side is <code class="docutils literal notranslate"><span class="pre">BUY</span></code> and entry_order.price &lt;= stop_loss.price.</p></li>
-<li><p><strong>ValueError</strong> – If entry_order.side is <code class="docutils literal notranslate"><span class="pre">BUY</span></code> and entry_order.price &gt;= take_profit.price.</p></li>
-<li><p><strong>ValueError</strong> – If entry_order.side is <code class="docutils literal notranslate"><span class="pre">SELL</span></code> and entry_order.price &gt;= stop_loss.price.</p></li>
-<li><p><strong>ValueError</strong> – If entry_order.side is <code class="docutils literal notranslate"><span class="pre">SELL</span></code> and entry_order.price &lt;= take_profit.price.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>tif</cite> is GTD and <cite>expire_time</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>tif_bracket</cite> is not either <code class="docutils literal notranslate"><span class="pre">DAY</span></code> or <code class="docutils literal notranslate"><span class="pre">GTC</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>entry_order.side</cite> is <code class="docutils literal notranslate"><span class="pre">BUY</span></code> and <cite>entry_order.price</cite> &lt;= <cite>stop_loss.price</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>entry_order.side</cite> is <code class="docutils literal notranslate"><span class="pre">BUY</span></code> and <cite>entry_order.price</cite> &gt;= <cite>take_profit.price</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>entry_order.side</cite> is <code class="docutils literal notranslate"><span class="pre">SELL</span></code> and <cite>entry_order.price</cite> &gt;= <cite>stop_loss.price</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>entry_order.side</cite> is <code class="docutils literal notranslate"><span class="pre">SELL</span></code> and <cite>entry_order.price</cite> &lt;= <cite>take_profit.price</cite>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2615,7 +2612,7 @@ IDs generated.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.factories.OrderFactory.bracket_market">
-<span class="sig-name descname"><span class="pre">bracket_market</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">stop_loss</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">take_profit</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">sl_tif=TimeInForce.GTC</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">tp_tif=TimeInForce.GTC</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">OrderList</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.bracket_market" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">bracket_market</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">stop_loss</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">take_profit</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">tif_bracket=TimeInForce.GTC</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">OrderList</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.bracket_market" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a bracket order with a MARKET entry from the given parameters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2625,8 +2622,7 @@ IDs generated.</p>
 <li><p><strong>quantity</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The entry orders quantity (&gt; 0).</p></li>
 <li><p><strong>stop_loss</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The stop-loss child order stop price.</p></li>
 <li><p><strong>take_profit</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The take-profit child order limit price.</p></li>
-<li><p><strong>sl_tif</strong> (TimeInForce {<code class="docutils literal notranslate"><span class="pre">DAY</span></code>, <code class="docutils literal notranslate"><span class="pre">GTC</span></code>}, optional) – The stop-loss orders time-in-force .</p></li>
-<li><p><strong>tp_tif</strong> (TimeInForce {<code class="docutils literal notranslate"><span class="pre">DAY</span></code>, <code class="docutils literal notranslate"><span class="pre">GTC</span></code>}, optional) – The take-profit orders time-in-force.</p></li>
+<li><p><strong>tif_bracket</strong> (TimeInForce {<code class="docutils literal notranslate"><span class="pre">DAY</span></code>, <code class="docutils literal notranslate"><span class="pre">GTC</span></code>}, optional) – The bracket orders time-in-force .</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -2634,13 +2630,11 @@ IDs generated.</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ValueError</strong> – If sl_tif is not either <code class="docutils literal notranslate"><span class="pre">DAY</span></code> or <code class="docutils literal notranslate"><span class="pre">GTC</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If tp_tif is not either <code class="docutils literal notranslate"><span class="pre">DAY</span></code> or <code class="docutils literal notranslate"><span class="pre">GTC</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If sl_tif is not equal to tp_tif.</p></li>
-<li><p><strong>ValueError</strong> – If entry_order.side is <code class="docutils literal notranslate"><span class="pre">BUY</span></code> and entry_order.price &lt;= stop_loss.price.</p></li>
-<li><p><strong>ValueError</strong> – If entry_order.side is <code class="docutils literal notranslate"><span class="pre">BUY</span></code> and entry_order.price &gt;= take_profit.price.</p></li>
-<li><p><strong>ValueError</strong> – If entry_order.side is <code class="docutils literal notranslate"><span class="pre">SELL</span></code> and entry_order.price &gt;= stop_loss.price.</p></li>
-<li><p><strong>ValueError</strong> – If entry_order.side is <code class="docutils literal notranslate"><span class="pre">SELL</span></code> and entry_order.price &lt;= take_profit.price.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>tif_bracket</cite> is not either <code class="docutils literal notranslate"><span class="pre">DAY</span></code> or <code class="docutils literal notranslate"><span class="pre">GTC</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>entry_order.side</cite> is <code class="docutils literal notranslate"><span class="pre">BUY</span></code> and <cite>entry_order.price</cite> &lt;= <cite>stop_loss.price</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>entry_order.side</cite> is <code class="docutils literal notranslate"><span class="pre">BUY</span></code> and <cite>entry_order.price</cite> &gt;= <cite>take_profit.price</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>entry_order.side</cite> is <code class="docutils literal notranslate"><span class="pre">SELL</span></code> and <cite>entry_order.price</cite> &gt;= <cite>stop_loss.price</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>entry_order.side</cite> is <code class="docutils literal notranslate"><span class="pre">SELL</span></code> and <cite>entry_order.price</cite> &lt;= <cite>take_profit.price</cite>.</p></li>
 </ul>
 </dd>
 </dl>
