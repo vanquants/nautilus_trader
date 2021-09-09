@@ -620,7 +620,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>database</strong> (<a class="reference internal" href="#nautilus_trader.cache.database.CacheDatabase" title="nautilus_trader.cache.database.CacheDatabase"><em>CacheDatabase</em></a><em>, </em><em>optional</em>) – The database for the cache. If <cite>None</cite> then will bypass persistence.</p></li>
+<li><p><strong>database</strong> (<a class="reference internal" href="#nautilus_trader.cache.database.CacheDatabase" title="nautilus_trader.cache.database.CacheDatabase"><em>CacheDatabase</em></a><em>, </em><em>optional</em>) – The database for the cache. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will bypass persistence.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the cache.</p></li>
 <li><p><strong>config</strong> (<a class="reference internal" href="#nautilus_trader.cache.cache.CacheConfig" title="nautilus_trader.cache.cache.CacheConfig"><em>CacheConfig</em></a><em>, </em><em>optional</em>) – The cache configuration.</p></li>
 </ul>
@@ -640,7 +640,7 @@
 <dd class="field-odd"><p><strong>account_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId"><em>AccountId</em></a>) – The account ID.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Account or None</em></p>
+<dd class="field-even"><p>Account or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -654,7 +654,7 @@
 <dd class="field-odd"><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a>) – The venue for the account.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Account or None</em></p>
+<dd class="field-even"><p>Account or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -668,7 +668,7 @@
 <dd class="field-odd"><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a>) – The venue for the account ID.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>AccountId or None</em></p>
+<dd class="field-even"><p>AccountId or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -872,7 +872,7 @@ ID.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Bar or None</em> – If no bars or no bar at index then returns <cite>None</cite>.</p>
+<dd class="field-even"><p>Bar or <code class="docutils literal notranslate"><span class="pre">None</span></code> – If no bars or no bar at index then returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -1008,7 +1008,7 @@ error is found then a log error message will also be produced.</p>
 <dd class="field-odd"><p><strong>venue_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a>) – The venue assigned order ID.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>ClientOrderId or None</em></p>
+<dd class="field-even"><p>ClientOrderId or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1233,7 +1233,7 @@ given instrument ID.</p>
 <dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID of the instrument to return.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Instrument or None</em></p>
+<dd class="field-even"><p>Instrument or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1361,7 +1361,7 @@ and is open.</p>
 <dd class="field-odd"><p><strong>account_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId"><em>AccountId</em></a>) – The account ID to load.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Account or None</em></p>
+<dd class="field-even"><p>Account or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1375,7 +1375,7 @@ and is open.</p>
 <dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID to load.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Account or None</em></p>
+<dd class="field-even"><p>Account or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1389,7 +1389,7 @@ and is open.</p>
 <dd class="field-odd"><p><strong>client_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID to load.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Order or None</em></p>
+<dd class="field-even"><p>Order or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1403,7 +1403,7 @@ and is open.</p>
 <dd class="field-odd"><p><strong>position_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId"><em>PositionId</em></a>) – The position ID to load.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Position or None</em></p>
+<dd class="field-even"><p>Position or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1425,7 +1425,7 @@ and is open.</p>
 <dd><p>Return the order matching the given client order ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>Order or None</em></p>
+<dd class="field-odd"><p>Order or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1439,7 +1439,7 @@ and is open.</p>
 <dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – </p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>OrderBook or None</em></p>
+<dd class="field-even"><p>OrderBook or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1647,7 +1647,7 @@ and is open.</p>
 <dd class="field-odd"><p><strong>position_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId"><em>PositionId</em></a>) – The position ID.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Position or None</em></p>
+<dd class="field-even"><p>Position or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1693,7 +1693,7 @@ and is open.</p>
 <dd class="field-odd"><p><strong>client_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID associated with the position.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>PositionId or None</em></p>
+<dd class="field-even"><p>PositionId or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1854,7 +1854,7 @@ and is open.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Price or None</em></p>
+<dd class="field-even"><p>Price or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1872,7 +1872,7 @@ and is open.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>QuoteTick or None</em> – If no ticks or no tick at index then returns None.</p>
+<dd class="field-even"><p>QuoteTick or <code class="docutils literal notranslate"><span class="pre">None</span></code> – If no ticks or no tick at index then returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -1923,7 +1923,7 @@ and is open.</p>
 <dd class="field-odd"><p><strong>client_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID associated with the strategy.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>StrategyId or None</em></p>
+<dd class="field-even"><p>StrategyId or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1937,7 +1937,7 @@ and is open.</p>
 <dd class="field-odd"><p><strong>position_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId"><em>PositionId</em></a>) – The position ID associated with the strategy.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>StrategyId or None</em></p>
+<dd class="field-even"><p>StrategyId or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1977,7 +1977,7 @@ and is open.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Ticker or None</em> – If no tickers or no ticker at index then returns None.</p>
+<dd class="field-even"><p>Ticker or <code class="docutils literal notranslate"><span class="pre">None</span></code> – If no tickers or no ticker at index then returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -2025,7 +2025,7 @@ and is open.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>TradeTick or None</em> – If no ticks or no tick at index then returns None.</p>
+<dd class="field-even"><p>TradeTick or <code class="docutils literal notranslate"><span class="pre">None</span></code> – If no ticks or no tick at index then returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -2110,7 +2110,7 @@ and is open.</p>
 <dd><p>Return the order ID matching the given client order ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>VenueOrderId or None</em></p>
+<dd class="field-odd"><p>VenueOrderId or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>

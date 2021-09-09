@@ -229,7 +229,7 @@ attempts to operate without a managing <cite>Trader</cite> instance.</p>
 <dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Actor</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>component_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ComponentId" title="nautilus_trader.model.identifiers.ComponentId"><em>ComponentId</em></a><em>, </em><em>optional</em>) – The component ID. If <cite>None</cite> is passed then the identifier will be
+<dd class="field-odd"><p><strong>component_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ComponentId" title="nautilus_trader.model.identifiers.ComponentId"><em>ComponentId</em></a><em>, </em><em>optional</em>) – The component ID. If <code class="docutils literal notranslate"><span class="pre">None</span></code> is passed then the identifier will be
 taken from <cite>type(self).__name__</cite>.</p>
 </dd>
 </dl>
@@ -641,7 +641,7 @@ called after faulting.</p>
 <dd><p>The message bus for the actor (if registered).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>MessageBus</cite> or <cite>None</cite></p>
+<dd class="field-odd"><p><cite>MessageBus</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -958,13 +958,13 @@ paused, and also when it is done for day.</p>
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.request_bars">
 <span class="sig-name descname"><span class="pre">request_bars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">BarType</span> <span class="pre">bar_type</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">from_datetime=None</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">to_datetime=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.request_bars" title="Permalink to this definition">¶</a></dt>
 <dd><p>Request historical bars for the given parameters.</p>
-<p>If datetimes are <cite>None</cite> then will request the most recent data.</p>
+<p>If datetimes are <code class="docutils literal notranslate"><span class="pre">None</span></code> then will request the most recent data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type for the request.</p></li>
 <li><p><strong>from_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified from datetime for the data.</p></li>
-<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If <cite>None</cite> then will default
+<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will default
 to the current datetime.</p></li>
 </ul>
 </dd>
@@ -991,13 +991,13 @@ to the current datetime.</p></li>
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.request_quote_ticks">
 <span class="sig-name descname"><span class="pre">request_quote_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">from_datetime=None</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">to_datetime=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.request_quote_ticks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Request historical quote ticks for the given parameters.</p>
-<p>If datetimes are <cite>None</cite> then will request the most recent data.</p>
+<p>If datetimes are <code class="docutils literal notranslate"><span class="pre">None</span></code> then will request the most recent data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument ID for the request.</p></li>
 <li><p><strong>from_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified from datetime for the data.</p></li>
-<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If <cite>None</cite> then will default
+<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will default
 to the current datetime.</p></li>
 </ul>
 </dd>
@@ -1010,13 +1010,13 @@ to the current datetime.</p></li>
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.request_trade_ticks">
 <span class="sig-name descname"><span class="pre">request_trade_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">from_datetime=None</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">to_datetime=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.request_trade_ticks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Request historical trade ticks for the given parameters.</p>
-<p>If datetimes are <cite>None</cite> then will request the most recent data.</p>
+<p>If datetimes are <code class="docutils literal notranslate"><span class="pre">None</span></code> then will request the most recent data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument ID for the request.</p></li>
 <li><p><strong>from_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified from datetime for the data.</p></li>
-<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If <cite>None</cite> then will default
+<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will default
 to the current datetime.</p></li>
 </ul>
 </dd>
@@ -1570,8 +1570,8 @@ default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
 <li><p><strong>ValueError</strong> – If alert_time is not &gt;= the clocks current time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <cite>None</cite>.</p></li>
-<li><p><strong>ValueError</strong> – If handler is <cite>None</cite> and no default handler is registered.</p></li>
+<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If handler is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1599,10 +1599,10 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
 <li><p><strong>ValueError</strong> – If interval is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not <cite>None</cite> and stop_time &lt; time_now.</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not <cite>None</cite> and start_time + interval &gt; stop_time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <cite>None</cite>.</p></li>
-<li><p><strong>ValueError</strong> – If handler is <cite>None</cite> and no default handler is registered.</p></li>
+<li><p><strong>ValueError</strong> – If stop_time is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and stop_time &lt; time_now.</p></li>
+<li><p><strong>ValueError</strong> – If stop_time is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and start_time + interval &gt; stop_time.</p></li>
+<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If handler is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1617,7 +1617,7 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of the timer.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Timer or None</em> – The timer with the given name (if found).</p>
+<dd class="field-even"><p>Timer or <code class="docutils literal notranslate"><span class="pre">None</span></code> – The timer with the given name (if found).</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><p><strong>ValueError</strong> – If name is not a valid string.</p>
@@ -1695,7 +1695,7 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dt class="sig sig-object py" id="nautilus_trader.common.clock.LiveClock.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.clock.LiveClock.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LiveClock</span></code> class.</p>
-<p>If loop is <cite>None</cite> then threads will be used for timers.</p>
+<p>If loop is <code class="docutils literal notranslate"><span class="pre">None</span></code> then threads will be used for timers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>loop</strong> (<em>asyncio.AbstractEventLoop</em>) – The event loop for the clocks timers.</p>
@@ -1841,8 +1841,8 @@ default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
 <li><p><strong>ValueError</strong> – If alert_time is not &gt;= the clocks current time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <cite>None</cite>.</p></li>
-<li><p><strong>ValueError</strong> – If handler is <cite>None</cite> and no default handler is registered.</p></li>
+<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If handler is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1870,10 +1870,10 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
 <li><p><strong>ValueError</strong> – If interval is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not <cite>None</cite> and stop_time &lt; time_now.</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not <cite>None</cite> and start_time + interval &gt; stop_time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <cite>None</cite>.</p></li>
-<li><p><strong>ValueError</strong> – If handler is <cite>None</cite> and no default handler is registered.</p></li>
+<li><p><strong>ValueError</strong> – If stop_time is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and stop_time &lt; time_now.</p></li>
+<li><p><strong>ValueError</strong> – If stop_time is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and start_time + interval &gt; stop_time.</p></li>
+<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If handler is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1888,7 +1888,7 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of the timer.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Timer or None</em> – The timer with the given name (if found).</p>
+<dd class="field-even"><p>Timer or <code class="docutils literal notranslate"><span class="pre">None</span></code> – The timer with the given name (if found).</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><p><strong>ValueError</strong> – If name is not a valid string.</p>
@@ -2139,8 +2139,8 @@ default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
 <li><p><strong>ValueError</strong> – If alert_time is not &gt;= the clocks current time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <cite>None</cite>.</p></li>
-<li><p><strong>ValueError</strong> – If handler is <cite>None</cite> and no default handler is registered.</p></li>
+<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If handler is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2168,10 +2168,10 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
 <li><p><strong>ValueError</strong> – If interval is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not <cite>None</cite> and stop_time &lt; time_now.</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not <cite>None</cite> and start_time + interval &gt; stop_time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <cite>None</cite>.</p></li>
-<li><p><strong>ValueError</strong> – If handler is <cite>None</cite> and no default handler is registered.</p></li>
+<li><p><strong>ValueError</strong> – If stop_time is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and stop_time &lt; time_now.</p></li>
+<li><p><strong>ValueError</strong> – If stop_time is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and start_time + interval &gt; stop_time.</p></li>
+<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If handler is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2186,7 +2186,7 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name of the timer.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Timer or None</em> – The timer with the given name (if found).</p>
+<dd class="field-even"><p>Timer or <code class="docutils literal notranslate"><span class="pre">None</span></code> – The timer with the given name (if found).</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><p><strong>ValueError</strong> – If name is not a valid string.</p>
@@ -2282,7 +2282,7 @@ then it will be in a <code class="docutils literal notranslate"><span class="pre
 <li><p><strong>clock</strong> (<a class="reference internal" href="#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the component.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the component.</p></li>
 <li><p><strong>trader_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId"><em>TraderId</em></a><em>, </em><em>optional</em>) – The trader ID associated with the component.</p></li>
-<li><p><strong>component_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ComponentId" title="nautilus_trader.model.identifiers.ComponentId"><em>ComponentId</em></a><em>, </em><em>optional</em>) – The component ID. If <cite>None</cite> is passed then the identifier will be
+<li><p><strong>component_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ComponentId" title="nautilus_trader.model.identifiers.ComponentId"><em>ComponentId</em></a><em>, </em><em>optional</em>) – The component ID. If <code class="docutils literal notranslate"><span class="pre">None</span></code> is passed then the identifier will be
 taken from <cite>type(self).__name__</cite>.</p></li>
 <li><p><strong>component_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The custom component name.</p></li>
 <li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a><em>, </em><em>optional</em>) – The message bus for the component (required before initialized).</p></li>
@@ -2600,7 +2600,7 @@ IDs generated.</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ValueError</strong> – If time_in_force is GTD and expire_time is <cite>None</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If time_in_force is GTD and expire_time is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 <li><p><strong>ValueError</strong> – If sl_tif is not either <code class="docutils literal notranslate"><span class="pre">DAY</span></code> or <code class="docutils literal notranslate"><span class="pre">GTC</span></code>.</p></li>
 <li><p><strong>ValueError</strong> – If tp_tif is not either <code class="docutils literal notranslate"><span class="pre">DAY</span></code> or <code class="docutils literal notranslate"><span class="pre">GTC</span></code>.</p></li>
 <li><p><strong>ValueError</strong> – If sl_tif is not equal to tp_tif.</p></li>
@@ -2684,7 +2684,7 @@ contain any arbitrary delimiter if required.</p></li>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ValueError</strong> – If quantity is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If time_in_force is GTD and expire_time is <cite>None</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If time_in_force is GTD and expire_time is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 <li><p><strong>ValueError</strong> – If post_only and hidden.</p></li>
 <li><p><strong>ValueError</strong> – If hidden and post_only.</p></li>
 </ul>
@@ -2766,7 +2766,7 @@ contain any arbitrary delimiter if required.</p></li>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ValueError</strong> – If quantity is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If time_in_force is GTD and expire_time is <cite>None</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If time_in_force is GTD and expire_time is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 <li><p><strong>ValueError</strong> – If post_only and hidden.</p></li>
 <li><p><strong>ValueError</strong> – If hidden and post_only.</p></li>
 </ul>
@@ -2799,7 +2799,7 @@ contain any arbitrary delimiter if required.</p></li>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ValueError</strong> – If quantity is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If time_in_force is GTD and expire_time is <cite>None</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If time_in_force is GTD and expire_time is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -3082,7 +3082,7 @@ will be appended with ‘F’.</p></li>
 <dd><p>The timestamp (UTC) the logger last blocked.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>datetime</cite> or <cite>None</cite></p>
+<dd class="field-odd"><p><cite>datetime</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -3457,7 +3457,7 @@ will be appended with ‘F’.</p></li>
 <dd class="field-odd"><p><strong>code</strong> (<em>str</em>) – The currency code.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Currency or None</em></p>
+<dd class="field-even"><p>Currency or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -3471,7 +3471,7 @@ will be appended with ‘F’.</p></li>
 <dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The ID for the instrument</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Instrument or None</em></p>
+<dd class="field-even"><p>Instrument or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -3615,7 +3615,7 @@ then full() is never True.</p>
 <dd><p>Return the item at the back of the queue without popping (if not empty).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>object or None</em></p>
+<dd class="field-odd"><p>object or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -3626,7 +3626,7 @@ then full() is never True.</p>
 <dd><p>Return the item at the front of the queue without popping (if not empty).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>object or None</em></p>
+<dd class="field-odd"><p>object or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -3724,7 +3724,7 @@ upstream.</p>
 <li><p><strong>interval</strong> (<em>timedelta</em>) – The interval setting for the throttling.</p></li>
 <li><p><strong>output_send</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The output handler to send messages from the throttler.</p></li>
 <li><p><strong>output_drop</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em><em>, </em><em>optional</em>) – The output handler to drop messages from the throttler.
-If <cite>None</cite> then messages will be buffered.</p></li>
+If <code class="docutils literal notranslate"><span class="pre">None</span></code> then messages will be buffered.</p></li>
 <li><p><strong>clock</strong> (<a class="reference internal" href="#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the throttler.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the throttler.</p></li>
 </ul>
@@ -3735,7 +3735,7 @@ If <cite>None</cite> then messages will be buffered.</p></li>
 <li><p><strong>ValueError</strong> – If limit is not positive (&gt; 0).</p></li>
 <li><p><strong>ValueError</strong> – If interval is not positive (&gt; 0).</p></li>
 <li><p><strong>ValueError</strong> – If output_send is not of type <cite>Callable</cite>.</p></li>
-<li><p><strong>ValueError</strong> – If output_drop is not of type <cite>Callable</cite> or <cite>None</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If output_drop is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -3955,7 +3955,7 @@ If <cite>None</cite> then messages will be buffered.</p></li>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>event_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The ID for the time event.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the time event object was initialization.</p></li>
+<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -4106,7 +4106,7 @@ If <cite>None</cite> then messages will be buffered.</p></li>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>event_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The ID for the time event.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the time event object was initialization.</p></li>
+<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -4268,7 +4268,7 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>event_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The ID for the time event.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the time event object was initialization.</p></li>
+<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -4421,7 +4421,7 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>event_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The ID for the time event.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the time event object was initialization.</p></li>
+<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -4481,7 +4481,7 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 <li><p><strong>event_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The event ID.</p></li>
 <li><p><strong>timestamp</strong> (<em>datetime</em>) – The event timestamp (UTC).</p></li>
 <li><p><strong>ts_event</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the time event occurred.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the event object was initialized.</p></li>
+<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
 </ul>
 </dd>
 </dl>
@@ -4701,7 +4701,7 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>event_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The ID for the time event.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the time event object was initialization.</p></li>
+<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>

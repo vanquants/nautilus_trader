@@ -252,7 +252,7 @@ slice of a to be searched.</p>
 <dd class="field-odd"><p><strong>data</strong> (<em>pd.Series</em><em> or </em><em>pd.DataFrame.</em>) – The object to ensure is UTC.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>pd.Series, pd.DataFrame or None</em></p>
+<dd class="field-even"><p>pd.Series, pd.DataFrame or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -283,7 +283,7 @@ slice of a to be searched.</p>
 <dd class="field-even"><p><em>int64</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – If timestamp is <cite>None</cite>.</p>
+<dd class="field-odd"><p><strong>TypeError</strong> – If timestamp is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -300,7 +300,7 @@ slice of a to be searched.</p>
 <dd class="field-even"><p><em>int64</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – If timestamp is <cite>None</cite>.</p>
+<dd class="field-odd"><p><strong>TypeError</strong> – If timestamp is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -317,7 +317,7 @@ slice of a to be searched.</p>
 <dd class="field-even"><p><em>int64</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – If timestamp is <cite>None</cite>.</p>
+<dd class="field-odd"><p><strong>TypeError</strong> – If timestamp is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -453,14 +453,14 @@ slice of a to be searched.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.datetime.maybe_dt_to_unix_nanos">
 <span class="sig-name descname"><span class="pre">maybe_dt_to_unix_nanos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">datetime</span> <span class="pre">dt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.datetime.maybe_dt_to_unix_nanos" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the UNIX time (nanoseconds) from the given datetime, or None.</p>
-<p>If dt is <cite>None</cite>, then will return None.</p>
+<dd><p>Return the UNIX time (nanoseconds) from the given datetime, or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>If dt is <code class="docutils literal notranslate"><span class="pre">None</span></code>, then will return None.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>dt</strong> (<em>datetime</em><em> or </em><em>None</em>) – The datetime for the timestamp.</p>
+<dd class="field-odd"><p><strong>dt</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The datetime for the timestamp.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>int64 or None</em></p>
+<dd class="field-even"><p>int64 or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -468,14 +468,14 @@ slice of a to be searched.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.datetime.maybe_nanos_to_unix_dt">
 <span class="sig-name descname"><span class="pre">maybe_nanos_to_unix_dt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nanos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.datetime.maybe_nanos_to_unix_dt" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the datetime in UTC from the given UNIX time (nanoseconds), or None.</p>
-<p>If nanos is <cite>None</cite>, then will return None.</p>
+<dd><p>Return the datetime in UTC from the given UNIX time (nanoseconds), or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>If nanos is <code class="docutils literal notranslate"><span class="pre">None</span></code>, then will return None.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>nanos</strong> (<em>int64</em><em> or </em><em>None</em>) – The UNIX time (nanoseconds) to convert.</p>
+<dd class="field-odd"><p><strong>nanos</strong> (<em>int64</em><em>, </em><em>optional</em>) – The UNIX time (nanoseconds) to convert.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>int64 or None</em></p>
+<dd class="field-even"><p>int64 or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -635,17 +635,17 @@ deterministic state value.</p>
 starting state and trigger as keys, and resulting states as values.</p></li>
 <li><p><strong>initial_state</strong> (<em>int / C Enum</em>) – The initial state for the FSM.</p></li>
 <li><p><strong>trigger_parser</strong> (<em>Callable</em><em>[</em><em>[</em><em>int</em><em>]</em><em>, </em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The trigger parser needed to convert C Enum ints into strings.
-If <cite>None</cite> then will just print the integer.</p></li>
+If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will just print the integer.</p></li>
 <li><p><strong>state_parser</strong> (<em>Callable</em><em>[</em><em>[</em><em>int</em><em>]</em><em>, </em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The state parser needed to convert C Enum ints into strings.
-If <cite>None</cite> then will just print the integer.</p></li>
+If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will just print the integer.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If state_transition_table is empty.</p></li>
 <li><p><strong>ValueError</strong> – If state_transition_table key not tuple.</p></li>
-<li><p><strong>ValueError</strong> – If trigger_parser not of type <cite>Callable</cite> or <cite>None</cite>.</p></li>
-<li><p><strong>ValueError</strong> – If state_parser not of type <cite>Callable</cite> or <cite>None</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If trigger_parser not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If state_parser not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -719,7 +719,7 @@ set self.__traceback__ to tb and return self.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>command_id</strong> (<a class="reference internal" href="#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The command ID.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the command object was initialized.</p></li>
+<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
 </ul>
 </dd>
 </dl>
@@ -777,7 +777,7 @@ set self.__traceback__ to tb and return self.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>document_id</strong> (<a class="reference internal" href="#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The document ID.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the document object was initialized.</p></li>
+<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
 </ul>
 </dd>
 </dl>
@@ -836,7 +836,7 @@ set self.__traceback__ to tb and return self.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>event_id</strong> (<a class="reference internal" href="#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The event ID.</p></li>
 <li><p><strong>ts_event</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the event occurred.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the event object was initialized.</p></li>
+<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
 </ul>
 </dd>
 </dl>
@@ -906,7 +906,7 @@ set self.__traceback__ to tb and return self.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>category</strong> (<em>MessageCategory</em>) – The message category.</p></li>
 <li><p><strong>message_id</strong> (<a class="reference internal" href="#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The message ID.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the message object was initialized.</p></li>
+<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
 </ul>
 </dd>
 </dl>
@@ -965,7 +965,7 @@ set self.__traceback__ to tb and return self.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The delegate to call with the response.</p></li>
 <li><p><strong>request_id</strong> (<a class="reference internal" href="#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The request ID.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the request object was initialized.</p></li>
+<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1035,7 +1035,7 @@ set self.__traceback__ to tb and return self.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>correlation_id</strong> (<a class="reference internal" href="#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The correlation ID.</p></li>
 <li><p><strong>response_id</strong> (<a class="reference internal" href="#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The response ID.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the response object was initialized.</p></li>
+<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1256,10 +1256,10 @@ this class vs the Python standard <cite>uuid.uuid4()</cite> function.</p>
 <dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">UUID4</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>value</strong> (<em>str</em><em>, </em><em>optional</em>) – The UUID value. If <cite>None</cite> then a value will be generated.</p>
+<dd class="field-odd"><p><strong>value</strong> (<em>str</em><em>, </em><em>optional</em>) – The UUID value. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then a value will be generated.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If value is not <cite>None</cite> and not a valid UUID.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If value is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and not a valid UUID.</p>
 </dd>
 </dl>
 </dd></dl>

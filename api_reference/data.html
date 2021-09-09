@@ -2269,7 +2269,7 @@ the new model: you should trust this data</p></li>
 <li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID for the command.</p></li>
 <li><p><strong>data_type</strong> (<em>type</em>) – The data type for the command.</p></li>
 <li><p><strong>command_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The command ID.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the command object was initialized.</p></li>
+<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2348,7 +2348,7 @@ the new model: you should trust this data</p></li>
 <li><p><strong>data_type</strong> (<em>type</em>) – The data type for the request.</p></li>
 <li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The delegate to call with the data.</p></li>
 <li><p><strong>request_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The request ID.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the request object was initialized.</p></li>
+<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2439,7 +2439,7 @@ the new model: you should trust this data</p></li>
 <li><p><strong>data</strong> (<em>object</em>) – The data of the response.</p></li>
 <li><p><strong>correlation_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The correlation ID.</p></li>
 <li><p><strong>response_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The response ID.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the response object was initialized.</p></li>
+<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2539,7 +2539,7 @@ the new model: you should trust this data</p></li>
 <li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID for the command.</p></li>
 <li><p><strong>data_type</strong> (<em>type</em>) – The data type for the subscription.</p></li>
 <li><p><strong>command_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The command ID.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the command object was initialized.</p></li>
+<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2617,7 +2617,7 @@ the new model: you should trust this data</p></li>
 <li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID for the command.</p></li>
 <li><p><strong>data_type</strong> (<em>type</em>) – The data type to unsubscribe from.</p></li>
 <li><p><strong>command_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The command ID.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the command object was initialized.</p></li>
+<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2797,7 +2797,7 @@ of bid and ask data. Provided data can either be tick data or bar data.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_indexer</strong> (<em>int</em>) – The instrument ID indexer for the built ticks.</p></li>
 <li><p><strong>random_seed</strong> (<em>int</em><em>, </em><em>optional</em>) – The random seed for shuffling order of high and low ticks from bar
-data. If random_seed is <cite>None</cite> then won’t shuffle.</p></li>
+data. If random_seed is <code class="docutils literal notranslate"><span class="pre">None</span></code> then won’t shuffle.</p></li>
 <li><p><strong>default_volume</strong> (<em>Decimal</em>) – The volume per tick if not available from the data.</p></li>
 </ul>
 </dd>

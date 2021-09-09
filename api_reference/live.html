@@ -1825,7 +1825,7 @@ the new model: you should trust this data</p></li>
 <dd><p>The clients account base currency (None for multi-currency accounts).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Currency</cite> or <cite>None</cite></p>
+<dd class="field-odd"><p><cite>Currency</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2021,7 +2021,7 @@ orders.</p>
 <li><p><strong>execution_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ExecutionId" title="nautilus_trader.model.identifiers.ExecutionId"><em>ExecutionId</em></a>) – The execution ID.</p></li>
 <li><p><strong>venue_position_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId"><em>PositionId</em></a><em>, </em><em>optional</em>) – The venue position ID associated with the order. If the trading
 venue has assigned a position ID / ticket then pass that here,
-otherwise pass <cite>None</cite> and the execution engine OMS will handle
+otherwise pass <code class="docutils literal notranslate"><span class="pre">None</span></code> and the execution engine OMS will handle
 position ID resolution.</p></li>
 <li><p><strong>order_side</strong> (<em>OrderSide</em>) – The execution order side.</p></li>
 <li><p><strong>order_type</strong> (<em>OrderType</em>) – The execution order type.</p></li>
@@ -2109,13 +2109,13 @@ position ID resolution.</p></li>
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.generate_order_status_report">
 <span class="sig-name descname"><span class="pre">generate_order_status_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.generate_order_status_report" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate an order status report for the given order.</p>
-<p>If an error occurs then logs and returns None.</p>
+<p>If an error occurs then logs and returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>order</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order for the report.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>OrderStatusReport or None</em></p>
+<dd class="field-even"><p>OrderStatusReport or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2180,7 +2180,7 @@ position ID resolution.</p></li>
 <dd><p>Return the account for the client (if registered).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>Account or None</em></p>
+<dd class="field-odd"><p>Account or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2410,7 +2410,7 @@ fetched from cache.</p></li>
 <dd><p>The clients venue ID (if not multi-venue brokerage).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Venue</cite> or <cite>None</cite></p>
+<dd class="field-odd"><p><cite>Venue</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -3302,7 +3302,7 @@ called after faulting.</p>
 <dd><p>Return the current maximum notional per order for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>Decimal or None</em></p>
+<dd class="field-odd"><p>Decimal or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -3407,7 +3407,7 @@ notional check.</p>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>decimal.InvalidOperation</strong> – If new_value not a valid input for decimal.Decimal.</p></li>
-<li><p><strong>ValueError</strong> – If new_value is not <cite>None</cite> and not positive.</p></li>
+<li><p><strong>ValueError</strong> – If new_value is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and not positive.</p></li>
 </ul>
 </dd>
 </dl>
