@@ -121,7 +121,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.model.orders.limit">Limit Order</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.model.orders.stop_market">Stop-Market Order</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.model.orders.stop_limit">Stop-Limit Order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.model.orders.bracket">Bracket Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bracket-order">Bracket Order</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.model.currencies">Currencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.model.currency">Currency</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.model.enums">Enums</a></li>
@@ -526,134 +526,6 @@
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitBracketOrder">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">SubmitBracketOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">BracketOrder</span> <span class="pre">bracket_order</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">command_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitBracketOrder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.commands.trading.TradingCommand" title="nautilus_trader.model.commands.trading.TradingCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.commands.trading.TradingCommand</span></code></a></p>
-<p>Represents a command to submit a bracket order consisting of parent and child orders.</p>
-<p class="rubric">References</p>
-<p><a class="reference external" href="https://www.onixs.biz/fix-dictionary/5.0.SP2/msgType_E_69.html">https://www.onixs.biz/fix-dictionary/5.0.SP2/msgType_E_69.html</a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitBracketOrder.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitBracketOrder.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">SubmitBracketOrder</span></code> class.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>trader_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId"><em>TraderId</em></a>) – The trader ID for the command.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a>) – The strategy ID for the command.</p></li>
-<li><p><strong>bracket_order</strong> (<a class="reference internal" href="#nautilus_trader.model.orders.bracket.BracketOrder" title="nautilus_trader.model.orders.bracket.BracketOrder"><em>BracketOrder</em></a>) – The bracket order to submit.</p></li>
-<li><p><strong>command_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The command ID.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the command object was initialized.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitBracketOrder.bracket_order">
-<span class="sig-name descname"><span class="pre">bracket_order</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitBracketOrder.bracket_order" title="Permalink to this definition">¶</a></dt>
-<dd><p>The bracket order to submit.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>BracketOrder</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitBracketOrder.category">
-<span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitBracketOrder.category" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message category.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>MessageCategory</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitBracketOrder.from_dict">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dict</span> <span class="pre">values</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#nautilus_trader.model.commands.trading.SubmitBracketOrder" title="nautilus_trader.model.commands.trading.SubmitBracketOrder"><span class="pre">SubmitBracketOrder</span></a></span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitBracketOrder.from_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a submit bracket order command from the given dict values.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>values</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>object</em><em>]</em>) – The values for initialization.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>SubmitBracketOrder</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitBracketOrder.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitBracketOrder.id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID4</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitBracketOrder.instrument_id">
-<span class="sig-name descname"><span class="pre">instrument_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitBracketOrder.instrument_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The instrument ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>InstrumentId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitBracketOrder.strategy_id">
-<span class="sig-name descname"><span class="pre">strategy_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitBracketOrder.strategy_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The strategy ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>StrategyId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitBracketOrder.to_dict">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">SubmitBracketOrder</span> <span class="pre">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitBracketOrder.to_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a dictionary representation of this object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[str, object]</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitBracketOrder.trader_id">
-<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitBracketOrder.trader_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The trader ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>TraderId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitBracketOrder.ts_init">
-<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitBracketOrder.ts_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int64</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrder">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">SubmitOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">PositionId</span> <span class="pre">position_id</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">command_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.commands.trading.TradingCommand" title="nautilus_trader.model.commands.trading.TradingCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.commands.trading.TradingCommand</span></code></a></p>
@@ -783,6 +655,137 @@
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrder.ts_init">
 <span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrder.ts_init" title="Permalink to this definition">¶</a></dt>
+<dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>int64</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrderList">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">SubmitOrderList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">OrderList</span> <span class="pre">order_list</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">command_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrderList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.commands.trading.TradingCommand" title="nautilus_trader.model.commands.trading.TradingCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.commands.trading.TradingCommand</span></code></a></p>
+<p>Represents a command to submit an order list consisting of bulk or related
+parent-child contingent orders.</p>
+<p>This command can correspond to a <cite>NewOrderList &lt;E&gt; message</cite> for the FIX
+protocol.</p>
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://www.onixs.biz/fix-dictionary/5.0.SP2/msgType_E_69.html">https://www.onixs.biz/fix-dictionary/5.0.SP2/msgType_E_69.html</a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrderList.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrderList.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">SubmitOrderList</span></code> class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trader_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId"><em>TraderId</em></a>) – The trader ID for the command.</p></li>
+<li><p><strong>strategy_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a>) – The strategy ID for the command.</p></li>
+<li><p><strong>order_list</strong> (<em>OrderList</em>) – The order list to submit.</p></li>
+<li><p><strong>command_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The command ID.</p></li>
+<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the command object was initialized.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrderList.category">
+<span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrderList.category" title="Permalink to this definition">¶</a></dt>
+<dd><p>The message category.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>MessageCategory</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrderList.from_dict">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dict</span> <span class="pre">values</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#nautilus_trader.model.commands.trading.SubmitOrderList" title="nautilus_trader.model.commands.trading.SubmitOrderList"><span class="pre">SubmitOrderList</span></a></span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrderList.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a submit order list command from the given dict values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>values</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>object</em><em>]</em>) – The values for initialization.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>SubmitOrderList</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrderList.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrderList.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The message ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>UUID4</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrderList.instrument_id">
+<span class="sig-name descname"><span class="pre">instrument_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrderList.instrument_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The instrument ID associated with the command.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>InstrumentId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrderList.list">
+<span class="sig-name descname"><span class="pre">list</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrderList.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>The order list for submission.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>OrderList</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrderList.strategy_id">
+<span class="sig-name descname"><span class="pre">strategy_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrderList.strategy_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The strategy ID associated with the command.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>StrategyId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrderList.to_dict">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">SubmitOrderList</span> <span class="pre">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrderList.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary representation of this object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>dict[str, object]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrderList.trader_id">
+<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrderList.trader_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The trader ID associated with the command.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>TraderId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrderList.ts_init">
+<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrderList.ts_init" title="Permalink to this definition">¶</a></dt>
 <dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -3480,7 +3483,7 @@ any other reason that an otherwise valid order is not able to be submitted.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderInitialized">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderInitialized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">OrderType</span> <span class="pre">order_type</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">options</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">event_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderInitialized" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderInitialized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">OrderType</span> <span class="pre">order_type</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">options</span></em>, <em class="sig-param"><span class="pre">OrderListId</span> <span class="pre">order_list_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">parent_order_id</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">child_order_ids</span></em>, <em class="sig-param"><span class="pre">ContingencyType</span> <span class="pre">contingency</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">contingency_ids</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">event_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderInitialized" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.events.order.OrderEvent" title="nautilus_trader.model.events.order.OrderEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.events.order.OrderEvent</span></code></a></p>
 <p>Represents an event where an order has been initialized.</p>
 <p>This is a seed event which can instantiate any order through a creation
@@ -3504,6 +3507,11 @@ properties as if it had been instantiated locally.</p>
 <li><p><strong>time_in_force</strong> (<em>TimeInForce</em>) – The order time-in-force.</p></li>
 <li><p><strong>options</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – The order initialization options. Contains mappings for specific
 order parameters.</p></li>
+<li><p><strong>order_list_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.OrderListId" title="nautilus_trader.model.identifiers.OrderListId"><em>OrderListId</em></a><em>, </em><em>optional</em>) – The order list ID associated with the order.</p></li>
+<li><p><strong>parent_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a><em>, </em><em>optional</em>) – The orders parent client order ID.</p></li>
+<li><p><strong>child_order_ids</strong> (<em>list</em><em>[</em><a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a><em>]</em><em>, </em><em>optional</em>) – The orders child order ID(s).</p></li>
+<li><p><strong>contingency</strong> (<em>ContingencyType</em>) – The orders contingency type.</p></li>
+<li><p><strong>contingency_ids</strong> (<em>list</em><em>[</em><a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a><em>]</em><em>, </em><em>optional</em>) – The orders contingency IDs.</p></li>
 <li><p><strong>tags</strong> (<em>str</em><em>, </em><em>optional</em>) – The custom user tags for the order. These are optional and can
 contain any arbitrary delimiter if required.</p></li>
 <li><p><strong>event_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The event ID.</p></li>
@@ -3536,12 +3544,45 @@ contain any arbitrary delimiter if required.</p></li>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderInitialized.child_order_ids">
+<span class="sig-name descname"><span class="pre">child_order_ids</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderInitialized.child_order_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>The orders child client order ID(s).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>list[ClientOrderId]</cite> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderInitialized.client_order_id">
 <span class="sig-name descname"><span class="pre">client_order_id</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderInitialized.client_order_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>The client order ID associated with the event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>ClientOrderId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderInitialized.contingency">
+<span class="sig-name descname"><span class="pre">contingency</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderInitialized.contingency" title="Permalink to this definition">¶</a></dt>
+<dd><p>The orders contingency type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>ContingencyType</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderInitialized.contingency_ids">
+<span class="sig-name descname"><span class="pre">contingency_ids</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderInitialized.contingency_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>The orders contingency IDs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>list[ClientOrderId]</cite> or <cite>None</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -3589,6 +3630,28 @@ contain any arbitrary delimiter if required.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>dict</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderInitialized.order_list_id">
+<span class="sig-name descname"><span class="pre">order_list_id</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderInitialized.order_list_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The order list ID associated with the order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>OrderListId</cite> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderInitialized.parent_order_id">
+<span class="sig-name descname"><span class="pre">parent_order_id</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderInitialized.parent_order_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The orders parent client order ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>ClientOrderId</cite> or <cite>None</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -8539,7 +8602,7 @@ This class maps directly to functionality of the <cite>OrderBook</cite> base cla
 <span id="market-order"></span><h2>Market Order<a class="headerlink" href="#module-nautilus_trader.model.orders.market" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">MarketOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">init_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">MarketOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">init_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em>, <em class="sig-param"><span class="pre">OrderListId</span> <span class="pre">order_list_id=None</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">parent_order_id=None</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">child_order_ids=None</span></em>, <em class="sig-param"><span class="pre">ContingencyType</span> <span class="pre">contingency=ContingencyType.NONE</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">contingency_ids=None</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.orders.base.Order</span></code></p>
 <p>Represents a market order.</p>
 <p>A market order is an order to buy or sell an instrument immediately. This
@@ -8563,6 +8626,11 @@ be executed.</p>
 <li><p><strong>quantity</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The order quantity (&gt; 0).</p></li>
 <li><p><strong>init_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The order initialization event ID.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the order was initialized.</p></li>
+<li><p><strong>order_list_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.OrderListId" title="nautilus_trader.model.identifiers.OrderListId"><em>OrderListId</em></a><em>, </em><em>optional</em>) – The order list ID associated with the order.</p></li>
+<li><p><strong>parent_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a><em>, </em><em>optional</em>) – The orders parent client order ID.</p></li>
+<li><p><strong>child_order_ids</strong> (<em>list</em><em>[</em><a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a><em>]</em><em>, </em><em>optional</em>) – The orders child order ID(s).</p></li>
+<li><p><strong>contingency</strong> (<em>ContingencyType</em>) – The orders contingency type.</p></li>
+<li><p><strong>contingency_ids</strong> (<em>list</em><em>[</em><a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a><em>]</em><em>, </em><em>optional</em>) – The orders contingency IDs.</p></li>
 <li><p><strong>tags</strong> (<em>str</em><em>, </em><em>optional</em>) – The custom user tags for the order. These are optional and can
 contain any arbitrary delimiter if required.</p></li>
 </ul>
@@ -8618,12 +8686,45 @@ contain any arbitrary delimiter if required.</p></li>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.child_order_ids">
+<span class="sig-name descname"><span class="pre">child_order_ids</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.child_order_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>The child order ID(s).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>list[ClientOrderId]</cite> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.client_order_id">
 <span class="sig-name descname"><span class="pre">client_order_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.client_order_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>The client order ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>ClientOrderId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.contingency">
+<span class="sig-name descname"><span class="pre">contingency</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.contingency" title="Permalink to this definition">¶</a></dt>
+<dd><p>The orders contingency type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>ContingencyType</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.contingency_ids">
+<span class="sig-name descname"><span class="pre">contingency_ids</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.contingency_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>The orders contingency type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>list[ClientOrderId]</cite> or <cite>None</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -8789,6 +8890,17 @@ The possible states of active orders include;</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.is_child_order">
+<span class="sig-name descname"><span class="pre">is_child_order</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.is_child_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the order has a parent order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.is_completed">
 <span class="sig-name descname"><span class="pre">is_completed</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.is_completed" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the order is completed (closed).</p>
@@ -8810,6 +8922,17 @@ The possible states of completed orders include;</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.is_contingency">
+<span class="sig-name descname"><span class="pre">is_contingency</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.is_contingency" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the order has a contingency (order.contingency is not <code class="docutils literal notranslate"><span class="pre">NONE</span></code>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.is_inflight">
 <span class="sig-name descname"><span class="pre">is_inflight</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.is_inflight" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the order is in-flight (order request sent to the trading venue).</p>
@@ -8819,6 +8942,17 @@ The possible states of completed orders include;</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">PENDING_CANCEL</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">PENDING_UPDATE</span></code></p></li>
 </ul>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.is_parent_order">
+<span class="sig-name descname"><span class="pre">is_parent_order</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.is_parent_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the order has <strong>at least</strong> one child order.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -8913,6 +9047,28 @@ The possible states of completed orders include;</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><p><strong>ValueError</strong> – If side is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.order_list_id">
+<span class="sig-name descname"><span class="pre">order_list_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.order_list_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The order list ID associated with the order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>OrderListId</cite> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.parent_order_id">
+<span class="sig-name descname"><span class="pre">parent_order_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.parent_order_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The parent client order ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>ClientOrderId</cite> or <cite>None</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9100,7 +9256,7 @@ The possible states of completed orders include;</p>
 <span id="limit-order"></span><h2>Limit Order<a class="headerlink" href="#module-nautilus_trader.model.orders.limit" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LimitOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">expire_time</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">init_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">post_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">hidden=False</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LimitOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">expire_time</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">init_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">post_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">hidden=False</span></em>, <em class="sig-param"><span class="pre">OrderListId</span> <span class="pre">order_list_id=None</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">parent_order_id=None</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">child_order_ids=None</span></em>, <em class="sig-param"><span class="pre">ContingencyType</span> <span class="pre">contingency=ContingencyType.NONE</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">contingency_ids=None</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.orders.base.PassiveOrder</span></code></p>
 <p>Limit orders are used to specify a maximum or minimum price the trader is
 willing to buy or sell at. Traders use this order type to minimise their
@@ -9128,6 +9284,11 @@ market.</p>
 <li><p><strong>post_only</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order will only make a market.</p></li>
 <li><p><strong>reduce_only</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order will only reduce an open position.</p></li>
 <li><p><strong>hidden</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order will be hidden from the public book.</p></li>
+<li><p><strong>order_list_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.OrderListId" title="nautilus_trader.model.identifiers.OrderListId"><em>OrderListId</em></a><em>, </em><em>optional</em>) – The order list ID associated with the order.</p></li>
+<li><p><strong>parent_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a><em>, </em><em>optional</em>) – The orders parent client order ID.</p></li>
+<li><p><strong>child_order_ids</strong> (<em>list</em><em>[</em><a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a><em>]</em><em>, </em><em>optional</em>) – The orders child order ID(s).</p></li>
+<li><p><strong>contingency</strong> (<em>ContingencyType</em>) – The orders contingency type.</p></li>
+<li><p><strong>contingency_ids</strong> (<em>list</em><em>[</em><a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a><em>]</em><em>, </em><em>optional</em>) – The orders contingency IDs.</p></li>
 <li><p><strong>tags</strong> (<em>str</em><em>, </em><em>optional</em>) – The custom user tags for the order. These are optional and can
 contain any arbitrary delimiter if required.</p></li>
 </ul>
@@ -9184,12 +9345,45 @@ contain any arbitrary delimiter if required.</p></li>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.child_order_ids">
+<span class="sig-name descname"><span class="pre">child_order_ids</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.child_order_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>The child order ID(s).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>list[ClientOrderId]</cite> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.client_order_id">
 <span class="sig-name descname"><span class="pre">client_order_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.client_order_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>The client order ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>ClientOrderId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.contingency">
+<span class="sig-name descname"><span class="pre">contingency</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.contingency" title="Permalink to this definition">¶</a></dt>
+<dd><p>The orders contingency type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>ContingencyType</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.contingency_ids">
+<span class="sig-name descname"><span class="pre">contingency_ids</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.contingency_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>The orders contingency type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>list[ClientOrderId]</cite> or <cite>None</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9377,6 +9571,17 @@ The possible states of active orders include;</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.is_child_order">
+<span class="sig-name descname"><span class="pre">is_child_order</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.is_child_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the order has a parent order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.is_completed">
 <span class="sig-name descname"><span class="pre">is_completed</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.is_completed" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the order is completed (closed).</p>
@@ -9390,6 +9595,17 @@ The possible states of completed orders include;</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">EXPIRED</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FILLED</span></code></p></li>
 </ul>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.is_contingency">
+<span class="sig-name descname"><span class="pre">is_contingency</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.is_contingency" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the order has a contingency (order.contingency is not <code class="docutils literal notranslate"><span class="pre">NONE</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -9418,6 +9634,17 @@ The possible states of completed orders include;</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">PENDING_CANCEL</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">PENDING_UPDATE</span></code></p></li>
 </ul>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.is_parent_order">
+<span class="sig-name descname"><span class="pre">is_parent_order</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.is_parent_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the order has <strong>at least</strong> one child order.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -9545,6 +9772,28 @@ The possible states of completed orders include;</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><p><strong>ValueError</strong> – If side is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.order_list_id">
+<span class="sig-name descname"><span class="pre">order_list_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.order_list_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The order list ID associated with the order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>OrderListId</cite> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.parent_order_id">
+<span class="sig-name descname"><span class="pre">parent_order_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.parent_order_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The parent client order ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>ClientOrderId</cite> or <cite>None</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9754,7 +10003,7 @@ The possible states of completed orders include;</p>
 <span id="stop-market-order"></span><h2>Stop-Market Order<a class="headerlink" href="#module-nautilus_trader.model.orders.stop_market" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">StopMarketOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">expire_time</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">init_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">StopMarketOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">expire_time</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">init_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></em>, <em class="sig-param"><span class="pre">OrderListId</span> <span class="pre">order_list_id=None</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">parent_order_id=None</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">child_order_ids=None</span></em>, <em class="sig-param"><span class="pre">ContingencyType</span> <span class="pre">contingency=ContingencyType.NONE</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">contingency_ids=None</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.orders.base.PassiveOrder</span></code></p>
 <p>Represents a stop-market order.</p>
 <p>A stop-market order is an instruction to submit a buy or sell market order
@@ -9784,6 +10033,11 @@ or help protect a profit on a short sale.</p>
 <li><p><strong>init_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The order initialization event ID.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the order was initialized.</p></li>
 <li><p><strong>reduce_only</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order will only reduce an open position.</p></li>
+<li><p><strong>order_list_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.OrderListId" title="nautilus_trader.model.identifiers.OrderListId"><em>OrderListId</em></a><em>, </em><em>optional</em>) – The order list ID associated with the order.</p></li>
+<li><p><strong>parent_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a><em>, </em><em>optional</em>) – The orders parent client order ID.</p></li>
+<li><p><strong>child_order_ids</strong> (<em>list</em><em>[</em><a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a><em>]</em><em>, </em><em>optional</em>) – The orders child order ID(s).</p></li>
+<li><p><strong>contingency</strong> (<em>ContingencyType</em>) – The orders contingency type.</p></li>
+<li><p><strong>contingency_ids</strong> (<em>list</em><em>[</em><a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a><em>]</em><em>, </em><em>optional</em>) – The orders contingency IDs.</p></li>
 <li><p><strong>tags</strong> (<em>str</em><em>, </em><em>optional</em>) – The custom user tags for the order. These are optional and can
 contain any arbitrary delimiter if required.</p></li>
 </ul>
@@ -9839,12 +10093,45 @@ contain any arbitrary delimiter if required.</p></li>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.child_order_ids">
+<span class="sig-name descname"><span class="pre">child_order_ids</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.child_order_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>The child order ID(s).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>list[ClientOrderId]</cite> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.client_order_id">
 <span class="sig-name descname"><span class="pre">client_order_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.client_order_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>The client order ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>ClientOrderId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.contingency">
+<span class="sig-name descname"><span class="pre">contingency</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.contingency" title="Permalink to this definition">¶</a></dt>
+<dd><p>The orders contingency type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>ContingencyType</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.contingency_ids">
+<span class="sig-name descname"><span class="pre">contingency_ids</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.contingency_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>The orders contingency type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>list[ClientOrderId]</cite> or <cite>None</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -10032,6 +10319,17 @@ The possible states of active orders include;</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.is_child_order">
+<span class="sig-name descname"><span class="pre">is_child_order</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_child_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the order has a parent order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.is_completed">
 <span class="sig-name descname"><span class="pre">is_completed</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_completed" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the order is completed (closed).</p>
@@ -10053,6 +10351,17 @@ The possible states of completed orders include;</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.is_contingency">
+<span class="sig-name descname"><span class="pre">is_contingency</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_contingency" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the order has a contingency (order.contingency is not <code class="docutils literal notranslate"><span class="pre">NONE</span></code>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.is_inflight">
 <span class="sig-name descname"><span class="pre">is_inflight</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_inflight" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the order is in-flight (order request sent to the trading venue).</p>
@@ -10062,6 +10371,17 @@ The possible states of completed orders include;</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">PENDING_CANCEL</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">PENDING_UPDATE</span></code></p></li>
 </ul>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.is_parent_order">
+<span class="sig-name descname"><span class="pre">is_parent_order</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_parent_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the order has <strong>at least</strong> one child order.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -10178,6 +10498,28 @@ The possible states of completed orders include;</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><p><strong>ValueError</strong> – If side is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.order_list_id">
+<span class="sig-name descname"><span class="pre">order_list_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.order_list_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The order list ID associated with the order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>OrderListId</cite> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.parent_order_id">
+<span class="sig-name descname"><span class="pre">parent_order_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.parent_order_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The parent client order ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>ClientOrderId</cite> or <cite>None</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -10387,7 +10729,7 @@ The possible states of completed orders include;</p>
 <span id="stop-limit-order"></span><h2>Stop-Limit Order<a class="headerlink" href="#module-nautilus_trader.model.orders.stop_limit" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">StopLimitOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">trigger</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">expire_time</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">init_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">post_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">hidden=False</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">StopLimitOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">trigger</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">expire_time</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">init_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">post_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">hidden=False</span></em>, <em class="sig-param"><span class="pre">OrderListId</span> <span class="pre">order_list_id=None</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">parent_order_id=None</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">child_order_ids=None</span></em>, <em class="sig-param"><span class="pre">ContingencyType</span> <span class="pre">contingency=ContingencyType.NONE</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">contingency_ids=None</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.orders.base.PassiveOrder</span></code></p>
 <p>Represents a stop-limit order.</p>
 <p>A stop-limit order is an instruction to submit a buy or sell limit order
@@ -10422,6 +10764,11 @@ trader could “miss the market” altogether.</p>
 <li><p><strong>post_only</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order will only make a market (once triggered).</p></li>
 <li><p><strong>reduce_only</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order will only reduce an open position (once triggered).</p></li>
 <li><p><strong>hidden</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order will be hidden from the public book (once triggered).</p></li>
+<li><p><strong>order_list_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.OrderListId" title="nautilus_trader.model.identifiers.OrderListId"><em>OrderListId</em></a><em>, </em><em>optional</em>) – The order list ID associated with the order.</p></li>
+<li><p><strong>parent_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a><em>, </em><em>optional</em>) – The orders parent client order ID.</p></li>
+<li><p><strong>child_order_ids</strong> (<em>list</em><em>[</em><a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a><em>]</em><em>, </em><em>optional</em>) – The orders child order ID(s).</p></li>
+<li><p><strong>contingency</strong> (<em>ContingencyType</em>) – The orders contingency type.</p></li>
+<li><p><strong>contingency_ids</strong> (<em>list</em><em>[</em><a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a><em>]</em><em>, </em><em>optional</em>) – The orders contingency IDs.</p></li>
 <li><p><strong>tags</strong> (<em>str</em><em>, </em><em>optional</em>) – The custom user tags for the order. These are optional and can
 contain any arbitrary delimiter if required.</p></li>
 </ul>
@@ -10478,12 +10825,45 @@ contain any arbitrary delimiter if required.</p></li>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.child_order_ids">
+<span class="sig-name descname"><span class="pre">child_order_ids</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.child_order_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>The child order ID(s).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>list[ClientOrderId]</cite> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.client_order_id">
 <span class="sig-name descname"><span class="pre">client_order_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.client_order_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>The client order ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>ClientOrderId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.contingency">
+<span class="sig-name descname"><span class="pre">contingency</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.contingency" title="Permalink to this definition">¶</a></dt>
+<dd><p>The orders contingency type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>ContingencyType</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.contingency_ids">
+<span class="sig-name descname"><span class="pre">contingency_ids</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.contingency_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>The orders contingency type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>list[ClientOrderId]</cite> or <cite>None</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -10671,6 +11051,17 @@ The possible states of active orders include;</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_child_order">
+<span class="sig-name descname"><span class="pre">is_child_order</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_child_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the order has a parent order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_completed">
 <span class="sig-name descname"><span class="pre">is_completed</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_completed" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the order is completed (closed).</p>
@@ -10684,6 +11075,17 @@ The possible states of completed orders include;</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">EXPIRED</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FILLED</span></code></p></li>
 </ul>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_contingency">
+<span class="sig-name descname"><span class="pre">is_contingency</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_contingency" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the order has a contingency (order.contingency is not <code class="docutils literal notranslate"><span class="pre">NONE</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -10712,6 +11114,17 @@ The possible states of completed orders include;</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">PENDING_CANCEL</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">PENDING_UPDATE</span></code></p></li>
 </ul>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bool</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_parent_order">
+<span class="sig-name descname"><span class="pre">is_parent_order</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_parent_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the order has <strong>at least</strong> one child order.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
@@ -10850,6 +11263,28 @@ The possible states of completed orders include;</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><p><strong>ValueError</strong> – If side is invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.order_list_id">
+<span class="sig-name descname"><span class="pre">order_list_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.order_list_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The order list ID associated with the order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>OrderListId</cite> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.parent_order_id">
+<span class="sig-name descname"><span class="pre">parent_order_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.parent_order_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The parent client order ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>ClientOrderId</cite> or <cite>None</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -11066,110 +11501,8 @@ The possible states of completed orders include;</p>
 </dd></dl>
 
 </div>
-<div class="section" id="module-nautilus_trader.model.orders.bracket">
-<span id="bracket-order"></span><h2>Bracket Order<a class="headerlink" href="#module-nautilus_trader.model.orders.bracket" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.bracket.BracketOrder">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BracketOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Order</span> <span class="pre">entry</span></em>, <em class="sig-param"><span class="pre">StopMarketOrder</span> <span class="pre">stop_loss</span></em>, <em class="sig-param"><span class="pre">LimitOrder</span> <span class="pre">take_profit</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orders.bracket.BracketOrder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Represents a bracket order.</p>
-<p>A bracket order is designed to help limit a traders loss and optionally
-lock in a profit by “bracketing” an entry order with two opposite-side exit
-orders. A BUY order is bracketed by a high-side sell order and a
-low-side sell stop order. A SELL order is bracketed by a high-side buy stop
-order and a low-side buy order.</p>
-<p>Once the ‘parent’ entry order is triggered the ‘child’ OCO orders being a
-<cite>StopMarketOrder</cite> and take-profit <cite>LimitOrder</cite> automatically become
-working on the exchange.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.bracket.BracketOrder.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orders.bracket.BracketOrder.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BracketOrder</span></code> class.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>entry</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The entry ‘parent’ order.</p></li>
-<li><p><strong>stop_loss</strong> (<a class="reference internal" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder" title="nautilus_trader.model.orders.stop_market.StopMarketOrder"><em>StopMarketOrder</em></a>) – The stop-loss (SL) ‘child’ order.</p></li>
-<li><p><strong>take_profit</strong> (<em>Limit</em>) – The take-profit (TP) ‘child’ order.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If entry.quantity != stop_loss.quantity.</p></li>
-<li><p><strong>ValueError</strong> – If entry.quantity != take_profit.quantity.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.bracket.BracketOrder.entry">
-<span class="sig-name descname"><span class="pre">entry</span></span><a class="headerlink" href="#nautilus_trader.model.orders.bracket.BracketOrder.entry" title="Permalink to this definition">¶</a></dt>
-<dd><p>The entry order.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Order</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.bracket.BracketOrder.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.bracket.BracketOrder.id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The client order link ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>ClientOrderLinkId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.bracket.BracketOrder.instrument_id">
-<span class="sig-name descname"><span class="pre">instrument_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.bracket.BracketOrder.instrument_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The order instrument ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>InstrumentId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.bracket.BracketOrder.stop_loss">
-<span class="sig-name descname"><span class="pre">stop_loss</span></span><a class="headerlink" href="#nautilus_trader.model.orders.bracket.BracketOrder.stop_loss" title="Permalink to this definition">¶</a></dt>
-<dd><p>The stop-loss order.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>StopMarketOrder</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.bracket.BracketOrder.take_profit">
-<span class="sig-name descname"><span class="pre">take_profit</span></span><a class="headerlink" href="#nautilus_trader.model.orders.bracket.BracketOrder.take_profit" title="Permalink to this definition">¶</a></dt>
-<dd><p>The take-profit order.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>LimitOrder</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.bracket.BracketOrder.timestamp_ns">
-<span class="sig-name descname"><span class="pre">timestamp_ns</span></span><a class="headerlink" href="#nautilus_trader.model.orders.bracket.BracketOrder.timestamp_ns" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UNIX timestamp (nanoseconds) of the bracket order.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int64</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
+<div class="section" id="bracket-order">
+<h2>Bracket Order<a class="headerlink" href="#bracket-order" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="module-nautilus_trader.model.currencies">
 <span id="currencies"></span><h2>Currencies<a class="headerlink" href="#module-nautilus_trader.model.currencies" title="Permalink to this headline">¶</a></h2>
@@ -11400,7 +11733,7 @@ correctly formatted with two valid strings either side of a hyphen.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.AccountId.value">
 <span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#nautilus_trader.model.identifiers.AccountId.value" title="Permalink to this definition">¶</a></dt>
-<dd><p>The ID value.</p>
+<dd><p>The identifier (ID) value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>str</cite></p>
@@ -11433,7 +11766,7 @@ correctly formatted with two valid strings either side of a hyphen.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.ClientId.value">
 <span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#nautilus_trader.model.identifiers.ClientId.value" title="Permalink to this definition">¶</a></dt>
-<dd><p>The ID value.</p>
+<dd><p>The identifier (ID) value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>str</cite></p>
@@ -11466,7 +11799,7 @@ correctly formatted with two valid strings either side of a hyphen.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.ClientOrderId.value">
 <span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#nautilus_trader.model.identifiers.ClientOrderId.value" title="Permalink to this definition">¶</a></dt>
-<dd><p>The ID value.</p>
+<dd><p>The identifier (ID) value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>str</cite></p>
@@ -11482,6 +11815,7 @@ correctly formatted with two valid strings either side of a hyphen.</p>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.identifiers.Identifier" title="nautilus_trader.model.identifiers.Identifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.identifiers.Identifier</span></code></a></p>
 <p>Represents a valid client order link ID (assigned by the Nautilus system).</p>
 <p>The ID value must be unique for a trading venue.</p>
+<p>Can correspond to the <cite>ClOrdLinkID &lt;583&gt; field</cite> of the FIX protocol.</p>
 <p>Permits order originators to tie together groups of orders in which trades
 resulting from orders are associated for a specific purpose, for example the
 calculation of average execution price for a customer or to associate lists
@@ -11505,7 +11839,7 @@ submitted to a broker as waves of a larger program trade.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.ClientOrderLinkId.value">
 <span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#nautilus_trader.model.identifiers.ClientOrderLinkId.value" title="Permalink to this definition">¶</a></dt>
-<dd><p>The ID value.</p>
+<dd><p>The identifier (ID) value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>str</cite></p>
@@ -11538,7 +11872,7 @@ submitted to a broker as waves of a larger program trade.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.ComponentId.value">
 <span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#nautilus_trader.model.identifiers.ComponentId.value" title="Permalink to this definition">¶</a></dt>
-<dd><p>The ID value.</p>
+<dd><p>The identifier (ID) value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>str</cite></p>
@@ -11570,7 +11904,7 @@ submitted to a broker as waves of a larger program trade.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.ExecutionId.value">
 <span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#nautilus_trader.model.identifiers.ExecutionId.value" title="Permalink to this definition">¶</a></dt>
-<dd><p>The ID value.</p>
+<dd><p>The identifier (ID) value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>str</cite></p>
@@ -11606,7 +11940,7 @@ submitted to a broker as waves of a larger program trade.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.Identifier.value">
 <span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#nautilus_trader.model.identifiers.Identifier.value" title="Permalink to this definition">¶</a></dt>
-<dd><p>The ID value.</p>
+<dd><p>The identifier (ID) value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>str</cite></p>
@@ -11667,7 +12001,7 @@ period.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.InstrumentId.value">
 <span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#nautilus_trader.model.identifiers.InstrumentId.value" title="Permalink to this definition">¶</a></dt>
-<dd><p>The ID value.</p>
+<dd><p>The identifier (ID) value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>str</cite></p>
@@ -11682,6 +12016,38 @@ period.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>Venue</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="nautilus_trader.model.identifiers.OrderListId">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderListId</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.identifiers.OrderListId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.identifiers.Identifier" title="nautilus_trader.model.identifiers.Identifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.identifiers.Identifier</span></code></a></p>
+<p>Represents a valid order list ID (assigned by the Nautilus system).</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.model.identifiers.OrderListId.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.identifiers.OrderListId.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">OrderListId</span></code> class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>str</em>) – The order list ID value.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If value is not a valid string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.identifiers.OrderListId.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#nautilus_trader.model.identifiers.OrderListId.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>The identifier (ID) value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>str</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -11710,7 +12076,7 @@ period.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.PositionId.value">
 <span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#nautilus_trader.model.identifiers.PositionId.value" title="Permalink to this definition">¶</a></dt>
-<dd><p>The ID value.</p>
+<dd><p>The identifier (ID) value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>str</cite></p>
@@ -11758,7 +12124,7 @@ with an order ID tag number separated by a hyphen.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.StrategyId.value">
 <span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#nautilus_trader.model.identifiers.StrategyId.value" title="Permalink to this definition">¶</a></dt>
-<dd><p>The ID value.</p>
+<dd><p>The identifier (ID) value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>str</cite></p>
@@ -11794,7 +12160,7 @@ instrument.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.Symbol.value">
 <span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#nautilus_trader.model.identifiers.Symbol.value" title="Permalink to this definition">¶</a></dt>
-<dd><p>The ID value.</p>
+<dd><p>The identifier (ID) value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>str</cite></p>
@@ -11842,7 +12208,7 @@ with an order ID tag number separated by a hyphen.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.TraderId.value">
 <span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#nautilus_trader.model.identifiers.TraderId.value" title="Permalink to this definition">¶</a></dt>
-<dd><p>The ID value.</p>
+<dd><p>The identifier (ID) value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>str</cite></p>
@@ -11874,7 +12240,7 @@ with an order ID tag number separated by a hyphen.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.Venue.value">
 <span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#nautilus_trader.model.identifiers.Venue.value" title="Permalink to this definition">¶</a></dt>
-<dd><p>The ID value.</p>
+<dd><p>The identifier (ID) value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>str</cite></p>
@@ -11906,7 +12272,7 @@ with an order ID tag number separated by a hyphen.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.VenueOrderId.value">
 <span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#nautilus_trader.model.identifiers.VenueOrderId.value" title="Permalink to this definition">¶</a></dt>
-<dd><p>The ID value.</p>
+<dd><p>The identifier (ID) value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>str</cite></p>

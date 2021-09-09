@@ -260,8 +260,6 @@
 </li>
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.bollinger_bands.BollingerBands.__init__">(BollingerBands method)</a>
 </li>
-        <li><a href="api_reference/model.html#nautilus_trader.model.orders.bracket.BracketOrder.__init__">(BracketOrder method)</a>
-</li>
         <li><a href="api_reference/data.html#nautilus_trader.data.aggregation.BulkTickBarBuilder.__init__">(BulkTickBarBuilder method)</a>
 </li>
         <li><a href="api_reference/data.html#nautilus_trader.data.aggregation.BulkTimeBarUpdater.__init__">(BulkTimeBarUpdater method)</a>
@@ -484,6 +482,8 @@
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.events.order.OrderInitialized.__init__">(OrderInitialized method)</a>
 </li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.identifiers.OrderListId.__init__">(OrderListId method)</a>
+</li>
         <li><a href="api_reference/model.html#nautilus_trader.model.events.order.OrderModifyRejected.__init__">(OrderModifyRejected method)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.events.order.OrderPendingCancel.__init__">(OrderPendingCancel method)</a>
@@ -584,9 +584,9 @@
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.identifiers.StrategyId.__init__">(StrategyId method)</a>
 </li>
-        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitBracketOrder.__init__">(SubmitBracketOrder method)</a>
-</li>
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitOrder.__init__">(SubmitOrder method)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitOrderList.__init__">(SubmitOrderList method)</a>
 </li>
         <li><a href="api_reference/data.html#nautilus_trader.data.messages.Subscribe.__init__">(Subscribe method)</a>
 </li>
@@ -1349,11 +1349,9 @@
 </li>
       <li><a href="api_reference/indicators.html#nautilus_trader.indicators.bollinger_bands.BollingerBands">BollingerBands (class in nautilus_trader.indicators.bollinger_bands)</a>
 </li>
-      <li><a href="api_reference/common.html#nautilus_trader.common.factories.OrderFactory.bracket">bracket() (OrderFactory method)</a>
+      <li><a href="api_reference/common.html#nautilus_trader.common.factories.OrderFactory.bracket_limit">bracket_limit() (OrderFactory method)</a>
 </li>
-      <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitBracketOrder.bracket_order">bracket_order (SubmitBracketOrder attribute)</a>
-</li>
-      <li><a href="api_reference/model.html#nautilus_trader.model.orders.bracket.BracketOrder">BracketOrder (class in nautilus_trader.model.orders.bracket)</a>
+      <li><a href="api_reference/common.html#nautilus_trader.common.factories.OrderFactory.bracket_market">bracket_market() (OrderFactory method)</a>
 </li>
       <li><a href="api_reference/data.html#nautilus_trader.data.aggregation.BarBuilder.build">build() (BarBuilder method)</a>
 
@@ -1596,9 +1594,9 @@
 </li>
         <li><a href="api_reference/core.html#nautilus_trader.core.message.Response.category">(Response attribute)</a>
 </li>
-        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitBracketOrder.category">(SubmitBracketOrder attribute)</a>
-</li>
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitOrder.category">(SubmitOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitOrderList.category">(SubmitOrderList attribute)</a>
 </li>
         <li><a href="api_reference/data.html#nautilus_trader.data.messages.Subscribe.category">(Subscribe attribute)</a>
 </li>
@@ -1669,6 +1667,18 @@
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.data.bar.Bar.checked">checked (Bar attribute)</a>
 </li>
+      <li><a href="api_reference/model.html#nautilus_trader.model.orders.limit.LimitOrder.child_order_ids">child_order_ids (LimitOrder attribute)</a>
+
+      <ul>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.market.MarketOrder.child_order_ids">(MarketOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.events.order.OrderInitialized.child_order_ids">(OrderInitialized attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.child_order_ids">(StopLimitOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.child_order_ids">(StopMarketOrder attribute)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_producer.BacktestDataProducer.clear">clear() (BacktestDataProducer method)</a>
 
       <ul>
@@ -1733,8 +1743,6 @@
         <li><a href="api_reference/data.html#nautilus_trader.data.messages.Unsubscribe.client_id">(Unsubscribe attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelOrder.client_order_id">client_order_id (CancelOrder attribute)</a>
 
       <ul>
@@ -1783,6 +1791,8 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.client_order_id">(StopMarketOrder attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.client_order_id">client_order_id() (Cache method)</a>
 
       <ul>
@@ -1941,6 +1951,30 @@
         <li><a href="api_reference/live.html#nautilus_trader.live.node.TradingNodeConfig.construct">(TradingNodeConfig class method)</a>
 </li>
         <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategyConfig.construct">(TradingStrategyConfig class method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/model.html#nautilus_trader.model.orders.limit.LimitOrder.contingency">contingency (LimitOrder attribute)</a>
+
+      <ul>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.market.MarketOrder.contingency">(MarketOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.events.order.OrderInitialized.contingency">(OrderInitialized attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.contingency">(StopLimitOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.contingency">(StopMarketOrder attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/model.html#nautilus_trader.model.orders.limit.LimitOrder.contingency_ids">contingency_ids (LimitOrder attribute)</a>
+
+      <ul>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.market.MarketOrder.contingency_ids">(MarketOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.events.order.OrderInitialized.contingency_ids">(OrderInitialized attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.contingency_ids">(StopLimitOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.contingency_ids">(StopMarketOrder attribute)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.engine.BacktestEngineConfig.copy">copy() (BacktestEngineConfig method)</a>
@@ -2351,11 +2385,9 @@
 </li>
       <li><a href="api_reference/msgbus.html#nautilus_trader.msgbus.bus.MessageBus.endpoints">endpoints() (MessageBus method)</a>
 </li>
-      <li><a href="api_reference/model.html#nautilus_trader.model.orders.bracket.BracketOrder.entry">entry (BracketOrder attribute)</a>
+      <li><a href="api_reference/model.html#nautilus_trader.model.position.Position.entry">entry (Position attribute)</a>
 
       <ul>
-        <li><a href="api_reference/model.html#nautilus_trader.model.position.Position.entry">(Position attribute)</a>
-</li>
         <li><a href="api_reference/model.html#nautilus_trader.model.events.position.PositionChanged.entry">(PositionChanged attribute)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.events.position.PositionClosed.entry">(PositionClosed attribute)</a>
@@ -2419,10 +2451,10 @@
 </li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.exchange_order_book_level">exchange_order_book_level (SimulatedExchange attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/accounting.html#nautilus_trader.accounting.calculators.ExchangeRateCalculator">ExchangeRateCalculator (class in nautilus_trader.accounting.calculators)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.exec_client">exec_client (SimulatedExchange attribute)</a>
 </li>
       <li><a href="api_reference/execution.html#nautilus_trader.execution.messages.ExecutionMassStatus.exec_reports">exec_reports() (ExecutionMassStatus method)</a>
@@ -2686,9 +2718,9 @@
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.data.tick.QuoteTick.from_dict">(QuoteTick static method)</a>
 </li>
-        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitBracketOrder.from_dict">(SubmitBracketOrder static method)</a>
-</li>
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitOrder.from_dict">(SubmitOrder static method)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitOrderList.from_dict">(SubmitOrderList static method)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.data.tick.TradeTick.from_dict">(TradeTick static method)</a>
 </li>
@@ -3225,9 +3257,9 @@
         <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.handle_quote_ticks">(TradingStrategy method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.handle_submit_bracket_order">handle_submit_bracket_order() (SimulatedExchange method)</a>
-</li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.handle_submit_order">handle_submit_order() (SimulatedExchange method)</a>
+</li>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.handle_submit_order_list">handle_submit_order_list() (SimulatedExchange method)</a>
 </li>
       <li><a href="api_reference/common.html#nautilus_trader.common.actor.Actor.handle_ticker">handle_ticker() (Actor method)</a>
 
@@ -3452,8 +3484,6 @@
 </li>
         <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestMarketDataClient.id">(BacktestMarketDataClient attribute)</a>
 </li>
-        <li><a href="api_reference/model.html#nautilus_trader.model.orders.bracket.BracketOrder.id">(BracketOrder attribute)</a>
-</li>
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelOrder.id">(CancelOrder attribute)</a>
 </li>
         <li><a href="api_reference/accounting.html#nautilus_trader.accounting.accounts.cash.CashAccount.id">(CashAccount attribute)</a>
@@ -3552,9 +3582,9 @@
 </li>
         <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.id">(SimulatedExchange attribute)</a>
 </li>
-        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitBracketOrder.id">(SubmitBracketOrder attribute)</a>
-</li>
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitOrder.id">(SubmitOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitOrderList.id">(SubmitOrderList attribute)</a>
 </li>
         <li><a href="api_reference/data.html#nautilus_trader.data.messages.Subscribe.id">(Subscribe attribute)</a>
 </li>
@@ -3710,8 +3740,6 @@
       <ul>
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.bid_ask_min_max.BidAskMinMax.instrument_id">(BidAskMinMax attribute)</a>
 </li>
-        <li><a href="api_reference/model.html#nautilus_trader.model.orders.bracket.BracketOrder.instrument_id">(BracketOrder attribute)</a>
-</li>
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelOrder.instrument_id">(CancelOrder attribute)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.data.venue.InstrumentClosePrice.instrument_id">(InstrumentClosePrice attribute)</a>
@@ -3790,9 +3818,9 @@
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.instrument_id">(StopMarketOrder attribute)</a>
 </li>
-        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitBracketOrder.instrument_id">(SubmitBracketOrder attribute)</a>
-</li>
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitOrder.instrument_id">(SubmitOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitOrderList.instrument_id">(SubmitOrderList attribute)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.data.tick.Tick.instrument_id">(Tick attribute)</a>
 </li>
@@ -3897,6 +3925,16 @@
         <li><a href="api_reference/risk.html#nautilus_trader.risk.engine.RiskEngine.is_bypassed">(RiskEngine attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/model.html#nautilus_trader.model.orders.limit.LimitOrder.is_child_order">is_child_order (LimitOrder attribute)</a>
+
+      <ul>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.market.MarketOrder.is_child_order">(MarketOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_child_order">(StopLimitOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_child_order">(StopMarketOrder attribute)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/model.html#nautilus_trader.model.position.Position.is_closed">is_closed (Position attribute)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.orders.limit.LimitOrder.is_completed">is_completed (LimitOrder attribute)</a>
@@ -3941,6 +3979,16 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/model.html#nautilus_trader.model.orders.limit.LimitOrder.is_contingency">is_contingency (LimitOrder attribute)</a>
+
+      <ul>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.market.MarketOrder.is_contingency">(MarketOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_contingency">(StopLimitOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_contingency">(StopMarketOrder attribute)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/model.html#nautilus_trader.model.currency.Currency.is_crypto">is_crypto() (Currency static method)</a>
 </li>
       <li><a href="api_reference/core.html#nautilus_trader.core.datetime.is_datetime_utc">is_datetime_utc() (in module nautilus_trader.core.datetime)</a>
@@ -4203,6 +4251,16 @@
 
       <ul>
         <li><a href="api_reference/cache.html#nautilus_trader.cache.base.CacheFacade.is_order_working">(CacheFacade method)</a>
+</li>
+      </ul></li>
+      <li><a href="api_reference/model.html#nautilus_trader.model.orders.limit.LimitOrder.is_parent_order">is_parent_order (LimitOrder attribute)</a>
+
+      <ul>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.market.MarketOrder.is_parent_order">(MarketOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_parent_order">(StopLimitOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_parent_order">(StopMarketOrder attribute)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/model.html#nautilus_trader.model.orders.limit.LimitOrder.is_passive">is_passive (LimitOrder attribute)</a>
@@ -4579,6 +4637,8 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.liquidity_side">(StopMarketOrder attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitOrderList.list">list (SubmitOrderList attribute)</a>
+</li>
       <li><a href="api_reference/serialization.html#nautilus_trader.serialization.arrow.serializer.list_schemas">list_schemas() (in module nautilus_trader.serialization.arrow.serializer)</a>
 </li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.engine.BacktestEngine.list_venues">list_venues() (BacktestEngine method)</a>
@@ -5098,8 +5158,6 @@
         <li><a href="api_reference/model.html#module-nautilus_trader.model.orderbook.book">nautilus_trader.model.orderbook.book</a>
 </li>
         <li><a href="api_reference/model.html#module-nautilus_trader.model.orderbook.data">nautilus_trader.model.orderbook.data</a>
-</li>
-        <li><a href="api_reference/model.html#module-nautilus_trader.model.orders.bracket">nautilus_trader.model.orders.bracket</a>
 </li>
         <li><a href="api_reference/model.html#module-nautilus_trader.model.orders.limit">nautilus_trader.model.orders.limit</a>
 </li>
@@ -6009,13 +6067,6 @@
 </li>
       </ul></li>
       <li>
-    nautilus_trader.model.orders.bracket
-
-      <ul>
-        <li><a href="api_reference/model.html#module-nautilus_trader.model.orders.bracket">module</a>
-</li>
-      </ul></li>
-      <li>
     nautilus_trader.model.orders.limit
 
       <ul>
@@ -6443,8 +6494,6 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitOrder.order">(SubmitOrder attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.order">order() (Cache method)</a>
 
       <ul>
@@ -6457,6 +6506,8 @@
         <li><a href="api_reference/cache.html#nautilus_trader.cache.base.CacheFacade.order_book">(CacheFacade method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.order_exists">order_exists() (Cache method)</a>
 
       <ul>
@@ -6465,6 +6516,18 @@
       </ul></li>
       <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.order_factory">order_factory (TradingStrategy attribute)</a>
 </li>
+      <li><a href="api_reference/model.html#nautilus_trader.model.orders.limit.LimitOrder.order_list_id">order_list_id (LimitOrder attribute)</a>
+
+      <ul>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.market.MarketOrder.order_list_id">(MarketOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.events.order.OrderInitialized.order_list_id">(OrderInitialized attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.order_list_id">(StopLimitOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.order_list_id">(StopMarketOrder attribute)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/execution.html#nautilus_trader.execution.messages.ExecutionMassStatus.order_reports">order_reports() (ExecutionMassStatus method)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.events.order.OrderFilled.order_side">order_side (OrderFilled attribute)</a>
@@ -6500,6 +6563,8 @@
       <li><a href="api_reference/model.html#nautilus_trader.model.events.order.OrderFilled">OrderFilled (class in nautilus_trader.model.events.order)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.events.order.OrderInitialized">OrderInitialized (class in nautilus_trader.model.events.order)</a>
+</li>
+      <li><a href="api_reference/model.html#nautilus_trader.model.identifiers.OrderListId">OrderListId (class in nautilus_trader.model.identifiers)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.events.order.OrderModifyRejected">OrderModifyRejected (class in nautilus_trader.model.events.order)</a>
 </li>
@@ -6585,6 +6650,18 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/core.html#nautilus_trader.core.text.pad_string">pad_string() (in module nautilus_trader.core.text)</a>
 </li>
+      <li><a href="api_reference/model.html#nautilus_trader.model.orders.limit.LimitOrder.parent_order_id">parent_order_id (LimitOrder attribute)</a>
+
+      <ul>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.market.MarketOrder.parent_order_id">(MarketOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.events.order.OrderInitialized.parent_order_id">(OrderInitialized attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.parent_order_id">(StopLimitOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.parent_order_id">(StopMarketOrder attribute)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.loaders.ParquetBarDataLoader">ParquetBarDataLoader (class in nautilus_trader.backtest.loaders)</a>
 </li>
       <li><a href="api_reference/serialization.html#nautilus_trader.serialization.arrow.serializer.ParquetSerializer">ParquetSerializer (class in nautilus_trader.serialization.arrow.serializer)</a>
@@ -6757,12 +6834,12 @@
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.events.position.PositionChanged">PositionChanged (class in nautilus_trader.model.events.position)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/model.html#nautilus_trader.model.events.position.PositionClosed">PositionClosed (class in nautilus_trader.model.events.position)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.events.position.PositionEvent">PositionEvent (class in nautilus_trader.model.events.position)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/model.html#nautilus_trader.model.identifiers.PositionId">PositionId (class in nautilus_trader.model.identifiers)</a>
 </li>
       <li><a href="api_reference/common.html#nautilus_trader.common.generators.PositionIdGenerator">PositionIdGenerator (class in nautilus_trader.common.generators)</a>
@@ -7865,8 +7942,6 @@
       </ul></li>
       <li><a href="api_reference/common.html#nautilus_trader.common.factories.OrderFactory.stop_limit">stop_limit() (OrderFactory method)</a>
 </li>
-      <li><a href="api_reference/model.html#nautilus_trader.model.orders.bracket.BracketOrder.stop_loss">stop_loss (BracketOrder attribute)</a>
-</li>
       <li><a href="api_reference/common.html#nautilus_trader.common.factories.OrderFactory.stop_market">stop_market() (OrderFactory method)</a>
 </li>
       <li><a href="api_reference/common.html#nautilus_trader.common.timer.LiveTimer.stop_time_ns">stop_time_ns (LiveTimer attribute)</a>
@@ -7940,9 +8015,9 @@
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.strategy_id">(StopMarketOrder attribute)</a>
 </li>
-        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitBracketOrder.strategy_id">(SubmitBracketOrder attribute)</a>
-</li>
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitOrder.strategy_id">(SubmitOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitOrderList.strategy_id">(SubmitOrderList attribute)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.TradingCommand.strategy_id">(TradingCommand attribute)</a>
 </li>
@@ -7973,16 +8048,6 @@
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.identifiers.StrategyId">StrategyId (class in nautilus_trader.model.identifiers)</a>
 </li>
-      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.execution.BacktestExecClient.submit_bracket_order">submit_bracket_order() (BacktestExecClient method)</a>
-
-      <ul>
-        <li><a href="api_reference/execution.html#nautilus_trader.execution.client.ExecutionClient.submit_bracket_order">(ExecutionClient method)</a>
-</li>
-        <li><a href="api_reference/live.html#nautilus_trader.live.execution_client.LiveExecutionClient.submit_bracket_order">(LiveExecutionClient method)</a>
-</li>
-        <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.submit_bracket_order">(TradingStrategy method)</a>
-</li>
-      </ul></li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.execution.BacktestExecClient.submit_order">submit_order() (BacktestExecClient method)</a>
 
       <ul>
@@ -7993,9 +8058,19 @@
         <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.submit_order">(TradingStrategy method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitBracketOrder">SubmitBracketOrder (class in nautilus_trader.model.commands.trading)</a>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.execution.BacktestExecClient.submit_order_list">submit_order_list() (BacktestExecClient method)</a>
+
+      <ul>
+        <li><a href="api_reference/execution.html#nautilus_trader.execution.client.ExecutionClient.submit_order_list">(ExecutionClient method)</a>
 </li>
+        <li><a href="api_reference/live.html#nautilus_trader.live.execution_client.LiveExecutionClient.submit_order_list">(LiveExecutionClient method)</a>
+</li>
+        <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.submit_order_list">(TradingStrategy method)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitOrder">SubmitOrder (class in nautilus_trader.model.commands.trading)</a>
+</li>
+      <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitOrderList">SubmitOrderList (class in nautilus_trader.model.commands.trading)</a>
 </li>
       <li><a href="api_reference/data.html#nautilus_trader.data.messages.Subscribe">Subscribe (class in nautilus_trader.data.messages)</a>
 </li>
@@ -8327,8 +8402,6 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.tags">(StopMarketOrder attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/model.html#nautilus_trader.model.orders.bracket.BracketOrder.take_profit">take_profit (BracketOrder attribute)</a>
-</li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.loaders.TardisQuoteDataLoader">TardisQuoteDataLoader (class in nautilus_trader.backtest.loaders)</a>
 </li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.loaders.TardisTradeDataLoader">TardisTradeDataLoader (class in nautilus_trader.backtest.loaders)</a>
@@ -8423,8 +8496,6 @@
         <li><a href="api_reference/common.html#nautilus_trader.common.clock.TestClock.timestamp">(TestClock method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/model.html#nautilus_trader.model.orders.bracket.BracketOrder.timestamp_ns">timestamp_ns (BracketOrder attribute)</a>
-</li>
       <li><a href="api_reference/common.html#nautilus_trader.common.clock.Clock.timestamp_ns">timestamp_ns() (Clock method)</a>
 
       <ul>
@@ -8504,9 +8575,9 @@
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.to_dict">(StopMarketOrder method)</a>
 </li>
-        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitBracketOrder.to_dict">(SubmitBracketOrder static method)</a>
-</li>
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitOrder.to_dict">(SubmitOrder static method)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitOrderList.to_dict">(SubmitOrderList static method)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.data.tick.TradeTick.to_dict">(TradeTick static method)</a>
 </li>
@@ -8666,9 +8737,9 @@
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.trader_id">(StopMarketOrder attribute)</a>
 </li>
-        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitBracketOrder.trader_id">(SubmitBracketOrder attribute)</a>
-</li>
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitOrder.trader_id">(SubmitOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitOrderList.trader_id">(SubmitOrderList attribute)</a>
 </li>
         <li><a href="api_reference/trading.html#nautilus_trader.trading.trader.Trader.trader_id">(Trader attribute)</a>
 </li>
@@ -8900,9 +8971,9 @@
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.ts_init">(StopMarketOrder attribute)</a>
 </li>
-        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitBracketOrder.ts_init">(SubmitBracketOrder attribute)</a>
-</li>
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitOrder.ts_init">(SubmitOrder attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.SubmitOrderList.ts_init">(SubmitOrderList attribute)</a>
 </li>
         <li><a href="api_reference/data.html#nautilus_trader.data.messages.Subscribe.ts_init">(Subscribe attribute)</a>
 </li>
@@ -9443,6 +9514,8 @@
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.macd.MovingAverageConvergenceDivergence.value">(MovingAverageConvergenceDivergence attribute)</a>
 </li>
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.obv.OnBalanceVolume.value">(OnBalanceVolume attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.identifiers.OrderListId.value">(OrderListId attribute)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.identifiers.PositionId.value">(PositionId attribute)</a>
 </li>

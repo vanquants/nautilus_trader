@@ -2145,13 +2145,13 @@ the new model: you should trust this data</p></li>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange.handle_submit_bracket_order">
-<span class="sig-name descname"><span class="pre">handle_submit_bracket_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">SubmitBracketOrder</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange.handle_submit_bracket_order" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange.handle_submit_order">
+<span class="sig-name descname"><span class="pre">handle_submit_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">SubmitOrder</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange.handle_submit_order" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange.handle_submit_order">
-<span class="sig-name descname"><span class="pre">handle_submit_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">SubmitOrder</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange.handle_submit_order" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange.handle_submit_order_list">
+<span class="sig-name descname"><span class="pre">handle_submit_order_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">SubmitOrderList</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange.handle_submit_order_list" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -2844,23 +2844,23 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.submit_bracket_order">
-<span class="sig-name descname"><span class="pre">submit_bracket_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">SubmitBracketOrder</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.submit_bracket_order" title="Permalink to this definition">¶</a></dt>
-<dd><p>Submit the bracket order contained in the given command for execution.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>command</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.commands.trading.SubmitBracketOrder" title="nautilus_trader.model.commands.trading.SubmitBracketOrder"><em>SubmitBracketOrder</em></a>) – The command to execute.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.submit_order">
 <span class="sig-name descname"><span class="pre">submit_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">SubmitOrder</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.submit_order" title="Permalink to this definition">¶</a></dt>
 <dd><p>Submit the order contained in the given command for execution.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>command</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.commands.trading.SubmitOrder" title="nautilus_trader.model.commands.trading.SubmitOrder"><em>SubmitOrder</em></a>) – The command to execute.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.submit_order_list">
+<span class="sig-name descname"><span class="pre">submit_order_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">SubmitOrderList</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.submit_order_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Submit the order list contained in the given command for execution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>command</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.commands.trading.SubmitOrderList" title="nautilus_trader.model.commands.trading.SubmitOrderList"><em>SubmitOrderList</em></a>) – The command to execute.</p>
 </dd>
 </dl>
 </dd></dl>

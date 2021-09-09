@@ -1726,19 +1726,6 @@ to the current datetime.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.submit_bracket_order">
-<span class="sig-name descname"><span class="pre">submit_bracket_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">BracketOrder</span> <span class="pre">bracket_order</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.submit_bracket_order" title="Permalink to this definition">¶</a></dt>
-<dd><p>Submit the given bracket order with optional routing instructions.</p>
-<p>A <cite>SubmitBracketOrder</cite> command with be created and sent to the
-<cite>ExecutionEngine</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bracket_order</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.orders.bracket.BracketOrder" title="nautilus_trader.model.orders.bracket.BracketOrder"><em>BracketOrder</em></a>) – The bracket order to submit.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.submit_order">
 <span class="sig-name descname"><span class="pre">submit_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em>, <em class="sig-param"><span class="pre">PositionId</span> <span class="pre">position_id=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.submit_order" title="Permalink to this definition">¶</a></dt>
 <dd><p>Submit the given order with optional position ID and routing instructions.</p>
@@ -1750,6 +1737,19 @@ to the current datetime.</p></li>
 <li><p><strong>order</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to submit.</p></li>
 <li><p><strong>position_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId"><em>PositionId</em></a><em>, </em><em>optional</em>) – The position ID to submit the order against.</p></li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.submit_order_list">
+<span class="sig-name descname"><span class="pre">submit_order_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">OrderList</span> <span class="pre">order_list</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.submit_order_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Submit the given order list.</p>
+<p>A <cite>SubmitOrderList</cite> command with be created and sent to the
+<cite>ExecutionEngine</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>order_list</strong> (<em>OrderList</em>) – The order list to submit.</p>
 </dd>
 </dl>
 </dd></dl>
