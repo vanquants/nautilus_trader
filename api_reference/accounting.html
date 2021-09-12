@@ -97,7 +97,6 @@
               <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Accounting</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.accounting.accounts.base">Base Account</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.accounting.accounts.cash">Cash Account</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.accounting.accounts.margin">Margin Account</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.accounting.calculators">Calculators</a></li>
@@ -191,366 +190,12 @@
             
   <div class="section" id="module-nautilus_trader.accounting">
 <span id="accounting"></span><h1>Accounting<a class="headerlink" href="#module-nautilus_trader.accounting" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="module-nautilus_trader.accounting.accounts.base">
-<span id="base-account"></span><h2>Base Account<a class="headerlink" href="#module-nautilus_trader.accounting.accounts.base" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">AccountState</span> <span class="pre">event</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">calculate_account_state</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>The base class for all trading accounts.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Account</span></code> class.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>event</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.events.account.AccountState" title="nautilus_trader.model.events.account.AccountState"><em>AccountState</em></a>) – The initial account state event.</p></li>
-<li><p><strong>calculate_account_state</strong> (<em>bool</em>) – If the account state should be calculated from order fills.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If account_type is not equal to event.account_type.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.apply">
-<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">AccountState</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.apply" title="Permalink to this definition">¶</a></dt>
-<dd><p>Apply the given account event to the account.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.events.account.AccountState" title="nautilus_trader.model.events.account.AccountState"><em>AccountState</em></a>) – The account event to apply.</p>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>System method (not intended to be called by user code).</p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.balance">
-<span class="sig-name descname"><span class="pre">balance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">currency=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">AccountBalance</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.balance" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the current account balance total.</p>
-<p>For multi-currency accounts, specify the currency for the query.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will use the default
-currency (if set).</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>AccountBalance or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is None and base_currency is None.</p>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Returns <code class="docutils literal notranslate"><span class="pre">None</span></code> if there is no applicable information for the query,
-rather than <cite>Money</cite> of zero amount.</p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.balance_free">
-<span class="sig-name descname"><span class="pre">balance_free</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">currency=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Money</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.balance_free" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the account balance free.</p>
-<p>For multi-currency accounts, specify the currency for the query.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will use the default
-currency (if set).</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is <code class="docutils literal notranslate"><span class="pre">None</span></code> and base_currency is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Returns <code class="docutils literal notranslate"><span class="pre">None</span></code> if there is no applicable information for the query,
-rather than <cite>Money</cite> of zero amount.</p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.balance_locked">
-<span class="sig-name descname"><span class="pre">balance_locked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">currency=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Money</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.balance_locked" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the account balance locked.</p>
-<p>For multi-currency accounts, specify the currency for the query.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will use the default
-currency (if set).</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is <code class="docutils literal notranslate"><span class="pre">None</span></code> and base_currency is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Returns <code class="docutils literal notranslate"><span class="pre">None</span></code> if there is no applicable information for the query,
-rather than <cite>Money</cite> of zero amount.</p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.balance_total">
-<span class="sig-name descname"><span class="pre">balance_total</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">currency=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Money</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.balance_total" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the current account balance total.</p>
-<p>For multi-currency accounts, specify the currency for the query.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will use the default
-currency (if set).</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is <code class="docutils literal notranslate"><span class="pre">None</span></code> and base_currency is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Returns <code class="docutils literal notranslate"><span class="pre">None</span></code> if there is no applicable information for the query,
-rather than <cite>Money</cite> of zero amount.</p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.balances">
-<span class="sig-name descname"><span class="pre">balances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.balances" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the account balances totals.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[Currency, Money]</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.balances_free">
-<span class="sig-name descname"><span class="pre">balances_free</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.balances_free" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the account balances free.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[Currency, Money]</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.balances_locked">
-<span class="sig-name descname"><span class="pre">balances_locked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.balances_locked" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the account balances locked.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[Currency, Money]</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.balances_total">
-<span class="sig-name descname"><span class="pre">balances_total</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.balances_total" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the account balances totals.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[Currency, Money]</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.base_currency">
-<span class="sig-name descname"><span class="pre">base_currency</span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.base_currency" title="Permalink to this definition">¶</a></dt>
-<dd><p>The accounts base currency (<code class="docutils literal notranslate"><span class="pre">None</span></code> for multi-currency accounts).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Currency</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.calculate_account_state">
-<span class="sig-name descname"><span class="pre">calculate_account_state</span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.calculate_account_state" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the accounts state should be calculated by Nautilus.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>bool</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.calculate_commission">
-<span class="sig-name descname"><span class="pre">calculate_commission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">last_qty</span></em>, <em class="sig-param"><span class="pre">last_px:</span> <span class="pre">Decimal</span></em>, <em class="sig-param"><span class="pre">LiquiditySide</span> <span class="pre">liquidity_side</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">inverse_as_quote=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Money</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.calculate_commission" title="Permalink to this definition">¶</a></dt>
-<dd><p>Abstract method (implement in subclass).</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.calculate_pnls">
-<span class="sig-name descname"><span class="pre">calculate_pnls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em>, <em class="sig-param"><span class="pre">Position</span> <span class="pre">position</span></em>, <em class="sig-param"><span class="pre">OrderFilled</span> <span class="pre">fill</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.calculate_pnls" title="Permalink to this definition">¶</a></dt>
-<dd><p>Abstract method (implement in subclass).</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.clear_margin_init">
-<span class="sig-name descname"><span class="pre">clear_margin_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.clear_margin_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>Abstract method (implement in subclass).</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.commission">
-<span class="sig-name descname"><span class="pre">commission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">currency</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Money</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.commission" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the total commissions for the given currency.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a>) – The currency for the commission.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.commissions">
-<span class="sig-name descname"><span class="pre">commissions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.commissions" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the total commissions for the account.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.currencies">
-<span class="sig-name descname"><span class="pre">currencies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.currencies" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the account currencies.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[Currency]</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.event_count">
-<span class="sig-name descname"><span class="pre">event_count</span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.event_count" title="Permalink to this definition">¶</a></dt>
-<dd><p>The count of events.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>int</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.events">
-<span class="sig-name descname"><span class="pre">events</span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.events" title="Permalink to this definition">¶</a></dt>
-<dd><p>All events received by the account.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[AccountState]</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The accounts ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>AccountId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.last_event">
-<span class="sig-name descname"><span class="pre">last_event</span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.last_event" title="Permalink to this definition">¶</a></dt>
-<dd><p>The accounts last state event.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>AccountState</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.starting_balances">
-<span class="sig-name descname"><span class="pre">starting_balances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.starting_balances" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the account starting balances.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[Currency, Money]</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.type">
-<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.type" title="Permalink to this definition">¶</a></dt>
-<dd><p>The accounts type.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>AccountType</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.update_balances">
-<span class="sig-name descname"><span class="pre">update_balances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">balances</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.update_balances" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update the account balances.</p>
-<p>There is no guarantee that every account currency is included in the
-given balances, therefore we only update included balances.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>balances</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.objects.AccountBalance" title="nautilus_trader.model.objects.AccountBalance"><em>AccountBalance</em></a><em>]</em>) – </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.update_commissions">
-<span class="sig-name descname"><span class="pre">update_commissions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Money</span> <span class="pre">commission</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.update_commissions" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update the commissions.</p>
-<p>Can be negative which represents credited commission.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>commission</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money"><em>Money</em></a>) – The commission to update with.</p>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>System method (not intended to be called by user code).</p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.base.Account.update_margin_init">
-<span class="sig-name descname"><span class="pre">update_margin_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">Money</span> <span class="pre">margin_init</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.base.Account.update_margin_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>Abstract method (implement in subclass).</p>
-</dd></dl>
-
-</dd></dl>
-
-</div>
 <div class="section" id="module-nautilus_trader.accounting.accounts.cash">
 <span id="cash-account"></span><h2>Cash Account<a class="headerlink" href="#module-nautilus_trader.accounting.accounts.cash" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.cash.CashAccount">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CashAccount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">AccountState</span> <span class="pre">event</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">calculate_account_state=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.accounting.accounts.cash.CashAccount" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.accounting.accounts.base.Account" title="nautilus_trader.accounting.accounts.base.Account"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.accounting.accounts.base.Account</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.accounting.accounts.base.Account</span></code></p>
 <p>Provides a cash account.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.cash.CashAccount.__init__">
@@ -564,7 +209,7 @@ given balances, therefore we only update included balances.</p>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If event.account_type is not equal to <code class="docutils literal notranslate"><span class="pre">CASH</span></code>.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>event.account_type</cite> is not equal to <code class="docutils literal notranslate"><span class="pre">CASH</span></code>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -576,6 +221,13 @@ given balances, therefore we only update included balances.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.events.account.AccountState" title="nautilus_trader.model.events.account.AccountState"><em>AccountState</em></a>) – The account event to apply.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If <cite>event.account_type</cite> is not equal to <cite>self.type</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>event.account_id</cite> is not equal to <cite>self.id</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>event.base_currency</cite> is not equal to <cite>self.base_currency</cite>.</p></li>
+</ul>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -598,7 +250,7 @@ currency (if set).</p>
 <dd class="field-even"><p>AccountBalance or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is None and base_currency is None.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -622,7 +274,7 @@ currency (if set).</p>
 <dd class="field-even"><p>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is <code class="docutils literal notranslate"><span class="pre">None</span></code> and base_currency is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -646,7 +298,7 @@ currency (if set).</p>
 <dd class="field-even"><p>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is <code class="docutils literal notranslate"><span class="pre">None</span></code> and base_currency is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -670,7 +322,7 @@ currency (if set).</p>
 <dd class="field-even"><p>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is <code class="docutils literal notranslate"><span class="pre">None</span></code> and base_currency is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -747,6 +399,27 @@ rather than <cite>Money</cite> of zero amount.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.cash.CashAccount.calculate_balance_locked">
+<span class="sig-name descname"><span class="pre">calculate_balance_locked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">inverse_as_quote=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Money</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.cash.CashAccount.calculate_balance_locked" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the locked balance from the given parameters.</p>
+<p>Result will be in quote currency for standard instruments, or base
+currency for inverse instruments.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the calculation.</p></li>
+<li><p><strong>quantity</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The order quantity.</p></li>
+<li><p><strong>price</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The order price.</p></li>
+<li><p><strong>inverse_as_quote</strong> (<em>bool</em>) – If inverse instrument calculations use quote currency (instead of base).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>Money</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.cash.CashAccount.calculate_commission">
 <span class="sig-name descname"><span class="pre">calculate_commission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">last_qty</span></em>, <em class="sig-param"><span class="pre">last_px:</span> <span class="pre">Decimal</span></em>, <em class="sig-param"><span class="pre">LiquiditySide</span> <span class="pre">liquidity_side</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">inverse_as_quote=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Money</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.cash.CashAccount.calculate_commission" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the commission generated from a transaction with the given
@@ -767,28 +440,7 @@ currency for inverse instruments.</p>
 <dd class="field-even"><p><em>Money</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If liquidity_side is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.cash.CashAccount.calculate_margin_init">
-<span class="sig-name descname"><span class="pre">calculate_margin_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">inverse_as_quote=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Money</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.cash.CashAccount.calculate_margin_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate the initial (order) margin from the given parameters.</p>
-<p>Result will be in quote currency for standard instruments, or base
-currency for inverse instruments.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the calculation.</p></li>
-<li><p><strong>quantity</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The order quantity.</p></li>
-<li><p><strong>price</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The order price.</p></li>
-<li><p><strong>inverse_as_quote</strong> (<em>bool</em>) – If inverse instrument calculations use quote currency (instead of base).</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Money</em></p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>liquidity_side</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -812,11 +464,9 @@ currency for inverse instruments.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.cash.CashAccount.clear_margin_init">
-<span class="sig-name descname"><span class="pre">clear_margin_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.cash.CashAccount.clear_margin_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>Clear the locked balances for the given instrument ID.</p>
-<p>There may be more than one currency if the instrument is being traded
-in multiple directions.</p>
+<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.cash.CashAccount.clear_balance_locked">
+<span class="sig-name descname"><span class="pre">clear_balance_locked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.cash.CashAccount.clear_balance_locked" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the balance locked for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument for the locked balance to clear.</p>
@@ -922,6 +572,27 @@ in multiple directions.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.cash.CashAccount.update_balance_locked">
+<span class="sig-name descname"><span class="pre">update_balance_locked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">Money</span> <span class="pre">locked</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.cash.CashAccount.update_balance_locked" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the balance locked for the given instrument ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the update.</p></li>
+<li><p><strong>locked</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money"><em>Money</em></a>) – The locked balance for the instrument.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If margin_init is negative (&lt; 0).</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.cash.CashAccount.update_balances">
 <span class="sig-name descname"><span class="pre">update_balances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">balances</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.cash.CashAccount.update_balances" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update the account balances.</p>
@@ -930,6 +601,9 @@ given balances, therefore we only update included balances.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>balances</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.objects.AccountBalance" title="nautilus_trader.model.objects.AccountBalance"><em>AccountBalance</em></a><em>]</em>) – </p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>balances</cite> is empty.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -950,27 +624,6 @@ given balances, therefore we only update included balances.</p>
 </div>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.cash.CashAccount.update_margin_init">
-<span class="sig-name descname"><span class="pre">update_margin_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">Money</span> <span class="pre">margin_init</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.cash.CashAccount.update_margin_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update the initial (order) margin.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the margin.</p></li>
-<li><p><strong>margin_init</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money"><em>Money</em></a>) – The current initial (order) margin for the currency.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If margin initial is negative (&lt; 0).</p>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>System method (not intended to be called by user code).</p>
-</div>
-</dd></dl>
-
 </dd></dl>
 
 </div>
@@ -979,7 +632,7 @@ given balances, therefore we only update included balances.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.margin.MarginAccount">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">MarginAccount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">AccountState</span> <span class="pre">event</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">calculate_account_state=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.accounting.accounts.margin.MarginAccount" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.accounting.accounts.base.Account" title="nautilus_trader.accounting.accounts.base.Account"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.accounting.accounts.base.Account</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.accounting.accounts.base.Account</span></code></p>
 <p>Provides a margin account.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.margin.MarginAccount.__init__">
@@ -993,7 +646,7 @@ given balances, therefore we only update included balances.</p>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If event.account_type is not equal to <code class="docutils literal notranslate"><span class="pre">MARGIN</span></code>.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>event.account_type</cite> is not equal to <code class="docutils literal notranslate"><span class="pre">MARGIN</span></code>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1005,6 +658,13 @@ given balances, therefore we only update included balances.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.events.account.AccountState" title="nautilus_trader.model.events.account.AccountState"><em>AccountState</em></a>) – The account event to apply.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If <cite>event.account_type</cite> is not equal to <cite>self.type</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>event.account_id</cite> is not equal to <cite>self.id</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>event.base_currency</cite> is not equal to <cite>self.base_currency</cite>.</p></li>
+</ul>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1027,7 +687,7 @@ currency (if set).</p>
 <dd class="field-even"><p>AccountBalance or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is None and base_currency is None.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1051,7 +711,7 @@ currency (if set).</p>
 <dd class="field-even"><p>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is <code class="docutils literal notranslate"><span class="pre">None</span></code> and base_currency is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1075,7 +735,7 @@ currency (if set).</p>
 <dd class="field-even"><p>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is <code class="docutils literal notranslate"><span class="pre">None</span></code> and base_currency is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1099,7 +759,7 @@ currency (if set).</p>
 <dd class="field-even"><p>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If currency is <code class="docutils literal notranslate"><span class="pre">None</span></code> and base_currency is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1498,6 +1158,9 @@ given balances, therefore we only update included balances.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>balances</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.objects.AccountBalance" title="nautilus_trader.model.objects.AccountBalance"><em>AccountBalance</em></a><em>]</em>) – </p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>balances</cite> is empty.</p>
 </dd>
 </dl>
 </dd></dl>
