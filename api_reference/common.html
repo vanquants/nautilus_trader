@@ -2688,7 +2688,7 @@ contain any arbitrary delimiter if required.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.factories.OrderFactory.market">
-<span class="sig-name descname"><span class="pre">market</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force=TimeInForce.GTC</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">MarketOrder</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.market" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">market</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force=TimeInForce.GTC</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">MarketOrder</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.market" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new market order.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2697,6 +2697,7 @@ contain any arbitrary delimiter if required.</p></li>
 <li><p><strong>order_side</strong> (<em>OrderSide</em>) – The orders side.</p></li>
 <li><p><strong>quantity</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The orders quantity (&gt; 0).</p></li>
 <li><p><strong>time_in_force</strong> (<em>TimeInForce</em><em>, </em><em>optional</em>) – The orders time-in-force. Often not applicable for market orders.</p></li>
+<li><p><strong>reduce_only</strong> (<em>bool</em>) – If the order carries the ‘reduce-only’ execution instruction.</p></li>
 <li><p><strong>tags</strong> (<em>str</em><em>, </em><em>optional</em>) – The custom user tags for the order. These are optional and can
 contain any arbitrary delimiter if required.</p></li>
 </ul>
