@@ -1,80 +1,38 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Execution &mdash; NautilusTrader latest documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/nautilus.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/nautilus.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/nautilus.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Indicators" href="indicators.html" />
     <link rel="prev" title="Data" href="data.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> NautilusTrader
-          
-
-          
-            
             <img src="../_static/nautilus-black.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 latest
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -82,18 +40,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="accounting.html">Accounting</a></li>
@@ -121,73 +68,32 @@
 <li class="toctree-l1"><a class="reference internal" href="trading.html">Trading</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">NautilusTrader</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Execution</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../_sources/api_reference/execution.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="module-nautilus_trader.execution">
-<span id="execution"></span><h1>Execution<a class="headerlink" href="#module-nautilus_trader.execution" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="module-nautilus_trader.execution">
+<span id="execution"></span><h1>Execution<a class="headerlink" href="#module-nautilus_trader.execution" title="Permalink to this headline"></a></h1>
 <p>The <cite>execution</cite> subpackage groups components relating to the execution stack for the platform.</p>
 <p>The layered architecture of the execution stack somewhat mirrors the
 data stack with a central engine, cache layer beneath, database layer
@@ -195,11 +101,11 @@ beneath, with alternative implementations able to be written on top.</p>
 <p>Due to the high-performance, the core components are reusable between both
 backtest and live implementations - helping to ensure consistent logic for
 trading operations.</p>
-<div class="section" id="module-nautilus_trader.execution.client">
-<span id="client"></span><h2>Client<a class="headerlink" href="#module-nautilus_trader.execution.client" title="Permalink to this headline">¶</a></h2>
+<section id="module-nautilus_trader.execution.client">
+<span id="client"></span><h2>Client<a class="headerlink" href="#module-nautilus_trader.execution.client" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ExecutionClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">VenueType</span> <span class="pre">venue_type</span></em>, <em class="sig-param"><span class="pre">AccountId</span> <span class="pre">account_id</span></em>, <em class="sig-param"><span class="pre">AccountType</span> <span class="pre">account_type</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">base_currency</span></em>, <em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></em>, <em class="sig-param"><span class="pre">Cache</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">Clock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">config=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ExecutionClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">VenueType</span> <span class="pre">venue_type</span></em>, <em class="sig-param"><span class="pre">AccountId</span> <span class="pre">account_id</span></em>, <em class="sig-param"><span class="pre">AccountType</span> <span class="pre">account_type</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">base_currency</span></em>, <em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></em>, <em class="sig-param"><span class="pre">Cache</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">Clock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">config=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="common.html#nautilus_trader.common.component.Component" title="nautilus_trader.common.component.Component"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.component.Component</span></code></a></p>
 <p>The abstract base class for all execution clients.</p>
 <div class="admonition warning">
@@ -208,7 +114,7 @@ trading operations.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">ExecutionClient</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -233,7 +139,7 @@ trading operations.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.account_id">
-<span class="sig-name descname"><span class="pre">account_id</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.account_id" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">account_id</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.account_id" title="Permalink to this definition"></a></dt>
 <dd><p>The clients account ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -244,7 +150,7 @@ trading operations.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.account_type">
-<span class="sig-name descname"><span class="pre">account_type</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.account_type" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">account_type</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.account_type" title="Permalink to this definition"></a></dt>
 <dd><p>The clients account type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -255,7 +161,7 @@ trading operations.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.base_currency">
-<span class="sig-name descname"><span class="pre">base_currency</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.base_currency" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">base_currency</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.base_currency" title="Permalink to this definition"></a></dt>
 <dd><p>The clients account base currency (None for multi-currency accounts).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -266,13 +172,13 @@ trading operations.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.cancel_order">
-<span class="sig-name descname"><span class="pre">cancel_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">CancelOrder</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.cancel_order" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">cancel_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">CancelOrder</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.cancel_order" title="Permalink to this definition"></a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.degrade">
-<span class="sig-name descname"><span class="pre">degrade</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.degrade" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">degrade</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.degrade" title="Permalink to this definition"></a></dt>
 <dd><p>Degrade the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
@@ -288,7 +194,7 @@ trading operations.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.dispose">
-<span class="sig-name descname"><span class="pre">dispose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.dispose" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">dispose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.dispose" title="Permalink to this definition"></a></dt>
 <dd><p>Dispose of the component.</p>
 <p>This method is idempotent and irreversible. No other methods should be
 called after disposal.</p>
@@ -306,7 +212,7 @@ called after disposal.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.fault">
-<span class="sig-name descname"><span class="pre">fault</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.fault" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fault</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.fault" title="Permalink to this definition"></a></dt>
 <dd><p>Fault the component.</p>
 <p>This method is idempotent and irreversible. No other methods should be
 called after faulting.</p>
@@ -324,7 +230,7 @@ called after faulting.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.generate_account_state">
-<span class="sig-name descname"><span class="pre">generate_account_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">balances</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reported</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">info=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_account_state" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">generate_account_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">balances</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reported</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">info=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_account_state" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>AccountState</cite> event and publish on the message bus.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -340,7 +246,7 @@ called after faulting.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.generate_order_accepted">
-<span class="sig-name descname"><span class="pre">generate_order_accepted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_accepted" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">generate_order_accepted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_accepted" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderAccepted</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -357,7 +263,7 @@ called after faulting.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.generate_order_cancel_rejected">
-<span class="sig-name descname"><span class="pre">generate_order_cancel_rejected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">reason</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_cancel_rejected" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">generate_order_cancel_rejected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">reason</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_cancel_rejected" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderCancelRejected</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -375,7 +281,7 @@ called after faulting.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.generate_order_canceled">
-<span class="sig-name descname"><span class="pre">generate_order_canceled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_canceled" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">generate_order_canceled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_canceled" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderCanceled</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -392,7 +298,7 @@ called after faulting.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.generate_order_expired">
-<span class="sig-name descname"><span class="pre">generate_order_expired</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_expired" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">generate_order_expired</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_expired" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderExpired</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -409,7 +315,7 @@ called after faulting.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.generate_order_filled">
-<span class="sig-name descname"><span class="pre">generate_order_filled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">PositionId</span> <span class="pre">venue_position_id</span></em>, <em class="sig-param"><span class="pre">ExecutionId</span> <span class="pre">execution_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">OrderType</span> <span class="pre">order_type</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">last_qty</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">last_px</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">quote_currency</span></em>, <em class="sig-param"><span class="pre">Money</span> <span class="pre">commission</span></em>, <em class="sig-param"><span class="pre">LiquiditySide</span> <span class="pre">liquidity_side</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_filled" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">generate_order_filled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">PositionId</span> <span class="pre">venue_position_id</span></em>, <em class="sig-param"><span class="pre">ExecutionId</span> <span class="pre">execution_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">OrderType</span> <span class="pre">order_type</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">last_qty</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">last_px</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">quote_currency</span></em>, <em class="sig-param"><span class="pre">Money</span> <span class="pre">commission</span></em>, <em class="sig-param"><span class="pre">LiquiditySide</span> <span class="pre">liquidity_side</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_filled" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderFilled</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -438,7 +344,7 @@ position ID resolution.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.generate_order_modify_rejected">
-<span class="sig-name descname"><span class="pre">generate_order_modify_rejected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">reason</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_modify_rejected" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">generate_order_modify_rejected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">reason</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_modify_rejected" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderModifyRejected</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -456,7 +362,7 @@ position ID resolution.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.generate_order_pending_cancel">
-<span class="sig-name descname"><span class="pre">generate_order_pending_cancel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_pending_cancel" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">generate_order_pending_cancel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_pending_cancel" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderPendingCancel</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -473,7 +379,7 @@ position ID resolution.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.generate_order_pending_update">
-<span class="sig-name descname"><span class="pre">generate_order_pending_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_pending_update" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">generate_order_pending_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_pending_update" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderPendingUpdate</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -490,7 +396,7 @@ position ID resolution.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.generate_order_rejected">
-<span class="sig-name descname"><span class="pre">generate_order_rejected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">reason</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_rejected" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">generate_order_rejected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">reason</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_rejected" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderRejected</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -507,7 +413,7 @@ position ID resolution.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.generate_order_submitted">
-<span class="sig-name descname"><span class="pre">generate_order_submitted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_submitted" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">generate_order_submitted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_submitted" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderSubmitted</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -523,7 +429,7 @@ position ID resolution.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.generate_order_triggered">
-<span class="sig-name descname"><span class="pre">generate_order_triggered</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_triggered" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">generate_order_triggered</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_triggered" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderTriggered</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -540,7 +446,7 @@ position ID resolution.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.generate_order_updated">
-<span class="sig-name descname"><span class="pre">generate_order_updated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">trigger</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">venue_order_id_modified=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_updated" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">generate_order_updated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">trigger</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">venue_order_id_modified=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.generate_order_updated" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderUpdated</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -561,7 +467,7 @@ position ID resolution.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.get_account">
-<span class="sig-name descname"><span class="pre">get_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Account</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.get_account" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Account</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.get_account" title="Permalink to this definition"></a></dt>
 <dd><p>Return the account for the client (if registered).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -572,7 +478,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.id" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.id" title="Permalink to this definition"></a></dt>
 <dd><p>The components ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -583,7 +489,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.is_connected">
-<span class="sig-name descname"><span class="pre">is_connected</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.is_connected" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_connected</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.is_connected" title="Permalink to this definition"></a></dt>
 <dd><p>If the client is connected.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -594,7 +500,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.is_degraded">
-<span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.is_degraded" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.is_degraded" title="Permalink to this definition"></a></dt>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DEGRADED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -605,7 +511,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.is_disposed">
-<span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.is_disposed" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.is_disposed" title="Permalink to this definition"></a></dt>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -616,7 +522,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.is_faulted">
-<span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.is_faulted" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.is_faulted" title="Permalink to this definition"></a></dt>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">FAULTED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -627,7 +533,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.is_initialized">
-<span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.is_initialized" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.is_initialized" title="Permalink to this definition"></a></dt>
 <dd><p>If the component has been initialized (component.state &gt;= <code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -638,7 +544,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.is_running">
-<span class="sig-name descname"><span class="pre">is_running</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.is_running" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_running</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.is_running" title="Permalink to this definition"></a></dt>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -649,7 +555,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.is_stopped">
-<span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.is_stopped" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.is_stopped" title="Permalink to this definition"></a></dt>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">STOPPED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -660,13 +566,13 @@ position ID resolution.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.modify_order">
-<span class="sig-name descname"><span class="pre">modify_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ModifyOrder</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.modify_order" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">modify_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ModifyOrder</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.modify_order" title="Permalink to this definition"></a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.reset">
-<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.reset" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.reset" title="Permalink to this definition"></a></dt>
 <dd><p>Reset the component.</p>
 <p>All stateful fields are reset to their initial value.</p>
 <dl class="field-list simple">
@@ -683,7 +589,7 @@ position ID resolution.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.resume">
-<span class="sig-name descname"><span class="pre">resume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.resume" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">resume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.resume" title="Permalink to this definition"></a></dt>
 <dd><p>Resume the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
@@ -699,7 +605,7 @@ position ID resolution.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.start">
-<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.start" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.start" title="Permalink to this definition"></a></dt>
 <dd><p>Start the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
@@ -715,7 +621,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.state">
-<span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.state" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.state" title="Permalink to this definition"></a></dt>
 <dd><p>The components current state.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -726,7 +632,7 @@ position ID resolution.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.stop">
-<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.stop" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.stop" title="Permalink to this definition"></a></dt>
 <dd><p>Stop the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
@@ -742,19 +648,19 @@ position ID resolution.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.submit_order">
-<span class="sig-name descname"><span class="pre">submit_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">SubmitOrder</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.submit_order" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">submit_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">SubmitOrder</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.submit_order" title="Permalink to this definition"></a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.submit_order_list">
-<span class="sig-name descname"><span class="pre">submit_order_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">SubmitOrderList</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.submit_order_list" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">submit_order_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">SubmitOrderList</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.submit_order_list" title="Permalink to this definition"></a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.trader_id">
-<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.trader_id" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.trader_id" title="Permalink to this definition"></a></dt>
 <dd><p>The trader ID associated with the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -765,7 +671,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.type">
-<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.type" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.type" title="Permalink to this definition"></a></dt>
 <dd><p>The components type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -776,7 +682,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.venue">
-<span class="sig-name descname"><span class="pre">venue</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.venue" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">venue</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.venue" title="Permalink to this definition"></a></dt>
 <dd><p>The clients venue ID (if not multi-venue brokerage).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -787,7 +693,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.venue_type">
-<span class="sig-name descname"><span class="pre">venue_type</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.venue_type" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">venue_type</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.venue_type" title="Permalink to this definition"></a></dt>
 <dd><p>The clients venue type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -798,9 +704,9 @@ position ID resolution.</p></li>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-nautilus_trader.execution.engine">
-<span id="engine"></span><h2>Engine<a class="headerlink" href="#module-nautilus_trader.execution.engine" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-nautilus_trader.execution.engine">
+<span id="engine"></span><h2>Engine<a class="headerlink" href="#module-nautilus_trader.execution.engine" title="Permalink to this headline"></a></h2>
 <p>The <cite>ExecutionEngine</cite> is the central component of the entire execution stack.</p>
 <p>The execution engines primary responsibility is to orchestrate interactions
 between the <cite>ExecutionClient</cite> instances, and the rest of the platform. This
@@ -813,19 +719,19 @@ messages.</p>
 just need to override the <cite>execute</cite> and <cite>process</cite> methods.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecEngineConfig">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ExecEngineConfig</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecEngineConfig" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ExecEngineConfig</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecEngineConfig" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydantic.main.BaseModel</span></code></p>
 <p>Configuration for <code class="docutils literal notranslate"><span class="pre">ExecutionEngine</span></code> instances.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecEngineConfig.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecEngineConfig.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecEngineConfig.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Create a new model by parsing and validating input data from keyword arguments.</p>
 <p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecEngineConfig.construct">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_fields_set</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">SetStr</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Model</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecEngineConfig.construct" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_fields_set</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">SetStr</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Model</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecEngineConfig.construct" title="Permalink to this definition"></a></dt>
 <dd><p>Creates a new model setting __dict__ and __fields_set__ from trusted or pre-validated data.
 Default values are respected, but no other validation is performed.
 Behaves as if <cite>Config.extra = ‘allow’</cite> was set since it adds all passed values</p>
@@ -833,7 +739,7 @@ Behaves as if <cite>Config.extra = ‘allow’</cite> was set since it adds all 
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecEngineConfig.copy">
-<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">DictStrAny</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Model</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecEngineConfig.copy" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">DictStrAny</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Model</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecEngineConfig.copy" title="Permalink to this definition"></a></dt>
 <dd><p>Duplicate a model, optionally choose which fields to include, exclude and change.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -853,20 +759,20 @@ the new model: you should trust this data</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecEngineConfig.dict">
-<span class="sig-name descname"><span class="pre">dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">by_alias</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_defaults</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_unset</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_defaults</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_none</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DictStrAny</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecEngineConfig.dict" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">by_alias</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_defaults</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_unset</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_defaults</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_none</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DictStrAny</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecEngineConfig.dict" title="Permalink to this definition"></a></dt>
 <dd><p>Generate a dictionary representation of the model, optionally specifying which fields to include or exclude.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecEngineConfig.json">
-<span class="sig-name descname"><span class="pre">json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">by_alias</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_defaults</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_unset</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_defaults</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_none</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">dumps_kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecEngineConfig.json" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">by_alias</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_defaults</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_unset</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_defaults</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_none</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">dumps_kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecEngineConfig.json" title="Permalink to this definition"></a></dt>
 <dd><p>Generate a JSON representation of the model, <cite>include</cite> and <cite>exclude</cite> arguments as per <cite>dict()</cite>.</p>
 <p><cite>encoder</cite> is an optional function to supply as <cite>default</cite> to json.dumps(), other arguments as per <cite>json.dumps()</cite>.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecEngineConfig.update_forward_refs">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">update_forward_refs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">localns</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecEngineConfig.update_forward_refs" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">update_forward_refs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">localns</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecEngineConfig.update_forward_refs" title="Permalink to this definition"></a></dt>
 <dd><p>Try to update ForwardRefs on fields based on this Model, globalns and localns.</p>
 </dd></dl>
 
@@ -874,14 +780,14 @@ the new model: you should trust this data</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ExecutionEngine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></em>, <em class="sig-param"><span class="pre">Cache</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">Clock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">config:</span> <span class="pre">Optional[ExecEngineConfig]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ExecutionEngine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></em>, <em class="sig-param"><span class="pre">Cache</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">Clock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">config:</span> <span class="pre">Optional[ExecEngineConfig]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="common.html#nautilus_trader.common.component.Component" title="nautilus_trader.common.component.Component"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.component.Component</span></code></a></p>
 <p>Provides a high-performance execution engine for the management of many
 <cite>ExecutionClient</cite> instances, and the asynchronous ingest and distribution of
 trading commands and events.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">ExecutionEngine</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -901,7 +807,7 @@ trading commands and events.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.check_connected">
-<span class="sig-name descname"><span class="pre">check_connected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.check_connected" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">check_connected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.check_connected" title="Permalink to this definition"></a></dt>
 <dd><p>Check all of the engines clients are connected.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -912,7 +818,7 @@ trading commands and events.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.check_disconnected">
-<span class="sig-name descname"><span class="pre">check_disconnected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.check_disconnected" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">check_disconnected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.check_disconnected" title="Permalink to this definition"></a></dt>
 <dd><p>Check all of the engines clients are disconnected.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -923,7 +829,7 @@ trading commands and events.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.check_integrity">
-<span class="sig-name descname"><span class="pre">check_integrity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.check_integrity" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">check_integrity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.check_integrity" title="Permalink to this definition"></a></dt>
 <dd><p>Check integrity of data within the cache and clients.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -934,7 +840,7 @@ trading commands and events.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.check_residuals">
-<span class="sig-name descname"><span class="pre">check_residuals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.check_residuals" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">check_residuals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.check_residuals" title="Permalink to this definition"></a></dt>
 <dd><p>Check for any residual active state and log warnings if found.</p>
 <p>Active state is considered working orders and open positions.</p>
 <dl class="field-list simple">
@@ -946,7 +852,7 @@ trading commands and events.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.command_count">
-<span class="sig-name descname"><span class="pre">command_count</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.command_count" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">command_count</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.command_count" title="Permalink to this definition"></a></dt>
 <dd><p>The total count of commands received by the engine.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -957,7 +863,7 @@ trading commands and events.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.default_client">
-<span class="sig-name descname"><span class="pre">default_client</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.default_client" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">default_client</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.default_client" title="Permalink to this definition"></a></dt>
 <dd><p>The default execution client registered with the engine.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -968,7 +874,7 @@ trading commands and events.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.degrade">
-<span class="sig-name descname"><span class="pre">degrade</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.degrade" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">degrade</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.degrade" title="Permalink to this definition"></a></dt>
 <dd><p>Degrade the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
@@ -984,7 +890,7 @@ trading commands and events.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.deregister_client">
-<span class="sig-name descname"><span class="pre">deregister_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ExecutionClient</span> <span class="pre">client</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.deregister_client" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">deregister_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ExecutionClient</span> <span class="pre">client</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.deregister_client" title="Permalink to this definition"></a></dt>
 <dd><p>Deregister the given execution client from the execution engine.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -998,7 +904,7 @@ trading commands and events.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.dispose">
-<span class="sig-name descname"><span class="pre">dispose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.dispose" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">dispose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.dispose" title="Permalink to this definition"></a></dt>
 <dd><p>Dispose of the component.</p>
 <p>This method is idempotent and irreversible. No other methods should be
 called after disposal.</p>
@@ -1016,7 +922,7 @@ called after disposal.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.event_count">
-<span class="sig-name descname"><span class="pre">event_count</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.event_count" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">event_count</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.event_count" title="Permalink to this definition"></a></dt>
 <dd><p>The total count of events received by the engine.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1027,7 +933,7 @@ called after disposal.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.execute">
-<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">TradingCommand</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.execute" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">TradingCommand</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.execute" title="Permalink to this definition"></a></dt>
 <dd><p>Execute the given command.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1038,7 +944,7 @@ called after disposal.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.fault">
-<span class="sig-name descname"><span class="pre">fault</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.fault" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fault</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.fault" title="Permalink to this definition"></a></dt>
 <dd><p>Fault the component.</p>
 <p>This method is idempotent and irreversible. No other methods should be
 called after faulting.</p>
@@ -1056,7 +962,7 @@ called after faulting.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.flush_db">
-<span class="sig-name descname"><span class="pre">flush_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.flush_db" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">flush_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.flush_db" title="Permalink to this definition"></a></dt>
 <dd><p>Flush the execution database which permanently removes all persisted data.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1066,7 +972,7 @@ called after faulting.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.id" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.id" title="Permalink to this definition"></a></dt>
 <dd><p>The components ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1077,7 +983,7 @@ called after faulting.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.is_degraded">
-<span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.is_degraded" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.is_degraded" title="Permalink to this definition"></a></dt>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DEGRADED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1088,7 +994,7 @@ called after faulting.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.is_disposed">
-<span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.is_disposed" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.is_disposed" title="Permalink to this definition"></a></dt>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1099,7 +1005,7 @@ called after faulting.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.is_faulted">
-<span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.is_faulted" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.is_faulted" title="Permalink to this definition"></a></dt>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">FAULTED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1110,7 +1016,7 @@ called after faulting.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.is_initialized">
-<span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.is_initialized" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.is_initialized" title="Permalink to this definition"></a></dt>
 <dd><p>If the component has been initialized (component.state &gt;= <code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1121,7 +1027,7 @@ called after faulting.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.is_running">
-<span class="sig-name descname"><span class="pre">is_running</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.is_running" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_running</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.is_running" title="Permalink to this definition"></a></dt>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1132,7 +1038,7 @@ called after faulting.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.is_stopped">
-<span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.is_stopped" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.is_stopped" title="Permalink to this definition"></a></dt>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">STOPPED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1143,13 +1049,13 @@ called after faulting.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.load_cache">
-<span class="sig-name descname"><span class="pre">load_cache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.load_cache" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">load_cache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.load_cache" title="Permalink to this definition"></a></dt>
 <dd><p>Load the cache up from the execution database.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.position_id_count">
-<span class="sig-name descname"><span class="pre">position_id_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.position_id_count" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">position_id_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.position_id_count" title="Permalink to this definition"></a></dt>
 <dd><p>The position ID count for the given strategy ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1163,7 +1069,7 @@ called after faulting.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.process">
-<span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">OrderEvent</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.process" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">OrderEvent</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.process" title="Permalink to this definition"></a></dt>
 <dd><p>Process the given order event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1174,7 +1080,7 @@ called after faulting.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.register_client">
-<span class="sig-name descname"><span class="pre">register_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ExecutionClient</span> <span class="pre">client</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.register_client" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">register_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ExecutionClient</span> <span class="pre">client</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.register_client" title="Permalink to this definition"></a></dt>
 <dd><p>Register the given execution client with the execution engine.</p>
 <p>If the client.venue_type == <code class="docutils literal notranslate"><span class="pre">BROKERAGE_MULTI_VENUE</span></code> and a default client
 has not been previously registered then will be registered as such.</p>
@@ -1190,7 +1096,7 @@ has not been previously registered then will be registered as such.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.register_default_client">
-<span class="sig-name descname"><span class="pre">register_default_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ExecutionClient</span> <span class="pre">client</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.register_default_client" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">register_default_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ExecutionClient</span> <span class="pre">client</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.register_default_client" title="Permalink to this definition"></a></dt>
 <dd><p>Register the given client as the default client (when a specific venue
 routing cannot be found).</p>
 <p>Any existing default client will be overwritten.</p>
@@ -1203,7 +1109,7 @@ routing cannot be found).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.register_oms_type">
-<span class="sig-name descname"><span class="pre">register_oms_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">TradingStrategy</span> <span class="pre">strategy</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.register_oms_type" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">register_oms_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">TradingStrategy</span> <span class="pre">strategy</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.register_oms_type" title="Permalink to this definition"></a></dt>
 <dd><p>Register the given trading strategies OMS (Order Management System) type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1214,7 +1120,7 @@ routing cannot be found).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.register_venue_routing">
-<span class="sig-name descname"><span class="pre">register_venue_routing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ExecutionClient</span> <span class="pre">client</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.register_venue_routing" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">register_venue_routing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ExecutionClient</span> <span class="pre">client</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.register_venue_routing" title="Permalink to this definition"></a></dt>
 <dd><p>Register the given client to route orders to the given venue.</p>
 <p>Any existing client in the routing map for the given venue will be
 overwritten.</p>
@@ -1230,7 +1136,7 @@ overwritten.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.registered_clients">
-<span class="sig-name descname"><span class="pre">registered_clients</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.registered_clients" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">registered_clients</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.registered_clients" title="Permalink to this definition"></a></dt>
 <dd><p>The execution clients registered with the engine.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1241,7 +1147,7 @@ overwritten.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.reset">
-<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.reset" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.reset" title="Permalink to this definition"></a></dt>
 <dd><p>Reset the component.</p>
 <p>All stateful fields are reset to their initial value.</p>
 <dl class="field-list simple">
@@ -1258,7 +1164,7 @@ overwritten.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.resume">
-<span class="sig-name descname"><span class="pre">resume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.resume" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">resume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.resume" title="Permalink to this definition"></a></dt>
 <dd><p>Resume the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
@@ -1274,7 +1180,7 @@ overwritten.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.start">
-<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.start" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.start" title="Permalink to this definition"></a></dt>
 <dd><p>Start the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
@@ -1290,7 +1196,7 @@ overwritten.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.state">
-<span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.state" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.state" title="Permalink to this definition"></a></dt>
 <dd><p>The components current state.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1301,7 +1207,7 @@ overwritten.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.stop">
-<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.stop" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.stop" title="Permalink to this definition"></a></dt>
 <dd><p>Stop the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
@@ -1317,7 +1223,7 @@ overwritten.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.trader_id">
-<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.trader_id" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.trader_id" title="Permalink to this definition"></a></dt>
 <dd><p>The trader ID associated with the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1328,7 +1234,7 @@ overwritten.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.type">
-<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.type" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.type" title="Permalink to this definition"></a></dt>
 <dd><p>The components type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1339,17 +1245,17 @@ overwritten.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-nautilus_trader.execution.messages">
-<span id="messages"></span><h2>Messages<a class="headerlink" href="#module-nautilus_trader.execution.messages" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-nautilus_trader.execution.messages">
+<span id="messages"></span><h2>Messages<a class="headerlink" href="#module-nautilus_trader.execution.messages" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.ExecutionMassStatus">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ExecutionMassStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">AccountId</span> <span class="pre">account_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionMassStatus" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ExecutionMassStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientId</span> <span class="pre">client_id</span></em>, <em class="sig-param"><span class="pre">AccountId</span> <span class="pre">account_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionMassStatus" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Represents a mass status report of execution status.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.ExecutionMassStatus.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionMassStatus.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionMassStatus.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Initializes a new instance of the <cite>ExecutionMassStatus`</cite> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1367,7 +1273,7 @@ overwritten.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.ExecutionMassStatus.account_id">
-<span class="sig-name descname"><span class="pre">account_id</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionMassStatus.account_id" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">account_id</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionMassStatus.account_id" title="Permalink to this definition"></a></dt>
 <dd><p>The account ID for the report.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1378,7 +1284,7 @@ overwritten.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.ExecutionMassStatus.add_exec_reports">
-<span class="sig-name descname"><span class="pre">add_exec_reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">reports</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionMassStatus.add_exec_reports" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">add_exec_reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">reports</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionMassStatus.add_exec_reports" title="Permalink to this definition"></a></dt>
 <dd><p>Add the list of trades for the given order ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1395,7 +1301,7 @@ overwritten.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.ExecutionMassStatus.add_order_report">
-<span class="sig-name descname"><span class="pre">add_order_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">OrderStatusReport</span> <span class="pre">report</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionMassStatus.add_order_report" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">add_order_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">OrderStatusReport</span> <span class="pre">report</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionMassStatus.add_order_report" title="Permalink to this definition"></a></dt>
 <dd><p>Add the order status report.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1406,7 +1312,7 @@ overwritten.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.ExecutionMassStatus.add_position_report">
-<span class="sig-name descname"><span class="pre">add_position_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">PositionStatusReport</span> <span class="pre">report</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionMassStatus.add_position_report" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">add_position_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">PositionStatusReport</span> <span class="pre">report</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionMassStatus.add_position_report" title="Permalink to this definition"></a></dt>
 <dd><p>Add the position state report.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1417,7 +1323,7 @@ overwritten.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.ExecutionMassStatus.client_id">
-<span class="sig-name descname"><span class="pre">client_id</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionMassStatus.client_id" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">client_id</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionMassStatus.client_id" title="Permalink to this definition"></a></dt>
 <dd><p>The client ID for the report.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1428,7 +1334,7 @@ overwritten.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.ExecutionMassStatus.exec_reports">
-<span class="sig-name descname"><span class="pre">exec_reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionMassStatus.exec_reports" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">exec_reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionMassStatus.exec_reports" title="Permalink to this definition"></a></dt>
 <dd><p>Return the execution reports.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1439,7 +1345,7 @@ overwritten.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.ExecutionMassStatus.order_reports">
-<span class="sig-name descname"><span class="pre">order_reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionMassStatus.order_reports" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">order_reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionMassStatus.order_reports" title="Permalink to this definition"></a></dt>
 <dd><p>Return the order status reports.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1450,7 +1356,7 @@ overwritten.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.ExecutionMassStatus.position_reports">
-<span class="sig-name descname"><span class="pre">position_reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionMassStatus.position_reports" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">position_reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionMassStatus.position_reports" title="Permalink to this definition"></a></dt>
 <dd><p>Return the position state reports.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1461,7 +1367,7 @@ overwritten.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.ExecutionMassStatus.ts_init">
-<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionMassStatus.ts_init" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionMassStatus.ts_init" title="Permalink to this definition"></a></dt>
 <dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1474,12 +1380,12 @@ overwritten.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.ExecutionReport">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ExecutionReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">PositionId</span> <span class="pre">venue_position_id</span></em>, <em class="sig-param"><span class="pre">ExecutionId</span> <span class="pre">execution_id</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">last_qty</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">last_px</span></em>, <em class="sig-param"><span class="pre">Money</span> <span class="pre">commission</span></em>, <em class="sig-param"><span class="pre">LiquiditySide</span> <span class="pre">liquidity_side</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ExecutionReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">PositionId</span> <span class="pre">venue_position_id</span></em>, <em class="sig-param"><span class="pre">ExecutionId</span> <span class="pre">execution_id</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">last_qty</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">last_px</span></em>, <em class="sig-param"><span class="pre">Money</span> <span class="pre">commission</span></em>, <em class="sig-param"><span class="pre">LiquiditySide</span> <span class="pre">liquidity_side</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Represents a report of execution state by order ID.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.ExecutionReport.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Initializes a new instance of the <cite>ExecutionReport`</cite> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1503,7 +1409,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.ExecutionReport.client_order_id">
-<span class="sig-name descname"><span class="pre">client_order_id</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport.client_order_id" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">client_order_id</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport.client_order_id" title="Permalink to this definition"></a></dt>
 <dd><p>The client order ID for the report.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1514,7 +1420,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.ExecutionReport.commission">
-<span class="sig-name descname"><span class="pre">commission</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport.commission" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">commission</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport.commission" title="Permalink to this definition"></a></dt>
 <dd><p>The reported commission.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1525,7 +1431,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.ExecutionReport.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport.id" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport.id" title="Permalink to this definition"></a></dt>
 <dd><p>The reported execution ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1536,7 +1442,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.ExecutionReport.last_px">
-<span class="sig-name descname"><span class="pre">last_px</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport.last_px" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">last_px</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport.last_px" title="Permalink to this definition"></a></dt>
 <dd><p>The reported price of the last fill.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1547,7 +1453,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.ExecutionReport.last_qty">
-<span class="sig-name descname"><span class="pre">last_qty</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport.last_qty" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">last_qty</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport.last_qty" title="Permalink to this definition"></a></dt>
 <dd><p>The reported quantity of the last fill.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1558,7 +1464,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.ExecutionReport.liquidity_side">
-<span class="sig-name descname"><span class="pre">liquidity_side</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport.liquidity_side" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">liquidity_side</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport.liquidity_side" title="Permalink to this definition"></a></dt>
 <dd><p>The reported liquidity side.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1569,7 +1475,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.ExecutionReport.ts_event">
-<span class="sig-name descname"><span class="pre">ts_event</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport.ts_event" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">ts_event</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport.ts_event" title="Permalink to this definition"></a></dt>
 <dd><p>The UNIX timestamp (nanoseconds) when the execution event occurred.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1580,7 +1486,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.ExecutionReport.ts_init">
-<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport.ts_init" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport.ts_init" title="Permalink to this definition"></a></dt>
 <dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1591,7 +1497,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.ExecutionReport.venue_order_id">
-<span class="sig-name descname"><span class="pre">venue_order_id</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport.venue_order_id" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">venue_order_id</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport.venue_order_id" title="Permalink to this definition"></a></dt>
 <dd><p>The reported venue order ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1602,7 +1508,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.ExecutionReport.venue_position_id">
-<span class="sig-name descname"><span class="pre">venue_position_id</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport.venue_position_id" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">venue_position_id</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.ExecutionReport.venue_position_id" title="Permalink to this definition"></a></dt>
 <dd><p>The reported venue position ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1615,12 +1521,12 @@ position ID resolution.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.OrderStatusReport">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderStatusReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">OrderStatus</span> <span class="pre">order_status</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">filled_qty</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.messages.OrderStatusReport" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderStatusReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">OrderStatus</span> <span class="pre">order_status</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">filled_qty</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.messages.OrderStatusReport" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Represents an orders state at a point in time.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.OrderStatusReport.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.messages.OrderStatusReport.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.messages.OrderStatusReport.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Initializes a new instance of the <cite>OrderStatusReport`</cite> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1637,7 +1543,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.OrderStatusReport.client_order_id">
-<span class="sig-name descname"><span class="pre">client_order_id</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.OrderStatusReport.client_order_id" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">client_order_id</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.OrderStatusReport.client_order_id" title="Permalink to this definition"></a></dt>
 <dd><p>The client order ID for the report.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1648,7 +1554,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.OrderStatusReport.filled_qty">
-<span class="sig-name descname"><span class="pre">filled_qty</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.OrderStatusReport.filled_qty" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">filled_qty</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.OrderStatusReport.filled_qty" title="Permalink to this definition"></a></dt>
 <dd><p>The reported filled quantity.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1659,7 +1565,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.OrderStatusReport.order_status">
-<span class="sig-name descname"><span class="pre">order_status</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.OrderStatusReport.order_status" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">order_status</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.OrderStatusReport.order_status" title="Permalink to this definition"></a></dt>
 <dd><p>The reported order status at the exchange.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1670,7 +1576,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.OrderStatusReport.ts_init">
-<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.OrderStatusReport.ts_init" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.OrderStatusReport.ts_init" title="Permalink to this definition"></a></dt>
 <dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1681,7 +1587,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.OrderStatusReport.venue_order_id">
-<span class="sig-name descname"><span class="pre">venue_order_id</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.OrderStatusReport.venue_order_id" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">venue_order_id</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.OrderStatusReport.venue_order_id" title="Permalink to this definition"></a></dt>
 <dd><p>The reported venue order ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1694,12 +1600,12 @@ position ID resolution.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.PositionStatusReport">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">PositionStatusReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">PositionSide</span> <span class="pre">position_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">qty</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.messages.PositionStatusReport" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">PositionStatusReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">PositionSide</span> <span class="pre">position_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">qty</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.messages.PositionStatusReport" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Represents a positions state at a point in time.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.PositionStatusReport.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.messages.PositionStatusReport.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.messages.PositionStatusReport.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Initializes a new instance of the <cite>PositionStatusReport`</cite> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1715,7 +1621,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.PositionStatusReport.instrument_id">
-<span class="sig-name descname"><span class="pre">instrument_id</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.PositionStatusReport.instrument_id" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">instrument_id</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.PositionStatusReport.instrument_id" title="Permalink to this definition"></a></dt>
 <dd><p>The reported instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1726,7 +1632,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.PositionStatusReport.qty">
-<span class="sig-name descname"><span class="pre">qty</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.PositionStatusReport.qty" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">qty</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.PositionStatusReport.qty" title="Permalink to this definition"></a></dt>
 <dd><p>The reported position quantity at the exchange.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1737,7 +1643,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.PositionStatusReport.side">
-<span class="sig-name descname"><span class="pre">side</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.PositionStatusReport.side" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">side</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.PositionStatusReport.side" title="Permalink to this definition"></a></dt>
 <dd><p>The reported position side at the exchange.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1748,7 +1654,7 @@ position ID resolution.</p></li>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.messages.PositionStatusReport.ts_init">
-<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.PositionStatusReport.ts_init" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.execution.messages.PositionStatusReport.ts_init" title="Permalink to this definition"></a></dt>
 <dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1759,55 +1665,38 @@ position ID resolution.</p></li>
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="indicators.html" class="btn btn-neutral float-right" title="Indicators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="data.html" class="btn btn-neutral float-left" title="Data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="indicators.html" class="btn btn-neutral float-right" title="Indicators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2015-2021, Nautech Systems Pty Ltd..
-
-    </p>
+    <p>&#169; Copyright 2015-2021, Nautech Systems Pty Ltd..</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

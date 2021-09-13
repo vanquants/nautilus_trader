@@ -1,80 +1,38 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Portfolio &mdash; NautilusTrader latest documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/nautilus.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/nautilus.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/nautilus.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Risk" href="risk.html" />
     <link rel="prev" title="Network" href="network.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> NautilusTrader
-          
-
-          
-            
             <img src="../_static/nautilus-black.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 latest
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -82,18 +40,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="accounting.html">Accounting</a></li>
@@ -116,73 +63,32 @@
 <li class="toctree-l1"><a class="reference internal" href="trading.html">Trading</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">NautilusTrader</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Portfolio</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../_sources/api_reference/portfolio.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="module-nautilus_trader.portfolio.portfolio">
-<span id="portfolio"></span><h1>Portfolio<a class="headerlink" href="#module-nautilus_trader.portfolio.portfolio" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="module-nautilus_trader.portfolio.portfolio">
+<span id="portfolio"></span><h1>Portfolio<a class="headerlink" href="#module-nautilus_trader.portfolio.portfolio" title="Permalink to this headline"></a></h1>
 <p>The <cite>Portfolio</cite> facilitates the management of trading operations.</p>
 <p>The intended use case is for a single <code class="docutils literal notranslate"><span class="pre">Portfolio</span></code> instance per running system,
 a fleet of trading strategies will organize around a portfolio with the help
@@ -191,14 +97,14 @@ of the <cite>Trader`</cite> class.</p>
 total risk exposures and total net positions.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.portfolio.portfolio.Portfolio">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Portfolio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></em>, <em class="sig-param"><span class="pre">CacheFacade</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">Clock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Portfolio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></em>, <em class="sig-param"><span class="pre">CacheFacade</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">Clock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.portfolio.base.PortfolioFacade</span></code></p>
 <p>Provides a trading portfolio.</p>
 <p>Currently there is a limitation of one account per <code class="docutils literal notranslate"><span class="pre">ExecutionClient</span></code>
 instance.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.portfolio.portfolio.Portfolio.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Portfolio</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -214,7 +120,7 @@ instance.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.portfolio.portfolio.Portfolio.account">
-<span class="sig-name descname"><span class="pre">account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Account</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.account" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Account</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.account" title="Permalink to this definition"></a></dt>
 <dd><p>Return the account for the given venue (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -228,19 +134,19 @@ instance.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.portfolio.portfolio.Portfolio.initialize_orders">
-<span class="sig-name descname"><span class="pre">initialize_orders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.initialize_orders" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">initialize_orders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.initialize_orders" title="Permalink to this definition"></a></dt>
 <dd><p>Initialize the portfolios orders.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.portfolio.portfolio.Portfolio.initialize_positions">
-<span class="sig-name descname"><span class="pre">initialize_positions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.initialize_positions" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">initialize_positions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.initialize_positions" title="Permalink to this definition"></a></dt>
 <dd><p>Initialize the portfolios positions.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.portfolio.portfolio.Portfolio.initialized">
-<span class="sig-name descname"><span class="pre">initialized</span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.initialized" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">initialized</span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.initialized" title="Permalink to this definition"></a></dt>
 <dd><p>If the portfolio is initialized.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -251,7 +157,7 @@ instance.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.portfolio.portfolio.Portfolio.is_completely_flat">
-<span class="sig-name descname"><span class="pre">is_completely_flat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.is_completely_flat" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_completely_flat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.is_completely_flat" title="Permalink to this definition"></a></dt>
 <dd><p>Return a value indicating whether the portfolio is completely flat.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -262,7 +168,7 @@ instance.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.portfolio.portfolio.Portfolio.is_flat">
-<span class="sig-name descname"><span class="pre">is_flat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.is_flat" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_flat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.is_flat" title="Permalink to this definition"></a></dt>
 <dd><p>Return a value indicating whether the portfolio is flat for the given
 instrument ID.</p>
 <dl class="field-list simple">
@@ -277,7 +183,7 @@ instrument ID.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.portfolio.portfolio.Portfolio.is_net_long">
-<span class="sig-name descname"><span class="pre">is_net_long</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.is_net_long" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_net_long</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.is_net_long" title="Permalink to this definition"></a></dt>
 <dd><p>Return a value indicating whether the portfolio is net long the given
 instrument ID.</p>
 <dl class="field-list simple">
@@ -292,7 +198,7 @@ instrument ID.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.portfolio.portfolio.Portfolio.is_net_short">
-<span class="sig-name descname"><span class="pre">is_net_short</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.is_net_short" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_net_short</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.is_net_short" title="Permalink to this definition"></a></dt>
 <dd><p>Return a value indicating whether the portfolio is net short the given
 instrument ID.</p>
 <dl class="field-list simple">
@@ -307,7 +213,7 @@ instrument ID.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.portfolio.portfolio.Portfolio.margins_init">
-<span class="sig-name descname"><span class="pre">margins_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.margins_init" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">margins_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.margins_init" title="Permalink to this definition"></a></dt>
 <dd><p>Return the initial (order) margins for the given venue (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -321,7 +227,7 @@ instrument ID.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.portfolio.portfolio.Portfolio.margins_maint">
-<span class="sig-name descname"><span class="pre">margins_maint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.margins_maint" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">margins_maint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.margins_maint" title="Permalink to this definition"></a></dt>
 <dd><p>Return the maintenance (position) margins for the given venue (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -335,7 +241,7 @@ instrument ID.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.portfolio.portfolio.Portfolio.net_exposure">
-<span class="sig-name descname"><span class="pre">net_exposure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Money</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.net_exposure" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">net_exposure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Money</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.net_exposure" title="Permalink to this definition"></a></dt>
 <dd><p>Return the net exposure for the given instrument (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -349,7 +255,7 @@ instrument ID.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.portfolio.portfolio.Portfolio.net_exposures">
-<span class="sig-name descname"><span class="pre">net_exposures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.net_exposures" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">net_exposures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.net_exposures" title="Permalink to this definition"></a></dt>
 <dd><p>Return the net exposures for the given venue (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -363,7 +269,7 @@ instrument ID.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.portfolio.portfolio.Portfolio.net_position">
-<span class="sig-name descname"><span class="pre">net_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.net_position" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">net_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.net_position" title="Permalink to this definition"></a></dt>
 <dd><p>Return the total net position for the given instrument ID.
 If no positions for instrument_id then will return <cite>Decimal(‘0’)</cite>.</p>
 <dl class="field-list simple">
@@ -378,14 +284,14 @@ If no positions for instrument_id then will return <cite>Decimal(‘0’)</cite>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.portfolio.portfolio.Portfolio.reset">
-<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.reset" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.reset" title="Permalink to this definition"></a></dt>
 <dd><p>Reset the portfolio.</p>
 <p>All stateful fields are reset to their initial value.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.portfolio.portfolio.Portfolio.unrealized_pnl">
-<span class="sig-name descname"><span class="pre">unrealized_pnl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Money</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.unrealized_pnl" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">unrealized_pnl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Money</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.unrealized_pnl" title="Permalink to this definition"></a></dt>
 <dd><p>Return the unrealized PnL for the given instrument ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -399,7 +305,7 @@ If no positions for instrument_id then will return <cite>Decimal(‘0’)</cite>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.portfolio.portfolio.Portfolio.unrealized_pnls">
-<span class="sig-name descname"><span class="pre">unrealized_pnls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.unrealized_pnls" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">unrealized_pnls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.unrealized_pnls" title="Permalink to this definition"></a></dt>
 <dd><p>Return the unrealized pnls for the given venue (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -413,7 +319,7 @@ If no positions for instrument_id then will return <cite>Decimal(‘0’)</cite>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.portfolio.portfolio.Portfolio.update_account">
-<span class="sig-name descname"><span class="pre">update_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">AccountState</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.update_account" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">update_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">AccountState</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.update_account" title="Permalink to this definition"></a></dt>
 <dd><p>Apply the given account state.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -424,7 +330,7 @@ If no positions for instrument_id then will return <cite>Decimal(‘0’)</cite>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.portfolio.portfolio.Portfolio.update_order">
-<span class="sig-name descname"><span class="pre">update_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">OrderEvent</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.update_order" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">update_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">OrderEvent</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.update_order" title="Permalink to this definition"></a></dt>
 <dd><p>Update the portfolio with the given order.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -435,7 +341,7 @@ If no positions for instrument_id then will return <cite>Decimal(‘0’)</cite>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.portfolio.portfolio.Portfolio.update_position">
-<span class="sig-name descname"><span class="pre">update_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">PositionEvent</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.update_position" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">update_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">PositionEvent</span> <span class="pre">event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.update_position" title="Permalink to this definition"></a></dt>
 <dd><p>Update the portfolio with the given position event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -446,7 +352,7 @@ If no positions for instrument_id then will return <cite>Decimal(‘0’)</cite>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.portfolio.portfolio.Portfolio.update_tick">
-<span class="sig-name descname"><span class="pre">update_tick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">QuoteTick</span> <span class="pre">tick</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.update_tick" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">update_tick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">QuoteTick</span> <span class="pre">tick</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio.update_tick" title="Permalink to this definition"></a></dt>
 <dd><p>Update the portfolio with the given tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -457,54 +363,37 @@ If no positions for instrument_id then will return <cite>Decimal(‘0’)</cite>
 
 </dd></dl>
 
-</div>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="risk.html" class="btn btn-neutral float-right" title="Risk" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="network.html" class="btn btn-neutral float-left" title="Network" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="risk.html" class="btn btn-neutral float-right" title="Risk" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2015-2021, Nautech Systems Pty Ltd..
-
-    </p>
+    <p>&#169; Copyright 2015-2021, Nautech Systems Pty Ltd..</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

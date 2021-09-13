@@ -1,80 +1,38 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Serialization &mdash; NautilusTrader latest documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/nautilus.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/nautilus.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/nautilus.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Trading" href="trading.html" />
     <link rel="prev" title="Risk" href="risk.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> NautilusTrader
-          
-
-          
-            
             <img src="../_static/nautilus-black.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
               <div class="version">
                 latest
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -82,18 +40,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="accounting.html">Accounting</a></li>
@@ -121,81 +68,40 @@
 <li class="toctree-l1"><a class="reference internal" href="trading.html">Trading</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">NautilusTrader</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Serialization</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../_sources/api_reference/serialization.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="module-nautilus_trader.serialization">
-<span id="serialization"></span><h1>Serialization<a class="headerlink" href="#module-nautilus_trader.serialization" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="module-nautilus_trader.serialization">
+<span id="serialization"></span><h1>Serialization<a class="headerlink" href="#module-nautilus_trader.serialization" title="Permalink to this headline"></a></h1>
 <p>The <cite>serialization</cite> subpackage groups all serialization components and serializer implementations.</p>
 <p>Base classes are defined which can allow for other serialization implementations
 beside the built-in <cite>MessagePack</cite> specification serializers.</p>
-<div class="section" id="module-nautilus_trader.serialization.base">
-<span id="base"></span><h2>Base<a class="headerlink" href="#module-nautilus_trader.serialization.base" title="Permalink to this headline">¶</a></h2>
+<section id="module-nautilus_trader.serialization.base">
+<span id="base"></span><h2>Base<a class="headerlink" href="#module-nautilus_trader.serialization.base" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.base.Serializer">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Serializer</span></span><a class="headerlink" href="#nautilus_trader.serialization.base.Serializer" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Serializer</span></span><a class="headerlink" href="#nautilus_trader.serialization.base.Serializer" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The abstract base class for all serializers.</p>
 <div class="admonition warning">
@@ -204,19 +110,19 @@ beside the built-in <cite>MessagePack</cite> specification serializers.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.base.Serializer.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.base.Serializer.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.base.Serializer.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Serializer</span></code> class.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.base.Serializer.deserialize">
-<span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">bytes</span> <span class="pre">obj_bytes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.base.Serializer.deserialize" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">bytes</span> <span class="pre">obj_bytes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.base.Serializer.deserialize" title="Permalink to this definition"></a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.base.Serializer.serialize">
-<span class="sig-name descname"><span class="pre">serialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#nautilus_trader.serialization.base.Serializer.serialize" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">serialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#nautilus_trader.serialization.base.Serializer.serialize" title="Permalink to this definition"></a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
@@ -224,7 +130,7 @@ beside the built-in <cite>MessagePack</cite> specification serializers.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.base.register_serializable_object">
-<span class="sig-name descname"><span class="pre">register_serializable_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.serialization.base.register_serializable_object" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">register_serializable_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.serialization.base.register_serializable_object" title="Permalink to this definition"></a></dt>
 <dd><p>Register the given object with the global serialization object maps.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -243,17 +149,17 @@ beside the built-in <cite>MessagePack</cite> specification serializers.</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-nautilus_trader.serialization.msgpack.serializer">
-<span id="msgpack"></span><h2>MsgPack<a class="headerlink" href="#module-nautilus_trader.serialization.msgpack.serializer" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-nautilus_trader.serialization.msgpack.serializer">
+<span id="msgpack"></span><h2>MsgPack<a class="headerlink" href="#module-nautilus_trader.serialization.msgpack.serializer" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">MsgPackSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timestamps_as_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">MsgPackSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timestamps_as_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.serialization.base.Serializer" title="nautilus_trader.serialization.base.Serializer"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.serialization.base.Serializer</span></code></a></p>
 <p>Provides a serializer for the <cite>MessagePack</cite> specification.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Initializes a new instance of the <code class="docutils literal notranslate"><span class="pre">MsgPackSerializer</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -265,7 +171,7 @@ and back to int64_t on deserialization.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.deserialize">
-<span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">bytes</span> <span class="pre">obj_bytes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.deserialize" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">bytes</span> <span class="pre">obj_bytes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.deserialize" title="Permalink to this definition"></a></dt>
 <dd><p>Deserialize the given <cite>MessagePack</cite> specification bytes to an object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -282,7 +188,7 @@ and back to int64_t on deserialization.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.serialize">
-<span class="sig-name descname"><span class="pre">serialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.serialize" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">serialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.serialize" title="Permalink to this definition"></a></dt>
 <dd><p>Serialize the given object to <cite>MessagePack</cite> specification bytes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -299,7 +205,7 @@ and back to int64_t on deserialization.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.timestamps_as_str">
-<span class="sig-name descname"><span class="pre">timestamps_as_str</span></span><a class="headerlink" href="#nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.timestamps_as_str" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">timestamps_as_str</span></span><a class="headerlink" href="#nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.timestamps_as_str" title="Permalink to this definition"></a></dt>
 <dd><p>If the serializer converts timestamp int64_t to str.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -310,22 +216,22 @@ and back to int64_t on deserialization.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-nautilus_trader.serialization.arrow.serializer">
-<span id="arrow"></span><h2>Arrow<a class="headerlink" href="#module-nautilus_trader.serialization.arrow.serializer" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-nautilus_trader.serialization.arrow.serializer">
+<span id="arrow"></span><h2>Arrow<a class="headerlink" href="#module-nautilus_trader.serialization.arrow.serializer" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.arrow.serializer.ParquetSerializer">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ParquetSerializer</span></span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.ParquetSerializer" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ParquetSerializer</span></span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.ParquetSerializer" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides an object serializer for the <cite>Parquet</cite> specification.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.arrow.serializer.ParquetSerializer.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.ParquetSerializer.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.ParquetSerializer.__init__" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.arrow.serializer.ParquetSerializer.deserialize">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">type</span> <span class="pre">cls</span></em>, <em class="sig-param"><span class="pre">chunk</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.ParquetSerializer.deserialize" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">type</span> <span class="pre">cls</span></em>, <em class="sig-param"><span class="pre">chunk</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.ParquetSerializer.deserialize" title="Permalink to this definition"></a></dt>
 <dd><p>Deserialize the given <cite>Parquet</cite> specification bytes to an object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -345,7 +251,7 @@ and back to int64_t on deserialization.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.arrow.serializer.ParquetSerializer.serialize">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">serialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.ParquetSerializer.serialize" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">serialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.ParquetSerializer.serialize" title="Permalink to this definition"></a></dt>
 <dd><p>Serialize the given instrument to <cite>Parquet</cite> specification bytes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -364,27 +270,27 @@ and back to int64_t on deserialization.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.arrow.serializer.get_cls_table">
-<span class="sig-name descname"><span class="pre">get_cls_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">type</span> <span class="pre">cls:</span> <span class="pre">type</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.get_cls_table" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_cls_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">type</span> <span class="pre">cls:</span> <span class="pre">type</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.get_cls_table" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.arrow.serializer.get_partition_keys">
-<span class="sig-name descname"><span class="pre">get_partition_keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">type</span> <span class="pre">cls:</span> <span class="pre">type</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.get_partition_keys" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_partition_keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">type</span> <span class="pre">cls:</span> <span class="pre">type</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.get_partition_keys" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.arrow.serializer.get_schema">
-<span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">type</span> <span class="pre">cls:</span> <span class="pre">type</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.get_schema" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">type</span> <span class="pre">cls:</span> <span class="pre">type</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.get_schema" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.arrow.serializer.list_schemas">
-<span class="sig-name descname"><span class="pre">list_schemas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.list_schemas" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">list_schemas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.list_schemas" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.arrow.serializer.register_parquet">
-<span class="sig-name descname"><span class="pre">register_parquet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">type</span> <span class="pre">cls</span></em>, <em class="sig-param"><span class="pre">serializer:</span> <span class="pre">Optional[Callable]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">deserializer:</span> <span class="pre">Optional[Callable]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">schema:</span> <span class="pre">Optional[pa.Schema]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">tuple</span> <span class="pre">partition_keys=None</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">chunk=False</span></em>, <em class="sig-param"><span class="pre">type</span> <span class="pre">table=None</span></em>, <em class="sig-param"><span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.register_parquet" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">register_parquet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">type</span> <span class="pre">cls</span></em>, <em class="sig-param"><span class="pre">serializer:</span> <span class="pre">Optional[Callable]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">deserializer:</span> <span class="pre">Optional[Callable]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">schema:</span> <span class="pre">Optional[pa.Schema]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">tuple</span> <span class="pre">partition_keys=None</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">chunk=False</span></em>, <em class="sig-param"><span class="pre">type</span> <span class="pre">table=None</span></em>, <em class="sig-param"><span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.register_parquet" title="Permalink to this definition"></a></dt>
 <dd><p>Register a new class for serialization to parquet.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -408,55 +314,38 @@ its own. (for example, <cite>OrderBookSnapshots</cite> are stored as
 </dl>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="trading.html" class="btn btn-neutral float-right" title="Trading" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="risk.html" class="btn btn-neutral float-left" title="Risk" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="trading.html" class="btn btn-neutral float-right" title="Trading" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2015-2021, Nautech Systems Pty Ltd..
-
-    </p>
+    <p>&#169; Copyright 2015-2021, Nautech Systems Pty Ltd..</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
