@@ -49,10 +49,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.backtest.data_client">Data Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.backtest.engine">Engine</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.backtest.exchange">Exchange</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.backtest.execution">Execution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.backtest.loaders">Loaders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.backtest.execution_client">Execution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.backtest.data.loaders">Loaders</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.backtest.models">Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.backtest.modules">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wranglers">Wranglers</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="cache.html">Cache</a></li>
@@ -1140,7 +1141,7 @@ data.</p>
 <dd class="field-odd"><p><strong>config</strong> (<a class="reference internal" href="#nautilus_trader.backtest.engine.BacktestEngineConfig" title="nautilus_trader.backtest.engine.BacktestEngineConfig"><em>BacktestEngineConfig</em></a><em>, </em><em>optional</em>) – The configuration for the instance.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – If config is not of type <cite>BacktestEngineConfig</cite>.</p>
+<dd class="field-even"><p><strong>TypeError</strong> – If <cite>config</cite> is not of type <cite>BacktestEngineConfig</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1157,9 +1158,9 @@ source must be <code class="docutils literal notranslate"><span class="pre">EXTE
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If bar_type.aggregation_source is not equal to <code class="docutils literal notranslate"><span class="pre">EXTERNAL</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If bars is empty.</p></li>
-<li><p><strong>ValueError</strong> – If instrument_id is not found in the cache.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>bar_type.aggregation_source</cite> is not equal to <code class="docutils literal notranslate"><span class="pre">EXTERNAL</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>data</cite> is empty.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>instrument_id</cite> is not found in the cache.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1177,7 +1178,7 @@ source must be <code class="docutils literal notranslate"><span class="pre">EXTE
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If data is empty.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>data</cite> is empty.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1203,37 +1204,23 @@ source must be <code class="docutils literal notranslate"><span class="pre">EXTE
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If data is empty.</p></li>
-<li><p><strong>ValueError</strong> – If instrument_id is not found in the cache.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>data</cite> is empty.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>instrument_id</cite> is not found in the cache.</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.add_quote_ticks">
-<span class="sig-name descname"><span class="pre">add_quote_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">data</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.add_quote_ticks" title="Permalink to this definition"></a></dt>
-<dd><p>Add the built quote tick data to the backtest engine.</p>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.add_ticks">
+<span class="sig-name descname"><span class="pre">add_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">data</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.add_ticks" title="Permalink to this definition"></a></dt>
+<dd><p>Add the tick data to the backtest engine.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a><em>]</em>) – The quote tick data to add.</p>
+<dd class="field-odd"><p><strong>data</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.tick.Tick" title="nautilus_trader.model.data.tick.Tick"><em>Tick</em></a><em>]</em>) – The tick data to add.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If data is empty.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.add_trade_ticks">
-<span class="sig-name descname"><span class="pre">add_trade_ticks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">data</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.add_trade_ticks" title="Permalink to this definition"></a></dt>
-<dd><p>Add the built trade tick data to the backtest engine.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a><em>]</em>) – The trade tick data to add.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If data is empty.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>data</cite> is empty.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1259,7 +1246,7 @@ generate new position IDs.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If an exchange of venue is already registered with the engine.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If an exchange of <cite>venue</cite> is already registered with the engine.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1860,7 +1847,7 @@ the new model: you should trust this data</p></li>
 <dd><p>Register the given execution client with the simulated exchange.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>client</strong> (<a class="reference internal" href="#nautilus_trader.backtest.execution.BacktestExecClient" title="nautilus_trader.backtest.execution.BacktestExecClient"><em>BacktestExecClient</em></a>) – The client to register</p>
+<dd class="field-odd"><p><strong>client</strong> (<a class="reference internal" href="#nautilus_trader.backtest.execution_client.BacktestExecClient" title="nautilus_trader.backtest.execution_client.BacktestExecClient"><em>BacktestExecClient</em></a>) – The client to register</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1907,16 +1894,16 @@ the new model: you should trust this data</p></li>
 </dd></dl>
 
 </section>
-<section id="module-nautilus_trader.backtest.execution">
-<span id="execution"></span><h2>Execution<a class="headerlink" href="#module-nautilus_trader.backtest.execution" title="Permalink to this headline"></a></h2>
+<section id="module-nautilus_trader.backtest.execution_client">
+<span id="execution"></span><h2>Execution<a class="headerlink" href="#module-nautilus_trader.backtest.execution_client" title="Permalink to this headline"></a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BacktestExecClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">SimulatedExchange</span> <span class="pre">exchange</span></em>, <em class="sig-param"><span class="pre">AccountId</span> <span class="pre">account_id</span></em>, <em class="sig-param"><span class="pre">AccountType</span> <span class="pre">account_type</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">base_currency</span></em>, <em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></em>, <em class="sig-param"><span class="pre">Cache</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">TestClock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">is_frozen_account=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BacktestExecClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">SimulatedExchange</span> <span class="pre">exchange</span></em>, <em class="sig-param"><span class="pre">AccountId</span> <span class="pre">account_id</span></em>, <em class="sig-param"><span class="pre">AccountType</span> <span class="pre">account_type</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">base_currency</span></em>, <em class="sig-param"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></em>, <em class="sig-param"><span class="pre">Cache</span> <span class="pre">cache</span></em>, <em class="sig-param"><span class="pre">TestClock</span> <span class="pre">clock</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">is_frozen_account=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="execution.html#nautilus_trader.execution.client.ExecutionClient" title="nautilus_trader.execution.client.ExecutionClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.execution.client.ExecutionClient</span></code></a></p>
 <p>Provides an execution client for the <cite>BacktestEngine</cite>.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.__init__" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">BacktestExecClient</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1936,8 +1923,8 @@ the new model: you should trust this data</p></li>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.account_id">
-<span class="sig-name descname"><span class="pre">account_id</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.account_id" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.account_id">
+<span class="sig-name descname"><span class="pre">account_id</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.account_id" title="Permalink to this definition"></a></dt>
 <dd><p>The clients account ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1947,8 +1934,8 @@ the new model: you should trust this data</p></li>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.account_type">
-<span class="sig-name descname"><span class="pre">account_type</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.account_type" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.account_type">
+<span class="sig-name descname"><span class="pre">account_type</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.account_type" title="Permalink to this definition"></a></dt>
 <dd><p>The clients account type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1958,8 +1945,8 @@ the new model: you should trust this data</p></li>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.base_currency">
-<span class="sig-name descname"><span class="pre">base_currency</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.base_currency" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.base_currency">
+<span class="sig-name descname"><span class="pre">base_currency</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.base_currency" title="Permalink to this definition"></a></dt>
 <dd><p>The clients account base currency (None for multi-currency accounts).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1969,8 +1956,8 @@ the new model: you should trust this data</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.cancel_order">
-<span class="sig-name descname"><span class="pre">cancel_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">CancelOrder</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.cancel_order" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.cancel_order">
+<span class="sig-name descname"><span class="pre">cancel_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">CancelOrder</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.cancel_order" title="Permalink to this definition"></a></dt>
 <dd><p>Cancel the order with the <cite>ClientOrderId</cite> contained in the given command.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1980,8 +1967,8 @@ the new model: you should trust this data</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.degrade">
-<span class="sig-name descname"><span class="pre">degrade</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.degrade" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.degrade">
+<span class="sig-name descname"><span class="pre">degrade</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.degrade" title="Permalink to this definition"></a></dt>
 <dd><p>Degrade the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
@@ -1996,8 +1983,8 @@ the new model: you should trust this data</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.dispose">
-<span class="sig-name descname"><span class="pre">dispose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.dispose" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.dispose">
+<span class="sig-name descname"><span class="pre">dispose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.dispose" title="Permalink to this definition"></a></dt>
 <dd><p>Dispose of the component.</p>
 <p>This method is idempotent and irreversible. No other methods should be
 called after disposal.</p>
@@ -2014,8 +2001,8 @@ called after disposal.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.fault">
-<span class="sig-name descname"><span class="pre">fault</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.fault" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.fault">
+<span class="sig-name descname"><span class="pre">fault</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.fault" title="Permalink to this definition"></a></dt>
 <dd><p>Fault the component.</p>
 <p>This method is idempotent and irreversible. No other methods should be
 called after faulting.</p>
@@ -2032,8 +2019,8 @@ called after faulting.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.generate_account_state">
-<span class="sig-name descname"><span class="pre">generate_account_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">balances</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reported</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">info=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.generate_account_state" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.generate_account_state">
+<span class="sig-name descname"><span class="pre">generate_account_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">balances</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reported</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">info=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.generate_account_state" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>AccountState</cite> event and publish on the message bus.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2048,8 +2035,8 @@ called after faulting.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.generate_order_accepted">
-<span class="sig-name descname"><span class="pre">generate_order_accepted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.generate_order_accepted" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_accepted">
+<span class="sig-name descname"><span class="pre">generate_order_accepted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_accepted" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderAccepted</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2065,8 +2052,8 @@ called after faulting.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.generate_order_cancel_rejected">
-<span class="sig-name descname"><span class="pre">generate_order_cancel_rejected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">reason</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.generate_order_cancel_rejected" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_cancel_rejected">
+<span class="sig-name descname"><span class="pre">generate_order_cancel_rejected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">reason</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_cancel_rejected" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderCancelRejected</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2083,8 +2070,8 @@ called after faulting.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.generate_order_canceled">
-<span class="sig-name descname"><span class="pre">generate_order_canceled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.generate_order_canceled" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_canceled">
+<span class="sig-name descname"><span class="pre">generate_order_canceled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_canceled" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderCanceled</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2100,8 +2087,8 @@ called after faulting.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.generate_order_expired">
-<span class="sig-name descname"><span class="pre">generate_order_expired</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.generate_order_expired" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_expired">
+<span class="sig-name descname"><span class="pre">generate_order_expired</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_expired" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderExpired</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2117,8 +2104,8 @@ called after faulting.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.generate_order_filled">
-<span class="sig-name descname"><span class="pre">generate_order_filled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">PositionId</span> <span class="pre">venue_position_id</span></em>, <em class="sig-param"><span class="pre">ExecutionId</span> <span class="pre">execution_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">OrderType</span> <span class="pre">order_type</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">last_qty</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">last_px</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">quote_currency</span></em>, <em class="sig-param"><span class="pre">Money</span> <span class="pre">commission</span></em>, <em class="sig-param"><span class="pre">LiquiditySide</span> <span class="pre">liquidity_side</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.generate_order_filled" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_filled">
+<span class="sig-name descname"><span class="pre">generate_order_filled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">PositionId</span> <span class="pre">venue_position_id</span></em>, <em class="sig-param"><span class="pre">ExecutionId</span> <span class="pre">execution_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">OrderType</span> <span class="pre">order_type</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">last_qty</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">last_px</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">quote_currency</span></em>, <em class="sig-param"><span class="pre">Money</span> <span class="pre">commission</span></em>, <em class="sig-param"><span class="pre">LiquiditySide</span> <span class="pre">liquidity_side</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_filled" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderFilled</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2146,8 +2133,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.generate_order_modify_rejected">
-<span class="sig-name descname"><span class="pre">generate_order_modify_rejected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">reason</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.generate_order_modify_rejected" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_modify_rejected">
+<span class="sig-name descname"><span class="pre">generate_order_modify_rejected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">reason</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_modify_rejected" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderModifyRejected</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2164,8 +2151,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.generate_order_pending_cancel">
-<span class="sig-name descname"><span class="pre">generate_order_pending_cancel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.generate_order_pending_cancel" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_pending_cancel">
+<span class="sig-name descname"><span class="pre">generate_order_pending_cancel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_pending_cancel" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderPendingCancel</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2181,8 +2168,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.generate_order_pending_update">
-<span class="sig-name descname"><span class="pre">generate_order_pending_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.generate_order_pending_update" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_pending_update">
+<span class="sig-name descname"><span class="pre">generate_order_pending_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_pending_update" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderPendingUpdate</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2198,8 +2185,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.generate_order_rejected">
-<span class="sig-name descname"><span class="pre">generate_order_rejected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">reason</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.generate_order_rejected" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_rejected">
+<span class="sig-name descname"><span class="pre">generate_order_rejected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">reason</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_rejected" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderRejected</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2215,8 +2202,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.generate_order_submitted">
-<span class="sig-name descname"><span class="pre">generate_order_submitted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.generate_order_submitted" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_submitted">
+<span class="sig-name descname"><span class="pre">generate_order_submitted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_submitted" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderSubmitted</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2231,8 +2218,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.generate_order_triggered">
-<span class="sig-name descname"><span class="pre">generate_order_triggered</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.generate_order_triggered" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_triggered">
+<span class="sig-name descname"><span class="pre">generate_order_triggered</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_triggered" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderTriggered</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2248,8 +2235,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.generate_order_updated">
-<span class="sig-name descname"><span class="pre">generate_order_updated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">trigger</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">venue_order_id_modified=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.generate_order_updated" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_updated">
+<span class="sig-name descname"><span class="pre">generate_order_updated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em>, <em class="sig-param"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">trigger</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">venue_order_id_modified=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.generate_order_updated" title="Permalink to this definition"></a></dt>
 <dd><p>Generate an <cite>OrderUpdated</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2269,8 +2256,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.get_account">
-<span class="sig-name descname"><span class="pre">get_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Account</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.get_account" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.get_account">
+<span class="sig-name descname"><span class="pre">get_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Account</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.get_account" title="Permalink to this definition"></a></dt>
 <dd><p>Return the account for the client (if registered).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2280,8 +2267,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.id" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.id" title="Permalink to this definition"></a></dt>
 <dd><p>The components ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2291,8 +2278,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.is_connected">
-<span class="sig-name descname"><span class="pre">is_connected</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.is_connected" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.is_connected">
+<span class="sig-name descname"><span class="pre">is_connected</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.is_connected" title="Permalink to this definition"></a></dt>
 <dd><p>If the client is connected.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2302,8 +2289,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.is_degraded">
-<span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.is_degraded" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.is_degraded">
+<span class="sig-name descname"><span class="pre">is_degraded</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.is_degraded" title="Permalink to this definition"></a></dt>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DEGRADED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2313,8 +2300,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.is_disposed">
-<span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.is_disposed" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.is_disposed">
+<span class="sig-name descname"><span class="pre">is_disposed</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.is_disposed" title="Permalink to this definition"></a></dt>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2324,8 +2311,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.is_faulted">
-<span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.is_faulted" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.is_faulted">
+<span class="sig-name descname"><span class="pre">is_faulted</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.is_faulted" title="Permalink to this definition"></a></dt>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">FAULTED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2335,8 +2322,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.is_initialized">
-<span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.is_initialized" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.is_initialized">
+<span class="sig-name descname"><span class="pre">is_initialized</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.is_initialized" title="Permalink to this definition"></a></dt>
 <dd><p>If the component has been initialized (component.state &gt;= <code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2346,8 +2333,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.is_running">
-<span class="sig-name descname"><span class="pre">is_running</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.is_running" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.is_running">
+<span class="sig-name descname"><span class="pre">is_running</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.is_running" title="Permalink to this definition"></a></dt>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2357,8 +2344,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.is_stopped">
-<span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.is_stopped" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.is_stopped">
+<span class="sig-name descname"><span class="pre">is_stopped</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.is_stopped" title="Permalink to this definition"></a></dt>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">STOPPED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2368,8 +2355,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.modify_order">
-<span class="sig-name descname"><span class="pre">modify_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ModifyOrder</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.modify_order" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.modify_order">
+<span class="sig-name descname"><span class="pre">modify_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ModifyOrder</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.modify_order" title="Permalink to this definition"></a></dt>
 <dd><p>Modify the order with parameters contained in the command.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2379,8 +2366,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.reset">
-<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.reset" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.reset" title="Permalink to this definition"></a></dt>
 <dd><p>Reset the component.</p>
 <p>All stateful fields are reset to their initial value.</p>
 <dl class="field-list simple">
@@ -2396,8 +2383,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.resume">
-<span class="sig-name descname"><span class="pre">resume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.resume" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.resume">
+<span class="sig-name descname"><span class="pre">resume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.resume" title="Permalink to this definition"></a></dt>
 <dd><p>Resume the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
@@ -2412,8 +2399,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.start">
-<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.start" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.start" title="Permalink to this definition"></a></dt>
 <dd><p>Start the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
@@ -2428,8 +2415,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.state">
-<span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.state" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.state">
+<span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.state" title="Permalink to this definition"></a></dt>
 <dd><p>The components current state.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2439,8 +2426,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.stop">
-<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.stop" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.stop" title="Permalink to this definition"></a></dt>
 <dd><p>Stop the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
@@ -2455,8 +2442,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.submit_order">
-<span class="sig-name descname"><span class="pre">submit_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">SubmitOrder</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.submit_order" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.submit_order">
+<span class="sig-name descname"><span class="pre">submit_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">SubmitOrder</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.submit_order" title="Permalink to this definition"></a></dt>
 <dd><p>Submit the order contained in the given command for execution.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2466,8 +2453,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.submit_order_list">
-<span class="sig-name descname"><span class="pre">submit_order_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">SubmitOrderList</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.submit_order_list" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.submit_order_list">
+<span class="sig-name descname"><span class="pre">submit_order_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">SubmitOrderList</span> <span class="pre">command</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.submit_order_list" title="Permalink to this definition"></a></dt>
 <dd><p>Submit the order list contained in the given command for execution.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2477,8 +2464,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.trader_id">
-<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.trader_id" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.trader_id">
+<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.trader_id" title="Permalink to this definition"></a></dt>
 <dd><p>The trader ID associated with the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2488,8 +2475,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.type">
-<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.type" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.type">
+<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.type" title="Permalink to this definition"></a></dt>
 <dd><p>The components type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2499,8 +2486,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.venue">
-<span class="sig-name descname"><span class="pre">venue</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.venue" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.venue">
+<span class="sig-name descname"><span class="pre">venue</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.venue" title="Permalink to this definition"></a></dt>
 <dd><p>The clients venue ID (if not multi-venue brokerage).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2510,8 +2497,8 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.execution.BacktestExecClient.venue_type">
-<span class="sig-name descname"><span class="pre">venue_type</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution.BacktestExecClient.venue_type" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient.venue_type">
+<span class="sig-name descname"><span class="pre">venue_type</span></span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient.venue_type" title="Permalink to this definition"></a></dt>
 <dd><p>The clients venue type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2523,21 +2510,21 @@ position ID resolution.</p></li>
 </dd></dl>
 
 </section>
-<section id="module-nautilus_trader.backtest.loaders">
-<span id="loaders"></span><h2>Loaders<a class="headerlink" href="#module-nautilus_trader.backtest.loaders" title="Permalink to this headline"></a></h2>
+<section id="module-nautilus_trader.backtest.data.loaders">
+<span id="loaders"></span><h2>Loaders<a class="headerlink" href="#module-nautilus_trader.backtest.data.loaders" title="Permalink to this headline"></a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.CSVBarDataLoader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CSVBarDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.loaders.CSVBarDataLoader" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.CSVBarDataLoader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CSVBarDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.CSVBarDataLoader" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a means of loading bar data pandas DataFrames from CSV files.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.CSVBarDataLoader.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.loaders.CSVBarDataLoader.__init__" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.CSVBarDataLoader.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.CSVBarDataLoader.__init__" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.CSVBarDataLoader.load">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.loaders.CSVBarDataLoader.load" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.CSVBarDataLoader.load">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.CSVBarDataLoader.load" title="Permalink to this definition"></a></dt>
 <dd><p>Return the bar pandas.DataFrame loaded from the given csv file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2552,18 +2539,18 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.CSVTickDataLoader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CSVTickDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.loaders.CSVTickDataLoader" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.CSVTickDataLoader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CSVTickDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.CSVTickDataLoader" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a means of loading tick data pandas DataFrames from CSV files.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.CSVTickDataLoader.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.loaders.CSVTickDataLoader.__init__" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.CSVTickDataLoader.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.CSVTickDataLoader.__init__" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.CSVTickDataLoader.load">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.loaders.CSVTickDataLoader.load" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.CSVTickDataLoader.load">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.CSVTickDataLoader.load" title="Permalink to this definition"></a></dt>
 <dd><p>Return the tick pandas.DataFrame loaded from the given csv file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2578,18 +2565,18 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.ParquetBarDataLoader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ParquetBarDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.loaders.ParquetBarDataLoader" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.ParquetBarDataLoader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ParquetBarDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.ParquetBarDataLoader" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a means of loading bar data pandas DataFrames from parquet files.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.ParquetBarDataLoader.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.loaders.ParquetBarDataLoader.__init__" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.ParquetBarDataLoader.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.ParquetBarDataLoader.__init__" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.ParquetBarDataLoader.load">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.loaders.ParquetBarDataLoader.load" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.ParquetBarDataLoader.load">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.ParquetBarDataLoader.load" title="Permalink to this definition"></a></dt>
 <dd><p>Return the bar pandas.DataFrame loaded from the given parquet file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2604,18 +2591,18 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.ParquetTickDataLoader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ParquetTickDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.loaders.ParquetTickDataLoader" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.ParquetTickDataLoader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ParquetTickDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.ParquetTickDataLoader" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a means of loading tick data pandas DataFrames from Parquet files.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.ParquetTickDataLoader.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.loaders.ParquetTickDataLoader.__init__" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.ParquetTickDataLoader.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.ParquetTickDataLoader.__init__" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.ParquetTickDataLoader.load">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.loaders.ParquetTickDataLoader.load" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.ParquetTickDataLoader.load">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.ParquetTickDataLoader.load" title="Permalink to this definition"></a></dt>
 <dd><p>Return the tick pandas.DataFrame loaded from the given parquet file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2630,18 +2617,18 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.TardisQuoteDataLoader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TardisQuoteDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.loaders.TardisQuoteDataLoader" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.TardisQuoteDataLoader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TardisQuoteDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.TardisQuoteDataLoader" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a means of loading quote data pandas DataFrames from Tardis CSV files.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.TardisQuoteDataLoader.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.loaders.TardisQuoteDataLoader.__init__" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.TardisQuoteDataLoader.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.TardisQuoteDataLoader.__init__" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.TardisQuoteDataLoader.load">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.loaders.TardisQuoteDataLoader.load" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.TardisQuoteDataLoader.load">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.TardisQuoteDataLoader.load" title="Permalink to this definition"></a></dt>
 <dd><p>Return the quote pandas.DataFrame loaded from the given csv file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2656,18 +2643,18 @@ position ID resolution.</p></li>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.TardisTradeDataLoader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TardisTradeDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.loaders.TardisTradeDataLoader" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.TardisTradeDataLoader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TardisTradeDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.TardisTradeDataLoader" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a means of loading trade data pandas DataFrames from Tardis CSV files.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.TardisTradeDataLoader.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.loaders.TardisTradeDataLoader.__init__" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.TardisTradeDataLoader.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.TardisTradeDataLoader.__init__" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.loaders.TardisTradeDataLoader.load">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.loaders.TardisTradeDataLoader.load" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.TardisTradeDataLoader.load">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.TardisTradeDataLoader.load" title="Permalink to this definition"></a></dt>
 <dd><p>Return the trade pandas.DataFrame loaded from the given csv file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2885,6 +2872,9 @@ of fills and slippage by order type.</p>
 
 </dd></dl>
 
+</section>
+<section id="wranglers">
+<h2>Wranglers<a class="headerlink" href="#wranglers" title="Permalink to this headline"></a></h2>
 </section>
 </section>
 
