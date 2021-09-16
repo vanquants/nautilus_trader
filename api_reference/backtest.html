@@ -1808,6 +1808,18 @@ the new model: you should trust this data</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange.process_bar">
+<span class="sig-name descname"><span class="pre">process_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Bar</span> <span class="pre">bar</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange.process_bar" title="Permalink to this definition"></a></dt>
+<dd><p>Process the exchanges market for the given bar.</p>
+<p>Market dynamics are simulated by auctioning working orders.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The tick to process.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange.process_modules">
 <span class="sig-name descname"><span class="pre">process_modules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">now_ns</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange.process_modules" title="Permalink to this definition"></a></dt>
 <dd><p>Process the simulation modules by advancing their time.</p>
