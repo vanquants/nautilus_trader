@@ -882,6 +882,17 @@ currency for inverse instruments.</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.margin.MarginAccount.default_leverage">
+<span class="sig-name descname"><span class="pre">default_leverage</span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.margin.MarginAccount.default_leverage" title="Permalink to this definition"></a></dt>
+<dd><p>The accounts default leverage setting.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>Decimal</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.margin.MarginAccount.event_count">
 <span class="sig-name descname"><span class="pre">event_count</span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.margin.MarginAccount.event_count" title="Permalink to this definition"></a></dt>
 <dd><p>The count of events.</p>
@@ -1008,6 +1019,24 @@ rather than <cite>Money</cite> of zero amount.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>dict[InstrumentId, Money]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.margin.MarginAccount.set_default_leverage">
+<span class="sig-name descname"><span class="pre">set_default_leverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">leverage</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Decimal</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.margin.MarginAccount.set_default_leverage" title="Permalink to this definition"></a></dt>
+<dd><p>Set the default leverage for the account (if not specified by instrument).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>leverage</strong> (<em>Decimal</em>) – The default leverage value</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>TypeError</em> – If leverage is not of type <cite>Decimal</cite>.</p></li>
+<li><p><em>ValueError</em> – If leverage is not &gt;= 1.</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
