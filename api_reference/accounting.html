@@ -306,7 +306,7 @@ rather than <cite>Money</cite> of zero amount.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.cash.CashAccount.calculate_balance_locked">
-<span class="sig-name descname"><span class="pre">calculate_balance_locked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">inverse_as_quote=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Money</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.cash.CashAccount.calculate_balance_locked" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">calculate_balance_locked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">inverse_as_quote=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Money</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.cash.CashAccount.calculate_balance_locked" title="Permalink to this definition"></a></dt>
 <dd><p>Calculate the locked balance from the given parameters.</p>
 <p>Result will be in quote currency for standard instruments, or base
 currency for inverse instruments.</p>
@@ -314,6 +314,7 @@ currency for inverse instruments.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the calculation.</p></li>
+<li><p><strong>side</strong> (<em>OrderSide</em>) – The order side.</p></li>
 <li><p><strong>quantity</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The order quantity.</p></li>
 <li><p><strong>price</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The order price.</p></li>
 <li><p><strong>inverse_as_quote</strong> (<em>bool</em>) – If inverse instrument calculations use quote currency (instead of base).</p></li>
