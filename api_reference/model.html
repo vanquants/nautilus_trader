@@ -6415,7 +6415,7 @@ trading venue.</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L1OrderBook">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">L1OrderBook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">uint8_t</span> <span class="pre">price_precision</span></em>, <em class="sig-param"><span class="pre">uint8_t</span> <span class="pre">size_precision</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L1OrderBook" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.orderbook.book.OrderBook" title="nautilus_trader.model.orderbook.book.OrderBook"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.orderbook.book.OrderBook</span></code></a></p>
-<p>Provides a L1 order book.</p>
+<p>Provides a L1_TBBO order book.</p>
 <p>A level 1 order book has a single (top) <cite>Level</cite>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L1OrderBook.__init__">
@@ -6453,7 +6453,7 @@ trading venue.</p>
 <dd class="field-odd"><p><strong>data</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookData" title="nautilus_trader.model.orderbook.data.OrderBookData"><em>OrderBookData</em></a>) – The data to apply.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If data.level is not equal to self.level.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If data.level is not equal to self.type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -6467,7 +6467,7 @@ trading venue.</p>
 <dd class="field-odd"><p><strong>delta</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookDelta" title="nautilus_trader.model.orderbook.data.OrderBookDelta"><em>OrderBookDelta</em></a>) – The delta to apply.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If delta.level is not equal to self.level.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If delta.book_type is not equal to self.type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -6481,7 +6481,7 @@ trading venue.</p>
 <dd class="field-odd"><p><strong>deltas</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookDeltas" title="nautilus_trader.model.orderbook.data.OrderBookDeltas"><em>OrderBookDeltas</em></a>) – The deltas to apply.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If snapshot.level is not equal to self.level.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If snapshot.book_type is not equal to self.type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -6495,7 +6495,7 @@ trading venue.</p>
 <dd class="field-odd"><p><strong>snapshot</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookSnapshot" title="nautilus_trader.model.orderbook.data.OrderBookSnapshot"><em>OrderBookSnapshot</em></a>) – The snapshot to apply.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If snapshot.level is not equal to self.level.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If snapshot.book_type is not equal to self.type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -6592,9 +6592,9 @@ trading venue.</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L1OrderBook.check_integrity">
 <span class="sig-name descname"><span class="pre">check_integrity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L1OrderBook.check_integrity" title="Permalink to this definition"></a></dt>
 <dd><p>Check order book integrity.</p>
-<p>For a L1 order book:
+<p>For a L1_TBBO order book:
 - There should be at most one level per side.
-- The bid side price should not be greater than the ask side price.</p>
+- The bid side price should not be greater than or equal to the ask side price.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><p><strong>BookIntegrityError</strong> – If any check fails.</p>
@@ -6622,13 +6622,13 @@ trading venue.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L1OrderBook.create">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em>, <em class="sig-param"><span class="pre">BookLevel</span> <span class="pre">level</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">simulated=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L1OrderBook.create" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em>, <em class="sig-param"><span class="pre">BookType</span> <span class="pre">book_type</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">simulated=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L1OrderBook.create" title="Permalink to this definition"></a></dt>
 <dd><p>Create a new order book with the given parameters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the book.</p></li>
-<li><p><strong>level</strong> (BookLevel {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}) – The order book level.</p></li>
+<li><p><strong>book_type</strong> (BookType {<code class="docutils literal notranslate"><span class="pre">L1_TBBO</span></code>, <code class="docutils literal notranslate"><span class="pre">L2_MBP</span></code>, <code class="docutils literal notranslate"><span class="pre">L3_MBO</span></code>}) – The order book level.</p></li>
 <li><p><strong>simulated</strong> (<em>bool</em>) – If the order book should be simulated (for backtesting only).</p></li>
 </ul>
 </dd>
@@ -6681,17 +6681,6 @@ trading venue.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>InstrumentId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L1OrderBook.level">
-<span class="sig-name descname"><span class="pre">level</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L1OrderBook.level" title="Permalink to this definition"></a></dt>
-<dd><p>The order book level {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>BookLevel</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -6782,6 +6771,17 @@ trading venue.</p>
 </dl>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L1OrderBook.type">
+<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L1OrderBook.type" title="Permalink to this definition"></a></dt>
+<dd><p>The order book type {<code class="docutils literal notranslate"><span class="pre">L1_TBBO</span></code>, <code class="docutils literal notranslate"><span class="pre">L2_MBP</span></code>, <code class="docutils literal notranslate"><span class="pre">L3_MBO</span></code>}.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>BookType</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L1OrderBook.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L1OrderBook.update" title="Permalink to this definition"></a></dt>
@@ -6799,8 +6799,8 @@ trading venue.</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L2OrderBook">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">L2OrderBook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">uint8_t</span> <span class="pre">price_precision</span></em>, <em class="sig-param"><span class="pre">uint8_t</span> <span class="pre">size_precision</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L2OrderBook" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.orderbook.book.OrderBook" title="nautilus_trader.model.orderbook.book.OrderBook"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.orderbook.book.OrderBook</span></code></a></p>
-<p>Provides an L2 order book.</p>
-<p>A level 2 order books <cite>Levels</cite> are only made up of a single order.</p>
+<p>Provides a L2_MBP order book.</p>
+<p>The books <cite>Levels</cite> are only made up of a single order.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L2OrderBook.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L2OrderBook.__init__" title="Permalink to this definition"></a></dt>
@@ -6842,7 +6842,7 @@ trading venue.</p>
 <dd class="field-odd"><p><strong>data</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookData" title="nautilus_trader.model.orderbook.data.OrderBookData"><em>OrderBookData</em></a>) – The data to apply.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If data.level is not equal to self.level.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If data.level is not equal to self.type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -6856,7 +6856,7 @@ trading venue.</p>
 <dd class="field-odd"><p><strong>delta</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookDelta" title="nautilus_trader.model.orderbook.data.OrderBookDelta"><em>OrderBookDelta</em></a>) – The delta to apply.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If delta.level is not equal to self.level.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If delta.book_type is not equal to self.type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -6870,7 +6870,7 @@ trading venue.</p>
 <dd class="field-odd"><p><strong>deltas</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookDeltas" title="nautilus_trader.model.orderbook.data.OrderBookDeltas"><em>OrderBookDeltas</em></a>) – The deltas to apply.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If snapshot.level is not equal to self.level.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If snapshot.book_type is not equal to self.type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -6884,7 +6884,7 @@ trading venue.</p>
 <dd class="field-odd"><p><strong>snapshot</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookSnapshot" title="nautilus_trader.model.orderbook.data.OrderBookSnapshot"><em>OrderBookSnapshot</em></a>) – The snapshot to apply.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If snapshot.level is not equal to self.level.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If snapshot.book_type is not equal to self.type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -6981,9 +6981,9 @@ trading venue.</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L2OrderBook.check_integrity">
 <span class="sig-name descname"><span class="pre">check_integrity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L2OrderBook.check_integrity" title="Permalink to this definition"></a></dt>
 <dd><p>Check order book integrity.</p>
-<p>For a L2 order book:
+<p>For a L2_MBP order book:
 - There should be at most one order per level.
-- The bid side price should not be greater than the ask side price.</p>
+- The bid side price should not be greater than or equal to the ask side price.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><p><strong>BookIntegrityError</strong> – If any check fails.</p>
@@ -7011,13 +7011,13 @@ trading venue.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L2OrderBook.create">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em>, <em class="sig-param"><span class="pre">BookLevel</span> <span class="pre">level</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">simulated=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L2OrderBook.create" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em>, <em class="sig-param"><span class="pre">BookType</span> <span class="pre">book_type</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">simulated=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L2OrderBook.create" title="Permalink to this definition"></a></dt>
 <dd><p>Create a new order book with the given parameters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the book.</p></li>
-<li><p><strong>level</strong> (BookLevel {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}) – The order book level.</p></li>
+<li><p><strong>book_type</strong> (BookType {<code class="docutils literal notranslate"><span class="pre">L1_TBBO</span></code>, <code class="docutils literal notranslate"><span class="pre">L2_MBP</span></code>, <code class="docutils literal notranslate"><span class="pre">L3_MBO</span></code>}) – The order book level.</p></li>
 <li><p><strong>simulated</strong> (<em>bool</em>) – If the order book should be simulated (for backtesting only).</p></li>
 </ul>
 </dd>
@@ -7070,17 +7070,6 @@ trading venue.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>InstrumentId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L2OrderBook.level">
-<span class="sig-name descname"><span class="pre">level</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L2OrderBook.level" title="Permalink to this definition"></a></dt>
-<dd><p>The order book level {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>BookLevel</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -7171,6 +7160,17 @@ trading venue.</p>
 </dl>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L2OrderBook.type">
+<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L2OrderBook.type" title="Permalink to this definition"></a></dt>
+<dd><p>The order book type {<code class="docutils literal notranslate"><span class="pre">L1_TBBO</span></code>, <code class="docutils literal notranslate"><span class="pre">L2_MBP</span></code>, <code class="docutils literal notranslate"><span class="pre">L3_MBO</span></code>}.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>BookType</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L2OrderBook.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L2OrderBook.update" title="Permalink to this definition"></a></dt>
@@ -7188,7 +7188,7 @@ trading venue.</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L3OrderBook">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">L3OrderBook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">uint8_t</span> <span class="pre">price_precision</span></em>, <em class="sig-param"><span class="pre">uint8_t</span> <span class="pre">size_precision</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L3OrderBook" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.orderbook.book.OrderBook" title="nautilus_trader.model.orderbook.book.OrderBook"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.orderbook.book.OrderBook</span></code></a></p>
-<p>Provides an L3 order book.</p>
+<p>Provides an L3_MBO order book.</p>
 <p>A level 3 order books <cite>Levels</cite> can be made up of multiple orders.
 This class maps directly to the functionality of the base class.</p>
 <dl class="py method">
@@ -7232,7 +7232,7 @@ This class maps directly to the functionality of the base class.</p>
 <dd class="field-odd"><p><strong>data</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookData" title="nautilus_trader.model.orderbook.data.OrderBookData"><em>OrderBookData</em></a>) – The data to apply.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If data.level is not equal to self.level.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If data.level is not equal to self.type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -7246,7 +7246,7 @@ This class maps directly to the functionality of the base class.</p>
 <dd class="field-odd"><p><strong>delta</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookDelta" title="nautilus_trader.model.orderbook.data.OrderBookDelta"><em>OrderBookDelta</em></a>) – The delta to apply.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If delta.level is not equal to self.level.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If delta.book_type is not equal to self.type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -7260,7 +7260,7 @@ This class maps directly to the functionality of the base class.</p>
 <dd class="field-odd"><p><strong>deltas</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookDeltas" title="nautilus_trader.model.orderbook.data.OrderBookDeltas"><em>OrderBookDeltas</em></a>) – The deltas to apply.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If snapshot.level is not equal to self.level.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If snapshot.book_type is not equal to self.type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -7274,7 +7274,7 @@ This class maps directly to the functionality of the base class.</p>
 <dd class="field-odd"><p><strong>snapshot</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookSnapshot" title="nautilus_trader.model.orderbook.data.OrderBookSnapshot"><em>OrderBookSnapshot</em></a>) – The snapshot to apply.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If snapshot.level is not equal to self.level.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If snapshot.book_type is not equal to self.type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -7400,13 +7400,13 @@ This class maps directly to the functionality of the base class.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L3OrderBook.create">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em>, <em class="sig-param"><span class="pre">BookLevel</span> <span class="pre">level</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">simulated=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L3OrderBook.create" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em>, <em class="sig-param"><span class="pre">BookType</span> <span class="pre">book_type</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">simulated=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L3OrderBook.create" title="Permalink to this definition"></a></dt>
 <dd><p>Create a new order book with the given parameters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the book.</p></li>
-<li><p><strong>level</strong> (BookLevel {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}) – The order book level.</p></li>
+<li><p><strong>book_type</strong> (BookType {<code class="docutils literal notranslate"><span class="pre">L1_TBBO</span></code>, <code class="docutils literal notranslate"><span class="pre">L2_MBP</span></code>, <code class="docutils literal notranslate"><span class="pre">L3_MBO</span></code>}) – The order book level.</p></li>
 <li><p><strong>simulated</strong> (<em>bool</em>) – If the order book should be simulated (for backtesting only).</p></li>
 </ul>
 </dd>
@@ -7459,17 +7459,6 @@ This class maps directly to the functionality of the base class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>InstrumentId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L3OrderBook.level">
-<span class="sig-name descname"><span class="pre">level</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L3OrderBook.level" title="Permalink to this definition"></a></dt>
-<dd><p>The order book level {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>BookLevel</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -7560,6 +7549,17 @@ This class maps directly to the functionality of the base class.</p>
 </dl>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L3OrderBook.type">
+<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L3OrderBook.type" title="Permalink to this definition"></a></dt>
+<dd><p>The order book type {<code class="docutils literal notranslate"><span class="pre">L1_TBBO</span></code>, <code class="docutils literal notranslate"><span class="pre">L2_MBP</span></code>, <code class="docutils literal notranslate"><span class="pre">L3_MBO</span></code>}.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>BookType</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L3OrderBook.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L3OrderBook.update" title="Permalink to this definition"></a></dt>
@@ -7575,7 +7575,7 @@ This class maps directly to the functionality of the base class.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.OrderBook">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderBook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BookLevel</span> <span class="pre">level</span></em>, <em class="sig-param"><span class="pre">uint8_t</span> <span class="pre">price_precision</span></em>, <em class="sig-param"><span class="pre">uint8_t</span> <span class="pre">size_precision</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.OrderBook" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderBook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BookType</span> <span class="pre">book_type</span></em>, <em class="sig-param"><span class="pre">uint8_t</span> <span class="pre">price_precision</span></em>, <em class="sig-param"><span class="pre">uint8_t</span> <span class="pre">size_precision</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.OrderBook" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The base class for all order books.</p>
 <p>Provides a L1/L2/L3 order book as an <cite>L3OrderBook</cite> which can be proxied to
@@ -7605,7 +7605,7 @@ This class maps directly to the functionality of the base class.</p>
 <dd class="field-odd"><p><strong>data</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookData" title="nautilus_trader.model.orderbook.data.OrderBookData"><em>OrderBookData</em></a>) – The data to apply.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If data.level is not equal to self.level.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If data.level is not equal to self.type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -7619,7 +7619,7 @@ This class maps directly to the functionality of the base class.</p>
 <dd class="field-odd"><p><strong>delta</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookDelta" title="nautilus_trader.model.orderbook.data.OrderBookDelta"><em>OrderBookDelta</em></a>) – The delta to apply.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If delta.level is not equal to self.level.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If delta.book_type is not equal to self.type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -7633,7 +7633,7 @@ This class maps directly to the functionality of the base class.</p>
 <dd class="field-odd"><p><strong>deltas</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookDeltas" title="nautilus_trader.model.orderbook.data.OrderBookDeltas"><em>OrderBookDeltas</em></a>) – The deltas to apply.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If snapshot.level is not equal to self.level.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If snapshot.book_type is not equal to self.type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -7647,7 +7647,7 @@ This class maps directly to the functionality of the base class.</p>
 <dd class="field-odd"><p><strong>snapshot</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookSnapshot" title="nautilus_trader.model.orderbook.data.OrderBookSnapshot"><em>OrderBookSnapshot</em></a>) – The snapshot to apply.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If snapshot.level is not equal to self.level.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If snapshot.book_type is not equal to self.type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -7773,13 +7773,13 @@ This class maps directly to the functionality of the base class.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.OrderBook.create">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em>, <em class="sig-param"><span class="pre">BookLevel</span> <span class="pre">level</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">simulated=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.OrderBook.create" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em>, <em class="sig-param"><span class="pre">BookType</span> <span class="pre">book_type</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">simulated=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.OrderBook.create" title="Permalink to this definition"></a></dt>
 <dd><p>Create a new order book with the given parameters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the book.</p></li>
-<li><p><strong>level</strong> (BookLevel {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}) – The order book level.</p></li>
+<li><p><strong>book_type</strong> (BookType {<code class="docutils literal notranslate"><span class="pre">L1_TBBO</span></code>, <code class="docutils literal notranslate"><span class="pre">L2_MBP</span></code>, <code class="docutils literal notranslate"><span class="pre">L3_MBO</span></code>}) – The order book level.</p></li>
 <li><p><strong>simulated</strong> (<em>bool</em>) – If the order book should be simulated (for backtesting only).</p></li>
 </ul>
 </dd>
@@ -7832,17 +7832,6 @@ This class maps directly to the functionality of the base class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>InstrumentId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.OrderBook.level">
-<span class="sig-name descname"><span class="pre">level</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.OrderBook.level" title="Permalink to this definition"></a></dt>
-<dd><p>The order book level {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>BookLevel</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -7929,6 +7918,17 @@ This class maps directly to the functionality of the base class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>int64</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.OrderBook.type">
+<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.OrderBook.type" title="Permalink to this definition"></a></dt>
+<dd><p>The order book type {<code class="docutils literal notranslate"><span class="pre">L1_TBBO</span></code>, <code class="docutils literal notranslate"><span class="pre">L2_MBP</span></code>, <code class="docutils literal notranslate"><span class="pre">L3_MBO</span></code>}.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>BookType</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -8098,7 +8098,7 @@ This class maps directly to the functionality of the base class.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookData">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderBookData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BookLevel</span> <span class="pre">level</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookData" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderBookData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BookType</span> <span class="pre">book_type</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookData" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.data.Data</span></code></p>
 <p>The abstract base class for all <cite>OrderBook</cite> data.</p>
 <div class="admonition warning">
@@ -8113,10 +8113,21 @@ This class maps directly to the functionality of the base class.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the book.</p></li>
-<li><p><strong>level</strong> (BookLevel {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}) – The order book level.</p></li>
+<li><p><strong>book_type</strong> (BookType {<code class="docutils literal notranslate"><span class="pre">L1_TBBO</span></code>, <code class="docutils literal notranslate"><span class="pre">L2_MBP</span></code>, <code class="docutils literal notranslate"><span class="pre">L3_MBO</span></code>}) – The order book type.</p></li>
 <li><p><strong>ts_event</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the data event occurred.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the data object was initialized.</p></li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookData.book_type">
+<span class="sig-name descname"><span class="pre">book_type</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookData.book_type" title="Permalink to this definition"></a></dt>
+<dd><p>The order book type (L1_TBBO, L2_MBP, L3_MBO).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>BookType</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -8128,17 +8139,6 @@ This class maps directly to the functionality of the base class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>InstrumentId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookData.level">
-<span class="sig-name descname"><span class="pre">level</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookData.level" title="Permalink to this definition"></a></dt>
-<dd><p>The order book level (L1, L2, L3).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>BookLevel</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -8169,7 +8169,7 @@ This class maps directly to the functionality of the base class.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookDelta">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderBookDelta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BookLevel</span> <span class="pre">level</span></em>, <em class="sig-param"><span class="pre">BookAction</span> <span class="pre">action</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookDelta" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderBookDelta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BookType</span> <span class="pre">book_type</span></em>, <em class="sig-param"><span class="pre">BookAction</span> <span class="pre">action</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookDelta" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookData" title="nautilus_trader.model.orderbook.data.OrderBookData"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.orderbook.data.OrderBookData</span></code></a></p>
 <p>Represents a single difference on an <cite>OrderBook</cite>.</p>
 <dl class="py method">
@@ -8180,7 +8180,7 @@ This class maps directly to the functionality of the base class.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID.</p></li>
-<li><p><strong>level</strong> (BookLevel {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}) – The order book level.</p></li>
+<li><p><strong>book_type</strong> (BookType {<code class="docutils literal notranslate"><span class="pre">L1_TBBO</span></code>, <code class="docutils literal notranslate"><span class="pre">L2_MBP</span></code>, <code class="docutils literal notranslate"><span class="pre">L3_MBO</span></code>}) – The order book type.</p></li>
 <li><p><strong>action</strong> (BookAction {<code class="docutils literal notranslate"><span class="pre">ADD</span></code>, <code class="docutils literal notranslate"><span class="pre">UPDATED</span></code>, <code class="docutils literal notranslate"><span class="pre">DELETE</span></code>, <code class="docutils literal notranslate"><span class="pre">CLEAR</span></code>}) – The order book delta action.</p></li>
 <li><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to apply.</p></li>
 <li><p><strong>ts_event</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the data event occurred.</p></li>
@@ -8197,6 +8197,17 @@ This class maps directly to the functionality of the base class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>BookAction</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookDelta.book_type">
+<span class="sig-name descname"><span class="pre">book_type</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookDelta.book_type" title="Permalink to this definition"></a></dt>
+<dd><p>The order book type (L1_TBBO, L2_MBP, L3_MBO).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>BookType</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -8222,17 +8233,6 @@ This class maps directly to the functionality of the base class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>InstrumentId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookDelta.level">
-<span class="sig-name descname"><span class="pre">level</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookDelta.level" title="Permalink to this definition"></a></dt>
-<dd><p>The order book level (L1, L2, L3).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>BookLevel</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -8285,7 +8285,7 @@ This class maps directly to the functionality of the base class.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookDeltas">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderBookDeltas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BookLevel</span> <span class="pre">level</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">deltas</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookDeltas" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderBookDeltas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BookType</span> <span class="pre">book_type</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">deltas</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookDeltas" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookData" title="nautilus_trader.model.orderbook.data.OrderBookData"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.orderbook.data.OrderBookData</span></code></a></p>
 <p>Represents bulk changes for an <cite>OrderBook</cite>.</p>
 <dl class="py method">
@@ -8296,11 +8296,22 @@ This class maps directly to the functionality of the base class.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the book.</p></li>
-<li><p><strong>level</strong> (BookLevel {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}) – The order book level.</p></li>
+<li><p><strong>book_type</strong> (BookType {<code class="docutils literal notranslate"><span class="pre">L1_TBBO</span></code>, <code class="docutils literal notranslate"><span class="pre">L2_MBP</span></code>, <code class="docutils literal notranslate"><span class="pre">L3_MBO</span></code>}) – The order book type.</p></li>
 <li><p><strong>deltas</strong> (<em>list</em><em>[</em><a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookDelta" title="nautilus_trader.model.orderbook.data.OrderBookDelta"><em>OrderBookDelta</em></a><em>]</em>) – The list of order book changes.</p></li>
 <li><p><strong>ts_event</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the data event occurred.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the data object was initialized.</p></li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookDeltas.book_type">
+<span class="sig-name descname"><span class="pre">book_type</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookDeltas.book_type" title="Permalink to this definition"></a></dt>
+<dd><p>The order book type (L1_TBBO, L2_MBP, L3_MBO).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>BookType</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -8337,17 +8348,6 @@ This class maps directly to the functionality of the base class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>InstrumentId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookDeltas.level">
-<span class="sig-name descname"><span class="pre">level</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookDeltas.level" title="Permalink to this definition"></a></dt>
-<dd><p>The order book level (L1, L2, L3).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>BookLevel</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -8389,7 +8389,7 @@ This class maps directly to the functionality of the base class.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookSnapshot">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderBookSnapshot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BookLevel</span> <span class="pre">level</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">bids</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">asks</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookSnapshot" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderBookSnapshot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BookType</span> <span class="pre">book_type</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">bids</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">asks</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookSnapshot" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookData" title="nautilus_trader.model.orderbook.data.OrderBookData"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.orderbook.data.OrderBookData</span></code></a></p>
 <p>Represents a snapshot in time for an <cite>OrderBook</cite>.</p>
 <dl class="py method">
@@ -8400,7 +8400,7 @@ This class maps directly to the functionality of the base class.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the book.</p></li>
-<li><p><strong>level</strong> (BookLevel {<code class="docutils literal notranslate"><span class="pre">L1</span></code>, <code class="docutils literal notranslate"><span class="pre">L2</span></code>, <code class="docutils literal notranslate"><span class="pre">L3</span></code>}) – The order book level.</p></li>
+<li><p><strong>book_type</strong> (BookType {<code class="docutils literal notranslate"><span class="pre">L1_TBBO</span></code>, <code class="docutils literal notranslate"><span class="pre">L2_MBP</span></code>, <code class="docutils literal notranslate"><span class="pre">L3_MBO</span></code>}) – The order book type.</p></li>
 <li><p><strong>bids</strong> (<em>list</em>) – The bids for the snapshot.</p></li>
 <li><p><strong>asks</strong> (<em>list</em>) – The asks for the snapshot.</p></li>
 <li><p><strong>ts_event</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the data event occurred.</p></li>
@@ -8432,6 +8432,17 @@ This class maps directly to the functionality of the base class.</p>
 </dl>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookSnapshot.book_type">
+<span class="sig-name descname"><span class="pre">book_type</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookSnapshot.book_type" title="Permalink to this definition"></a></dt>
+<dd><p>The order book type (L1_TBBO, L2_MBP, L3_MBO).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>BookType</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookSnapshot.from_dict">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dict</span> <span class="pre">values</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookSnapshot" title="nautilus_trader.model.orderbook.data.OrderBookSnapshot"><span class="pre">OrderBookSnapshot</span></a></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookSnapshot.from_dict" title="Permalink to this definition"></a></dt>
@@ -8453,17 +8464,6 @@ This class maps directly to the functionality of the base class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>InstrumentId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookSnapshot.level">
-<span class="sig-name descname"><span class="pre">level</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookSnapshot.level" title="Permalink to this definition"></a></dt>
-<dd><p>The order book level (L1, L2, L3).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>BookLevel</cite></p>
 </dd>
 </dl>
 </dd></dl>
