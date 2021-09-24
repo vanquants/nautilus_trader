@@ -2719,7 +2719,7 @@ position ID resolution.</p></li>
 <span id="models"></span><h2>Models<a class="headerlink" href="#module-nautilus_trader.backtest.models" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.models.FillModel">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">FillModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">double</span> <span class="pre">prob_fill_at_limit=1.0</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">prob_fill_at_stop=1.0</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">prob_slippage=0.0</span></em>, <em class="sig-param"><span class="pre">random_seed=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.models.FillModel" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">FillModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">double</span> <span class="pre">prob_fill_on_limit=1.0</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">prob_fill_on_stop=1.0</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">prob_slippage=0.0</span></em>, <em class="sig-param"><span class="pre">random_seed=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.models.FillModel" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides probabilistic modeling for order fill dynamics including probability
 of fills and slippage by order type.</p>
@@ -2730,8 +2730,8 @@ of fills and slippage by order type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>prob_fill_at_limit</strong> (<em>double</em>) – The probability of limit order filling if the market rests on its price.</p></li>
-<li><p><strong>prob_fill_at_stop</strong> (<em>double</em>) – The probability of stop orders filling if the market rests on its price.</p></li>
+<li><p><strong>prob_fill_on_limit</strong> (<em>double</em>) – The probability of limit order filling if the market rests on its price.</p></li>
+<li><p><strong>prob_fill_on_stop</strong> (<em>double</em>) – The probability of stop orders filling if the market rests on its price.</p></li>
 <li><p><strong>prob_slippage</strong> (<em>double</em>) – The probability of order fill prices slipping by one tick.</p></li>
 <li><p><strong>random_seed</strong> (<em>int</em><em>, </em><em>optional</em>) – The random seed (if None then no random seed).</p></li>
 </ul>
@@ -2779,9 +2779,9 @@ of fills and slippage by order type.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.models.FillModel.prob_fill_at_limit">
-<span class="sig-name descname"><span class="pre">prob_fill_at_limit</span></span><a class="headerlink" href="#nautilus_trader.backtest.models.FillModel.prob_fill_at_limit" title="Permalink to this definition"></a></dt>
-<dd><p>The probability of limit orders filling at the limit price.</p>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.models.FillModel.prob_fill_on_limit">
+<span class="sig-name descname"><span class="pre">prob_fill_on_limit</span></span><a class="headerlink" href="#nautilus_trader.backtest.models.FillModel.prob_fill_on_limit" title="Permalink to this definition"></a></dt>
+<dd><p>The probability of limit orders filling on the limit price.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>bool</cite></p>
@@ -2790,9 +2790,9 @@ of fills and slippage by order type.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.models.FillModel.prob_fill_at_stop">
-<span class="sig-name descname"><span class="pre">prob_fill_at_stop</span></span><a class="headerlink" href="#nautilus_trader.backtest.models.FillModel.prob_fill_at_stop" title="Permalink to this definition"></a></dt>
-<dd><p>The probability of stop orders filling at the stop price.</p>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.models.FillModel.prob_fill_on_stop">
+<span class="sig-name descname"><span class="pre">prob_fill_on_stop</span></span><a class="headerlink" href="#nautilus_trader.backtest.models.FillModel.prob_fill_on_stop" title="Permalink to this definition"></a></dt>
+<dd><p>The probability of stop orders filling on the stop price.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>bool</cite></p>
