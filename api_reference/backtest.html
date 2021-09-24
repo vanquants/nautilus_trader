@@ -1318,6 +1318,14 @@ called after disposal.</p>
 <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.end_streaming">
 <span class="sig-name descname"><span class="pre">end_streaming</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.end_streaming" title="Permalink to this definition"></a></dt>
 <dd><p>End the backtest streaming run.</p>
+<dl class="simple">
+<dt>The following sequence of events will occur:</dt><dd><ul class="simple">
+<li><p>The trader will be stopped which in turn stops the strategies.</p></li>
+<li><p>The exchanges will process all pending messages.</p></li>
+<li><p>Post-run analysis is performed.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1396,7 +1404,9 @@ called after disposal.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.run">
 <span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.run" title="Permalink to this definition"></a></dt>
-<dd><p>Run a backtest from the start datetime to the end datetime.</p>
+<dd><p>Run a backtest.</p>
+<p>At the end of the run the trader and strategies will be stopped, then
+post-run analysis performed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1418,7 +1428,20 @@ to the end of the data.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.run_streaming">
 <span class="sig-name descname"><span class="pre">run_streaming</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.run_streaming" title="Permalink to this definition"></a></dt>
-<dd><p>Run a backtest on streaming data.</p>
+<dd><p>Run a backtest in streaming mode.</p>
+<p>If more data than can fit in memory is to be run through the backtest
+engine, then streaming mode can be utilized. The expected sequence is as
+follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Add initial data block and strategies.</p></li>
+<li><p>Call <cite>run_streaming()</cite>.</p></li>
+<li><p>Call <cite>clear_data()</cite>.</p></li>
+<li><p>Add next block of data stream.</p></li>
+<li><p>Call <cite>run_streaming()</cite>.</p></li>
+<li><p>Call <cite>end_streaming()</cite> when there is no more data to run on.</p></li>
+</ul>
+</div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
