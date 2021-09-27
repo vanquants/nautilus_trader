@@ -178,61 +178,6 @@ slice of a to be searched.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.dt_to_unix_micros">
-<span class="sig-name descname"><span class="pre">dt_to_unix_micros</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">datetime</span> <span class="pre">dt</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.dt_to_unix_micros" title="Permalink to this definition"></a></dt>
-<dd><p>Return the round UNIX timestamp (microseconds) from the given <cite>datetime</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>dt</strong> (<em>datetime</em>) – The datetime to convert.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>int64</em></p>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – If timestamp is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.dt_to_unix_millis">
-<span class="sig-name descname"><span class="pre">dt_to_unix_millis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">datetime</span> <span class="pre">dt</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.dt_to_unix_millis" title="Permalink to this definition"></a></dt>
-<dd><p>Return the round UNIX timestamp (milliseconds) from the given <cite>datetime</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>dt</strong> (<em>datetime</em>) – The datetime to convert.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>int64</em></p>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – If timestamp is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.dt_to_unix_nanos">
-<span class="sig-name descname"><span class="pre">dt_to_unix_nanos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">datetime</span> <span class="pre">dt</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.dt_to_unix_nanos" title="Permalink to this definition"></a></dt>
-<dd><p>Return the round UNIX timestamp (nanoseconds) from the given <cite>datetime</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>dt</strong> (<em>datetime</em>) – The datetime to convert.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>int64</em></p>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – If timestamp is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The maximum resolution of a Python <cite>datetime</cite> is 1 microsecond (μs).</p>
-</div>
-</dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.datetime.format_iso8601">
 <span class="sig-name descname"><span class="pre">format_iso8601</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">datetime</span> <span class="pre">dt</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.format_iso8601" title="Permalink to this definition"></a></dt>
 <dd><p>Format the given string to millisecond accuracy ISO 8601 specification.</p>
@@ -298,60 +243,6 @@ slice of a to be searched.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>bool</em> – True if object timezone naive, else False.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.iso8601_to_unix_micros">
-<span class="sig-name descname"><span class="pre">iso8601_to_unix_micros</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">iso8601</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.iso8601_to_unix_micros" title="Permalink to this definition"></a></dt>
-<dd><p>Convert the given string to the UNIX timestamp (microseconds).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>iso8601</strong> (<em>str</em>) – The input iso8601 datetime string to convert.</p>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<p>Unit accuracy is microseconds.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>int64</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.iso8601_to_unix_millis">
-<span class="sig-name descname"><span class="pre">iso8601_to_unix_millis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">iso8601</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.iso8601_to_unix_millis" title="Permalink to this definition"></a></dt>
-<dd><p>Convert the given string to the UNIX timestamp (microseconds).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>iso8601</strong> (<em>str</em>) – The input iso8601 datetime string to convert.</p>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<p>Unit accuracy is millisecond.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>int64</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.iso8601_to_unix_nanos">
-<span class="sig-name descname"><span class="pre">iso8601_to_unix_nanos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">iso8601</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.iso8601_to_unix_nanos" title="Permalink to this definition"></a></dt>
-<dd><p>Convert the given string to the UNIX timestamp (nanoseconds).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>iso8601</strong> (<em>str</em>) – The input iso8601 datetime string to convert.</p>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<p>Unit accuracy is nanoseconds.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>int64</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -457,34 +348,6 @@ slice of a to be searched.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.nanos_to_timedelta">
-<span class="sig-name descname"><span class="pre">nanos_to_timedelta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">int64_t</span> <span class="pre">nanos</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">timedelta</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.nanos_to_timedelta" title="Permalink to this definition"></a></dt>
-<dd><p>Return a timedelta from the given nanoseconds (ns).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>nanos</strong> (<em>int64</em>) – The nanoseconds to convert.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>timedelta</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.nanos_to_unix_dt">
-<span class="sig-name descname"><span class="pre">nanos_to_unix_dt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">double</span> <span class="pre">nanos</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">datetime</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.nanos_to_unix_dt" title="Permalink to this definition"></a></dt>
-<dd><p>Return the tz-aware datetime in UTC from the given UNIX time (nanoseconds).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>nanos</strong> (<em>double</em>) – The nanoseconds to convert.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>datetime</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.datetime.secs_to_nanos">
 <span class="sig-name descname"><span class="pre">secs_to_nanos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">double</span> <span class="pre">secs</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.secs_to_nanos" title="Permalink to this definition"></a></dt>
 <dd><p>Return round nanoseconds (ns) converted from the given seconds.</p>
@@ -496,24 +359,6 @@ slice of a to be searched.</p>
 <dd class="field-even"><p><em>int64</em></p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.timedelta_to_nanos">
-<span class="sig-name descname"><span class="pre">timedelta_to_nanos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">timedelta</span> <span class="pre">td</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.timedelta_to_nanos" title="Permalink to this definition"></a></dt>
-<dd><p>Return round nanoseconds (ns) converted from the given <cite>timedelta</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>td</strong> (<em>timedelta</em>) – The timedelta to convert.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>int64</em></p>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The maximum resolution of a Python <cite>timedelta</cite> is 1 microsecond (μs).</p>
-</div>
 </dd></dl>
 
 </section>
