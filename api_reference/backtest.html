@@ -1237,7 +1237,7 @@ source must be <code class="docutils literal notranslate"><span class="pre">EXTE
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.add_venue">
-<span class="sig-name descname"><span class="pre">add_venue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue</span></em>, <em class="sig-param"><span class="pre">VenueType</span> <span class="pre">venue_type</span></em>, <em class="sig-param"><span class="pre">OMSType</span> <span class="pre">oms_type</span></em>, <em class="sig-param"><span class="pre">AccountType</span> <span class="pre">account_type</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">base_currency</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">starting_balances</span></em>, <em class="sig-param"><span class="pre">default_leverage=None</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">leverages=None</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">is_frozen_account=False</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">modules=None</span></em>, <em class="sig-param"><span class="pre">FillModel</span> <span class="pre">fill_model=None</span></em>, <em class="sig-param"><span class="pre">BookType</span> <span class="pre">book_type=BookType.L1_TBBO</span></em>, <em class="sig-param"><span class="pre">fill_limit_at_price=False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.add_venue" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">add_venue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue</span></em>, <em class="sig-param"><span class="pre">VenueType</span> <span class="pre">venue_type</span></em>, <em class="sig-param"><span class="pre">OMSType</span> <span class="pre">oms_type</span></em>, <em class="sig-param"><span class="pre">AccountType</span> <span class="pre">account_type</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">base_currency</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">starting_balances</span></em>, <em class="sig-param"><span class="pre">default_leverage=None</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">leverages=None</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">is_frozen_account=False</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">modules=None</span></em>, <em class="sig-param"><span class="pre">FillModel</span> <span class="pre">fill_model=None</span></em>, <em class="sig-param"><span class="pre">BookType</span> <span class="pre">book_type=BookType.L1_TBBO</span></em>, <em class="sig-param"><span class="pre">fill_limit_at_price:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></em>, <em class="sig-param"><span class="pre">fill_stop_at_price:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.add_venue" title="Permalink to this definition"></a></dt>
 <dd><p>Add a <cite>SimulatedExchange</cite> with the given parameters to the backtest engine.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1255,7 +1255,8 @@ generate new position IDs.</p></li>
 <li><p><strong>modules</strong> (<em>list</em><em>[</em><a class="reference internal" href="#nautilus_trader.backtest.modules.SimulationModule" title="nautilus_trader.backtest.modules.SimulationModule"><em>SimulationModule</em></a><em>, </em><em>optional</em>) – The simulation modules to load into the exchange.</p></li>
 <li><p><strong>fill_model</strong> (<a class="reference internal" href="#nautilus_trader.backtest.models.FillModel" title="nautilus_trader.backtest.models.FillModel"><em>FillModel</em></a><em>, </em><em>optional</em>) – The fill model for the exchange (if None then no probabilistic fills).</p></li>
 <li><p><strong>book_type</strong> (<em>BookType</em>) – The default order book type for fill modelling.</p></li>
-<li><p><strong>fill_limit_at_price</strong> (<em>bool</em>) – If limit orders should be filled at their original price only (overrides slippage).</p></li>
+<li><p><strong>fill_limit_at_price</strong> (<em>bool</em>) – If <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> orders should be filled at their original price only (overrides slippage).</p></li>
+<li><p><strong>fill_stop_at_price</strong> (<em>bool</em>) – If <code class="docutils literal notranslate"><span class="pre">STOP_MARKET</span></code> orders should be filled at their original price only (overrides slippage).</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -1434,10 +1435,10 @@ engine, then streaming mode can be utilized. The expected sequence is as
 follows:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Add initial data block and strategies.</p></li>
+<li><p>Add initial data batch and strategies.</p></li>
 <li><p>Call <cite>run_streaming()</cite>.</p></li>
 <li><p>Call <cite>clear_data()</cite>.</p></li>
-<li><p>Add next block of data stream.</p></li>
+<li><p>Add next batch of data stream.</p></li>
 <li><p>Call <cite>run_streaming()</cite>.</p></li>
 <li><p>Call <cite>end_streaming()</cite> when there is no more data to run on.</p></li>
 </ul>
@@ -1445,9 +1446,9 @@ follows:</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>start</strong> (<em>Union</em><em>[</em><em>datetime</em><em>, </em><em>str</em><em>, </em><em>int</em><em>]</em><em>, </em><em>optional</em>) – The start datetime (UTC) for the current block of data. If <code class="docutils literal notranslate"><span class="pre">None</span></code>
+<li><p><strong>start</strong> (<em>Union</em><em>[</em><em>datetime</em><em>, </em><em>str</em><em>, </em><em>int</em><em>]</em><em>, </em><em>optional</em>) – The start datetime (UTC) for the current batch of data. If <code class="docutils literal notranslate"><span class="pre">None</span></code>
 engine runs from the start of the data.</p></li>
-<li><p><strong>end</strong> (<em>Union</em><em>[</em><em>datetime</em><em>, </em><em>str</em><em>, </em><em>int</em><em>]</em><em>, </em><em>optional</em>) – The end datetime (UTC) for the current block of data. If <code class="docutils literal notranslate"><span class="pre">None</span></code> engine runs
+<li><p><strong>end</strong> (<em>Union</em><em>[</em><em>datetime</em><em>, </em><em>str</em><em>, </em><em>int</em><em>]</em><em>, </em><em>optional</em>) – The end datetime (UTC) for the current batch of data. If <code class="docutils literal notranslate"><span class="pre">None</span></code> engine runs
 to the end of the data.</p></li>
 </ul>
 </dd>
@@ -1570,7 +1571,7 @@ the new model: you should trust this data</p></li>
 <span id="exchange"></span><h2>Exchange<a class="headerlink" href="#module-nautilus_trader.backtest.exchange" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">SimulatedExchange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue,</span> <span class="pre">VenueType</span> <span class="pre">venue_type,</span> <span class="pre">OMSType</span> <span class="pre">oms_type,</span> <span class="pre">AccountType</span> <span class="pre">account_type,</span> <span class="pre">Currency</span> <span class="pre">base_currency,</span> <span class="pre">list</span> <span class="pre">starting_balances,</span> <span class="pre">default_leverage:</span> <span class="pre">Decimal,</span> <span class="pre">leverages:</span> <span class="pre">Dict[InstrumentId,</span> <span class="pre">Decimal],</span> <span class="pre">bool</span> <span class="pre">is_frozen_account,</span> <span class="pre">list</span> <span class="pre">instruments,</span> <span class="pre">list</span> <span class="pre">modules,</span> <span class="pre">CacheFacade</span> <span class="pre">cache,</span> <span class="pre">FillModel</span> <span class="pre">fill_model,</span> <span class="pre">TestClock</span> <span class="pre">clock,</span> <span class="pre">Logger</span> <span class="pre">logger,</span> <span class="pre">BookType</span> <span class="pre">book_type=BookType.L1_TBBO,</span> <span class="pre">fill_limit_at_price=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">SimulatedExchange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue,</span> <span class="pre">VenueType</span> <span class="pre">venue_type,</span> <span class="pre">OMSType</span> <span class="pre">oms_type,</span> <span class="pre">AccountType</span> <span class="pre">account_type,</span> <span class="pre">Currency</span> <span class="pre">base_currency,</span> <span class="pre">list</span> <span class="pre">starting_balances,</span> <span class="pre">default_leverage:</span> <span class="pre">Decimal,</span> <span class="pre">leverages:</span> <span class="pre">Dict[InstrumentId,</span> <span class="pre">Decimal],</span> <span class="pre">bool</span> <span class="pre">is_frozen_account,</span> <span class="pre">list</span> <span class="pre">instruments,</span> <span class="pre">list</span> <span class="pre">modules,</span> <span class="pre">CacheFacade</span> <span class="pre">cache,</span> <span class="pre">FillModel</span> <span class="pre">fill_model,</span> <span class="pre">TestClock</span> <span class="pre">clock,</span> <span class="pre">Logger</span> <span class="pre">logger,</span> <span class="pre">BookType</span> <span class="pre">book_type=BookType.L1_TBBO,</span> <span class="pre">fill_limit_at_price=False,</span> <span class="pre">fill_stop_at_price=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a simulated financial market exchange.</p>
 <dl class="py method">
@@ -1594,7 +1595,8 @@ the new model: you should trust this data</p></li>
 <li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.TestClock" title="nautilus_trader.common.clock.TestClock"><em>TestClock</em></a>) – The clock for the exchange.</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the exchange.</p></li>
 <li><p><strong>book_type</strong> (<em>BookType</em>) – The order book type for the exchange.</p></li>
-<li><p><strong>fill_limit_at_price</strong> (<em>bool</em>) – If limit orders should be filled at their original price only (overrides slippage).</p></li>
+<li><p><strong>fill_limit_at_price</strong> (<em>bool</em>) – If <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> orders should be filled at their original price only (overrides slippage).</p></li>
+<li><p><strong>fill_stop_at_price</strong> (<em>bool</em>) – If <code class="docutils literal notranslate"><span class="pre">STOP_MARKET</span></code> orders should be filled at their original price only (overrides slippage).</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -1724,7 +1726,7 @@ the new model: you should trust this data</p></li>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange.fill_limit_at_price">
 <span class="sig-name descname"><span class="pre">fill_limit_at_price</span></span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange.fill_limit_at_price" title="Permalink to this definition"></a></dt>
-<dd><p>If limit orders should be filled at their original price.</p>
+<dd><p>If <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> orders should be filled at their original price only.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>bool</cite></p>
@@ -1739,6 +1741,17 @@ the new model: you should trust this data</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>FillModel</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange.fill_stop_at_price">
+<span class="sig-name descname"><span class="pre">fill_stop_at_price</span></span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange.fill_stop_at_price" title="Permalink to this definition"></a></dt>
+<dd><p>If <code class="docutils literal notranslate"><span class="pre">STOP_MARKET</span></code> orders should be filled at their original price only.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>bool</cite></p>
 </dd>
 </dl>
 </dd></dl>

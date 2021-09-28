@@ -1494,7 +1494,7 @@ default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – The name for the alert (must be unique for this clock).</p></li>
-<li><p><strong>alert_time_ns</strong> (<em>int64</em>) – The Unix (nanoseconds) time for the alert.</p></li>
+<li><p><strong>alert_time_ns</strong> (<em>int64</em>) – The UNIX time (nanoseconds) for the alert.</p></li>
 <li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent"><em>TimeEvent</em></a><em>]</em><em>, </em><em>None</em><em>]</em><em>, </em><em>optional</em>) – The callback to receive time events.</p></li>
 </ul>
 </dd>
@@ -1544,7 +1544,7 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dt class="sig sig-object py" id="nautilus_trader.common.clock.Clock.set_timer_ns">
 <span class="sig-name descname"><span class="pre">set_timer_ns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">name,</span> <span class="pre">int64_t</span> <span class="pre">interval_ns,</span> <span class="pre">int64_t</span> <span class="pre">start_time_ns,</span> <span class="pre">int64_t</span> <span class="pre">stop_time_ns,</span> <span class="pre">callback:</span> <span class="pre">Callable[[TimeEvent],</span> <span class="pre">None]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.Clock.set_timer_ns" title="Permalink to this definition"></a></dt>
 <dd><p>Set a timer to run.</p>
-<p>The timer will run from the start time (optionally until the stop time).
+<p>The timer will run from the start time until the stop time.
 When the intervals are reached the handlers will be passed the
 <cite>TimeEvent</cite> containing the timers unique name. If no handler is passed
 then the default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
@@ -1552,9 +1552,9 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – The name for the timer (must be unique for this clock).</p></li>
-<li><p><strong>interval_ns</strong> (<em>int64</em>) – The time interval for the timer.</p></li>
-<li><p><strong>start_time_ns</strong> (<em>int64</em>) – The start time for the timer..</p></li>
-<li><p><strong>stop_time_ns</strong> (<em>int64</em>) – The stop time for the timer.</p></li>
+<li><p><strong>interval_ns</strong> (<em>int64</em>) – The time interval (nanoseconds) for the timer.</p></li>
+<li><p><strong>start_time_ns</strong> (<em>int64</em>) – The start UNIX time (nanoseconds) for the timer.</p></li>
+<li><p><strong>stop_time_ns</strong> (<em>int64</em>) – The stop UNIX time (nanoseconds) for the timer.</p></li>
 <li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent"><em>TimeEvent</em></a><em>]</em><em>, </em><em>None</em><em>]</em><em>, </em><em>optional</em>) – The callback to receive time events.</p></li>
 </ul>
 </dd>
@@ -1822,7 +1822,7 @@ default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – The name for the alert (must be unique for this clock).</p></li>
-<li><p><strong>alert_time_ns</strong> (<em>int64</em>) – The Unix (nanoseconds) time for the alert.</p></li>
+<li><p><strong>alert_time_ns</strong> (<em>int64</em>) – The UNIX time (nanoseconds) for the alert.</p></li>
 <li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent"><em>TimeEvent</em></a><em>]</em><em>, </em><em>None</em><em>]</em><em>, </em><em>optional</em>) – The callback to receive time events.</p></li>
 </ul>
 </dd>
@@ -1872,7 +1872,7 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dt class="sig sig-object py" id="nautilus_trader.common.clock.LiveClock.set_timer_ns">
 <span class="sig-name descname"><span class="pre">set_timer_ns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">name,</span> <span class="pre">int64_t</span> <span class="pre">interval_ns,</span> <span class="pre">int64_t</span> <span class="pre">start_time_ns,</span> <span class="pre">int64_t</span> <span class="pre">stop_time_ns,</span> <span class="pre">callback:</span> <span class="pre">Callable[[TimeEvent],</span> <span class="pre">None]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.LiveClock.set_timer_ns" title="Permalink to this definition"></a></dt>
 <dd><p>Set a timer to run.</p>
-<p>The timer will run from the start time (optionally until the stop time).
+<p>The timer will run from the start time until the stop time.
 When the intervals are reached the handlers will be passed the
 <cite>TimeEvent</cite> containing the timers unique name. If no handler is passed
 then the default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
@@ -1880,9 +1880,9 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – The name for the timer (must be unique for this clock).</p></li>
-<li><p><strong>interval_ns</strong> (<em>int64</em>) – The time interval for the timer.</p></li>
-<li><p><strong>start_time_ns</strong> (<em>int64</em>) – The start time for the timer..</p></li>
-<li><p><strong>stop_time_ns</strong> (<em>int64</em>) – The stop time for the timer.</p></li>
+<li><p><strong>interval_ns</strong> (<em>int64</em>) – The time interval (nanoseconds) for the timer.</p></li>
+<li><p><strong>start_time_ns</strong> (<em>int64</em>) – The start UNIX time (nanoseconds) for the timer.</p></li>
+<li><p><strong>stop_time_ns</strong> (<em>int64</em>) – The stop UNIX time (nanoseconds) for the timer.</p></li>
 <li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent"><em>TimeEvent</em></a><em>]</em><em>, </em><em>None</em><em>]</em><em>, </em><em>optional</em>) – The callback to receive time events.</p></li>
 </ul>
 </dd>
@@ -1988,7 +1988,7 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">TestClock</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>initial_ns</strong> (<em>int64</em>) – The initial UNIX time for the clock (nanoseconds).</p>
+<dd class="field-odd"><p><strong>initial_ns</strong> (<em>int64</em>) – The initial UNIX time (nanoseconds) for the clock.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2177,7 +2177,7 @@ default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – The name for the alert (must be unique for this clock).</p></li>
-<li><p><strong>alert_time_ns</strong> (<em>int64</em>) – The Unix (nanoseconds) time for the alert.</p></li>
+<li><p><strong>alert_time_ns</strong> (<em>int64</em>) – The UNIX time (nanoseconds) for the alert.</p></li>
 <li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent"><em>TimeEvent</em></a><em>]</em><em>, </em><em>None</em><em>]</em><em>, </em><em>optional</em>) – The callback to receive time events.</p></li>
 </ul>
 </dd>
@@ -2227,7 +2227,7 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dt class="sig sig-object py" id="nautilus_trader.common.clock.TestClock.set_timer_ns">
 <span class="sig-name descname"><span class="pre">set_timer_ns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">name,</span> <span class="pre">int64_t</span> <span class="pre">interval_ns,</span> <span class="pre">int64_t</span> <span class="pre">start_time_ns,</span> <span class="pre">int64_t</span> <span class="pre">stop_time_ns,</span> <span class="pre">callback:</span> <span class="pre">Callable[[TimeEvent],</span> <span class="pre">None]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.TestClock.set_timer_ns" title="Permalink to this definition"></a></dt>
 <dd><p>Set a timer to run.</p>
-<p>The timer will run from the start time (optionally until the stop time).
+<p>The timer will run from the start time until the stop time.
 When the intervals are reached the handlers will be passed the
 <cite>TimeEvent</cite> containing the timers unique name. If no handler is passed
 then the default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
@@ -2235,9 +2235,9 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – The name for the timer (must be unique for this clock).</p></li>
-<li><p><strong>interval_ns</strong> (<em>int64</em>) – The time interval for the timer.</p></li>
-<li><p><strong>start_time_ns</strong> (<em>int64</em>) – The start time for the timer..</p></li>
-<li><p><strong>stop_time_ns</strong> (<em>int64</em>) – The stop time for the timer.</p></li>
+<li><p><strong>interval_ns</strong> (<em>int64</em>) – The time interval (nanoseconds) for the timer.</p></li>
+<li><p><strong>start_time_ns</strong> (<em>int64</em>) – The start UNIX time (nanoseconds) for the timer.</p></li>
+<li><p><strong>stop_time_ns</strong> (<em>int64</em>) – The stop UNIX time (nanoseconds) for the timer.</p></li>
 <li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="#nautilus_trader.common.timer.TimeEvent" title="nautilus_trader.common.timer.TimeEvent"><em>TimeEvent</em></a><em>]</em><em>, </em><em>None</em><em>]</em><em>, </em><em>optional</em>) – The callback to receive time events.</p></li>
 </ul>
 </dd>
