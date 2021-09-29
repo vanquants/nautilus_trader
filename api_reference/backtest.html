@@ -1277,6 +1277,28 @@ generate new position IDs.</p></li>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.backtest_end">
+<span class="sig-name descname"><span class="pre">backtest_end</span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.backtest_end" title="Permalink to this definition"></a></dt>
+<dd><p>The last backtest run time range end (if run).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>datetime</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.backtest_start">
+<span class="sig-name descname"><span class="pre">backtest_start</span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.backtest_start" title="Permalink to this definition"></a></dt>
+<dd><p>The last backtest run time range start (if run).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>datetime</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.cache">
 <span class="sig-name descname"><span class="pre">cache</span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.cache" title="Permalink to this definition"></a></dt>
 <dd><p>The backtest engine cache.</p>
@@ -1336,6 +1358,17 @@ called after disposal.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>ExecutionEngine</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.get_result">
+<span class="sig-name descname"><span class="pre">get_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.get_result" title="Permalink to this definition"></a></dt>
+<dd><p>Return the backtest result from the last run.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>BacktestResult</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1404,7 +1437,7 @@ called after disposal.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.run">
-<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.run" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">start:</span> <span class="pre">Union[datetime</span></em>, <em class="sig-param"><span class="pre">str</span></em>, <em class="sig-param"><span class="pre">int]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">end:</span> <span class="pre">Union[datetime</span></em>, <em class="sig-param"><span class="pre">str</span></em>, <em class="sig-param"><span class="pre">int]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">run_config_id:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.run" title="Permalink to this definition"></a></dt>
 <dd><p>Run a backtest.</p>
 <p>At the end of the run the trader and strategies will be stopped, then
 post-run analysis performed.</p>
@@ -1415,6 +1448,7 @@ post-run analysis performed.</p>
 from the start of the data.</p></li>
 <li><p><strong>end</strong> (<em>Union</em><em>[</em><em>datetime</em><em>, </em><em>str</em><em>, </em><em>int</em><em>]</em><em>, </em><em>optional</em>) – The end datetime (UTC) for the backtest run. If <code class="docutils literal notranslate"><span class="pre">None</span></code> engine runs
 to the end of the data.</p></li>
+<li><p><strong>run_config_id</strong> (<em>str</em><em>, </em><em>optional</em>) – The tokenized <cite>BacktestRunConfig</cite> ID.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -1426,9 +1460,53 @@ to the end of the data.</p></li>
 </dl>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.run_config_id">
+<span class="sig-name descname"><span class="pre">run_config_id</span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.run_config_id" title="Permalink to this definition"></a></dt>
+<dd><p>The last backtest engine run config ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>str</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.run_finished">
+<span class="sig-name descname"><span class="pre">run_finished</span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.run_finished" title="Permalink to this definition"></a></dt>
+<dd><p>When the last backtest run finished (if run).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>datetime</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.run_id">
+<span class="sig-name descname"><span class="pre">run_id</span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.run_id" title="Permalink to this definition"></a></dt>
+<dd><p>The last backtest engine run ID (if run).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>UUID4</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.run_started">
+<span class="sig-name descname"><span class="pre">run_started</span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.run_started" title="Permalink to this definition"></a></dt>
+<dd><p>When the last backtest run started (if run).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>datetime</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.run_streaming">
-<span class="sig-name descname"><span class="pre">run_streaming</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.run_streaming" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">run_streaming</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">start:</span> <span class="pre">Union[datetime</span></em>, <em class="sig-param"><span class="pre">str</span></em>, <em class="sig-param"><span class="pre">int]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">end:</span> <span class="pre">Union[datetime</span></em>, <em class="sig-param"><span class="pre">str</span></em>, <em class="sig-param"><span class="pre">int]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">run_config_id:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.run_streaming" title="Permalink to this definition"></a></dt>
 <dd><p>Run a backtest in streaming mode.</p>
 <p>If more data than can fit in memory is to be run through the backtest
 engine, then streaming mode can be utilized. The expected sequence is as
@@ -1450,6 +1528,7 @@ follows:</p>
 engine runs from the start of the data.</p></li>
 <li><p><strong>end</strong> (<em>Union</em><em>[</em><em>datetime</em><em>, </em><em>str</em><em>, </em><em>int</em><em>]</em><em>, </em><em>optional</em>) – The end datetime (UTC) for the current batch of data. If <code class="docutils literal notranslate"><span class="pre">None</span></code> engine runs
 to the end of the data.</p></li>
+<li><p><strong>run_config_id</strong> (<em>str</em><em>, </em><em>optional</em>) – The tokenized backtest run configuration ID.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
