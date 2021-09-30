@@ -1237,7 +1237,7 @@ source must be <code class="docutils literal notranslate"><span class="pre">EXTE
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.add_venue">
-<span class="sig-name descname"><span class="pre">add_venue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue</span></em>, <em class="sig-param"><span class="pre">VenueType</span> <span class="pre">venue_type</span></em>, <em class="sig-param"><span class="pre">OMSType</span> <span class="pre">oms_type</span></em>, <em class="sig-param"><span class="pre">AccountType</span> <span class="pre">account_type</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">base_currency</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">starting_balances</span></em>, <em class="sig-param"><span class="pre">default_leverage=None</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">leverages=None</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">is_frozen_account=False</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">modules=None</span></em>, <em class="sig-param"><span class="pre">FillModel</span> <span class="pre">fill_model=None</span></em>, <em class="sig-param"><span class="pre">BookType</span> <span class="pre">book_type=BookType.L1_TBBO</span></em>, <em class="sig-param"><span class="pre">bar_execution:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.add_venue" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">add_venue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue</span></em>, <em class="sig-param"><span class="pre">VenueType</span> <span class="pre">venue_type</span></em>, <em class="sig-param"><span class="pre">OMSType</span> <span class="pre">oms_type</span></em>, <em class="sig-param"><span class="pre">AccountType</span> <span class="pre">account_type</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">base_currency</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">starting_balances</span></em>, <em class="sig-param"><span class="pre">default_leverage=None</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">leverages=None</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">is_frozen_account=False</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">modules=None</span></em>, <em class="sig-param"><span class="pre">FillModel</span> <span class="pre">fill_model=None</span></em>, <em class="sig-param"><span class="pre">BookType</span> <span class="pre">book_type=BookType.L1_TBBO</span></em>, <em class="sig-param"><span class="pre">bar_execution:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></em>, <em class="sig-param"><span class="pre">reject_stop_orders:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.add_venue" title="Permalink to this definition"></a></dt>
 <dd><p>Add a <cite>SimulatedExchange</cite> with the given parameters to the backtest engine.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1256,6 +1256,7 @@ generate new position IDs.</p></li>
 <li><p><strong>fill_model</strong> (<a class="reference internal" href="#nautilus_trader.backtest.models.FillModel" title="nautilus_trader.backtest.models.FillModel"><em>FillModel</em></a><em>, </em><em>optional</em>) – The fill model for the exchange (if None then no probabilistic fills).</p></li>
 <li><p><strong>book_type</strong> (<em>BookType</em>) – The default order book type for fill modelling.</p></li>
 <li><p><strong>bar_execution</strong> (<em>bool</em>) – If the exchange execution dynamics is based on bar data.</p></li>
+<li><p><strong>reject_stop_orders</strong> (<em>bool</em>) – If stop orders are rejected on submission if in the market.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -1649,7 +1650,7 @@ the new model: you should trust this data</p></li>
 <span id="exchange"></span><h2>Exchange<a class="headerlink" href="#module-nautilus_trader.backtest.exchange" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">SimulatedExchange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue,</span> <span class="pre">VenueType</span> <span class="pre">venue_type,</span> <span class="pre">OMSType</span> <span class="pre">oms_type,</span> <span class="pre">AccountType</span> <span class="pre">account_type,</span> <span class="pre">Currency</span> <span class="pre">base_currency,</span> <span class="pre">list</span> <span class="pre">starting_balances,</span> <span class="pre">default_leverage:</span> <span class="pre">Decimal,</span> <span class="pre">leverages:</span> <span class="pre">Dict[InstrumentId,</span> <span class="pre">Decimal],</span> <span class="pre">bool</span> <span class="pre">is_frozen_account,</span> <span class="pre">list</span> <span class="pre">instruments,</span> <span class="pre">list</span> <span class="pre">modules,</span> <span class="pre">CacheFacade</span> <span class="pre">cache,</span> <span class="pre">FillModel</span> <span class="pre">fill_model,</span> <span class="pre">TestClock</span> <span class="pre">clock,</span> <span class="pre">Logger</span> <span class="pre">logger,</span> <span class="pre">BookType</span> <span class="pre">book_type=BookType.L1_TBBO,</span> <span class="pre">bar_execution=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">SimulatedExchange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue,</span> <span class="pre">VenueType</span> <span class="pre">venue_type,</span> <span class="pre">OMSType</span> <span class="pre">oms_type,</span> <span class="pre">AccountType</span> <span class="pre">account_type,</span> <span class="pre">Currency</span> <span class="pre">base_currency,</span> <span class="pre">list</span> <span class="pre">starting_balances,</span> <span class="pre">default_leverage:</span> <span class="pre">Decimal,</span> <span class="pre">leverages:</span> <span class="pre">Dict[InstrumentId,</span> <span class="pre">Decimal],</span> <span class="pre">bool</span> <span class="pre">is_frozen_account,</span> <span class="pre">list</span> <span class="pre">instruments,</span> <span class="pre">list</span> <span class="pre">modules,</span> <span class="pre">CacheFacade</span> <span class="pre">cache,</span> <span class="pre">FillModel</span> <span class="pre">fill_model,</span> <span class="pre">TestClock</span> <span class="pre">clock,</span> <span class="pre">Logger</span> <span class="pre">logger,</span> <span class="pre">BookType</span> <span class="pre">book_type=BookType.L1_TBBO,</span> <span class="pre">bar_execution:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">reject_stop_orders:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a simulated financial market exchange.</p>
 <dl class="py method">
@@ -1674,6 +1675,7 @@ the new model: you should trust this data</p></li>
 <li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the exchange.</p></li>
 <li><p><strong>book_type</strong> (<em>BookType</em>) – The order book type for the exchange.</p></li>
 <li><p><strong>bar_execution</strong> (<em>bool</em>) – If the exchange execution dynamics is based on bar data.</p></li>
+<li><p><strong>reject_stop_orders</strong> (<em>bool</em>) – If stop orders are rejected on submission if in the market.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -1717,7 +1719,7 @@ the new model: you should trust this data</p></li>
 <dd><p>If the exchange execution dynamics is based on bar data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>FillModel</cite></p>
+<dd class="field-odd"><p><cite>bool</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1995,6 +1997,17 @@ the new model: you should trust this data</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>client</strong> (<a class="reference internal" href="#nautilus_trader.backtest.execution_client.BacktestExecClient" title="nautilus_trader.backtest.execution_client.BacktestExecClient"><em>BacktestExecClient</em></a>) – The client to register</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange.reject_stop_orders">
+<span class="sig-name descname"><span class="pre">reject_stop_orders</span></span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange.reject_stop_orders" title="Permalink to this definition"></a></dt>
+<dd><p>If stop orders are rejected on submission if in the market.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>bool</cite></p>
 </dd>
 </dl>
 </dd></dl>
