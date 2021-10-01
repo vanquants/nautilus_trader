@@ -372,6 +372,12 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.cache.base.CacheFacade.position_for_order">
+<span class="sig-name descname"><span class="pre">position_for_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Position</span></span></span><a class="headerlink" href="#nautilus_trader.cache.base.CacheFacade.position_for_order" title="Permalink to this definition"></a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.cache.base.CacheFacade.position_id">
 <span class="sig-name descname"><span class="pre">position_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PositionId</span></span></span><a class="headerlink" href="#nautilus_trader.cache.base.CacheFacade.position_id" title="Permalink to this definition"></a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
@@ -1586,6 +1592,20 @@ and is open.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>int</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.cache.cache.Cache.position_for_order">
+<span class="sig-name descname"><span class="pre">position_for_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Position</span></span></span><a class="headerlink" href="#nautilus_trader.cache.cache.Cache.position_for_order" title="Permalink to this definition"></a></dt>
+<dd><p>Return the position associated with the given client order ID (if found).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>client_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Position or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
