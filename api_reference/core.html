@@ -180,7 +180,7 @@ slice of a to be searched.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.datetime.dt_to_unix_nanos">
 <span class="sig-name descname"><span class="pre">dt_to_unix_nanos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pd.Timestamp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.datetime.dt_to_unix_nanos" title="Permalink to this definition"></a></dt>
-<dd><p>Return the UNIX time (nanoseconds) from the given datetime.</p>
+<dd><p>Return the UNIX time (nanoseconds) from the given datetime (UTC).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>dt</strong> (<em>pd.Timestamp</em><em>, </em><em>optional</em>) – The datetime to convert.</p>
@@ -287,9 +287,9 @@ as standard Python <cite>datetime</cite> objects are only accurate to 1 microsec
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.maybe_nanos_to_unix_dt">
-<span class="sig-name descname"><span class="pre">maybe_nanos_to_unix_dt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nanos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.datetime.maybe_nanos_to_unix_dt" title="Permalink to this definition"></a></dt>
-<dd><p>Return the datetime in UTC from the given UNIX time (nanoseconds), or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dt class="sig sig-object py" id="nautilus_trader.core.datetime.maybe_unix_nanos_to_dt">
+<span class="sig-name descname"><span class="pre">maybe_unix_nanos_to_dt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nanos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.datetime.maybe_unix_nanos_to_dt" title="Permalink to this definition"></a></dt>
+<dd><p>Return the datetime (UTC) from the given UNIX time (nanoseconds), or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <p>If nanos is <code class="docutils literal notranslate"><span class="pre">None</span></code>, then will return None.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -372,20 +372,6 @@ as standard Python <cite>datetime</cite> objects are only accurate to 1 microsec
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.nanos_to_unix_dt">
-<span class="sig-name descname"><span class="pre">nanos_to_unix_dt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">int64_t</span> <span class="pre">nanos</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.datetime.nanos_to_unix_dt" title="Permalink to this definition"></a></dt>
-<dd><p>Return the datetime in UTC from the given UNIX time (nanoseconds).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>nanos</strong> (<em>int64</em>) – The UNIX time (nanoseconds) to convert.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>pd.Timestamp</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.datetime.secs_to_nanos">
 <span class="sig-name descname"><span class="pre">secs_to_nanos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">double</span> <span class="pre">secs</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.secs_to_nanos" title="Permalink to this definition"></a></dt>
 <dd><p>Return round nanoseconds (ns) converted from the given seconds.</p>
@@ -395,6 +381,20 @@ as standard Python <cite>datetime</cite> objects are only accurate to 1 microsec
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>int64</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nautilus_trader.core.datetime.unix_nanos_to_dt">
+<span class="sig-name descname"><span class="pre">unix_nanos_to_dt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">int64_t</span> <span class="pre">nanos</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.datetime.unix_nanos_to_dt" title="Permalink to this definition"></a></dt>
+<dd><p>Return the datetime (UTC) from the given UNIX time (nanoseconds).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>nanos</strong> (<em>int64</em>) – The UNIX time (nanoseconds) to convert.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>pd.Timestamp</em></p>
 </dd>
 </dl>
 </dd></dl>
