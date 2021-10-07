@@ -1338,6 +1338,17 @@ called after disposal.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.dump_pickled_data">
+<span class="sig-name descname"><span class="pre">dump_pickled_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.dump_pickled_data" title="Permalink to this definition"></a></dt>
+<dd><p>Return the internal data stream pickled.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>bytes</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.end_streaming">
 <span class="sig-name descname"><span class="pre">end_streaming</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.end_streaming" title="Permalink to this definition"></a></dt>
 <dd><p>End the backtest streaming run.</p>
@@ -1404,6 +1415,26 @@ called after disposal.</p>
 <dd class="field-odd"><p><em>List[Venue]</em></p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.engine.BacktestEngine.load_pickled_data">
+<span class="sig-name descname"><span class="pre">load_pickled_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">bytes</span> <span class="pre">data</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.engine.BacktestEngine.load_pickled_data" title="Permalink to this definition"></a></dt>
+<dd><p>Load the given pickled data directly into the internal data stream.</p>
+<p>It is highly advised to only pass data to this method which was obtained
+through a call to <cite>.dump_pickled_data()</cite>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<dl class="simple">
+<dt>This low-level direct access method makes the following assumptions:</dt><dd><ul class="simple">
+<li><p>The data contains valid Nautilus objects only, which inherit from <cite>Data</cite>.</p></li>
+<li><p>The data was successfully pickled from a call to <cite>pickle.dumps()</cite>.</p></li>
+<li><p>The data was sorted prior to pickling.</p></li>
+<li><p>All required instruments have been added to the engine.</p></li>
+</ul>
+</dd>
+</dl>
+</div>
 </dd></dl>
 
 <dl class="py attribute">
