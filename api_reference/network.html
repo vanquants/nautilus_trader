@@ -57,9 +57,9 @@
 <li class="toctree-l1"><a class="reference internal" href="model.html">Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="msgbus.html">Message Bus</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Network</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.network.http_client">HTTP Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#http-client">HTTP Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.network.socket">Socket</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.network.ws_client">WebSocket Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#websocket-client">WebSocket Client</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="portfolio.html">Portfolio</a></li>
@@ -97,78 +97,8 @@
 <p>The <cite>network</cite> subpackage provides generic components for networking clients.</p>
 <p>The base classes can be inherited to assist with writing adapters for integrations with exchanges,
 brokerages, data providers/feeds and other venues or services.</p>
-<section id="module-nautilus_trader.network.http_client">
-<span id="http-client"></span><h2>HTTP Client<a class="headerlink" href="#module-nautilus_trader.network.http_client" title="Permalink to this headline"></a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.network.http_client.HTTPClient">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">HTTPClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">loop:</span> <span class="pre">asyncio.AbstractEventLoop</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">addresses=None</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">nameservers=None</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">ttl_dns_cache=ONE_DAY</span></em>, <em class="sig-param"><span class="pre">ssl=False</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">connector_kwargs=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.http_client.HTTPClient" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Provides a low-level HTTP2 client.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.http_client.HTTPClient.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.http_client.HTTPClient.__init__" title="Permalink to this definition"></a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">HTTPClient</span></code> class.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>loop</strong> (<em>asyncio.AbstractEventLoop</em>) – The event loop for the client.</p></li>
-<li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the client.</p></li>
-<li><p><strong>ttl_dns_cache</strong> (<em>int</em>) – The time to live for the DNS cache.</p></li>
-<li><p><strong>ssl</strong> (<em>SSL Context</em><em>, </em><em>default=False</em>) – The ssl context to use for HTTPS.</p></li>
-<li><p><strong>connector_kwargs</strong> (<em>dict</em><em>, </em><em>optional</em>) – The connector key word arguments.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If ttl_dns_cache is not positive.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.http_client.HTTPClient.connect">
-<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.http_client.HTTPClient.connect" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.http_client.HTTPClient.disconnect">
-<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.http_client.HTTPClient.disconnect" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.http_client.HTTPClient.get">
-<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">url</span></em>, <em class="sig-param"><span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.http_client.HTTPClient.get" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.http_client.HTTPClient.post">
-<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">url</span></em>, <em class="sig-param"><span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.http_client.HTTPClient.post" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.http_client.HTTPClient.request">
-<span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">method</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">url</span></em>, <em class="sig-param"><span class="pre">headers=None</span></em>, <em class="sig-param"><span class="pre">json=None</span></em>, <em class="sig-param"><span class="pre">**kwargs</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ClientResponse</span></span></span><a class="headerlink" href="#nautilus_trader.network.http_client.HTTPClient.request" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="nautilus_trader.network.http_client.ResponseException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">ResponseException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resp</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">ClientResponse</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_response_error</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">ClientResponseError</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.http_client.ResponseException" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseException</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.http_client.ResponseException.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resp</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">ClientResponse</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_response_error</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">ClientResponseError</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.http_client.ResponseException.__init__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.http_client.ResponseException.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.http_client.ResponseException.with_traceback" title="Permalink to this definition"></a></dt>
-<dd><p>Exception.with_traceback(tb) –
-set self.__traceback__ to tb and return self.</p>
-</dd></dl>
-
-</dd></dl>
-
+<section id="http-client">
+<h2>HTTP Client<a class="headerlink" href="#http-client" title="Permalink to this headline"></a></h2>
 </section>
 <section id="module-nautilus_trader.network.socket">
 <span id="socket"></span><h2>Socket<a class="headerlink" href="#module-nautilus_trader.network.socket" title="Permalink to this headline"></a></h2>
@@ -286,87 +216,8 @@ set self.__traceback__ to tb and return self.</p>
 </dd></dl>
 
 </section>
-<section id="module-nautilus_trader.network.ws_client">
-<span id="websocket-client"></span><h2>WebSocket Client<a class="headerlink" href="#module-nautilus_trader.network.ws_client" title="Permalink to this headline"></a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.network.ws_client.WebSocketClient">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">WebSocketClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">ws_url</span></em>, <em class="sig-param"><span class="pre">loop:</span> <span class="pre">asyncio.AbstractEventLoop</span></em>, <em class="sig-param"><span class="pre">handler:</span> <span class="pre">Callable</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger:</span> <span class="pre">Logger</span></em>, <em class="sig-param"><span class="pre">kwargs:</span> <span class="pre">Optional[Dict]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.ws_client.WebSocketClient" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Provides a low-level web socket base client.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.ws_client.WebSocketClient.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.ws_client.WebSocketClient.__init__" title="Permalink to this definition"></a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">WebSocketClient</span></code> class.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ws_url</strong> (<em>str</em>) – The websocket url to connect to.</p></li>
-<li><p><strong>handler</strong> (<em>Callable</em>) – The handler for received raw data.</p></li>
-<li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.LoggerAdapter" title="nautilus_trader.common.logging.LoggerAdapter"><em>LoggerAdapter</em></a>) – The logger adapter for the client.</p></li>
-<li><p><strong>loop</strong> (<em>asyncio.AbstractEventLoop</em><em>, </em><em>optional</em>) – The event loop for the client.</p></li>
-<li><p><strong>kwargs</strong> (<em>dict</em><em>, </em><em>optional</em>) – The additional kwargs to pass to aiohttp.ClientSession._ws_connect().</p></li>
-</ul>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If ws_url is not a valid string.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.ws_client.WebSocketClient.close">
-<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.ws_client.WebSocketClient.close" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.ws_client.WebSocketClient.connect">
-<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">start=True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.ws_client.WebSocketClient.connect" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.ws_client.WebSocketClient.disconnect">
-<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.ws_client.WebSocketClient.disconnect" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.network.ws_client.WebSocketClient.is_connected">
-<span class="sig-name descname"><span class="pre">is_connected</span></span><a class="headerlink" href="#nautilus_trader.network.ws_client.WebSocketClient.is_connected" title="Permalink to this definition"></a></dt>
-<dd><p>If the client is connected.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>bool</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.ws_client.WebSocketClient.recv">
-<span class="sig-name descname"><span class="pre">recv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.ws_client.WebSocketClient.recv" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.ws_client.WebSocketClient.send">
-<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">bytes</span> <span class="pre">raw</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.ws_client.WebSocketClient.send" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.ws_client.WebSocketClient.start">
-<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.ws_client.WebSocketClient.start" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.network.ws_client.WebSocketClient.ws_url">
-<span class="sig-name descname"><span class="pre">ws_url</span></span><a class="headerlink" href="#nautilus_trader.network.ws_client.WebSocketClient.ws_url" title="Permalink to this definition"></a></dt>
-<dd><p>The client URL.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>str</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
+<section id="websocket-client">
+<h2>WebSocket Client<a class="headerlink" href="#websocket-client" title="Permalink to this headline"></a></h2>
 </section>
 </section>
 
