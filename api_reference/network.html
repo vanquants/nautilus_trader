@@ -104,7 +104,7 @@ brokerages, data providers/feeds and other venues or services.</p>
 <span id="socket"></span><h2>Socket<a class="headerlink" href="#module-nautilus_trader.network.socket" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">SocketClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">host</span></em>, <em class="sig-param"><span class="pre">port</span></em>, <em class="sig-param"><span class="pre">loop:</span> <span class="pre">asyncio.AbstractEventLoop</span></em>, <em class="sig-param"><span class="pre">handler:</span> <span class="pre">Callable</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger:</span> <span class="pre">Logger</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">ssl=True</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">encoding=u'utf-8'</span></em>, <em class="sig-param"><span class="pre">bytes</span> <span class="pre">crlf=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">SocketClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">loop:</span> <span class="pre">asyncio.AbstractEventLoop</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger:</span> <span class="pre">Logger</span></em>, <em class="sig-param"><span class="pre">host</span></em>, <em class="sig-param"><span class="pre">port</span></em>, <em class="sig-param"><span class="pre">handler:</span> <span class="pre">Callable</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">ssl=True</span></em>, <em class="sig-param"><span class="pre">bytes</span> <span class="pre">crlf=None</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">encoding=u'utf-8'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a low-level generic socket base client.</p>
 <dl class="py method">
@@ -114,14 +114,14 @@ brokerages, data providers/feeds and other venues or services.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>loop</strong> (<em>asyncio.AbstractEventLoop</em>) – The event loop for the client.</p></li>
+<li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the client.</p></li>
 <li><p><strong>host</strong> (<em>str</em>) – The host for the client.</p></li>
 <li><p><strong>port</strong> (<em>int</em>) – The port for the client.</p></li>
-<li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the client.</p></li>
-<li><p><strong>loop</strong> (<em>asyncio.AbstractEventLoop</em>) – The event loop for the client.</p></li>
 <li><p><strong>handler</strong> (<em>Callable</em>) – The handler to process the raw bytes read.</p></li>
 <li><p><strong>ssl</strong> (<em>bool</em>) – If SSL should be used for socket connection.</p></li>
-<li><p><strong>encoding</strong> (<em>str</em><em>, </em><em>optional</em>) – The encoding to use when sending messages.</p></li>
 <li><p><strong>crlf</strong> (<em>bytes</em><em>, </em><em>optional</em>) – The carriage return, line feed delimiter on which to split messages.</p></li>
+<li><p><strong>encoding</strong> (<em>str</em><em>, </em><em>optional</em>) – The encoding to use when sending messages.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
