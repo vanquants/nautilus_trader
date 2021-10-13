@@ -97,7 +97,6 @@
  | <a href="#G"><strong>G</strong></a>
  | <a href="#H"><strong>H</strong></a>
  | <a href="#I"><strong>I</strong></a>
- | <a href="#J"><strong>J</strong></a>
  | <a href="#K"><strong>K</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
@@ -284,10 +283,6 @@
 </li>
         <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.__init__">(LiveDataEngine method)</a>
 </li>
-        <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngineConfig.__init__">(LiveDataEngineConfig method)</a>
-</li>
-        <li><a href="api_reference/live.html#nautilus_trader.live.execution_engine.LiveExecEngineConfig.__init__">(LiveExecEngineConfig method)</a>
-</li>
         <li><a href="api_reference/live.html#nautilus_trader.live.execution_client.LiveExecutionClient.__init__">(LiveExecutionClient method)</a>
 </li>
         <li><a href="api_reference/live.html#nautilus_trader.live.execution_engine.LiveExecutionEngine.__init__">(LiveExecutionEngine method)</a>
@@ -297,8 +292,6 @@
         <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveMarketDataClient.__init__">(LiveMarketDataClient method)</a>
 </li>
         <li><a href="api_reference/live.html#nautilus_trader.live.risk_engine.LiveRiskEngine.__init__">(LiveRiskEngine method)</a>
-</li>
-        <li><a href="api_reference/live.html#nautilus_trader.live.risk_engine.LiveRiskEngineConfig.__init__">(LiveRiskEngineConfig method)</a>
 </li>
         <li><a href="api_reference/common.html#nautilus_trader.common.timer.LiveTimer.__init__">(LiveTimer method)</a>
 </li>
@@ -1531,12 +1524,12 @@
 </li>
       <li><a href="api_reference/accounting.html#nautilus_trader.accounting.accounts.margin.MarginAccount.clear_margin_init">clear_margin_init() (MarginAccount method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/accounting.html#nautilus_trader.accounting.accounts.margin.MarginAccount.clear_margin_maint">clear_margin_maint() (MarginAccount method)</a>
 </li>
       <li><a href="api_reference/trading.html#nautilus_trader.trading.trader.Trader.clear_strategies">clear_strategies() (Trader method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/data.html#nautilus_trader.data.messages.DataCommand.client_id">client_id (DataCommand attribute)</a>
 
       <ul>
@@ -1716,21 +1709,17 @@
 </li>
         <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveDataClient.connect">(LiveDataClient method)</a>
 </li>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.connect">(LiveDataEngine method)</a>
+</li>
         <li><a href="api_reference/live.html#nautilus_trader.live.execution_client.LiveExecutionClient.connect">(LiveExecutionClient method)</a>
+</li>
+        <li><a href="api_reference/live.html#nautilus_trader.live.execution_engine.LiveExecutionEngine.connect">(LiveExecutionEngine method)</a>
 </li>
         <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveMarketDataClient.connect">(LiveMarketDataClient method)</a>
 </li>
         <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.connect">(MarketDataClient method)</a>
 </li>
         <li><a href="api_reference/network.html#nautilus_trader.network.socket.SocketClient.connect">(SocketClient method)</a>
-</li>
-      </ul></li>
-      <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngineConfig.construct">construct() (LiveDataEngineConfig class method)</a>
-
-      <ul>
-        <li><a href="api_reference/live.html#nautilus_trader.live.execution_engine.LiveExecEngineConfig.construct">(LiveExecEngineConfig class method)</a>
-</li>
-        <li><a href="api_reference/live.html#nautilus_trader.live.risk_engine.LiveRiskEngineConfig.construct">(LiveRiskEngineConfig class method)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/model.html#nautilus_trader.model.orders.limit.LimitOrder.contingency">contingency (LimitOrder attribute)</a>
@@ -1755,14 +1744,6 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.contingency_ids">(StopLimitOrder attribute)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.contingency_ids">(StopMarketOrder attribute)</a>
-</li>
-      </ul></li>
-      <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngineConfig.copy">copy() (LiveDataEngineConfig method)</a>
-
-      <ul>
-        <li><a href="api_reference/live.html#nautilus_trader.live.execution_engine.LiveExecEngineConfig.copy">(LiveExecEngineConfig method)</a>
-</li>
-        <li><a href="api_reference/live.html#nautilus_trader.live.risk_engine.LiveRiskEngineConfig.copy">(LiveRiskEngineConfig method)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/data.html#nautilus_trader.data.messages.DataResponse.correlation_id">correlation_id (DataResponse attribute)</a>
@@ -2009,14 +1990,6 @@
         <li><a href="api_reference/serialization.html#nautilus_trader.serialization.base.Serializer.deserialize">(Serializer method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngineConfig.dict">dict() (LiveDataEngineConfig method)</a>
-
-      <ul>
-        <li><a href="api_reference/live.html#nautilus_trader.live.execution_engine.LiveExecEngineConfig.dict">(LiveExecEngineConfig method)</a>
-</li>
-        <li><a href="api_reference/live.html#nautilus_trader.live.risk_engine.LiveRiskEngineConfig.dict">(LiveRiskEngineConfig method)</a>
-</li>
-      </ul></li>
       <li><a href="api_reference/indicators.html#nautilus_trader.indicators.fuzzy_candlesticks.FuzzyCandle.direction">direction (FuzzyCandle attribute)</a>
 
       <ul>
@@ -2032,7 +2005,11 @@
 </li>
         <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveDataClient.disconnect">(LiveDataClient method)</a>
 </li>
+        <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine.disconnect">(LiveDataEngine method)</a>
+</li>
         <li><a href="api_reference/live.html#nautilus_trader.live.execution_client.LiveExecutionClient.disconnect">(LiveExecutionClient method)</a>
+</li>
+        <li><a href="api_reference/live.html#nautilus_trader.live.execution_engine.LiveExecutionEngine.disconnect">(LiveExecutionEngine method)</a>
 </li>
         <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveMarketDataClient.disconnect">(LiveMarketDataClient method)</a>
 </li>
@@ -4164,20 +4141,6 @@
   </ul></td>
 </tr></table>
 
-<h2 id="J">J</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngineConfig.json">json() (LiveDataEngineConfig method)</a>
-
-      <ul>
-        <li><a href="api_reference/live.html#nautilus_trader.live.execution_engine.LiveExecEngineConfig.json">(LiveExecEngineConfig method)</a>
-</li>
-        <li><a href="api_reference/live.html#nautilus_trader.live.risk_engine.LiveRiskEngineConfig.json">(LiveRiskEngineConfig method)</a>
-</li>
-      </ul></li>
-  </ul></td>
-</tr></table>
-
 <h2 id="K">K</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -4311,10 +4274,6 @@
 </li>
       <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngine">LiveDataEngine (class in nautilus_trader.live.data_engine)</a>
 </li>
-      <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngineConfig">LiveDataEngineConfig (class in nautilus_trader.live.data_engine)</a>
-</li>
-      <li><a href="api_reference/live.html#nautilus_trader.live.execution_engine.LiveExecEngineConfig">LiveExecEngineConfig (class in nautilus_trader.live.execution_engine)</a>
-</li>
       <li><a href="api_reference/live.html#nautilus_trader.live.execution_client.LiveExecutionClient">LiveExecutionClient (class in nautilus_trader.live.execution_client)</a>
 </li>
       <li><a href="api_reference/live.html#nautilus_trader.live.execution_engine.LiveExecutionEngine">LiveExecutionEngine (class in nautilus_trader.live.execution_engine)</a>
@@ -4324,8 +4283,6 @@
       <li><a href="api_reference/live.html#nautilus_trader.live.data_client.LiveMarketDataClient">LiveMarketDataClient (class in nautilus_trader.live.data_client)</a>
 </li>
       <li><a href="api_reference/live.html#nautilus_trader.live.risk_engine.LiveRiskEngine">LiveRiskEngine (class in nautilus_trader.live.risk_engine)</a>
-</li>
-      <li><a href="api_reference/live.html#nautilus_trader.live.risk_engine.LiveRiskEngineConfig">LiveRiskEngineConfig (class in nautilus_trader.live.risk_engine)</a>
 </li>
       <li><a href="api_reference/common.html#nautilus_trader.common.timer.LiveTimer">LiveTimer (class in nautilus_trader.common.timer)</a>
 </li>
@@ -8862,6 +8819,8 @@
         <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.unsubscribe_trade_ticks">(TradingStrategy method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestMarketDataClient.unsubscribe_venue_status_updates">unsubscribe_venue_status_updates() (BacktestMarketDataClient method)</a>
 
       <ul>
@@ -8870,8 +8829,6 @@
         <li><a href="api_reference/data.html#nautilus_trader.data.client.MarketDataClient.unsubscribe_venue_status_updates">(MarketDataClient method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/data.html#nautilus_trader.data.aggregation.BarBuilder.update">update() (BarBuilder method)</a>
 
       <ul>
@@ -8906,14 +8863,6 @@
 
       <ul>
         <li><a href="api_reference/accounting.html#nautilus_trader.accounting.accounts.margin.MarginAccount.update_commissions">(MarginAccount method)</a>
-</li>
-      </ul></li>
-      <li><a href="api_reference/live.html#nautilus_trader.live.data_engine.LiveDataEngineConfig.update_forward_refs">update_forward_refs() (LiveDataEngineConfig class method)</a>
-
-      <ul>
-        <li><a href="api_reference/live.html#nautilus_trader.live.execution_engine.LiveExecEngineConfig.update_forward_refs">(LiveExecEngineConfig class method)</a>
-</li>
-        <li><a href="api_reference/live.html#nautilus_trader.live.risk_engine.LiveRiskEngineConfig.update_forward_refs">(LiveRiskEngineConfig class method)</a>
 </li>
       </ul></li>
       <li><a href="api_reference/model.html#nautilus_trader.model.orderbook.data.Order.update_id">update_id() (Order method)</a>
