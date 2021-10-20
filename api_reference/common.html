@@ -122,7 +122,7 @@ fully “wired” into the platform. Exceptions will be raised if a <cite>Tradin
 attempts to operate without a managing <cite>Trader</cite> instance.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Actor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ComponentId</span> <span class="pre">component_id=None</span></em>, <em class="sig-param"><span class="pre">dict</span> <span class="pre">config=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.actor.Actor" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Actor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">ActorConfig</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.common.actor.Actor" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.common.component.Component" title="nautilus_trader.common.component.Component"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.component.Component</span></code></a></p>
 <p>The abstract base class for all actor components.</p>
 <div class="admonition warning">
@@ -135,8 +135,10 @@ attempts to operate without a managing <cite>Trader</cite> instance.</p>
 <dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Actor</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>component_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ComponentId" title="nautilus_trader.model.identifiers.ComponentId"><em>ComponentId</em></a><em>, </em><em>optional</em>) – The component ID. If <code class="docutils literal notranslate"><span class="pre">None</span></code> is passed then the identifier will be
-taken from <cite>type(self).__name__</cite>.</p>
+<dd class="field-odd"><p><strong>config</strong> (<em>ActorConfig</em><em>, </em><em>optional</em>) – The actor configuration.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>TypeError</strong> – If config is not of type <cite>ActorConfig</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
