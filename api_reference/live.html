@@ -994,7 +994,7 @@ called after faulting.</p>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – If config is not of type <cite>LiveDataEngineConfig</cite>.</p>
+<dd class="field-even"><p><strong>TypeError</strong> – If <cite>config</cite> is not of type <cite>LiveDataEngineConfig</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1290,7 +1290,7 @@ running on.</p>
 <dd class="field-odd"><p><strong>client</strong> (<a class="reference internal" href="data.html#nautilus_trader.data.client.DataClient" title="nautilus_trader.data.client.DataClient"><em>DataClient</em></a>) – The client to register.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If client is already registered.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>client</cite> is already registered.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2121,8 +2121,8 @@ fetched from cache.</p></li>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If report.client_order_id is not equal to order.client_order_id.</p></li>
-<li><p><strong>ValueError</strong> – If report.venue_order_id is not equal to order.venue_order_id.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>report.client_order_id</cite> is not equal to <cite>order.client_order_id</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>report.venue_order_id</cite> is not equal to <cite>order.venue_order_id</cite>.</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Returns</dt>
@@ -2294,7 +2294,7 @@ fetched from cache.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – If config is not of type <cite>LiveExecEngineConfig</cite>.</p>
+<dd class="field-even"><p><strong>TypeError</strong> – If <cite>config</cite> is not of type <cite>LiveExecEngineConfig</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2397,7 +2397,7 @@ fetched from cache.</p></li>
 <dd class="field-odd"><p><strong>client</strong> (<a class="reference internal" href="execution.html#nautilus_trader.execution.client.ExecutionClient" title="nautilus_trader.execution.client.ExecutionClient"><em>ExecutionClient</em></a>) – The execution client to deregister.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If client is not registered with the execution engine.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>client</cite> is not registered with the execution engine.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2644,7 +2644,7 @@ to reconcile a state then errors will be logged.</p>
 <dd class="field-even"><p><em>bool</em> – True if states reconcile within timeout, else False.</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If timeout_secs is not positive (&gt; 0).</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>timeout_secs</cite> is not positive (&gt; 0).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2660,7 +2660,7 @@ has not been previously registered then will be registered as such.</p>
 <dd class="field-odd"><p><strong>client</strong> (<a class="reference internal" href="execution.html#nautilus_trader.execution.client.ExecutionClient" title="nautilus_trader.execution.client.ExecutionClient"><em>ExecutionClient</em></a>) – The execution client to register.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If client is already registered with the execution engine.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>client</cite> is already registered with the execution engine.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2841,7 +2841,7 @@ overwritten.</p>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – If config is not of type <cite>LiveRiskEngineConfig</cite>.</p>
+<dd class="field-even"><p><strong>TypeError</strong> – If <cite>config</cite> is not of type <cite>LiveRiskEngineConfig</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3164,8 +3164,8 @@ notional check.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>decimal.InvalidOperation</strong> – If new_value not a valid input for decimal.Decimal.</p></li>
-<li><p><strong>ValueError</strong> – If new_value is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and not positive.</p></li>
+<li><p><strong>decimal.InvalidOperation</strong> – If <cite>new_value</cite> not a valid input for decimal.Decimal.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>new_value</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and not positive.</p></li>
 </ul>
 </dd>
 </dl>
@@ -3277,7 +3277,7 @@ notional check.</p>
 <dd class="field-odd"><p><strong>config</strong> (<em>TradingNodeConfig</em><em>, </em><em>optional</em>) – The configuration for the instance.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – If config is not of type <cite>TradingNodeConfig</cite>.</p>
+<dd class="field-even"><p><strong>TypeError</strong> – If <cite>config</cite> is not of type <cite>TradingNodeConfig</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3335,7 +3335,7 @@ notional check.</p>
 <dd class="field-odd"><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><em>Dict</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The sink handler to register.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>KeyError</strong> – If handler already registered.</p>
+<dd class="field-even"><p><strong>KeyError</strong> – If <cite>handler</cite> already registered.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3353,8 +3353,8 @@ notional check.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If name is not a valid string.</p></li>
-<li><p><strong>KeyError</strong> – If name has already been added.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>name</cite> is not a valid string.</p></li>
+<li><p><strong>KeyError</strong> – If <cite>name</cite> has already been added.</p></li>
 </ul>
 </dd>
 </dl>
@@ -3373,8 +3373,8 @@ notional check.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If name is not a valid string.</p></li>
-<li><p><strong>KeyError</strong> – If name has already been added.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>name</cite> is not a valid string.</p></li>
+<li><p><strong>KeyError</strong> – If <cite>name</cite> has already been added.</p></li>
 </ul>
 </dd>
 </dl>
@@ -3450,8 +3450,8 @@ notional check.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If name is not a valid string.</p></li>
-<li><p><strong>KeyError</strong> – If name has already been added.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>name</cite> is not a valid string.</p></li>
+<li><p><strong>KeyError</strong> – If <cite>name</cite> has already been added.</p></li>
 </ul>
 </dd>
 </dl>
@@ -3470,8 +3470,8 @@ notional check.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If name is not a valid string.</p></li>
-<li><p><strong>KeyError</strong> – If name has already been added.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>name</cite> is not a valid string.</p></li>
+<li><p><strong>KeyError</strong> – If <cite>name</cite> has already been added.</p></li>
 </ul>
 </dd>
 </dl>

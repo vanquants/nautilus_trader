@@ -155,9 +155,9 @@ Will return None if no news events match the filter conditions.</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ValueError</strong> – The time_now &lt; self.unfiltered_data_start</p></li>
-<li><p><strong>ValueError</strong> – The time_now &gt; self.unfiltered_data_end</p></li>
-<li><p><strong>ValueError</strong> – If time_now is not tz aware UTC.</p></li>
+<li><p><strong>ValueError</strong> – The <cite>time_now</cite> &lt; <cite>self.unfiltered_data_start</cite>.</p></li>
+<li><p><strong>ValueError</strong> – The <cite>time_now</cite> &gt; <cite>self.unfiltered_data_end</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>time_now</cite> is not tz aware UTC.</p></li>
 </ul>
 </dd>
 </dl>
@@ -177,9 +177,9 @@ Will return None if no news events match the filter conditions.</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ValueError</strong> – The time_now &lt; self.unfiltered_data_start</p></li>
-<li><p><strong>ValueError</strong> – The time_now &gt; self.unfiltered_data_end</p></li>
-<li><p><strong>ValueError</strong> – If time_now is not tz aware UTC.</p></li>
+<li><p><strong>ValueError</strong> – The <cite>time_now</cite> &lt; <cite>self.unfiltered_data_start</cite>.</p></li>
+<li><p><strong>ValueError</strong> – The <cite>time_now</cite> &gt; <cite>self.unfiltered_data_end</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>time_now</cite> is not tz aware UTC.</p></li>
 </ul>
 </dd>
 </dl>
@@ -241,7 +241,7 @@ Will return None if no news events match the filter conditions.</p>
 <dd class="field-even"><p><em>datetime</em> – The converted local datetime.</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If time_now is not tz aware UTC.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>time_now</cite> is not tz aware UTC.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -266,7 +266,7 @@ Will return None if no news events match the filter conditions.</p>
 <dd class="field-even"><p><em>datetime</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If time_now is not tz aware UTC.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>time_now</cite> is not tz aware UTC.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -291,7 +291,7 @@ Will return None if no news events match the filter conditions.</p>
 <dd class="field-even"><p><em>datetime</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If time_now is not tz aware UTC.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>time_now</cite> is not tz aware UTC.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -316,7 +316,7 @@ Will return None if no news events match the filter conditions.</p>
 <dd class="field-even"><p><em>datetime</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If time_now is not tz aware UTC.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>time_now</cite> is not tz aware UTC.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -341,7 +341,7 @@ Will return None if no news events match the filter conditions.</p>
 <dd class="field-even"><p><em>datetime</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If time_now is not tz aware UTC.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>time_now</cite> is not tz aware UTC.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -473,7 +473,7 @@ per instrument. The position ID will be <cite>{instrument_id}-{strategy_id}</cit
 <dd class="field-odd"><p><strong>config</strong> (<em>TradingStrategyConfig</em><em>, </em><em>optional</em>) – The trading strategy configuration.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – If config is not of type <cite>TradingStrategyConfig</cite>.</p>
+<dd class="field-even"><p><strong>TypeError</strong> – If <cite>config</cite> is not of type <cite>TradingStrategyConfig</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -963,7 +963,7 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <dd class="field-odd"><p><strong>state</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>object</em><em>]</em>) – The state dictionary.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>RuntimeError</strong> – If strategy is not registered with a trader.</p>
+<dd class="field-even"><p><strong>RuntimeError</strong> – If <cite>strategy</cite> is not registered with a trader.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1004,7 +1004,7 @@ original <cite>ClientOrderId</cite>.</p>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If trigger is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and order.type != <code class="docutils literal notranslate"><span class="pre">STOP_LIMIT</span></code>.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>trigger</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>order.type</cite> != <code class="docutils literal notranslate"><span class="pre">STOP_LIMIT</span></code>.</p>
 </dd>
 </dl>
 <p class="rubric">References</p>
@@ -1579,7 +1579,7 @@ to the current datetime.</p></li>
 <p>Calls <cite>on_save</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>RuntimeError</strong> – If strategy is not registered with a trader.</p>
+<dd class="field-odd"><p><strong>RuntimeError</strong> – If <cite>strategy</cite> is not registered with a trader.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1764,8 +1764,8 @@ as per the last subscription request (this will also affect all subscribers).</p
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If depth is negative (&lt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If interval_ms is not positive (&gt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>depth</cite> is negative (&lt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>interval_ms</cite> is not positive (&gt; 0).</p></li>
 </ul>
 </dd>
 </dl>
@@ -2017,10 +2017,10 @@ a running instance of the platform.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If portfolio is not equal to the exec_engine._portfolio.</p></li>
-<li><p><strong>ValueError</strong> – If strategies is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If strategies list is empty.</p></li>
-<li><p><strong>TypeError</strong> – If strategies list contains a type other than <cite>TradingStrategy</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>portfolio</cite> is not equal to the <cite>exec_engine</cite> portfolio.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>strategies</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>strategies</cite> is empty.</p></li>
+<li><p><strong>TypeError</strong> – If <cite>strategies</cite> contains a type other than <cite>TradingStrategy</cite>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2036,8 +2036,8 @@ a running instance of the platform.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>KeyError</strong> – If component.id already exists in the trader.</p></li>
-<li><p><strong>ValueError</strong> – If component.state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> or <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p></li>
+<li><p><strong>KeyError</strong> – If <cite>component.id</cite> already exists in the trader.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>component.state</cite> is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> or <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2052,7 +2052,7 @@ a running instance of the platform.</p>
 <dd class="field-odd"><p><strong>components</strong> (<em>list</em><em>[</em><em>TradingStrategies</em><em>]</em>) – The custom components to add and register.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If components is <code class="docutils literal notranslate"><span class="pre">None</span></code> or empty.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>components</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> or empty.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2066,7 +2066,7 @@ a running instance of the platform.</p>
 <dd class="field-odd"><p><strong>strategies</strong> (<em>list</em><em>[</em><em>TradingStrategies</em><em>]</em>) – The trading strategies to add and register.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If strategies is <code class="docutils literal notranslate"><span class="pre">None</span></code> or empty.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>strategies</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> or empty.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2081,8 +2081,8 @@ a running instance of the platform.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>KeyError</strong> – If strategy.id already exists in the trader.</p></li>
-<li><p><strong>ValueError</strong> – If strategy.state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> or <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p></li>
+<li><p><strong>KeyError</strong> – If <cite>strategy.id</cite> already exists in the trader.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>strategy.state</cite> is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> or <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p></li>
 </ul>
 </dd>
 </dl>

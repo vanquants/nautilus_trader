@@ -366,7 +366,7 @@ rolling window.</p>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If period is not positive (&gt; 0).</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>period</cite> is not positive (&gt; 0).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -534,7 +534,7 @@ represents the Donchian Channel.</p>
 <dd class="field-odd"><p><strong>period</strong> (<em>int</em>) – The rolling window period for the indicator (&gt; 0).</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If period is not positive (&gt; 0).</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>period</cite> is not positive (&gt; 0).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -694,7 +694,7 @@ moving average.</p>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If period is not positive (&gt; 0).</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>period</cite> is not positive (&gt; 0).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -857,7 +857,7 @@ moving average.</p>
 <dd class="field-even"><p><em>MovingAverage</em></p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If period is not positive (&gt; 0).</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>period</cite> is not positive (&gt; 0).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -884,7 +884,7 @@ moving average.</p>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If period is not positive (&gt; 0).</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>period</cite> is not positive (&gt; 0).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1040,7 +1040,7 @@ moving average.</p>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If period is not positive (&gt; 0).</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>period</cite> is not positive (&gt; 0).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1546,8 +1546,8 @@ adjusted to user preferences.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If period is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If k is not positive (&gt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>period</cite> is not positive (&gt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>k</cite> is not positive (&gt; 0).</p></li>
 </ul>
 </dd>
 </dl>
@@ -1717,7 +1717,7 @@ relation to the volatility, this could be thought of as a proxy for noise.</p>
 <dd class="field-odd"><p><strong>period</strong> (<em>int</em>) – The rolling window period for the indicator (&gt;= 2).</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If period is not &gt;= 2.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>period</cite> is not &gt;= 2.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2748,9 +2748,9 @@ Different moving average types can be selected for the inner calculation.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If fast_period is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If slow_period is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If fast_period is not &lt; slow_period.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>fast_period</cite> is not positive (&gt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>slow_period</cite> is not positive (&gt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>fast_period</cite> is not &lt; <cite>slow_period</cite>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2904,7 +2904,7 @@ volume.</p>
 <dd class="field-odd"><p><strong>period</strong> (<em>int</em>) – The period for the indicator, zero indicates no window (&gt;= 0).</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If period is negative (&lt; 0).</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>period</cite> is negative (&lt; 0).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3034,8 +3034,8 @@ to move the market across a relative range (multiple of ATR).</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If period is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If atr_floor is negative (&lt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>period</cite> is not positive (&gt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>atr_floor</cite> is negative (&lt; 0).</p></li>
 </ul>
 </dd>
 </dl>
@@ -3176,7 +3176,7 @@ The return output can be simple or log.</p>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If period is not &gt; 1.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>period</cite> is not &gt; 1.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3299,7 +3299,7 @@ The return output can be simple or log.</p>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If period is not positive (&gt; 0).</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>period</cite> is not positive (&gt; 0).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3422,7 +3422,7 @@ The return output can be simple or log.</p>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If capacity is not positive (&gt; 0).</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>capacity</cite> is not positive (&gt; 0).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3475,7 +3475,7 @@ The return output can be simple or log.</p>
 <dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a>) – The tick for the update.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If tick.instrument_id does not equal the analyzers instrument_id.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>tick.instrument_id</cite> does not equal the analyzers instrument ID.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3563,8 +3563,8 @@ sold.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If the period_k is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If the period_d is not positive (&gt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>period_k</cite> is not positive (&gt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>period_d</cite> is not positive (&gt; 0).</p></li>
 </ul>
 </dd>
 </dl>
@@ -3939,10 +3939,10 @@ Different moving average types can be selected for the inner ATR calculations.</
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If fast_period is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If slow_period is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If fast_period is not &lt; slow_period.</p></li>
-<li><p><strong>ValueError</strong> – If value_floor is negative (&lt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>fast_period</cite> is not positive (&gt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>slow_period</cite> is not positive (&gt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>fast_period</cite> is not &lt; <cite>slow_period</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>value_floor</cite> is negative (&lt; 0).</p></li>
 </ul>
 </dd>
 </dl>

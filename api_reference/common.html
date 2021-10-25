@@ -138,7 +138,7 @@ attempts to operate without a managing <cite>Trader</cite> instance.</p>
 <dd class="field-odd"><p><strong>config</strong> (<em>ActorConfig</em><em>, </em><em>optional</em>) – The actor configuration.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – If config is not of type <cite>ActorConfig</cite>.</p>
+<dd class="field-even"><p><strong>TypeError</strong> – If <cite>config</cite> is not of type <cite>ActorConfig</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1113,8 +1113,8 @@ as per the last subscription request (this will also affect all subscribers).</p
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If depth is negative (&lt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If interval_ms is not positive (&gt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>depth</cite> is negative (&lt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>interval_ms</cite> is not positive (&gt; 0).</p></li>
 </ul>
 </dd>
 </dl>
@@ -1454,7 +1454,7 @@ the target timezone).</p>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite>.</p>
+<dd class="field-odd"><p><strong>TypeError</strong> – If <cite>handler</cite> is not of type <cite>Callable</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1476,10 +1476,10 @@ default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
-<li><p><strong>ValueError</strong> – If alert_time is not &gt;= the clocks current time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If handler is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>name</cite> is not unique for this clock.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>alert_time</cite> is not &gt;= the clocks current time.</p></li>
+<li><p><strong>TypeError</strong> – If <cite>handler</cite> is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>handler</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1502,10 +1502,10 @@ default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
-<li><p><strong>ValueError</strong> – If alert_time is not &gt;= the clocks current time.</p></li>
-<li><p><strong>TypeError</strong> – If callback is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If callback is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>name</cite> is not unique for this clock.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>alert_time</cite> is not &gt;= the clocks current time.</p></li>
+<li><p><strong>TypeError</strong> – If <cite>callback</cite> is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>callback</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1531,12 +1531,12 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
-<li><p><strong>ValueError</strong> – If interval is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and stop_time &lt; time_now.</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and start_time + interval &gt; stop_time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If handler is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>name</cite> is not unique for this clock.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>interval</cite> is not positive (&gt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>stop_time</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>stop_time</cite> &lt; time now.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>stop_time</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>start_time</cite> + <cite>interval</cite> &gt; <cite>stop_time</cite>.</p></li>
+<li><p><strong>TypeError</strong> – If <cite>handler</cite> is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>handler</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1562,12 +1562,12 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
-<li><p><strong>ValueError</strong> – If interval is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and stop_time &lt; time_now.</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and start_time + interval &gt; stop_time.</p></li>
-<li><p><strong>TypeError</strong> – If callback is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If callback is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>name</cite> is not unique for this clock.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>interval</cite> is not positive (&gt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>stop_time</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>stop_time</cite> &lt; time now.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>stop_time</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>start_time</cite> + interval &gt; <cite>stop_time</cite>.</p></li>
+<li><p><strong>TypeError</strong> – If <cite>callback</cite> is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>callback</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1585,7 +1585,7 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dd class="field-even"><p>Timer or <code class="docutils literal notranslate"><span class="pre">None</span></code> – The timer with the given name (if found).</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If name is not a valid string.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>name</cite> is not a valid string.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1782,7 +1782,7 @@ the target timezone).</p>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite>.</p>
+<dd class="field-odd"><p><strong>TypeError</strong> – If <cite>handler</cite> is not of type <cite>Callable</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1804,10 +1804,10 @@ default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
-<li><p><strong>ValueError</strong> – If alert_time is not &gt;= the clocks current time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If handler is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>name</cite> is not unique for this clock.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>alert_time</cite> is not &gt;= the clocks current time.</p></li>
+<li><p><strong>TypeError</strong> – If <cite>handler</cite> is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>handler</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1830,10 +1830,10 @@ default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
-<li><p><strong>ValueError</strong> – If alert_time is not &gt;= the clocks current time.</p></li>
-<li><p><strong>TypeError</strong> – If callback is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If callback is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>name</cite> is not unique for this clock.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>alert_time</cite> is not &gt;= the clocks current time.</p></li>
+<li><p><strong>TypeError</strong> – If <cite>callback</cite> is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>callback</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1859,12 +1859,12 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
-<li><p><strong>ValueError</strong> – If interval is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and stop_time &lt; time_now.</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and start_time + interval &gt; stop_time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If handler is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>name</cite> is not unique for this clock.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>interval</cite> is not positive (&gt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>stop_time</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>stop_time</cite> &lt; time now.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>stop_time</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>start_time</cite> + <cite>interval</cite> &gt; <cite>stop_time</cite>.</p></li>
+<li><p><strong>TypeError</strong> – If <cite>handler</cite> is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>handler</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1890,12 +1890,12 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
-<li><p><strong>ValueError</strong> – If interval is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and stop_time &lt; time_now.</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and start_time + interval &gt; stop_time.</p></li>
-<li><p><strong>TypeError</strong> – If callback is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If callback is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>name</cite> is not unique for this clock.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>interval</cite> is not positive (&gt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>stop_time</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>stop_time</cite> &lt; time now.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>stop_time</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>start_time</cite> + interval &gt; <cite>stop_time</cite>.</p></li>
+<li><p><strong>TypeError</strong> – If <cite>callback</cite> is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>callback</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1913,7 +1913,7 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dd class="field-even"><p>Timer or <code class="docutils literal notranslate"><span class="pre">None</span></code> – The timer with the given name (if found).</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If name is not a valid string.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>name</cite> is not a valid string.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2007,7 +2007,7 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dd class="field-even"><p><em>list[TimeEvent]</em> – Sorted chronologically.</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If to_time is &lt; the clocks current time.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>to_time</cite> is &lt; the clocks current time.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2126,7 +2126,7 @@ the target timezone).</p>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite>.</p>
+<dd class="field-odd"><p><strong>TypeError</strong> – If <cite>handler</cite> is not of type <cite>Callable</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2159,10 +2159,10 @@ default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
-<li><p><strong>ValueError</strong> – If alert_time is not &gt;= the clocks current time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If handler is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>name</cite> is not unique for this clock.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>alert_time</cite> is not &gt;= the clocks current time.</p></li>
+<li><p><strong>TypeError</strong> – If <cite>handler</cite> is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>handler</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2185,10 +2185,10 @@ default handler (if registered) will receive the <cite>TimeEvent</cite>.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
-<li><p><strong>ValueError</strong> – If alert_time is not &gt;= the clocks current time.</p></li>
-<li><p><strong>TypeError</strong> – If callback is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If callback is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>name</cite> is not unique for this clock.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>alert_time</cite> is not &gt;= the clocks current time.</p></li>
+<li><p><strong>TypeError</strong> – If <cite>callback</cite> is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>callback</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2214,12 +2214,12 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
-<li><p><strong>ValueError</strong> – If interval is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and stop_time &lt; time_now.</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and start_time + interval &gt; stop_time.</p></li>
-<li><p><strong>TypeError</strong> – If handler is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If handler is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>name</cite> is not unique for this clock.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>interval</cite> is not positive (&gt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>stop_time</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>stop_time</cite> &lt; time now.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>stop_time</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>start_time</cite> + <cite>interval</cite> &gt; <cite>stop_time</cite>.</p></li>
+<li><p><strong>TypeError</strong> – If <cite>handler</cite> is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>handler</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2245,12 +2245,12 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If name is not unique for this clock.</p></li>
-<li><p><strong>ValueError</strong> – If interval is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and stop_time &lt; time_now.</p></li>
-<li><p><strong>ValueError</strong> – If stop_time is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and start_time + interval &gt; stop_time.</p></li>
-<li><p><strong>TypeError</strong> – If callback is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If callback is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>name</cite> is not unique for this clock.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>interval</cite> is not positive (&gt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>stop_time</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>stop_time</cite> &lt; time now.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>stop_time</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>start_time</cite> + interval &gt; <cite>stop_time</cite>.</p></li>
+<li><p><strong>TypeError</strong> – If <cite>callback</cite> is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>callback</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and no default handler is registered.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2268,7 +2268,7 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dd class="field-even"><p>Timer or <code class="docutils literal notranslate"><span class="pre">None</span></code> – The timer with the given name (if found).</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If name is not a valid string.</p>
+<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>name</cite> is not a valid string.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2369,7 +2369,7 @@ taken from <cite>type(self).__name__</cite>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If component_name is not a valid string.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>component_name</cite> is not a valid string.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2650,7 +2650,7 @@ IDs generated.</p>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If initial_count is negative (&lt; 0).</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>initial_count</cite> is negative (&lt; 0).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2757,10 +2757,10 @@ contain any arbitrary delimiter if required.</p></li>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ValueError</strong> – If quantity is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If time_in_force is GTD and expire_time is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If post_only and hidden.</p></li>
-<li><p><strong>ValueError</strong> – If hidden and post_only.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>quantity</cite> is not positive (&gt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>time_in_force</cite> is <code class="docutils literal notranslate"><span class="pre">GTD</span></code> and <cite>expire_time</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>post_only</cite> and <cite>hidden</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>hidden</cite> and <cite>post_only</cite>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2787,8 +2787,8 @@ contain any arbitrary delimiter if required.</p></li>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ValueError</strong> – If quantity is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If time_in_force is other than <code class="docutils literal notranslate"><span class="pre">GTC</span></code>, <code class="docutils literal notranslate"><span class="pre">IOC</span></code>, <code class="docutils literal notranslate"><span class="pre">FOK</span></code> or <code class="docutils literal notranslate"><span class="pre">OC</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>quantity</cite> is not positive (&gt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>time_in_force</cite> is other than <code class="docutils literal notranslate"><span class="pre">GTC</span></code>, <code class="docutils literal notranslate"><span class="pre">IOC</span></code>, <code class="docutils literal notranslate"><span class="pre">FOK</span></code> or <code class="docutils literal notranslate"><span class="pre">OC</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2840,10 +2840,10 @@ contain any arbitrary delimiter if required.</p></li>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ValueError</strong> – If quantity is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If time_in_force is GTD and expire_time is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If post_only and hidden.</p></li>
-<li><p><strong>ValueError</strong> – If hidden and post_only.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>quantity</cite> is not positive (&gt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>time_in_force</cite> is <code class="docutils literal notranslate"><span class="pre">GTD</span></code> and <cite>expire_time</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>post_only</cite> and <cite>hidden</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>hidden</cite> and <cite>post_only</cite>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2873,8 +2873,8 @@ contain any arbitrary delimiter if required.</p></li>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ValueError</strong> – If quantity is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If time_in_force is GTD and expire_time is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>quantity</cite> is not positive (&gt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>time_in_force</cite> is <code class="docutils literal notranslate"><span class="pre">GTD</span></code> and <cite>expire_time</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2926,7 +2926,7 @@ contain any arbitrary delimiter if required.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If initial_count is negative (&lt; 0).</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>initial_count</cite> is negative (&lt; 0).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3061,7 +3061,7 @@ will be appended with ‘F’.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If the count is negative (&lt; 0).</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>count</cite> is negative (&lt; 0).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3171,7 +3171,7 @@ will be appended with ‘F’.</p></li>
 <dd class="field-odd"><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><em>Dict</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The sink handler to register.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>KeyError</strong> – If handler already registered.</p>
+<dd class="field-even"><p><strong>KeyError</strong> – If <cite>handler</cite> already registered.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3268,7 +3268,7 @@ will be appended with ‘F’.</p></li>
 <dd class="field-odd"><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><em>Dict</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The sink handler to register.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>KeyError</strong> – If handler already registered.</p>
+<dd class="field-even"><p><strong>KeyError</strong> – If <cite>handler</cite> already registered.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3748,7 +3748,7 @@ then full() is never True.</p>
 <dd class="field-odd"><p><em>object</em></p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>IndexError</strong> – If index is out of range.</p>
+<dd class="field-even"><p><strong>IndexError</strong> – If <cite>index</cite> is out of range.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3839,11 +3839,11 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If name is not a valid string.</p></li>
-<li><p><strong>ValueError</strong> – If limit is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If interval is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If output_send is not of type <cite>Callable</cite>.</p></li>
-<li><p><strong>ValueError</strong> – If output_drop is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>name</cite> is not a valid string.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>limit</cite> is not positive (&gt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>interval</cite> is not positive (&gt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>output_send</cite> is not of type <cite>Callable</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>output_drop</cite> is not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -3978,7 +3978,7 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – If callback is not of type <cite>Callable</cite>.</p>
+<dd class="field-even"><p><strong>TypeError</strong> – If <cite>callback</cite> is not of type <cite>Callable</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -4129,7 +4129,7 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – If callback is not of type <cite>Callable</cite>.</p>
+<dd class="field-even"><p><strong>TypeError</strong> – If <cite>callback</cite> is not of type <cite>Callable</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -4393,9 +4393,6 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>TimeEvent</em></p>
 </dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If the next event timestamp is not equal to the at_time.</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -4444,7 +4441,7 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – If callback is not of type <cite>Callable</cite>.</p>
+<dd class="field-even"><p><strong>TypeError</strong> – If <cite>callback</cite> is not of type <cite>Callable</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -4710,8 +4707,8 @@ of events. A <code class="docutils literal notranslate"><span class="pre">TimeEv
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If name is not a valid string.</p></li>
-<li><p><strong>TypeError</strong> – If callback is not of type <cite>Callable</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>name</cite> is not a valid string.</p></li>
+<li><p><strong>TypeError</strong> – If <cite>callback</cite> is not of type <cite>Callable</cite>.</p></li>
 </ul>
 </dd>
 </dl>
