@@ -2669,7 +2669,7 @@ IDs generated.</p>
 <li><p><strong>stop_loss</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The stop-loss child order stop price.</p></li>
 <li><p><strong>take_profit</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The take-profit child order limit price.</p></li>
 <li><p><strong>tif</strong> (TimeInForce {<code class="docutils literal notranslate"><span class="pre">DAY</span></code>, <code class="docutils literal notranslate"><span class="pre">GTC</span></code>}, optional) – The entry orders time-in-force .</p></li>
-<li><p><strong>expire_time</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The order expire time (for GTD orders).</p></li>
+<li><p><strong>expire_time</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The order expire time (for <code class="docutils literal notranslate"><span class="pre">GTD</span></code> orders).</p></li>
 <li><p><strong>tif_bracket</strong> (TimeInForce {<code class="docutils literal notranslate"><span class="pre">DAY</span></code>, <code class="docutils literal notranslate"><span class="pre">GTC</span></code>}, optional) – The bracket orders time-in-force.</p></li>
 <li><p><strong>post_only</strong> (<em>bool</em>) – If the entry order will only provide liquidity (make a market).</p></li>
 </ul>
@@ -2679,7 +2679,7 @@ IDs generated.</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ValueError</strong> – If <cite>tif</cite> is GTD and <cite>expire_time</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>tif</cite> is <code class="docutils literal notranslate"><span class="pre">GTD</span></code> and <cite>expire_time</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 <li><p><strong>ValueError</strong> – If <cite>tif_bracket</cite> is not either <code class="docutils literal notranslate"><span class="pre">DAY</span></code> or <code class="docutils literal notranslate"><span class="pre">GTC</span></code>.</p></li>
 <li><p><strong>ValueError</strong> – If <cite>entry_order.side</cite> is <code class="docutils literal notranslate"><span class="pre">BUY</span></code> and <cite>entry_order.price</cite> &lt;= <cite>stop_loss.price</cite>.</p></li>
 <li><p><strong>ValueError</strong> – If <cite>entry_order.side</cite> is <code class="docutils literal notranslate"><span class="pre">BUY</span></code> and <cite>entry_order.price</cite> &gt;= <cite>take_profit.price</cite>.</p></li>
@@ -2735,7 +2735,7 @@ IDs generated.</p>
 <dt class="sig sig-object py" id="nautilus_trader.common.factories.OrderFactory.limit">
 <span class="sig-name descname"><span class="pre">limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force=TimeInForce.GTC</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">expire_time=None</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">post_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">hidden=False</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LimitOrder</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.limit" title="Permalink to this definition"></a></dt>
 <dd><p>Create a new limit order.</p>
-<p>If the time-in-force is GTD then a valid expire time must be given.</p>
+<p>If the time-in-force is <code class="docutils literal notranslate"><span class="pre">GTD</span></code> then a valid expire time must be given.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2744,7 +2744,7 @@ IDs generated.</p>
 <li><p><strong>quantity</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The orders quantity (&gt; 0).</p></li>
 <li><p><strong>price</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The orders price.</p></li>
 <li><p><strong>time_in_force</strong> (<em>TimeInForce</em><em>, </em><em>optional</em>) – The orders time-in-force.</p></li>
-<li><p><strong>expire_time</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The order expire time (for GTD orders).</p></li>
+<li><p><strong>expire_time</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The order expire time (for <code class="docutils literal notranslate"><span class="pre">GTD</span></code> orders).</p></li>
 <li><p><strong>post_only</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order will only provide liquidity (make a market).</p></li>
 <li><p><strong>reduce_only</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order carries the ‘reduce-only’ execution instruction.</p></li>
 <li><p><strong>hidden</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order should be hidden from the public book.</p></li>
@@ -2817,7 +2817,7 @@ given count.</p>
 <dt class="sig sig-object py" id="nautilus_trader.common.factories.OrderFactory.stop_limit">
 <span class="sig-name descname"><span class="pre">stop_limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">trigger</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force=TimeInForce.GTC</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">expire_time=None</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">post_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">hidden=False</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">StopLimitOrder</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.stop_limit" title="Permalink to this definition"></a></dt>
 <dd><p>Create a new stop-limit order.</p>
-<p>If the time-in-force is GTD then a valid expire time must be given.</p>
+<p>If the time-in-force is <code class="docutils literal notranslate"><span class="pre">GTD</span></code> then a valid expire time must be given.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2827,7 +2827,7 @@ given count.</p>
 <li><p><strong>price</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The orders limit price.</p></li>
 <li><p><strong>trigger</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The orders stop trigger price.</p></li>
 <li><p><strong>time_in_force</strong> (<em>TimeInForce</em><em>, </em><em>optional</em>) – The orders time-in-force.</p></li>
-<li><p><strong>expire_time</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The order expire time (for GTD orders).</p></li>
+<li><p><strong>expire_time</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The order expire time (for <code class="docutils literal notranslate"><span class="pre">GTD</span></code> orders).</p></li>
 <li><p><strong>post_only</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order will only provide liquidity (make a market).</p></li>
 <li><p><strong>reduce_only</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order carries the ‘reduce-only’ execution instruction.</p></li>
 <li><p><strong>hidden</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order should be hidden from the public book.</p></li>
@@ -2853,7 +2853,7 @@ contain any arbitrary delimiter if required.</p></li>
 <dt class="sig sig-object py" id="nautilus_trader.common.factories.OrderFactory.stop_market">
 <span class="sig-name descname"><span class="pre">stop_market</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">OrderSide</span> <span class="pre">order_side</span></em>, <em class="sig-param"><span class="pre">Quantity</span> <span class="pre">quantity</span></em>, <em class="sig-param"><span class="pre">Price</span> <span class="pre">price</span></em>, <em class="sig-param"><span class="pre">TimeInForce</span> <span class="pre">time_in_force=TimeInForce.GTC</span></em>, <em class="sig-param"><span class="pre">datetime</span> <span class="pre">expire_time=None</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">tags=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">StopMarketOrder</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.stop_market" title="Permalink to this definition"></a></dt>
 <dd><p>Create a new stop-market order.</p>
-<p>If the time-in-force is GTD then a valid expire time must be given.</p>
+<p>If the time-in-force is <code class="docutils literal notranslate"><span class="pre">GTD</span></code> then a valid expire time must be given.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2862,7 +2862,7 @@ contain any arbitrary delimiter if required.</p></li>
 <li><p><strong>quantity</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The orders quantity (&gt; 0).</p></li>
 <li><p><strong>price</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The orders price.</p></li>
 <li><p><strong>time_in_force</strong> (<em>TimeInForce</em><em>, </em><em>optional</em>) – The orders time-in-force.</p></li>
-<li><p><strong>expire_time</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The order expire time (for GTD orders).</p></li>
+<li><p><strong>expire_time</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The order expire time (for <code class="docutils literal notranslate"><span class="pre">GTD</span></code> orders).</p></li>
 <li><p><strong>reduce_only</strong> (<em>bool</em><em>,</em>) – If the order carries the ‘reduce-only’ execution instruction.</p></li>
 <li><p><strong>tags</strong> (<em>str</em><em>, </em><em>optional</em>) – The custom user tags for the order. These are optional and can
 contain any arbitrary delimiter if required.</p></li>

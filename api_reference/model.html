@@ -6415,7 +6415,7 @@ trading venue.</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L1OrderBook">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">L1OrderBook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">uint8_t</span> <span class="pre">price_precision</span></em>, <em class="sig-param"><span class="pre">uint8_t</span> <span class="pre">size_precision</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L1OrderBook" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.orderbook.book.OrderBook" title="nautilus_trader.model.orderbook.book.OrderBook"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.orderbook.book.OrderBook</span></code></a></p>
-<p>Provides a L1_TBBO order book.</p>
+<p>Provides a L1 TBBO (top of book best bid/offer) order book.</p>
 <p>A level 1 order book has a single (top) <cite>Level</cite>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L1OrderBook.__init__">
@@ -6592,7 +6592,7 @@ trading venue.</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L1OrderBook.check_integrity">
 <span class="sig-name descname"><span class="pre">check_integrity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L1OrderBook.check_integrity" title="Permalink to this definition"></a></dt>
 <dd><p>Check order book integrity.</p>
-<p>For a L1_TBBO order book:
+<p>For a L1 TBBO order book:
 - There should be at most one level per side.
 - The bid side price should not be greater than or equal to the ask side price.</p>
 <dl class="field-list simple">
@@ -6799,8 +6799,8 @@ trading venue.</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L2OrderBook">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">L2OrderBook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">uint8_t</span> <span class="pre">price_precision</span></em>, <em class="sig-param"><span class="pre">uint8_t</span> <span class="pre">size_precision</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L2OrderBook" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.orderbook.book.OrderBook" title="nautilus_trader.model.orderbook.book.OrderBook"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.orderbook.book.OrderBook</span></code></a></p>
-<p>Provides a L2_MBP order book.</p>
-<p>The books <cite>Levels</cite> are only made up of a single order.</p>
+<p>Provides a L2 MBP (market by price) order book.</p>
+<p>A level 2 order books <cite>Levels</cite> are only made up of a single order.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L2OrderBook.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L2OrderBook.__init__" title="Permalink to this definition"></a></dt>
@@ -7188,7 +7188,7 @@ trading venue.</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L3OrderBook">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">L3OrderBook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">uint8_t</span> <span class="pre">price_precision</span></em>, <em class="sig-param"><span class="pre">uint8_t</span> <span class="pre">size_precision</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L3OrderBook" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.orderbook.book.OrderBook" title="nautilus_trader.model.orderbook.book.OrderBook"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.orderbook.book.OrderBook</span></code></a></p>
-<p>Provides an L3_MBO order book.</p>
+<p>Provides an L3 MBO (market by order) order book.</p>
 <p>A level 3 order books <cite>Levels</cite> can be made up of multiple orders.
 This class maps directly to the functionality of the base class.</p>
 <dl class="py method">
@@ -8179,7 +8179,7 @@ This class maps directly to the functionality of the base class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID.</p></li>
+<li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the book.</p></li>
 <li><p><strong>book_type</strong> (BookType {<code class="docutils literal notranslate"><span class="pre">L1_TBBO</span></code>, <code class="docutils literal notranslate"><span class="pre">L2_MBP</span></code>, <code class="docutils literal notranslate"><span class="pre">L3_MBO</span></code>}) – The order book type.</p></li>
 <li><p><strong>action</strong> (BookAction {<code class="docutils literal notranslate"><span class="pre">ADD</span></code>, <code class="docutils literal notranslate"><span class="pre">UPDATED</span></code>, <code class="docutils literal notranslate"><span class="pre">DELETE</span></code>, <code class="docutils literal notranslate"><span class="pre">CLEAR</span></code>}) – The order book delta action.</p></li>
 <li><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to apply.</p></li>
