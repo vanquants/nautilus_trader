@@ -1626,9 +1626,22 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.clock.Clock.timestamp_ms">
+<span class="sig-name descname"><span class="pre">timestamp_ms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.Clock.timestamp_ms" title="Permalink to this definition"></a></dt>
+<dd><p>Return the current UNIX time in milliseconds (ms).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>int64</em></p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Unix_time">https://en.wikipedia.org/wiki/Unix_time</a></p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.clock.Clock.timestamp_ns">
 <span class="sig-name descname"><span class="pre">timestamp_ns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.Clock.timestamp_ns" title="Permalink to this definition"></a></dt>
-<dd><p>Return the current UNIX time in nanoseconds.</p>
+<dd><p>Return the current UNIX time in nanoseconds (ns).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>int64</em></p>
@@ -1944,6 +1957,19 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dt class="sig sig-object py" id="nautilus_trader.common.clock.LiveClock.timestamp">
 <span class="sig-name descname"><span class="pre">timestamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.LiveClock.timestamp" title="Permalink to this definition"></a></dt>
 <dd><p>Return the current UNIX time in seconds from the system clock.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>double</em></p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Unix_time">https://en.wikipedia.org/wiki/Unix_time</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.clock.LiveClock.timestamp_ms">
+<span class="sig-name descname"><span class="pre">timestamp_ms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.LiveClock.timestamp_ms" title="Permalink to this definition"></a></dt>
+<dd><p>Return the current UNIX time in milliseconds (ms).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>double</em></p>
@@ -2299,6 +2325,19 @@ then the default handler (if registered) will receive the <cite>TimeEvent</cite>
 <dt class="sig sig-object py" id="nautilus_trader.common.clock.TestClock.timestamp">
 <span class="sig-name descname"><span class="pre">timestamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.TestClock.timestamp" title="Permalink to this definition"></a></dt>
 <dd><p>Return the current UNIX time in seconds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>double</em></p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Unix_time">https://en.wikipedia.org/wiki/Unix_time</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.clock.TestClock.timestamp_ms">
+<span class="sig-name descname"><span class="pre">timestamp_ms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.common.clock.TestClock.timestamp_ms" title="Permalink to this definition"></a></dt>
+<dd><p>Return the current UNIX time in milliseconds (ms).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>double</em></p>
