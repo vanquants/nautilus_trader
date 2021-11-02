@@ -2634,74 +2634,43 @@ position ID resolution.</p></li>
 <section id="module-nautilus_trader.backtest.data.loaders">
 <span id="loaders"></span><h2>Loaders<a class="headerlink" href="#module-nautilus_trader.backtest.data.loaders" title="Permalink to this headline"></a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.CSVBarDataLoader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CSVBarDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.CSVBarDataLoader" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Provides a means of loading bar data pandas DataFrames from CSV files.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.CSVBarDataLoader.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.CSVBarDataLoader.__init__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.CSVBarDataLoader.load">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.CSVBarDataLoader.load" title="Permalink to this definition"></a></dt>
-<dd><p>Return the bar pandas.DataFrame loaded from the given csv file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – The absolute path to the CSV file.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>pd.DataFrame</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.CSVTickDataLoader">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CSVTickDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.CSVTickDataLoader" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a means of loading tick data pandas DataFrames from CSV files.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.CSVTickDataLoader.load">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.core.frame.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.CSVTickDataLoader.load" title="Permalink to this definition"></a></dt>
+<dd><p>Return the tick pandas.DataFrame loaded from the given csv file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em><em>, </em><em>path object</em><em> or </em><em>file-like object</em>) – The path to the CSV file.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>pd.DataFrame</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.CSVTickDataLoader.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.CSVTickDataLoader.__init__" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.CSVTickDataLoader.load">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.CSVTickDataLoader.load" title="Permalink to this definition"></a></dt>
-<dd><p>Return the tick pandas.DataFrame loaded from the given csv file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – The absolute path to the CSV file.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>pd.DataFrame</em></p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.ParquetBarDataLoader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ParquetBarDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.ParquetBarDataLoader" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.CSVBarDataLoader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CSVBarDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.CSVBarDataLoader" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Provides a means of loading bar data pandas DataFrames from parquet files.</p>
+<p>Provides a means of loading bar data pandas DataFrames from CSV files.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.ParquetBarDataLoader.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.ParquetBarDataLoader.__init__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.ParquetBarDataLoader.load">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.ParquetBarDataLoader.load" title="Permalink to this definition"></a></dt>
-<dd><p>Return the bar pandas.DataFrame loaded from the given parquet file.</p>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.CSVBarDataLoader.load">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.core.frame.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.CSVBarDataLoader.load" title="Permalink to this definition"></a></dt>
+<dd><p>Return the bar pandas.DataFrame loaded from the given csv file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – The absolute path to the parquet file.</p>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em><em>, </em><em>path object</em><em> or </em><em>file-like object</em>) – The path to the CSV file.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>pd.DataFrame</em></p>
@@ -2709,57 +2678,10 @@ position ID resolution.</p></li>
 </dl>
 </dd></dl>
 
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.ParquetTickDataLoader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ParquetTickDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.ParquetTickDataLoader" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Provides a means of loading tick data pandas DataFrames from Parquet files.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.ParquetTickDataLoader.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.ParquetTickDataLoader.__init__" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.CSVBarDataLoader.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.CSVBarDataLoader.__init__" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.ParquetTickDataLoader.load">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.ParquetTickDataLoader.load" title="Permalink to this definition"></a></dt>
-<dd><p>Return the tick pandas.DataFrame loaded from the given parquet file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – The absolute path to the Parquet file.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>pd.DataFrame</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.TardisQuoteDataLoader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TardisQuoteDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.TardisQuoteDataLoader" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Provides a means of loading quote data pandas DataFrames from Tardis CSV files.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.TardisQuoteDataLoader.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.TardisQuoteDataLoader.__init__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.TardisQuoteDataLoader.load">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.TardisQuoteDataLoader.load" title="Permalink to this definition"></a></dt>
-<dd><p>Return the quote pandas.DataFrame loaded from the given csv file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – The absolute path to the CSV file.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>pd.DataFrame</em></p>
-</dd>
-</dl>
-</dd></dl>
 
 </dd></dl>
 
@@ -2769,23 +2691,101 @@ position ID resolution.</p></li>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a means of loading trade data pandas DataFrames from Tardis CSV files.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.TardisTradeDataLoader.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.TardisTradeDataLoader.__init__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.TardisTradeDataLoader.load">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">file_path</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.TardisTradeDataLoader.load" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.core.frame.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.TardisTradeDataLoader.load" title="Permalink to this definition"></a></dt>
 <dd><p>Return the trade pandas.DataFrame loaded from the given csv file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – The absolute path to the CSV file.</p>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em><em>, </em><em>path object</em><em> or </em><em>file-like object</em>) – The path to the CSV file.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>pd.DataFrame</em></p>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.TardisTradeDataLoader.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.TardisTradeDataLoader.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.TardisQuoteDataLoader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TardisQuoteDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.TardisQuoteDataLoader" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides a means of loading quote data pandas DataFrames from Tardis CSV files.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.TardisQuoteDataLoader.load">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.core.frame.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.TardisQuoteDataLoader.load" title="Permalink to this definition"></a></dt>
+<dd><p>Return the quote pandas.DataFrame loaded from the given csv file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em><em>, </em><em>path object</em><em> or </em><em>file-like object</em>) – The path to the CSV file.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>pd.DataFrame</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.TardisQuoteDataLoader.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.TardisQuoteDataLoader.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.ParquetTickDataLoader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ParquetTickDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.ParquetTickDataLoader" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides a means of loading tick data pandas DataFrames from Parquet files.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.ParquetTickDataLoader.load">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.core.frame.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.ParquetTickDataLoader.load" title="Permalink to this definition"></a></dt>
+<dd><p>Return the tick pandas.DataFrame loaded from the given parquet file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em><em>, </em><em>path object</em><em> or </em><em>file-like object</em>) – The path to the Parquet file.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>pd.DataFrame</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.ParquetTickDataLoader.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.ParquetTickDataLoader.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.ParquetBarDataLoader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ParquetBarDataLoader</span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.ParquetBarDataLoader" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides a means of loading bar data pandas DataFrames from parquet files.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.ParquetBarDataLoader.load">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.core.frame.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.ParquetBarDataLoader.load" title="Permalink to this definition"></a></dt>
+<dd><p>Return the bar pandas.DataFrame loaded from the given parquet file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em><em>, </em><em>path object</em><em> or </em><em>file-like object</em>) – The path to the parquet file.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>pd.DataFrame</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.data.loaders.ParquetBarDataLoader.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.data.loaders.ParquetBarDataLoader.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
