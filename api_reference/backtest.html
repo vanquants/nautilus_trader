@@ -1577,7 +1577,7 @@ to the end of the data.</p></li>
 <span id="exchange"></span><h2>Exchange<a class="headerlink" href="#module-nautilus_trader.backtest.exchange" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">SimulatedExchange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue,</span> <span class="pre">VenueType</span> <span class="pre">venue_type,</span> <span class="pre">OMSType</span> <span class="pre">oms_type,</span> <span class="pre">AccountType</span> <span class="pre">account_type,</span> <span class="pre">Currency</span> <span class="pre">base_currency,</span> <span class="pre">list</span> <span class="pre">starting_balances,</span> <span class="pre">default_leverage:</span> <span class="pre">Decimal,</span> <span class="pre">leverages:</span> <span class="pre">Dict[InstrumentId,</span> <span class="pre">Decimal],</span> <span class="pre">bool</span> <span class="pre">is_frozen_account,</span> <span class="pre">list</span> <span class="pre">instruments,</span> <span class="pre">list</span> <span class="pre">modules,</span> <span class="pre">CacheFacade</span> <span class="pre">cache,</span> <span class="pre">FillModel</span> <span class="pre">fill_model,</span> <span class="pre">TestClock</span> <span class="pre">clock,</span> <span class="pre">Logger</span> <span class="pre">logger,</span> <span class="pre">BookType</span> <span class="pre">book_type=BookType.L1_TBBO,</span> <span class="pre">bool</span> <span class="pre">bar_execution=False,</span> <span class="pre">bool</span> <span class="pre">reject_stop_orders=True,</span> <span class="pre">SimulatedExchangeLatency</span> <span class="pre">simulated_latency=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">SimulatedExchange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Venue</span> <span class="pre">venue,</span> <span class="pre">VenueType</span> <span class="pre">venue_type,</span> <span class="pre">OMSType</span> <span class="pre">oms_type,</span> <span class="pre">AccountType</span> <span class="pre">account_type,</span> <span class="pre">Currency</span> <span class="pre">base_currency,</span> <span class="pre">list</span> <span class="pre">starting_balances,</span> <span class="pre">default_leverage:</span> <span class="pre">Decimal,</span> <span class="pre">leverages:</span> <span class="pre">Dict[InstrumentId,</span> <span class="pre">Decimal],</span> <span class="pre">bool</span> <span class="pre">is_frozen_account,</span> <span class="pre">list</span> <span class="pre">instruments,</span> <span class="pre">list</span> <span class="pre">modules,</span> <span class="pre">CacheFacade</span> <span class="pre">cache,</span> <span class="pre">FillModel</span> <span class="pre">fill_model,</span> <span class="pre">TestClock</span> <span class="pre">clock,</span> <span class="pre">Logger</span> <span class="pre">logger,</span> <span class="pre">BookType</span> <span class="pre">book_type=BookType.L1_TBBO,</span> <span class="pre">bool</span> <span class="pre">bar_execution=False,</span> <span class="pre">bool</span> <span class="pre">reject_stop_orders=True,</span> <span class="pre">LatencyModel</span> <span class="pre">latency_model=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a simulated financial market exchange.</p>
 <dl class="py method">
@@ -1603,6 +1603,7 @@ to the end of the data.</p></li>
 <li><p><strong>book_type</strong> (<em>BookType</em>) – The order book type for the exchange.</p></li>
 <li><p><strong>bar_execution</strong> (<em>bool</em>) – If the exchange execution dynamics is based on bar data.</p></li>
 <li><p><strong>reject_stop_orders</strong> (<em>bool</em>) – If stop orders are rejected on submission if in the market.</p></li>
+<li><p><strong>latency_model</strong> (<a class="reference internal" href="#nautilus_trader.backtest.models.LatencyModel" title="nautilus_trader.backtest.models.LatencyModel"><em>LatencyModel</em></a><em>, </em><em>optional</em>) – The latency model for the exchange.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -1708,17 +1709,6 @@ to the end of the data.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>CacheFacade</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange.change_simulated_latency">
-<span class="sig-name descname"><span class="pre">change_simulated_latency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">SimulatedExchangeLatency</span> <span class="pre">simulated_latency</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange.change_simulated_latency" title="Permalink to this definition"></a></dt>
-<dd><p>Change the simulated_latency for this exchange.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>simulated_latency</strong> (<a class="reference internal" href="#nautilus_trader.backtest.models.SimulatedExchangeLatency" title="nautilus_trader.backtest.models.SimulatedExchangeLatency"><em>SimulatedExchangeLatency</em></a>) – The simulated latency of the this exchange.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1874,6 +1864,17 @@ to the end of the data.</p></li>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange.latency_model">
+<span class="sig-name descname"><span class="pre">latency_model</span></span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange.latency_model" title="Permalink to this definition"></a></dt>
+<dd><p>The latency model for the exchange.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>LatencyModel</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange.leverages">
 <span class="sig-name descname"><span class="pre">leverages</span></span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange.leverages" title="Permalink to this definition"></a></dt>
 <dd><p>The accounts instrument specific leverage configuration.</p>
@@ -1997,19 +1998,20 @@ to the end of the data.</p></li>
 <dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange.set_fill_model">
 <span class="sig-name descname"><span class="pre">set_fill_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">FillModel</span> <span class="pre">fill_model</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange.set_fill_model" title="Permalink to this definition"></a></dt>
 <dd><p>Set the fill model to the given model.</p>
-<dl class="simple">
-<dt>fill_model<span class="classifier">FillModel</span></dt><dd><p>The fill model to set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fill_model</strong> (<a class="reference internal" href="#nautilus_trader.backtest.models.FillModel" title="nautilus_trader.backtest.models.FillModel"><em>FillModel</em></a>) – The fill model to set.</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange.simulated_latency">
-<span class="sig-name descname"><span class="pre">simulated_latency</span></span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange.simulated_latency" title="Permalink to this definition"></a></dt>
-<dd><p>If stop orders are rejected on submission if in the market.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.exchange.SimulatedExchange.set_latency_model">
+<span class="sig-name descname"><span class="pre">set_latency_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">LatencyModel</span> <span class="pre">latency_model</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.backtest.exchange.SimulatedExchange.set_latency_model" title="Permalink to this definition"></a></dt>
+<dd><p>Change the latency model for this exchange.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>bool</cite></p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>latency_model</strong> (<a class="reference internal" href="#nautilus_trader.backtest.models.LatencyModel" title="nautilus_trader.backtest.models.LatencyModel"><em>LatencyModel</em></a>) – The latency model to set.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2911,71 +2913,74 @@ of fills and slippage by order type.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.models.SimulatedExchangeLatency">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">SimulatedExchangeLatency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">int</span> <span class="pre">base_latency_nanos=NANOSECONDS_IN_MILLISECOND</span></em>, <em class="sig-param"><span class="pre">insert_latency_nanos=None</span></em>, <em class="sig-param"><span class="pre">update_latency_nanos=None</span></em>, <em class="sig-param"><span class="pre">cancel_latency_nanos=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.models.SimulatedExchangeLatency" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.models.LatencyModel">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LatencyModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">int</span> <span class="pre">base_latency_nanos=NANOSECONDS_IN_MILLISECOND</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">insert_latency_nanos=0</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">update_latency_nanos=0</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">cancel_latency_nanos=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.models.LatencyModel" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Delays messages coming from and going to the simulated exchange.</p>
+<p>Provides a latency model for messages coming from and going to a simulated exchange.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.models.SimulatedExchangeLatency.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.models.SimulatedExchangeLatency.__init__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.models.SimulatedExchangeLatency.base_latency_nanos">
-<span class="sig-name descname"><span class="pre">base_latency_nanos</span></span><a class="headerlink" href="#nautilus_trader.backtest.models.SimulatedExchangeLatency.base_latency_nanos" title="Permalink to this definition"></a></dt>
-<dd><p>‘int’
-The default latency to the exchange.</p>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.models.LatencyModel.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.models.LatencyModel.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">LatencyModel</span></code> class.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int</cite></p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_latency_nanos</strong> (<em>int</em>) – The base latency (nanoseconds) for the model.</p></li>
+<li><p><strong>insert_latency_nanos</strong> (<em>int</em>) – The order insert latency (nanoseconds) for the model.</p></li>
+<li><p><strong>update_latency_nanos</strong> (<em>int</em>) – The order update latency (nanoseconds) for the model.</p></li>
+<li><p><strong>cancel_latency_nanos</strong> (<em>int</em>) – The order cancel latency (nanoseconds) for the model.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Type</dt>
-<dd class="field-even"><p>base_latency_nanos</p>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If <cite>base_latency_nanos</cite> is negative (&lt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>insert_latency_nanos</cite> is negative (&lt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>update_latency_nanos</cite> is negative (&lt; 0).</p></li>
+<li><p><strong>ValueError</strong> – If <cite>cancel_latency_nanos</cite> is negative (&lt; 0).</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.models.SimulatedExchangeLatency.cancel_latency_nanos">
-<span class="sig-name descname"><span class="pre">cancel_latency_nanos</span></span><a class="headerlink" href="#nautilus_trader.backtest.models.SimulatedExchangeLatency.cancel_latency_nanos" title="Permalink to this definition"></a></dt>
-<dd><p>‘int’
-The latency for cancel messages to reach the exchange.</p>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.models.LatencyModel.base_latency_nanos">
+<span class="sig-name descname"><span class="pre">base_latency_nanos</span></span><a class="headerlink" href="#nautilus_trader.backtest.models.LatencyModel.base_latency_nanos" title="Permalink to this definition"></a></dt>
+<dd><p>The default latency to the exchange.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>int</cite></p>
-</dd>
-<dt class="field-even">Type</dt>
-<dd class="field-even"><p>cancel_latency_nanos</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.models.SimulatedExchangeLatency.insert_latency_nanos">
-<span class="sig-name descname"><span class="pre">insert_latency_nanos</span></span><a class="headerlink" href="#nautilus_trader.backtest.models.SimulatedExchangeLatency.insert_latency_nanos" title="Permalink to this definition"></a></dt>
-<dd><p>‘int’
-The latency for insert messages to reach the exchange.</p>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.models.LatencyModel.cancel_latency_nanos">
+<span class="sig-name descname"><span class="pre">cancel_latency_nanos</span></span><a class="headerlink" href="#nautilus_trader.backtest.models.LatencyModel.cancel_latency_nanos" title="Permalink to this definition"></a></dt>
+<dd><p>The latency (nanoseconds) for order cancel messages to reach the exchange.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>int</cite></p>
-</dd>
-<dt class="field-even">Type</dt>
-<dd class="field-even"><p>insert_latency_nanos</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.backtest.models.SimulatedExchangeLatency.update_latency_nanos">
-<span class="sig-name descname"><span class="pre">update_latency_nanos</span></span><a class="headerlink" href="#nautilus_trader.backtest.models.SimulatedExchangeLatency.update_latency_nanos" title="Permalink to this definition"></a></dt>
-<dd><p>‘int’
-The latency for update messages to reach the exchange.</p>
+<dt class="sig sig-object py" id="nautilus_trader.backtest.models.LatencyModel.insert_latency_nanos">
+<span class="sig-name descname"><span class="pre">insert_latency_nanos</span></span><a class="headerlink" href="#nautilus_trader.backtest.models.LatencyModel.insert_latency_nanos" title="Permalink to this definition"></a></dt>
+<dd><p>The latency (nanoseconds) for order insert messages to reach the exchange.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>int</cite></p>
 </dd>
-<dt class="field-even">Type</dt>
-<dd class="field-even"><p>update_latency_nanos</p>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.backtest.models.LatencyModel.update_latency_nanos">
+<span class="sig-name descname"><span class="pre">update_latency_nanos</span></span><a class="headerlink" href="#nautilus_trader.backtest.models.LatencyModel.update_latency_nanos" title="Permalink to this definition"></a></dt>
+<dd><p>The latency (nanoseconds) for order update messages to reach the exchange.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>int</cite></p>
 </dd>
 </dl>
 </dd></dl>

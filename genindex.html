@@ -275,6 +275,8 @@
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.orderbook.book.L3OrderBook.__init__">(L3OrderBook method)</a>
 </li>
+        <li><a href="api_reference/backtest.html#nautilus_trader.backtest.models.LatencyModel.__init__">(LatencyModel method)</a>
+</li>
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.limit.LimitOrder.__init__">(LimitOrder method)</a>
 </li>
         <li><a href="api_reference/common.html#nautilus_trader.common.clock.LiveClock.__init__">(LiveClock method)</a>
@@ -434,8 +436,6 @@
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.average.sma.SimpleMovingAverage.__init__">(SimpleMovingAverage method)</a>
 </li>
         <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.__init__">(SimulatedExchange method)</a>
-</li>
-        <li><a href="api_reference/backtest.html#nautilus_trader.backtest.models.SimulatedExchangeLatency.__init__">(SimulatedExchangeLatency method)</a>
 </li>
         <li><a href="api_reference/backtest.html#nautilus_trader.backtest.modules.SimulationModule.__init__">(SimulationModule method)</a>
 </li>
@@ -1088,7 +1088,7 @@
         <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.base_currency">(SimulatedExchange attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.models.SimulatedExchangeLatency.base_latency_nanos">base_latency_nanos (SimulatedExchangeLatency attribute)</a>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.models.LatencyModel.base_latency_nanos">base_latency_nanos (LatencyModel attribute)</a>
 </li>
       <li><a href="api_reference/model.html#nautilus_trader.model.objects.BaseDecimal">BaseDecimal (class in nautilus_trader.model.objects)</a>
 </li>
@@ -1322,7 +1322,7 @@
       </ul></li>
       <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.cancel_all_orders">cancel_all_orders() (TradingStrategy method)</a>
 </li>
-      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.models.SimulatedExchangeLatency.cancel_latency_nanos">cancel_latency_nanos (SimulatedExchangeLatency attribute)</a>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.models.LatencyModel.cancel_latency_nanos">cancel_latency_nanos (LatencyModel attribute)</a>
 </li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.execution_client.BacktestExecClient.cancel_order">cancel_order() (BacktestExecClient method)</a>
 
@@ -1434,8 +1434,6 @@
       </ul></li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.engine.BacktestEngine.change_fill_model">change_fill_model() (BacktestEngine method)</a>
 </li>
-      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.change_simulated_latency">change_simulated_latency() (SimulatedExchange method)</a>
-</li>
       <li><a href="api_reference/indicators.html#nautilus_trader.indicators.swings.Swings.changed">changed (Swings attribute)</a>
 </li>
       <li><a href="api_reference/data.html#nautilus_trader.data.engine.DataEngine.check_connected">check_connected() (DataEngine method)</a>
@@ -1538,10 +1536,10 @@
       </ul></li>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.clear_cache">clear_cache() (Cache method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/trading.html#nautilus_trader.trading.trader.Trader.clear_components">clear_components() (Trader method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.engine.BacktestEngine.clear_data">clear_data() (BacktestEngine method)</a>
 </li>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.clear_index">clear_index() (Cache method)</a>
@@ -3406,7 +3404,7 @@
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.average.wma.WeightedMovingAverage.initialized">(WeightedMovingAverage attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.models.SimulatedExchangeLatency.insert_latency_nanos">insert_latency_nanos (SimulatedExchangeLatency attribute)</a>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.models.LatencyModel.insert_latency_nanos">insert_latency_nanos (LatencyModel attribute)</a>
 </li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.engine.BacktestEngine.instance_id">instance_id (BacktestEngine attribute)</a>
 
@@ -4232,6 +4230,10 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.events.position.PositionOpened.last_qty">(PositionOpened attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.latency_model">latency_model (SimulatedExchange attribute)</a>
+</li>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.models.LatencyModel">LatencyModel (class in nautilus_trader.backtest.models)</a>
+</li>
       <li><a href="api_reference/model.html#nautilus_trader.model.orders.limit.LimitOrder.leaves_qty">leaves_qty (LimitOrder attribute)</a>
 
       <ul>
@@ -7185,6 +7187,8 @@
 </li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.set_fill_model">set_fill_model() (SimulatedExchange method)</a>
 </li>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.set_latency_model">set_latency_model() (SimulatedExchange method)</a>
+</li>
       <li><a href="api_reference/accounting.html#nautilus_trader.accounting.accounts.margin.MarginAccount.set_leverage">set_leverage() (MarginAccount method)</a>
 </li>
       <li><a href="api_reference/live.html#nautilus_trader.live.risk_engine.LiveRiskEngine.set_max_notional_per_order">set_max_notional_per_order() (LiveRiskEngine method)</a>
@@ -7273,11 +7277,7 @@
 </li>
       <li><a href="api_reference/indicators.html#nautilus_trader.indicators.average.sma.SimpleMovingAverage">SimpleMovingAverage (class in nautilus_trader.indicators.average.sma)</a>
 </li>
-      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.simulated_latency">simulated_latency (SimulatedExchange attribute)</a>
-</li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange">SimulatedExchange (class in nautilus_trader.backtest.exchange)</a>
-</li>
-      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.models.SimulatedExchangeLatency">SimulatedExchangeLatency (class in nautilus_trader.backtest.models)</a>
 </li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.modules.SimulationModule">SimulationModule (class in nautilus_trader.backtest.modules)</a>
 </li>
@@ -8879,7 +8879,7 @@
         <li><a href="api_reference/risk.html#nautilus_trader.risk.sizing.PositionSizer.update_instrument">(PositionSizer method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.models.SimulatedExchangeLatency.update_latency_nanos">update_latency_nanos (SimulatedExchangeLatency attribute)</a>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.models.LatencyModel.update_latency_nanos">update_latency_nanos (LatencyModel attribute)</a>
 </li>
       <li><a href="api_reference/accounting.html#nautilus_trader.accounting.accounts.margin.MarginAccount.update_margin_init">update_margin_init() (MarginAccount method)</a>
 </li>
