@@ -435,6 +435,8 @@
 </li>
         <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.__init__">(SimulatedExchange method)</a>
 </li>
+        <li><a href="api_reference/backtest.html#nautilus_trader.backtest.models.SimulatedExchangeLatency.__init__">(SimulatedExchangeLatency method)</a>
+</li>
         <li><a href="api_reference/backtest.html#nautilus_trader.backtest.modules.SimulationModule.__init__">(SimulationModule method)</a>
 </li>
         <li><a href="api_reference/network.html#nautilus_trader.network.socket.SocketClient.__init__">(SocketClient method)</a>
@@ -1086,10 +1088,14 @@
         <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.base_currency">(SimulatedExchange attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.models.SimulatedExchangeLatency.base_latency_nanos">base_latency_nanos (SimulatedExchangeLatency attribute)</a>
+</li>
       <li><a href="api_reference/model.html#nautilus_trader.model.objects.BaseDecimal">BaseDecimal (class in nautilus_trader.model.objects)</a>
 </li>
       <li><a href="api_reference/core.html#nautilus_trader.core.stats.basis_points_as_percentage">basis_points_as_percentage() (in module nautilus_trader.core.stats)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/model.html#nautilus_trader.model.orderbook.book.L1OrderBook.best_ask_level">best_ask_level() (L1OrderBook method)</a>
 
       <ul>
@@ -1100,8 +1106,6 @@
         <li><a href="api_reference/model.html#nautilus_trader.model.orderbook.book.OrderBook.best_ask_level">(OrderBook method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/model.html#nautilus_trader.model.orderbook.book.L1OrderBook.best_ask_price">best_ask_price() (L1OrderBook method)</a>
 
       <ul>
@@ -1318,6 +1322,8 @@
       </ul></li>
       <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.cancel_all_orders">cancel_all_orders() (TradingStrategy method)</a>
 </li>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.models.SimulatedExchangeLatency.cancel_latency_nanos">cancel_latency_nanos (SimulatedExchangeLatency attribute)</a>
+</li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.execution_client.BacktestExecClient.cancel_order">cancel_order() (BacktestExecClient method)</a>
 
       <ul>
@@ -1428,6 +1434,8 @@
       </ul></li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.engine.BacktestEngine.change_fill_model">change_fill_model() (BacktestEngine method)</a>
 </li>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.change_simulated_latency">change_simulated_latency() (SimulatedExchange method)</a>
+</li>
       <li><a href="api_reference/indicators.html#nautilus_trader.indicators.swings.Swings.changed">changed (Swings attribute)</a>
 </li>
       <li><a href="api_reference/data.html#nautilus_trader.data.engine.DataEngine.check_connected">check_connected() (DataEngine method)</a>
@@ -1530,10 +1538,10 @@
       </ul></li>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.clear_cache">clear_cache() (Cache method)</a>
 </li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.trader.Trader.clear_components">clear_components() (Trader method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/trading.html#nautilus_trader.trading.trader.Trader.clear_components">clear_components() (Trader method)</a>
+</li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.engine.BacktestEngine.clear_data">clear_data() (BacktestEngine method)</a>
 </li>
       <li><a href="api_reference/cache.html#nautilus_trader.cache.cache.Cache.clear_index">clear_index() (Cache method)</a>
@@ -3398,6 +3406,8 @@
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.average.wma.WeightedMovingAverage.initialized">(WeightedMovingAverage attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.models.SimulatedExchangeLatency.insert_latency_nanos">insert_latency_nanos (SimulatedExchangeLatency attribute)</a>
+</li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.engine.BacktestEngine.instance_id">instance_id (BacktestEngine attribute)</a>
 
       <ul>
@@ -7263,7 +7273,11 @@
 </li>
       <li><a href="api_reference/indicators.html#nautilus_trader.indicators.average.sma.SimpleMovingAverage">SimpleMovingAverage (class in nautilus_trader.indicators.average.sma)</a>
 </li>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.simulated_latency">simulated_latency (SimulatedExchange attribute)</a>
+</li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange">SimulatedExchange (class in nautilus_trader.backtest.exchange)</a>
+</li>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.models.SimulatedExchangeLatency">SimulatedExchangeLatency (class in nautilus_trader.backtest.models)</a>
 </li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.modules.SimulationModule">SimulationModule (class in nautilus_trader.backtest.modules)</a>
 </li>
@@ -8865,6 +8879,8 @@
         <li><a href="api_reference/risk.html#nautilus_trader.risk.sizing.PositionSizer.update_instrument">(PositionSizer method)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.models.SimulatedExchangeLatency.update_latency_nanos">update_latency_nanos (SimulatedExchangeLatency attribute)</a>
+</li>
       <li><a href="api_reference/accounting.html#nautilus_trader.accounting.accounts.margin.MarginAccount.update_margin_init">update_margin_init() (MarginAccount method)</a>
 </li>
       <li><a href="api_reference/accounting.html#nautilus_trader.accounting.accounts.margin.MarginAccount.update_margin_maint">update_margin_maint() (MarginAccount method)</a>
