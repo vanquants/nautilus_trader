@@ -2924,10 +2924,10 @@ of fills and slippage by order type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>base_latency_nanos</strong> (<em>int</em>) – The base latency (nanoseconds) for the model.</p></li>
-<li><p><strong>insert_latency_nanos</strong> (<em>int</em>) – The order insert latency (nanoseconds) for the model.</p></li>
-<li><p><strong>update_latency_nanos</strong> (<em>int</em>) – The order update latency (nanoseconds) for the model.</p></li>
-<li><p><strong>cancel_latency_nanos</strong> (<em>int</em>) – The order cancel latency (nanoseconds) for the model.</p></li>
+<li><p><strong>base_latency_nanos</strong> (<em>int</em><em>, </em><em>default 1_000_000_000</em>) – The base latency (nanoseconds) for the model.</p></li>
+<li><p><strong>insert_latency_nanos</strong> (<em>int</em><em>, </em><em>default 0</em>) – The order insert latency (nanoseconds) for the model.</p></li>
+<li><p><strong>update_latency_nanos</strong> (<em>int</em><em>, </em><em>default 0</em>) – The order update latency (nanoseconds) for the model.</p></li>
+<li><p><strong>cancel_latency_nanos</strong> (<em>int</em><em>, </em><em>default 0</em>) – The order cancel latency (nanoseconds) for the model.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
