@@ -6440,7 +6440,7 @@ trading venue.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L1OrderBook.add">
-<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L1OrderBook.add" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em>, <em class="sig-param"><span class="pre">uint64_t</span> <span class="pre">update_id=0</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L1OrderBook.add" title="Permalink to this definition"></a></dt>
 <dd><p>NotImplemented (Use <cite>update(order)</cite> for L1OrderBook).</p>
 </dd></dl>
 
@@ -6640,11 +6640,14 @@ trading venue.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L1OrderBook.delete">
-<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L1OrderBook.delete" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em>, <em class="sig-param"><span class="pre">uint64_t</span> <span class="pre">update_id=0</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L1OrderBook.delete" title="Permalink to this definition"></a></dt>
 <dd><p>Delete the given order in the book.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to delete.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to delete.</p></li>
+<li><p><strong>update_id</strong> (<em>uint64</em><em>, </em><em>default 0</em>) – The unique ID for the update. If default 0 then will increment the <cite>last_update_id</cite>.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -6681,6 +6684,17 @@ trading venue.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>InstrumentId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L1OrderBook.last_update_id">
+<span class="sig-name descname"><span class="pre">last_update_id</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L1OrderBook.last_update_id" title="Permalink to this definition"></a></dt>
+<dd><p>The last update ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>int</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -6784,11 +6798,14 @@ trading venue.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L1OrderBook.update">
-<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L1OrderBook.update" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em>, <em class="sig-param"><span class="pre">uint64_t</span> <span class="pre">update_id=0</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L1OrderBook.update" title="Permalink to this definition"></a></dt>
 <dd><p>Update the given order in the book.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to update.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to update.</p></li>
+<li><p><strong>update_id</strong> (<em>uint64</em><em>, </em><em>default 0</em>) – The unique ID for the update. If default 0 then will increment the <cite>last_update_id</cite>.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -6824,11 +6841,14 @@ trading venue.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L2OrderBook.add">
-<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L2OrderBook.add" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em>, <em class="sig-param"><span class="pre">uint64_t</span> <span class="pre">update_id=0</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L2OrderBook.add" title="Permalink to this definition"></a></dt>
 <dd><p>Add the given order to the book.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to add.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to add.</p></li>
+<li><p><strong>update_id</strong> (<em>uint64</em><em>, </em><em>default 0</em>) – The unique ID for the update. If default 0 then will increment the <cite>last_update_id</cite>.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -7029,11 +7049,14 @@ trading venue.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L2OrderBook.delete">
-<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L2OrderBook.delete" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em>, <em class="sig-param"><span class="pre">uint64_t</span> <span class="pre">update_id=0</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L2OrderBook.delete" title="Permalink to this definition"></a></dt>
 <dd><p>Delete the given order in the book.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to delete.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to delete.</p></li>
+<li><p><strong>update_id</strong> (<em>uint64</em><em>, </em><em>default 0</em>) – The unique ID for the update. If default 0 then will increment the <cite>last_update_id</cite>.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -7070,6 +7093,17 @@ trading venue.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>InstrumentId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L2OrderBook.last_update_id">
+<span class="sig-name descname"><span class="pre">last_update_id</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L2OrderBook.last_update_id" title="Permalink to this definition"></a></dt>
+<dd><p>The last update ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>int</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -7173,11 +7207,14 @@ trading venue.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L2OrderBook.update">
-<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L2OrderBook.update" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em>, <em class="sig-param"><span class="pre">uint64_t</span> <span class="pre">update_id=0</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L2OrderBook.update" title="Permalink to this definition"></a></dt>
 <dd><p>Update the given order in the book.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to update.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to update.</p></li>
+<li><p><strong>update_id</strong> (<em>uint64</em><em>, </em><em>default 0</em>) – The unique ID for the update. If default 0 then will increment the <cite>last_update_id</cite>.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -7214,11 +7251,14 @@ This class maps directly to the functionality of the base class.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L3OrderBook.add">
-<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L3OrderBook.add" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em>, <em class="sig-param"><span class="pre">uint64_t</span> <span class="pre">update_id=0</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L3OrderBook.add" title="Permalink to this definition"></a></dt>
 <dd><p>Add the given order to the book.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to add.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to add.</p></li>
+<li><p><strong>update_id</strong> (<em>uint64</em><em>, </em><em>default 0</em>) – The unique ID for the update. If default 0 then will increment the <cite>last_update_id</cite>.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -7418,11 +7458,14 @@ This class maps directly to the functionality of the base class.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L3OrderBook.delete">
-<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L3OrderBook.delete" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em>, <em class="sig-param"><span class="pre">uint64_t</span> <span class="pre">update_id=0</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L3OrderBook.delete" title="Permalink to this definition"></a></dt>
 <dd><p>Delete the given order in the book.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to delete.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to delete.</p></li>
+<li><p><strong>update_id</strong> (<em>uint64</em><em>, </em><em>default 0</em>) – The unique ID for the update. If default 0 then will increment the <cite>last_update_id</cite>.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -7459,6 +7502,17 @@ This class maps directly to the functionality of the base class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>InstrumentId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L3OrderBook.last_update_id">
+<span class="sig-name descname"><span class="pre">last_update_id</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L3OrderBook.last_update_id" title="Permalink to this definition"></a></dt>
+<dd><p>The last update ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>int</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -7562,11 +7616,14 @@ This class maps directly to the functionality of the base class.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.L3OrderBook.update">
-<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L3OrderBook.update" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em>, <em class="sig-param"><span class="pre">uint64_t</span> <span class="pre">update_id=0</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.L3OrderBook.update" title="Permalink to this definition"></a></dt>
 <dd><p>Update the given order in the book.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to update.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to update.</p></li>
+<li><p><strong>update_id</strong> (<em>uint64</em><em>, </em><em>default 0</em>) – The unique ID for the update. If default 0 then will increment the <cite>last_update_id</cite>.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -7587,11 +7644,14 @@ This class maps directly to the functionality of the base class.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.OrderBook.add">
-<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.OrderBook.add" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em>, <em class="sig-param"><span class="pre">uint64_t</span> <span class="pre">update_id=0</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.OrderBook.add" title="Permalink to this definition"></a></dt>
 <dd><p>Add the given order to the book.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to add.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to add.</p></li>
+<li><p><strong>update_id</strong> (<em>uint64</em><em>, </em><em>default 0</em>) – The unique ID for the update. If default 0 then will increment the <cite>last_update_id</cite>.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -7791,11 +7851,14 @@ This class maps directly to the functionality of the base class.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.OrderBook.delete">
-<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.OrderBook.delete" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em>, <em class="sig-param"><span class="pre">uint64_t</span> <span class="pre">update_id=0</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.OrderBook.delete" title="Permalink to this definition"></a></dt>
 <dd><p>Delete the given order in the book.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to delete.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to delete.</p></li>
+<li><p><strong>update_id</strong> (<em>uint64</em><em>, </em><em>default 0</em>) – The unique ID for the update. If default 0 then will increment the <cite>last_update_id</cite>.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -7832,6 +7895,17 @@ This class maps directly to the functionality of the base class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>InstrumentId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.OrderBook.last_update_id">
+<span class="sig-name descname"><span class="pre">last_update_id</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.OrderBook.last_update_id" title="Permalink to this definition"></a></dt>
+<dd><p>The last update ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>int</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -7935,11 +8009,14 @@ This class maps directly to the functionality of the base class.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.book.OrderBook.update">
-<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.OrderBook.update" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em>, <em class="sig-param"><span class="pre">uint64_t</span> <span class="pre">update_id=0</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.book.OrderBook.update" title="Permalink to this definition"></a></dt>
 <dd><p>Update the given order in the book.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to update.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to update.</p></li>
+<li><p><strong>update_id</strong> (<em>uint64</em><em>, </em><em>default 0</em>) – The unique ID for the update. If default 0 then will increment the <cite>last_update_id</cite>.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -8098,7 +8175,7 @@ This class maps directly to the functionality of the base class.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookData">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderBookData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BookType</span> <span class="pre">book_type</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookData" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderBookData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BookType</span> <span class="pre">book_type</span></em>, <em class="sig-param"><span class="pre">uint64_t</span> <span class="pre">update_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookData" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.data.Data</span></code></p>
 <p>The abstract base class for all <cite>OrderBook</cite> data.</p>
 <div class="admonition warning">
@@ -8114,6 +8191,7 @@ This class maps directly to the functionality of the base class.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the book.</p></li>
 <li><p><strong>book_type</strong> (BookType {<code class="docutils literal notranslate"><span class="pre">L1_TBBO</span></code>, <code class="docutils literal notranslate"><span class="pre">L2_MBP</span></code>, <code class="docutils literal notranslate"><span class="pre">L3_MBO</span></code>}) – The order book type.</p></li>
+<li><p><strong>update_id</strong> (<em>uint64</em><em>, </em><em>default 0</em>) – The unique ID for the data.</p></li>
 <li><p><strong>ts_event</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the data event occurred.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the data object was initialized.</p></li>
 </ul>
@@ -8165,11 +8243,22 @@ This class maps directly to the functionality of the base class.</p>
 </dl>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookData.update_id">
+<span class="sig-name descname"><span class="pre">update_id</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookData.update_id" title="Permalink to this definition"></a></dt>
+<dd><p>The update ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>uint64</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookDelta">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderBookDelta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BookType</span> <span class="pre">book_type</span></em>, <em class="sig-param"><span class="pre">BookAction</span> <span class="pre">action</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookDelta" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderBookDelta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BookType</span> <span class="pre">book_type</span></em>, <em class="sig-param"><span class="pre">BookAction</span> <span class="pre">action</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em>, <em class="sig-param"><span class="pre">uint64_t</span> <span class="pre">update_id=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookDelta" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookData" title="nautilus_trader.model.orderbook.data.OrderBookData"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.orderbook.data.OrderBookData</span></code></a></p>
 <p>Represents a single difference on an <cite>OrderBook</cite>.</p>
 <dl class="py method">
@@ -8185,6 +8274,7 @@ This class maps directly to the functionality of the base class.</p>
 <li><p><strong>order</strong> (<a class="reference internal" href="#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to apply.</p></li>
 <li><p><strong>ts_event</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the data event occurred.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the data object was initialized.</p></li>
+<li><p><strong>update_id</strong> (<em>uint64</em><em>, </em><em>default 0</em>) – The unique ID for the data. If zero then order book will maintain ID internally.</p></li>
 </ul>
 </dd>
 </dl>
@@ -8281,11 +8371,22 @@ This class maps directly to the functionality of the base class.</p>
 </dl>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookDelta.update_id">
+<span class="sig-name descname"><span class="pre">update_id</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookDelta.update_id" title="Permalink to this definition"></a></dt>
+<dd><p>The update ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>uint64</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookDeltas">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderBookDeltas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BookType</span> <span class="pre">book_type</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">deltas</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookDeltas" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderBookDeltas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BookType</span> <span class="pre">book_type</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">deltas</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em>, <em class="sig-param"><span class="pre">uint64_t</span> <span class="pre">update_id=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookDeltas" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookData" title="nautilus_trader.model.orderbook.data.OrderBookData"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.orderbook.data.OrderBookData</span></code></a></p>
 <p>Represents bulk changes for an <cite>OrderBook</cite>.</p>
 <dl class="py method">
@@ -8300,6 +8401,7 @@ This class maps directly to the functionality of the base class.</p>
 <li><p><strong>deltas</strong> (<em>list</em><em>[</em><a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookDelta" title="nautilus_trader.model.orderbook.data.OrderBookDelta"><em>OrderBookDelta</em></a><em>]</em>) – The list of order book changes.</p></li>
 <li><p><strong>ts_event</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the data event occurred.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the data object was initialized.</p></li>
+<li><p><strong>update_id</strong> (<em>uint64</em><em>, </em><em>default 0</em>) – The unique ID for the data. If zero then order book will maintain ID internally.</p></li>
 </ul>
 </dd>
 </dl>
@@ -8385,11 +8487,22 @@ This class maps directly to the functionality of the base class.</p>
 </dl>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookDeltas.update_id">
+<span class="sig-name descname"><span class="pre">update_id</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookDeltas.update_id" title="Permalink to this definition"></a></dt>
+<dd><p>The update ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>uint64</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookSnapshot">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderBookSnapshot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BookType</span> <span class="pre">book_type</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">bids</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">asks</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookSnapshot" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">OrderBookSnapshot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em>, <em class="sig-param"><span class="pre">BookType</span> <span class="pre">book_type</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">bids</span></em>, <em class="sig-param"><span class="pre">list</span> <span class="pre">asks</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em>, <em class="sig-param"><span class="pre">uint64_t</span> <span class="pre">update_id=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookSnapshot" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.orderbook.data.OrderBookData" title="nautilus_trader.model.orderbook.data.OrderBookData"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.orderbook.data.OrderBookData</span></code></a></p>
 <p>Represents a snapshot in time for an <cite>OrderBook</cite>.</p>
 <dl class="py method">
@@ -8405,6 +8518,7 @@ This class maps directly to the functionality of the base class.</p>
 <li><p><strong>asks</strong> (<em>list</em>) – The asks for the snapshot.</p></li>
 <li><p><strong>ts_event</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the data event occurred.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the data object was initialized.</p></li>
+<li><p><strong>update_id</strong> (<em>uint64</em><em>, </em><em>default 0</em>) – The unique ID for the data. If zero then order book will maintain ID internally.</p></li>
 </ul>
 </dd>
 </dl>
@@ -8497,6 +8611,17 @@ This class maps directly to the functionality of the base class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>int64</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orderbook.data.OrderBookSnapshot.update_id">
+<span class="sig-name descname"><span class="pre">update_id</span></span><a class="headerlink" href="#nautilus_trader.model.orderbook.data.OrderBookSnapshot.update_id" title="Permalink to this definition"></a></dt>
+<dd><p>The update ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>uint64</cite></p>
 </dd>
 </dl>
 </dd></dl>
