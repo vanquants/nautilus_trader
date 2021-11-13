@@ -97,7 +97,7 @@
 <span id="cache"></span><h2>Cache<a class="headerlink" href="#module-nautilus_trader.infrastructure.cache" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.infrastructure.cache.RedisCacheDatabase">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">RedisCacheDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id</span></em>, <em class="sig-param"><span class="pre">Logger</span> <span class="pre">logger</span></em>, <em class="sig-param"><span class="pre">Serializer</span> <span class="pre">serializer</span></em>, <em class="sig-param"><span class="pre">config:</span> <span class="pre">CacheDatabaseConfig</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RedisCacheDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">TraderId</span> <span class="pre">trader_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Logger</span> <span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Serializer</span> <span class="pre">serializer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config:</span> <span class="pre">CacheDatabaseConfig</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="cache.html#nautilus_trader.cache.database.CacheDatabase" title="nautilus_trader.cache.database.CacheDatabase"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.cache.database.CacheDatabase</span></code></a></p>
 <p>Provides a cache database backed by Redis.</p>
 <div class="admonition warning">
@@ -131,7 +131,7 @@ per the default implementations for both <cite>TradingNode</cite> and <cite>Back
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.infrastructure.cache.RedisCacheDatabase.add_account">
-<span class="sig-name descname"><span class="pre">add_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Account</span> <span class="pre">account</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.add_account" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">add_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Account</span> <span class="pre">account</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.add_account" title="Permalink to this definition"></a></dt>
 <dd><p>Add the given account to the database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -142,7 +142,7 @@ per the default implementations for both <cite>TradingNode</cite> and <cite>Back
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.infrastructure.cache.RedisCacheDatabase.add_currency">
-<span class="sig-name descname"><span class="pre">add_currency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Currency</span> <span class="pre">currency</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.add_currency" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">add_currency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">currency</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.add_currency" title="Permalink to this definition"></a></dt>
 <dd><p>Add the given currency to the database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -153,7 +153,7 @@ per the default implementations for both <cite>TradingNode</cite> and <cite>Back
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.infrastructure.cache.RedisCacheDatabase.add_instrument">
-<span class="sig-name descname"><span class="pre">add_instrument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Instrument</span> <span class="pre">instrument</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.add_instrument" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">add_instrument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Instrument</span> <span class="pre">instrument</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.add_instrument" title="Permalink to this definition"></a></dt>
 <dd><p>Add the given instrument to the database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -164,7 +164,7 @@ per the default implementations for both <cite>TradingNode</cite> and <cite>Back
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.infrastructure.cache.RedisCacheDatabase.add_order">
-<span class="sig-name descname"><span class="pre">add_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.add_order" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">add_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Order</span> <span class="pre">order</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.add_order" title="Permalink to this definition"></a></dt>
 <dd><p>Add the given order to the database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -175,7 +175,7 @@ per the default implementations for both <cite>TradingNode</cite> and <cite>Back
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.infrastructure.cache.RedisCacheDatabase.add_position">
-<span class="sig-name descname"><span class="pre">add_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Position</span> <span class="pre">position</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.add_position" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">add_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Position</span> <span class="pre">position</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.add_position" title="Permalink to this definition"></a></dt>
 <dd><p>Add the given position associated with the given strategy ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -186,7 +186,7 @@ per the default implementations for both <cite>TradingNode</cite> and <cite>Back
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.infrastructure.cache.RedisCacheDatabase.delete_strategy">
-<span class="sig-name descname"><span class="pre">delete_strategy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.delete_strategy" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">delete_strategy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.delete_strategy" title="Permalink to this definition"></a></dt>
 <dd><p>Delete the given strategy from the database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -203,7 +203,7 @@ per the default implementations for both <cite>TradingNode</cite> and <cite>Back
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.infrastructure.cache.RedisCacheDatabase.load_account">
-<span class="sig-name descname"><span class="pre">load_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">AccountId</span> <span class="pre">account_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Account</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.load_account" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">load_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AccountId</span> <span class="pre">account_id</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Account</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.load_account" title="Permalink to this definition"></a></dt>
 <dd><p>Load the account associated with the given account ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -239,7 +239,7 @@ per the default implementations for both <cite>TradingNode</cite> and <cite>Back
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.infrastructure.cache.RedisCacheDatabase.load_currency">
-<span class="sig-name descname"><span class="pre">load_currency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">code</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Currency</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.load_currency" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">load_currency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">code</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Currency</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.load_currency" title="Permalink to this definition"></a></dt>
 <dd><p>Load the currency associated with the given currency code (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -253,7 +253,7 @@ per the default implementations for both <cite>TradingNode</cite> and <cite>Back
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.infrastructure.cache.RedisCacheDatabase.load_instrument">
-<span class="sig-name descname"><span class="pre">load_instrument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Instrument</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.load_instrument" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">load_instrument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Instrument</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.load_instrument" title="Permalink to this definition"></a></dt>
 <dd><p>Load the instrument associated with the given instrument ID
 (if found).</p>
 <dl class="field-list simple">
@@ -279,7 +279,7 @@ per the default implementations for both <cite>TradingNode</cite> and <cite>Back
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.infrastructure.cache.RedisCacheDatabase.load_order">
-<span class="sig-name descname"><span class="pre">load_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Order</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.load_order" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">load_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Order</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.load_order" title="Permalink to this definition"></a></dt>
 <dd><p>Load the order associated with the given client order ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -304,7 +304,7 @@ per the default implementations for both <cite>TradingNode</cite> and <cite>Back
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.infrastructure.cache.RedisCacheDatabase.load_position">
-<span class="sig-name descname"><span class="pre">load_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">PositionId</span> <span class="pre">position_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Position</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.load_position" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">load_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PositionId</span> <span class="pre">position_id</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Position</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.load_position" title="Permalink to this definition"></a></dt>
 <dd><p>Load the position associated with the given ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -329,7 +329,7 @@ per the default implementations for both <cite>TradingNode</cite> and <cite>Back
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.infrastructure.cache.RedisCacheDatabase.load_strategy">
-<span class="sig-name descname"><span class="pre">load_strategy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.load_strategy" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">load_strategy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.load_strategy" title="Permalink to this definition"></a></dt>
 <dd><p>Load the state for the given strategy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -343,7 +343,7 @@ per the default implementations for both <cite>TradingNode</cite> and <cite>Back
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.infrastructure.cache.RedisCacheDatabase.update_account">
-<span class="sig-name descname"><span class="pre">update_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Account</span> <span class="pre">account</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.update_account" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Account</span> <span class="pre">account</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.update_account" title="Permalink to this definition"></a></dt>
 <dd><p>Update the given account in the database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -354,7 +354,7 @@ per the default implementations for both <cite>TradingNode</cite> and <cite>Back
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.infrastructure.cache.RedisCacheDatabase.update_order">
-<span class="sig-name descname"><span class="pre">update_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Order</span> <span class="pre">order</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.update_order" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Order</span> <span class="pre">order</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.update_order" title="Permalink to this definition"></a></dt>
 <dd><p>Update the given order in the database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -365,7 +365,7 @@ per the default implementations for both <cite>TradingNode</cite> and <cite>Back
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.infrastructure.cache.RedisCacheDatabase.update_position">
-<span class="sig-name descname"><span class="pre">update_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">Position</span> <span class="pre">position</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.update_position" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Position</span> <span class="pre">position</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.update_position" title="Permalink to this definition"></a></dt>
 <dd><p>Update the given position in the database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -376,7 +376,7 @@ per the default implementations for both <cite>TradingNode</cite> and <cite>Back
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.infrastructure.cache.RedisCacheDatabase.update_strategy">
-<span class="sig-name descname"><span class="pre">update_strategy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">TradingStrategy</span> <span class="pre">strategy</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.update_strategy" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update_strategy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TradingStrategy</span> <span class="pre">strategy</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.infrastructure.cache.RedisCacheDatabase.update_strategy" title="Permalink to this definition"></a></dt>
 <dd><p>Update the given strategy state in the database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>

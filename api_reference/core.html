@@ -108,7 +108,7 @@ state transitions for both domain entities and common components.</p>
 <span id="collections"></span><h2>Collections<a class="headerlink" href="#module-nautilus_trader.core.collections" title="Permalink to this headline"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.collections.bisect_left">
-<span class="sig-name descname"><span class="pre">bisect_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">list</span> <span class="pre">a</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">x</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">lo=0</span></em>, <em class="sig-param"><span class="pre">hi=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#nautilus_trader.core.collections.bisect_left" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">bisect_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">lo=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hi=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#nautilus_trader.core.collections.bisect_left" title="Permalink to this definition"></a></dt>
 <dd><p>Return the index where to insert item x in list a, assuming a is sorted.
 The return value i is such that all e in a[:i] have e &lt;= x, and all e in
 a[i:] have e &gt; x.  So if x already appears in the list, a.insert(i, x) will
@@ -127,7 +127,7 @@ slice of a to be searched.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.collections.bisect_right">
-<span class="sig-name descname"><span class="pre">bisect_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">list</span> <span class="pre">a</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">x</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">lo=0</span></em>, <em class="sig-param"><span class="pre">hi=None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#nautilus_trader.core.collections.bisect_right" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">bisect_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">lo=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hi=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#nautilus_trader.core.collections.bisect_right" title="Permalink to this definition"></a></dt>
 <dd><p>Return the index where to insert item x in list a, assuming a is sorted.
 The return value i is such that all e in a[:i] have e &lt;= x, and all e in
 a[i:] have e &gt; x.  So if x already appears in the list, a.insert(i, x) will
@@ -151,7 +151,7 @@ slice of a to be searched.</p>
 <p>Functions include awareness/tz checks and conversions, as well as ISO 8601 conversion.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.datetime.as_utc_index">
-<span class="sig-name descname"><span class="pre">as_utc_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pd.DataFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.datetime.as_utc_index" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">as_utc_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pd.DataFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.datetime.as_utc_index" title="Permalink to this definition"></a></dt>
 <dd><p>Ensure the given data has a DateTimeIndex which is tz-aware UTC.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -165,7 +165,7 @@ slice of a to be searched.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.datetime.as_utc_timestamp">
-<span class="sig-name descname"><span class="pre">as_utc_timestamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">datetime</span> <span class="pre">dt</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">datetime</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.as_utc_timestamp" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">as_utc_timestamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">dt</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">datetime</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.as_utc_timestamp" title="Permalink to this definition"></a></dt>
 <dd><p>Ensure the given timestamp is tz-aware UTC.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -179,7 +179,7 @@ slice of a to be searched.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.datetime.dt_to_unix_nanos">
-<span class="sig-name descname"><span class="pre">dt_to_unix_nanos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pd.Timestamp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.datetime.dt_to_unix_nanos" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">dt_to_unix_nanos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pd.Timestamp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.datetime.dt_to_unix_nanos" title="Permalink to this definition"></a></dt>
 <dd><p>Return the UNIX time (nanoseconds) from the given datetime (UTC).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -198,7 +198,7 @@ objects are only accurate to 1 microsecond (μs).</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.datetime.format_iso8601">
-<span class="sig-name descname"><span class="pre">format_iso8601</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">datetime</span> <span class="pre">dt</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.format_iso8601" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">format_iso8601</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">dt</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.format_iso8601" title="Permalink to this definition"></a></dt>
 <dd><p>Format the given string to millisecond accuracy ISO 8601 specification.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -212,7 +212,7 @@ objects are only accurate to 1 microsecond (μs).</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.datetime.format_iso8601_ns">
-<span class="sig-name descname"><span class="pre">format_iso8601_ns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">datetime</span> <span class="pre">dt</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.format_iso8601_ns" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">format_iso8601_ns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">dt</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.format_iso8601_ns" title="Permalink to this definition"></a></dt>
 <dd><p>Format the given string to nanosecond accuracy ISO 8601 specification.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -226,7 +226,7 @@ objects are only accurate to 1 microsecond (μs).</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.datetime.is_datetime_utc">
-<span class="sig-name descname"><span class="pre">is_datetime_utc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">datetime</span> <span class="pre">dt</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.is_datetime_utc" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">is_datetime_utc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">dt</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.is_datetime_utc" title="Permalink to this definition"></a></dt>
 <dd><p>Return a value indicating whether the given timestamp is timezone aware UTC.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -268,7 +268,7 @@ objects are only accurate to 1 microsecond (μs).</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.datetime.maybe_dt_to_unix_nanos">
-<span class="sig-name descname"><span class="pre">maybe_dt_to_unix_nanos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pd.Timestamp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.datetime.maybe_dt_to_unix_nanos" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">maybe_dt_to_unix_nanos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pd.Timestamp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.datetime.maybe_dt_to_unix_nanos" title="Permalink to this definition"></a></dt>
 <dd><p>Return the UNIX time (nanoseconds) from the given datetime, or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <p>If dt is <code class="docutils literal notranslate"><span class="pre">None</span></code>, then will return None.</p>
 <dl class="field-list simple">
@@ -303,7 +303,7 @@ as standard Python <cite>datetime</cite> objects are only accurate to 1 microsec
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.datetime.micros_to_nanos">
-<span class="sig-name descname"><span class="pre">micros_to_nanos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">double</span> <span class="pre">micros</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.micros_to_nanos" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">micros_to_nanos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">micros</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.micros_to_nanos" title="Permalink to this definition"></a></dt>
 <dd><p>Return round nanoseconds (ns) converted from the given microseconds (μs).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -317,7 +317,7 @@ as standard Python <cite>datetime</cite> objects are only accurate to 1 microsec
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.datetime.millis_to_nanos">
-<span class="sig-name descname"><span class="pre">millis_to_nanos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">double</span> <span class="pre">millis</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.millis_to_nanos" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">millis_to_nanos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">millis</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.millis_to_nanos" title="Permalink to this definition"></a></dt>
 <dd><p>Return round nanoseconds (ns) converted from the given milliseconds (ms).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -331,7 +331,7 @@ as standard Python <cite>datetime</cite> objects are only accurate to 1 microsec
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.datetime.nanos_to_micros">
-<span class="sig-name descname"><span class="pre">nanos_to_micros</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">int64_t</span> <span class="pre">nanos</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.nanos_to_micros" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">nanos_to_micros</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">nanos</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.nanos_to_micros" title="Permalink to this definition"></a></dt>
 <dd><p>Return round microseconds (μs) converted from the given nanoseconds (ns).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -345,7 +345,7 @@ as standard Python <cite>datetime</cite> objects are only accurate to 1 microsec
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.datetime.nanos_to_millis">
-<span class="sig-name descname"><span class="pre">nanos_to_millis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">int64_t</span> <span class="pre">nanos</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.nanos_to_millis" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">nanos_to_millis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">nanos</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.nanos_to_millis" title="Permalink to this definition"></a></dt>
 <dd><p>Return round milliseconds (ms) converted from the given nanoseconds (ns).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -359,7 +359,7 @@ as standard Python <cite>datetime</cite> objects are only accurate to 1 microsec
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.datetime.nanos_to_secs">
-<span class="sig-name descname"><span class="pre">nanos_to_secs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">double</span> <span class="pre">nanos</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.nanos_to_secs" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">nanos_to_secs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">nanos</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.nanos_to_secs" title="Permalink to this definition"></a></dt>
 <dd><p>Return seconds converted from the given nanoseconds (ns).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -373,7 +373,7 @@ as standard Python <cite>datetime</cite> objects are only accurate to 1 microsec
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.datetime.secs_to_nanos">
-<span class="sig-name descname"><span class="pre">secs_to_nanos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">double</span> <span class="pre">secs</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.secs_to_nanos" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">secs_to_nanos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">secs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.secs_to_nanos" title="Permalink to this definition"></a></dt>
 <dd><p>Return round nanoseconds (ns) converted from the given seconds.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -387,7 +387,7 @@ as standard Python <cite>datetime</cite> objects are only accurate to 1 microsec
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.datetime.unix_nanos_to_dt">
-<span class="sig-name descname"><span class="pre">unix_nanos_to_dt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">int64_t</span> <span class="pre">nanos</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.datetime.unix_nanos_to_dt" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">unix_nanos_to_dt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">nanos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.datetime.unix_nanos_to_dt" title="Permalink to this definition"></a></dt>
 <dd><p>Return the datetime (UTC) from the given UNIX time (nanoseconds).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -410,7 +410,7 @@ deterministic state value.</p>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Finite-state_machine">https://en.wikipedia.org/wiki/Finite-state_machine</a></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.core.fsm.FiniteStateMachine">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">FiniteStateMachine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dict</span> <span class="pre">state_transition_table,</span> <span class="pre">int</span> <span class="pre">initial_state,</span> <span class="pre">trigger_parser:</span> <span class="pre">Callable[[int],</span> <span class="pre">str]</span> <span class="pre">=</span> <span class="pre">str,</span> <span class="pre">state_parser:</span> <span class="pre">Callable[[int],</span> <span class="pre">str]</span> <span class="pre">=</span> <span class="pre">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.fsm.FiniteStateMachine" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FiniteStateMachine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dict</span> <span class="pre">state_transition_table,</span> <span class="pre">int</span> <span class="pre">initial_state,</span> <span class="pre">trigger_parser:</span> <span class="pre">Callable[[int],</span> <span class="pre">str]</span> <span class="pre">=</span> <span class="pre">str,</span> <span class="pre">state_parser:</span> <span class="pre">Callable[[int],</span> <span class="pre">str]</span> <span class="pre">=</span> <span class="pre">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.fsm.FiniteStateMachine" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a generic finite state machine.</p>
 <dl class="py method">
@@ -453,7 +453,7 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.core.fsm.FiniteStateMachine.trigger">
-<span class="sig-name descname"><span class="pre">trigger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">trigger</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.core.fsm.FiniteStateMachine.trigger" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">trigger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">trigger</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.core.fsm.FiniteStateMachine.trigger" title="Permalink to this definition"></a></dt>
 <dd><p>Process the FSM with the given trigger. The trigger must be valid for
 the FSMs current state.</p>
 <dl class="field-list simple">
@@ -471,7 +471,7 @@ the transition table lookup.</p>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="nautilus_trader.core.fsm.InvalidStateTrigger">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">InvalidStateTrigger</span></span><a class="headerlink" href="#nautilus_trader.core.fsm.InvalidStateTrigger" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">InvalidStateTrigger</span></span><a class="headerlink" href="#nautilus_trader.core.fsm.InvalidStateTrigger" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Represents an invalid trigger for the current state.</p>
 <dl class="py method">
@@ -493,7 +493,7 @@ set self.__traceback__ to tb and return self.</p>
 <span id="message"></span><h2>Message<a class="headerlink" href="#module-nautilus_trader.core.message" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Command">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">UUID4</span> <span class="pre">command_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Command" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">command_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Command" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
 <p>The abstract base class for all commands.</p>
 <div class="admonition warning">
@@ -551,7 +551,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Document">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Document</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">UUID4</span> <span class="pre">document_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Document" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Document</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">document_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Document" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
 <p>The abstract base class for all documents.</p>
 <div class="admonition warning">
@@ -609,7 +609,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Event">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">UUID4</span> <span class="pre">event_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_event</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Event" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">event_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Event" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
 <p>The abstract base class for all events.</p>
 <div class="admonition warning">
@@ -679,7 +679,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Message">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">MessageCategory</span> <span class="pre">category</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">message_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Message" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MessageCategory</span> <span class="pre">category</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">message_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Message" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The abstract base class for all messages.</p>
 <div class="admonition warning">
@@ -738,7 +738,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Request">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">callback:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None],</span> <span class="pre">UUID4</span> <span class="pre">request_id,</span> <span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Request" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">callback:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None],</span> <span class="pre">UUID4</span> <span class="pre">request_id,</span> <span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Request" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
 <p>The abstract base class for all requests.</p>
 <div class="admonition warning">
@@ -808,7 +808,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.core.message.Response">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">UUID4</span> <span class="pre">correlation_id</span></em>, <em class="sig-param"><span class="pre">UUID4</span> <span class="pre">response_id</span></em>, <em class="sig-param"><span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Response" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">correlation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">response_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Response" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
 <p>The abstract base class for all responses.</p>
 <div class="admonition warning">
@@ -881,7 +881,7 @@ set self.__traceback__ to tb and return self.</p>
 <span id="stats"></span><h2>Stats<a class="headerlink" href="#module-nautilus_trader.core.stats" title="Permalink to this headline"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.stats.basis_points_as_percentage">
-<span class="sig-name descname"><span class="pre">basis_points_as_percentage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">double</span> <span class="pre">basis_points</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.core.stats.basis_points_as_percentage" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">basis_points_as_percentage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">basis_points</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.core.stats.basis_points_as_percentage" title="Permalink to this definition"></a></dt>
 <dd><p>Return the given basis points expressed as a percentage where 100% = 1.0.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -897,7 +897,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.stats.fast_mean">
-<span class="sig-name descname"><span class="pre">fast_mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ndarray</span> <span class="pre">values</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.core.stats.fast_mean" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">fast_mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ndarray</span> <span class="pre">values</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.core.stats.fast_mean" title="Permalink to this definition"></a></dt>
 <dd><p>Return the average value for numpy.ndarray values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -913,7 +913,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.stats.fast_mean_iterated">
-<span class="sig-name descname"><span class="pre">fast_mean_iterated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ndarray</span> <span class="pre">values</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">next_value</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">current_value</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">expected_length</span></em>, <em class="sig-param"><span class="pre">bool</span> <span class="pre">drop_left=True</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.core.stats.fast_mean_iterated" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">fast_mean_iterated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ndarray</span> <span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">next_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">current_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">expected_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">drop_left=True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.core.stats.fast_mean_iterated" title="Permalink to this definition"></a></dt>
 <dd><p>Return the calculated average from the given inputs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -936,7 +936,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.stats.fast_std">
-<span class="sig-name descname"><span class="pre">fast_std</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ndarray</span> <span class="pre">values</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.core.stats.fast_std" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">fast_std</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ndarray</span> <span class="pre">values</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.core.stats.fast_std" title="Permalink to this definition"></a></dt>
 <dd><p>Return the standard deviation from the given values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -952,7 +952,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.stats.fast_std_with_mean">
-<span class="sig-name descname"><span class="pre">fast_std_with_mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ndarray</span> <span class="pre">values</span></em>, <em class="sig-param"><span class="pre">double</span> <span class="pre">mean</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.core.stats.fast_std_with_mean" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">fast_std_with_mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ndarray</span> <span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">mean</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.core.stats.fast_std_with_mean" title="Permalink to this definition"></a></dt>
 <dd><p>Return the standard deviation from the given values and mean.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -974,7 +974,7 @@ set self.__traceback__ to tb and return self.</p>
 <span id="text"></span><h2>Text<a class="headerlink" href="#module-nautilus_trader.core.text" title="Permalink to this headline"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.text.format_bytes">
-<span class="sig-name descname"><span class="pre">format_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">double</span> <span class="pre">size</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.core.text.format_bytes" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">format_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">size</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.core.text.format_bytes" title="Permalink to this definition"></a></dt>
 <dd><p>Return the formatted bytes size.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -988,7 +988,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.text.pad_string">
-<span class="sig-name descname"><span class="pre">pad_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">string</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">final_length</span></em>, <em class="sig-param"><span class="pre">unicode</span> <span class="pre">pad=u'</span> <span class="pre">'</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.core.text.pad_string" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">pad_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">final_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">pad=u'</span> <span class="pre">'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.core.text.pad_string" title="Permalink to this definition"></a></dt>
 <dd><p>Return the given string front padded.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1006,7 +1006,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="nautilus_trader.core.text.precision_from_str">
-<span class="sig-name descname"><span class="pre">precision_from_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">value</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">uint8_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.text.precision_from_str" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">precision_from_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">uint8_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.text.precision_from_str" title="Permalink to this definition"></a></dt>
 <dd><p>Return the decimal precision inferred from the given string.</p>
 <p>Can accept scientific notation strings including an ‘e’ character.</p>
 <dl class="field-list simple">
@@ -1030,7 +1030,7 @@ inferred as zero.</p>
 <span id="uuid"></span><h2>UUID<a class="headerlink" href="#module-nautilus_trader.core.uuid" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID4">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">UUID4</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">value=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID4" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UUID4</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">value=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID4" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Represents a pseudo-random UUID (universally unique identifier) version 4
 based on a 128-bit label as specified in RFC 4122.</p>
