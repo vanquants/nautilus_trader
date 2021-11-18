@@ -2028,12 +2028,34 @@ a running instance of the platform.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.add_component">
-<span class="sig-name descname"><span class="pre">add_component</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Actor</span> <span class="pre">component</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.add_component" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.actor_ids">
+<span class="sig-name descname"><span class="pre">actor_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.actor_ids" title="Permalink to this definition"></a></dt>
+<dd><p>Return the actor IDs loaded in the trader.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>list[ComponentId]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.actor_states">
+<span class="sig-name descname"><span class="pre">actor_states</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.actor_states" title="Permalink to this definition"></a></dt>
+<dd><p>Return the traders actor states.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>dict[ComponentId, str]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.add_actor">
+<span class="sig-name descname"><span class="pre">add_actor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Actor</span> <span class="pre">actor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.add_actor" title="Permalink to this definition"></a></dt>
 <dd><p>Add the given custom component to the trader.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>component</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.actor.Actor" title="nautilus_trader.common.actor.Actor"><em>Actor</em></a>) – The custom component to add and register.</p>
+<dd class="field-odd"><p><strong>actor</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.actor.Actor" title="nautilus_trader.common.actor.Actor"><em>Actor</em></a>) – The actor to add and register.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
@@ -2045,15 +2067,15 @@ a running instance of the platform.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.add_components">
-<span class="sig-name descname"><span class="pre">add_components</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">list</span> <span class="pre">components:</span> <span class="pre">[Actor]</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.add_components" title="Permalink to this definition"></a></dt>
-<dd><p>Add the given custom components to the trader.</p>
+<dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.add_actors">
+<span class="sig-name descname"><span class="pre">add_actors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">list</span> <span class="pre">actors:</span> <span class="pre">[Actor]</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.add_actors" title="Permalink to this definition"></a></dt>
+<dd><p>Add the given actors to the trader.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>components</strong> (<em>list</em><em>[</em><em>TradingStrategies</em><em>]</em>) – The custom components to add and register.</p>
+<dd class="field-odd"><p><strong>actors</strong> (<em>list</em><em>[</em><em>TradingStrategies</em><em>]</em>) – The actors to add and register.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>components</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> or empty.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>actors</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> or empty.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2107,9 +2129,9 @@ a running instance of the platform.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.clear_components">
-<span class="sig-name descname"><span class="pre">clear_components</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.clear_components" title="Permalink to this definition"></a></dt>
-<dd><p>Dispose and clear all custom components held by the trader.</p>
+<dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.clear_actors">
+<span class="sig-name descname"><span class="pre">clear_actors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.clear_actors" title="Permalink to this definition"></a></dt>
+<dd><p>Dispose and clear all actors held by the trader.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><p><strong>ValueError</strong> – If state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
@@ -2124,28 +2146,6 @@ a running instance of the platform.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><p><strong>ValueError</strong> – If state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.component_ids">
-<span class="sig-name descname"><span class="pre">component_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.component_ids" title="Permalink to this definition"></a></dt>
-<dd><p>Return the custom component IDs loaded in the trader.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[ComponentId]</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.component_states">
-<span class="sig-name descname"><span class="pre">component_states</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.component_states" title="Permalink to this definition"></a></dt>
-<dd><p>Return the traders custom component states.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[ComponentId, str]</em></p>
 </dd>
 </dl>
 </dd></dl>
