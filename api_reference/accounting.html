@@ -501,13 +501,16 @@ currency for inverse instruments.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.cash.CashAccount.update_balances">
-<span class="sig-name descname"><span class="pre">update_balances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">balances</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.cash.CashAccount.update_balances" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update_balances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">balances</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">allow_zero=True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.cash.CashAccount.update_balances" title="Permalink to this definition"></a></dt>
 <dd><p>Update the account balances.</p>
 <p>There is no guarantee that every account currency is included in the
 given balances, therefore we only update included balances.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>balances</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.objects.AccountBalance" title="nautilus_trader.model.objects.AccountBalance"><em>AccountBalance</em></a><em>]</em>) – </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>balances</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.objects.AccountBalance" title="nautilus_trader.model.objects.AccountBalance"><em>AccountBalance</em></a><em>]</em>) – The balances for the update.</p></li>
+<li><p><strong>allow_zero</strong> (<em>bool</em><em>, </em><em>default True</em>) – If zero balances are allowed (will then just clear the assets balance).</p></li>
+</ul>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><p><strong>ValueError</strong> – If <cite>balances</cite> is empty.</p>
@@ -1087,13 +1090,16 @@ rather than <cite>Money</cite> of zero amount.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.margin.MarginAccount.update_balances">
-<span class="sig-name descname"><span class="pre">update_balances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">balances</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.margin.MarginAccount.update_balances" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update_balances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">balances</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">allow_zero=True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.margin.MarginAccount.update_balances" title="Permalink to this definition"></a></dt>
 <dd><p>Update the account balances.</p>
 <p>There is no guarantee that every account currency is included in the
 given balances, therefore we only update included balances.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>balances</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.objects.AccountBalance" title="nautilus_trader.model.objects.AccountBalance"><em>AccountBalance</em></a><em>]</em>) – </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>balances</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.objects.AccountBalance" title="nautilus_trader.model.objects.AccountBalance"><em>AccountBalance</em></a><em>]</em>) – The balances for the update.</p></li>
+<li><p><strong>allow_zero</strong> (<em>bool</em><em>, </em><em>default True</em>) – If zero balances are allowed (will then just clear the assets balance).</p></li>
+</ul>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><p><strong>ValueError</strong> – If <cite>balances</cite> is empty.</p>
