@@ -9310,7 +9310,7 @@ The possible states of completed orders include;</p>
 <span id="limit-order"></span><h2>Limit Order<a class="headerlink" href="#module-nautilus_trader.model.orders.limit" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LimitOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">TraderId</span> <span class="pre">trader_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">order_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">expire_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">init_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">post_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">hidden=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderListId</span> <span class="pre">order_list_id=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientOrderId</span> <span class="pre">parent_order_id=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">child_order_ids=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ContingencyType</span> <span class="pre">contingency=ContingencyType.NONE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">contingency_ids=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">tags=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LimitOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">TraderId</span> <span class="pre">trader_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">order_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">expire_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">init_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">post_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">display_qty=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderListId</span> <span class="pre">order_list_id=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientOrderId</span> <span class="pre">parent_order_id=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">child_order_ids=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ContingencyType</span> <span class="pre">contingency=ContingencyType.NONE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">contingency_ids=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">tags=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.orders.base.PassiveOrder</span></code></p>
 <p>Limit orders are used to specify a maximum or minimum price the trader is
 willing to buy or sell at. Traders use this order type to minimise their
@@ -9337,7 +9337,7 @@ market.</p>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
 <li><p><strong>post_only</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order will only provide liquidity (make a market).</p></li>
 <li><p><strong>reduce_only</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order carries the ‘reduce-only’ execution instruction.</p></li>
-<li><p><strong>hidden</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the order should be hidden from the public book.</p></li>
+<li><p><strong>display_qty</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a><em>, </em><em>optional</em>) – The quantity of the order to display on the public book (iceberg).</p></li>
 <li><p><strong>order_list_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.OrderListId" title="nautilus_trader.model.identifiers.OrderListId"><em>OrderListId</em></a><em>, </em><em>optional</em>) – The order list ID associated with the order.</p></li>
 <li><p><strong>parent_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a><em>, </em><em>optional</em>) – The order parent client order ID.</p></li>
 <li><p><strong>child_order_ids</strong> (<em>list</em><em>[</em><a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a><em>]</em><em>, </em><em>optional</em>) – The order child client order ID(s).</p></li>
@@ -9351,7 +9351,7 @@ contain any arbitrary delimiter if required.</p></li>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If <cite>quantity</cite> is not positive (&gt; 0).</p></li>
 <li><p><strong>ValueError</strong> – If <cite>time_in_force</cite> is <code class="docutils literal notranslate"><span class="pre">GTD</span></code> and expire_time is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If <cite>post_only</cite> and <cite>hidden</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>display_qty</cite> is negative (&lt; 0) or greater than <cite>quantity</cite>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -9438,6 +9438,17 @@ contain any arbitrary delimiter if required.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>list[ClientOrderId]</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.display_qty">
+<span class="sig-name descname"><span class="pre">display_qty</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.display_qty" title="Permalink to this definition"></a></dt>
+<dd><p>The quantity of the order to display on the public book (iceberg).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>Quantity</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9663,17 +9674,6 @@ The possible states of completed orders include;</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.is_hidden">
-<span class="sig-name descname"><span class="pre">is_hidden</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.is_hidden" title="Permalink to this definition"></a></dt>
-<dd><p>If the order should be hidden from the public book.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>bool</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -10805,7 +10805,7 @@ The possible states of completed orders include;</p>
 <span id="stop-limit-order"></span><h2>Stop-Limit Order<a class="headerlink" href="#module-nautilus_trader.model.orders.stop_limit" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StopLimitOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">TraderId</span> <span class="pre">trader_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">order_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">trigger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">expire_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">init_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">post_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">hidden=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderListId</span> <span class="pre">order_list_id=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientOrderId</span> <span class="pre">parent_order_id=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">child_order_ids=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ContingencyType</span> <span class="pre">contingency=ContingencyType.NONE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">contingency_ids=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">tags=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StopLimitOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">TraderId</span> <span class="pre">trader_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">order_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">trigger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TimeInForce</span> <span class="pre">time_in_force</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">expire_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">init_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">post_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">display_qty=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderListId</span> <span class="pre">order_list_id=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientOrderId</span> <span class="pre">parent_order_id=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">child_order_ids=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ContingencyType</span> <span class="pre">contingency=ContingencyType.NONE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">contingency_ids=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">tags=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.orders.base.PassiveOrder</span></code></p>
 <p>Represents a stop-limit order.</p>
 <p>A stop-limit order is an instruction to submit a buy or sell limit order
@@ -10839,7 +10839,7 @@ trader could “miss the market” altogether.</p>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
 <li><p><strong>post_only</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the <cite>LIMIT</cite> order will only provide liquidity (once triggered).</p></li>
 <li><p><strong>reduce_only</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the <cite>LIMIT</cite> order carries the ‘reduce-only’ execution instruction.</p></li>
-<li><p><strong>hidden</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the <cite>LIMIT</cite> order should be hidden from the public book (once triggered).</p></li>
+<li><p><strong>display_qty</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a><em>, </em><em>optional</em>) – The quantity of the <cite>LIMIT</cite> order to display on the public book (iceberg).</p></li>
 <li><p><strong>order_list_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.OrderListId" title="nautilus_trader.model.identifiers.OrderListId"><em>OrderListId</em></a><em>, </em><em>optional</em>) – The order list ID associated with the order.</p></li>
 <li><p><strong>parent_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a><em>, </em><em>optional</em>) – The order parent client order ID.</p></li>
 <li><p><strong>child_order_ids</strong> (<em>list</em><em>[</em><a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a><em>]</em><em>, </em><em>optional</em>) – The order child client order ID(s).</p></li>
@@ -10853,7 +10853,7 @@ contain any arbitrary delimiter if required.</p></li>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>ValueError</strong> – If <cite>quantity</cite> is not positive (&gt; 0).</p></li>
 <li><p><strong>ValueError</strong> – If <cite>time_in_force</cite> is <code class="docutils literal notranslate"><span class="pre">GTD</span></code> and the expire_time is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If <cite>post_only</cite> and <cite>hidden</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>display_qty</cite> is negative (&lt; 0) or greater than <cite>quantity</cite>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -10940,6 +10940,17 @@ contain any arbitrary delimiter if required.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>list[ClientOrderId]</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.display_qty">
+<span class="sig-name descname"><span class="pre">display_qty</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.display_qty" title="Permalink to this definition"></a></dt>
+<dd><p>The quantity of the <cite>LIMIT</cite> order to display on the public book (iceberg).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>Quantity</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -11165,17 +11176,6 @@ The possible states of completed orders include;</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>bool</em></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_hidden">
-<span class="sig-name descname"><span class="pre">is_hidden</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_hidden" title="Permalink to this definition"></a></dt>
-<dd><p>If the order should be hidden from the public book.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>bool</cite></p>
 </dd>
 </dl>
 </dd></dl>
