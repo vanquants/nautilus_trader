@@ -167,6 +167,8 @@
 </li>
         <li><a href="api_reference/cache.html#nautilus_trader.cache.base.CacheFacade.__init__">(CacheFacade method)</a>
 </li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelAllOrders.__init__">(CancelAllOrders method)</a>
+</li>
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelOrder.__init__">(CancelOrder method)</a>
 </li>
         <li><a href="api_reference/accounting.html#nautilus_trader.accounting.accounts.cash.CashAccount.__init__">(CashAccount method)</a>
@@ -1324,8 +1326,16 @@
         <li><a href="api_reference/common.html#nautilus_trader.common.timer.Timer.cancel">(Timer method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.cancel_all_orders">cancel_all_orders() (TradingStrategy method)</a>
+      <li><a href="api_reference/backtest.html#nautilus_trader.backtest.execution_client.BacktestExecClient.cancel_all_orders">cancel_all_orders() (BacktestExecClient method)</a>
+
+      <ul>
+        <li><a href="api_reference/execution.html#nautilus_trader.execution.client.ExecutionClient.cancel_all_orders">(ExecutionClient method)</a>
 </li>
+        <li><a href="api_reference/live.html#nautilus_trader.live.execution_client.LiveExecutionClient.cancel_all_orders">(LiveExecutionClient method)</a>
+</li>
+        <li><a href="api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.cancel_all_orders">(TradingStrategy method)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.models.LatencyModel.cancel_latency_nanos">cancel_latency_nanos (LatencyModel attribute)</a>
 </li>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.execution_client.BacktestExecClient.cancel_order">cancel_order() (BacktestExecClient method)</a>
@@ -1354,6 +1364,8 @@
         <li><a href="api_reference/common.html#nautilus_trader.common.clock.TestClock.cancel_timers">(TestClock method)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelAllOrders">CancelAllOrders (class in nautilus_trader.model.commands.trading)</a>
+</li>
       <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelOrder">CancelOrder (class in nautilus_trader.model.commands.trading)</a>
 </li>
       <li><a href="api_reference/indicators.html#nautilus_trader.indicators.spread_analyzer.SpreadAnalyzer.capacity">capacity (SpreadAnalyzer attribute)</a>
@@ -1363,6 +1375,8 @@
       <li><a href="api_reference/model.html#nautilus_trader.model.events.account.AccountState.category">category (AccountState attribute)</a>
 
       <ul>
+        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelAllOrders.category">(CancelAllOrders attribute)</a>
+</li>
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelOrder.category">(CancelOrder attribute)</a>
 </li>
         <li><a href="api_reference/core.html#nautilus_trader.core.message.Command.category">(Command attribute)</a>
@@ -2374,16 +2388,18 @@
 </li>
       <li><a href="api_reference/core.html#nautilus_trader.core.datetime.format_iso8601_ns">format_iso8601_ns() (in module nautilus_trader.core.datetime)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/model.html#nautilus_trader.model.objects.AccountBalance.free">free (AccountBalance attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/model.html#nautilus_trader.model.objects.AccountBalance.from_dict">from_dict() (AccountBalance static method)</a>
 
       <ul>
         <li><a href="api_reference/model.html#nautilus_trader.model.events.account.AccountState.from_dict">(AccountState static method)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.data.bar.Bar.from_dict">(Bar static method)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelAllOrders.from_dict">(CancelAllOrders static method)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelOrder.from_dict">(CancelOrder static method)</a>
 </li>
@@ -3181,6 +3197,8 @@
 </li>
         <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestMarketDataClient.id">(BacktestMarketDataClient attribute)</a>
 </li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelAllOrders.id">(CancelAllOrders attribute)</a>
+</li>
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelOrder.id">(CancelOrder attribute)</a>
 </li>
         <li><a href="api_reference/accounting.html#nautilus_trader.accounting.accounts.cash.CashAccount.id">(CashAccount attribute)</a>
@@ -3441,6 +3459,8 @@
       <ul>
         <li><a href="api_reference/indicators.html#nautilus_trader.indicators.bid_ask_min_max.BidAskMinMax.instrument_id">(BidAskMinMax attribute)</a>
 </li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelAllOrders.instrument_id">(CancelAllOrders attribute)</a>
+</li>
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelOrder.instrument_id">(CancelOrder attribute)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.data.venue.InstrumentClosePrice.instrument_id">(InstrumentClosePrice attribute)</a>
@@ -3646,6 +3666,8 @@
       </ul></li>
       <li><a href="api_reference/portfolio.html#nautilus_trader.portfolio.portfolio.Portfolio.is_completely_flat">is_completely_flat() (Portfolio method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestDataClient.is_connected">is_connected (BacktestDataClient attribute)</a>
 
       <ul>
@@ -3668,8 +3690,6 @@
         <li><a href="api_reference/network.html#nautilus_trader.network.socket.SocketClient.is_connected">(SocketClient attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/model.html#nautilus_trader.model.orders.limit.LimitOrder.is_contingency">is_contingency (LimitOrder attribute)</a>
 
       <ul>
@@ -7561,9 +7581,11 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelOrder.strategy_id">strategy_id (CancelOrder attribute)</a>
+      <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelAllOrders.strategy_id">strategy_id (CancelAllOrders attribute)</a>
 
       <ul>
+        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelOrder.strategy_id">(CancelOrder attribute)</a>
+</li>
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.limit.LimitOrder.strategy_id">(LimitOrder attribute)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.orders.market.MarketOrder.strategy_id">(MarketOrder attribute)</a>
@@ -8108,6 +8130,8 @@
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.data.bar.Bar.to_dict">(Bar static method)</a>
 </li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelAllOrders.to_dict">(CancelAllOrders static method)</a>
+</li>
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelOrder.to_dict">(CancelOrder static method)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.data.venue.InstrumentClosePrice.to_dict">(InstrumentClosePrice static method)</a>
@@ -8243,6 +8267,8 @@
         <li><a href="api_reference/backtest.html#nautilus_trader.backtest.execution_client.BacktestExecClient.trader_id">(BacktestExecClient attribute)</a>
 </li>
         <li><a href="api_reference/backtest.html#nautilus_trader.backtest.data_client.BacktestMarketDataClient.trader_id">(BacktestMarketDataClient attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelAllOrders.trader_id">(CancelAllOrders attribute)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelOrder.trader_id">(CancelOrder attribute)</a>
 </li>
@@ -8463,6 +8489,8 @@
 
       <ul>
         <li><a href="api_reference/model.html#nautilus_trader.model.data.bar.Bar.ts_init">(Bar attribute)</a>
+</li>
+        <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelAllOrders.ts_init">(CancelAllOrders attribute)</a>
 </li>
         <li><a href="api_reference/model.html#nautilus_trader.model.commands.trading.CancelOrder.ts_init">(CancelOrder attribute)</a>
 </li>

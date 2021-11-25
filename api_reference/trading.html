@@ -493,11 +493,9 @@ per instrument. The position ID will be <cite>{instrument_id}-{strategy_id}</cit
 <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.cancel_all_orders">
 <span class="sig-name descname"><span class="pre">cancel_all_orders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.cancel_all_orders" title="Permalink to this definition"></a></dt>
 <dd><p>Cancel all orders for this strategy for the given instrument ID.</p>
-<p>All working orders in turn will have a <cite>CancelOrder</cite> command created and
-then sent to the <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument for the orders to cancel.</p>
+<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument for the orders to cancel.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -594,11 +592,9 @@ called after faulting.</p>
 <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.flatten_all_positions">
 <span class="sig-name descname"><span class="pre">flatten_all_positions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.flatten_all_positions" title="Permalink to this definition"></a></dt>
 <dd><p>Flatten all positions for the given instrument ID for this strategy.</p>
-<p>All open positions in turn will have a closing <cite>MarketOrder</cite> created and
-then sent to the <cite>ExecutionEngine</cite> via <cite>SubmitOrder</cite> commands.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument for the positions to flatten.</p>
+<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument for the positions to flatten.</p>
 </dd>
 </dl>
 </dd></dl>
