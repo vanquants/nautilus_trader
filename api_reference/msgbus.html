@@ -115,15 +115,6 @@ example, “comp*” matches anything beginning with “comp” which means “c
 <p>A question mark matches a single character once. For example, “c?mp” matches
 “camp” and “comp.” The question mark can also be used more than once.
 For example, “c??p” would match both of the above examples and “coop.”</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This message bus is not thread-safe and must be called from the same thread
-as the event loop.</p>
-</div>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.__init__" title="Permalink to this definition"></a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">MessageBus</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -137,8 +128,11 @@ as the event loop.</p>
 <dd class="field-even"><p><strong>ValueError</strong> – If <cite>name</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and not a valid string.</p>
 </dd>
 </dl>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This message bus is not thread-safe and must be called from the same thread
+as the event loop.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.deregister">
 <span class="sig-name descname"><span class="pre">deregister</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">endpoint,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None]</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.deregister" title="Permalink to this definition"></a></dt>
@@ -410,13 +404,6 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <p>Represents a subscription to a particular topic.</p>
 <p>This is an internal class intended to be used by the message bus to organize
 topics and their subscribers.</p>
-<p class="rubric">Notes</p>
-<p>The subscription equality is determined by the topic and handler,
-priority is not considered (and could change).</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.subscription.Subscription.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.msgbus.subscription.Subscription.__init__" title="Permalink to this definition"></a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Subscription</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -433,8 +420,9 @@ priority is not considered (and could change).</p>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
+<p class="rubric">Notes</p>
+<p>The subscription equality is determined by the topic and handler,
+priority is not considered (and could change).</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.msgbus.subscription.Subscription.handler">
 <span class="sig-name descname"><span class="pre">handler</span></span><a class="headerlink" href="#nautilus_trader.msgbus.subscription.Subscription.handler" title="Permalink to this definition"></a></dt>

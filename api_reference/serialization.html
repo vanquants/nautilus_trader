@@ -109,12 +109,6 @@ beside the built-in <cite>MessagePack</cite> specification serializers.</p>
 <p>This class should not be used directly, but through a concrete subclass.</p>
 </div>
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.serialization.base.Serializer.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.base.Serializer.__init__" title="Permalink to this definition"></a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Serializer</span></code> class.</p>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.base.Serializer.deserialize">
 <span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytes</span> <span class="pre">obj_bytes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.base.Serializer.deserialize" title="Permalink to this definition"></a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
@@ -154,21 +148,15 @@ beside the built-in <cite>MessagePack</cite> specification serializers.</p>
 <span id="msgpack"></span><h2>MsgPack<a class="headerlink" href="#module-nautilus_trader.serialization.msgpack.serializer" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MsgPackSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timestamps_as_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MsgPackSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">timestamps_as_str=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.serialization.base.Serializer" title="nautilus_trader.serialization.base.Serializer"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.serialization.base.Serializer</span></code></a></p>
 <p>Provides a serializer for the <cite>MessagePack</cite> specification.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.__init__" title="Permalink to this definition"></a></dt>
-<dd><p>Initializes a new instance of the <code class="docutils literal notranslate"><span class="pre">MsgPackSerializer</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>timestamps_as_str</strong> (<em>bool</em>) – If the serializer converts timestamp int64_t to str on serialization,
 and back to int64_t on deserialization.</p>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.deserialize">
 <span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytes</span> <span class="pre">obj_bytes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.deserialize" title="Permalink to this definition"></a></dt>
@@ -224,11 +212,6 @@ and back to int64_t on deserialization.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ParquetSerializer</span></span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.ParquetSerializer" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides an object serializer for the <cite>Parquet</cite> specification.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.serialization.arrow.serializer.ParquetSerializer.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.ParquetSerializer.__init__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.serialization.arrow.serializer.ParquetSerializer.deserialize">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span> <span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.ParquetSerializer.deserialize" title="Permalink to this definition"></a></dt>

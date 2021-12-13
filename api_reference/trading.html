@@ -60,6 +60,7 @@
 <li class="toctree-l1"><a class="reference internal" href="risk.html">Risk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serialization.html">Serialization</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Trading</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.trading.config">Config</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.trading.filters">Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.trading.strategy">Strategy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-nautilus_trader.trading.trader">Trader</a></li>
@@ -97,6 +98,161 @@
 <p>This is a top-level package where the majority of users will interface with the
 framework. Custom trading strategies can be implemented by inheriting from the
 <cite>TradingStrategy</cite> base class.</p>
+<section id="module-nautilus_trader.trading.config">
+<span id="config"></span><h2>Config<a class="headerlink" href="#module-nautilus_trader.trading.config" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="nautilus_trader.trading.config.TradingStrategyConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TradingStrategyConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_id_tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'000'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oms_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'HEDGING'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.config.TradingStrategyConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="common.html#nautilus_trader.common.config.ActorConfig" title="nautilus_trader.common.config.ActorConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.config.ActorConfig</span></code></a></p>
+<p>The base model for all trading strategy configurations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>component_id</strong> (<em>str</em><em>, </em><em>optional</em>) – The unique component ID for the strategy. Will become the strategy ID if not None.</p></li>
+<li><p><strong>order_id_tag</strong> (<em>str</em>) – The unique order ID tag for the strategy. Must be unique
+amongst all running strategies for a particular trader ID.</p></li>
+<li><p><strong>oms_type</strong> (<em>OMSType</em>) – The order management system type for the strategy. This will determine
+how the <cite>ExecutionEngine</cite> handles position IDs (see docs).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.config.TradingStrategyConfig.construct">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_fields_set</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">SetStr</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Model</span></span></span><a class="headerlink" href="#nautilus_trader.trading.config.TradingStrategyConfig.construct" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a new model setting __dict__ and __fields_set__ from trusted or pre-validated data.
+Default values are respected, but no other validation is performed.
+Behaves as if <cite>Config.extra = ‘allow’</cite> was set since it adds all passed values</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.config.TradingStrategyConfig.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DictStrAny</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Model</span></span></span><a class="headerlink" href="#nautilus_trader.trading.config.TradingStrategyConfig.copy" title="Permalink to this definition"></a></dt>
+<dd><p>Duplicate a model, optionally choose which fields to include, exclude and change.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>include</strong> – fields to include in new model</p></li>
+<li><p><strong>exclude</strong> – fields to exclude from new model, as with values this takes precedence over include</p></li>
+<li><p><strong>update</strong> – values to change/add in the new model. Note: the data is not validated before creating
+the new model: you should trust this data</p></li>
+<li><p><strong>deep</strong> – set to <cite>True</cite> to make a deep copy of the model</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>new model instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.config.TradingStrategyConfig.dict">
+<span class="sig-name descname"><span class="pre">dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">by_alias</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_defaults</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_unset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_defaults</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_none</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DictStrAny</span></span></span><a class="headerlink" href="#nautilus_trader.trading.config.TradingStrategyConfig.dict" title="Permalink to this definition"></a></dt>
+<dd><p>Generate a dictionary representation of the model, optionally specifying which fields to include or exclude.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.config.TradingStrategyConfig.json">
+<span class="sig-name descname"><span class="pre">json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">by_alias</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_defaults</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_unset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_defaults</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_none</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">dumps_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.trading.config.TradingStrategyConfig.json" title="Permalink to this definition"></a></dt>
+<dd><p>Generate a JSON representation of the model, <cite>include</cite> and <cite>exclude</cite> arguments as per <cite>dict()</cite>.</p>
+<p><cite>encoder</cite> is an optional function to supply as <cite>default</cite> to json.dumps(), other arguments as per <cite>json.dumps()</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.config.TradingStrategyConfig.update_forward_refs">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_forward_refs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">localns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.trading.config.TradingStrategyConfig.update_forward_refs" title="Permalink to this definition"></a></dt>
+<dd><p>Try to update ForwardRefs on fields based on this Model, globalns and localns.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="nautilus_trader.trading.config.ImportableStrategyConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ImportableStrategyConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#nautilus_trader.trading.config.TradingStrategyConfig" title="nautilus_trader.trading.config.TradingStrategyConfig"><span class="pre">nautilus_trader.trading.config.TradingStrategyConfig</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.config.ImportableStrategyConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="common.html#nautilus_trader.common.config.ImportableActorConfig" title="nautilus_trader.common.config.ImportableActorConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.config.ImportableActorConfig</span></code></a></p>
+<p>Represents a trading strategy configuration for one specific backtest run.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em><em>, </em><em>optional</em>) – The fully-qualified name of the module.</p></li>
+<li><p><strong>source</strong> (<em>bytes</em><em>, </em><em>optional</em>) – The strategy source code.</p></li>
+<li><p><strong>config</strong> (<em>Union</em><em>[</em><a class="reference internal" href="#nautilus_trader.trading.config.TradingStrategyConfig" title="nautilus_trader.trading.config.TradingStrategyConfig"><em>TradingStrategyConfig</em></a><em>, </em><em>str</em><em>]</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.config.ImportableStrategyConfig.construct">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_fields_set</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">SetStr</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Model</span></span></span><a class="headerlink" href="#nautilus_trader.trading.config.ImportableStrategyConfig.construct" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a new model setting __dict__ and __fields_set__ from trusted or pre-validated data.
+Default values are respected, but no other validation is performed.
+Behaves as if <cite>Config.extra = ‘allow’</cite> was set since it adds all passed values</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.config.ImportableStrategyConfig.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DictStrAny</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Model</span></span></span><a class="headerlink" href="#nautilus_trader.trading.config.ImportableStrategyConfig.copy" title="Permalink to this definition"></a></dt>
+<dd><p>Duplicate a model, optionally choose which fields to include, exclude and change.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>include</strong> – fields to include in new model</p></li>
+<li><p><strong>exclude</strong> – fields to exclude from new model, as with values this takes precedence over include</p></li>
+<li><p><strong>update</strong> – values to change/add in the new model. Note: the data is not validated before creating
+the new model: you should trust this data</p></li>
+<li><p><strong>deep</strong> – set to <cite>True</cite> to make a deep copy of the model</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>new model instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.config.ImportableStrategyConfig.dict">
+<span class="sig-name descname"><span class="pre">dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">by_alias</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_defaults</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_unset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_defaults</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_none</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DictStrAny</span></span></span><a class="headerlink" href="#nautilus_trader.trading.config.ImportableStrategyConfig.dict" title="Permalink to this definition"></a></dt>
+<dd><p>Generate a dictionary representation of the model, optionally specifying which fields to include or exclude.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.config.ImportableStrategyConfig.json">
+<span class="sig-name descname"><span class="pre">json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractSetIntStr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">MappingIntStrAny</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">by_alias</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_defaults</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_unset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_defaults</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_none</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">dumps_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.trading.config.ImportableStrategyConfig.json" title="Permalink to this definition"></a></dt>
+<dd><p>Generate a JSON representation of the model, <cite>include</cite> and <cite>exclude</cite> arguments as per <cite>dict()</cite>.</p>
+<p><cite>encoder</cite> is an optional function to supply as <cite>default</cite> to json.dumps(), other arguments as per <cite>json.dumps()</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.config.ImportableStrategyConfig.update_forward_refs">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_forward_refs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">localns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.trading.config.ImportableStrategyConfig.update_forward_refs" title="Permalink to this definition"></a></dt>
+<dd><p>Try to update ForwardRefs on fields based on this Model, globalns and localns.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="nautilus_trader.trading.config.StrategyFactory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StrategyFactory</span></span><a class="headerlink" href="#nautilus_trader.trading.config.StrategyFactory" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides strategy creation from importable configurations.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.trading.config.StrategyFactory.create">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#nautilus_trader.trading.config.ImportableStrategyConfig" title="nautilus_trader.trading.config.ImportableStrategyConfig"><span class="pre">nautilus_trader.trading.config.ImportableStrategyConfig</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.config.StrategyFactory.create" title="Permalink to this definition"></a></dt>
+<dd><p>Create a trading strategy from the given configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>config</strong> (<a class="reference internal" href="#nautilus_trader.trading.config.ImportableStrategyConfig" title="nautilus_trader.trading.config.ImportableStrategyConfig"><em>ImportableStrategyConfig</em></a>) – The configuration for the building step.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>TradingStrategy</em></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>TypeError</strong> – If <cite>config</cite> is not of type <cite>ImportableStrategyConfig</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
 <section id="module-nautilus_trader.trading.filters">
 <span id="filters"></span><h2>Filters<a class="headerlink" href="#module-nautilus_trader.trading.filters" title="Permalink to this headline"></a></h2>
 <dl class="py class">
@@ -104,21 +260,15 @@ framework. Custom trading strategies can be implemented by inheriting from the
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EconomicNewsEventFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">currencies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">impacts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">news_data:</span> <span class="pre">pd.DataFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.filters.EconomicNewsEventFilter" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides methods to help filter trading strategy rules based on economic news events.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.trading.filters.EconomicNewsEventFilter.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.filters.EconomicNewsEventFilter.__init__" title="Permalink to this definition"></a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">EconomicNewsEventFilter</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>currencies</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – The list of three letter currency codes to filter.</p></li>
 <li><p><strong>impacts</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – The list of impact levels to filter (‘LOW’, ‘MEDIUM’, ‘HIGH’).</p></li>
-<li><p><strong>news_data</strong> (<em>pd.DataFrame</em>) – The economic news data .</p></li>
+<li><p><strong>news_data</strong> (<em>pd.DataFrame</em>) – The economic news data.</p></li>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.trading.filters.EconomicNewsEventFilter.currencies">
 <span class="sig-name descname"><span class="pre">currencies</span></span><a class="headerlink" href="#nautilus_trader.trading.filters.EconomicNewsEventFilter.currencies" title="Permalink to this definition"></a></dt>
@@ -221,11 +371,6 @@ Will return None if no news events match the filter conditions.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ForexSessionFilter</span></span><a class="headerlink" href="#nautilus_trader.trading.filters.ForexSessionFilter" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides methods to help filter trading strategy rules dependent on Forex session times.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.trading.filters.ForexSessionFilter.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.filters.ForexSessionFilter.__init__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.trading.filters.ForexSessionFilter.local_from_utc">
 <span class="sig-name descname"><span class="pre">local_from_utc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session:</span> <span class="pre">ForexSession</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">time_now</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">datetime</span></span></span><a class="headerlink" href="#nautilus_trader.trading.filters.ForexSessionFilter.local_from_utc" title="Permalink to this definition"></a></dt>
@@ -353,10 +498,7 @@ Will return None if no news events match the filter conditions.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NewsEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">impact:</span> <span class="pre">NewsImpact</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.filters.NewsEvent" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.data.Data</span></code></p>
 <p>Represents an economic news event.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.trading.filters.NewsEvent.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.filters.NewsEvent.__init__" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>impact</strong> (<a class="reference internal" href="#nautilus_trader.trading.filters.NewsImpact" title="nautilus_trader.trading.filters.NewsImpact"><em>NewsImpact</em></a>) – The expected impact for the economic news event.</p></li>
@@ -367,8 +509,6 @@ Will return None if no news events match the filter conditions.</p>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.trading.filters.NewsEvent.currency">
 <span class="sig-name descname"><span class="pre">currency</span></span><a class="headerlink" href="#nautilus_trader.trading.filters.NewsEvent.currency" title="Permalink to this definition"></a></dt>
@@ -460,24 +600,18 @@ per instrument. The position ID will be <cite>{instrument_id}-{strategy_id}</cit
 </ul>
 </dd>
 </dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This class should not be used directly, but through a concrete subclass.</p>
-</div>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.__init__" title="Permalink to this definition"></a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">TradingStrategy</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>config</strong> (<em>TradingStrategyConfig</em><em>, </em><em>optional</em>) – The trading strategy configuration.</p>
+<dd class="field-odd"><p><strong>config</strong> (<a class="reference internal" href="#nautilus_trader.trading.config.TradingStrategyConfig" title="nautilus_trader.trading.config.TradingStrategyConfig"><em>TradingStrategyConfig</em></a><em>, </em><em>optional</em>) – The trading strategy configuration.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><p><strong>TypeError</strong> – If <cite>config</cite> is not of type <cite>TradingStrategyConfig</cite>.</p>
 </dd>
 </dl>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This class should not be used directly, but through a concrete subclass.</p>
+</div>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.cache">
 <span class="sig-name descname"><span class="pre">cache</span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.cache" title="Permalink to this definition"></a></dt>
@@ -1993,10 +2127,6 @@ a running instance of the platform.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Trader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">TraderId</span> <span class="pre">trader_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Cache</span> <span class="pre">cache</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Portfolio</span> <span class="pre">portfolio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DataEngine</span> <span class="pre">data_engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">RiskEngine</span> <span class="pre">risk_engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ExecutionEngine</span> <span class="pre">exec_engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Clock</span> <span class="pre">clock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Logger</span> <span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">config=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="common.html#nautilus_trader.common.component.Component" title="nautilus_trader.common.component.Component"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.component.Component</span></code></a></p>
 <p>Provides a trader for managing a portfolio of trading strategies.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.__init__" title="Permalink to this definition"></a></dt>
-<dd><p>Initialize a new instance of the <code class="docutils literal notranslate"><span class="pre">Trader</span></code> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2021,8 +2151,6 @@ a running instance of the platform.</p>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.trading.trader.Trader.actor_ids">
 <span class="sig-name descname"><span class="pre">actor_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.trading.trader.Trader.actor_ids" title="Permalink to this definition"></a></dt>
