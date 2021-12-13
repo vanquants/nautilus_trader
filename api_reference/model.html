@@ -1570,7 +1570,7 @@ the data publisher.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.data.tick.TradeTick">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TradeTick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AggressorSide</span> <span class="pre">aggressor_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">match_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.data.tick.TradeTick" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TradeTick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AggressorSide</span> <span class="pre">aggressor_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">trade_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.data.tick.TradeTick" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.data.tick.Tick" title="nautilus_trader.model.data.tick.Tick"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.data.tick.Tick</span></code></a></p>
 <p>Represents a single trade tick in a financial market.</p>
 <dl class="py method">
@@ -1584,13 +1584,13 @@ the data publisher.</p></li>
 <li><p><strong>price</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The traded price.</p></li>
 <li><p><strong>size</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The traded size.</p></li>
 <li><p><strong>aggressor_side</strong> (<em>AggressorSide</em>) – The trade aggressor side.</p></li>
-<li><p><strong>match_id</strong> (<em>str</em>) – The trade match ID.</p></li>
+<li><p><strong>trade_id</strong> (<em>str</em>) – The trade match ID.</p></li>
 <li><p><strong>ts_event</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the tick event occurred.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the data object was initialized.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>match_id</cite> is not a valid string.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>trade_id</cite> is not a valid string.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1632,17 +1632,6 @@ the data publisher.</p></li>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.data.tick.TradeTick.match_id">
-<span class="sig-name descname"><span class="pre">match_id</span></span><a class="headerlink" href="#nautilus_trader.model.data.tick.TradeTick.match_id" title="Permalink to this definition"></a></dt>
-<dd><p>The trade match ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>str</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.data.tick.TradeTick.price">
 <span class="sig-name descname"><span class="pre">price</span></span><a class="headerlink" href="#nautilus_trader.model.data.tick.TradeTick.price" title="Permalink to this definition"></a></dt>
 <dd><p>The traded price.</p>
@@ -1671,6 +1660,17 @@ the data publisher.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><em>dict[str, object]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.data.tick.TradeTick.trade_id">
+<span class="sig-name descname"><span class="pre">trade_id</span></span><a class="headerlink" href="#nautilus_trader.model.data.tick.TradeTick.trade_id" title="Permalink to this definition"></a></dt>
+<dd><p>The trade match ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>str</cite></p>
 </dd>
 </dl>
 </dd></dl>
