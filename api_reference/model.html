@@ -234,7 +234,7 @@
 <li><p><strong>strategy_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a>) – The strategy ID for the command.</p></li>
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the command.</p></li>
 <li><p><strong>client_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID to cancel.</p></li>
-<li><p><strong>venue_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a>) – The venue order ID to cancel.</p></li>
+<li><p><strong>venue_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a><em>, </em><em>optional</em>) – The venue order ID to cancel.</p></li>
 <li><p><strong>command_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The command ID.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
 </ul>
@@ -350,7 +350,7 @@
 <dd><p>The venue order ID associated with the command.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>VenueOrderId</cite></p>
+<dd class="field-odd"><p><cite>VenueOrderId</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -369,7 +369,7 @@
 <li><p><strong>strategy_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a>) – The strategy ID for the command.</p></li>
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the command.</p></li>
 <li><p><strong>client_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a>) – The client order ID to update.</p></li>
-<li><p><strong>venue_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a>) – The venue order ID to update.</p></li>
+<li><p><strong>venue_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a><em>, </em><em>optional</em>) – The venue order ID to update.</p></li>
 <li><p><strong>quantity</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a><em>, </em><em>optional</em>) – The quantity for the order update.</p></li>
 <li><p><strong>price</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a><em>, </em><em>optional</em>) – The price for the order update.</p></li>
 <li><p><strong>trigger</strong> (<a class="reference internal" href="#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a><em>, </em><em>optional</em>) – The trigger price for the order update.</p></li>
@@ -521,7 +521,7 @@
 <dd><p>The venue order ID associated with the command.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>VenueOrderId</cite></p>
+<dd class="field-odd"><p><cite>VenueOrderId</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -3679,7 +3679,7 @@ trading venue.</p>
 <li><p><strong>account_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId"><em>AccountId</em></a>) – The account ID.</p></li>
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID.</p></li>
 <li><p><strong>client_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID.</p></li>
-<li><p><strong>venue_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a>) – The venue order ID.</p></li>
+<li><p><strong>venue_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a><em>, </em><em>optional</em>) – The venue order ID.</p></li>
 <li><p><strong>reason</strong> (<em>str</em>) – The order update rejected reason.</p></li>
 <li><p><strong>event_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The event ID.</p></li>
 <li><p><strong>ts_event</strong> (<em>datetime</em>) – The UNIX timestamp (nanoseconds) when the order update rejected event occurred.</p></li>
@@ -3852,7 +3852,7 @@ trading venue.</p>
 <li><p><strong>account_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId"><em>AccountId</em></a>) – The account ID.</p></li>
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID.</p></li>
 <li><p><strong>client_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID.</p></li>
-<li><p><strong>venue_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a>) – The venue order ID.</p></li>
+<li><p><strong>venue_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a><em>, </em><em>optional</em>) – The venue order ID.</p></li>
 <li><p><strong>event_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The event ID.</p></li>
 <li><p><strong>ts_event</strong> (<em>datetime</em>) – The UNIX timestamp (nanoseconds) when the order pending cancel event occurred.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
@@ -4010,7 +4010,7 @@ trading venue.</p>
 <li><p><strong>account_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId"><em>AccountId</em></a>) – The account ID.</p></li>
 <li><p><strong>instrument_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID.</p></li>
 <li><p><strong>client_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID.</p></li>
-<li><p><strong>venue_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a>) – The venue order ID.</p></li>
+<li><p><strong>venue_order_id</strong> (<a class="reference internal" href="#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a><em>, </em><em>optional</em>) – The venue order ID.</p></li>
 <li><p><strong>event_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The event ID.</p></li>
 <li><p><strong>ts_event</strong> (<em>datetime</em>) – The UNIX timestamp (nanoseconds) when the order pending update event occurred.</p></li>
 <li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
