@@ -100,21 +100,21 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MessageBus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">TraderId</span> <span class="pre">trader_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Clock</span> <span class="pre">clock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Logger</span> <span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">name=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides a generic message bus to facilitate various messaging patterns.</p>
-<p>The bus provides both a producer and consumer API for PUB/SUB, REQ/REP as
+<p>The bus provides both a producer and consumer API for PUB/SUB, REQ/REP, as
 well as direct point-to-point messaging to registered endpoints.</p>
 <dl class="simple">
 <dt>PUB/SUB wildcard patterns for hierarchical topics are possible:</dt><dd><ul class="simple">
-<li><p>‘*’ asterisk represents one or more characters in a pattern.</p></li>
-<li><p>‘?’ question mark represents a single character in a pattern.</p></li>
+<li><p><cite>*</cite> asterisk represents one or more characters in a pattern.</p></li>
+<li><p><cite>?</cite> question mark represents a single character in a pattern.</p></li>
 </ul>
 </dd>
 </dl>
 <p>The asterisk in a wildcard matches any character zero or more times. For
-example, “comp*” matches anything beginning with “comp” which means “comp,”
-“complete,” and “computer” are all matched.</p>
-<p>A question mark matches a single character once. For example, “c?mp” matches
-“camp” and “comp.” The question mark can also be used more than once.
-For example, “c??p” would match both of the above examples and “coop.”</p>
+example, <cite>comp*</cite> matches anything beginning with <cite>comp</cite> which means <cite>comp</cite>,
+<cite>complete</cite>, and <cite>computer</cite> are all matched.</p>
+<p>A question mark matches a single character once. For example, <cite>c?mp</cite> matches
+<cite>camp</cite> and <cite>comp</cite>. The question mark can also be used more than once.
+For example, <cite>c??p</cite> would match both of the above examples and <cite>coop</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -125,7 +125,7 @@ For example, “c??p” would match both of the above examples and “coop.”</
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>name</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and not a valid string.</p>
+<dd class="field-even"><p><strong>ValueError</strong> – If <cite>name</cite> is not [<cite>None</cite>] and not a valid string.</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -136,12 +136,12 @@ as the event loop.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.deregister">
 <span class="sig-name descname"><span class="pre">deregister</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">endpoint,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None]</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.deregister" title="Permalink to this definition"></a></dt>
-<dd><p>De-register the given handler from the endpoint address.</p>
+<dd><p>Deregister the given <cite>handler</cite> from the <cite>endpoint</cite> address.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>endpoint</strong> (<em>str</em>) – The endpoint address to deregister.</p></li>
-<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The handler for the de-registration.</p></li>
+<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The handler to deregister.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -169,11 +169,11 @@ as the event loop.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.has_subscribers">
 <span class="sig-name descname"><span class="pre">has_subscribers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">topic=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.has_subscribers" title="Permalink to this definition"></a></dt>
-<dd><p>If the message bus has subscribers for the give topic.</p>
+<dd><p>If the message bus has subscribers for the give <cite>topic</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>topic</strong> (<em>str</em><em>, </em><em>optional</em>) – The topic filter. May include wildcard characters ‘*’ and ‘?’.
-If <code class="docutils literal notranslate"><span class="pre">None</span></code> then query is for ALL topics.</p>
+<dd class="field-odd"><p><strong>topic</strong> (<em>str</em><em>, </em><em>optional</em>) – The topic filter. May include wildcard characters <cite>*</cite> and <cite>?</cite>.
+If [<cite>None</cite>] then query is for <strong>all</strong> topics.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>bool</em></p>
@@ -195,7 +195,7 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.publish">
 <span class="sig-name descname"><span class="pre">publish</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">topic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg:</span> <span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.publish" title="Permalink to this definition"></a></dt>
-<dd><p>Publish the given message.</p>
+<dd><p>Publish the given message for the given <cite>topic</cite>.</p>
 <p>Subscription handlers will receive the message in priority order
 (highest first).</p>
 <dl class="field-list simple">
@@ -211,7 +211,7 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.register">
 <span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">endpoint,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None]</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.register" title="Permalink to this definition"></a></dt>
-<dd><p>Register the given handler to receive messages at the endpoint address.</p>
+<dd><p>Register the given <cite>handler</cite> to receive messages at the <cite>endpoint</cite> address.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -243,7 +243,7 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.request">
 <span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Request</span> <span class="pre">request</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.request" title="Permalink to this definition"></a></dt>
-<dd><p>Handle the given request.</p>
+<dd><p>Handle the given <cite>request</cite>.</p>
 <p>Will log an error if the correlation ID already exists.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -269,7 +269,7 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.response">
 <span class="sig-name descname"><span class="pre">response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Response</span> <span class="pre">response</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.response" title="Permalink to this definition"></a></dt>
-<dd><p>Handle the given response.</p>
+<dd><p>Handle the given <cite>response</cite>.</p>
 <p>Will log an error if the correlation ID is not found.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -281,7 +281,7 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.send">
 <span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg:</span> <span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.send" title="Permalink to this definition"></a></dt>
-<dd><p>Send the given message to the given endpoint address.</p>
+<dd><p>Send the given message to the given <cite>endpoint</cite> address.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -306,11 +306,12 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.subscribe">
 <span class="sig-name descname"><span class="pre">subscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">topic,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None],</span> <span class="pre">int</span> <span class="pre">priority=0</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.subscribe" title="Permalink to this definition"></a></dt>
-<dd><p>Subscribe to the given message topic with the given callback handler.</p>
+<dd><p>Subscribe to the given message <cite>topic</cite> with the given callback <cite>handler</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>topic</strong> (<em>str</em>) – The topic for the subscription. May include wildcard characters ‘*’ and ‘?’.</p></li>
+<li><p><strong>topic</strong> (<em>str</em>) – The topic for the subscription. May include wildcard characters
+<cite>*</cite> and <cite>?</cite>.</p></li>
 <li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The handler for the subscription.</p></li>
 <li><p><strong>priority</strong> (<em>int</em><em>, </em><em>optional</em>) – The priority for the subscription. Determines the ordering of
 handlers receiving messages being processed, higher priority
@@ -326,23 +327,23 @@ handlers will receive messages prior to lower priority handlers.</p></li>
 </dl>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Assigning priority handling is an advanced feature which shouldn’t
-normally be needed by most users. Only assign a higher priority to the
-subscription if you are certain of what you’re doing. If an inappropriate
+<p>Assigning priority handling is an advanced feature which <em>shouldn’t
+normally be needed by most users</em>. <strong>Only assign a higher priority to the
+subscription if you are certain of what you’re doing</strong>. If an inappropriate
 priority is assigned then the handler may receive messages before core
-system components have been able to produce side effects and conduct the
-necessary calculations for logically sound behaviour.</p>
+system components have been able to process necessary calculations and
+produce potential side effects for logically sound behaviour.</p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.subscriptions">
 <span class="sig-name descname"><span class="pre">subscriptions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">topic=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.subscriptions" title="Permalink to this definition"></a></dt>
-<dd><p>Return all subscriptions matching the given topic.</p>
+<dd><p>Return all subscriptions matching the given <cite>topic</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>topic</strong> (<em>str</em><em>, </em><em>optional</em>) – The topic filter. May include wildcard characters ‘*’ and ‘?’.
-If <code class="docutils literal notranslate"><span class="pre">None</span></code> then query is for ALL topics.</p>
+<dd class="field-odd"><p><strong>topic</strong> (<em>str</em><em>, </em><em>optional</em>) – The topic filter. May include wildcard characters <cite>*</cite> and <cite>?</cite>.
+If [<cite>None</cite>] then query is for <strong>all</strong> topics.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>list[Subscription]</em></p>
@@ -375,11 +376,12 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.unsubscribe">
 <span class="sig-name descname"><span class="pre">unsubscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">topic,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None]</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.unsubscribe" title="Permalink to this definition"></a></dt>
-<dd><p>Unsubscribe the given callback handler from the given message topic.</p>
+<dd><p>Unsubscribe the given callback <cite>handler</cite> from the given message <cite>topic</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>topic</strong> (<em>str</em><em>, </em><em>optional</em>) – The topic to unsubscribe from. May include wildcard characters ‘*’ and ‘?’.</p></li>
+<li><p><strong>topic</strong> (<em>str</em><em>, </em><em>optional</em>) – The topic to unsubscribe from. May include wildcard characters <cite>*</cite>
+and <cite>?</cite>.</p></li>
 <li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The handler for the subscription.</p></li>
 </ul>
 </dd>
@@ -407,7 +409,7 @@ topics and their subscribers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>topic</strong> (<em>str</em>) – The topic for the subscription. May include wildcard characters ‘*’ and ‘?’.</p></li>
+<li><p><strong>topic</strong> (<em>str</em>) – The topic for the subscription. May include wildcard characters <cite>*</cite> and <cite>?</cite>.</p></li>
 <li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="core.html#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><em>Message</em></a><em>]</em><em>, </em><em>None</em><em>]</em>) – The handler for the subscription.</p></li>
 <li><p><strong>priority</strong> (<em>int</em>) – The priority for the subscription.</p></li>
 </ul>
