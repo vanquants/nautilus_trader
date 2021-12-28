@@ -168,11 +168,11 @@ as the event loop.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.has_subscribers">
-<span class="sig-name descname"><span class="pre">has_subscribers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">topic=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.has_subscribers" title="Permalink to this definition"></a></dt>
-<dd><p>If the message bus has subscribers for the give <cite>topic</cite>.</p>
+<span class="sig-name descname"><span class="pre">has_subscribers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">pattern=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.has_subscribers" title="Permalink to this definition"></a></dt>
+<dd><p>If the message bus has subscribers for the give topic <cite>pattern</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>topic</strong> (<em>str</em><em>, </em><em>optional</em>) – The topic filter. May include wildcard characters <cite>*</cite> and <cite>?</cite>.
+<dd class="field-odd"><p><strong>pattern</strong> (<em>str</em><em>, </em><em>optional</em>) – The topic filter. May include wildcard characters <cite>*</cite> and <cite>?</cite>.
 If <code class="docutils literal notranslate"><span class="pre">None</span></code> then query is for <strong>all</strong> topics.</p>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -338,11 +338,11 @@ produce potential side effects for logically sound behaviour.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.subscriptions">
-<span class="sig-name descname"><span class="pre">subscriptions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">topic=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.subscriptions" title="Permalink to this definition"></a></dt>
-<dd><p>Return all subscriptions matching the given <cite>topic</cite>.</p>
+<span class="sig-name descname"><span class="pre">subscriptions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">pattern=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.subscriptions" title="Permalink to this definition"></a></dt>
+<dd><p>Return all subscriptions matching the given topic <cite>pattern</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>topic</strong> (<em>str</em><em>, </em><em>optional</em>) – The topic filter. May include wildcard characters <cite>*</cite> and <cite>?</cite>.
+<dd class="field-odd"><p><strong>pattern</strong> (<em>str</em><em>, </em><em>optional</em>) – The topic pattern filter. May include wildcard characters <cite>*</cite> and <cite>?</cite>.
 If <code class="docutils literal notranslate"><span class="pre">None</span></code> then query is for <strong>all</strong> topics.</p>
 </dd>
 <dt class="field-even">Returns</dt>
