@@ -827,11 +827,14 @@ paused, and also when it is done for day.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.publish_data">
-<span class="sig-name descname"><span class="pre">publish_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Data</span> <span class="pre">data</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.publish_data" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">publish_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DataType</span> <span class="pre">data_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Data</span> <span class="pre">data</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.publish_data" title="Permalink to this definition"></a></dt>
 <dd><p>Publish the given data to the message bus.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data</strong> (<em>Data</em>) – The data to publish.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_type</strong> (<em>DataType</em>) – The data type being published.</p></li>
+<li><p><strong>data</strong> (<em>Data</em>) – The data to publish.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -1028,13 +1031,14 @@ to the current datetime.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.subscribe_data">
-<span class="sig-name descname"><span class="pre">subscribe_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientId</span> <span class="pre">client_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DataType</span> <span class="pre">data_type</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.subscribe_data" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">subscribe_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DataType</span> <span class="pre">data_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientId</span> <span class="pre">client_id=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.subscribe_data" title="Permalink to this definition"></a></dt>
 <dd><p>Subscribe to data of the given data type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID.</p></li>
 <li><p><strong>data_type</strong> (<em>DataType</em>) – The data type to subscribe to.</p></li>
+<li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a><em>, </em><em>optional</em>) – The data client ID. If supplied then a <cite>Subscribe</cite> command will be
+sent to the data client.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1139,20 +1143,6 @@ as per the last subscription request (this will also affect all subscribers).</p
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.subscribe_strategy_data">
-<span class="sig-name descname"><span class="pre">subscribe_strategy_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span> <span class="pre">data_type=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrategyId</span> <span class="pre">strategy_id=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.subscribe_strategy_data" title="Permalink to this definition"></a></dt>
-<dd><p>Subscribe to strategy data of the given data type.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data_type</strong> (<em>type</em><em>, </em><em>optional</em>) – The strategy data type to subscribe to.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID filter for the subscription.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.subscribe_ticker">
 <span class="sig-name descname"><span class="pre">subscribe_ticker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.subscribe_ticker" title="Permalink to this definition"></a></dt>
 <dd><p>Subscribe to streaming <cite>Ticker</cite> data for the given instrument ID.</p>
@@ -1220,13 +1210,14 @@ as per the last subscription request (this will also affect all subscribers).</p
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.unsubscribe_data">
-<span class="sig-name descname"><span class="pre">unsubscribe_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientId</span> <span class="pre">client_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DataType</span> <span class="pre">data_type</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.unsubscribe_data" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">unsubscribe_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DataType</span> <span class="pre">data_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientId</span> <span class="pre">client_id=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.unsubscribe_data" title="Permalink to this definition"></a></dt>
 <dd><p>Unsubscribe from data of the given data type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID.</p></li>
 <li><p><strong>data_type</strong> (<em>DataType</em>) – The data type to unsubscribe from.</p></li>
+<li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a><em>, </em><em>optional</em>) – The data client ID. If supplied then an <cite>Unsubscribe</cite> command will
+be sent to the data client.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1287,20 +1278,6 @@ as per the last subscription request (this will also affect all subscribers).</p
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument to unsubscribe from.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.common.actor.Actor.unsubscribe_strategy_data">
-<span class="sig-name descname"><span class="pre">unsubscribe_strategy_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span> <span class="pre">data_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrategyId</span> <span class="pre">strategy_id=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.common.actor.Actor.unsubscribe_strategy_data" title="Permalink to this definition"></a></dt>
-<dd><p>Unsubscribe from strategy data of the given data type.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data_type</strong> (<em>type</em>) – The strategy data type to unsubscribe from.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID filter for the subscription.</p></li>
-</ul>
 </dd>
 </dl>
 </dd></dl>
