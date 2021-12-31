@@ -337,10 +337,47 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../5_developer_guide/0_index.html">
    Developer Guide
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5_developer_guide/1_environment_setup.html">
+     Environment Setup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5_developer_guide/2_coding_standards.html">
+     Coding Standards
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5_developer_guide/3_cython.html">
+     Cython
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5_developer_guide/4_testing.html">
+     Testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5_developer_guide/5_packaged_data.html">
+     Packaged Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/nautechsystems/nautilus_trader/blob/develop/CONTRIBUTING.md">
+     Contributing
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -434,6 +471,48 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="betfair">
 <h1>Betfair<a class="headerlink" href="#betfair" title="Permalink to this headline">¶</a></h1>
+<p>NautilusTrader offers adapters for integrating with the Betfair REST API and
+Exchange Streaming API. Under the hood it leverages the excellent <a class="reference external" href="https://github.com/liampauling/betfair">betfairlightweight</a> library to handle some of the formatting of requests to Betfair.</p>
+<p>The following integration classes are available:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BetfairInstrumentProvider</span></code> which allows querying the Betfair market catalogue for betting markets, which are then converted into Nautilus “instruments”.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BetfairDataClient</span></code> which connects to the Exchange Stream API and streams market data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BetfairExecutionClient</span></code> which allows the retrieval of account information and execution and updates for orders (or bets).</p></li>
+</ul>
+<p>The Betfair adapter currently uses environment variables for authentication. To use the adapter,
+simply pass the following config to the TradingNode, indicating the names of the environment variables
+to look for when connecting:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="o">...</span> <span class="c1"># Omitted </span>
+    <span class="s2">&quot;data_clients&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;BETFAIR&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BETFAIR_USERNAME&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BETFAIR_PASSWORD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;app_key&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BETFAIR_APP_KEY&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;cert_dir&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BETFAIR_CERT_DIR&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;exec_clients&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;BETFAIR&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BETFAIR_USERNAME&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BETFAIR_PASSWORD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;app_key&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BETFAIR_APP_KEY&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;cert_dir&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BETFAIR_CERT_DIR&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;base_currency&quot;</span><span class="p">:</span> <span class="s2">&quot;AUD&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>Then, create a <code class="docutils literal notranslate"><span class="pre">TradingNode</span></code> and add the factory clients:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instantiate the node passing a list of strategies and configuration</span>
+<span class="n">node</span> <span class="o">=</span> <span class="n">TradingNode</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
+<span class="n">node</span><span class="o">.</span><span class="n">trader</span><span class="o">.</span><span class="n">add_strategies</span><span class="p">([</span><span class="n">strategy</span><span class="p">])</span>
+
+<span class="c1"># Register your client factories with the node (can also take user defined factories)</span>
+<span class="n">node</span><span class="o">.</span><span class="n">add_data_client_factory</span><span class="p">(</span><span class="s2">&quot;BETFAIR&quot;</span><span class="p">,</span> <span class="n">BetfairLiveDataClientFactory</span><span class="p">)</span>
+<span class="n">node</span><span class="o">.</span><span class="n">add_exec_client_factory</span><span class="p">(</span><span class="s2">&quot;BETFAIR&quot;</span><span class="p">,</span> <span class="n">BetfairLiveExecutionClientFactory</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

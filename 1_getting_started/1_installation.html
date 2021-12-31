@@ -337,10 +337,47 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../5_developer_guide/0_index.html">
    Developer Guide
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5_developer_guide/1_environment_setup.html">
+     Environment Setup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5_developer_guide/2_coding_standards.html">
+     Coding Standards
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5_developer_guide/3_cython.html">
+     Cython
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5_developer_guide/4_testing.html">
+     Testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5_developer_guide/5_packaged_data.html">
+     Packaged Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/nautechsystems/nautilus_trader/blob/develop/CONTRIBUTING.md">
+     Contributing
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -424,6 +461,34 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#from-pypi">
+   From PyPI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extras">
+   Extras
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#from-source">
+   From Source
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#from-github-release">
+   From GitHub Release
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -437,6 +502,59 @@
 <p>The package is tested against Python 3.8 - 3.9 on 64-bit Windows, macOS and Linux.
 We recommend running the platform with the latest stable version of Python, and
 in a virtual environment to isolate the dependencies.</p>
+<div class="section" id="from-pypi">
+<h2>From PyPI<a class="headerlink" href="#from-pypi" title="Permalink to this headline">¶</a></h2>
+<p>To install the latest binary wheel (or sdist package) from PyPI:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install -U nautilus_trader
+</pre></div>
+</div>
+</div>
+<div class="section" id="extras">
+<h2>Extras<a class="headerlink" href="#extras" title="Permalink to this headline">¶</a></h2>
+<p>Also, the following optional dependency ‘extras’ are separately available for installation.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">distributed</span></code> - packages for using Dask distributed in backtests.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ib</span></code>  - packages required for the Interactive Brokers adapter.</p></li>
+</ul>
+<p>For example, to install including the <code class="docutils literal notranslate"><span class="pre">distributed</span></code> extras using pip:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install -U nautilus_trader[distributed]
+</pre></div>
+</div>
+</div>
+<div class="section" id="from-source">
+<h2>From Source<a class="headerlink" href="#from-source" title="Permalink to this headline">¶</a></h2>
+<p>It’s possible to install from sourcing using <code class="docutils literal notranslate"><span class="pre">pip</span></code> if you first install the build dependencies
+as specified in the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>. However, we highly recommend installing using <a class="reference external" href="https://python-poetry.org/">poetry</a>.</p>
+<ol>
+<li><p>First install poetry (or follow the installation guide on their site):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+</pre></div>
+</div>
+</li>
+<li><p>Clone the source with <code class="docutils literal notranslate"><span class="pre">git</span></code>, and install from the projects root directory:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/nautechsystems/nautilus_trader
+cd nautilus_trader
+poetry install --no-dev
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Because of jupyter-book, the project requires a large number of development dependencies (which is the
+reason for passing the <code class="docutils literal notranslate"><span class="pre">--no-dev</span></code> option above). If you’ll be running tests, or developing with the codebase
+in general then remove that option flag when installing. It’s also possible to simply run <code class="docutils literal notranslate"><span class="pre">make</span></code> from the
+top-level directory.</p>
+</div>
+</div>
+<div class="section" id="from-github-release">
+<h2>From GitHub Release<a class="headerlink" href="#from-github-release" title="Permalink to this headline">¶</a></h2>
+<p>To install a binary wheel from GitHub, first navigate to the <a class="reference external" href="https://github.com/nautechsystems/nautilus_trader/releases/latest">latest release</a>.
+Download the appropriate <code class="docutils literal notranslate"><span class="pre">.whl</span></code> for your operating system and Python version, then run:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install &lt;file-name&gt;.whl
+</pre></div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

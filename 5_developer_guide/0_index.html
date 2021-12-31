@@ -51,6 +51,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Environment Setup" href="1_environment_setup.html" />
     <link rel="prev" title="Interactive Brokers" href="../4_integrations/ib.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -336,10 +337,47 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active">
+ <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
    Developer Guide
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1_environment_setup.html">
+     Environment Setup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2_coding_standards.html">
+     Coding Standards
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3_cython.html">
+     Cython
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_testing.html">
+     Testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5_packaged_data.html">
+     Packaged Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/nautechsystems/nautilus_trader/blob/develop/CONTRIBUTING.md">
+     Contributing
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -433,6 +471,31 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="developer-guide">
 <h1>Developer Guide<a class="headerlink" href="#developer-guide" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to the developer guide for NautilusTrader!</p>
+<p>Here you will find information related to developing and extending the NautilusTrader codebase.
+These guides will assist you in both adding functionality for your own trading operation, and/or
+acting as a guide to assist with valuable contributions.</p>
+<p>We believe in using the right tool for the job. The overall design philosophy is to fully utilize
+the high level power of Python, with its rich eco-system of frameworks and libraries, whilst
+overcoming some of its inherent shortcomings in performance and lack of built-in type safety
+(with it being an interpreted dynamic language).</p>
+<p>One of the advantages of Cython is that allocation and freeing of memory is handled by the C code
+generator during the ‘cythonization’ step of the build (unless you’re specifically utilizing some of
+its lower level features).</p>
+<p>So we get the best of both worlds - with Pythons clean straight forward syntax, and a lot of
+potential to extract several orders of magnitude greater runtime performance through compiled C
+dynamic libraries.</p>
+<p>The main development and runtime environment we are working in is of course Python. However with the
+introduction of Cython syntax throughout the production codebase in .pyx and .pxd files - it’s
+important to be aware of how the CPython implementation of Python interacts with the underlying
+CPython API, and the NautilusTrader C extension modules which Cython produces.</p>
+<p>We recommend a thorough review of the <a class="reference external" href="https://cython.readthedocs.io/en/latest/">Cython docs</a> to familiarize yourself with some of its core
+concepts, and where C typing is being introduced.</p>
+<p>It’s not necessary to become a C language expert, however how Cython C syntax is used in function
+and method definitions, in local code blocks, and the common primitive C types and how these map to
+their corresponding PyObject types - should be well understood.</p>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -466,6 +529,13 @@
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Interactive Brokers</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="1_environment_setup.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Environment Setup</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
         
