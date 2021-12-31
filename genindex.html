@@ -270,6 +270,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="3_api_reference/persistence.html">
+     Persistence
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="3_api_reference/portfolio.html">
      Portfolio
     </a>
@@ -1327,6 +1332,8 @@
 </li>
       <li><a href="3_api_reference/data.html#nautilus_trader.data.aggregation.BulkTimeBarUpdater">BulkTimeBarUpdater (class in nautilus_trader.data.aggregation)</a>
 </li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.external.readers.ByteReader">ByteReader (class in nautilus_trader.persistence.external.readers)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -1706,6 +1713,8 @@
 </li>
         <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionMassStatus.client_id">(ExecutionMassStatus attribute)</a>
 </li>
+        <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.batching.FileMeta.client_id">(FileMeta attribute)</a>
+</li>
         <li><a href="3_api_reference/data.html#nautilus_trader.data.messages.Subscribe.client_id">(Subscribe attribute)</a>
 </li>
         <li><a href="3_api_reference/data.html#nautilus_trader.data.messages.Unsubscribe.client_id">(Unsubscribe attribute)</a>
@@ -1912,6 +1921,8 @@
 </li>
         <li><a href="3_api_reference/live.html#nautilus_trader.live.config.LiveRiskEngineConfig.construct">(LiveRiskEngineConfig class method)</a>
 </li>
+        <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.config.PersistenceConfig.construct">(PersistenceConfig class method)</a>
+</li>
         <li><a href="3_api_reference/risk.html#nautilus_trader.risk.config.RiskEngineConfig.construct">(RiskEngineConfig class method)</a>
 </li>
         <li><a href="3_api_reference/live.html#nautilus_trader.live.config.TradingNodeConfig.construct">(TradingNodeConfig class method)</a>
@@ -1974,6 +1985,8 @@
 </li>
         <li><a href="3_api_reference/live.html#nautilus_trader.live.config.LiveRiskEngineConfig.copy">(LiveRiskEngineConfig method)</a>
 </li>
+        <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.config.PersistenceConfig.copy">(PersistenceConfig method)</a>
+</li>
         <li><a href="3_api_reference/risk.html#nautilus_trader.risk.config.RiskEngineConfig.copy">(RiskEngineConfig method)</a>
 </li>
         <li><a href="3_api_reference/live.html#nautilus_trader.live.config.TradingNodeConfig.copy">(TradingNodeConfig method)</a>
@@ -2015,6 +2028,8 @@
         <li><a href="3_api_reference/indicators.html#nautilus_trader.indicators.average.wma.WeightedMovingAverage.count">(WeightedMovingAverage attribute)</a>
 </li>
       </ul></li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.batching.FileMeta.count">count() (FileMeta method)</a>
+</li>
       <li><a href="3_api_reference/accounting.html#nautilus_trader.accounting.factory.AccountFactory.create">create() (AccountFactory static method)</a>
 
       <ul>
@@ -2050,6 +2065,8 @@
       <li><a href="3_api_reference/model/instruments.html#nautilus_trader.model.instruments.crypto_perp.CryptoPerpetual">CryptoPerpetual (class in nautilus_trader.model.instruments.crypto_perp)</a>
 </li>
       <li><a href="3_api_reference/backtest.html#nautilus_trader.backtest.data.loaders.CSVBarDataLoader">CSVBarDataLoader (class in nautilus_trader.backtest.data.loaders)</a>
+</li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.external.readers.CSVReader">CSVReader (class in nautilus_trader.persistence.external.readers)</a>
 </li>
       <li><a href="3_api_reference/backtest.html#nautilus_trader.backtest.data.loaders.CSVTickDataLoader">CSVTickDataLoader (class in nautilus_trader.backtest.data.loaders)</a>
 </li>
@@ -2129,6 +2146,8 @@
         <li><a href="3_api_reference/data.html#nautilus_trader.data.messages.Unsubscribe.data_type">(Unsubscribe attribute)</a>
 </li>
       </ul></li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.catalog.DataCatalog">DataCatalog (class in nautilus_trader.persistence.catalog)</a>
+</li>
       <li><a href="3_api_reference/data.html#nautilus_trader.data.client.DataClient">DataClient (class in nautilus_trader.data.client)</a>
 </li>
       <li><a href="3_api_reference/data.html#nautilus_trader.data.messages.DataCommand">DataCommand (class in nautilus_trader.data.messages)</a>
@@ -2142,6 +2161,8 @@
       <li><a href="3_api_reference/data.html#nautilus_trader.data.messages.DataResponse">DataResponse (class in nautilus_trader.data.messages)</a>
 </li>
       <li><a href="3_api_reference/model/data.html#nautilus_trader.model.data.base.DataType">DataType (class in nautilus_trader.model.data.base)</a>
+</li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.batching.FileMeta.datatype">datatype (FileMeta attribute)</a>
 </li>
       <li><a href="3_api_reference/common.html#nautilus_trader.common.logging.LoggerAdapter.debug">debug() (LoggerAdapter method)</a>
 </li>
@@ -2271,6 +2292,8 @@
         <li><a href="3_api_reference/serialization.html#nautilus_trader.serialization.base.Serializer.deserialize">(Serializer method)</a>
 </li>
       </ul></li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.external.core.determine_partition_cols">determine_partition_cols() (in module nautilus_trader.persistence.external.core)</a>
+</li>
       <li><a href="3_api_reference/common.html#nautilus_trader.common.config.ActorConfig.dict">dict() (ActorConfig method)</a>
 
       <ul>
@@ -2294,6 +2317,8 @@
 </li>
         <li><a href="3_api_reference/live.html#nautilus_trader.live.config.LiveRiskEngineConfig.dict">(LiveRiskEngineConfig method)</a>
 </li>
+        <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.config.PersistenceConfig.dict">(PersistenceConfig method)</a>
+</li>
         <li><a href="3_api_reference/risk.html#nautilus_trader.risk.config.RiskEngineConfig.dict">(RiskEngineConfig method)</a>
 </li>
         <li><a href="3_api_reference/live.html#nautilus_trader.live.config.TradingNodeConfig.dict">(TradingNodeConfig method)</a>
@@ -2301,6 +2326,8 @@
         <li><a href="3_api_reference/trading.html#nautilus_trader.trading.config.TradingStrategyConfig.dict">(TradingStrategyConfig method)</a>
 </li>
       </ul></li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.external.core.dicts_to_dataframes">dicts_to_dataframes() (in module nautilus_trader.persistence.external.core)</a>
+</li>
       <li><a href="3_api_reference/indicators.html#nautilus_trader.indicators.fuzzy_candlesticks.FuzzyCandle.direction">direction (FuzzyCandle attribute)</a>
 
       <ul>
@@ -2409,6 +2436,8 @@
 </li>
       <li><a href="3_api_reference/common.html#nautilus_trader.common.queue.Queue.empty">empty() (Queue method)</a>
 </li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.batching.FileMeta.end">end (FileMeta attribute)</a>
+</li>
       <li><a href="3_api_reference/backtest.html#nautilus_trader.backtest.engine.BacktestEngine.end_streaming">end_streaming() (BacktestEngine method)</a>
 </li>
       <li><a href="3_api_reference/msgbus.html#nautilus_trader.msgbus.bus.MessageBus.endpoints">endpoints() (MessageBus method)</a>
@@ -2493,10 +2522,10 @@
 </li>
       <li><a href="3_api_reference/accounting.html#nautilus_trader.accounting.calculators.ExchangeRateCalculator">ExchangeRateCalculator (class in nautilus_trader.accounting.calculators)</a>
 </li>
-      <li><a href="3_api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.exec_client">exec_client (SimulatedExchange attribute)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="3_api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.exec_client">exec_client (SimulatedExchange attribute)</a>
+</li>
       <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionMassStatus.exec_reports">exec_reports() (ExecutionMassStatus method)</a>
 </li>
       <li><a href="3_api_reference/execution.html#nautilus_trader.execution.config.ExecEngineConfig">ExecEngineConfig (class in nautilus_trader.execution.config)</a>
@@ -2655,6 +2684,12 @@
         <li><a href="3_api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.fault">(TradingStrategy method)</a>
 </li>
       </ul></li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.streaming.FeatherWriter">FeatherWriter (class in nautilus_trader.persistence.streaming)</a>
+</li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.batching.FileMeta">FileMeta (class in nautilus_trader.persistence.batching)</a>
+</li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.batching.FileMeta.filename">filename (FileMeta attribute)</a>
+</li>
       <li><a href="3_api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.fill_model">fill_model (SimulatedExchange attribute)</a>
 </li>
       <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.limit.LimitOrder.filled_qty">filled_qty (LimitOrder attribute)</a>
@@ -2731,6 +2766,8 @@
 </li>
       <li><a href="3_api_reference/model/objects.html#nautilus_trader.model.objects.AccountBalance.free">free (AccountBalance attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="3_api_reference/model/objects.html#nautilus_trader.model.objects.AccountBalance.from_dict">from_dict() (AccountBalance static method)</a>
 
       <ul>
@@ -2817,8 +2854,6 @@
         <li><a href="3_api_reference/model/data.html#nautilus_trader.model.data.venue.VenueStatusUpdate.from_dict">(VenueStatusUpdate static method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="3_api_reference/model/objects.html#nautilus_trader.model.objects.Price.from_int">from_int() (Price static method)</a>
 
       <ul>
@@ -3791,6 +3826,8 @@
 </li>
       <li><a href="3_api_reference/model/tick_scheme.html#nautilus_trader.model.tick_scheme.implementations.fixed.FixedTickScheme.increment">increment (FixedTickScheme attribute)</a>
 </li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.batching.FileMeta.index">index() (FileMeta method)</a>
+</li>
       <li><a href="3_api_reference/indicators.html#nautilus_trader.indicators.base.indicator.Indicator">Indicator (class in nautilus_trader.indicators.base.indicator)</a>
 </li>
       <li><a href="3_api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.indicators_initialized">indicators_initialized() (TradingStrategy method)</a>
@@ -3965,6 +4002,8 @@
         <li><a href="3_api_reference/model/commands.html#nautilus_trader.model.commands.trading.CancelAllOrders.instrument_id">(CancelAllOrders attribute)</a>
 </li>
         <li><a href="3_api_reference/model/commands.html#nautilus_trader.model.commands.trading.CancelOrder.instrument_id">(CancelOrder attribute)</a>
+</li>
+        <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.batching.FileMeta.instrument_id">(FileMeta attribute)</a>
 </li>
         <li><a href="3_api_reference/model/data.html#nautilus_trader.model.data.venue.InstrumentClosePrice.instrument_id">(InstrumentClosePrice attribute)</a>
 </li>
@@ -4185,6 +4224,8 @@
       </ul></li>
       <li><a href="3_api_reference/model/position.html#nautilus_trader.model.position.Position.is_closed">is_closed (Position attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.limit.LimitOrder.is_completed">is_completed (LimitOrder attribute)</a>
 
       <ul>
@@ -4199,8 +4240,6 @@
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_completed">(StopMarketOrder attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="3_api_reference/portfolio.html#nautilus_trader.portfolio.portfolio.Portfolio.is_completely_flat">is_completely_flat() (Portfolio method)</a>
 
       <ul>
@@ -4800,6 +4839,8 @@
 </li>
         <li><a href="3_api_reference/live.html#nautilus_trader.live.config.LiveRiskEngineConfig.json">(LiveRiskEngineConfig method)</a>
 </li>
+        <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.config.PersistenceConfig.json">(PersistenceConfig method)</a>
+</li>
         <li><a href="3_api_reference/risk.html#nautilus_trader.risk.config.RiskEngineConfig.json">(RiskEngineConfig method)</a>
 </li>
         <li><a href="3_api_reference/live.html#nautilus_trader.live.config.TradingNodeConfig.json">(TradingNodeConfig method)</a>
@@ -4955,6 +4996,8 @@
 </li>
       <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.limit.LimitOrder">LimitOrder (class in nautilus_trader.model.orders.limit)</a>
 </li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.external.readers.LinePreprocessor">LinePreprocessor (class in nautilus_trader.persistence.external.readers)</a>
+</li>
       <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionReport.liquidity_side">liquidity_side (ExecutionReport attribute)</a>
 
       <ul>
@@ -5003,6 +5046,8 @@
 </li>
       <li><a href="3_api_reference/common.html#nautilus_trader.common.timer.LiveTimer">LiveTimer (class in nautilus_trader.common.timer)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="3_api_reference/backtest.html#nautilus_trader.backtest.data.loaders.CSVBarDataLoader.load">load() (CSVBarDataLoader static method)</a>
 
       <ul>
@@ -5023,8 +5068,6 @@
         <li><a href="3_api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.load">(TradingStrategy method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="3_api_reference/cache.html#nautilus_trader.cache.cache.Cache.load_account">load_account() (Cache method)</a>
 
       <ul>
@@ -5406,6 +5449,8 @@
       <li><a href="3_api_reference/core.html#nautilus_trader.core.datetime.maybe_dt_to_unix_nanos">maybe_dt_to_unix_nanos() (in module nautilus_trader.core.datetime)</a>
 </li>
       <li><a href="3_api_reference/core.html#nautilus_trader.core.datetime.maybe_unix_nanos_to_dt">maybe_unix_nanos_to_dt() (in module nautilus_trader.core.datetime)</a>
+</li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.external.core.merge_existing_data">merge_existing_data() (in module nautilus_trader.persistence.external.core)</a>
 </li>
       <li><a href="3_api_reference/core.html#nautilus_trader.core.message.Message">Message (class in nautilus_trader.core.message)</a>
 </li>
@@ -5823,6 +5868,22 @@
 </li>
         <li><a href="3_api_reference/network.html#module-nautilus_trader.network.websocket">nautilus_trader.network.websocket</a>
 </li>
+        <li><a href="3_api_reference/persistence.html#module-nautilus_trader.persistence">nautilus_trader.persistence</a>
+</li>
+        <li><a href="3_api_reference/persistence.html#module-nautilus_trader.persistence.batching">nautilus_trader.persistence.batching</a>
+</li>
+        <li><a href="3_api_reference/persistence.html#module-nautilus_trader.persistence.catalog">nautilus_trader.persistence.catalog</a>
+</li>
+        <li><a href="3_api_reference/persistence.html#module-nautilus_trader.persistence.config">nautilus_trader.persistence.config</a>
+</li>
+        <li><a href="3_api_reference/persistence.html#module-nautilus_trader.persistence.external.core">nautilus_trader.persistence.external.core</a>
+</li>
+        <li><a href="3_api_reference/persistence.html#module-nautilus_trader.persistence.external.readers">nautilus_trader.persistence.external.readers</a>
+</li>
+        <li><a href="3_api_reference/persistence.html#module-nautilus_trader.persistence.streaming">nautilus_trader.persistence.streaming</a>
+</li>
+        <li><a href="3_api_reference/persistence.html#module-nautilus_trader.persistence.util">nautilus_trader.persistence.util</a>
+</li>
         <li><a href="3_api_reference/portfolio.html#module-nautilus_trader.portfolio">nautilus_trader.portfolio</a>
 </li>
         <li><a href="3_api_reference/portfolio.html#module-nautilus_trader.portfolio.base">nautilus_trader.portfolio.base</a>
@@ -5871,6 +5932,8 @@
       <li><a href="3_api_reference/indicators.html#nautilus_trader.indicators.average.ma_factory.MovingAverageFactory">MovingAverageFactory (class in nautilus_trader.indicators.average.ma_factory)</a>
 </li>
       <li><a href="3_api_reference/indicators.html#nautilus_trader.indicators.average.moving_average.MovingAverageType">MovingAverageType (class in nautilus_trader.indicators.average.moving_average)</a>
+</li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.util.Singleton.mro">mro() (Singleton method)</a>
 </li>
       <li><a href="3_api_reference/common.html#nautilus_trader.common.actor.Actor.msgbus">msgbus (Actor attribute)</a>
 
@@ -6612,8 +6675,6 @@
         <li><a href="3_api_reference/indicators.html#module-nautilus_trader.indicators.volatility_ratio">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     nautilus_trader.indicators.vwap
 
@@ -6642,6 +6703,8 @@
         <li><a href="3_api_reference/infrastructure.html#module-nautilus_trader.infrastructure.config">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     nautilus_trader.live
 
@@ -7060,6 +7123,62 @@
 
       <ul>
         <li><a href="3_api_reference/network.html#module-nautilus_trader.network.websocket">module</a>
+</li>
+      </ul></li>
+      <li>
+    nautilus_trader.persistence
+
+      <ul>
+        <li><a href="3_api_reference/persistence.html#module-nautilus_trader.persistence">module</a>
+</li>
+      </ul></li>
+      <li>
+    nautilus_trader.persistence.batching
+
+      <ul>
+        <li><a href="3_api_reference/persistence.html#module-nautilus_trader.persistence.batching">module</a>
+</li>
+      </ul></li>
+      <li>
+    nautilus_trader.persistence.catalog
+
+      <ul>
+        <li><a href="3_api_reference/persistence.html#module-nautilus_trader.persistence.catalog">module</a>
+</li>
+      </ul></li>
+      <li>
+    nautilus_trader.persistence.config
+
+      <ul>
+        <li><a href="3_api_reference/persistence.html#module-nautilus_trader.persistence.config">module</a>
+</li>
+      </ul></li>
+      <li>
+    nautilus_trader.persistence.external.core
+
+      <ul>
+        <li><a href="3_api_reference/persistence.html#module-nautilus_trader.persistence.external.core">module</a>
+</li>
+      </ul></li>
+      <li>
+    nautilus_trader.persistence.external.readers
+
+      <ul>
+        <li><a href="3_api_reference/persistence.html#module-nautilus_trader.persistence.external.readers">module</a>
+</li>
+      </ul></li>
+      <li>
+    nautilus_trader.persistence.streaming
+
+      <ul>
+        <li><a href="3_api_reference/persistence.html#module-nautilus_trader.persistence.streaming">module</a>
+</li>
+      </ul></li>
+      <li>
+    nautilus_trader.persistence.util
+
+      <ul>
+        <li><a href="3_api_reference/persistence.html#module-nautilus_trader.persistence.util">module</a>
 </li>
       </ul></li>
       <li>
@@ -7679,6 +7798,8 @@
       </ul></li>
       <li><a href="3_api_reference/backtest.html#nautilus_trader.backtest.data.loaders.ParquetBarDataLoader">ParquetBarDataLoader (class in nautilus_trader.backtest.data.loaders)</a>
 </li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.external.readers.ParquetReader">ParquetReader (class in nautilus_trader.persistence.external.readers)</a>
+</li>
       <li><a href="3_api_reference/serialization.html#nautilus_trader.serialization.arrow.serializer.ParquetSerializer">ParquetSerializer (class in nautilus_trader.serialization.arrow.serializer)</a>
 </li>
       <li><a href="3_api_reference/backtest.html#nautilus_trader.backtest.data.loaders.ParquetTickDataLoader">ParquetTickDataLoader (class in nautilus_trader.backtest.data.loaders)</a>
@@ -7762,6 +7883,8 @@
       <li><a href="3_api_reference/indicators.html#nautilus_trader.indicators.average.ama.AdaptiveMovingAverage.period_er">period_er (AdaptiveMovingAverage attribute)</a>
 </li>
       <li><a href="3_api_reference/indicators.html#nautilus_trader.indicators.stochastics.Stochastics.period_k">period_k (Stochastics attribute)</a>
+</li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.config.PersistenceConfig">PersistenceConfig (class in nautilus_trader.persistence.config)</a>
 </li>
       <li><a href="3_api_reference/common.html#nautilus_trader.common.timer.LiveTimer.pop_event">pop_event() (LiveTimer method)</a>
 
@@ -8226,6 +8349,12 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="3_api_reference/indicators.html#nautilus_trader.indicators.roc.RateOfChange">RateOfChange (class in nautilus_trader.indicators.roc)</a>
+</li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.external.core.RawFile">RawFile (class in nautilus_trader.persistence.external.core)</a>
+</li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.external.core.read_progress">read_progress() (in module nautilus_trader.persistence.external.core)</a>
+</li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.external.readers.Reader">Reader (class in nautilus_trader.persistence.external.readers)</a>
 </li>
       <li><a href="3_api_reference/model/position.html#nautilus_trader.model.position.Position.realized_pnl">realized_pnl (Position attribute)</a>
 
@@ -8891,6 +9020,8 @@
 </li>
       <li><a href="3_api_reference/indicators.html#nautilus_trader.indicators.swings.Swings.since_low">since_low (Swings attribute)</a>
 </li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.util.Singleton">Singleton (class in nautilus_trader.persistence.util)</a>
+</li>
       <li><a href="3_api_reference/indicators.html#nautilus_trader.indicators.fuzzy_candlesticks.FuzzyCandle.size">size (FuzzyCandle attribute)</a>
 
       <ul>
@@ -8985,6 +9116,8 @@
 </li>
       <li><a href="3_api_reference/model/data.html#nautilus_trader.model.data.bar.BarType.spec">spec (BarType attribute)</a>
 </li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.external.core.split_and_serialize">split_and_serialize() (in module nautilus_trader.persistence.external.core)</a>
+</li>
       <li><a href="3_api_reference/model/orderbook.html#nautilus_trader.model.orderbook.book.L1OrderBook.spread">spread() (L1OrderBook method)</a>
 
       <ul>
@@ -9006,6 +9139,8 @@
       <li><a href="3_api_reference/network.html#nautilus_trader.network.socket.SocketClient.ssl">ssl (SocketClient attribute)</a>
 </li>
       <li><a href="3_api_reference/model/data.html#nautilus_trader.model.data.bet.Bet.stake">stake() (Bet method)</a>
+</li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.batching.FileMeta.start">start (FileMeta attribute)</a>
 </li>
       <li><a href="3_api_reference/common.html#nautilus_trader.common.actor.Actor.start">start() (Actor method)</a>
 
@@ -9696,6 +9831,8 @@
       <li><a href="3_api_reference/backtest.html#nautilus_trader.backtest.data.providers.TestInstrumentProvider">TestInstrumentProvider (class in nautilus_trader.backtest.data.providers)</a>
 </li>
       <li><a href="3_api_reference/common.html#nautilus_trader.common.timer.TestTimer">TestTimer (class in nautilus_trader.common.timer)</a>
+</li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.external.readers.TextReader">TextReader (class in nautilus_trader.persistence.external.readers)</a>
 </li>
       <li><a href="3_api_reference/common.html#nautilus_trader.common.timer.ThreadTimer">ThreadTimer (class in nautilus_trader.common.timer)</a>
 </li>
@@ -10715,8 +10852,6 @@
         <li><a href="3_api_reference/model/orderbook.html#nautilus_trader.model.orderbook.simulated.SimulatedL3OrderBook.update">(SimulatedL3OrderBook method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="3_api_reference/cache.html#nautilus_trader.cache.cache.Cache.update_account">update_account() (Cache method)</a>
 
       <ul>
@@ -10727,6 +10862,8 @@
         <li><a href="3_api_reference/infrastructure.html#nautilus_trader.infrastructure.cache.RedisCacheDatabase.update_account">(RedisCacheDatabase method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="3_api_reference/accounting.html#nautilus_trader.accounting.accounts.cash.CashAccount.update_balance_locked">update_balance_locked() (CashAccount method)</a>
 </li>
       <li><a href="3_api_reference/accounting.html#nautilus_trader.accounting.accounts.cash.CashAccount.update_balances">update_balances() (CashAccount method)</a>
@@ -10763,6 +10900,8 @@
         <li><a href="3_api_reference/live.html#nautilus_trader.live.config.LiveExecEngineConfig.update_forward_refs">(LiveExecEngineConfig class method)</a>
 </li>
         <li><a href="3_api_reference/live.html#nautilus_trader.live.config.LiveRiskEngineConfig.update_forward_refs">(LiveRiskEngineConfig class method)</a>
+</li>
+        <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.config.PersistenceConfig.update_forward_refs">(PersistenceConfig class method)</a>
 </li>
         <li><a href="3_api_reference/risk.html#nautilus_trader.risk.config.RiskEngineConfig.update_forward_refs">(RiskEngineConfig class method)</a>
 </li>
@@ -11161,10 +11300,10 @@
 </li>
       <li><a href="3_api_reference/indicators.html#nautilus_trader.indicators.average.wma.WeightedMovingAverage.weights">weights (WeightedMovingAverage attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="3_api_reference/model/data.html#nautilus_trader.model.data.bet.Bet.win_payoff">win_payoff() (Bet method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="3_api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.win_rate">win_rate() (PerformanceAnalyzer method)</a>
 </li>
       <li><a href="3_api_reference/indicators.html#nautilus_trader.indicators.bid_ask_min_max.WindowedMinMaxPrices">WindowedMinMaxPrices (class in nautilus_trader.indicators.bid_ask_min_max)</a>
@@ -11175,6 +11314,10 @@
         <li><a href="3_api_reference/core.html#nautilus_trader.core.fsm.InvalidStateTrigger.with_traceback">(InvalidStateTrigger method)</a>
 </li>
       </ul></li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.external.core.write_parquet">write_parquet() (in module nautilus_trader.persistence.external.core)</a>
+</li>
+      <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.external.core.write_tables">write_tables() (in module nautilus_trader.persistence.external.core)</a>
+</li>
   </ul></td>
 </tr></table>
 
