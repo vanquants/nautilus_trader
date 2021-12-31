@@ -462,6 +462,12 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.accounting">
 <span id="accounting"></span><h1>Accounting<a class="headerlink" href="#module-nautilus_trader.accounting" title="Permalink to this headline">¶</a></h1>
+<p>The <cite>accounts</cite> subpackage defines both different account types and account management machinery.</p>
+<p>There is also an <cite>ExchangeRateCalculator</cite> for calculating the exchange rate between FX and/or crypto
+pairs. The <cite>AccountManager</cite> is mainly used from the <cite>Portfolio</cite> to manage accounting operations.</p>
+<p>The <cite>AccountFactory</cite> supports customized account types for specific integrations. These custom
+account types can be registered with the factory and will then be instantiated when an <cite>AccountState</cite>
+event is received for that integration.</p>
 <div class="section" id="module-nautilus_trader.accounting.accounts.cash">
 <span id="cash-account"></span><h2>Cash Account<a class="headerlink" href="#module-nautilus_trader.accounting.accounts.cash" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">

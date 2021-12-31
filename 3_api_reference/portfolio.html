@@ -419,6 +419,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Portfolio
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Portfolio
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-nautilus_trader.portfolio.base">
+   Base Classes
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -427,9 +450,13 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.portfolio.portfolio">
-<span id="portfolio"></span><h1>Portfolio<a class="headerlink" href="#module-nautilus_trader.portfolio.portfolio" title="Permalink to this headline">¶</a></h1>
-<p>The <cite>Portfolio</cite> facilitates the management of trading operations.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.portfolio">
+<span id="portfolio"></span><h1>Portfolio<a class="headerlink" href="#module-nautilus_trader.portfolio" title="Permalink to this headline">¶</a></h1>
+<p>The <cite>portfolio</cite> subpackage provides portfolio management functionality.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>Portfolio<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-nautilus_trader.portfolio.portfolio"></span><p>The <cite>Portfolio</cite> facilitates the management of trading operations.</p>
 <p>The intended use case is for a single <code class="docutils literal notranslate"><span class="pre">Portfolio</span></code> instance per running system,
 a fleet of trading strategies will organize around a portfolio with the help
 of the <cite>Trader`</cite> class.</p>
@@ -438,7 +465,7 @@ total risk exposures and total net positions.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.portfolio.portfolio.Portfolio">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Portfolio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CacheFacade</span> <span class="pre">cache</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Clock</span> <span class="pre">clock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Logger</span> <span class="pre">logger=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.portfolio.portfolio.Portfolio" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.portfolio.base.PortfolioFacade</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.portfolio.base.PortfolioFacade" title="nautilus_trader.portfolio.base.PortfolioFacade"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.portfolio.base.PortfolioFacade</span></code></a></p>
 <p>Provides a trading portfolio.</p>
 <p>Currently there is a limitation of one account per <code class="docutils literal notranslate"><span class="pre">ExecutionClient</span></code>
 instance.</p>
@@ -794,6 +821,105 @@ a market quote update.</p>
 </dl>
 </dd>
 </dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.portfolio.base">
+<span id="base-classes"></span><h1>Base Classes<a class="headerlink" href="#module-nautilus_trader.portfolio.base" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="nautilus_trader.portfolio.base.PortfolioFacade">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PortfolioFacade</span></span><a class="headerlink" href="#nautilus_trader.portfolio.base.PortfolioFacade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides a read-only facade for a <cite>Portfolio</cite>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.portfolio.base.PortfolioFacade.account">
+<span class="sig-name descname"><span class="pre">account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Venue</span> <span class="pre">venue</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Account</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.base.PortfolioFacade.account" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.portfolio.base.PortfolioFacade.balances_locked">
+<span class="sig-name descname"><span class="pre">balances_locked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Venue</span> <span class="pre">venue</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.base.PortfolioFacade.balances_locked" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.portfolio.base.PortfolioFacade.initialized">
+<span class="sig-name descname"><span class="pre">initialized</span></span><a class="headerlink" href="#nautilus_trader.portfolio.base.PortfolioFacade.initialized" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the portfolio is initialized.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>bool</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.portfolio.base.PortfolioFacade.is_completely_flat">
+<span class="sig-name descname"><span class="pre">is_completely_flat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.base.PortfolioFacade.is_completely_flat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.portfolio.base.PortfolioFacade.is_flat">
+<span class="sig-name descname"><span class="pre">is_flat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.base.PortfolioFacade.is_flat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.portfolio.base.PortfolioFacade.is_net_long">
+<span class="sig-name descname"><span class="pre">is_net_long</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.base.PortfolioFacade.is_net_long" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.portfolio.base.PortfolioFacade.is_net_short">
+<span class="sig-name descname"><span class="pre">is_net_short</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.base.PortfolioFacade.is_net_short" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.portfolio.base.PortfolioFacade.margins_init">
+<span class="sig-name descname"><span class="pre">margins_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Venue</span> <span class="pre">venue</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.base.PortfolioFacade.margins_init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.portfolio.base.PortfolioFacade.margins_maint">
+<span class="sig-name descname"><span class="pre">margins_maint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Venue</span> <span class="pre">venue</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.base.PortfolioFacade.margins_maint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.portfolio.base.PortfolioFacade.net_exposure">
+<span class="sig-name descname"><span class="pre">net_exposure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Money</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.base.PortfolioFacade.net_exposure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.portfolio.base.PortfolioFacade.net_exposures">
+<span class="sig-name descname"><span class="pre">net_exposures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Venue</span> <span class="pre">venue</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.base.PortfolioFacade.net_exposures" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.portfolio.base.PortfolioFacade.net_position">
+<span class="sig-name descname"><span class="pre">net_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.portfolio.base.PortfolioFacade.net_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.portfolio.base.PortfolioFacade.unrealized_pnl">
+<span class="sig-name descname"><span class="pre">unrealized_pnl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Money</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.base.PortfolioFacade.unrealized_pnl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.portfolio.base.PortfolioFacade.unrealized_pnls">
+<span class="sig-name descname"><span class="pre">unrealized_pnls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Venue</span> <span class="pre">venue</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.portfolio.base.PortfolioFacade.unrealized_pnls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method (implement in subclass).</p>
 </dd></dl>
 
 </dd></dl>
