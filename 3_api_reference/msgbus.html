@@ -26,8 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -40,7 +40,7 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
@@ -52,7 +52,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Network" href="network.html" />
-    <link rel="prev" title="Model" href="model.html" />
+    <link rel="prev" title="Tick Scheme" href="model/tick_scheme.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -196,10 +196,72 @@
      Live
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="model.html">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="model/0_index.html">
      Model
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/commands.html">
+       Commands
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/currency.html">
+       Currency
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/data.html">
+       Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/events.html">
+       Events
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/identifiers.html">
+       Identifiers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/instruments.html">
+       Instruments
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/objects.html">
+       Objects
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/orderbook.html">
+       Order Book
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/orders.html">
+       Orders
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/position.html">
+       Position
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/tick_scheme.html">
+       Tick Scheme
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
@@ -237,8 +299,8 @@
   <a class="reference internal" href="../4_integrations/0_index.html">
    Integrations
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -311,9 +373,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/3_api_reference/msgbus.rst"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/3_api_reference/msgbus.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.rst</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -378,8 +440,9 @@
         
               <div>
                 
-  <div class="section" id="module-nautilus_trader.msgbus">
+  <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.msgbus">
 <span id="message-bus"></span><h1>Message Bus<a class="headerlink" href="#module-nautilus_trader.msgbus" title="Permalink to this headline">¶</a></h1>
+<p>Defines a universal message bus for connecting system components in a loosely coupled way.</p>
 <div class="section" id="id1">
 <h2>Message Bus<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-nautilus_trader.msgbus.bus"></span><dl class="py class">
@@ -404,15 +467,22 @@ example, <cite>comp*</cite> matches anything beginning with <cite>comp</cite> wh
 For example, <cite>c??p</cite> would match both of the above examples and <cite>coop</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>trader_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId"><em>TraderId</em></a>) – The trader ID associated with the message bus.</p></li>
-<li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the message bus.</p></li>
-<li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the message bus.</p></li>
-<li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – The custom name for the message bus.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>trader_id</strong><span class="classifier">TraderId</span></dt><dd><p>The trader ID associated with the message bus.</p>
+</dd>
+<dt><strong>clock</strong><span class="classifier">Clock</span></dt><dd><p>The clock for the message bus.</p>
+</dd>
+<dt><strong>logger</strong><span class="classifier">Logger</span></dt><dd><p>The logger for the message bus.</p>
+</dd>
+<dt><strong>name</strong><span class="classifier">str, optional</span></dt><dd><p>The custom name for the message bus.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>name</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and not a valid string.</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>name</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and not a valid string.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -426,18 +496,24 @@ as the event loop.</p>
 <dd><p>Deregister the given <cite>handler</cite> from the <cite>endpoint</cite> address.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>endpoint</strong> (<em>str</em>) – The endpoint address to deregister.</p></li>
-<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The handler to deregister.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>endpoint</strong><span class="classifier">str</span></dt><dd><p>The endpoint address to deregister.</p>
+</dd>
+<dt><strong>handler</strong><span class="classifier">Callable[[Any], None]</span></dt><dd><p>The handler to deregister.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If <cite>endpoint</cite> is not a valid string.</p></li>
-<li><p><strong>ValueError</strong> – If <cite>handler</cite> is not of type <cite>Callable</cite>.</p></li>
-<li><p><strong>KeyError</strong> – If <cite>endpoint</cite> is not registered.</p></li>
-<li><p><strong>ValueError</strong> – If <cite>handler</cite> is not registered at the endpoint.</p></li>
-</ul>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>endpoint</cite> is not a valid string.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>handler</cite> is not of type <cite>Callable</cite>.</p>
+</dd>
+<dt>KeyError</dt><dd><p>If <cite>endpoint</cite> is not registered.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>handler</cite> is not registered at the endpoint.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -448,7 +524,9 @@ as the event loop.</p>
 <dd><p>Return all endpoint addresses registered with the message bus.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[str]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[str]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -459,11 +537,16 @@ as the event loop.</p>
 <dd><p>If the message bus has subscribers for the give topic <cite>pattern</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>pattern</strong> (<em>str</em><em>, </em><em>optional</em>) – The topic filter. May include wildcard characters <cite>*</cite> and <cite>?</cite>.
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pattern</strong><span class="classifier">str, optional</span></dt><dd><p>The topic filter. May include wildcard characters <cite>*</cite> and <cite>?</cite>.
 If <code class="docutils literal notranslate"><span class="pre">None</span></code> then query is for <strong>all</strong> topics.</p>
 </dd>
+</dl>
+</dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>bool</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -487,10 +570,12 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 (highest first).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>topic</strong> (<em>str</em>) – The topic to publish on.</p></li>
-<li><p><strong>msg</strong> (<em>object</em>) – The message to publish.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>topic</strong><span class="classifier">str</span></dt><dd><p>The topic to publish on.</p>
+</dd>
+<dt><strong>msg</strong><span class="classifier">object</span></dt><dd><p>The message to publish.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -501,17 +586,22 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <dd><p>Register the given <cite>handler</cite> to receive messages at the <cite>endpoint</cite> address.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>endpoint</strong> (<em>str</em>) – The endpoint address to register.</p></li>
-<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The handler for the registration.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>endpoint</strong><span class="classifier">str</span></dt><dd><p>The endpoint address to register.</p>
+</dd>
+<dt><strong>handler</strong><span class="classifier">Callable[[Any], None]</span></dt><dd><p>The handler for the registration.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If <cite>endpoint</cite> is not a valid string.</p></li>
-<li><p><strong>ValueError</strong> – If <cite>handler</cite> is not of type <cite>Callable</cite>.</p></li>
-<li><p><strong>KeyError</strong> – If <cite>endpoint</cite> already registered.</p></li>
-</ul>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>endpoint</cite> is not a valid string.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>handler</cite> is not of type <cite>Callable</cite>.</p>
+</dd>
+<dt>KeyError</dt><dd><p>If <cite>endpoint</cite> already registered.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -534,10 +624,12 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <p>Will log an error if the correlation ID already exists.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>endpoint</strong> (<em>str</em>) – The endpoint address to send the request to.</p></li>
-<li><p><strong>request</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.message.Request" title="nautilus_trader.core.message.Request"><em>Request</em></a>) – The request to handle.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>endpoint</strong><span class="classifier">str</span></dt><dd><p>The endpoint address to send the request to.</p>
+</dd>
+<dt><strong>request</strong><span class="classifier">Request</span></dt><dd><p>The request to handle.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -560,7 +652,10 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <p>Will log an error if the correlation ID is not found.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>response</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.message.Response" title="nautilus_trader.core.message.Response"><em>Response</em></a>) – The response to handle</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>response</strong><span class="classifier">Response</span></dt><dd><p>The response to handle</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -571,10 +666,12 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <dd><p>Send the given message to the given <cite>endpoint</cite> address.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>endpoint</strong> (<em>str</em>) – The endpoint address to send the message to.</p></li>
-<li><p><strong>msg</strong> (<em>object</em>) – The message to send.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>endpoint</strong><span class="classifier">str</span></dt><dd><p>The endpoint address to send the message to.</p>
+</dd>
+<dt><strong>msg</strong><span class="classifier">object</span></dt><dd><p>The message to send.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -596,20 +693,25 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <dd><p>Subscribe to the given message <cite>topic</cite> with the given callback <cite>handler</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>topic</strong> (<em>str</em>) – The topic for the subscription. May include wildcard characters
-<cite>*</cite> and <cite>?</cite>.</p></li>
-<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The handler for the subscription.</p></li>
-<li><p><strong>priority</strong> (<em>int</em><em>, </em><em>optional</em>) – The priority for the subscription. Determines the ordering of
+<dd class="field-odd"><dl class="simple">
+<dt><strong>topic</strong><span class="classifier">str</span></dt><dd><p>The topic for the subscription. May include wildcard characters
+<cite>*</cite> and <cite>?</cite>.</p>
+</dd>
+<dt><strong>handler</strong><span class="classifier">Callable[[Any], None]</span></dt><dd><p>The handler for the subscription.</p>
+</dd>
+<dt><strong>priority</strong><span class="classifier">int, optional</span></dt><dd><p>The priority for the subscription. Determines the ordering of
 handlers receiving messages being processed, higher priority
-handlers will receive messages prior to lower priority handlers.</p></li>
-</ul>
+handlers will receive messages prior to lower priority handlers.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If <cite>topic</cite> is not a valid string.</p></li>
-<li><p><strong>ValueError</strong> – If <cite>handler</cite> is not of type <cite>Callable</cite>.</p></li>
-</ul>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>topic</cite> is not a valid string.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>handler</cite> is not of type <cite>Callable</cite>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -629,11 +731,16 @@ produce potential side effects for logically sound behaviour.</p>
 <dd><p>Return all subscriptions matching the given topic <cite>pattern</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>pattern</strong> (<em>str</em><em>, </em><em>optional</em>) – The topic pattern filter. May include wildcard characters <cite>*</cite> and <cite>?</cite>.
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pattern</strong><span class="classifier">str, optional</span></dt><dd><p>The topic pattern filter. May include wildcard characters <cite>*</cite> and <cite>?</cite>.
 If <code class="docutils literal notranslate"><span class="pre">None</span></code> then query is for <strong>all</strong> topics.</p>
 </dd>
+</dl>
+</dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>list[Subscription]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>list[Subscription]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -644,7 +751,9 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <dd><p>Return all topics with active subscribers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[str]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[str]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -666,17 +775,21 @@ If <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <dd><p>Unsubscribe the given callback <cite>handler</cite> from the given message <cite>topic</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>topic</strong> (<em>str</em><em>, </em><em>optional</em>) – The topic to unsubscribe from. May include wildcard characters <cite>*</cite>
-and <cite>?</cite>.</p></li>
-<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The handler for the subscription.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>topic</strong><span class="classifier">str, optional</span></dt><dd><p>The topic to unsubscribe from. May include wildcard characters <cite>*</cite>
+and <cite>?</cite>.</p>
+</dd>
+<dt><strong>handler</strong><span class="classifier">Callable[[Any], None]</span></dt><dd><p>The handler for the subscription.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If <cite>topic</cite> is not a valid string.</p></li>
-<li><p><strong>ValueError</strong> – If <cite>handler</cite> is not of type <cite>Callable</cite>.</p></li>
-</ul>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>topic</cite> is not a valid string.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>handler</cite> is not of type <cite>Callable</cite>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -695,18 +808,24 @@ and <cite>?</cite>.</p></li>
 topics and their subscribers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>topic</strong> (<em>str</em>) – The topic for the subscription. May include wildcard characters <cite>*</cite> and <cite>?</cite>.</p></li>
-<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="core.html#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><em>Message</em></a><em>]</em><em>, </em><em>None</em><em>]</em>) – The handler for the subscription.</p></li>
-<li><p><strong>priority</strong> (<em>int</em>) – The priority for the subscription.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>topic</strong><span class="classifier">str</span></dt><dd><p>The topic for the subscription. May include wildcard characters <cite>*</cite> and <cite>?</cite>.</p>
+</dd>
+<dt><strong>handler</strong><span class="classifier">Callable[[Message], None]</span></dt><dd><p>The handler for the subscription.</p>
+</dd>
+<dt><strong>priority</strong><span class="classifier">int</span></dt><dd><p>The priority for the subscription.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If <cite>topic</cite> is not a valid string.</p></li>
-<li><p><strong>ValueError</strong> – If <cite>handler</cite> is not of type <cite>Callable</cite>.</p></li>
-<li><p><strong>ValueError</strong> – If <cite>priority</cite> is negative (&lt; 0).</p></li>
-</ul>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>topic</cite> is not a valid string.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>handler</cite> is not of type <cite>Callable</cite>.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>priority</cite> is negative (&lt; 0).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -775,11 +894,11 @@ priority is not considered (and could change).</p>
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="model.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="model/tick_scheme.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Model</p>
+            <p class="prev-next-title">Tick Scheme</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="network.html" title="next page">

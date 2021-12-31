@@ -1,0 +1,1157 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; NautilusTrader</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="API Reference" href="../3_api_reference/0_index.html" />
+    <link rel="prev" title="Core Concepts" href="1_core_concepts.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/nautilus.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">NautilusTrader</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../1_getting_started/0_index.html">
+   Getting Started
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1_getting_started/1_installation.html">
+     Installation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="0_index.html">
+   User Guide
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1_core_concepts.html">
+     Core Concepts
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../3_api_reference/0_index.html">
+   API Reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3_api_reference/accounting.html">
+     Accounting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3_api_reference/analysis.html">
+     Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3_api_reference/backtest.html">
+     Backtest
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3_api_reference/cache.html">
+     Cache
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3_api_reference/common.html">
+     Common
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3_api_reference/core.html">
+     Core
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3_api_reference/data.html">
+     Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3_api_reference/execution.html">
+     Execution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3_api_reference/indicators.html">
+     Indicators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3_api_reference/infrastructure.html">
+     Infrastructure
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3_api_reference/live.html">
+     Live
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../3_api_reference/model/0_index.html">
+     Model
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../3_api_reference/model/commands.html">
+       Commands
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../3_api_reference/model/currency.html">
+       Currency
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../3_api_reference/model/data.html">
+       Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../3_api_reference/model/events.html">
+       Events
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../3_api_reference/model/identifiers.html">
+       Identifiers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../3_api_reference/model/instruments.html">
+       Instruments
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../3_api_reference/model/objects.html">
+       Objects
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../3_api_reference/model/orderbook.html">
+       Order Book
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../3_api_reference/model/orders.html">
+       Orders
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../3_api_reference/model/position.html">
+       Position
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../3_api_reference/model/tick_scheme.html">
+       Tick Scheme
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3_api_reference/msgbus.html">
+     Message Bus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3_api_reference/network.html">
+     Network
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3_api_reference/portfolio.html">
+     Portfolio
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3_api_reference/risk.html">
+     Risk
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3_api_reference/serialization.html">
+     Serialization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3_api_reference/trading.html">
+     Trading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../4_integrations/0_index.html">
+   Integrations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4_integrations/betfair.html">
+     Betfair
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4_integrations/binance.html">
+     Binance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4_integrations/ftx.html">
+     FTX
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4_integrations/ib.html">
+     Interactive Brokers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5_developer_guide/0_index.html">
+   Developer Guide
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/2_user_guide/2_backtest_example.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/nautechsystems/nautilus_trader"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/nautechsystems/nautilus_trader/issues/new?title=Issue%20on%20page%20%2F2_user_guide/2_backtest_example.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <dl>
+<dt>{</dt><dd><dl>
+<dt>“cells”: [</dt><dd><dl>
+<dt>{</dt><dd><p>“cell_type”: “markdown”,
+“id”: “1781c982-1086-44e3-8a2e-5a8d662224fc”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“# Complete Backtest Examplen”,
+“n”,
+“This notebook runs through a complete backtest example using raw data (external to nautilus) to a parameterised run “</p>
+</div></blockquote>
+<p>]</p>
+</dd>
+</dl>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“id”: “c5054869-9f66-4782-99a8-5ba7c4b3fb3c”,
+“metadata”: {</p>
+<blockquote>
+<div><p>“tags”: []</p>
+</div></blockquote>
+<p>},
+“source”: [</p>
+<blockquote>
+<div><p>“## Getting some raw datan”,
+“n”,
+“Before we start the notebook - as a once off we need to download some sample data for backtestingn”,
+“n”,
+“For this notebook we will use Forex data from <cite>histdata.com</cite>, simply go to <a class="reference external" href="https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/">https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/</a> and select a Forex pair and one or more months of data to download.n”,
+“n”,
+“Once you have downloaded the data, set the variable <cite>DATA_DIR</cite> below to the directory containing the data. By default it will use the users <cite>Downloads</cite> directory.”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: null,
+“id”: “b6da34f0-9e47-4de2-9f30-68b2725a3ce6”,
+“metadata”: {},
+“outputs”: [],
+“source”: [</p>
+<blockquote>
+<div><p>“DATA_DIR = &quot;~/Downloads/&quot;”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“id”: “de2ed543-97c1-42b6-82d9-82bd3cb6fc2c”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“Run the cell below; you should see the files that you downloaded”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: null,
+“id”: “152a5cdc-f3d8-4b7e-9bd1-87241cd99967”,
+“metadata”: {},
+“outputs”: [],
+“source”: [</p>
+<blockquote>
+<div><p>“import fsspecn”,
+“fs = fsspec.filesystem(‘file’)n”,
+“raw_files = fs.glob(f&quot;{DATA_DIR}/HISTDATA*&quot;)n”,
+“assert raw_files, f&quot;Unable to find any histdata files in directory {DATA_DIR}&quot;n”,
+“raw_files”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“id”: “a4be5c96-3d1b-40f9-a6ee-6f19f84d0439”,
+“metadata”: {</p>
+<blockquote>
+<div><p>“tags”: []</p>
+</div></blockquote>
+<p>},
+“source”: [</p>
+<blockquote>
+<div><p>“## The Data Catalogn”,
+“n”,
+“Next we will load this raw data into the data catalog. The data catalog is a central store for Nautilus data, persisted in the [Parquet](<a class="reference external" href="https://parquet.apache.org">https://parquet.apache.org</a>) file format.n”,
+“n”,
+“We have chosen parquet as the storage format for the following reasons:n”,
+“- It performs much better than CSV/JSON/HDF5/etc in terms of compression (storage size) and read performance.n”,
+“- It does not require any separate running components (for example a database).n”,
+“- It is quick and simple for someone to get up and running with.”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“id”: “28863c1c-5161-4a5a-880c-f21ea82d6c9e”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“## Loading data into the catalogn”,
+“n”,
+“We can load data from various sources into the data catalog using helper methods in the <cite>nautilus_trader.persistence.external.readers</cite> module. The module contains methods for reading various data formats (csv, json, txt), minimising the amount of code required to get data loaded correctly into the data catalog.n”,
+“n”,
+“The Forex data from <cite>histdata</cite> is stored in csv/text format, with fields <cite>timestamp, bid_price, ask_price</cite>. To load the data into the catalog, we simply write a function that converts each row into a Nautilus object (in this case, a <cite>QuoteTick</cite>). For this example, we will use the <cite>TextReader</cite> helper, which allows reading and applying a parsing function line by line.n”,
+“n”,
+“Then, we simply instantiate a data catalog (passing in a directory where to store the data, by default we will just use the current directory) and pass our parsing function wrapping in the Reader class to <cite>process_files</cite>. We also need to know about which instrument this data is for; in this example, we will simply use one of the Nautilus test helpers to create a Forex instrument.n”,
+“n”,
+“It should only take a couple of minutes to load the data (depending on how many months).”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: null,
+“id”: “83ee13a6-5578-4b32-a75c-3a376d6e971e”,
+“metadata”: {},
+“outputs”: [],
+“source”: [</p>
+<blockquote>
+<div><p>“import datetimen”,
+“import pandas as pdn”,
+“n”,
+“from nautilus_trader.persistence.catalog import DataCatalogn”,
+“from nautilus_trader.persistence.external.core import process_files, write_objectsn”,
+“from nautilus_trader.persistence.external.readers import TextReadern”,
+“n”,
+“from nautilus_trader.model.data.tick import QuoteTickn”,
+“from nautilus_trader.model.objects import Price, Quantityn”,
+“from nautilus_trader.core.datetime import dt_to_unix_nanosn”,
+“n”,
+“n”,
+“from nautilus_trader.backtest.data.providers import TestInstrumentProvider”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: null,
+“id”: “d8213a82-3663-412a-aac4-7b93ea1cc358”,
+“metadata”: {},
+“outputs”: [],
+“source”: [</p>
+<blockquote>
+<div><p>“def parser(line):n”,
+”    ts, bid, ask, idx = line.split(b&quot;,&quot;)n”,
+”    dt = pd.Timestamp(datetime.datetime.strptime(ts.decode(), &quot;%Y%m%d %H%M%S%f&quot;), tz=’UTC’)n”,
+”    yield QuoteTick(n”,
+”        instrument_id=AUDUSD.id,n”,
+”        bid=Price.from_str(bid.decode()),n”,
+”        ask=Price.from_str(ask.decode()),n”,
+”        bid_size=Quantity.from_int(100_000),n”,
+”        ask_size=Quantity.from_int(100_000),n”,
+”        ts_event=dt_to_unix_nanos(dt),n”,
+”        ts_init=dt_to_unix_nanos(dt),n”,
+”    )”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“id”: “1a33829d-9f1b-4bbd-89fa-7ffc8e9772fa”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“We’ll set up a catalog in the current working directory”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: null,
+“id”: “151e6e66-43ee-4b7e-a22e-41659f19d4b8”,
+“metadata”: {},
+“outputs”: [],
+“source”: [</p>
+<blockquote>
+<div><p>“import os, shutiln”,
+“CATALOG_PATH = os.getcwd() + &quot;/catalog&quot;n”,
+“n”,
+“# Clear if it already exists, then create freshn”,
+“if os.path.exists(CATALOG_PATH):n”,
+”    shutil.rmtree(CATALOG_PATH)n”,
+“os.mkdir(CATALOG_PATH)”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: null,
+“id”: “a3ced2c7-5776-4f8e-954d-fe1102303d80”,
+“metadata”: {},
+“outputs”: [],
+“source”: [</p>
+<blockquote>
+<div><p>“AUDUSD = TestInstrumentProvider.default_fx_ccy(&quot;AUD/USD&quot;)n”,
+“n”,
+“catalog = DataCatalog(CATALOG_PATH)n”,
+“n”,
+“process_files(n”,
+”    glob_path=f&quot;{DATA_DIR}/HISTDATA*.zip&quot;,n”,
+”    reader=TextReader(line_parser=parser),n”,
+”    catalog=catalog,n”,
+“)n”,
+“n”,
+“# Also manually write the AUDUSD instrument to the catalogn”,
+“write_objects(catalog, [AUDUSD])”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“id”: “ad998911-7ed2-43c8-98c5-b35059edfca0”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“## Using the Data Catalog n”,
+“n”,
+“Once data has been loaded into the catalog, the <cite>catalog</cite> instance can be used for loading data into the backtest engine, or simple for research purposes. It contains various methods to pull data from the catalog, like <cite>quote_ticks</cite> (show below))”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: null,
+“id”: “99722f39-474d-4101-a898-9a07ef10261a”,
+“metadata”: {},
+“outputs”: [],
+“source”: [</p>
+<blockquote>
+<div><p>“catalog.instruments()”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: null,
+“id”: “a4807b41-e5d0-4d65-8cce-51d75bf50b37”,
+“metadata”: {},
+“outputs”: [],
+“source”: [</p>
+<blockquote>
+<div><p>“start = dt_to_unix_nanos(pd.Timestamp(‘2020-01-01’, tz=’UTC’))n”,
+“end =  dt_to_unix_nanos(pd.Timestamp(‘2020-01-02’, tz=’UTC’))n”,
+“n”,
+“catalog.quote_ticks(start=start, end=end)”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“id”: “2b203768-9711-4523-9ca6-5937a073b2f5”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“## Configuring backtestsn”,
+“n”,
+“Nautilus has a top level object <cite>BacktestRunConfig</cite> that allows configuring a backtest in one place. It is a <cite>Partialable</cite> object (which means it can be configured in stages); the benefits of which are reduced boilerplate code when creating multiple backtest runs (for example when doing some sort of grid search over parameters).n”,
+“n”,
+“### Staring with a Venuen”,
+“n”,
+“We can start partially configuring the config with just a Venue:”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: null,
+“id”: “f8ff310d-67c9-47c4-8f16-6eb7515a6693”,
+“metadata”: {},
+“outputs”: [],
+“source”: [</p>
+<blockquote>
+<div><p>“from nautilus_trader.backtest.config import BacktestRunConfig, BacktestVenueConfig, BacktestDataConfig, BacktestEngineConfign”,
+“from nautilus_trader.model.currencies import USDn”,
+“n”,
+“# Create a <cite>base</cite> config object to be shared with all backtestsn”,
+“base = BacktestRunConfig(n”,
+”    venues=[n”,
+”        BacktestVenueConfig(n”,
+”            name=&quot;SIM&quot;,n”,
+”            venue_type=&quot;ECN&quot;,n”,
+”            oms_type=&quot;HEDGING&quot;,n”,
+”            account_type=&quot;MARGIN&quot;,n”,
+”            base_currency=&quot;USD&quot;,n”,
+”            starting_balances=[&quot;1000000 USD&quot;],n”,
+”        )n”,
+”    ]n”,
+“)n”,
+“base”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“id”: “bb055fb4-c55d-4b6b-88c2-7b1028ba2c2e”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“### Adding Datan”,
+“n”,
+“Notice many of the fields are <cite>None</cite> - we can continue to configure the backtest via <cite>update</cite>.n”,
+“n”,
+“The <cite>data_config</cite> arg allows adding multiple data types (<cite>quotes</cite>, <cite>trades</cite>, <cite>generic_data</cite>), but for this example, we will simply load the quote ticks we added earlier.”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: null,
+“id”: “3d207cac-9680-4b79-a34c-d88ae83d64f9”,
+“metadata”: {},
+“outputs”: [],
+“source”: [</p>
+<blockquote>
+<div><p>“instrument = catalog.instruments(as_nautilus=True)[0]n”,
+“n”,
+“data_config=[n”,
+”    BacktestDataConfig(n”,
+”        catalog_path=CATALOG_PATH,n”,
+”        data_type=QuoteTick,n”,
+”        instrument_id=instrument.id.value,n”,
+”        start_time=1580398089820000000,n”,
+”        end_time=1580504394501000000,n”,
+”    )n”,
+“]n”,
+“n”,
+“config = base.update(n”,
+”    data=data_config,n”,
+”    engine=BacktestEngineConfig()n”,
+“)n”,
+“n”,
+“config”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“id”: “c87052af-e9d4-412c-a9ac-31d4e1ddbb21”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“### Finally, add Strategy instancesn”,
+“n”,
+“We can perform a grid-search of some parameters by using the <cite>replace</cite> method, which returns a new copy of the config. We use the <cite>ImportableStrategyConfig</cite> object to tell nautilus where the <cite>TradingStrategy</cite> class exists, and add some config “</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: null,
+“id”: “68e9fdaf-81a7-4297-9fbc-e119ce2383ac”,
+“metadata”: {},
+“outputs”: [],
+“source”: [</p>
+<blockquote>
+<div><p>“from decimal import Decimaln”,
+“from nautilus_trader.trading.config import ImportableStrategyConfign”,
+“from nautilus_trader.examples.strategies.ema_cross import EMACrossConfign”,
+“n”,
+“n”,
+“PARAM_SET = [n”,
+”    {&quot;fast_ema&quot;: 5, &quot;slow_ema&quot;: 20},n”,
+”    {&quot;fast_ema&quot;: 10, &quot;slow_ema&quot;: 50},n”,
+”    {&quot;fast_ema&quot;: 30, &quot;slow_ema&quot;: 100},n”,
+“]n”,
+“n”,
+“configs = []n”,
+“for params in PARAM_SET:n”,
+”    strategies = [n”,
+”        ImportableStrategyConfig(n”,
+”            path=&quot;examples.strategies.ema_cross_simple:EMACross&quot;,n”,
+”            config=EMACrossConfig(n”,
+”                instrument_id=instrument.id.value,n”,
+”                bar_type=’AUD/USD.SIM-15-MINUTE-BID-INTERNAL’,n”,
+”                trade_size=Decimal(1_000_000),n”,
+”                <a href="#id1"><span class="problematic" id="id2">**</span></a>paramsn”,
+”            ),n”,
+”        ),n”,
+”    ]n”,
+”    # Create the final confign”,
+”    new = config.replace(strategies=strategies)n”,
+”    n”,
+”    configs.append(new)”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“id”: “91da0230-1e6a-45e2-a3c5-3ca0ce2cf42e”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“### This gives us 3 parameter sets to backtest”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: null,
+“id”: “2373e861-b1d1-4882-ba15-29d29b464ecd”,
+“metadata”: {},
+“outputs”: [],
+“source”: [</p>
+<blockquote>
+<div><p>“print(&quot;\n\n&quot;.join(map(str, configs)))”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“id”: “54051792-91e7-4c99-b0f2-17810d4ab8f9”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“# Run the backtestn”,
+“n”,
+“Finally, we can create a BacktestNode and run the backtest”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: null,
+“id”: “f16ff626-6bde-457a-9be0-973ab067dcd3”,
+“metadata”: {},
+“outputs”: [],
+“source”: [</p>
+<blockquote>
+<div><p>“from nautilus_trader.backtest.node import BacktestNoden”,
+“node = BacktestNode()”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: null,
+“id”: “cdd5e6c0-2518-4308-92af-1ecf26b4aa6e”,
+“metadata”: {},
+“outputs”: [],
+“source”: [</p>
+<blockquote>
+<div><p>“task = node.build_graph(run_configs=configs)n”,
+“task”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: null,
+“id”: “1ec06050-5e35-40f0-9ed4-c20b7f77bccf”,
+“metadata”: {},
+“outputs”: [],
+“source”: [</p>
+<blockquote>
+<div><p>“# Visualising the graph requires graphviz - <cite>%pip install graphviz</cite> in a notebook cell to install itn”,
+“n”,
+“# task.visualize(rankdir=’LR’) “</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“id”: “e380542f-8496-4178-9efa-985d2f573d67”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“^ Notice because our configs share the same data that only one instance of <cite>load</cite> is required”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“id”: “39553f8b-2976-4a22-ad69-2329c01e8b0f”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“### Start up a local dask cluster to execute the graph”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: null,
+“id”: “1b6e2935-17c6-40d9-9a08-ef011df19631”,
+“metadata”: {},
+“outputs”: [],
+“source”: [</p>
+<blockquote>
+<div><p>“# Create a local dask client - not a requirement, but allows parallelising the runsn”,
+“from distributed import Clientn”,
+“client = Client(n_workers=2)n”,
+“client”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“id”: “3995677b-e48a-4d4c-8457-e51e93175592”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“### Run the backtests!”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: null,
+“id”: “d767c12d-8322-4671-a03a-07fa396af1b0”,
+“metadata”: {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>“jupyter”: {</dt><dd><p>“outputs_hidden”: true</p>
+</dd>
+</dl>
+<p>},
+“tags”: []</p>
+</div></blockquote>
+<p>},
+“outputs”: [],
+“source”: [</p>
+<blockquote>
+<div><p>“results = task.compute()”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“id”: “ac35bd5f-3b5b-4b4f-a173-d4ebd198994c”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“### Compare the results”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: null,
+“id”: “d3ac8fb0-a06c-49fb-99eb-8dedba4f4b74”,
+“metadata”: {},
+“outputs”: [],
+“source”: [</p>
+<blockquote>
+<div><p>“results.plot_balances()”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: null,
+“id”: “a5e1e0a2”,
+“metadata”: {},
+“outputs”: [],
+“source”: []</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+<p>],
+“metadata”: {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>“kernelspec”: {</dt><dd><p>“display_name”: “Python (nautilus_trader)”,
+“language”: “python”,
+“name”: “nautilus_trader”</p>
+</dd>
+</dl>
+<p>},
+“language_info”: {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>“codemirror_mode”: {</dt><dd><p>“name”: “ipython”,
+“version”: 3</p>
+</dd>
+</dl>
+<p>},
+“file_extension”: “.py”,
+“mimetype”: “text/x-python”,
+“name”: “python”,
+“nbconvert_exporter”: “python”,
+“pygments_lexer”: “ipython3”,
+“version”: “3.9.6”</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>},
+“nbformat”: 4,
+“nbformat_minor”: 5</p>
+</dd>
+</dl>
+<p>}</p>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "nautechsystems/nautilus_trader",
+            ref: "dev",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./2_user_guide"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="1_core_concepts.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Core Concepts</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../3_api_reference/0_index.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">API Reference</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Nautech Systems Pty Ltd.<br/>
+        
+            &copy; Copyright 2015-2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

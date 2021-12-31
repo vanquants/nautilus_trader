@@ -26,8 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -40,7 +40,7 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
@@ -196,10 +196,72 @@
      Live
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="model.html">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="model/0_index.html">
      Model
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/commands.html">
+       Commands
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/currency.html">
+       Currency
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/data.html">
+       Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/events.html">
+       Events
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/identifiers.html">
+       Identifiers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/instruments.html">
+       Instruments
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/objects.html">
+       Objects
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/orderbook.html">
+       Order Book
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/orders.html">
+       Orders
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/position.html">
+       Position
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/tick_scheme.html">
+       Tick Scheme
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="msgbus.html">
@@ -237,8 +299,8 @@
   <a class="reference internal" href="../4_integrations/0_index.html">
    Integrations
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -311,9 +373,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/3_api_reference/data.rst"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/3_api_reference/data.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.rst</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -393,7 +455,7 @@
         
               <div>
                 
-  <div class="section" id="module-nautilus_trader.data">
+  <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.data">
 <span id="data"></span><h1>Data<a class="headerlink" href="#module-nautilus_trader.data" title="Permalink to this headline">¶</a></h1>
 <p>The <cite>data</cite> subpackage groups components relating to the data stack for the platform.</p>
 <p>The layered architecture of the data stack somewhat mirrors the
@@ -411,15 +473,22 @@ trading operations.</p>
 <p>Provides a means of aggregating specified bars and sending to a registered handler.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the aggregator.</p></li>
-<li><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type for the aggregator.</p></li>
-<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a><em>]</em><em>, </em><em>None</em><em>]</em>) – The bar handler for the aggregator.</p></li>
-<li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the aggregator.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument for the aggregator.</p>
+</dd>
+<dt><strong>bar_type</strong><span class="classifier">BarType</span></dt><dd><p>The bar type for the aggregator.</p>
+</dd>
+<dt><strong>handler</strong><span class="classifier">Callable[[Bar], None]</span></dt><dd><p>The bar handler for the aggregator.</p>
+</dd>
+<dt><strong>logger</strong><span class="classifier">Logger</span></dt><dd><p>The logger for the aggregator.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>instrument.id</cite> != <cite>bar_type.instrument_id</cite>.</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>instrument.id</cite> != <cite>bar_type.instrument_id</cite>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -439,7 +508,10 @@ trading operations.</p>
 <dd><p>Update the aggregator with the given tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a>) – The tick for the update.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">QuoteTick</span></dt><dd><p>The tick for the update.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -450,7 +522,10 @@ trading operations.</p>
 <dd><p>Update the aggregator with the given tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a>) – The tick for the update.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">TradeTick</span></dt><dd><p>The tick for the update.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -464,13 +539,18 @@ trading operations.</p>
 <p>Provides a generic bar builder for aggregation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the builder.</p></li>
-<li><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type for the builder.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument for the builder.</p>
+</dd>
+<dt><strong>bar_type</strong><span class="classifier">BarType</span></dt><dd><p>The bar type for the builder.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>instrument.id</cite> != <cite>bar_type.instrument_id</cite>.</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>instrument.id</cite> != <cite>bar_type.instrument_id</cite>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -479,10 +559,15 @@ trading operations.</p>
 <dd><p>Return the aggregated bar with the given closing timestamp, and reset.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>ts_event</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) of the bar close.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ts_event</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) of the bar close.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Bar</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>Bar</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -493,7 +578,9 @@ trading operations.</p>
 <dd><p>Return the aggregated bar and reset.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>Bar</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>Bar</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -545,7 +632,10 @@ trading operations.</p>
 <p>This method can only be called once per instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>partial_bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The partial bar with values to set.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>partial_bar</strong><span class="classifier">Bar</span></dt><dd><p>The partial bar with values to set.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -578,11 +668,14 @@ trading operations.</p>
 <dd><p>Update the bar builder.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>price</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The update price.</p></li>
-<li><p><strong>size</strong> (<em>Decimal</em>) – The update size.</p></li>
-<li><p><strong>ts_event</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) of the update.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>price</strong><span class="classifier">Price</span></dt><dd><p>The update price.</p>
+</dd>
+<dt><strong>size</strong><span class="classifier">Decimal</span></dt><dd><p>The update size.</p>
+</dd>
+<dt><strong>ts_event</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) of the update.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -596,18 +689,24 @@ trading operations.</p>
 <p>Provides a temporary builder for tick bars from a bulk tick order.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the aggregator.</p></li>
-<li><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar_type to build.</p></li>
-<li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the bar aggregator.</p></li>
-<li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a><em>]</em><em>, </em><em>None</em><em>]</em>) – The delegate to call with the built bars.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument for the aggregator.</p>
+</dd>
+<dt><strong>bar_type</strong><span class="classifier">BarType</span></dt><dd><p>The bar_type to build.</p>
+</dd>
+<dt><strong>logger</strong><span class="classifier">Logger</span></dt><dd><p>The logger for the bar aggregator.</p>
+</dd>
+<dt><strong>callback</strong><span class="classifier">Callable[[Bar], None]</span></dt><dd><p>The delegate to call with the built bars.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If <cite>callback</cite> is not of type <cite>Callable</cite>.</p></li>
-<li><p><strong>ValueError</strong> – If <cite>instrument.id</cite> != <cite>bar_type.instrument_id</cite>.</p></li>
-</ul>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>callback</cite> is not of type <cite>Callable</cite>.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>instrument.id</cite> != <cite>bar_type.instrument_id</cite>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -617,7 +716,10 @@ trading operations.</p>
 <p>Then send the bar type and bars list on to the registered callback.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>ticks</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.tick.Tick" title="nautilus_trader.model.data.tick.Tick"><em>Tick</em></a><em>]</em>) – The ticks for aggregation.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ticks</strong><span class="classifier">list[Tick]</span></dt><dd><p>The ticks for aggregation.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -631,7 +733,10 @@ trading operations.</p>
 <p>Provides a temporary updater for time bars from a bulk tick order.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>aggregator</strong> (<a class="reference internal" href="#nautilus_trader.data.aggregation.TimeBarAggregator" title="nautilus_trader.data.aggregation.TimeBarAggregator"><em>TimeBarAggregator</em></a>) – The time bar aggregator to update.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>aggregator</strong><span class="classifier">TimeBarAggregator</span></dt><dd><p>The time bar aggregator to update.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -640,7 +745,10 @@ trading operations.</p>
 <dd><p>Receive the bulk list of ticks and update the aggregator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>ticks</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.tick.Tick" title="nautilus_trader.model.data.tick.Tick"><em>Tick</em></a><em>]</em>) – The ticks for updating.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ticks</strong><span class="classifier">list[Tick]</span></dt><dd><p>The ticks for updating.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -656,15 +764,22 @@ trading operations.</p>
 specification, then a bar is created and sent to the handler.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the aggregator.</p></li>
-<li><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type for the aggregator.</p></li>
-<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a><em>]</em><em>, </em><em>None</em><em>]</em>) – The bar handler for the aggregator.</p></li>
-<li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the aggregator.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument for the aggregator.</p>
+</dd>
+<dt><strong>bar_type</strong><span class="classifier">BarType</span></dt><dd><p>The bar type for the aggregator.</p>
+</dd>
+<dt><strong>handler</strong><span class="classifier">Callable[[Bar], None]</span></dt><dd><p>The bar handler for the aggregator.</p>
+</dd>
+<dt><strong>logger</strong><span class="classifier">Logger</span></dt><dd><p>The logger for the aggregator.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>instrument.id</cite> != <cite>bar_type.instrument_id</cite>.</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>instrument.id</cite> != <cite>bar_type.instrument_id</cite>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -684,7 +799,10 @@ specification, then a bar is created and sent to the handler.</p>
 <dd><p>Update the aggregator with the given tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a>) – The tick for the update.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">QuoteTick</span></dt><dd><p>The tick for the update.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -695,7 +813,10 @@ specification, then a bar is created and sent to the handler.</p>
 <dd><p>Update the aggregator with the given tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a>) – The tick for the update.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">TradeTick</span></dt><dd><p>The tick for the update.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -711,16 +832,24 @@ specification, then a bar is created and sent to the handler.</p>
 a bar is created and sent to the handler.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the aggregator.</p></li>
-<li><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type for the aggregator.</p></li>
-<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a><em>]</em><em>, </em><em>None</em><em>]</em>) – The bar handler for the aggregator.</p></li>
-<li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the aggregator.</p></li>
-<li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the aggregator.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument for the aggregator.</p>
+</dd>
+<dt><strong>bar_type</strong><span class="classifier">BarType</span></dt><dd><p>The bar type for the aggregator.</p>
+</dd>
+<dt><strong>handler</strong><span class="classifier">Callable[[Bar], None]</span></dt><dd><p>The bar handler for the aggregator.</p>
+</dd>
+<dt><strong>clock</strong><span class="classifier">Clock</span></dt><dd><p>The clock for the aggregator.</p>
+</dd>
+<dt><strong>logger</strong><span class="classifier">Logger</span></dt><dd><p>The logger for the aggregator.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>instrument.id</cite> != <cite>bar_type.instrument_id</cite>.</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>instrument.id</cite> != <cite>bar_type.instrument_id</cite>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -740,7 +869,10 @@ a bar is created and sent to the handler.</p>
 <dd><p>Return the start time for the aggregators next bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>datetime</em> – The timestamp (UTC).</p>
+<dd class="field-odd"><dl class="simple">
+<dt>datetime</dt><dd><p>The timestamp (UTC).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -751,7 +883,10 @@ a bar is created and sent to the handler.</p>
 <dd><p>Update the aggregator with the given tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a>) – The tick for the update.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">QuoteTick</span></dt><dd><p>The tick for the update.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -762,7 +897,10 @@ a bar is created and sent to the handler.</p>
 <dd><p>Update the aggregator with the given tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a>) – The tick for the update.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">TradeTick</span></dt><dd><p>The tick for the update.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -807,7 +945,10 @@ a bar is created and sent to the handler.</p>
 <p>This method can only be called once per instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>partial_bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The partial bar with values to set.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>partial_bar</strong><span class="classifier">Bar</span></dt><dd><p>The partial bar with values to set.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -829,15 +970,22 @@ a bar is created and sent to the handler.</p>
 specification, then a bar is created and sent to the handler.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the aggregator.</p></li>
-<li><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type for the aggregator.</p></li>
-<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a><em>]</em><em>, </em><em>None</em><em>]</em>) – The bar handler for the aggregator.</p></li>
-<li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the aggregator.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument for the aggregator.</p>
+</dd>
+<dt><strong>bar_type</strong><span class="classifier">BarType</span></dt><dd><p>The bar type for the aggregator.</p>
+</dd>
+<dt><strong>handler</strong><span class="classifier">Callable[[Bar], None]</span></dt><dd><p>The bar handler for the aggregator.</p>
+</dd>
+<dt><strong>logger</strong><span class="classifier">Logger</span></dt><dd><p>The logger for the aggregator.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>instrument.id</cite> != <cite>bar_type.instrument_id</cite>.</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>instrument.id</cite> != <cite>bar_type.instrument_id</cite>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -857,7 +1005,9 @@ specification, then a bar is created and sent to the handler.</p>
 <dd><p>Return the current cumulative value of the aggregator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>Decimal</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>Decimal</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -868,7 +1018,10 @@ specification, then a bar is created and sent to the handler.</p>
 <dd><p>Update the aggregator with the given tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a>) – The tick for the update.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">QuoteTick</span></dt><dd><p>The tick for the update.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -879,7 +1032,10 @@ specification, then a bar is created and sent to the handler.</p>
 <dd><p>Update the aggregator with the given tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a>) – The tick for the update.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">TradeTick</span></dt><dd><p>The tick for the update.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -895,15 +1051,22 @@ specification, then a bar is created and sent to the handler.</p>
 specification, then a bar is created and sent to the handler.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the aggregator.</p></li>
-<li><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type for the aggregator.</p></li>
-<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a><em>]</em><em>, </em><em>None</em><em>]</em>) – The bar handler for the aggregator.</p></li>
-<li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the aggregator.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument for the aggregator.</p>
+</dd>
+<dt><strong>bar_type</strong><span class="classifier">BarType</span></dt><dd><p>The bar type for the aggregator.</p>
+</dd>
+<dt><strong>handler</strong><span class="classifier">Callable[[Bar], None]</span></dt><dd><p>The bar handler for the aggregator.</p>
+</dd>
+<dt><strong>logger</strong><span class="classifier">Logger</span></dt><dd><p>The logger for the aggregator.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>instrument.id</cite> != <cite>bar_type.instrument_id</cite>.</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>instrument.id</cite> != <cite>bar_type.instrument_id</cite>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -923,7 +1086,10 @@ specification, then a bar is created and sent to the handler.</p>
 <dd><p>Update the aggregator with the given tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a>) – The tick for the update.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">QuoteTick</span></dt><dd><p>The tick for the update.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -934,7 +1100,10 @@ specification, then a bar is created and sent to the handler.</p>
 <dd><p>Update the aggregator with the given tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a>) – The tick for the update.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">TradeTick</span></dt><dd><p>The tick for the update.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -951,13 +1120,18 @@ specification, then a bar is created and sent to the handler.</p>
 <p>The abstract base class for all data clients.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID.</p></li>
-<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the client.</p></li>
-<li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the client.</p></li>
-<li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the client.</p></li>
-<li><p><strong>config</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>object</em><em>]</em><em>, </em><em>optional</em>) – The configuration for the instance.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client_id</strong><span class="classifier">ClientId</span></dt><dd><p>The data client ID.</p>
+</dd>
+<dt><strong>msgbus</strong><span class="classifier">MessageBus</span></dt><dd><p>The message bus for the client.</p>
+</dd>
+<dt><strong>clock</strong><span class="classifier">Clock</span></dt><dd><p>The clock for the client.</p>
+</dd>
+<dt><strong>logger</strong><span class="classifier">Logger</span></dt><dd><p>The logger for the client.</p>
+</dd>
+<dt><strong>config</strong><span class="classifier">dict[str, object], optional</span></dt><dd><p>The configuration for the instance.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -970,7 +1144,10 @@ specification, then a bar is created and sent to the handler.</p>
 <dd><p>Degrade the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -988,7 +1165,10 @@ specification, then a bar is created and sent to the handler.</p>
 called after disposal.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1006,7 +1186,10 @@ called after disposal.</p>
 called after faulting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1044,7 +1227,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DEGRADED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1055,7 +1240,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1066,7 +1253,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">FAULTED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1077,7 +1266,9 @@ called after faulting.</p>
 <dd><p>If the component has been initialized (component.state &gt;= <code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1088,7 +1279,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1099,7 +1292,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">STOPPED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1117,7 +1312,10 @@ called after faulting.</p>
 <p>All stateful fields are reset to their initial value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1133,7 +1331,10 @@ called after faulting.</p>
 <dd><p>Resume the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1149,7 +1350,10 @@ called after faulting.</p>
 <dd><p>Start the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1165,7 +1369,9 @@ called after faulting.</p>
 <dd><p>The components current state.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>ComponentState</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>ComponentState</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1176,7 +1382,10 @@ called after faulting.</p>
 <dd><p>Stop the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1198,7 +1407,9 @@ called after faulting.</p>
 <dd><p>Return the generic data types subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[DataType]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[DataType]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1240,14 +1451,20 @@ called after faulting.</p>
 <p>The abstract base class for all market data clients.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID (normally the venue).</p></li>
-<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the client.</p></li>
-<li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.cache.Cache" title="nautilus_trader.cache.cache.Cache"><em>Cache</em></a>) – The cache for the client.</p></li>
-<li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the client.</p></li>
-<li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the client.</p></li>
-<li><p><strong>config</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>object</em><em>]</em><em>, </em><em>optional</em>) – The configuration for the instance.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client_id</strong><span class="classifier">ClientId</span></dt><dd><p>The data client ID (normally the venue).</p>
+</dd>
+<dt><strong>msgbus</strong><span class="classifier">MessageBus</span></dt><dd><p>The message bus for the client.</p>
+</dd>
+<dt><strong>cache</strong><span class="classifier">Cache</span></dt><dd><p>The cache for the client.</p>
+</dd>
+<dt><strong>clock</strong><span class="classifier">Clock</span></dt><dd><p>The clock for the client.</p>
+</dd>
+<dt><strong>logger</strong><span class="classifier">Logger</span></dt><dd><p>The logger for the client.</p>
+</dd>
+<dt><strong>config</strong><span class="classifier">dict[str, object], optional</span></dt><dd><p>The configuration for the instance.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1260,7 +1477,10 @@ called after faulting.</p>
 <dd><p>Degrade the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1278,7 +1498,10 @@ called after faulting.</p>
 called after disposal.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1296,7 +1519,10 @@ called after disposal.</p>
 called after faulting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1334,7 +1560,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DEGRADED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1345,7 +1573,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1356,7 +1586,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">FAULTED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1367,7 +1599,9 @@ called after faulting.</p>
 <dd><p>If the component has been initialized (component.state &gt;= <code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1378,7 +1612,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1389,7 +1625,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">STOPPED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1425,7 +1663,10 @@ called after faulting.</p>
 <p>All stateful fields are reset to their initial value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1441,7 +1682,10 @@ called after faulting.</p>
 <dd><p>Resume the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1457,7 +1701,10 @@ called after faulting.</p>
 <dd><p>Start the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1473,7 +1720,9 @@ called after faulting.</p>
 <dd><p>The components current state.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>ComponentState</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>ComponentState</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1484,7 +1733,10 @@ called after faulting.</p>
 <dd><p>Stop the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1566,7 +1818,9 @@ called after faulting.</p>
 <dd><p>Return the bar types subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[BarType]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[BarType]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1577,7 +1831,9 @@ called after faulting.</p>
 <dd><p>Return the generic data types subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[DataType]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[DataType]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1588,7 +1844,9 @@ called after faulting.</p>
 <dd><p>Return the close price instruments subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[InstrumentId]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[InstrumentId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1599,7 +1857,9 @@ called after faulting.</p>
 <dd><p>Return the status update instruments subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[InstrumentId]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[InstrumentId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1610,7 +1870,9 @@ called after faulting.</p>
 <dd><p>Return the instruments subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[InstrumentId]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[InstrumentId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1621,7 +1883,9 @@ called after faulting.</p>
 <dd><p>Return the order book delta instruments subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[InstrumentId]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[InstrumentId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1632,7 +1896,9 @@ called after faulting.</p>
 <dd><p>Return the order book snapshot instruments subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[InstrumentId]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[InstrumentId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1643,7 +1909,9 @@ called after faulting.</p>
 <dd><p>Return the quote tick instruments subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[InstrumentId]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[InstrumentId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1654,7 +1922,9 @@ called after faulting.</p>
 <dd><p>Return the ticker instruments subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[InstrumentId]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[InstrumentId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1665,7 +1935,9 @@ called after faulting.</p>
 <dd><p>Return the trade tick instruments subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[InstrumentId]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[InstrumentId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1838,13 +2110,18 @@ just need to override the <cite>execute</cite>, <cite>process</cite>, <cite>send
 instances, for the asynchronous ingest of data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the engine.</p></li>
-<li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.cache.Cache" title="nautilus_trader.cache.cache.Cache"><em>Cache</em></a>) – The cache for the engine.</p></li>
-<li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the engine.</p></li>
-<li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the engine.</p></li>
-<li><p><strong>config</strong> (<a class="reference internal" href="#nautilus_trader.data.config.DataEngineConfig" title="nautilus_trader.data.config.DataEngineConfig"><em>DataEngineConfig</em></a><em>, </em><em>optional</em>) – The configuration for the instance.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>msgbus</strong><span class="classifier">MessageBus</span></dt><dd><p>The message bus for the engine.</p>
+</dd>
+<dt><strong>cache</strong><span class="classifier">Cache</span></dt><dd><p>The cache for the engine.</p>
+</dd>
+<dt><strong>clock</strong><span class="classifier">Clock</span></dt><dd><p>The clock for the engine.</p>
+</dd>
+<dt><strong>logger</strong><span class="classifier">Logger</span></dt><dd><p>The logger for the engine.</p>
+</dd>
+<dt><strong>config</strong><span class="classifier">DataEngineConfig, optional</span></dt><dd><p>The configuration for the instance.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -1853,7 +2130,10 @@ instances, for the asynchronous ingest of data.</p>
 <dd><p>Check all of the engines clients are connected.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if all clients connected, else False.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if all clients connected, else False.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1864,7 +2144,10 @@ instances, for the asynchronous ingest of data.</p>
 <dd><p>Check all of the engines clients are disconnected.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if all clients disconnected, else False.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if all clients disconnected, else False.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1897,7 +2180,10 @@ instances, for the asynchronous ingest of data.</p>
 <dd><p>Degrade the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1913,7 +2199,10 @@ instances, for the asynchronous ingest of data.</p>
 <dd><p>Deregister the given data client from the data engine.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>client</strong> (<a class="reference internal" href="#nautilus_trader.data.client.DataClient" title="nautilus_trader.data.client.DataClient"><em>DataClient</em></a>) – The data client to deregister.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client</strong><span class="classifier">DataClient</span></dt><dd><p>The data client to deregister.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1926,7 +2215,10 @@ instances, for the asynchronous ingest of data.</p>
 called after disposal.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1942,7 +2234,10 @@ called after disposal.</p>
 <dd><p>Execute the given data command.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>command</strong> (<a class="reference internal" href="#nautilus_trader.data.messages.DataCommand" title="nautilus_trader.data.messages.DataCommand"><em>DataCommand</em></a>) – The command to execute.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>command</strong><span class="classifier">DataCommand</span></dt><dd><p>The command to execute.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1955,7 +2250,10 @@ called after disposal.</p>
 called after faulting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1982,7 +2280,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DEGRADED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1993,7 +2293,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2004,7 +2306,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">FAULTED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2015,7 +2319,9 @@ called after faulting.</p>
 <dd><p>If the component has been initialized (component.state &gt;= <code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2026,7 +2332,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2037,7 +2345,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">STOPPED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2048,7 +2358,10 @@ called after faulting.</p>
 <dd><p>Process the given data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data</strong> (<em>Data</em>) – The data to process.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data</strong><span class="classifier">Data</span></dt><dd><p>The data to process.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2059,10 +2372,16 @@ called after faulting.</p>
 <dd><p>Register the given data client with the data engine.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>client</strong> (<a class="reference internal" href="#nautilus_trader.data.client.DataClient" title="nautilus_trader.data.client.DataClient"><em>DataClient</em></a>) – The client to register.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client</strong><span class="classifier">DataClient</span></dt><dd><p>The client to register.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>client</cite> is already registered.</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>client</cite> is already registered.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2073,7 +2392,9 @@ called after faulting.</p>
 <dd><p>Return the data clients registered with the data engine.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[ClientId]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[ClientId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2084,7 +2405,10 @@ called after faulting.</p>
 <dd><p>Handle the given request.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>request</strong> (<a class="reference internal" href="#nautilus_trader.data.messages.DataRequest" title="nautilus_trader.data.messages.DataRequest"><em>DataRequest</em></a>) – The request to handle.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>request</strong><span class="classifier">DataRequest</span></dt><dd><p>The request to handle.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2107,7 +2431,10 @@ called after faulting.</p>
 <p>All stateful fields are reset to their initial value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -2123,7 +2450,10 @@ called after faulting.</p>
 <dd><p>Handle the given response.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>response</strong> (<a class="reference internal" href="#nautilus_trader.data.messages.DataResponse" title="nautilus_trader.data.messages.DataResponse"><em>DataResponse</em></a>) – The response to handle.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>response</strong><span class="classifier">DataResponse</span></dt><dd><p>The response to handle.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2145,7 +2475,10 @@ called after faulting.</p>
 <dd><p>Resume the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -2161,7 +2494,10 @@ called after faulting.</p>
 <dd><p>Start the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -2177,7 +2513,9 @@ called after faulting.</p>
 <dd><p>The components current state.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>ComponentState</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>ComponentState</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2188,7 +2526,10 @@ called after faulting.</p>
 <dd><p>Stop the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -2204,7 +2545,9 @@ called after faulting.</p>
 <dd><p>Return the bar types subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[BarType]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[BarType]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2215,7 +2558,9 @@ called after faulting.</p>
 <dd><p>Return the generic data types subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[DataType]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[DataType]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2226,7 +2571,9 @@ called after faulting.</p>
 <dd><p>Return the close price instruments subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[InstrumentId]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[InstrumentId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2237,7 +2584,9 @@ called after faulting.</p>
 <dd><p>Return the status update instruments subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[InstrumentId]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[InstrumentId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2248,7 +2597,9 @@ called after faulting.</p>
 <dd><p>Return the instruments subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[InstrumentId]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[InstrumentId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2259,7 +2610,9 @@ called after faulting.</p>
 <dd><p>Return the order book delta instruments subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[InstrumentId]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[InstrumentId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2270,7 +2623,9 @@ called after faulting.</p>
 <dd><p>Return the order book snapshot instruments subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[InstrumentId]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[InstrumentId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2281,7 +2636,9 @@ called after faulting.</p>
 <dd><p>Return the quote tick instruments subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[InstrumentId]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[InstrumentId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2292,7 +2649,9 @@ called after faulting.</p>
 <dd><p>Return the ticker instruments subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[InstrumentId]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[InstrumentId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2303,7 +2662,9 @@ called after faulting.</p>
 <dd><p>Return the trade tick instruments subscribed to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[InstrumentId]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[InstrumentId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2342,12 +2703,16 @@ called after faulting.</p>
 <p>The abstract base class for all data commands.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID for the command.</p></li>
-<li><p><strong>data_type</strong> (<em>type</em>) – The data type for the command.</p></li>
-<li><p><strong>command_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The command ID.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client_id</strong><span class="classifier">ClientId</span></dt><dd><p>The data client ID for the command.</p>
+</dd>
+<dt><strong>data_type</strong><span class="classifier">type</span></dt><dd><p>The data type for the command.</p>
+</dd>
+<dt><strong>command_id</strong><span class="classifier">UUID4</span></dt><dd><p>The command ID.</p>
+</dd>
+<dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -2418,13 +2783,18 @@ called after faulting.</p>
 <p>Represents a request for data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID for the request.</p></li>
-<li><p><strong>data_type</strong> (<em>type</em>) – The data type for the request.</p></li>
-<li><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The delegate to call with the data.</p></li>
-<li><p><strong>request_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The request ID.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client_id</strong><span class="classifier">ClientId</span></dt><dd><p>The data client ID for the request.</p>
+</dd>
+<dt><strong>data_type</strong><span class="classifier">type</span></dt><dd><p>The data type for the request.</p>
+</dd>
+<dt><strong>callback</strong><span class="classifier">Callable[[Any], None]</span></dt><dd><p>The delegate to call with the data.</p>
+</dd>
+<dt><strong>request_id</strong><span class="classifier">UUID4</span></dt><dd><p>The request ID.</p>
+</dd>
+<dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -2502,14 +2872,20 @@ called after faulting.</p>
 <p>Represents a response with data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID of the response.</p></li>
-<li><p><strong>data_type</strong> (<em>type</em>) – The data type of the response.</p></li>
-<li><p><strong>data</strong> (<em>object</em>) – The data of the response.</p></li>
-<li><p><strong>correlation_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The correlation ID.</p></li>
-<li><p><strong>response_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The response ID.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client_id</strong><span class="classifier">ClientId</span></dt><dd><p>The data client ID of the response.</p>
+</dd>
+<dt><strong>data_type</strong><span class="classifier">type</span></dt><dd><p>The data type of the response.</p>
+</dd>
+<dt><strong>data</strong><span class="classifier">object</span></dt><dd><p>The data of the response.</p>
+</dd>
+<dt><strong>correlation_id</strong><span class="classifier">UUID4</span></dt><dd><p>The correlation ID.</p>
+</dd>
+<dt><strong>response_id</strong><span class="classifier">UUID4</span></dt><dd><p>The response ID.</p>
+</dd>
+<dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -2598,12 +2974,16 @@ called after faulting.</p>
 <p>Represents a command to subscribe to data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID for the command.</p></li>
-<li><p><strong>data_type</strong> (<em>type</em>) – The data type for the subscription.</p></li>
-<li><p><strong>command_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The command ID.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client_id</strong><span class="classifier">ClientId</span></dt><dd><p>The data client ID for the command.</p>
+</dd>
+<dt><strong>data_type</strong><span class="classifier">type</span></dt><dd><p>The data type for the subscription.</p>
+</dd>
+<dt><strong>command_id</strong><span class="classifier">UUID4</span></dt><dd><p>The command ID.</p>
+</dd>
+<dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -2670,12 +3050,16 @@ called after faulting.</p>
 <p>Represents a command to unsubscribe from data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID for the command.</p></li>
-<li><p><strong>data_type</strong> (<em>type</em>) – The data type to unsubscribe from.</p></li>
-<li><p><strong>command_id</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.uuid.UUID4" title="nautilus_trader.core.uuid.UUID4"><em>UUID4</em></a>) – The command ID.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the object was initialized.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client_id</strong><span class="classifier">ClientId</span></dt><dd><p>The data client ID for the command.</p>
+</dd>
+<dt><strong>data_type</strong><span class="classifier">type</span></dt><dd><p>The data type to unsubscribe from.</p>
+</dd>
+<dt><strong>command_id</strong><span class="classifier">UUID4</span></dt><dd><p>The command ID.</p>
+</dd>
+<dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py attribute">

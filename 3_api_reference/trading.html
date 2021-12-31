@@ -26,8 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -40,7 +40,7 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
@@ -196,10 +196,72 @@
      Live
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="model.html">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="model/0_index.html">
      Model
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/commands.html">
+       Commands
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/currency.html">
+       Currency
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/data.html">
+       Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/events.html">
+       Events
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/identifiers.html">
+       Identifiers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/instruments.html">
+       Instruments
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/objects.html">
+       Objects
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/orderbook.html">
+       Order Book
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/orders.html">
+       Orders
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/position.html">
+       Position
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/tick_scheme.html">
+       Tick Scheme
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="msgbus.html">
@@ -237,8 +299,8 @@
   <a class="reference internal" href="../4_integrations/0_index.html">
    Integrations
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -311,9 +373,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/3_api_reference/trading.rst"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/3_api_reference/trading.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.rst</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -388,7 +450,7 @@
         
               <div>
                 
-  <div class="section" id="module-nautilus_trader.trading">
+  <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.trading">
 <span id="trading"></span><h1>Trading<a class="headerlink" href="#module-nautilus_trader.trading" title="Permalink to this headline">¶</a></h1>
 <p>The <cite>trading</cite> subpackage groups all trading domain specific components and tooling.</p>
 <p>This is a top-level package where the majority of users will interface with the
@@ -403,13 +465,16 @@ framework. Custom trading strategies can be implemented by inheriting from the
 <p>The base model for all trading strategy configurations.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>component_id</strong> (<em>str</em><em>, </em><em>optional</em>) – The unique component ID for the strategy. Will become the strategy ID if not None.</p></li>
-<li><p><strong>order_id_tag</strong> (<em>str</em>) – The unique order ID tag for the strategy. Must be unique
-amongst all running strategies for a particular trader ID.</p></li>
-<li><p><strong>oms_type</strong> (<em>OMSType</em>) – The order management system type for the strategy. This will determine
-how the <cite>ExecutionEngine</cite> handles position IDs (see docs).</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>component_id</strong><span class="classifier">str, optional</span></dt><dd><p>The unique component ID for the strategy. Will become the strategy ID if not None.</p>
+</dd>
+<dt><strong>order_id_tag</strong><span class="classifier">str</span></dt><dd><p>The unique order ID tag for the strategy. Must be unique
+amongst all running strategies for a particular trader ID.</p>
+</dd>
+<dt><strong>oms_type</strong><span class="classifier">OMSType</span></dt><dd><p>The order management system type for the strategy. This will determine
+how the <cite>ExecutionEngine</cite> handles position IDs (see docs).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -468,11 +533,13 @@ the new model: you should trust this data</p></li>
 <p>Represents a trading strategy configuration for one specific backtest run.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>path</strong> (<em>str</em><em>, </em><em>optional</em>) – The fully-qualified name of the module.</p></li>
-<li><p><strong>source</strong> (<em>bytes</em><em>, </em><em>optional</em>) – The strategy source code.</p></li>
-<li><p><strong>config</strong> (<em>Union</em><em>[</em><a class="reference internal" href="#nautilus_trader.trading.config.TradingStrategyConfig" title="nautilus_trader.trading.config.TradingStrategyConfig"><em>TradingStrategyConfig</em></a><em>, </em><em>str</em><em>]</em>) – </p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>path</strong><span class="classifier">str, optional</span></dt><dd><p>The fully-qualified name of the module.</p>
+</dd>
+<dt><strong>source</strong><span class="classifier">bytes, optional</span></dt><dd><p>The strategy source code.</p>
+</dd>
+<dt><strong>config</strong><span class="classifier">Union[TradingStrategyConfig, str]</span></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -535,13 +602,21 @@ the new model: you should trust this data</p></li>
 <dd><p>Create a trading strategy from the given configuration.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>config</strong> (<a class="reference internal" href="#nautilus_trader.trading.config.ImportableStrategyConfig" title="nautilus_trader.trading.config.ImportableStrategyConfig"><em>ImportableStrategyConfig</em></a>) – The configuration for the building step.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>config</strong><span class="classifier">ImportableStrategyConfig</span></dt><dd><p>The configuration for the building step.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>TradingStrategy</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>TradingStrategy</dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – If <cite>config</cite> is not of type <cite>ImportableStrategyConfig</cite>.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>TypeError</dt><dd><p>If <cite>config</cite> is not of type <cite>ImportableStrategyConfig</cite>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -558,11 +633,14 @@ the new model: you should trust this data</p></li>
 <p>Provides methods to help filter trading strategy rules based on economic news events.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>currencies</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – The list of three letter currency codes to filter.</p></li>
-<li><p><strong>impacts</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – The list of impact levels to filter (‘LOW’, ‘MEDIUM’, ‘HIGH’).</p></li>
-<li><p><strong>news_data</strong> (<em>pd.DataFrame</em>) – The economic news data.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currencies</strong><span class="classifier">list[str]</span></dt><dd><p>The list of three letter currency codes to filter.</p>
+</dd>
+<dt><strong>impacts</strong><span class="classifier">list[str]</span></dt><dd><p>The list of impact levels to filter (‘LOW’, ‘MEDIUM’, ‘HIGH’).</p>
+</dd>
+<dt><strong>news_data</strong><span class="classifier">pd.DataFrame</span></dt><dd><p>The economic news data.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -571,7 +649,9 @@ the new model: you should trust this data</p></li>
 <dd><p>The currencies the data is filtered on.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[str]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[str]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -582,7 +662,9 @@ the new model: you should trust this data</p></li>
 <dd><p>The news impacts the data is filtered on.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[str]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[str]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -594,17 +676,25 @@ the new model: you should trust this data</p></li>
 Will return None if no news events match the filter conditions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>time_now</strong> (<em>datetime</em>) – </p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>time_now</strong><span class="classifier">datetime</span></dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>NewsEvent or <code class="docutils literal notranslate"><span class="pre">None</span></code> – The next news event in the filtered data if any.</p>
+<dd class="field-even"><dl class="simple">
+<dt>NewsEvent or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd><p>The next news event in the filtered data if any.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ValueError</strong> – The <cite>time_now</cite> &lt; <cite>self.unfiltered_data_start</cite>.</p></li>
-<li><p><strong>ValueError</strong> – The <cite>time_now</cite> &gt; <cite>self.unfiltered_data_end</cite>.</p></li>
-<li><p><strong>ValueError</strong> – If <cite>time_now</cite> is not tz aware UTC.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>The <cite>time_now</cite> &lt; <cite>self.unfiltered_data_start</cite>.</p>
+</dd>
+<dt>ValueError</dt><dd><p>The <cite>time_now</cite> &gt; <cite>self.unfiltered_data_end</cite>.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>time_now</cite> is not tz aware UTC.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -616,17 +706,25 @@ Will return None if no news events match the filter conditions.</p>
 Will return None if no news events match the filter conditions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>time_now</strong> (<em>datetime</em>) – </p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>time_now</strong><span class="classifier">datetime</span></dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>NewsEvent or <code class="docutils literal notranslate"><span class="pre">None</span></code> – The previous news event in the filtered data if any.</p>
+<dd class="field-even"><dl class="simple">
+<dt>NewsEvent or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd><p>The previous news event in the filtered data if any.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ValueError</strong> – The <cite>time_now</cite> &lt; <cite>self.unfiltered_data_start</cite>.</p></li>
-<li><p><strong>ValueError</strong> – The <cite>time_now</cite> &gt; <cite>self.unfiltered_data_end</cite>.</p></li>
-<li><p><strong>ValueError</strong> – If <cite>time_now</cite> is not tz aware UTC.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>The <cite>time_now</cite> &lt; <cite>self.unfiltered_data_start</cite>.</p>
+</dd>
+<dt>ValueError</dt><dd><p>The <cite>time_now</cite> &gt; <cite>self.unfiltered_data_end</cite>.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>time_now</cite> is not tz aware UTC.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -637,7 +735,9 @@ Will return None if no news events match the filter conditions.</p>
 <dd><p>The end of the raw data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>datetime</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>datetime</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -648,7 +748,9 @@ Will return None if no news events match the filter conditions.</p>
 <dd><p>The start of the raw data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>datetime</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>datetime</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -673,16 +775,24 @@ Will return None if no news events match the filter conditions.</p>
 <dd><p>Return the local datetime from the given session and time_now (UTC).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>session</strong> (<a class="reference internal" href="#nautilus_trader.trading.filters.ForexSession" title="nautilus_trader.trading.filters.ForexSession"><em>ForexSession</em></a>) – The session for the local timezone conversion.</p></li>
-<li><p><strong>time_now</strong> (<em>datetime</em>) – The time now (UTC).</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>session</strong><span class="classifier">ForexSession</span></dt><dd><p>The session for the local timezone conversion.</p>
+</dd>
+<dt><strong>time_now</strong><span class="classifier">datetime</span></dt><dd><p>The time now (UTC).</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>datetime</em> – The converted local datetime.</p>
+<dd class="field-even"><dl class="simple">
+<dt>datetime</dt><dd><p>The converted local datetime.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>time_now</cite> is not tz aware UTC.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>time_now</cite> is not tz aware UTC.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -698,16 +808,23 @@ Will return None if no news events match the filter conditions.</p>
 <p>New York Session  0800-1700 ‘America/New_York’</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>session</strong> (<a class="reference internal" href="#nautilus_trader.trading.filters.ForexSession" title="nautilus_trader.trading.filters.ForexSession"><em>ForexSession</em></a>) – The session for the end datetime.</p></li>
-<li><p><strong>time_now</strong> (<em>datetime</em>) – The datetime now (UTC).</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>session</strong><span class="classifier">ForexSession</span></dt><dd><p>The session for the end datetime.</p>
+</dd>
+<dt><strong>time_now</strong><span class="classifier">datetime</span></dt><dd><p>The datetime now (UTC).</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>datetime</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>datetime</dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>time_now</cite> is not tz aware UTC.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>time_now</cite> is not tz aware UTC.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -723,16 +840,23 @@ Will return None if no news events match the filter conditions.</p>
 <p>New York Session  0800-1700 ‘America/New_York’</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>session</strong> (<a class="reference internal" href="#nautilus_trader.trading.filters.ForexSession" title="nautilus_trader.trading.filters.ForexSession"><em>ForexSession</em></a>) – The session for the start datetime.</p></li>
-<li><p><strong>time_now</strong> (<em>datetime</em>) – The datetime now.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>session</strong><span class="classifier">ForexSession</span></dt><dd><p>The session for the start datetime.</p>
+</dd>
+<dt><strong>time_now</strong><span class="classifier">datetime</span></dt><dd><p>The datetime now.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>datetime</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>datetime</dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>time_now</cite> is not tz aware UTC.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>time_now</cite> is not tz aware UTC.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -748,16 +872,23 @@ Will return None if no news events match the filter conditions.</p>
 <p>New York Session  0800-1700 ‘America/New_York’</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>session</strong> (<a class="reference internal" href="#nautilus_trader.trading.filters.ForexSession" title="nautilus_trader.trading.filters.ForexSession"><em>ForexSession</em></a>) – The session for end datetime.</p></li>
-<li><p><strong>time_now</strong> (<em>datetime</em>) – The datetime now.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>session</strong><span class="classifier">ForexSession</span></dt><dd><p>The session for end datetime.</p>
+</dd>
+<dt><strong>time_now</strong><span class="classifier">datetime</span></dt><dd><p>The datetime now.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>datetime</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>datetime</dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>time_now</cite> is not tz aware UTC.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>time_now</cite> is not tz aware UTC.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -773,16 +904,23 @@ Will return None if no news events match the filter conditions.</p>
 <p>New York Session  0800-1700 ‘America/New_York’</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>session</strong> (<a class="reference internal" href="#nautilus_trader.trading.filters.ForexSession" title="nautilus_trader.trading.filters.ForexSession"><em>ForexSession</em></a>) – The session for the start datetime.</p></li>
-<li><p><strong>time_now</strong> (<em>datetime</em>) – The datetime now.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>session</strong><span class="classifier">ForexSession</span></dt><dd><p>The session for the start datetime.</p>
+</dd>
+<dt><strong>time_now</strong><span class="classifier">datetime</span></dt><dd><p>The datetime now.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>datetime</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>datetime</dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>time_now</cite> is not tz aware UTC.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>time_now</cite> is not tz aware UTC.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -796,13 +934,18 @@ Will return None if no news events match the filter conditions.</p>
 <p>Represents an economic news event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>impact</strong> (<a class="reference internal" href="#nautilus_trader.trading.filters.NewsImpact" title="nautilus_trader.trading.filters.NewsImpact"><em>NewsImpact</em></a>) – The expected impact for the economic news event.</p></li>
-<li><p><strong>name</strong> (<em>str</em>) – The name of the economic news event.</p></li>
-<li><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a>) – The currency the economic news event is expected to affect.</p></li>
-<li><p><strong>ts_event</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the news event occurred.</p></li>
-<li><p><strong>ts_init</strong> (<em>int64</em>) – The UNIX timestamp (nanoseconds) when the data object was initialized.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>impact</strong><span class="classifier">NewsImpact</span></dt><dd><p>The expected impact for the economic news event.</p>
+</dd>
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>The name of the economic news event.</p>
+</dd>
+<dt><strong>currency</strong><span class="classifier">Currency</span></dt><dd><p>The currency the economic news event is expected to affect.</p>
+</dd>
+<dt><strong>ts_event: int64</strong></dt><dd><p>The UNIX timestamp (nanoseconds) when the news event occurred.</p>
+</dd>
+<dt><strong>ts_init: int64</strong></dt><dd><p>The UNIX timestamp (nanoseconds) when the data object was initialized.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -898,10 +1041,16 @@ per instrument. The position ID will be <cite>{instrument_id}-{strategy_id}</cit
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>config</strong> (<a class="reference internal" href="#nautilus_trader.trading.config.TradingStrategyConfig" title="nautilus_trader.trading.config.TradingStrategyConfig"><em>TradingStrategyConfig</em></a><em>, </em><em>optional</em>) – The trading strategy configuration.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>config</strong><span class="classifier">TradingStrategyConfig, optional</span></dt><dd><p>The trading strategy configuration.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – If <cite>config</cite> is not of type <cite>TradingStrategyConfig</cite>.</p>
+<dd class="field-even"><dl class="simple">
+<dt>TypeError</dt><dd><p>If <cite>config</cite> is not of type <cite>TradingStrategyConfig</cite>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -925,7 +1074,10 @@ per instrument. The position ID will be <cite>{instrument_id}-{strategy_id}</cit
 <dd><p>Cancel all orders for this strategy for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument for the orders to cancel.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument for the orders to cancel.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -939,7 +1091,10 @@ per instrument. The position ID will be <cite>{instrument_id}-{strategy_id}</cit
 <p>Logs an error if no <cite>VenueOrderId</cite> has been assigned to the order.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>order</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to cancel.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>order</strong><span class="classifier">Order</span></dt><dd><p>The order to cancel.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -961,7 +1116,10 @@ per instrument. The position ID will be <cite>{instrument_id}-{strategy_id}</cit
 <dd><p>Degrade the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -977,7 +1135,10 @@ per instrument. The position ID will be <cite>{instrument_id}-{strategy_id}</cit
 <dd><p>Deregister the given event type from warning log levels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>event</strong> (<em>type</em>) – The event class to deregister.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>event</strong><span class="classifier">type</span></dt><dd><p>The event class to deregister.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -990,7 +1151,10 @@ per instrument. The position ID will be <cite>{instrument_id}-{strategy_id}</cit
 called after disposal.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1008,7 +1172,10 @@ called after disposal.</p>
 called after faulting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1024,7 +1191,10 @@ called after faulting.</p>
 <dd><p>Flatten all positions for the given instrument ID for this strategy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument for the positions to flatten.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument for the positions to flatten.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1037,7 +1207,10 @@ called after faulting.</p>
 to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>position</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.position.Position" title="nautilus_trader.model.position.Position"><em>Position</em></a>) – The position to flatten.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position</strong><span class="classifier">Position</span></dt><dd><p>The position to flatten.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1049,10 +1222,12 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <p>Calls <cite>on_bar</cite> if state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The bar received.</p></li>
-<li><p><strong>is_historical</strong> (<em>bool</em>) – If bar is historical then it won’t be passed to <cite>on_bar</cite>.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The bar received.</p>
+</dd>
+<dt><strong>is_historical</strong><span class="classifier">bool</span></dt><dd><p>If bar is historical then it won’t be passed to <cite>on_bar</cite>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1067,7 +1242,10 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <dd><p>Handle the given bar data by handling each bar individually.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bars</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a><em>]</em>) – The bars to handle.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bars</strong><span class="classifier">list[Bar]</span></dt><dd><p>The bars to handle.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1083,7 +1261,10 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <p>Calls <cite>on_data</cite> if state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data</strong> (<em>Data</em>) – The received data.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data</strong><span class="classifier">Data</span></dt><dd><p>The received data.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1099,7 +1280,10 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <p>Calls <cite>on_event</cite> if state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.message.Event" title="nautilus_trader.core.message.Event"><em>Event</em></a>) – The received event.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>event</strong><span class="classifier">Event</span></dt><dd><p>The received event.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1115,7 +1299,10 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <p>Calls <cite>on_instrument</cite> if state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument</strong> (<em>Instrument</em>) – The received instrument.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The received instrument.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1131,7 +1318,10 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <p>Calls <cite>on_instrument_close_price</cite> if .state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>update</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.venue.InstrumentClosePrice" title="nautilus_trader.model.data.venue.InstrumentClosePrice"><em>InstrumentClosePrice</em></a>) – The received update.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>update</strong><span class="classifier">InstrumentClosePrice</span></dt><dd><p>The received update.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1147,7 +1337,10 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <p>Calls <cite>on_instrument_status_update</cite> if state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>update</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.venue.InstrumentStatusUpdate" title="nautilus_trader.model.data.venue.InstrumentStatusUpdate"><em>InstrumentStatusUpdate</em></a>) – The received update.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>update</strong><span class="classifier">InstrumentStatusUpdate</span></dt><dd><p>The received update.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1163,7 +1356,10 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <p>Calls <cite>on_order_book</cite> if state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>order_book</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.orderbook.book.OrderBook" title="nautilus_trader.model.orderbook.book.OrderBook"><em>OrderBook</em></a>) – The received order book.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>order_book</strong><span class="classifier">OrderBook</span></dt><dd><p>The received order book.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1179,7 +1375,10 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <p>Calls <cite>on_order_book_delta</cite> if state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>delta</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.OrderBookDelta" title="nautilus_trader.model.orderbook.data.OrderBookDelta"><em>OrderBookDelta</em></a><em>, </em><a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.OrderBookDeltas" title="nautilus_trader.model.orderbook.data.OrderBookDeltas"><em>OrderBookDeltas</em></a><em>, </em><a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.OrderBookSnapshot" title="nautilus_trader.model.orderbook.data.OrderBookSnapshot"><em>OrderBookSnapshot</em></a>) – The order book delta received.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>delta</strong><span class="classifier">OrderBookDelta, OrderBookDeltas, OrderBookSnapshot</span></dt><dd><p>The order book delta received.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1195,10 +1394,12 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <p>Calls <cite>on_quote_tick</cite> if state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a>) – The received tick.</p></li>
-<li><p><strong>is_historical</strong> (<em>bool</em>) – If tick is historical then it won’t be passed to <cite>on_quote_tick</cite>.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">QuoteTick</span></dt><dd><p>The received tick.</p>
+</dd>
+<dt><strong>is_historical</strong><span class="classifier">bool</span></dt><dd><p>If tick is historical then it won’t be passed to <cite>on_quote_tick</cite>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1213,7 +1414,10 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <dd><p>Handle the given tick data by handling each tick individually.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>ticks</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a><em>]</em>) – The received ticks.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ticks</strong><span class="classifier">list[QuoteTick]</span></dt><dd><p>The received ticks.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1229,10 +1433,12 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <p>Calls <cite>on_ticker</cite> if state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ticker</strong> (<em>Ticker</em>) – The received ticker.</p></li>
-<li><p><strong>is_historical</strong> (<em>bool</em>) – If ticker is historical then it won’t be passed to <cite>on_ticker</cite>.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ticker</strong><span class="classifier">Ticker</span></dt><dd><p>The received ticker.</p>
+</dd>
+<dt><strong>is_historical</strong><span class="classifier">bool</span></dt><dd><p>If ticker is historical then it won’t be passed to <cite>on_ticker</cite>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1248,10 +1454,12 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <p>Calls <cite>on_trade_tick</cite> if state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a>) – The received trade tick.</p></li>
-<li><p><strong>is_historical</strong> (<em>bool</em>) – If tick is historical then it won’t be passed to <cite>on_trade_tick</cite>.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">TradeTick</span></dt><dd><p>The received trade tick.</p>
+</dd>
+<dt><strong>is_historical</strong><span class="classifier">bool</span></dt><dd><p>If tick is historical then it won’t be passed to <cite>on_trade_tick</cite>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1266,7 +1474,10 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <dd><p>Handle the given tick data by handling each tick individually.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>ticks</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a><em>]</em>) – The received ticks.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ticks</strong><span class="classifier">list[TradeTick]</span></dt><dd><p>The received ticks.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1282,7 +1493,10 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <p>Calls <cite>on_venue_status_update</cite> if state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>update</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.venue.VenueStatusUpdate" title="nautilus_trader.model.data.venue.VenueStatusUpdate"><em>VenueStatusUpdate</em></a>) – The received update.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>update</strong><span class="classifier">VenueStatusUpdate</span></dt><dd><p>The received update.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1308,7 +1522,10 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <dd><p>Return a value indicating whether all indicators are initialized.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if all initialized, else False</p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if all initialized, else False</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1319,7 +1536,9 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DEGRADED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1330,7 +1549,9 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1341,7 +1562,9 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">FAULTED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1352,7 +1575,9 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <dd><p>If the component has been initialized (component.state &gt;= <code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1363,7 +1588,9 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1374,7 +1601,9 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">STOPPED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1386,10 +1615,16 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 <p>Calls <cite>on_load</cite> and passes the state.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>state</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>object</em><em>]</em>) – The state dictionary.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>state</strong><span class="classifier">dict[str, object]</span></dt><dd><p>The state dictionary.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>RuntimeError</strong> – If <cite>strategy</cite> is not registered with a trader.</p>
+<dd class="field-even"><dl class="simple">
+<dt>RuntimeError</dt><dd><p>If <cite>strategy</cite> is not registered with a trader.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1422,15 +1657,22 @@ the API, then will cancel - then replace with a new order using the
 original <cite>ClientOrderId</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>order</strong> (<em>PassiveOrder</em>) – The order to update.</p></li>
-<li><p><strong>quantity</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a><em>, </em><em>optional</em>) – The updated quantity for the given order.</p></li>
-<li><p><strong>price</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a><em>, </em><em>optional</em>) – The updated price for the given order.</p></li>
-<li><p><strong>trigger</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a><em>, </em><em>optional</em>) – The updated trigger price for the given order.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>order</strong><span class="classifier">PassiveOrder</span></dt><dd><p>The order to update.</p>
+</dd>
+<dt><strong>quantity</strong><span class="classifier">Quantity, optional</span></dt><dd><p>The updated quantity for the given order.</p>
+</dd>
+<dt><strong>price</strong><span class="classifier">Price, optional</span></dt><dd><p>The updated price for the given order.</p>
+</dd>
+<dt><strong>trigger</strong><span class="classifier">Price, optional</span></dt><dd><p>The updated trigger price for the given order.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>trigger</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>order.type</cite> != <code class="docutils literal notranslate"><span class="pre">STOP_LIMIT</span></code>.</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>trigger</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>order.type</cite> != <code class="docutils literal notranslate"><span class="pre">STOP_LIMIT</span></code>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <p class="rubric">References</p>
@@ -1465,7 +1707,10 @@ original <cite>ClientOrderId</cite>.</p>
 <dd><p>Actions to be performed when running and receives a bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The bar received.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The bar received.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1480,7 +1725,10 @@ original <cite>ClientOrderId</cite>.</p>
 <dd><p>Actions to be performed when running and receives generic data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data</strong> (<em>Data</em>) – The data received.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data</strong><span class="classifier">Data</span></dt><dd><p>The data received.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1518,7 +1766,10 @@ original <cite>ClientOrderId</cite>.</p>
 <dd><p>Actions to be performed running and receives an event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.message.Event" title="nautilus_trader.core.message.Event"><em>Event</em></a>) – The event received.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>event</strong><span class="classifier">Event</span></dt><dd><p>The event received.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1545,7 +1796,10 @@ original <cite>ClientOrderId</cite>.</p>
 <dd><p>Actions to be performed when running and receives an instrument.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument received.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument received.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1561,7 +1815,10 @@ original <cite>ClientOrderId</cite>.</p>
 price update.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>update</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.venue.InstrumentClosePrice" title="nautilus_trader.model.data.venue.InstrumentClosePrice"><em>InstrumentClosePrice</em></a>) – The update received.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>update</strong><span class="classifier">InstrumentClosePrice</span></dt><dd><p>The update received.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1577,7 +1834,10 @@ price update.</p>
 update.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>update</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.venue.InstrumentStatusUpdate" title="nautilus_trader.model.data.venue.InstrumentStatusUpdate"><em>InstrumentStatusUpdate</em></a>) – The update received.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>update</strong><span class="classifier">InstrumentStatusUpdate</span></dt><dd><p>The update received.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1603,7 +1863,10 @@ update.</p>
 <dd><p>Actions to be performed when running and receives an order book snapshot.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>order_book</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.orderbook.book.OrderBook" title="nautilus_trader.model.orderbook.book.OrderBook"><em>OrderBook</em></a>) – The order book received.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>order_book</strong><span class="classifier">OrderBook</span></dt><dd><p>The order book received.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1618,7 +1881,10 @@ update.</p>
 <dd><p>Actions to be performed when running and receives an order book delta.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>delta</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.OrderBookDelta" title="nautilus_trader.model.orderbook.data.OrderBookDelta"><em>OrderBookDelta</em></a><em>, </em><a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.OrderBookDeltas" title="nautilus_trader.model.orderbook.data.OrderBookDeltas"><em>OrderBookDeltas</em></a><em>, </em><a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.OrderBookSnapshot" title="nautilus_trader.model.orderbook.data.OrderBookSnapshot"><em>OrderBookSnapshot</em></a>) – The order book delta received.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>delta</strong><span class="classifier">OrderBookDelta, OrderBookDeltas, OrderBookSnapshot</span></dt><dd><p>The order book delta received.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1633,7 +1899,10 @@ update.</p>
 <dd><p>Actions to be performed when running and receives a quote tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a>) – The tick received.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">QuoteTick</span></dt><dd><p>The tick received.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1670,7 +1939,10 @@ update.</p>
 <p>Create and return a state dictionary of values to be saved.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[str, bytes]</em> – The strategy state dictionary.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>dict[str, bytes]</dt><dd><p>The strategy state dictionary.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1712,7 +1984,10 @@ paused, and also when it is done for day.</p>
 <dd><p>Actions to be performed when running and receives a ticker.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>ticker</strong> (<em>Ticker</em>) – The ticker received.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ticker</strong><span class="classifier">Ticker</span></dt><dd><p>The ticker received.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1727,7 +2002,10 @@ paused, and also when it is done for day.</p>
 <dd><p>Actions to be performed when running and receives a trade tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a>) – The tick received.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">TradeTick</span></dt><dd><p>The tick received.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1742,7 +2020,10 @@ paused, and also when it is done for day.</p>
 <dd><p>Actions to be performed when running and receives a venue status update.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>update</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.venue.VenueStatusUpdate" title="nautilus_trader.model.data.venue.VenueStatusUpdate"><em>VenueStatusUpdate</em></a>) – The update received.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>update</strong><span class="classifier">VenueStatusUpdate</span></dt><dd><p>The update received.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1779,10 +2060,12 @@ paused, and also when it is done for day.</p>
 <dd><p>Publish the given data to the message bus.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data_type</strong> (<em>DataType</em>) – The data type being published.</p></li>
-<li><p><strong>data</strong> (<em>Data</em>) – The data to publish.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data_type</strong><span class="classifier">DataType</span></dt><dd><p>The data type being published.</p>
+</dd>
+<dt><strong>data</strong><span class="classifier">Data</span></dt><dd><p>The data to publish.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1793,14 +2076,20 @@ paused, and also when it is done for day.</p>
 <dd><p>Register the strategy with a trader.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>trader_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId"><em>TraderId</em></a>) – The trader ID for the strategy.</p></li>
-<li><p><strong>portfolio</strong> (<em>PortfolioFacade</em>) – The read-only portfolio for the strategy.</p></li>
-<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the strategy.</p></li>
-<li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.base.CacheFacade" title="nautilus_trader.cache.base.CacheFacade"><em>CacheFacade</em></a>) – The read-only cache for the strategy.</p></li>
-<li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the strategy.</p></li>
-<li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the strategy.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>trader_id</strong><span class="classifier">TraderId</span></dt><dd><p>The trader ID for the strategy.</p>
+</dd>
+<dt><strong>portfolio</strong><span class="classifier">PortfolioFacade</span></dt><dd><p>The read-only portfolio for the strategy.</p>
+</dd>
+<dt><strong>msgbus</strong><span class="classifier">MessageBus</span></dt><dd><p>The message bus for the strategy.</p>
+</dd>
+<dt><strong>cache</strong><span class="classifier">CacheFacade</span></dt><dd><p>The read-only cache for the strategy.</p>
+</dd>
+<dt><strong>clock</strong><span class="classifier">Clock</span></dt><dd><p>The clock for the strategy.</p>
+</dd>
+<dt><strong>logger</strong><span class="classifier">Logger</span></dt><dd><p>The logger for the strategy.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1815,13 +2104,18 @@ paused, and also when it is done for day.</p>
 <dd><p>Register the component with a trader.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>trader_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId"><em>TraderId</em></a>) – The trader ID for the actor.</p></li>
-<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the actor.</p></li>
-<li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.base.CacheFacade" title="nautilus_trader.cache.base.CacheFacade"><em>CacheFacade</em></a>) – The read-only cache for the actor.</p></li>
-<li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the actor.</p></li>
-<li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the actor.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>trader_id</strong><span class="classifier">TraderId</span></dt><dd><p>The trader ID for the actor.</p>
+</dd>
+<dt><strong>msgbus</strong><span class="classifier">MessageBus</span></dt><dd><p>The message bus for the actor.</p>
+</dd>
+<dt><strong>cache</strong><span class="classifier">CacheFacade</span></dt><dd><p>The read-only cache for the actor.</p>
+</dd>
+<dt><strong>clock</strong><span class="classifier">Clock</span></dt><dd><p>The clock for the actor.</p>
+</dd>
+<dt><strong>logger</strong><span class="classifier">Logger</span></dt><dd><p>The logger for the actor.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1837,10 +2131,12 @@ paused, and also when it is done for day.</p>
 given bar type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type for bar updates.</p></li>
-<li><p><strong>indicator</strong> (<em>Indicator</em>) – The indicator to register.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar_type</strong><span class="classifier">BarType</span></dt><dd><p>The bar type for bar updates.</p>
+</dd>
+<dt><strong>indicator</strong><span class="classifier">Indicator</span></dt><dd><p>The indicator to register.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1852,10 +2148,12 @@ given bar type.</p>
 data for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for tick updates.</p></li>
-<li><p><strong>indicator</strong> (<em>Indicator</em>) – The indicator to register.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for tick updates.</p>
+</dd>
+<dt><strong>indicator</strong><span class="classifier">Indicator</span></dt><dd><p>The indicator to register.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1867,10 +2165,12 @@ data for the given instrument ID.</p>
 data for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for tick updates.</p></li>
-<li><p><strong>indicator</strong> (<em>indicator</em>) – The indicator to register.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for tick updates.</p>
+</dd>
+<dt><strong>indicator</strong><span class="classifier">indicator</span></dt><dd><p>The indicator to register.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1881,7 +2181,10 @@ data for the given instrument ID.</p>
 <dd><p>Register the given event type for warning log levels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>event</strong> (<em>type</em>) – The event class to register.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>event</strong><span class="classifier">type</span></dt><dd><p>The event class to register.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1892,7 +2195,9 @@ data for the given instrument ID.</p>
 <dd><p>The registered indicators for the strategy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[Indicator]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[Indicator]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1904,12 +2209,15 @@ data for the given instrument ID.</p>
 <p>If datetimes are <code class="docutils literal notranslate"><span class="pre">None</span></code> then will request the most recent data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type for the request.</p></li>
-<li><p><strong>from_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified from datetime for the data.</p></li>
-<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will default
-to the current datetime.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar_type</strong><span class="classifier">BarType</span></dt><dd><p>The bar type for the request.</p>
+</dd>
+<dt><strong>from_datetime</strong><span class="classifier">datetime, optional</span></dt><dd><p>The specified from datetime for the data.</p>
+</dd>
+<dt><strong>to_datetime</strong><span class="classifier">datetime, optional</span></dt><dd><p>The specified to datetime for the data. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will default
+to the current datetime.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -1922,10 +2230,12 @@ to the current datetime.</p></li>
 <dd><p>Request custom data for the given data type from the given data client.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a>) – The data client ID.</p></li>
-<li><p><strong>data_type</strong> (<em>DataType</em>) – The data type for the request.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client_id</strong><span class="classifier">ClientId</span></dt><dd><p>The data client ID.</p>
+</dd>
+<dt><strong>data_type</strong><span class="classifier">DataType</span></dt><dd><p>The data type for the request.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1937,12 +2247,15 @@ to the current datetime.</p></li>
 <p>If datetimes are <code class="docutils literal notranslate"><span class="pre">None</span></code> then will request the most recent data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument ID for the request.</p></li>
-<li><p><strong>from_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified from datetime for the data.</p></li>
-<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will default
-to the current datetime.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The tick instrument ID for the request.</p>
+</dd>
+<dt><strong>from_datetime</strong><span class="classifier">datetime, optional</span></dt><dd><p>The specified from datetime for the data.</p>
+</dd>
+<dt><strong>to_datetime</strong><span class="classifier">datetime, optional</span></dt><dd><p>The specified to datetime for the data. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will default
+to the current datetime.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -1956,12 +2269,15 @@ to the current datetime.</p></li>
 <p>If datetimes are <code class="docutils literal notranslate"><span class="pre">None</span></code> then will request the most recent data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument ID for the request.</p></li>
-<li><p><strong>from_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified from datetime for the data.</p></li>
-<li><p><strong>to_datetime</strong> (<em>datetime</em><em>, </em><em>optional</em>) – The specified to datetime for the data. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will default
-to the current datetime.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The tick instrument ID for the request.</p>
+</dd>
+<dt><strong>from_datetime</strong><span class="classifier">datetime, optional</span></dt><dd><p>The specified from datetime for the data.</p>
+</dd>
+<dt><strong>to_datetime</strong><span class="classifier">datetime, optional</span></dt><dd><p>The specified to datetime for the data. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will default
+to the current datetime.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -1975,7 +2291,10 @@ to the current datetime.</p></li>
 <p>All stateful fields are reset to their initial value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1991,7 +2310,10 @@ to the current datetime.</p></li>
 <dd><p>Resume the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -2008,7 +2330,10 @@ to the current datetime.</p></li>
 <p>Calls <cite>on_save</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>RuntimeError</strong> – If <cite>strategy</cite> is not registered with a trader.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>RuntimeError</dt><dd><p>If <cite>strategy</cite> is not registered with a trader.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -2023,7 +2348,10 @@ to the current datetime.</p></li>
 <dd><p>Start the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -2039,7 +2367,9 @@ to the current datetime.</p></li>
 <dd><p>The components current state.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>ComponentState</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>ComponentState</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2050,7 +2380,10 @@ to the current datetime.</p></li>
 <dd><p>Stop the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -2068,10 +2401,12 @@ to the current datetime.</p></li>
 <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>order</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to submit.</p></li>
-<li><p><strong>position_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId"><em>PositionId</em></a><em>, </em><em>optional</em>) – The position ID to submit the order against.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>order</strong><span class="classifier">Order</span></dt><dd><p>The order to submit.</p>
+</dd>
+<dt><strong>position_id</strong><span class="classifier">PositionId, optional</span></dt><dd><p>The position ID to submit the order against.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2084,7 +2419,10 @@ to the current datetime.</p></li>
 <cite>ExecutionEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>order_list</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.orders.list.OrderList" title="nautilus_trader.model.orders.list.OrderList"><em>OrderList</em></a>) – The order list to submit.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>order_list</strong><span class="classifier">OrderList</span></dt><dd><p>The order list to submit.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2095,7 +2433,10 @@ to the current datetime.</p></li>
 <dd><p>Subscribe to streaming <cite>Bar</cite> data for the given bar type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type to subscribe to.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar_type</strong><span class="classifier">BarType</span></dt><dd><p>The bar type to subscribe to.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2106,11 +2447,13 @@ to the current datetime.</p></li>
 <dd><p>Subscribe to data of the given data type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data_type</strong> (<em>DataType</em>) – The data type to subscribe to.</p></li>
-<li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a><em>, </em><em>optional</em>) – The data client ID. If supplied then a <cite>Subscribe</cite> command will be
-sent to the data client.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data_type</strong><span class="classifier">DataType</span></dt><dd><p>The data type to subscribe to.</p>
+</dd>
+<dt><strong>client_id</strong><span class="classifier">ClientId, optional</span></dt><dd><p>The data client ID. If supplied then a <cite>Subscribe</cite> command will be
+sent to the data client.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2121,7 +2464,10 @@ sent to the data client.</p></li>
 <dd><p>Subscribe to update <cite>Instrument</cite> data for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the subscription.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the subscription.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2132,7 +2478,10 @@ sent to the data client.</p></li>
 <dd><p>Subscribe to closing prices for the given instrument id.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument to subscribe to status updates for.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument to subscribe to status updates for.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2143,7 +2492,10 @@ sent to the data client.</p></li>
 <dd><p>Subscribe to status updates of the given instrument id.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument to subscribe to status updates for.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument to subscribe to status updates for.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2154,7 +2506,10 @@ sent to the data client.</p></li>
 <dd><p>Subscribe to update <cite>Instrument</cite> data for the given venue.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a>) – The venue for the subscription.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue</span></dt><dd><p>The venue for the subscription.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2164,14 +2519,18 @@ sent to the data client.</p></li>
 <span class="sig-name descname"><span class="pre">subscribe_order_book_deltas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">BookType</span> <span class="pre">book_type=BookType.L2_MBP</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">depth=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">kwargs=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.subscribe_order_book_deltas" title="Permalink to this definition">¶</a></dt>
 <dd><p>Subscribe to the order book deltas stream, being a snapshot then deltas
 <cite>OrderBookData</cite> for the given instrument ID.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The order book instrument ID to subscribe to.</p></li>
-<li><p><strong>book_type</strong> (BookType {<code class="docutils literal notranslate"><span class="pre">L1_TBBO</span></code>, <code class="docutils literal notranslate"><span class="pre">L2_MBP</span></code>, <code class="docutils literal notranslate"><span class="pre">L3_MBO</span></code>}) – The order book type.</p></li>
-<li><p><strong>depth</strong> (<em>int</em><em>, </em><em>optional</em>) – The maximum depth for the order book. A depth of 0 is maximum depth.</p></li>
-<li><p><strong>kwargs</strong> (<em>dict</em><em>, </em><em>optional</em>) – The keyword arguments for exchange specific parameters.</p></li>
-</ul>
+<dd class="field-odd"><dl>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The order book instrument ID to subscribe to.</p>
+</dd>
+<dt><strong>book_type</strong><span class="classifier">BookType {<code class="docutils literal notranslate"><span class="pre">L1_TBBO</span></code>, <code class="docutils literal notranslate"><span class="pre">L2_MBP</span></code>, <code class="docutils literal notranslate"><span class="pre">L3_MBO</span></code>}</span></dt><dd><p>The order book type.</p>
+</dd>
+<dt><strong>depth</strong><span class="classifier">int, optional</span></dt><dd><p>The maximum depth for the order book. A depth of 0 is maximum depth.</p>
+</dd>
+<dt><strong>kwargs</strong><span class="classifier">dict, optional</span></dt><dd><p>The keyword arguments for exchange specific parameters.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2183,21 +2542,28 @@ sent to the data client.</p></li>
 <p>The <cite>DataEngine</cite> will only maintain one order book for each instrument.
 Because of this - the level, depth and kwargs for the stream will be set
 as per the last subscription request (this will also affect all subscribers).</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The order book instrument ID to subscribe to.</p></li>
-<li><p><strong>book_type</strong> (BookType {<code class="docutils literal notranslate"><span class="pre">L1_TBBO</span></code>, <code class="docutils literal notranslate"><span class="pre">L2_MBP</span></code>, <code class="docutils literal notranslate"><span class="pre">L3_MBO</span></code>}) – The order book type.</p></li>
-<li><p><strong>depth</strong> (<em>int</em><em>, </em><em>optional</em>) – The maximum depth for the order book. A depth of 0 is maximum depth.</p></li>
-<li><p><strong>interval_ms</strong> (<em>int</em>) – The order book snapshot interval in milliseconds.</p></li>
-<li><p><strong>kwargs</strong> (<em>dict</em><em>, </em><em>optional</em>) – The keyword arguments for exchange specific parameters.</p></li>
-</ul>
+<dd class="field-odd"><dl>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The order book instrument ID to subscribe to.</p>
+</dd>
+<dt><strong>book_type</strong><span class="classifier">BookType {<code class="docutils literal notranslate"><span class="pre">L1_TBBO</span></code>, <code class="docutils literal notranslate"><span class="pre">L2_MBP</span></code>, <code class="docutils literal notranslate"><span class="pre">L3_MBO</span></code>}</span></dt><dd><p>The order book type.</p>
+</dd>
+<dt><strong>depth</strong><span class="classifier">int, optional</span></dt><dd><p>The maximum depth for the order book. A depth of 0 is maximum depth.</p>
+</dd>
+<dt><strong>interval_ms</strong><span class="classifier">int</span></dt><dd><p>The order book snapshot interval in milliseconds.</p>
+</dd>
+<dt><strong>kwargs</strong><span class="classifier">dict, optional</span></dt><dd><p>The keyword arguments for exchange specific parameters.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If <cite>depth</cite> is negative (&lt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If <cite>interval_ms</cite> is not positive (&gt; 0).</p></li>
-</ul>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>depth</cite> is negative (&lt; 0).</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>interval_ms</cite> is not positive (&gt; 0).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2208,7 +2574,10 @@ as per the last subscription request (this will also affect all subscribers).</p
 <dd><p>Subscribe to streaming <cite>QuoteTick</cite> data for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument to subscribe to.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The tick instrument to subscribe to.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2219,7 +2588,10 @@ as per the last subscription request (this will also affect all subscribers).</p
 <dd><p>Subscribe to streaming <cite>Ticker</cite> data for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument to subscribe to.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The tick instrument to subscribe to.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2230,7 +2602,10 @@ as per the last subscription request (this will also affect all subscribers).</p
 <dd><p>Subscribe to streaming <cite>TradeTick</cite> data for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument to subscribe to.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The tick instrument to subscribe to.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2241,7 +2616,10 @@ as per the last subscription request (this will also affect all subscribers).</p
 <dd><p>Subscribe to status updates of the given venue.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a>) – The venue to subscribe to.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue</span></dt><dd><p>The venue to subscribe to.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2274,7 +2652,10 @@ as per the last subscription request (this will also affect all subscribers).</p
 <dd><p>Unsubscribe from streaming <cite>Bar</cite> data for the given bar type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type to unsubscribe from.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar_type</strong><span class="classifier">BarType</span></dt><dd><p>The bar type to unsubscribe from.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2285,11 +2666,13 @@ as per the last subscription request (this will also affect all subscribers).</p
 <dd><p>Unsubscribe from data of the given data type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data_type</strong> (<em>DataType</em>) – The data type to unsubscribe from.</p></li>
-<li><p><strong>client_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientId" title="nautilus_trader.model.identifiers.ClientId"><em>ClientId</em></a><em>, </em><em>optional</em>) – The data client ID. If supplied then an <cite>Unsubscribe</cite> command will
-be sent to the data client.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data_type</strong><span class="classifier">DataType</span></dt><dd><p>The data type to unsubscribe from.</p>
+</dd>
+<dt><strong>client_id</strong><span class="classifier">ClientId, optional</span></dt><dd><p>The data client ID. If supplied then an <cite>Unsubscribe</cite> command will
+be sent to the data client.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2300,7 +2683,10 @@ be sent to the data client.</p></li>
 <dd><p>Unsubscribe from update <cite>Instrument</cite> data for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument to unsubscribe from.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument to unsubscribe from.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2311,7 +2697,10 @@ be sent to the data client.</p></li>
 <dd><p>Unsubscribe from update <cite>Instrument</cite> data for the given venue.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a>) – The venue for the subscription.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue</span></dt><dd><p>The venue for the subscription.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2322,7 +2711,10 @@ be sent to the data client.</p></li>
 <dd><p>Unsubscribe the order book deltas stream for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The order book instrument to subscribe to.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The order book instrument to subscribe to.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2334,10 +2726,12 @@ be sent to the data client.</p></li>
 <p>The interval must match the previously subscribed interval.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The order book instrument to subscribe to.</p></li>
-<li><p><strong>interval_ms</strong> (<em>int</em>) – The order book snapshot interval in milliseconds.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The order book instrument to subscribe to.</p>
+</dd>
+<dt><strong>interval_ms</strong><span class="classifier">int</span></dt><dd><p>The order book snapshot interval in milliseconds.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2348,7 +2742,10 @@ be sent to the data client.</p></li>
 <dd><p>Unsubscribe from streaming <cite>QuoteTick</cite> data for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument to unsubscribe from.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The tick instrument to unsubscribe from.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2359,7 +2756,10 @@ be sent to the data client.</p></li>
 <dd><p>Unsubscribe from streaming <cite>Ticker</cite> data for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument to unsubscribe from.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The tick instrument to unsubscribe from.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2370,7 +2770,10 @@ be sent to the data client.</p></li>
 <dd><p>Unsubscribe from streaming <cite>TradeTick</cite> data for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The tick instrument ID to unsubscribe from.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The tick instrument ID to unsubscribe from.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2402,26 +2805,40 @@ a running instance of the platform.</p>
 <p>Provides a trader for managing a portfolio of trading strategies.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>trader_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.TraderId" title="nautilus_trader.model.identifiers.TraderId"><em>TraderId</em></a>) – The ID for the trader.</p></li>
-<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the trader.</p></li>
-<li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.cache.Cache" title="nautilus_trader.cache.cache.Cache"><em>Cache</em></a>) – The cache for the trader.</p></li>
-<li><p><strong>portfolio</strong> (<a class="reference internal" href="portfolio.html#nautilus_trader.portfolio.portfolio.Portfolio" title="nautilus_trader.portfolio.portfolio.Portfolio"><em>Portfolio</em></a>) – The portfolio for the trader.</p></li>
-<li><p><strong>data_engine</strong> (<a class="reference internal" href="data.html#nautilus_trader.data.engine.DataEngine" title="nautilus_trader.data.engine.DataEngine"><em>DataEngine</em></a>) – The data engine for the trader.</p></li>
-<li><p><strong>risk_engine</strong> (<a class="reference internal" href="risk.html#nautilus_trader.risk.engine.RiskEngine" title="nautilus_trader.risk.engine.RiskEngine"><em>RiskEngine</em></a>) – The risk engine for the trader.</p></li>
-<li><p><strong>exec_engine</strong> (<a class="reference internal" href="execution.html#nautilus_trader.execution.engine.ExecutionEngine" title="nautilus_trader.execution.engine.ExecutionEngine"><em>ExecutionEngine</em></a>) – The execution engine for the trader.</p></li>
-<li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the trader.</p></li>
-<li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the trader.</p></li>
-<li><p><strong>config</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – The configuration for the trader.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>trader_id</strong><span class="classifier">TraderId</span></dt><dd><p>The ID for the trader.</p>
+</dd>
+<dt><strong>msgbus</strong><span class="classifier">MessageBus</span></dt><dd><p>The message bus for the trader.</p>
+</dd>
+<dt><strong>cache</strong><span class="classifier">Cache</span></dt><dd><p>The cache for the trader.</p>
+</dd>
+<dt><strong>portfolio</strong><span class="classifier">Portfolio</span></dt><dd><p>The portfolio for the trader.</p>
+</dd>
+<dt><strong>data_engine</strong><span class="classifier">DataEngine</span></dt><dd><p>The data engine for the trader.</p>
+</dd>
+<dt><strong>risk_engine</strong><span class="classifier">RiskEngine</span></dt><dd><p>The risk engine for the trader.</p>
+</dd>
+<dt><strong>exec_engine</strong><span class="classifier">ExecutionEngine</span></dt><dd><p>The execution engine for the trader.</p>
+</dd>
+<dt><strong>clock</strong><span class="classifier">Clock</span></dt><dd><p>The clock for the trader.</p>
+</dd>
+<dt><strong>logger</strong><span class="classifier">Logger</span></dt><dd><p>The logger for the trader.</p>
+</dd>
+<dt><strong>config</strong><span class="classifier">dict[str, Any]</span></dt><dd><p>The configuration for the trader.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If <cite>portfolio</cite> is not equal to the <cite>exec_engine</cite> portfolio.</p></li>
-<li><p><strong>ValueError</strong> – If <cite>strategies</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><strong>ValueError</strong> – If <cite>strategies</cite> is empty.</p></li>
-<li><p><strong>TypeError</strong> – If <cite>strategies</cite> contains a type other than <cite>TradingStrategy</cite>.</p></li>
-</ul>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>portfolio</cite> is not equal to the <cite>exec_engine</cite> portfolio.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>strategies</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>strategies</cite> is empty.</p>
+</dd>
+<dt>TypeError</dt><dd><p>If <cite>strategies</cite> contains a type other than <cite>TradingStrategy</cite>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -2430,7 +2847,9 @@ a running instance of the platform.</p>
 <dd><p>Return the actor IDs loaded in the trader.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[ComponentId]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[ComponentId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2441,7 +2860,9 @@ a running instance of the platform.</p>
 <dd><p>Return the traders actor states.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[ComponentId, str]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>dict[ComponentId, str]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2452,13 +2873,18 @@ a running instance of the platform.</p>
 <dd><p>Add the given custom component to the trader.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>actor</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.actor.Actor" title="nautilus_trader.common.actor.Actor"><em>Actor</em></a>) – The actor to add and register.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>actor</strong><span class="classifier">Actor</span></dt><dd><p>The actor to add and register.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>KeyError</strong> – If <cite>component.id</cite> already exists in the trader.</p></li>
-<li><p><strong>ValueError</strong> – If <cite>component.state</cite> is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> or <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p></li>
-</ul>
+<dd class="field-even"><dl class="simple">
+<dt>KeyError</dt><dd><p>If <cite>component.id</cite> already exists in the trader.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>component.state</cite> is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> or <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2469,10 +2895,16 @@ a running instance of the platform.</p>
 <dd><p>Add the given actors to the trader.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>actors</strong> (<em>list</em><em>[</em><em>TradingStrategies</em><em>]</em>) – The actors to add and register.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>actors</strong><span class="classifier">list[TradingStrategies]</span></dt><dd><p>The actors to add and register.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>actors</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> or empty.</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>actors</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> or empty.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2483,10 +2915,16 @@ a running instance of the platform.</p>
 <dd><p>Add the given trading strategies to the trader.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>strategies</strong> (<em>list</em><em>[</em><em>TradingStrategies</em><em>]</em>) – The trading strategies to add and register.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>strategies</strong><span class="classifier">list[TradingStrategies]</span></dt><dd><p>The trading strategies to add and register.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>strategies</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> or empty.</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>strategies</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> or empty.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2497,13 +2935,18 @@ a running instance of the platform.</p>
 <dd><p>Add the given trading strategy to the trader.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>strategy</strong> (<a class="reference internal" href="#nautilus_trader.trading.strategy.TradingStrategy" title="nautilus_trader.trading.strategy.TradingStrategy"><em>TradingStrategy</em></a>) – The trading strategy to add and register.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>strategy</strong><span class="classifier">TradingStrategy</span></dt><dd><p>The trading strategy to add and register.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>KeyError</strong> – If <cite>strategy.id</cite> already exists in the trader.</p></li>
-<li><p><strong>ValueError</strong> – If <cite>strategy.state</cite> is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> or <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p></li>
-</ul>
+<dd class="field-even"><dl class="simple">
+<dt>KeyError</dt><dd><p>If <cite>strategy.id</cite> already exists in the trader.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>strategy.state</cite> is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> or <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2531,7 +2974,10 @@ a running instance of the platform.</p>
 <dd><p>Dispose and clear all actors held by the trader.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2542,7 +2988,10 @@ a running instance of the platform.</p>
 <dd><p>Dispose and clear all strategies held by the trader.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2553,7 +3002,10 @@ a running instance of the platform.</p>
 <dd><p>Degrade the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -2571,7 +3023,10 @@ a running instance of the platform.</p>
 called after disposal.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -2589,7 +3044,10 @@ called after disposal.</p>
 called after faulting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -2605,7 +3063,9 @@ called after faulting.</p>
 <dd><p>Generate an account report.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>pd.DataFrame</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>pd.DataFrame</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2616,7 +3076,9 @@ called after faulting.</p>
 <dd><p>Generate an order fills report.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>pd.DataFrame</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>pd.DataFrame</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2627,7 +3089,9 @@ called after faulting.</p>
 <dd><p>Generate an orders report.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>pd.DataFrame</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>pd.DataFrame</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2638,7 +3102,9 @@ called after faulting.</p>
 <dd><p>Generate a positions report.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>pd.DataFrame</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>pd.DataFrame</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2660,7 +3126,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DEGRADED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2671,7 +3139,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2682,7 +3152,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">FAULTED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2693,7 +3165,9 @@ called after faulting.</p>
 <dd><p>If the component has been initialized (component.state &gt;= <code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2704,7 +3178,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2715,7 +3191,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">STOPPED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2733,7 +3211,10 @@ called after faulting.</p>
 <p>All stateful fields are reset to their initial value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -2749,7 +3230,10 @@ called after faulting.</p>
 <dd><p>Resume the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -2771,7 +3255,10 @@ called after faulting.</p>
 <dd><p>Start the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -2787,7 +3274,9 @@ called after faulting.</p>
 <dd><p>The components current state.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>ComponentState</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>ComponentState</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2798,7 +3287,10 @@ called after faulting.</p>
 <dd><p>Stop the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -2814,7 +3306,9 @@ called after faulting.</p>
 <dd><p>Return the strategy IDs loaded in the trader.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[StrategyId]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[StrategyId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2825,7 +3319,9 @@ called after faulting.</p>
 <dd><p>Return the traders strategy states.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[StrategyId, str]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>dict[StrategyId, str]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2836,10 +3332,12 @@ called after faulting.</p>
 <dd><p>Subscribe to the given message topic with the given callback handler.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>topic</strong> (<em>str</em>) – The topic for the subscription. May include wildcard glob patterns.</p></li>
-<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The handler for the subscription.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>topic</strong><span class="classifier">str</span></dt><dd><p>The topic for the subscription. May include wildcard glob patterns.</p>
+</dd>
+<dt><strong>handler</strong><span class="classifier">Callable[[Any], None]</span></dt><dd><p>The handler for the subscription.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2872,10 +3370,12 @@ called after faulting.</p>
 <dd><p>Unsubscribe the given handler from the given message topic.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>topic</strong> (<em>str</em><em>, </em><em>optional</em>) – The topic to unsubscribe from. May include wildcard glob patterns.</p></li>
-<li><p><strong>handler</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>None</em><em>]</em>) – The handler for the subscription.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>topic</strong><span class="classifier">str, optional</span></dt><dd><p>The topic to unsubscribe from. May include wildcard glob patterns.</p>
+</dd>
+<dt><strong>handler</strong><span class="classifier">Callable[[Any], None]</span></dt><dd><p>The handler for the subscription.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>

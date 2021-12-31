@@ -26,8 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -40,7 +40,7 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
@@ -196,10 +196,72 @@
      Live
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="model.html">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="model/0_index.html">
      Model
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/commands.html">
+       Commands
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/currency.html">
+       Currency
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/data.html">
+       Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/events.html">
+       Events
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/identifiers.html">
+       Identifiers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/instruments.html">
+       Instruments
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/objects.html">
+       Objects
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/orderbook.html">
+       Order Book
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/orders.html">
+       Orders
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/position.html">
+       Position
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/tick_scheme.html">
+       Tick Scheme
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="msgbus.html">
@@ -237,8 +299,8 @@
   <a class="reference internal" href="../4_integrations/0_index.html">
    Integrations
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -311,9 +373,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/3_api_reference/cache.rst"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/3_api_reference/cache.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.rst</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -388,7 +450,7 @@
         
               <div>
                 
-  <div class="section" id="module-nautilus_trader.cache">
+  <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.cache">
 <span id="cache"></span><h1>Cache<a class="headerlink" href="#module-nautilus_trader.cache" title="Permalink to this headline">¶</a></h1>
 <p>The <cite>cache</cite> subpackage provides common caching infrastructure.</p>
 <div class="section" id="module-nautilus_trader.cache.base">
@@ -824,14 +886,20 @@
 <p>Provides a common object cache for market and execution related data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>database</strong> (<a class="reference internal" href="#nautilus_trader.cache.database.CacheDatabase" title="nautilus_trader.cache.database.CacheDatabase"><em>CacheDatabase</em></a><em>, </em><em>optional</em>) – The database for the cache. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will bypass persistence.</p></li>
-<li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the cache.</p></li>
-<li><p><strong>config</strong> (<a class="reference internal" href="#nautilus_trader.cache.config.CacheConfig" title="nautilus_trader.cache.config.CacheConfig"><em>CacheConfig</em></a><em>, </em><em>optional</em>) – The cache configuration.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>database</strong><span class="classifier">CacheDatabase, optional</span></dt><dd><p>The database for the cache. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will bypass persistence.</p>
+</dd>
+<dt><strong>logger</strong><span class="classifier">Logger</span></dt><dd><p>The logger for the cache.</p>
+</dd>
+<dt><strong>config</strong><span class="classifier">CacheConfig, optional</span></dt><dd><p>The cache configuration.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – If <cite>config</cite> is not of type <cite>CacheConfig</cite>.</p>
+<dd class="field-even"><dl class="simple">
+<dt>TypeError</dt><dd><p>If <cite>config</cite> is not of type <cite>CacheConfig</cite>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -840,10 +908,15 @@
 <dd><p>Return the account matching the given ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>account_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId"><em>AccountId</em></a>) – The account ID.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>account_id</strong><span class="classifier">AccountId</span></dt><dd><p>The account ID.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Account or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Account or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -854,10 +927,15 @@
 <dd><p>Return the account matching the given client ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a>) – The venue for the account.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue</span></dt><dd><p>The venue for the account.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Account or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Account or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -868,10 +946,15 @@
 <dd><p>Return the account ID for the given venue (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a>) – The venue for the account ID.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue</span></dt><dd><p>The venue for the account ID.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>AccountId or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>AccountId or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -882,7 +965,9 @@
 <dd><p>Return all accounts in the cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[Account]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[Account]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -893,10 +978,16 @@
 <dd><p>Add the given account to the cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>account</strong> (<em>Account</em>) – The account to add.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>account</strong><span class="classifier">Account</span></dt><dd><p>The account to add.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>account_id</cite> is already contained in the cache.</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>account_id</cite> is already contained in the cache.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -907,7 +998,10 @@
 <dd><p>Add the given bar to the cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The bar to add.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The bar to add.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -918,7 +1012,10 @@
 <dd><p>Add the given bars to the cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bars</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a><em>]</em>) – The bars to add.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bars</strong><span class="classifier">list[Bar]</span></dt><dd><p>The bars to add.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -929,7 +1026,10 @@
 <dd><p>Add the given currency to the cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a>) – The currency to add.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency</span></dt><dd><p>The currency to add.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -940,7 +1040,10 @@
 <dd><p>Add the given instrument to the cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument to add.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument to add.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -952,13 +1055,18 @@
 ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>order</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to add.</p></li>
-<li><p><strong>position_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId"><em>PositionId</em></a>) – The position ID to index for the order.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>order</strong><span class="classifier">Order</span></dt><dd><p>The order to add.</p>
+</dd>
+<dt><strong>position_id</strong><span class="classifier">PositionId</span></dt><dd><p>The position ID to index for the order.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>order.client_order_id</cite> is already contained in the cache.</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>order.client_order_id</cite> is already contained in the cache.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -969,7 +1077,10 @@ ID.</p>
 <dd><p>Add the given order book to the cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>order_book</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.orderbook.book.OrderBook" title="nautilus_trader.model.orderbook.book.OrderBook"><em>OrderBook</em></a>) – The order book to add.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>order_book</strong><span class="classifier">OrderBook</span></dt><dd><p>The order book to add.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -980,13 +1091,18 @@ ID.</p>
 <dd><p>Add the given position to the cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>position</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.position.Position" title="nautilus_trader.model.position.Position"><em>Position</em></a>) – The position to add.</p></li>
-<li><p><strong>oms_type</strong> (<em>OMSType</em>) – The order management system type for the position.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position</strong><span class="classifier">Position</span></dt><dd><p>The position to add.</p>
+</dd>
+<dt><strong>oms_type</strong><span class="classifier">OMSType</span></dt><dd><p>The order management system type for the position.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>oms_type</cite> is <code class="docutils literal notranslate"><span class="pre">HEDGING</span></code> and <cite>position.id</cite> is already contained in the cache.</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>oms_type</cite> is <code class="docutils literal notranslate"><span class="pre">HEDGING</span></code> and <cite>position.id</cite> is already contained in the cache.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -997,12 +1113,16 @@ ID.</p>
 <dd><p>Index the given position ID with the other given IDs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>position_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId"><em>PositionId</em></a>) – The position ID to index.</p></li>
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a>) – The venue ID to index with the position ID.</p></li>
-<li><p><strong>client_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID to index with the position ID.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a>) – The strategy ID to index with the position ID.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position_id</strong><span class="classifier">PositionId</span></dt><dd><p>The position ID to index.</p>
+</dd>
+<dt><strong>venue</strong><span class="classifier">Venue</span></dt><dd><p>The venue ID to index with the position ID.</p>
+</dd>
+<dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID to index with the position ID.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId</span></dt><dd><p>The strategy ID to index with the position ID.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1013,7 +1133,10 @@ ID.</p>
 <dd><p>Add the given quote tick to the cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a>) – The tick to add.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">QuoteTick</span></dt><dd><p>The tick to add.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1024,7 +1147,10 @@ ID.</p>
 <dd><p>Add the given quote ticks to the cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>ticks</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a><em>]</em>) – The ticks to add.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ticks</strong><span class="classifier">list[QuoteTick]</span></dt><dd><p>The ticks to add.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1035,7 +1161,10 @@ ID.</p>
 <dd><p>Add the given ticker to the cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>ticker</strong> (<em>Ticker</em>) – The ticker to add.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ticker</strong><span class="classifier">Ticker</span></dt><dd><p>The ticker to add.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1046,7 +1175,10 @@ ID.</p>
 <dd><p>Add the given trade tick to the cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a>) – The tick to add.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">TradeTick</span></dt><dd><p>The tick to add.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1057,7 +1189,10 @@ ID.</p>
 <dd><p>Add the given trade ticks to the cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>ticks</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a><em>]</em>) – The ticks to add.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ticks</strong><span class="classifier">list[TradeTick]</span></dt><dd><p>The ticks to add.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1069,13 +1204,18 @@ ID.</p>
 <p>Last bar if no index specified.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type to get.</p></li>
-<li><p><strong>index</strong> (<em>int</em><em>, </em><em>optional</em>) – The index for the bar to get.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar_type</strong><span class="classifier">BarType</span></dt><dd><p>The bar type to get.</p>
+</dd>
+<dt><strong>index</strong><span class="classifier">int, optional</span></dt><dd><p>The index for the bar to get.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Bar or <code class="docutils literal notranslate"><span class="pre">None</span></code> – If no bars or no bar at index then returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dd class="field-even"><dl class="simple">
+<dt>Bar or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd><p>If no bars or no bar at index then returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -1099,10 +1239,15 @@ ID.</p>
 <dd><p>The count of bars for the given bar type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type to count.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar_type</strong><span class="classifier">BarType</span></dt><dd><p>The bar type to count.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>int</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>int</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1113,10 +1258,15 @@ ID.</p>
 <dd><p>Return bars for the given bar type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type for bars to get.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar_type</strong><span class="classifier">BarType</span></dt><dd><p>The bar type for bars to get.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>list[Bar]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>list[Bar]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1170,7 +1320,10 @@ database.</p>
 error is found then a log error message will also be produced.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if checks pass, else False.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if checks pass, else False.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1182,7 +1335,10 @@ error is found then a log error message will also be produced.</p>
 <p>Active state is considered accepted/working orders and open positions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if residuals exist, else False.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if residuals exist, else False.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1208,10 +1364,15 @@ error is found then a log error message will also be produced.</p>
 <dd><p>Return the client order ID matching the given order ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>venue_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><em>VenueOrderId</em></a>) – The venue assigned order ID.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue assigned order ID.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>ClientOrderId or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>ClientOrderId or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1222,14 +1383,19 @@ error is found then a log error message will also be produced.</p>
 <dd><p>Return all client order IDs with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>set[ClientOrderId]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>set[ClientOrderId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1240,14 +1406,19 @@ error is found then a log error message will also be produced.</p>
 <dd><p>Return all active client order IDs with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>set[ClientOrderId]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>set[ClientOrderId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1258,14 +1429,19 @@ error is found then a log error message will also be produced.</p>
 <dd><p>Return all completed client order IDs with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>set[ClientOrderId]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>set[ClientOrderId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1276,14 +1452,19 @@ error is found then a log error message will also be produced.</p>
 <dd><p>Return all in-flight client order IDs with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>set[ClientOrderId]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>set[ClientOrderId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1294,14 +1475,19 @@ error is found then a log error message will also be produced.</p>
 <dd><p>Return all working client order IDs with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>set[ClientOrderId]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>set[ClientOrderId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1312,10 +1498,16 @@ error is found then a log error message will also be produced.</p>
 <dd><p>Delete the given strategy from the cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>strategy</strong> (<a class="reference internal" href="trading.html#nautilus_trader.trading.strategy.TradingStrategy" title="nautilus_trader.trading.strategy.TradingStrategy"><em>TradingStrategy</em></a>) – The strategy to deregister.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>strategy</strong><span class="classifier">TradingStrategy</span></dt><dd><p>The strategy to deregister.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>strategy</cite> is not contained in the strategies.</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>strategy</cite> is not contained in the strategies.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1336,18 +1528,27 @@ error is found then a log error message will also be produced.</p>
 <dd><p>Return the calculated exchange rate.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a>) – The venue for the exchange rate.</p></li>
-<li><p><strong>from_currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a>) – The currency to convert from.</p></li>
-<li><p><strong>to_currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a>) – The currency to convert to.</p></li>
-<li><p><strong>price_type</strong> (<em>PriceType</em>) – The price type for the exchange rate.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue</span></dt><dd><p>The venue for the exchange rate.</p>
+</dd>
+<dt><strong>from_currency</strong><span class="classifier">Currency</span></dt><dd><p>The currency to convert from.</p>
+</dd>
+<dt><strong>to_currency</strong><span class="classifier">Currency</span></dt><dd><p>The currency to convert to.</p>
+</dd>
+<dt><strong>price_type</strong><span class="classifier">PriceType</span></dt><dd><p>The price type for the exchange rate.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Decimal</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>Decimal</dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>price_type</cite> is <code class="docutils literal notranslate"><span class="pre">LAST</span></code>.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>price_type</cite> is <code class="docutils literal notranslate"><span class="pre">LAST</span></code>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1359,10 +1560,15 @@ error is found then a log error message will also be produced.</p>
 type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar_type</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.BarType" title="nautilus_trader.model.data.bar.BarType"><em>BarType</em></a>) – The bar type for the bars.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar_type</strong><span class="classifier">BarType</span></dt><dd><p>The bar type for the bars.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>bool</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1374,10 +1580,15 @@ type.</p>
 for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the order book snapshot.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the order book snapshot.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>bool</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1389,10 +1600,15 @@ for the given instrument ID.</p>
 given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the ticks.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the ticks.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>bool</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1404,10 +1620,15 @@ given instrument ID.</p>
 instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the ticks.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the ticks.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>bool</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1419,10 +1640,15 @@ instrument ID.</p>
 given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the ticks.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the ticks.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>bool</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1433,10 +1659,15 @@ given instrument ID.</p>
 <dd><p>Return the instrument corresponding to the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID of the instrument to return.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID of the instrument to return.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Instrument or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Instrument or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1447,10 +1678,15 @@ given instrument ID.</p>
 <dd><p>Return all instrument IDs held by the cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue filter for the query.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue filter for the query.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>list[InstrumentId]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>list[InstrumentId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1461,10 +1697,15 @@ given instrument ID.</p>
 <dd><p>Return all instruments held by the cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue filter for the query.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue filter for the query.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>list[Instrument]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>list[Instrument]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1475,10 +1716,15 @@ given instrument ID.</p>
 <dd><p>Return a value indicating whether an order with the given ID is active.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>client_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID to check.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID to check.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>bool</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1489,10 +1735,15 @@ given instrument ID.</p>
 <dd><p>Return a value indicating whether an order with the given ID is completed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>client_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID to check.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID to check.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>bool</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1503,10 +1754,15 @@ given instrument ID.</p>
 <dd><p>Return a value indicating whether an order with the given ID is in-flight.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>client_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID to check.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID to check.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>bool</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1517,10 +1773,15 @@ given instrument ID.</p>
 <dd><p>Return a value indicating whether an order with the given ID is working.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>client_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID to check.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID to check.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>bool</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1532,10 +1793,15 @@ given instrument ID.</p>
 and is closed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>position_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId"><em>PositionId</em></a>) – The position ID.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position_id</strong><span class="classifier">PositionId</span></dt><dd><p>The position ID.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>bool</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1547,10 +1813,15 @@ and is closed.</p>
 and is open.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>position_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId"><em>PositionId</em></a>) – The position ID.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position_id</strong><span class="classifier">PositionId</span></dt><dd><p>The position ID.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>bool</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1561,10 +1832,15 @@ and is open.</p>
 <dd><p>Load the account associated with the given account_id (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>account_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.AccountId" title="nautilus_trader.model.identifiers.AccountId"><em>AccountId</em></a>) – The account ID to load.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>account_id</strong><span class="classifier">AccountId</span></dt><dd><p>The account ID to load.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Account or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Account or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1575,10 +1851,15 @@ and is open.</p>
 <dd><p>Load the instrument associated with the given instrument_id (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID to load.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID to load.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Account or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Account or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1589,10 +1870,15 @@ and is open.</p>
 <dd><p>Load the order associated with the given ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>client_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID to load.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID to load.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Order or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Order or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1603,10 +1889,15 @@ and is open.</p>
 <dd><p>Load the position associated with the given ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>position_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId"><em>PositionId</em></a>) – The position ID to load.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position_id</strong><span class="classifier">PositionId</span></dt><dd><p>The position ID to load.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Position or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Position or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1617,7 +1908,10 @@ and is open.</p>
 <dd><p>Load the state dictionary for the given strategy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>strategy</strong> (<a class="reference internal" href="trading.html#nautilus_trader.trading.strategy.TradingStrategy" title="nautilus_trader.trading.strategy.TradingStrategy"><em>TradingStrategy</em></a>) – The strategy to load.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>strategy</strong><span class="classifier">TradingStrategy</span></dt><dd><p>The strategy to load.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1628,7 +1922,9 @@ and is open.</p>
 <dd><p>Return the order matching the given client order ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Order or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-odd"><dl class="simple">
+<dt>Order or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1639,10 +1935,14 @@ and is open.</p>
 <dd><p>Return the order book for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – </p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>OrderBook or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>OrderBook or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1653,10 +1953,15 @@ and is open.</p>
 <dd><p>Return a value indicating whether an order with the given ID exists.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>client_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID to check.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID to check.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>bool</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1667,14 +1972,19 @@ and is open.</p>
 <dd><p>Return all orders with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>list[Order]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>list[Order]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1685,14 +1995,19 @@ and is open.</p>
 <dd><p>Return all active orders with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>list[Order]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>list[Order]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1703,14 +2018,19 @@ and is open.</p>
 <dd><p>Return the count of active orders with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>int</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>int</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1721,14 +2041,19 @@ and is open.</p>
 <dd><p>Return all completed orders with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>list[Order]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>list[Order]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1739,14 +2064,19 @@ and is open.</p>
 <dd><p>Return the count of completed orders with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>int</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>int</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1757,10 +2087,15 @@ and is open.</p>
 <dd><p>Return all orders for the given position ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>position_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId"><em>PositionId</em></a>) – The position ID for the orders.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position_id</strong><span class="classifier">PositionId</span></dt><dd><p>The position ID for the orders.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>list[Order]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>list[Order]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1771,14 +2106,19 @@ and is open.</p>
 <dd><p>Return all working orders with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>list[Order]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>list[Order]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1789,14 +2129,19 @@ and is open.</p>
 <dd><p>Return the count of in-flight orders with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>int</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>int</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1807,14 +2152,19 @@ and is open.</p>
 <dd><p>Return the total count of orders with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>int</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>int</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1825,14 +2175,19 @@ and is open.</p>
 <dd><p>Return all working orders with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>list[Order]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>list[Order]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1843,14 +2198,19 @@ and is open.</p>
 <dd><p>Return the count of working orders with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>int</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>int</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1861,10 +2221,15 @@ and is open.</p>
 <dd><p>Return the position associated with the given ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>position_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId"><em>PositionId</em></a>) – The position ID.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position_id</strong><span class="classifier">PositionId</span></dt><dd><p>The position ID.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Position or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Position or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1875,14 +2240,19 @@ and is open.</p>
 <dd><p>Return all closed position IDs with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Set[PositionId]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>Set[PositionId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1893,10 +2263,15 @@ and is open.</p>
 <dd><p>Return a value indicating whether a position with the given ID exists.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>position_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId"><em>PositionId</em></a>) – The position ID.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position_id</strong><span class="classifier">PositionId</span></dt><dd><p>The position ID.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>int</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>int</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1907,10 +2282,15 @@ and is open.</p>
 <dd><p>Return the position associated with the given client order ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>client_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Position or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Position or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1921,10 +2301,15 @@ and is open.</p>
 <dd><p>Return the position ID associated with the given client order ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>client_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID associated with the position.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID associated with the position.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>PositionId or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>PositionId or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1935,14 +2320,19 @@ and is open.</p>
 <dd><p>Return all position IDs with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Set[PositionId]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>Set[PositionId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1953,14 +2343,19 @@ and is open.</p>
 <dd><p>Return all open position IDs with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Set[PositionId]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>Set[PositionId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1971,14 +2366,19 @@ and is open.</p>
 <dd><p>Return all positions with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>list[Position]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>list[Position]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1989,14 +2389,19 @@ and is open.</p>
 <dd><p>Return all closed positions with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>list[Position]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>list[Position]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2007,14 +2412,19 @@ and is open.</p>
 <dd><p>Return the count of closed positions with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>int</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>int</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2025,14 +2435,19 @@ and is open.</p>
 <dd><p>Return all open positions with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>list[Position]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>list[Position]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2043,14 +2458,19 @@ and is open.</p>
 <dd><p>Return the count of open positions with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>int</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>int</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2061,14 +2481,19 @@ and is open.</p>
 <dd><p>Return the total count of positions with the given query filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a><em>, </em><em>optional</em>) – The venue ID query filter.</p></li>
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument ID query filter.</p></li>
-<li><p><strong>strategy_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.StrategyId" title="nautilus_trader.model.identifiers.StrategyId"><em>StrategyId</em></a><em>, </em><em>optional</em>) – The strategy ID query filter.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue, optional</span></dt><dd><p>The venue ID query filter.</p>
+</dd>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>strategy_id</strong><span class="classifier">StrategyId, optional</span></dt><dd><p>The strategy ID query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>int</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>int</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2079,13 +2504,17 @@ and is open.</p>
 <dd><p>Return the price for the given instrument ID and price type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the price.</p></li>
-<li><p><strong>price_type</strong> (<em>PriceType</em>) – The price type for the query.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the price.</p>
+</dd>
+<dt><strong>price_type</strong><span class="classifier">PriceType</span></dt><dd><p>The price type for the query.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Price or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Price or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2097,13 +2526,18 @@ and is open.</p>
 <p>Last quote tick if no index specified.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the tick to get.</p></li>
-<li><p><strong>index</strong> (<em>int</em><em>, </em><em>optional</em>) – The index for the tick to get.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the tick to get.</p>
+</dd>
+<dt><strong>index</strong><span class="classifier">int, optional</span></dt><dd><p>The index for the tick to get.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>QuoteTick or <code class="docutils literal notranslate"><span class="pre">None</span></code> – If no ticks or no tick at index then returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dd class="field-even"><dl class="simple">
+<dt>QuoteTick or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd><p>If no ticks or no tick at index then returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -2116,10 +2550,15 @@ and is open.</p>
 <dd><p>The count of quote ticks for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the ticks.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the ticks.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>int</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>int</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2130,10 +2569,15 @@ and is open.</p>
 <dd><p>Return the quote ticks for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the ticks to get.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the ticks to get.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>list[QuoteTick]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>list[QuoteTick]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2151,10 +2595,15 @@ and is open.</p>
 <dd><p>Return the strategy ID associated with the given ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>client_order_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><em>ClientOrderId</em></a>) – The client order ID associated with the strategy.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID associated with the strategy.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>StrategyId or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>StrategyId or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2165,10 +2614,15 @@ and is open.</p>
 <dd><p>Return the strategy ID associated with the given ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>position_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId"><em>PositionId</em></a>) – The position ID associated with the strategy.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position_id</strong><span class="classifier">PositionId</span></dt><dd><p>The position ID associated with the strategy.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>StrategyId or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>StrategyId or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2179,7 +2633,9 @@ and is open.</p>
 <dd><p>Return all strategy IDs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>Set[StrategyId]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>Set[StrategyId]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2202,13 +2658,18 @@ and is open.</p>
 <p>Last ticker if no index specified.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the ticker to get.</p></li>
-<li><p><strong>index</strong> (<em>int</em><em>, </em><em>optional</em>) – The index for the ticker to get.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the ticker to get.</p>
+</dd>
+<dt><strong>index</strong><span class="classifier">int, optional</span></dt><dd><p>The index for the ticker to get.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Ticker or <code class="docutils literal notranslate"><span class="pre">None</span></code> – If no tickers or no ticker at index then returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dd class="field-even"><dl class="simple">
+<dt>Ticker or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd><p>If no tickers or no ticker at index then returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -2221,10 +2682,15 @@ and is open.</p>
 <dd><p>The count of tickers for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the tickers.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the tickers.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>int</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>int</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2235,10 +2701,15 @@ and is open.</p>
 <dd><p>Return the tickers for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the ticks to get.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the ticks to get.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>list[QuoteTick]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>list[QuoteTick]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2250,13 +2721,18 @@ and is open.</p>
 <p>Last trade tick if no index specified.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the tick to get.</p></li>
-<li><p><strong>index</strong> (<em>int</em><em>, </em><em>optional</em>) – The index for the tick to get.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the tick to get.</p>
+</dd>
+<dt><strong>index</strong><span class="classifier">int, optional</span></dt><dd><p>The index for the tick to get.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>TradeTick or <code class="docutils literal notranslate"><span class="pre">None</span></code> – If no ticks or no tick at index then returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dd class="field-even"><dl class="simple">
+<dt>TradeTick or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd><p>If no ticks or no tick at index then returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -2269,10 +2745,15 @@ and is open.</p>
 <dd><p>The count of trade ticks for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the ticks.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the ticks.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>int</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>int</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2283,10 +2764,15 @@ and is open.</p>
 <dd><p>Return trade ticks for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the ticks to get.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the ticks to get.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>list[TradeTick]</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>list[TradeTick]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2297,7 +2783,9 @@ and is open.</p>
 <dd><p>Update the given account in the cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>account</strong> (<em>The account to update</em><em> (</em><em>from last event</em><em>)</em><em></em>) – </p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>account</strong><span class="classifier">The account to update (from last event).</span></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2308,7 +2796,10 @@ and is open.</p>
 <dd><p>Update the given order in the cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>order</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.orderbook.data.Order" title="nautilus_trader.model.orderbook.data.Order"><em>Order</em></a>) – The order to update (from last event).</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>order</strong><span class="classifier">Order</span></dt><dd><p>The order to update (from last event).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2319,7 +2810,10 @@ and is open.</p>
 <dd><p>Update the given position in the cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>position</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.position.Position" title="nautilus_trader.model.position.Position"><em>Position</em></a>) – The position to update (from last event).</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position</strong><span class="classifier">Position</span></dt><dd><p>The position to update (from last event).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2330,7 +2824,10 @@ and is open.</p>
 <dd><p>Update the given strategy state in the cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>strategy</strong> (<a class="reference internal" href="trading.html#nautilus_trader.trading.strategy.TradingStrategy" title="nautilus_trader.trading.strategy.TradingStrategy"><em>TradingStrategy</em></a>) – The strategy to update.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>strategy</strong><span class="classifier">TradingStrategy</span></dt><dd><p>The strategy to update.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2341,7 +2838,9 @@ and is open.</p>
 <dd><p>Return the order ID matching the given client order ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>VenueOrderId or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-odd"><dl class="simple">
+<dt>VenueOrderId or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2358,10 +2857,12 @@ and is open.</p>
 <p>Configuration for <code class="docutils literal notranslate"><span class="pre">Cache</span></code> instances.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>tick_capacity</strong> (<em>int</em>) – The maximum length for internal tick deques.</p></li>
-<li><p><strong>bar_capacity</strong> (<em>int</em>) – The maximum length for internal bar deques.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick_capacity</strong><span class="classifier">int</span></dt><dd><p>The maximum length for internal tick deques.</p>
+</dd>
+<dt><strong>bar_capacity</strong><span class="classifier">int</span></dt><dd><p>The maximum length for internal bar deques.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -2423,7 +2924,10 @@ the new model: you should trust this data</p></li>
 <p>The abstract base class for all cache databases.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the database.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>logger</strong><span class="classifier">Logger</span></dt><dd><p>The logger for the database.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">

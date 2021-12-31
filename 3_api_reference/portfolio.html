@@ -26,8 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -40,7 +40,7 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
@@ -196,10 +196,72 @@
      Live
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="model.html">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="model/0_index.html">
      Model
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/commands.html">
+       Commands
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/currency.html">
+       Currency
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/data.html">
+       Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/events.html">
+       Events
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/identifiers.html">
+       Identifiers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/instruments.html">
+       Instruments
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/objects.html">
+       Objects
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/orderbook.html">
+       Order Book
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/orders.html">
+       Orders
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/position.html">
+       Position
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/tick_scheme.html">
+       Tick Scheme
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="msgbus.html">
@@ -237,8 +299,8 @@
   <a class="reference internal" href="../4_integrations/0_index.html">
    Integrations
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -311,9 +373,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/3_api_reference/portfolio.rst"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/3_api_reference/portfolio.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.rst</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -360,7 +422,7 @@
         
               <div>
                 
-  <div class="section" id="module-nautilus_trader.portfolio.portfolio">
+  <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.portfolio.portfolio">
 <span id="portfolio"></span><h1>Portfolio<a class="headerlink" href="#module-nautilus_trader.portfolio.portfolio" title="Permalink to this headline">¶</a></h1>
 <p>The <cite>Portfolio</cite> facilitates the management of trading operations.</p>
 <p>The intended use case is for a single <code class="docutils literal notranslate"><span class="pre">Portfolio</span></code> instance per running system,
@@ -377,12 +439,16 @@ total risk exposures and total net positions.</p>
 instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the engine.</p></li>
-<li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.base.CacheFacade" title="nautilus_trader.cache.base.CacheFacade"><em>CacheFacade</em></a>) – The read-only cache for the portfolio.</p></li>
-<li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the portfolio.</p></li>
-<li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the portfolio.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>msgbus</strong><span class="classifier">MessageBus</span></dt><dd><p>The message bus for the engine.</p>
+</dd>
+<dt><strong>cache</strong><span class="classifier">CacheFacade</span></dt><dd><p>The read-only cache for the portfolio.</p>
+</dd>
+<dt><strong>clock</strong><span class="classifier">Clock</span></dt><dd><p>The clock for the portfolio.</p>
+</dd>
+<dt><strong>logger</strong><span class="classifier">Logger</span></dt><dd><p>The logger for the portfolio.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -391,10 +457,15 @@ instance.</p>
 <dd><p>Return the account for the given venue (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a>) – The venue for the account.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue</span></dt><dd><p>The venue for the account.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Account or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Account or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -405,10 +476,15 @@ instance.</p>
 <dd><p>Return the balances locked for the given venue (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a>) – The venue for the margin.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue</span></dt><dd><p>The venue for the margin.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>dict[Currency, Money] or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>dict[Currency, Money] or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -444,7 +520,10 @@ instance.</p>
 <dd><p>Return a value indicating whether the portfolio is completely flat.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em> – True if net flat across all instruments, else False.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if net flat across all instruments, else False.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -456,10 +535,16 @@ instance.</p>
 instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a><em>, </em><em>optional</em>) – The instrument query filter.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument query filter.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>bool</em> – True if net flat, else False.</p>
+<dd class="field-even"><dl class="simple">
+<dt>bool</dt><dd><p>True if net flat, else False.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -471,10 +556,16 @@ instrument ID.</p>
 instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument for the query.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument for the query.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>bool</em> – True if net long, else False.</p>
+<dd class="field-even"><dl class="simple">
+<dt>bool</dt><dd><p>True if net long, else False.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -486,10 +577,16 @@ instrument ID.</p>
 instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument for the query.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument for the query.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>bool</em> – True if net short, else False.</p>
+<dd class="field-even"><dl class="simple">
+<dt>bool</dt><dd><p>True if net short, else False.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -500,10 +597,15 @@ instrument ID.</p>
 <dd><p>Return the initial (order) margins for the given venue (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a>) – The venue for the margin.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue</span></dt><dd><p>The venue for the margin.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>dict[Currency, Money] or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>dict[Currency, Money] or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -514,10 +616,15 @@ instrument ID.</p>
 <dd><p>Return the maintenance (position) margins for the given venue (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a>) – The venue for the margin.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue</span></dt><dd><p>The venue for the margin.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>dict[Currency, Money] or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>dict[Currency, Money] or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -528,10 +635,15 @@ instrument ID.</p>
 <dd><p>Return the net exposure for the given instrument (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument for the calculation.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument for the calculation.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -542,10 +654,15 @@ instrument ID.</p>
 <dd><p>Return the net exposures for the given venue (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a>) – The venue for the market value.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue</span></dt><dd><p>The venue for the market value.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>dict[Currency, Money] or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>dict[Currency, Money] or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -557,10 +674,15 @@ instrument ID.</p>
 If no positions for instrument_id then will return <cite>Decimal(‘0’)</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument for the query.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument for the query.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Decimal</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>Decimal</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -578,10 +700,15 @@ If no positions for instrument_id then will return <cite>Decimal(‘0’)</cite>
 <dd><p>Return the unrealized PnL for the given instrument ID (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument for the unrealized PnL.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument for the unrealized PnL.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -592,10 +719,15 @@ If no positions for instrument_id then will return <cite>Decimal(‘0’)</cite>
 <dd><p>Return the unrealized pnls for the given venue (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>venue</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.Venue" title="nautilus_trader.model.identifiers.Venue"><em>Venue</em></a>) – The venue for the unrealized pnl.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>venue</strong><span class="classifier">Venue</span></dt><dd><p>The venue for the unrealized pnl.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>dict[Currency, Money] or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>dict[Currency, Money] or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -606,7 +738,10 @@ If no positions for instrument_id then will return <cite>Decimal(‘0’)</cite>
 <dd><p>Apply the given account state.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.events.account.AccountState" title="nautilus_trader.model.events.account.AccountState"><em>AccountState</em></a>) – The account state to apply.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>event</strong><span class="classifier">AccountState</span></dt><dd><p>The account state to apply.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -617,7 +752,10 @@ If no positions for instrument_id then will return <cite>Decimal(‘0’)</cite>
 <dd><p>Update the portfolio with the given order.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.events.order.OrderEvent" title="nautilus_trader.model.events.order.OrderEvent"><em>OrderEvent</em></a>) – The event to update with.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>event</strong><span class="classifier">OrderEvent</span></dt><dd><p>The event to update with.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -628,7 +766,10 @@ If no positions for instrument_id then will return <cite>Decimal(‘0’)</cite>
 <dd><p>Update the portfolio with the given position event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.events.position.PositionEvent" title="nautilus_trader.model.events.position.PositionEvent"><em>PositionEvent</em></a>) – The event to update with.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>event</strong><span class="classifier">PositionEvent</span></dt><dd><p>The event to update with.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -642,7 +783,10 @@ performs any initialization calculations which may have been pending
 a market quote update.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a>) – The tick to update with.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">QuoteTick</span></dt><dd><p>The tick to update with.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>

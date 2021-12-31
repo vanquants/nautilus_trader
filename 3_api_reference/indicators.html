@@ -26,8 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -40,7 +40,7 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
@@ -196,10 +196,72 @@
      Live
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="model.html">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="model/0_index.html">
      Model
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/commands.html">
+       Commands
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/currency.html">
+       Currency
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/data.html">
+       Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/events.html">
+       Events
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/identifiers.html">
+       Identifiers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/instruments.html">
+       Instruments
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/objects.html">
+       Objects
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/orderbook.html">
+       Order Book
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/orders.html">
+       Orders
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/position.html">
+       Position
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/tick_scheme.html">
+       Tick Scheme
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="msgbus.html">
@@ -237,8 +299,8 @@
   <a class="reference internal" href="../4_integrations/0_index.html">
    Integrations
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -311,9 +373,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/3_api_reference/indicators.rst"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/3_api_reference/indicators.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.rst</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -503,7 +565,7 @@
         
               <div>
                 
-  <div class="section" id="module-nautilus_trader.indicators">
+  <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.indicators">
 <span id="indicators"></span><h1>Indicators<a class="headerlink" href="#module-nautilus_trader.indicators" title="Permalink to this headline">¶</a></h1>
 <p>The <cite>indicator</cite> subpackage groups all indicators and analyzers.</p>
 <p>These are classes which can be used for signal discovery and filtering. The idea
@@ -522,12 +584,16 @@ follow prices when the price swings are relatively small and the noise is
 low. The AMA will increase lag when the price swings increase.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>period_er</strong> (<em>int</em>) – The period for the internal <cite>EfficiencyRatio</cite> indicator (&gt; 0).</p></li>
-<li><p><strong>period_alpha_fast</strong> (<em>int</em>) – The period for the fast smoothing constant (&gt; 0).</p></li>
-<li><p><strong>period_alpha_slow</strong> (<em>int</em>) – The period for the slow smoothing constant (&gt; 0 &lt; alpha_fast).</p></li>
-<li><p><strong>price_type</strong> (<em>PriceType</em>) – The specified price type for extracting values from quote ticks.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>period_er</strong><span class="classifier">int</span></dt><dd><p>The period for the internal <cite>EfficiencyRatio</cite> indicator (&gt; 0).</p>
+</dd>
+<dt><strong>period_alpha_fast</strong><span class="classifier">int</span></dt><dd><p>The period for the fast smoothing constant (&gt; 0).</p>
+</dd>
+<dt><strong>period_alpha_slow</strong><span class="classifier">int</span></dt><dd><p>The period for the slow smoothing constant (&gt; 0 &lt; alpha_fast).</p>
+</dd>
+<dt><strong>price_type</strong><span class="classifier">PriceType</span></dt><dd><p>The specified price type for extracting values from quote ticks.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -580,7 +646,10 @@ low. The AMA will increase lag when the price swings increase.</p>
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The update bar to handle.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The update bar to handle.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -591,7 +660,10 @@ low. The AMA will increase lag when the price swings increase.</p>
 <dd><p>Update the indicator with the given quote tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a>) – The update tick to handle.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">QuoteTick</span></dt><dd><p>The update tick to handle.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -602,7 +674,10 @@ low. The AMA will increase lag when the price swings increase.</p>
 <dd><p>Update the indicator with the given trade tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a>) – The update tick to handle.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">TradeTick</span></dt><dd><p>The update tick to handle.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -708,7 +783,10 @@ low. The AMA will increase lag when the price swings increase.</p>
 <dd><p>Update the indicator with the given raw value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>value</strong> (<em>double</em>) – The update value.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>value</strong><span class="classifier">double</span></dt><dd><p>The update value.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -737,13 +815,18 @@ low. The AMA will increase lag when the price swings increase.</p>
 rolling window.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>period</strong> (<em>int</em>) – The rolling window period for the indicator (&gt; 0).</p></li>
-<li><p><strong>price_type</strong> (<em>PriceType</em>) – The specified price type for extracting values from quote ticks.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>period</strong><span class="classifier">int</span></dt><dd><p>The rolling window period for the indicator (&gt; 0).</p>
+</dd>
+<dt><strong>price_type</strong><span class="classifier">PriceType</span></dt><dd><p>The specified price type for extracting values from quote ticks.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>period</cite> is not positive (&gt; 0).</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>period</cite> is not positive (&gt; 0).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -774,7 +857,10 @@ rolling window.</p>
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The update bar to handle.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The update bar to handle.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -785,7 +871,10 @@ rolling window.</p>
 <dd><p>Update the indicator with the given quote tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a>) – The update tick to handle.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">QuoteTick</span></dt><dd><p>The update tick to handle.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -796,7 +885,10 @@ rolling window.</p>
 <dd><p>Update the indicator with the given trade tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a>) – The update tick to handle.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">TradeTick</span></dt><dd><p>The update tick to handle.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -869,7 +961,10 @@ rolling window.</p>
 <dd><p>Update the indicator with the given raw value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>value</strong> (<em>double</em>) – The update value.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>value</strong><span class="classifier">double</span></dt><dd><p>The update value.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -902,10 +997,16 @@ instrument_id over N periods. The area between the upper and lower bands
 represents the Donchian Channel.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>period</strong> (<em>int</em>) – The rolling window period for the indicator (&gt; 0).</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>period</strong><span class="classifier">int</span></dt><dd><p>The rolling window period for the indicator (&gt; 0).</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>period</cite> is not positive (&gt; 0).</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>period</cite> is not positive (&gt; 0).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -914,7 +1015,10 @@ represents the Donchian Channel.</p>
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The update bar.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The update bar.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -925,7 +1029,10 @@ represents the Donchian Channel.</p>
 <dd><p>Update the indicator with the given ticks high and low prices.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a>) – The tick for the update.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">TradeTick</span></dt><dd><p>The tick for the update.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -936,7 +1043,10 @@ represents the Donchian Channel.</p>
 <dd><p>Update the indicator with the given ticks price.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a>) – The tick for the update.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">TradeTick</span></dt><dd><p>The tick for the update.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1020,10 +1130,12 @@ represents the Donchian Channel.</p>
 <dd><p>Update the indicator with the given prices.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>high</strong> (<em>double</em>) – The price for the upper channel.</p></li>
-<li><p><strong>low</strong> (<em>double</em>) – The price for the lower channel.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>high</strong><span class="classifier">double</span></dt><dd><p>The price for the upper channel.</p>
+</dd>
+<dt><strong>low</strong><span class="classifier">double</span></dt><dd><p>The price for the lower channel.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1053,13 +1165,18 @@ window. The HMA, developed by Alan Hull, is an extremely fast and smooth
 moving average.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>period</strong> (<em>int</em>) – The rolling window period for the indicator (&gt; 0).</p></li>
-<li><p><strong>price_type</strong> (<em>PriceType</em>) – The specified price type for extracting values from quote ticks.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>period</strong><span class="classifier">int</span></dt><dd><p>The rolling window period for the indicator (&gt; 0).</p>
+</dd>
+<dt><strong>price_type</strong><span class="classifier">PriceType</span></dt><dd><p>The specified price type for extracting values from quote ticks.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>period</cite> is not positive (&gt; 0).</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>period</cite> is not positive (&gt; 0).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -1079,7 +1196,10 @@ moving average.</p>
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The update bar to handle.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The update bar to handle.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1090,7 +1210,10 @@ moving average.</p>
 <dd><p>Update the indicator with the given quote tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a>) – The update tick to handle.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">QuoteTick</span></dt><dd><p>The update tick to handle.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1101,7 +1224,10 @@ moving average.</p>
 <dd><p>Update the indicator with the given trade tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a>) – The update tick to handle.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">TradeTick</span></dt><dd><p>The update tick to handle.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1174,7 +1300,10 @@ moving average.</p>
 <dd><p>Update the indicator with the given raw value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>value</strong> (<em>double</em>) – The update value.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>value</strong><span class="classifier">double</span></dt><dd><p>The update value.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1206,16 +1335,23 @@ moving average.</p>
 <dd><p>Create a moving average indicator corresponding to the given ma_type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>period</strong> (<em>int</em>) – The period of the moving average (&gt; 0).</p></li>
-<li><p><strong>ma_type</strong> (<em>MovingAverageType</em>) – The moving average type.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>period</strong><span class="classifier">int</span></dt><dd><p>The period of the moving average (&gt; 0).</p>
+</dd>
+<dt><strong>ma_type</strong><span class="classifier">MovingAverageType</span></dt><dd><p>The moving average type.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>MovingAverage</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>MovingAverage</dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>period</cite> is not positive (&gt; 0).</p>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>period</cite> is not positive (&gt; 0).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1232,13 +1368,18 @@ moving average.</p>
 <p>An indicator which calculates a simple moving average across a rolling window.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>period</strong> (<em>int</em>) – The rolling window period for the indicator (&gt; 0).</p></li>
-<li><p><strong>price_type</strong> (<em>PriceType</em>) – The specified price type for extracting values from quote ticks.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>period</strong><span class="classifier">int</span></dt><dd><p>The rolling window period for the indicator (&gt; 0).</p>
+</dd>
+<dt><strong>price_type</strong><span class="classifier">PriceType</span></dt><dd><p>The specified price type for extracting values from quote ticks.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>period</cite> is not positive (&gt; 0).</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>period</cite> is not positive (&gt; 0).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -1258,7 +1399,10 @@ moving average.</p>
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The update bar to handle.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The update bar to handle.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1269,7 +1413,10 @@ moving average.</p>
 <dd><p>Update the indicator with the given quote tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a>) – The update tick to handle.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">QuoteTick</span></dt><dd><p>The update tick to handle.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1280,7 +1427,10 @@ moving average.</p>
 <dd><p>Update the indicator with the given trade tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a>) – The update tick to handle.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">TradeTick</span></dt><dd><p>The update tick to handle.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1353,7 +1503,10 @@ moving average.</p>
 <dd><p>Update the indicator with the given raw value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>value</strong> (<em>double</em>) – The update value.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>value</strong><span class="classifier">double</span></dt><dd><p>The update value.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1381,14 +1534,20 @@ moving average.</p>
 <p>An indicator which calculates a weighted moving average across a rolling window.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>period</strong> (<em>int</em>) – The rolling window period for the indicator (&gt; 0).</p></li>
-<li><p><strong>weights</strong> (<em>iterable</em>) – The weights for the moving average calculation (if not <code class="docutils literal notranslate"><span class="pre">None</span></code> then = period).</p></li>
-<li><p><strong>price_type</strong> (<em>PriceType</em>) – The specified price type for extracting values from quote ticks.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>period</strong><span class="classifier">int</span></dt><dd><p>The rolling window period for the indicator (&gt; 0).</p>
+</dd>
+<dt><strong>weights</strong><span class="classifier">iterable</span></dt><dd><p>The weights for the moving average calculation (if not <code class="docutils literal notranslate"><span class="pre">None</span></code> then = period).</p>
+</dd>
+<dt><strong>price_type</strong><span class="classifier">PriceType</span></dt><dd><p>The specified price type for extracting values from quote ticks.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>period</cite> is not positive (&gt; 0).</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>period</cite> is not positive (&gt; 0).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -1408,7 +1567,10 @@ moving average.</p>
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The update bar to handle.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The update bar to handle.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1419,7 +1581,10 @@ moving average.</p>
 <dd><p>Update the indicator with the given quote tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a>) – The update tick to handle.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">QuoteTick</span></dt><dd><p>The update tick to handle.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1430,7 +1595,10 @@ moving average.</p>
 <dd><p>Update the indicator with the given trade tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a>) – The update tick to handle.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">TradeTick</span></dt><dd><p>The update tick to handle.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1503,7 +1671,10 @@ moving average.</p>
 <dd><p>Update the indicator with the given raw value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>value</strong> (<em>double</em>) – The update value.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>value</strong><span class="classifier">double</span></dt><dd><p>The update value.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1543,14 +1714,18 @@ moving average.</p>
 Different moving average types can be selected for the inner calculation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>period</strong> (<em>int</em>) – The rolling window period for the indicator (&gt; 0).</p></li>
-<li><p><strong>ma_type</strong> (<em>MovingAverageType</em>) – The moving average type for the indicator (cannot be None).</p></li>
-<li><p><strong>use_previous</strong> (<em>bool</em>) – The boolean flag indicating whether previous price values should be used.
+<dd class="field-odd"><dl class="simple">
+<dt><strong>period</strong><span class="classifier">int</span></dt><dd><p>The rolling window period for the indicator (&gt; 0).</p>
+</dd>
+<dt><strong>ma_type</strong><span class="classifier">MovingAverageType</span></dt><dd><p>The moving average type for the indicator (cannot be None).</p>
+</dd>
+<dt><strong>use_previous</strong><span class="classifier">bool</span></dt><dd><p>The boolean flag indicating whether previous price values should be used.
 (note: only applicable for <cite>update()</cite>. <cite>update_mid()</cite> will need to
-use previous price.</p></li>
-<li><p><strong>value_floor</strong> (<em>double</em>) – The floor (minimum) output value for the indicator (&gt;= 0).</p></li>
-</ul>
+use previous price.</p>
+</dd>
+<dt><strong>value_floor</strong><span class="classifier">double</span></dt><dd><p>The floor (minimum) output value for the indicator (&gt;= 0).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -1559,7 +1734,10 @@ use previous price.</p></li>
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The update bar.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The update bar.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1633,11 +1811,14 @@ use previous price.</p></li>
 <dd><p>Update the indicator with the given raw values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>high</strong> (<em>double</em>) – The high price.</p></li>
-<li><p><strong>low</strong> (<em>double</em>) – The low price.</p></li>
-<li><p><strong>close</strong> (<em>double</em>) – The close price.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>high</strong><span class="classifier">double</span></dt><dd><p>The high price.</p>
+</dd>
+<dt><strong>low</strong><span class="classifier">double</span></dt><dd><p>The low price.</p>
+</dd>
+<dt><strong>close</strong><span class="classifier">double</span></dt><dd><p>The close price.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1666,10 +1847,12 @@ use previous price.</p></li>
 computation of the min/max values of the bid/ask prices within the window.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for inbound ticks.</p></li>
-<li><p><strong>lookback</strong> (<em>timedelta</em>) – The look back duration in time.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for inbound ticks.</p>
+</dd>
+<dt><strong>lookback</strong><span class="classifier">timedelta</span></dt><dd><p>The look back duration in time.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -1706,7 +1889,10 @@ computation of the min/max values of the bid/ask prices within the window.</p>
 <dd><p>Update the indicator with the given tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a>) – Incoming quote tick to process</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">QuoteTick</span></dt><dd><p>Incoming quote tick to process</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1789,7 +1975,10 @@ computation of the min/max values of the bid/ask prices within the window.</p>
 of the min/max values currently in the window.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>lookback</strong> (<em>timedelta</em>) – The look back duration in time.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>lookback</strong><span class="classifier">timedelta</span></dt><dd><p>The look back duration in time.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -1799,10 +1988,12 @@ of the min/max values currently in the window.</p>
 update our running min/max values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ts</strong> (<em>datetime</em>) – The timestamp for the price.</p></li>
-<li><p><strong>price</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The price to add.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ts</strong><span class="classifier">datetime</span></dt><dd><p>The timestamp for the price.</p>
+</dd>
+<dt><strong>price</strong><span class="classifier">Price</span></dt><dd><p>The price to add.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1862,17 +2053,22 @@ from a simple moving average (SMA) of a instrument_id’s price, but which can b
 adjusted to user preferences.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>period</strong> (<em>int</em>) – The rolling window period for the indicator (&gt; 0).</p></li>
-<li><p><strong>k</strong> (<em>double</em>) – The standard deviation multiple for the indicator (&gt; 0).</p></li>
-<li><p><strong>ma_type</strong> (<em>MovingAverageType</em>) – The moving average type for the indicator.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>period</strong><span class="classifier">int</span></dt><dd><p>The rolling window period for the indicator (&gt; 0).</p>
+</dd>
+<dt><strong>k</strong><span class="classifier">double</span></dt><dd><p>The standard deviation multiple for the indicator (&gt; 0).</p>
+</dd>
+<dt><strong>ma_type</strong><span class="classifier">MovingAverageType</span></dt><dd><p>The moving average type for the indicator.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If <cite>period</cite> is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If <cite>k</cite> is not positive (&gt; 0).</p></li>
-</ul>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>period</cite> is not positive (&gt; 0).</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>k</cite> is not positive (&gt; 0).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -1881,7 +2077,10 @@ adjusted to user preferences.</p>
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The update bar.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The update bar.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1892,7 +2091,10 @@ adjusted to user preferences.</p>
 <dd><p>Update the indicator with the given tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a>) – The tick for the update.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">TradeTick</span></dt><dd><p>The tick for the update.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1903,7 +2105,10 @@ adjusted to user preferences.</p>
 <dd><p>Update the indicator with the given tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a>) – The tick for the update.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">TradeTick</span></dt><dd><p>The tick for the update.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1998,11 +2203,14 @@ adjusted to user preferences.</p>
 <dd><p>Update the indicator with the given prices.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>high</strong> (<em>double</em>) – The high price for calculations.</p></li>
-<li><p><strong>low</strong> (<em>double</em>) – The low price for calculations.</p></li>
-<li><p><strong>close</strong> (<em>double</em>) – The closing price for calculations</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>high</strong><span class="classifier">double</span></dt><dd><p>The high price for calculations.</p>
+</dd>
+<dt><strong>low</strong><span class="classifier">double</span></dt><dd><p>The low price for calculations.</p>
+</dd>
+<dt><strong>close</strong><span class="classifier">double</span></dt><dd><p>The closing price for calculations</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2032,10 +2240,16 @@ The Kaufman Efficiency measures the ratio of the relative market speed in
 relation to the volatility, this could be thought of as a proxy for noise.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>period</strong> (<em>int</em>) – The rolling window period for the indicator (&gt;= 2).</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>period</strong><span class="classifier">int</span></dt><dd><p>The rolling window period for the indicator (&gt;= 2).</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>period</cite> is not &gt;= 2.</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>period</cite> is not &gt;= 2.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -2044,7 +2258,10 @@ relation to the volatility, this could be thought of as a proxy for noise.</p>
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The update bar.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The update bar.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2118,7 +2335,10 @@ relation to the volatility, this could be thought of as a proxy for noise.</p>
 <dd><p>Update the indicator with the given price.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>price</strong> (<em>double</em>) – The update price.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>price</strong><span class="classifier">double</span></dt><dd><p>The update price.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2146,13 +2366,18 @@ relation to the volatility, this could be thought of as a proxy for noise.</p>
 <p>Represents a fuzzy candle.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>direction</strong> (<em>CandleDirection</em>) – The candle direction.</p></li>
-<li><p><strong>size</strong> (<em>CandleSize</em>) – The candle fuzzy size.</p></li>
-<li><p><strong>body_size</strong> (<em>CandleBodySize</em>) – The candle fuzzy body size.</p></li>
-<li><p><strong>upper_wick_size</strong> (<em>CandleWickSize</em>) – The candle fuzzy upper wick size.</p></li>
-<li><p><strong>lower_wick_size</strong> (<em>CandleWickSize</em>) – The candle fuzzy lower wick size.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>direction</strong><span class="classifier">CandleDirection</span></dt><dd><p>The candle direction.</p>
+</dd>
+<dt><strong>size</strong><span class="classifier">CandleSize</span></dt><dd><p>The candle fuzzy size.</p>
+</dd>
+<dt><strong>body_size</strong><span class="classifier">CandleBodySize</span></dt><dd><p>The candle fuzzy body size.</p>
+</dd>
+<dt><strong>upper_wick_size</strong><span class="classifier">CandleWickSize</span></dt><dd><p>The candle fuzzy upper wick size.</p>
+</dd>
+<dt><strong>lower_wick_size</strong><span class="classifier">CandleWickSize</span></dt><dd><p>The candle fuzzy lower wick size.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -2220,13 +2445,18 @@ relation to the volatility, this could be thought of as a proxy for noise.</p>
 Bar data is dimensionally reduced via fuzzy feature extraction.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>period</strong> (<em>int</em>) – The rolling window period for the indicator (&gt; 0).</p></li>
-<li><p><strong>threshold1</strong> (<em>float</em>) – The membership function x threshold1 (&gt;= 0).</p></li>
-<li><p><strong>threshold2</strong> (<em>float</em>) – The membership function x threshold2 (&gt; threshold1).</p></li>
-<li><p><strong>threshold3</strong> (<em>float</em>) – The membership function x threshold3 (&gt; threshold2).</p></li>
-<li><p><strong>threshold4</strong> (<em>float</em>) – The membership function x threshold4 (&gt; threshold3).</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>period</strong><span class="classifier">int</span></dt><dd><p>The rolling window period for the indicator (&gt; 0).</p>
+</dd>
+<dt><strong>threshold1</strong><span class="classifier">float</span></dt><dd><p>The membership function x threshold1 (&gt;= 0).</p>
+</dd>
+<dt><strong>threshold2</strong><span class="classifier">float</span></dt><dd><p>The membership function x threshold2 (&gt; threshold1).</p>
+</dd>
+<dt><strong>threshold3</strong><span class="classifier">float</span></dt><dd><p>The membership function x threshold3 (&gt; threshold2).</p>
+</dd>
+<dt><strong>threshold4</strong><span class="classifier">float</span></dt><dd><p>The membership function x threshold4 (&gt; threshold3).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -2235,7 +2465,9 @@ Bar data is dimensionally reduced via fuzzy feature extraction.</p>
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar.</strong> (<em>The update</em>) – </p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>The update bar.</strong></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2309,12 +2541,16 @@ Bar data is dimensionally reduced via fuzzy feature extraction.</p>
 <dd><p>Update the indicator with the given raw values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>open</strong> (<em>double</em>) – The open price.</p></li>
-<li><p><strong>high</strong> (<em>double</em>) – The high price.</p></li>
-<li><p><strong>low</strong> (<em>double</em>) – The low price.</p></li>
-<li><p><strong>close</strong> (<em>double</em>) – The close price.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>open</strong><span class="classifier">double</span></dt><dd><p>The open price.</p>
+</dd>
+<dt><strong>high</strong><span class="classifier">double</span></dt><dd><p>The high price.</p>
+</dd>
+<dt><strong>low</strong><span class="classifier">double</span></dt><dd><p>The low price.</p>
+</dd>
+<dt><strong>close</strong><span class="classifier">double</span></dt><dd><p>The close price.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2357,7 +2593,10 @@ the rate of 36 degrees per bar so that 360 degrees of phase is completed
 (one full cycle) every 10 bars.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>period</strong> (<em>int</em>) – The rolling window period for the indicator (&gt; 0).</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>period</strong><span class="classifier">int</span></dt><dd><p>The rolling window period for the indicator (&gt; 0).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -2366,7 +2605,10 @@ the rate of 36 degrees per bar so that 360 degrees of phase is completed
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The update bar.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The update bar.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2440,10 +2682,12 @@ the rate of 36 degrees per bar so that 360 degrees of phase is completed
 <dd><p>Update the indicator with the given raw values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>high</strong> (<em>double</em>) – The high price.</p></li>
-<li><p><strong>low</strong> (<em>double</em>) – The low price.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>high</strong><span class="classifier">double</span></dt><dd><p>The high price.</p>
+</dd>
+<dt><strong>low</strong><span class="classifier">double</span></dt><dd><p>The low price.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2471,11 +2715,14 @@ the rate of 36 degrees per bar so that 360 degrees of phase is completed
 <p>An indicator which calculates the amplitude of a signal.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>period</strong> (<em>int</em>) – The rolling window period for the indicator (&gt; 0).</p></li>
-<li><p><strong>range_floor</strong> (<em>double</em>) – The floor value for range calculations.</p></li>
-<li><p><strong>amplitude_floor</strong> (<em>double</em>) – The floor value for amplitude calculations (0.001 from paper).</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>period</strong><span class="classifier">int</span></dt><dd><p>The rolling window period for the indicator (&gt; 0).</p>
+</dd>
+<dt><strong>range_floor</strong><span class="classifier">double</span></dt><dd><p>The floor value for range calculations.</p>
+</dd>
+<dt><strong>amplitude_floor</strong><span class="classifier">double</span></dt><dd><p>The floor value for amplitude calculations (0.001 from paper).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -2484,7 +2731,10 @@ the rate of 36 degrees per bar so that 360 degrees of phase is completed
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The update bar.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The update bar.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2558,10 +2808,12 @@ the rate of 36 degrees per bar so that 360 degrees of phase is completed
 <dd><p>Update the indicator with the given raw values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>high</strong> (<em>double</em>) – The high price.</p></li>
-<li><p><strong>low</strong> (<em>double</em>) – The low price.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>high</strong><span class="classifier">double</span></dt><dd><p>The high price.</p>
+</dd>
+<dt><strong>low</strong><span class="classifier">double</span></dt><dd><p>The low price.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2593,7 +2845,10 @@ price values are split into their complex number components of real (in-phase)
 and imaginary (quadrature) parts.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>period</strong> (<em>int</em>) – The rolling window period for the indicator (&gt; 0).</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>period</strong><span class="classifier">int</span></dt><dd><p>The rolling window period for the indicator (&gt; 0).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -2602,7 +2857,10 @@ and imaginary (quadrature) parts.</p>
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The update bar.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The update bar.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2676,7 +2934,10 @@ and imaginary (quadrature) parts.</p>
 <dd><p>Update the indicator with the given raw value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>price</strong> (<em>double</em>) – The price.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>price</strong><span class="classifier">double</span></dt><dd><p>The price.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2718,14 +2979,20 @@ typical price (high + low + close) / 3, the upper band is the middle band
 plus the ATR. The lower band is the middle band minus the ATR.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>period</strong> (<em>int</em>) – The rolling window period for the indicator (&gt; 0).</p></li>
-<li><p><strong>k_multiplier</strong> (<em>double</em>) – The multiplier for the ATR (&gt; 0).</p></li>
-<li><p><strong>ma_type</strong> (<em>MovingAverageType</em>) – The moving average type for the middle band (cannot be None).</p></li>
-<li><p><strong>ma_type_atr</strong> (<em>MovingAverageType</em>) – The moving average type for the internal ATR (cannot be None).</p></li>
-<li><p><strong>use_previous</strong> (<em>bool</em>) – The boolean flag indicating whether previous price values should be used.</p></li>
-<li><p><strong>atr_floor</strong> (<em>double</em>) – The ATR floor (minimum) output value for the indicator (&gt;= 0).</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>period</strong><span class="classifier">int</span></dt><dd><p>The rolling window period for the indicator (&gt; 0).</p>
+</dd>
+<dt><strong>k_multiplier</strong><span class="classifier">double</span></dt><dd><p>The multiplier for the ATR (&gt; 0).</p>
+</dd>
+<dt><strong>ma_type</strong><span class="classifier">MovingAverageType</span></dt><dd><p>The moving average type for the middle band (cannot be None).</p>
+</dd>
+<dt><strong>ma_type_atr</strong><span class="classifier">MovingAverageType</span></dt><dd><p>The moving average type for the internal ATR (cannot be None).</p>
+</dd>
+<dt><strong>use_previous</strong><span class="classifier">bool</span></dt><dd><p>The boolean flag indicating whether previous price values should be used.</p>
+</dd>
+<dt><strong>atr_floor</strong><span class="classifier">double</span></dt><dd><p>The ATR floor (minimum) output value for the indicator (&gt;= 0).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -2734,7 +3001,10 @@ plus the ATR. The lower band is the middle band minus the ATR.</p>
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The update bar.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The update bar.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2841,11 +3111,14 @@ plus the ATR. The lower band is the middle band minus the ATR.</p>
 <dd><p>Update the indicator with the given raw values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>high</strong> (<em>double</em>) – The high price.</p></li>
-<li><p><strong>low</strong> (<em>double</em>) – The low price.</p></li>
-<li><p><strong>close</strong> (<em>double</em>) – The close price.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>high</strong><span class="classifier">double</span></dt><dd><p>The high price.</p>
+</dd>
+<dt><strong>low</strong><span class="classifier">double</span></dt><dd><p>The low price.</p>
+</dd>
+<dt><strong>close</strong><span class="classifier">double</span></dt><dd><p>The close price.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2875,14 +3148,20 @@ within a defined Keltner channel. This provides a measure of the relative
 ‘extension’ of a market from the mean, as a multiple of volatility.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>period</strong> (<em>int</em>) – The rolling window period for the indicator (&gt; 0).</p></li>
-<li><p><strong>k_multiplier</strong> (<em>double</em>) – The multiplier for the ATR (&gt; 0).</p></li>
-<li><p><strong>ma_type</strong> (<em>MovingAverageType</em>) – The moving average type for the middle band (cannot be None).</p></li>
-<li><p><strong>ma_type_atr</strong> (<em>MovingAverageType</em>) – The moving average type for the internal ATR (cannot be None).</p></li>
-<li><p><strong>use_previous</strong> (<em>bool</em>) – The boolean flag indicating whether previous price values should be used.</p></li>
-<li><p><strong>atr_floor</strong> (<em>double</em>) – The ATR floor (minimum) output value for the indicator (&gt;= 0).</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>period</strong><span class="classifier">int</span></dt><dd><p>The rolling window period for the indicator (&gt; 0).</p>
+</dd>
+<dt><strong>k_multiplier</strong><span class="classifier">double</span></dt><dd><p>The multiplier for the ATR (&gt; 0).</p>
+</dd>
+<dt><strong>ma_type</strong><span class="classifier">MovingAverageType</span></dt><dd><p>The moving average type for the middle band (cannot be None).</p>
+</dd>
+<dt><strong>ma_type_atr</strong><span class="classifier">MovingAverageType</span></dt><dd><p>The moving average type for the internal ATR (cannot be None).</p>
+</dd>
+<dt><strong>use_previous</strong><span class="classifier">bool</span></dt><dd><p>The boolean flag indicating whether previous price values should be used.</p>
+</dd>
+<dt><strong>atr_floor</strong><span class="classifier">double</span></dt><dd><p>The ATR floor (minimum) output value for the indicator (&gt;= 0).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -2891,7 +3170,10 @@ within a defined Keltner channel. This provides a measure of the relative
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The update bar.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The update bar.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -2976,11 +3258,14 @@ within a defined Keltner channel. This provides a measure of the relative
 <dd><p>Update the indicator with the given raw value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>high</strong> (<em>double</em>) – The high price.</p></li>
-<li><p><strong>low</strong> (<em>double</em>) – The low price.</p></li>
-<li><p><strong>close</strong> (<em>double</em>) – The close price.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>high</strong><span class="classifier">double</span></dt><dd><p>The high price.</p>
+</dd>
+<dt><strong>low</strong><span class="classifier">double</span></dt><dd><p>The low price.</p>
+</dd>
+<dt><strong>close</strong><span class="classifier">double</span></dt><dd><p>The close price.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -3024,7 +3309,10 @@ Different moving average types can be selected for the inner calculation.</p>
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The update bar.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The update bar.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -3035,7 +3323,10 @@ Different moving average types can be selected for the inner calculation.</p>
 <dd><p>Update the indicator with the given quote tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a>) – The update tick to handle.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">QuoteTick</span></dt><dd><p>The update tick to handle.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -3046,7 +3337,10 @@ Different moving average types can be selected for the inner calculation.</p>
 <dd><p>Update the indicator with the given trade tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.TradeTick" title="nautilus_trader.model.data.tick.TradeTick"><em>TradeTick</em></a>) – The update tick to handle.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">TradeTick</span></dt><dd><p>The update tick to handle.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -3119,7 +3413,10 @@ Different moving average types can be selected for the inner calculation.</p>
 <dd><p>Update the indicator with the given close price.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>close</strong> (<em>double</em>) – The close price.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>close</strong><span class="classifier">double</span></dt><dd><p>The close price.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -3152,7 +3449,10 @@ volume.</p>
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The update bar.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The update bar.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -3226,11 +3526,14 @@ volume.</p>
 <dd><p>Update the indicator with the given raw values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>open</strong> (<em>double</em>) – The high price.</p></li>
-<li><p><strong>close</strong> (<em>double</em>) – The low price.</p></li>
-<li><p><strong>volume</strong> (<em>double</em>) – The close price.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>open</strong><span class="classifier">double</span></dt><dd><p>The high price.</p>
+</dd>
+<dt><strong>close</strong><span class="classifier">double</span></dt><dd><p>The low price.</p>
+</dd>
+<dt><strong>volume</strong><span class="classifier">double</span></dt><dd><p>The close price.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -3263,7 +3566,10 @@ to move the market across a relative range (multiple of ATR).</p>
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The update bar.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The update bar.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -3337,12 +3643,16 @@ to move the market across a relative range (multiple of ATR).</p>
 <dd><p>Update the indicator with the given raw values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>high</strong> (<em>double</em>) – The high price.</p></li>
-<li><p><strong>low</strong> (<em>double</em>) – The low price.</p></li>
-<li><p><strong>close</strong> (<em>double</em>) – The close price.</p></li>
-<li><p><strong>volume</strong> (<em>double</em>) – The volume.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>high</strong><span class="classifier">double</span></dt><dd><p>The high price.</p>
+</dd>
+<dt><strong>low</strong><span class="classifier">double</span></dt><dd><p>The low price.</p>
+</dd>
+<dt><strong>close</strong><span class="classifier">double</span></dt><dd><p>The close price.</p>
+</dd>
+<dt><strong>volume</strong><span class="classifier">double</span></dt><dd><p>The volume.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -3386,7 +3696,10 @@ The return output can be simple or log.</p>
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The update bar.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The update bar.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -3460,7 +3773,10 @@ The return output can be simple or log.</p>
 <dd><p>Update the indicator with the given price.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>price</strong> (<em>double</em>) – The update price.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>price</strong><span class="classifier">double</span></dt><dd><p>The update price.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -3492,7 +3808,10 @@ The return output can be simple or log.</p>
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The update bar.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The update bar.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -3566,7 +3885,10 @@ The return output can be simple or log.</p>
 <dd><p>Update the indicator with the given value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>value</strong> (<em>double</em>) – The update value.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>value</strong><span class="classifier">double</span></dt><dd><p>The update value.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -3637,10 +3959,16 @@ The return output can be simple or log.</p>
 <dd><p>Update the analyzer with the given quote tick.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tick</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.tick.QuoteTick" title="nautilus_trader.model.data.tick.QuoteTick"><em>QuoteTick</em></a>) – The tick for the update.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tick</strong><span class="classifier">QuoteTick</span></dt><dd><p>The tick for the update.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>tick.instrument_id</cite> does not equal the analyzers instrument ID.</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>tick.instrument_id</cite> does not equal the analyzers instrument ID.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -3721,7 +4049,10 @@ sold.</p>
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The update bar.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The update bar.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -3806,11 +4137,14 @@ sold.</p>
 <dd><p>Update the indicator with the given raw values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>high</strong> (<em>double</em>) – The high price.</p></li>
-<li><p><strong>low</strong> (<em>double</em>) – The low price.</p></li>
-<li><p><strong>close</strong> (<em>double</em>) – The close price.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>high</strong><span class="classifier">double</span></dt><dd><p>The high price.</p>
+</dd>
+<dt><strong>low</strong><span class="classifier">double</span></dt><dd><p>The low price.</p>
+</dd>
+<dt><strong>close</strong><span class="classifier">double</span></dt><dd><p>The close price.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -3886,7 +4220,10 @@ sold.</p>
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The update bar.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The update bar.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -4037,11 +4374,14 @@ sold.</p>
 <dd><p>Update the indicator with the given raw values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>high</strong> (<em>double</em>) – The high price.</p></li>
-<li><p><strong>low</strong> (<em>double</em>) – The low price.</p></li>
-<li><p><strong>timestamp</strong> (<em>datetime</em>) – The current timestamp.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>high</strong><span class="classifier">double</span></dt><dd><p>The high price.</p>
+</dd>
+<dt><strong>low</strong><span class="classifier">double</span></dt><dd><p>The low price.</p>
+</dd>
+<dt><strong>timestamp</strong><span class="classifier">datetime</span></dt><dd><p>The current timestamp.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -4059,21 +4399,30 @@ sold.</p>
 Different moving average types can be selected for the inner ATR calculations.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>fast_period</strong> (<em>int</em>) – The period for the fast ATR (&gt; 0).</p></li>
-<li><p><strong>slow_period</strong> (<em>int</em>) – The period for the slow ATR (&gt; 0 &amp; &gt; fast_period).</p></li>
-<li><p><strong>ma_type</strong> (<em>MovingAverageType</em>) – The moving average type for the ATR calculations.</p></li>
-<li><p><strong>use_previous</strong> (<em>bool</em>) – The boolean flag indicating whether previous price values should be used.</p></li>
-<li><p><strong>value_floor</strong> (<em>double</em>) – The floor (minimum) output value for the indicator (&gt;= 0).</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fast_period</strong><span class="classifier">int</span></dt><dd><p>The period for the fast ATR (&gt; 0).</p>
+</dd>
+<dt><strong>slow_period</strong><span class="classifier">int</span></dt><dd><p>The period for the slow ATR (&gt; 0 &amp; &gt; fast_period).</p>
+</dd>
+<dt><strong>ma_type</strong><span class="classifier">MovingAverageType</span></dt><dd><p>The moving average type for the ATR calculations.</p>
+</dd>
+<dt><strong>use_previous</strong><span class="classifier">bool</span></dt><dd><p>The boolean flag indicating whether previous price values should be used.</p>
+</dd>
+<dt><strong>value_floor</strong><span class="classifier">double</span></dt><dd><p>The floor (minimum) output value for the indicator (&gt;= 0).</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If <cite>fast_period</cite> is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If <cite>slow_period</cite> is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If <cite>fast_period</cite> is not &lt; <cite>slow_period</cite>.</p></li>
-<li><p><strong>ValueError</strong> – If <cite>value_floor</cite> is negative (&lt; 0).</p></li>
-</ul>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>fast_period</cite> is not positive (&gt; 0).</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>slow_period</cite> is not positive (&gt; 0).</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>fast_period</cite> is not &lt; <cite>slow_period</cite>.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>value_floor</cite> is negative (&lt; 0).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -4093,7 +4442,10 @@ Different moving average types can be selected for the inner ATR calculations.</
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The update bar.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The update bar.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -4167,11 +4519,14 @@ Different moving average types can be selected for the inner ATR calculations.</
 <dd><p>Update the indicator with the given raw value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>high</strong> (<em>double</em>) – The high price.</p></li>
-<li><p><strong>low</strong> (<em>double</em>) – The low price.</p></li>
-<li><p><strong>close</strong> (<em>double</em>) – The close price.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>high</strong><span class="classifier">double</span></dt><dd><p>The high price.</p>
+</dd>
+<dt><strong>low</strong><span class="classifier">double</span></dt><dd><p>The low price.</p>
+</dd>
+<dt><strong>close</strong><span class="classifier">double</span></dt><dd><p>The close price.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -4203,7 +4558,10 @@ Different moving average types can be selected for the inner ATR calculations.</
 <dd><p>Update the indicator with the given bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>bar</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.data.bar.Bar" title="nautilus_trader.model.data.bar.Bar"><em>Bar</em></a>) – The update bar.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar</strong><span class="classifier">Bar</span></dt><dd><p>The update bar.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -4266,11 +4624,14 @@ Different moving average types can be selected for the inner ATR calculations.</
 <dd><p>Update the indicator with the given raw values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>price</strong> (<em>double</em>) – The update price.</p></li>
-<li><p><strong>volume</strong> (<em>double</em>) – The update volume.</p></li>
-<li><p><strong>timestamp</strong> (<em>datetime</em>) – The current timestamp.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>price</strong><span class="classifier">double</span></dt><dd><p>The update price.</p>
+</dd>
+<dt><strong>volume</strong><span class="classifier">double</span></dt><dd><p>The update volume.</p>
+</dd>
+<dt><strong>timestamp</strong><span class="classifier">datetime</span></dt><dd><p>The current timestamp.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>

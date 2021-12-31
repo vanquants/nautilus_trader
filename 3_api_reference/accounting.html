@@ -26,8 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -40,7 +40,7 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
@@ -196,10 +196,72 @@
      Live
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="model.html">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="model/0_index.html">
      Model
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/commands.html">
+       Commands
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/currency.html">
+       Currency
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/data.html">
+       Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/events.html">
+       Events
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/identifiers.html">
+       Identifiers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/instruments.html">
+       Instruments
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/objects.html">
+       Objects
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/orderbook.html">
+       Order Book
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/orders.html">
+       Orders
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/position.html">
+       Position
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/tick_scheme.html">
+       Tick Scheme
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="msgbus.html">
@@ -237,8 +299,8 @@
   <a class="reference internal" href="../4_integrations/0_index.html">
    Integrations
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -311,9 +373,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/3_api_reference/accounting.rst"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/3_api_reference/accounting.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.rst</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -393,7 +455,7 @@
         
               <div>
                 
-  <div class="section" id="module-nautilus_trader.accounting">
+  <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.accounting">
 <span id="accounting"></span><h1>Accounting<a class="headerlink" href="#module-nautilus_trader.accounting" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="module-nautilus_trader.accounting.accounts.cash">
 <span id="cash-account"></span><h2>Cash Account<a class="headerlink" href="#module-nautilus_trader.accounting.accounts.cash" title="Permalink to this headline">¶</a></h2>
@@ -404,13 +466,18 @@
 <p>Provides a cash account.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>event</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.events.account.AccountState" title="nautilus_trader.model.events.account.AccountState"><em>AccountState</em></a>) – The initial account state event.</p></li>
-<li><p><strong>calculate_account_state</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the account state should be calculated from order fills.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>event</strong><span class="classifier">AccountState</span></dt><dd><p>The initial account state event.</p>
+</dd>
+<dt><strong>calculate_account_state</strong><span class="classifier">bool, optional</span></dt><dd><p>If the account state should be calculated from order fills.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>event.account_type</cite> is not equal to <code class="docutils literal notranslate"><span class="pre">CASH</span></code>.</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>event.account_type</cite> is not equal to <code class="docutils literal notranslate"><span class="pre">CASH</span></code>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -419,14 +486,20 @@
 <dd><p>Apply the given account event to the account.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.events.account.AccountState" title="nautilus_trader.model.events.account.AccountState"><em>AccountState</em></a>) – The account event to apply.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>event</strong><span class="classifier">AccountState</span></dt><dd><p>The account event to apply.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If <cite>event.account_type</cite> is not equal to <cite>self.type</cite>.</p></li>
-<li><p><strong>ValueError</strong> – If <cite>event.account_id</cite> is not equal to <cite>self.id</cite>.</p></li>
-<li><p><strong>ValueError</strong> – If <cite>event.base_currency</cite> is not equal to <cite>self.base_currency</cite>.</p></li>
-</ul>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>event.account_type</cite> is not equal to <cite>self.type</cite>.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>event.account_id</cite> is not equal to <cite>self.id</cite>.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>event.base_currency</cite> is not equal to <cite>self.base_currency</cite>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -442,14 +515,22 @@
 <p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will use the default
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency, optional</span></dt><dd><p>The currency for the query. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will use the default
 currency (if set).</p>
 </dd>
+</dl>
+</dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>AccountBalance or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>AccountBalance or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -466,14 +547,22 @@ rather than <cite>Money</cite> of zero amount.</p>
 <p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will use the default
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency, optional</span></dt><dd><p>The currency for the query. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will use the default
 currency (if set).</p>
 </dd>
+</dl>
+</dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -490,14 +579,22 @@ rather than <cite>Money</cite> of zero amount.</p>
 <p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will use the default
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency, optional</span></dt><dd><p>The currency for the query. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will use the default
 currency (if set).</p>
 </dd>
+</dl>
+</dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -514,14 +611,22 @@ rather than <cite>Money</cite> of zero amount.</p>
 <p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will use the default
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency, optional</span></dt><dd><p>The currency for the query. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will use the default
 currency (if set).</p>
 </dd>
+</dl>
+</dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -537,7 +642,9 @@ rather than <cite>Money</cite> of zero amount.</p>
 <dd><p>Return the account balances totals.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[Currency, Money]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>dict[Currency, Money]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -548,7 +655,9 @@ rather than <cite>Money</cite> of zero amount.</p>
 <dd><p>Return the account balances free.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[Currency, Money]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>dict[Currency, Money]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -559,7 +668,9 @@ rather than <cite>Money</cite> of zero amount.</p>
 <dd><p>Return the account balances locked.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[Currency, Money]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>dict[Currency, Money]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -570,7 +681,9 @@ rather than <cite>Money</cite> of zero amount.</p>
 <dd><p>Return the account balances totals.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[Currency, Money]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>dict[Currency, Money]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -605,16 +718,23 @@ rather than <cite>Money</cite> of zero amount.</p>
 currency for inverse instruments.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the calculation.</p></li>
-<li><p><strong>side</strong> (<em>OrderSide</em>) – The order side.</p></li>
-<li><p><strong>quantity</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The order quantity.</p></li>
-<li><p><strong>price</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The order price.</p></li>
-<li><p><strong>inverse_as_quote</strong> (<em>bool</em>) – If inverse instrument calculations use quote currency (instead of base).</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument for the calculation.</p>
+</dd>
+<dt><strong>side</strong><span class="classifier">OrderSide</span></dt><dd><p>The order side.</p>
+</dd>
+<dt><strong>quantity</strong><span class="classifier">Quantity</span></dt><dd><p>The order quantity.</p>
+</dd>
+<dt><strong>price</strong><span class="classifier">Price</span></dt><dd><p>The order price.</p>
+</dd>
+<dt><strong>inverse_as_quote</strong><span class="classifier">bool</span></dt><dd><p>If inverse instrument calculations use quote currency (instead of base).</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Money</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>Money</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -628,19 +748,29 @@ parameters.</p>
 currency for inverse instruments.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the calculation.</p></li>
-<li><p><strong>last_qty</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The transaction quantity.</p></li>
-<li><p><strong>last_px</strong> (<em>Decimal</em><em> or </em><a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The transaction price.</p></li>
-<li><p><strong>liquidity_side</strong> (<em>LiquiditySide</em>) – The liquidity side for the transaction.</p></li>
-<li><p><strong>inverse_as_quote</strong> (<em>bool</em>) – If inverse instrument calculations use quote currency (instead of base).</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument for the calculation.</p>
+</dd>
+<dt><strong>last_qty</strong><span class="classifier">Quantity</span></dt><dd><p>The transaction quantity.</p>
+</dd>
+<dt><strong>last_px</strong><span class="classifier">Decimal or Price</span></dt><dd><p>The transaction price.</p>
+</dd>
+<dt><strong>liquidity_side</strong><span class="classifier">LiquiditySide</span></dt><dd><p>The liquidity side for the transaction.</p>
+</dd>
+<dt><strong>inverse_as_quote</strong><span class="classifier">bool</span></dt><dd><p>If inverse instrument calculations use quote currency (instead of base).</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Money</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>Money</dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>liquidity_side</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>liquidity_side</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -651,14 +781,19 @@ currency for inverse instruments.</p>
 <dd><p>Return the calculated PnL.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the calculation.</p></li>
-<li><p><strong>position</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.position.Position" title="nautilus_trader.model.position.Position"><em>Position</em></a><em>, </em><em>optional</em>) – The position for the calculation (can be None).</p></li>
-<li><p><strong>fill</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.events.order.OrderFilled" title="nautilus_trader.model.events.order.OrderFilled"><em>OrderFilled</em></a>) – The fill for the calculation.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument for the calculation.</p>
+</dd>
+<dt><strong>position</strong><span class="classifier">Position, optional</span></dt><dd><p>The position for the calculation (can be None).</p>
+</dd>
+<dt><strong>fill</strong><span class="classifier">OrderFilled</span></dt><dd><p>The fill for the calculation.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>list[Money] or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>list[Money] or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -669,7 +804,10 @@ currency for inverse instruments.</p>
 <dd><p>Clear the balance locked for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument for the locked balance to clear.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument for the locked balance to clear.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -680,10 +818,15 @@ currency for inverse instruments.</p>
 <dd><p>Return the total commissions for the given currency.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a>) – The currency for the commission.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency</span></dt><dd><p>The currency for the commission.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -700,7 +843,9 @@ currency for inverse instruments.</p>
 <dd><p>Return the account currencies.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[Currency]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[Currency]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -711,7 +856,9 @@ currency for inverse instruments.</p>
 <dd><p>The count of events.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>int</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>int</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -722,7 +869,9 @@ currency for inverse instruments.</p>
 <dd><p>All events received by the account.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[AccountState]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[AccountState]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -744,7 +893,9 @@ currency for inverse instruments.</p>
 <dd><p>The accounts last state event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>AccountState</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>AccountState</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -755,7 +906,9 @@ currency for inverse instruments.</p>
 <dd><p>Return the account starting balances.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[Currency, Money]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>dict[Currency, Money]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -777,13 +930,18 @@ currency for inverse instruments.</p>
 <dd><p>Update the balance locked for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the update.</p></li>
-<li><p><strong>locked</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money"><em>Money</em></a>) – The locked balance for the instrument.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the update.</p>
+</dd>
+<dt><strong>locked</strong><span class="classifier">Money</span></dt><dd><p>The locked balance for the instrument.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>margin_init</cite> is negative (&lt; 0).</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>margin_init</cite> is negative (&lt; 0).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -800,13 +958,18 @@ currency for inverse instruments.</p>
 given balances, therefore we only update included balances.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>balances</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.objects.AccountBalance" title="nautilus_trader.model.objects.AccountBalance"><em>AccountBalance</em></a><em>]</em>) – The balances for the update.</p></li>
-<li><p><strong>allow_zero</strong> (<em>bool</em><em>, </em><em>default True</em>) – If zero balances are allowed (will then just clear the assets balance).</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>balances</strong><span class="classifier">list[AccountBalance]</span></dt><dd><p>The balances for the update.</p>
+</dd>
+<dt><strong>allow_zero</strong><span class="classifier">bool, default True</span></dt><dd><p>If zero balances are allowed (will then just clear the assets balance).</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>balances</cite> is empty.</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>balances</cite> is empty.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -818,7 +981,10 @@ given balances, therefore we only update included balances.</p>
 <p>Can be negative which represents credited commission.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>commission</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money"><em>Money</em></a>) – The commission to update with.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>commission</strong><span class="classifier">Money</span></dt><dd><p>The commission to update with.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -839,13 +1005,18 @@ given balances, therefore we only update included balances.</p>
 <p>Provides a margin account.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>event</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.events.account.AccountState" title="nautilus_trader.model.events.account.AccountState"><em>AccountState</em></a>) – The initial account state event.</p></li>
-<li><p><strong>calculate_account_state</strong> (<em>bool</em><em>, </em><em>optional</em>) – If the account state should be calculated from order fills.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>event</strong><span class="classifier">AccountState</span></dt><dd><p>The initial account state event.</p>
+</dd>
+<dt><strong>calculate_account_state</strong><span class="classifier">bool, optional</span></dt><dd><p>If the account state should be calculated from order fills.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>event.account_type</cite> is not equal to <code class="docutils literal notranslate"><span class="pre">MARGIN</span></code>.</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>event.account_type</cite> is not equal to <code class="docutils literal notranslate"><span class="pre">MARGIN</span></code>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -854,14 +1025,20 @@ given balances, therefore we only update included balances.</p>
 <dd><p>Apply the given account event to the account.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.events.account.AccountState" title="nautilus_trader.model.events.account.AccountState"><em>AccountState</em></a>) – The account event to apply.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>event</strong><span class="classifier">AccountState</span></dt><dd><p>The account event to apply.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If <cite>event.account_type</cite> is not equal to <cite>self.type</cite>.</p></li>
-<li><p><strong>ValueError</strong> – If <cite>event.account_id</cite> is not equal to <cite>self.id</cite>.</p></li>
-<li><p><strong>ValueError</strong> – If <cite>event.base_currency</cite> is not equal to <cite>self.base_currency</cite>.</p></li>
-</ul>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>event.account_type</cite> is not equal to <cite>self.type</cite>.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>event.account_id</cite> is not equal to <cite>self.id</cite>.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>event.base_currency</cite> is not equal to <cite>self.base_currency</cite>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -877,14 +1054,22 @@ given balances, therefore we only update included balances.</p>
 <p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will use the default
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency, optional</span></dt><dd><p>The currency for the query. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will use the default
 currency (if set).</p>
 </dd>
+</dl>
+</dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>AccountBalance or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>AccountBalance or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -901,14 +1086,22 @@ rather than <cite>Money</cite> of zero amount.</p>
 <p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will use the default
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency, optional</span></dt><dd><p>The currency for the query. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will use the default
 currency (if set).</p>
 </dd>
+</dl>
+</dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -925,14 +1118,22 @@ rather than <cite>Money</cite> of zero amount.</p>
 <p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will use the default
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency, optional</span></dt><dd><p>The currency for the query. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will use the default
 currency (if set).</p>
 </dd>
+</dl>
+</dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -949,14 +1150,22 @@ rather than <cite>Money</cite> of zero amount.</p>
 <p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a><em>, </em><em>optional</em>) – The currency for the query. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will use the default
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency, optional</span></dt><dd><p>The currency for the query. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will use the default
 currency (if set).</p>
 </dd>
+</dl>
+</dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>base_currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -972,7 +1181,9 @@ rather than <cite>Money</cite> of zero amount.</p>
 <dd><p>Return the account balances totals.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[Currency, Money]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>dict[Currency, Money]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -983,7 +1194,9 @@ rather than <cite>Money</cite> of zero amount.</p>
 <dd><p>Return the account balances free.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[Currency, Money]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>dict[Currency, Money]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -994,7 +1207,9 @@ rather than <cite>Money</cite> of zero amount.</p>
 <dd><p>Return the account balances locked.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[Currency, Money]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>dict[Currency, Money]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1005,7 +1220,9 @@ rather than <cite>Money</cite> of zero amount.</p>
 <dd><p>Return the account balances totals.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[Currency, Money]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>dict[Currency, Money]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1041,19 +1258,29 @@ parameters.</p>
 currency for inverse instruments.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the calculation.</p></li>
-<li><p><strong>last_qty</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The transaction quantity.</p></li>
-<li><p><strong>last_px</strong> (<em>Decimal</em><em> or </em><a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The transaction price.</p></li>
-<li><p><strong>liquidity_side</strong> (<em>LiquiditySide</em>) – The liquidity side for the transaction.</p></li>
-<li><p><strong>inverse_as_quote</strong> (<em>bool</em>) – If inverse instrument calculations use quote currency (instead of base).</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument for the calculation.</p>
+</dd>
+<dt><strong>last_qty</strong><span class="classifier">Quantity</span></dt><dd><p>The transaction quantity.</p>
+</dd>
+<dt><strong>last_px</strong><span class="classifier">Decimal or Price</span></dt><dd><p>The transaction price.</p>
+</dd>
+<dt><strong>liquidity_side</strong><span class="classifier">LiquiditySide</span></dt><dd><p>The liquidity side for the transaction.</p>
+</dd>
+<dt><strong>inverse_as_quote</strong><span class="classifier">bool</span></dt><dd><p>If inverse instrument calculations use quote currency (instead of base).</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Money</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>Money</dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>liquidity_side</cite> is NONE.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>liquidity_side</cite> is NONE.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1066,15 +1293,21 @@ currency for inverse instruments.</p>
 currency for inverse instruments.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the calculation.</p></li>
-<li><p><strong>quantity</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The order quantity.</p></li>
-<li><p><strong>price</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The order price.</p></li>
-<li><p><strong>inverse_as_quote</strong> (<em>bool</em>) – If inverse instrument calculations use quote currency (instead of base).</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument for the calculation.</p>
+</dd>
+<dt><strong>quantity</strong><span class="classifier">Quantity</span></dt><dd><p>The order quantity.</p>
+</dd>
+<dt><strong>price</strong><span class="classifier">Price</span></dt><dd><p>The order price.</p>
+</dd>
+<dt><strong>inverse_as_quote</strong><span class="classifier">bool</span></dt><dd><p>If inverse instrument calculations use quote currency (instead of base).</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Money</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>Money</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1087,16 +1320,23 @@ currency for inverse instruments.</p>
 currency for inverse instruments.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the calculation.</p></li>
-<li><p><strong>side</strong> (<em>PositionSide</em>) – The currency position side.</p></li>
-<li><p><strong>quantity</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><em>Quantity</em></a>) – The currency position quantity.</p></li>
-<li><p><strong>avg_open_px</strong> (<em>Decimal</em><em> or </em><a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The positions average open price.</p></li>
-<li><p><strong>inverse_as_quote</strong> (<em>bool</em>) – If inverse instrument calculations use quote currency (instead of base).</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument for the calculation.</p>
+</dd>
+<dt><strong>side</strong><span class="classifier">PositionSide</span></dt><dd><p>The currency position side.</p>
+</dd>
+<dt><strong>quantity</strong><span class="classifier">Quantity</span></dt><dd><p>The currency position quantity.</p>
+</dd>
+<dt><strong>avg_open_px</strong><span class="classifier">Decimal or Price</span></dt><dd><p>The positions average open price.</p>
+</dd>
+<dt><strong>inverse_as_quote</strong><span class="classifier">bool</span></dt><dd><p>If inverse instrument calculations use quote currency (instead of base).</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Money</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>Money</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1107,14 +1347,19 @@ currency for inverse instruments.</p>
 <dd><p>Return the calculated PnL.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the calculation.</p></li>
-<li><p><strong>position</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.position.Position" title="nautilus_trader.model.position.Position"><em>Position</em></a><em>, </em><em>optional</em>) – The position for the calculation.</p></li>
-<li><p><strong>fill</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.events.order.OrderFilled" title="nautilus_trader.model.events.order.OrderFilled"><em>OrderFilled</em></a>) – The fill for the calculation.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument for the calculation.</p>
+</dd>
+<dt><strong>position</strong><span class="classifier">Position, optional</span></dt><dd><p>The position for the calculation.</p>
+</dd>
+<dt><strong>fill</strong><span class="classifier">OrderFilled</span></dt><dd><p>The fill for the calculation.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>list[Money] or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>list[Money] or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1125,7 +1370,10 @@ currency for inverse instruments.</p>
 <dd><p>Clear the initial (order) margins for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument for the initial margin to clear.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument for the initial margin to clear.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1136,7 +1384,10 @@ currency for inverse instruments.</p>
 <dd><p>Clear the maintenance (position) margins for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument for the maintenance margin to clear.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument for the maintenance margin to clear.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1147,10 +1398,15 @@ currency for inverse instruments.</p>
 <dd><p>Return the total commissions for the given currency.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a>) – The currency for the commission.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency</span></dt><dd><p>The currency for the commission.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1167,7 +1423,9 @@ currency for inverse instruments.</p>
 <dd><p>Return the account currencies.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[Currency]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[Currency]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1189,7 +1447,9 @@ currency for inverse instruments.</p>
 <dd><p>The count of events.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>int</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>int</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1200,7 +1460,9 @@ currency for inverse instruments.</p>
 <dd><p>All events received by the account.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>list[AccountState]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>list[AccountState]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1222,7 +1484,9 @@ currency for inverse instruments.</p>
 <dd><p>The accounts last state event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>AccountState</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>AccountState</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1233,10 +1497,15 @@ currency for inverse instruments.</p>
 <dd><p>Return the leverage for the given instrument (if found).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the leverage.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the leverage.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Decimal or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Decimal or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1247,7 +1516,9 @@ currency for inverse instruments.</p>
 <dd><p>Return the account leverages.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[InstrumentId, Decimal]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>dict[InstrumentId, Decimal]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1259,10 +1530,15 @@ currency for inverse instruments.</p>
 <p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the query.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the query.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1279,10 +1555,15 @@ rather than <cite>Money</cite> of zero amount.</p>
 <p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the query.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the query.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-even"><dl class="simple">
+<dt>Money or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1298,7 +1579,9 @@ rather than <cite>Money</cite> of zero amount.</p>
 <dd><p>Return the initial (order) margins for the account.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[InstrumentId, Money]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>dict[InstrumentId, Money]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1309,7 +1592,9 @@ rather than <cite>Money</cite> of zero amount.</p>
 <dd><p>Return the maintenance (position) margins for the account.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[InstrumentId, Money]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>dict[InstrumentId, Money]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1320,14 +1605,18 @@ rather than <cite>Money</cite> of zero amount.</p>
 <dd><p>Set the default leverage for the account (if not specified by instrument).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>leverage</strong> (<em>Decimal</em>) – The default leverage value</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>leverage</strong><span class="classifier">Decimal</span></dt><dd><p>The default leverage value</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><em>TypeError</em> – If leverage is not of type <cite>Decimal</cite>.</p></li>
-<li><p><em>ValueError</em> – If leverage is not &gt;= 1.</p></li>
-</ul>
-</p>
+<dd class="field-even"><dl class="simple">
+<dt>TypeError</dt><dd><p>If leverage is not of type <cite>Decimal</cite>.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If leverage is not &gt;= 1.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1338,17 +1627,20 @@ rather than <cite>Money</cite> of zero amount.</p>
 <dd><p>Set the leverage for the given instrument.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument for the leverage.</p></li>
-<li><p><strong>leverage</strong> (<em>Decimal</em>) – The leverage value</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument for the leverage.</p>
+</dd>
+<dt><strong>leverage</strong><span class="classifier">Decimal</span></dt><dd><p>The leverage value</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><em>TypeError</em> – If leverage is not of type <cite>Decimal</cite>.</p></li>
-<li><p><em>ValueError</em> – If leverage is not &gt;= 1.</p></li>
-</ul>
-</p>
+<dd class="field-even"><dl class="simple">
+<dt>TypeError</dt><dd><p>If leverage is not of type <cite>Decimal</cite>.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If leverage is not &gt;= 1.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1359,7 +1651,9 @@ rather than <cite>Money</cite> of zero amount.</p>
 <dd><p>Return the account starting balances.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[Currency, Money]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>dict[Currency, Money]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1383,13 +1677,18 @@ rather than <cite>Money</cite> of zero amount.</p>
 given balances, therefore we only update included balances.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>balances</strong> (<em>list</em><em>[</em><a class="reference internal" href="model.html#nautilus_trader.model.objects.AccountBalance" title="nautilus_trader.model.objects.AccountBalance"><em>AccountBalance</em></a><em>]</em>) – The balances for the update.</p></li>
-<li><p><strong>allow_zero</strong> (<em>bool</em><em>, </em><em>default True</em>) – If zero balances are allowed (will then just clear the assets balance).</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>balances</strong><span class="classifier">list[AccountBalance]</span></dt><dd><p>The balances for the update.</p>
+</dd>
+<dt><strong>allow_zero</strong><span class="classifier">bool, default True</span></dt><dd><p>If zero balances are allowed (will then just clear the assets balance).</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>balances</cite> is empty.</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>balances</cite> is empty.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1401,7 +1700,10 @@ given balances, therefore we only update included balances.</p>
 <p>Can be negative which represents credited commission.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>commission</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money"><em>Money</em></a>) – The commission to update with.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>commission</strong><span class="classifier">Money</span></dt><dd><p>The commission to update with.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1416,13 +1718,18 @@ given balances, therefore we only update included balances.</p>
 <dd><p>Update the initial (order) margin.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the update.</p></li>
-<li><p><strong>margin_init</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money"><em>Money</em></a>) – The current initial (order) margin for the instrument.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the update.</p>
+</dd>
+<dt><strong>margin_init</strong><span class="classifier">Money</span></dt><dd><p>The current initial (order) margin for the instrument.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>margin_init</cite> is negative (&lt; 0).</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>margin_init</cite> is negative (&lt; 0).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1437,13 +1744,18 @@ given balances, therefore we only update included balances.</p>
 <dd><p>Update the maintenance (position) margin.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the update.</p></li>
-<li><p><strong>margin_maint</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money"><em>Money</em></a>) – The current maintenance (position) margin for the instrument.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the update.</p>
+</dd>
+<dt><strong>margin_maint</strong><span class="classifier">Money</span></dt><dd><p>The current maintenance (position) margin for the instrument.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>margin_maint</cite> is negative (&lt; 0).</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>margin_maint</cite> is negative (&lt; 0).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -1470,22 +1782,31 @@ given balances, therefore we only update included balances.</p>
 given dictionary of bid and ask quotes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>from_currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a>) – The currency to convert from.</p></li>
-<li><p><strong>to_currency</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><em>Currency</em></a>) – The currency to convert to.</p></li>
-<li><p><strong>price_type</strong> (<em>PriceType</em>) – The price type for conversion.</p></li>
-<li><p><strong>bid_quotes</strong> (<em>dict</em>) – The dictionary of currency pair bid quotes dict[Symbol, Decimal].</p></li>
-<li><p><strong>ask_quotes</strong> (<em>dict</em>) – The dictionary of currency pair ask quotes dict[Symbol, Decimal].</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>from_currency</strong><span class="classifier">Currency</span></dt><dd><p>The currency to convert from.</p>
+</dd>
+<dt><strong>to_currency</strong><span class="classifier">Currency</span></dt><dd><p>The currency to convert to.</p>
+</dd>
+<dt><strong>price_type</strong><span class="classifier">PriceType</span></dt><dd><p>The price type for conversion.</p>
+</dd>
+<dt><strong>bid_quotes</strong><span class="classifier">dict</span></dt><dd><p>The dictionary of currency pair bid quotes dict[Symbol, Decimal].</p>
+</dd>
+<dt><strong>ask_quotes</strong><span class="classifier">dict</span></dt><dd><p>The dictionary of currency pair ask quotes dict[Symbol, Decimal].</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Decimal</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>Decimal</dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ValueError</strong> – If <cite>bid_quotes</cite> length is not equal to <cite>ask_quotes</cite> length.</p></li>
-<li><p><strong>ValueError</strong> – If <cite>price_type</cite> is <code class="docutils literal notranslate"><span class="pre">LAST</span></code>.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>bid_quotes</cite> length is not equal to <cite>ask_quotes</cite> length.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>price_type</cite> is <code class="docutils literal notranslate"><span class="pre">LAST</span></code>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -1503,7 +1824,10 @@ given dictionary of bid and ask quotes.</p>
 interest rate data csv (data since 1956).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data</strong> (<em>str</em>) – The short term interest rate data.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data</strong><span class="classifier">str</span></dt><dd><p>The short term interest rate data.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -1512,16 +1836,23 @@ interest rate data csv (data since 1956).</p>
 <dd><p>Return the rollover interest rate between the given base currency and quote currency.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The forex instrument ID for the calculation.</p></li>
-<li><p><strong>date</strong> (<em>date</em>) – The date for the overnight rate.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The forex instrument ID for the calculation.</p>
+</dd>
+<dt><strong>date</strong><span class="classifier">date</span></dt><dd><p>The date for the overnight rate.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Decimal</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>Decimal</dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If <cite>instrument_id.symbol</cite> length is not in range [6, 7].</p>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>instrument_id.symbol</cite> length is not in range [6, 7].</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -1534,7 +1865,9 @@ interest rate data csv (data since 1956).</p>
 <dd><p>Return the short-term interest rate dataframe.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>pd.DataFrame</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>pd.DataFrame</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1555,10 +1888,15 @@ interest rate data csv (data since 1956).</p>
 <dd><p>Create an account based on the events account type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.events.account.AccountState" title="nautilus_trader.model.events.account.AccountState"><em>AccountState</em></a>) – The account state event for the creation.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>event</strong><span class="classifier">AccountState</span></dt><dd><p>The account state event for the creation.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Account</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>Account</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1569,13 +1907,18 @@ interest rate data csv (data since 1956).</p>
 <dd><p>Register the given custom account type for the issuer.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>issuer</strong> (<em>str</em>) – The issuer for the account.</p></li>
-<li><p><strong>account_cls</strong> (<em>type</em>) – The custom account type.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>issuer</strong><span class="classifier">str</span></dt><dd><p>The issuer for the account.</p>
+</dd>
+<dt><strong>account_cls</strong><span class="classifier">type</span></dt><dd><p>The custom account type.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>KeyError</strong> – If <cite>issuer</cite> has already registered a custom account type.</p>
+<dd class="field-even"><dl class="simple">
+<dt>KeyError</dt><dd><p>If <cite>issuer</cite> has already registered a custom account type.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1587,10 +1930,16 @@ interest rate data csv (data since 1956).</p>
 order fills.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>issuer</strong> (<em>str</em>) – The issuer for the account.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>issuer</strong><span class="classifier">str</span></dt><dd><p>The issuer for the account.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>KeyError</strong> – If an issuer has already been registered for the <cite>issuer</cite>.</p>
+<dd class="field-even"><dl class="simple">
+<dt>KeyError</dt><dd><p>If an issuer has already been registered for the <cite>issuer</cite>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -1607,11 +1956,14 @@ order fills.</p>
 <p>Provides account management services for a <code class="docutils literal notranslate"><span class="pre">Portfolio</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.base.CacheFacade" title="nautilus_trader.cache.base.CacheFacade"><em>CacheFacade</em></a>) – The read-only cache for the manager.</p></li>
-<li><p><strong>log</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.LoggerAdapter" title="nautilus_trader.common.logging.LoggerAdapter"><em>LoggerAdapter</em></a>) – The logger for the manager.</p></li>
-<li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the manager.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>cache</strong><span class="classifier">CacheFacade</span></dt><dd><p>The read-only cache for the manager.</p>
+</dd>
+<dt><strong>log</strong><span class="classifier">LoggerAdapter</span></dt><dd><p>The logger for the manager.</p>
+</dd>
+<dt><strong>clock</strong><span class="classifier">Clock</span></dt><dd><p>The clock for the manager.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>

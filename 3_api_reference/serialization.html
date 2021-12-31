@@ -26,8 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -40,7 +40,7 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
@@ -196,10 +196,72 @@
      Live
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="model.html">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="model/0_index.html">
      Model
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/commands.html">
+       Commands
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/currency.html">
+       Currency
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/data.html">
+       Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/events.html">
+       Events
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/identifiers.html">
+       Identifiers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/instruments.html">
+       Instruments
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/objects.html">
+       Objects
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/orderbook.html">
+       Order Book
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/orders.html">
+       Orders
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/position.html">
+       Position
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/tick_scheme.html">
+       Tick Scheme
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="msgbus.html">
@@ -237,8 +299,8 @@
   <a class="reference internal" href="../4_integrations/0_index.html">
    Integrations
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -311,9 +373,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/3_api_reference/serialization.rst"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/3_api_reference/serialization.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.rst</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -383,11 +445,11 @@
         
               <div>
                 
-  <div class="section" id="module-nautilus_trader.serialization">
+  <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.serialization">
 <span id="serialization"></span><h1>Serialization<a class="headerlink" href="#module-nautilus_trader.serialization" title="Permalink to this headline">¶</a></h1>
-<p>The <cite>serialization</cite> subpackage groups all serialization components and serializer implementations.</p>
+<p>Defines all serialization components and serializer implementations.</p>
 <p>Base classes are defined which can allow for other serialization implementations
-beside the built-in <cite>MessagePack</cite> specification serializers.</p>
+beside the built-in specification serializers.</p>
 <div class="section" id="module-nautilus_trader.serialization.base">
 <span id="base"></span><h2>Base<a class="headerlink" href="#module-nautilus_trader.serialization.base" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
@@ -419,17 +481,22 @@ beside the built-in <cite>MessagePack</cite> specification serializers.</p>
 <dd><p>Register the given object with the global serialization object maps.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>obj</strong> (<em>object</em>) – The object to register.</p></li>
-<li><p><strong>to_dict</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – The delegate to instantiate a dict of primitive types from the object.</p></li>
-<li><p><strong>from_dict</strong> (<em>Callable</em><em>[</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>, </em><em>Any</em><em>]</em>) – The delegate to instantiate the object from a dict of primitive types.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>obj</strong><span class="classifier">object</span></dt><dd><p>The object to register.</p>
+</dd>
+<dt><strong>to_dict</strong><span class="classifier">Callable[[Any], Dict[str, Any]]</span></dt><dd><p>The delegate to instantiate a dict of primitive types from the object.</p>
+</dd>
+<dt><strong>from_dict</strong><span class="classifier">Callable[[Dict[str, Any]], Any]</span></dt><dd><p>The delegate to instantiate the object from a dict of primitive types.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>TypeError</strong> – If <cite>to_dict</cite> or <cite>from_dict</cite> are not of type <cite>Callable</cite>.</p></li>
-<li><p><strong>KeyError</strong> – If obj already registered with the global object maps.</p></li>
-</ul>
+<dd class="field-even"><dl class="simple">
+<dt>TypeError</dt><dd><p>If <cite>to_dict</cite> or <cite>from_dict</cite> are not of type <cite>Callable</cite>.</p>
+</dd>
+<dt>KeyError</dt><dd><p>If obj already registered with the global object maps.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -444,8 +511,11 @@ beside the built-in <cite>MessagePack</cite> specification serializers.</p>
 <p>Provides a serializer for the <cite>MessagePack</cite> specification.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>timestamps_as_str</strong> (<em>bool</em>) – If the serializer converts timestamp int64_t to str on serialization,
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timestamps_as_str</strong><span class="classifier">bool</span></dt><dd><p>If the serializer converts timestamp int64_t to str on serialization,
 and back to int64_t on deserialization.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -454,13 +524,21 @@ and back to int64_t on deserialization.</p>
 <dd><p>Deserialize the given <cite>MessagePack</cite> specification bytes to an object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>obj_bytes</strong> (<em>bytes</em>) – The object bytes to deserialize.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>obj_bytes</strong><span class="classifier">bytes</span></dt><dd><p>The object bytes to deserialize.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>Instrument</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>Instrument</dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>RuntimeError</strong> – If <cite>obj_bytes</cite> cannot be deserialized.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>RuntimeError</dt><dd><p>If <cite>obj_bytes</cite> cannot be deserialized.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -471,13 +549,21 @@ and back to int64_t on deserialization.</p>
 <dd><p>Serialize the given object to <cite>MessagePack</cite> specification bytes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>obj</strong> (<em>object</em>) – The object to serialize.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>obj</strong><span class="classifier">object</span></dt><dd><p>The object to serialize.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>bytes</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>bytes</dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>RuntimeError</strong> – If <cite>obj</cite> cannot be serialized.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>RuntimeError</dt><dd><p>If <cite>obj</cite> cannot be serialized.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -509,16 +595,23 @@ and back to int64_t on deserialization.</p>
 <dd><p>Deserialize the given <cite>Parquet</cite> specification bytes to an object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>cls</strong> (<em>type</em>) – The type to deserialize to.</p></li>
-<li><p><strong>chunk</strong> (<em>bytes</em>) – The chunk to deserialize.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>cls</strong><span class="classifier">type</span></dt><dd><p>The type to deserialize to.</p>
+</dd>
+<dt><strong>chunk</strong><span class="classifier">bytes</span></dt><dd><p>The chunk to deserialize.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>object</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>object</dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – If <cite>chunk</cite> cannot be deserialized.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>TypeError</dt><dd><p>If <cite>chunk</cite> cannot be deserialized.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -529,13 +622,21 @@ and back to int64_t on deserialization.</p>
 <dd><p>Serialize the given instrument to <cite>Parquet</cite> specification bytes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>obj</strong> (<em>object</em>) – The object to serialize.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>obj</strong><span class="classifier">object</span></dt><dd><p>The object to serialize.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><em>bytes</em></p>
+<dd class="field-even"><dl class="simple">
+<dt>bytes</dt><dd></dd>
+</dl>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – If <cite>obj</cite> cannot be serialized.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>TypeError</dt><dd><p>If <cite>obj</cite> cannot be serialized.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -568,21 +669,27 @@ and back to int64_t on deserialization.</p>
 <dd><p>Register a new class for serialization to parquet.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>cls</strong> (<em>type</em>) – The type to register serialization for.</p></li>
-<li><p><strong>serializer</strong> (<em>Callable</em><em>, </em><em>optional</em>) – The callable to serialize instances of type <cite>cls_type</cite> to something
-parquet can write.</p></li>
-<li><p><strong>deserializer</strong> (<em>Callable</em><em>, </em><em>optional</em>) – The callable to deserialize rows from parquet into <cite>cls_type</cite>.</p></li>
-<li><p><strong>schema</strong> (<em>pa.Schema</em><em>, </em><em>optional</em>) – If the schema cannot be correctly inferred from a subset of the data
-(i.e. if certain values may be missing in the first chunk).</p></li>
-<li><p><strong>chunk</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to group objects by timestamp and operate together (Used for
+<dd class="field-odd"><dl class="simple">
+<dt><strong>cls</strong><span class="classifier">type</span></dt><dd><p>The type to register serialization for.</p>
+</dd>
+<dt><strong>serializer</strong><span class="classifier">Callable, optional</span></dt><dd><p>The callable to serialize instances of type <cite>cls_type</cite> to something
+parquet can write.</p>
+</dd>
+<dt><strong>deserializer</strong><span class="classifier">Callable, optional</span></dt><dd><p>The callable to deserialize rows from parquet into <cite>cls_type</cite>.</p>
+</dd>
+<dt><strong>schema</strong><span class="classifier">pa.Schema, optional</span></dt><dd><p>If the schema cannot be correctly inferred from a subset of the data
+(i.e. if certain values may be missing in the first chunk).</p>
+</dd>
+<dt><strong>chunk</strong><span class="classifier">bool, optional</span></dt><dd><p>Whether to group objects by timestamp and operate together (Used for
 complex objects where we write each object as multiple rows in parquet,
-i.e. <cite>OrderBook</cite> or <cite>AccountState</cite>).</p></li>
-<li><p><strong>table</strong> (<em>type</em><em>, </em><em>optional</em>) – Optional table override for <cite>cls</cite>. Used if <cite>cls</cite> is going to be
+i.e. <cite>OrderBook</cite> or <cite>AccountState</cite>).</p>
+</dd>
+<dt><strong>table</strong><span class="classifier">type, optional</span></dt><dd><p>Optional table override for <cite>cls</cite>. Used if <cite>cls</cite> is going to be
 transformed and stored in a table other than
 its own. (for example, <cite>OrderBookSnapshots</cite> are stored as
-<cite>OrderBookDeltas</cite>, so we use <cite>table=OrderBookDeltas</cite>).</p></li>
-</ul>
+<cite>OrderBookDeltas</cite>, so we use <cite>table=OrderBookDeltas</cite>).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>

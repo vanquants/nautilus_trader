@@ -26,8 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -40,7 +40,7 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
@@ -196,10 +196,72 @@
      Live
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="model.html">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="model/0_index.html">
      Model
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/commands.html">
+       Commands
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/currency.html">
+       Currency
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/data.html">
+       Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/events.html">
+       Events
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/identifiers.html">
+       Identifiers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/instruments.html">
+       Instruments
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/objects.html">
+       Objects
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/orderbook.html">
+       Order Book
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/orders.html">
+       Orders
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/position.html">
+       Position
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model/tick_scheme.html">
+       Tick Scheme
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="msgbus.html">
@@ -237,8 +299,8 @@
   <a class="reference internal" href="../4_integrations/0_index.html">
    Integrations
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -311,9 +373,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/3_api_reference/risk.rst"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/3_api_reference/risk.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.rst</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -383,9 +445,9 @@
         
               <div>
                 
-  <div class="section" id="module-nautilus_trader.risk">
+  <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.risk">
 <span id="risk"></span><h1>Risk<a class="headerlink" href="#module-nautilus_trader.risk" title="Permalink to this headline">¶</a></h1>
-<p>The <cite>risk</cite> subpackage groups all risk specific components and tooling.</p>
+<p>Defines all risk specific components and tooling.</p>
 <p>Base classes are defined which enable users to register <cite>RiskModule</cite> implementations
 with an <cite>ExecutionEngine</cite>, and write <cite>PositionSizer</cite> components.</p>
 <div class="section" id="module-nautilus_trader.risk.config">
@@ -397,12 +459,15 @@ with an <cite>ExecutionEngine</cite>, and write <cite>PositionSizer</cite> compo
 <p>Configuration for <code class="docutils literal notranslate"><span class="pre">RiskEngine</span></code> instances.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>bypass</strong> (<em>bool</em>) – If True then all risk checks are bypassed (will still check for duplicate IDs).</p></li>
-<li><p><strong>max_order_rate</strong> (<em>str</em><em>, </em><em>default=100/00:00:01</em>) – The maximum order rate per timedelta.</p></li>
-<li><p><strong>max_notional_per_order</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – The maximum notional value of an order per instrument ID.
-The value should be a valid decimal format.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bypass</strong><span class="classifier">bool</span></dt><dd><p>If True then all risk checks are bypassed (will still check for duplicate IDs).</p>
+</dd>
+<dt><strong>max_order_rate</strong><span class="classifier">str, default=100/00:00:01</span></dt><dd><p>The maximum order rate per timedelta.</p>
+</dd>
+<dt><strong>max_notional_per_order</strong><span class="classifier">Dict[str, str]</span></dt><dd><p>The maximum notional value of an order per instrument ID.
+The value should be a valid decimal format.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -475,17 +540,26 @@ risk monitoring.</p>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>portfolio</strong> (<em>PortfolioFacade</em>) – The portfolio for the engine.</p></li>
-<li><p><strong>msgbus</strong> (<a class="reference internal" href="msgbus.html#nautilus_trader.msgbus.bus.MessageBus" title="nautilus_trader.msgbus.bus.MessageBus"><em>MessageBus</em></a>) – The message bus for the engine.</p></li>
-<li><p><strong>cache</strong> (<a class="reference internal" href="cache.html#nautilus_trader.cache.base.CacheFacade" title="nautilus_trader.cache.base.CacheFacade"><em>CacheFacade</em></a>) – The read-only cache for the engine.</p></li>
-<li><p><strong>clock</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.clock.Clock" title="nautilus_trader.common.clock.Clock"><em>Clock</em></a>) – The clock for the engine.</p></li>
-<li><p><strong>logger</strong> (<a class="reference internal" href="common.html#nautilus_trader.common.logging.Logger" title="nautilus_trader.common.logging.Logger"><em>Logger</em></a>) – The logger for the engine.</p></li>
-<li><p><strong>config</strong> (<a class="reference internal" href="#nautilus_trader.risk.config.RiskEngineConfig" title="nautilus_trader.risk.config.RiskEngineConfig"><em>RiskEngineConfig</em></a><em>, </em><em>optional</em>) – The configuration for the instance.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>portfolio</strong><span class="classifier">PortfolioFacade</span></dt><dd><p>The portfolio for the engine.</p>
+</dd>
+<dt><strong>msgbus</strong><span class="classifier">MessageBus</span></dt><dd><p>The message bus for the engine.</p>
+</dd>
+<dt><strong>cache</strong><span class="classifier">CacheFacade</span></dt><dd><p>The read-only cache for the engine.</p>
+</dd>
+<dt><strong>clock</strong><span class="classifier">Clock</span></dt><dd><p>The clock for the engine.</p>
+</dd>
+<dt><strong>logger</strong><span class="classifier">Logger</span></dt><dd><p>The logger for the engine.</p>
+</dd>
+<dt><strong>config</strong><span class="classifier">RiskEngineConfig, optional</span></dt><dd><p>The configuration for the instance.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – If <cite>config</cite> is not of type <cite>RiskEngineConfig</cite>.</p>
+<dd class="field-even"><dl class="simple">
+<dt>TypeError</dt><dd><p>If <cite>config</cite> is not of type <cite>RiskEngineConfig</cite>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -505,7 +579,10 @@ risk monitoring.</p>
 <dd><p>Degrade the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -523,7 +600,10 @@ risk monitoring.</p>
 called after disposal.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -550,7 +630,10 @@ called after disposal.</p>
 <dd><p>Execute the given command.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>command</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.message.Command" title="nautilus_trader.core.message.Command"><em>Command</em></a>) – The command to execute.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>command</strong><span class="classifier">Command</span></dt><dd><p>The command to execute.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -563,7 +646,10 @@ called after disposal.</p>
 called after faulting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -601,7 +687,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DEGRADED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -612,7 +700,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">DISPOSED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -623,7 +713,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">FAULTED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -634,7 +726,9 @@ called after faulting.</p>
 <dd><p>If the component has been initialized (component.state &gt;= <code class="docutils literal notranslate"><span class="pre">INITIALIZED</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -645,7 +739,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -656,7 +752,9 @@ called after faulting.</p>
 <dd><p>If the current component state is <code class="docutils literal notranslate"><span class="pre">STOPPED</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>bool</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -667,7 +765,9 @@ called after faulting.</p>
 <dd><p>Return the current maximum notional per order for the given instrument ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Decimal or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-odd"><dl class="simple">
+<dt>Decimal or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -678,7 +778,9 @@ called after faulting.</p>
 <dd><p>Return the current maximum notionals per order settings.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>dict[InstrumentId, Decimal]</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>dict[InstrumentId, Decimal]</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -689,7 +791,10 @@ called after faulting.</p>
 <dd><p>Return the current maximum order rate limit setting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>(int, timedelta)</em> – The limit per timedelta interval.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>(int, timedelta)</dt><dd><p>The limit per timedelta interval.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -700,7 +805,10 @@ called after faulting.</p>
 <dd><p>Process the given event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="core.html#nautilus_trader.core.message.Event" title="nautilus_trader.core.message.Event"><em>Event</em></a>) – The event to process.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>event</strong><span class="classifier">Event</span></dt><dd><p>The event to process.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -712,7 +820,10 @@ called after faulting.</p>
 <p>All stateful fields are reset to their initial value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -728,7 +839,10 @@ called after faulting.</p>
 <dd><p>Resume the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -746,16 +860,20 @@ called after faulting.</p>
 notional check.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instrument_id</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><em>InstrumentId</em></a>) – The instrument ID for the max notional.</p></li>
-<li><p><strong>new_value</strong> (<em>integer</em><em>, </em><em>float</em><em>, </em><em>string</em><em> or </em><em>Decimal</em>) – The max notional value to set.</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the max notional.</p>
+</dd>
+<dt><strong>new_value</strong><span class="classifier">integer, float, string or Decimal</span></dt><dd><p>The max notional value to set.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>decimal.InvalidOperation</strong> – If <cite>new_value</cite> not a valid input for <cite>decimal.Decimal</cite>.</p></li>
-<li><p><strong>ValueError</strong> – If <cite>new_value</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and not positive.</p></li>
-</ul>
+<dd class="field-even"><dl class="simple">
+<dt>decimal.InvalidOperation</dt><dd><p>If <cite>new_value</cite> not a valid input for <cite>decimal.Decimal</cite>.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>new_value</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and not positive.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -766,7 +884,10 @@ notional check.</p>
 <dd><p>Set the trading state for the engine.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>state</strong> (<em>TradingState</em>) – The state to set.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>state</strong><span class="classifier">TradingState</span></dt><dd><p>The state to set.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -777,7 +898,10 @@ notional check.</p>
 <dd><p>Start the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -793,7 +917,9 @@ notional check.</p>
 <dd><p>The components current state.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>ComponentState</em></p>
+<dd class="field-odd"><dl class="simple">
+<dt>ComponentState</dt><dd></dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -804,7 +930,10 @@ notional check.</p>
 <dd><p>Stop the component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference internal" href="core.html#nautilus_trader.core.fsm.InvalidStateTrigger" title="nautilus_trader.core.fsm.InvalidStateTrigger"><strong>InvalidStateTrigger</strong></a> – If invalid trigger from current component state.</p>
+<dd class="field-odd"><dl class="simple">
+<dt>InvalidStateTrigger</dt><dd><p>If invalid trigger from current component state.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -859,7 +988,10 @@ notional check.</p>
 <p>Provides position sizing calculations based on a given risk.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for position sizing.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument for position sizing.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="py method">
@@ -868,30 +1000,47 @@ notional check.</p>
 <dd><p>Calculate the position size quantity.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>entry</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The entry price.</p></li>
-<li><p><strong>stop_loss</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><em>Price</em></a>) – The stop loss price.</p></li>
-<li><p><strong>equity</strong> (<a class="reference internal" href="model.html#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money"><em>Money</em></a>) – The account equity.</p></li>
-<li><p><strong>risk</strong> (<em>Decimal</em>) – The risk percentage.</p></li>
-<li><p><strong>exchange_rate</strong> (<em>Decimal</em>) – The exchange rate for the instrument quote currency vs account currency.</p></li>
-<li><p><strong>commission_rate</strong> (<em>Decimal</em>) – The commission rate (&gt;= 0).</p></li>
-<li><p><strong>hard_limit</strong> (<em>Decimal</em><em>, </em><em>optional</em>) – The hard limit for the total quantity (&gt;= 0).</p></li>
-<li><p><strong>unit_batch_size</strong> (<em>Decimal</em>) – The unit batch size (&gt; 0).</p></li>
-<li><p><strong>units</strong> (<em>int</em>) – The number of units to batch the position into (&gt; 0).</p></li>
-</ul>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>entry</strong><span class="classifier">Price</span></dt><dd><p>The entry price.</p>
 </dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If <cite>risk_bp</cite> is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If <cite>xrate</cite> is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If <cite>commission_rate</cite> is negative (&lt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If <cite>hard_limit</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If <cite>unit_batch_size</cite> is not positive (&gt; 0).</p></li>
-<li><p><strong>ValueError</strong> – If <cite>units</cite> is not positive (&gt; 0).</p></li>
-</ul>
+<dt><strong>stop_loss</strong><span class="classifier">Price</span></dt><dd><p>The stop loss price.</p>
 </dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><em>Quantity</em></p>
+<dt><strong>equity</strong><span class="classifier">Money</span></dt><dd><p>The account equity.</p>
+</dd>
+<dt><strong>risk</strong><span class="classifier">Decimal</span></dt><dd><p>The risk percentage.</p>
+</dd>
+<dt><strong>exchange_rate</strong><span class="classifier">Decimal</span></dt><dd><p>The exchange rate for the instrument quote currency vs account currency.</p>
+</dd>
+<dt><strong>commission_rate</strong><span class="classifier">Decimal</span></dt><dd><p>The commission rate (&gt;= 0).</p>
+</dd>
+<dt><strong>hard_limit</strong><span class="classifier">Decimal, optional</span></dt><dd><p>The hard limit for the total quantity (&gt;= 0).</p>
+</dd>
+<dt><strong>unit_batch_size</strong><span class="classifier">Decimal</span></dt><dd><p>The unit batch size (&gt; 0).</p>
+</dd>
+<dt><strong>units</strong><span class="classifier">int</span></dt><dd><p>The number of units to batch the position into (&gt; 0).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Quantity</dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>risk_bp</cite> is not positive (&gt; 0).</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>xrate</cite> is not positive (&gt; 0).</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>commission_rate</cite> is negative (&lt; 0).</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>hard_limit</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and is not positive (&gt; 0).</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>unit_batch_size</cite> is not positive (&gt; 0).</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>units</cite> is not positive (&gt; 0).</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -913,10 +1062,16 @@ notional check.</p>
 <dd><p>Update the internal instrument with the given instrument.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the update.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument for the update.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>instrument</cite> does not equal the currently held instrument.</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>instrument</cite> does not equal the currently held instrument.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -930,7 +1085,10 @@ notional check.</p>
 <p>The abstract base class for all position sizers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for position sizing.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument for position sizing.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -960,10 +1118,16 @@ notional check.</p>
 <dd><p>Update the internal instrument with the given instrument.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>instrument</strong> (<em>Instrument</em>) – The instrument for the update.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument for the update.</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – If <cite>instrument</cite> does not equal the currently held instrument.</p>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>instrument</cite> does not equal the currently held instrument.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
