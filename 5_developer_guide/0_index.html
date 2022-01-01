@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Developer Guide &#8212; NautilusTrader</title>
+    <title>Developer Guide &#8212; NautilusTrader Docs</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -78,10 +78,10 @@
         
       
       
-      <img src="../_static/nautilus.png" class="logo" alt="logo">
+      <img src="../_static/nautilus_white_small.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">NautilusTrader</h1>
+      <h1 class="site-logo" id="site-title">NautilusTrader Docs</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -491,14 +491,14 @@ its lower level features).</p>
 potential to extract several orders of magnitude greater runtime performance through compiled C
 dynamic libraries.</p>
 <p>The main development and runtime environment we are working in is of course Python. However with the
-introduction of Cython syntax throughout the production codebase in .pyx and .pxd files - it’s
+introduction of Cython syntax throughout the production codebase in <code class="docutils literal notranslate"><span class="pre">.pyx</span></code> and <code class="docutils literal notranslate"><span class="pre">.pxd</span></code> files - it’s
 important to be aware of how the CPython implementation of Python interacts with the underlying
 CPython API, and the NautilusTrader C extension modules which Cython produces.</p>
 <p>We recommend a thorough review of the <a class="reference external" href="https://cython.readthedocs.io/en/latest/">Cython docs</a> to familiarize yourself with some of its core
 concepts, and where C typing is being introduced.</p>
-<p>It’s not necessary to become a C language expert, however how Cython C syntax is used in function
-and method definitions, in local code blocks, and the common primitive C types and how these map to
-their corresponding PyObject types - should be well understood.</p>
+<p>It’s not necessary to become a C language expert, however it’s helpful to understand how Cython C
+syntax is used in function and method definitions, in local code blocks, and the common primitive C
+types and how these map to their corresponding <code class="docutils literal notranslate"><span class="pre">PyObject</span></code> types.</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
