@@ -466,6 +466,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#api-unification">
+   API Unification
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -478,6 +491,30 @@
 <h1>Integrations<a class="headerlink" href="#integrations" title="Permalink to this headline">¶</a></h1>
 <p>NautilusTrader is designed to work with modular adapters which provide integrations
 with data publishers and/or trading venues (exchanges/brokers).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The initial integrations for the project are currently under heavy construction.
+It’s advised to conduct some of your own testing with small amounts of capital before
+running strategies which are able to access larger capital allocations.</p>
+</div>
+<p>The implementation of each integration aims to meet the following criteria:</p>
+<ul class="simple">
+<li><p>Low-level client components should match the exchange API as closely as possible.</p></li>
+<li><p>The full range of an exchanges functionality should <em>eventually</em> be supported.</p></li>
+<li><p>Exchange specific datatypes will be added to support the functionality and return
+types which are reasonably expected by a user.</p></li>
+<li><p>Actions which are unsupported by either the exchange or NautilusTrader, will be explicitly logged as
+a warning or error when a user attempts to perform said action.</p></li>
+</ul>
+<div class="section" id="api-unification">
+<h2>API Unification<a class="headerlink" href="#api-unification" title="Permalink to this headline">¶</a></h2>
+<p>All integrations must be compatible with the NautilusTrader API at the system boundary,
+this means there is some unification and standardization needed.</p>
+<ul class="simple">
+<li><p>All symbols will match the local/native symbol for the exchange.</p></li>
+<li><p>All timestamps will be normalized to UNIX nanoseconds.</p></li>
+</ul>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </div>

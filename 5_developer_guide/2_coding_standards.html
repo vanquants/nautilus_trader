@@ -530,7 +530,7 @@ So there you could say we are “handcrafting towards”  <em>Black</em> stylist
 <p>1- For longer lines of code, and when passing more than a couple of arguments, you should take a new line which aligns at the next logical indent (rather than attempting a hanging ‘vanity’ alignment off an opening parenthesis). This practice conserves space to the right, ensures important code is more central in view, and is also robust to function/method name changes.</p>
 <p>2- The closing parenthesis should be located on a new line, aligned at the logical indent.</p>
 <p>3- Also ensure multiple hanging parameters or arguments end with a trailing comma:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">long_method</span><span class="p">(</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">long_method_with_many_params</span><span class="p">(</span>
     <span class="n">some_arg1</span><span class="p">,</span>
     <span class="n">some_arg2</span><span class="p">,</span>
     <span class="n">some_arg3</span><span class="p">,</span>  <span class="c1"># &lt;-- trailing comma</span>
@@ -543,10 +543,14 @@ So there you could say we are “handcrafting towards”  <em>Black</em> stylist
 <p>The codebase generally follows the PEP-8 style guide. Even though C typing is taken advantage of in the Cython parts of the codebase, we still aim to be idiomatic of Python where possible.
 One notable departure is that Python truthiness is not always taken advantage of to check if an argument is <code class="docutils literal notranslate"><span class="pre">None</span></code> for everything other than collections.</p>
 <p>There are two reasons for this;</p>
-<p>1- Cython can generate more efficient C code from is None and is not None, rather than entering the Python runtime to check the PyObject truthiness.</p>
-<p>2- As per the <a class="reference external" href="https://google.github.io/styleguide/pyguide.html">Google Python Style Guide</a> - it’s discouraged to use truthiness to check if an argument is/is not None, when there is a chance an unexpected object could be passed into the function or method which will yield an unexpected truthiness evaluation (which could result in a logical error type bug).</p>
+<p>1- Cython can generate more efficient C code from <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">None</span></code> and <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span> <span class="pre">None</span></code>, rather than entering the Python runtime to check the <code class="docutils literal notranslate"><span class="pre">PyObject</span></code> truthiness.</p>
+<p>2- As per the <a class="reference external" href="https://google.github.io/styleguide/pyguide.html">Google Python Style Guide</a> - it’s discouraged to use truthiness to check if an argument is/is not <code class="docutils literal notranslate"><span class="pre">None</span></code>, when there is a chance an unexpected object could be passed into the function or method which will yield an unexpected truthiness evaluation (which could result in a logical error type bug).</p>
 <p><em>“Always use if foo is None: (or is not None) to check for a None value. E.g., when testing whether a variable or argument that defaults to None was set to some other value. The other value might be a value that’s false in a boolean context!”</em></p>
-<p>Having said all of this there are still areas of the codebase which aren’t as performance-critical where it is safe to use Python truthiness to check for <code class="docutils literal notranslate"><span class="pre">None</span></code>. To be clear, it’s still encouraged to use Python truthiness <code class="docutils literal notranslate"><span class="pre">is</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span></code> to check if collections are <code class="docutils literal notranslate"><span class="pre">None</span></code> or empty.</p>
+<p>Having said all of this there are still areas of the codebase which aren’t as performance-critical where it is safe to use Python truthiness to check for <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To be clear, it’s still encouraged to use Python truthiness <code class="docutils literal notranslate"><span class="pre">is</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span></code> to check if collections are <code class="docutils literal notranslate"><span class="pre">None</span></code> or empty.</p>
+</div>
 <p>We welcome all feedback on where the codebase departs from PEP-8 for no apparent reason.</p>
 </div>
 <div class="section" id="docstrings">

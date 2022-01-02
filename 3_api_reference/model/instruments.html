@@ -666,17 +666,6 @@ on the asset class and asset type.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.instruments.betting.BettingInstrument.local_symbol">
-<span class="sig-name descname"><span class="pre">local_symbol</span></span><a class="headerlink" href="#nautilus_trader.model.instruments.betting.BettingInstrument.local_symbol" title="Permalink to this definition">¶</a></dt>
-<dd><p>The local/native symbol on the exchange for the instrument.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Symbol</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.instruments.betting.BettingInstrument.lot_size">
 <span class="sig-name descname"><span class="pre">lot_size</span></span><a class="headerlink" href="#nautilus_trader.model.instruments.betting.BettingInstrument.lot_size" title="Permalink to this definition">¶</a></dt>
 <dd><p>The rounded lot unit size (standard/board) for the instrument.</p>
@@ -838,6 +827,17 @@ precision.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>Quantity</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.instruments.betting.BettingInstrument.native_symbol">
+<span class="sig-name descname"><span class="pre">native_symbol</span></span><a class="headerlink" href="#nautilus_trader.model.instruments.betting.BettingInstrument.native_symbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>The local/native symbol on the exchange for the instrument.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>Symbol</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1048,7 +1048,7 @@ precision.</p>
 <span id="crypto-perpetual"></span><h2>Crypto Perpetual<a class="headerlink" href="#module-nautilus_trader.model.instruments.crypto_perp" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.instruments.crypto_perp.CryptoPerpetual">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CryptoPerpetual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Symbol</span> <span class="pre">local_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">base_currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">quote_currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">settlement_currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">is_inverse</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">price_precision</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">size_precision</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price_increment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">size_increment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">max_quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">min_quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Money</span> <span class="pre">max_notional</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Money</span> <span class="pre">min_notional</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">max_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">min_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin_init:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin_maint:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maker_fee:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taker_fee:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">info=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.instruments.crypto_perp.CryptoPerpetual" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CryptoPerpetual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Symbol</span> <span class="pre">native_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">base_currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">quote_currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">settlement_currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">is_inverse</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">price_precision</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">size_precision</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price_increment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">size_increment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">max_quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">min_quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Money</span> <span class="pre">max_notional</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Money</span> <span class="pre">min_notional</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">max_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">min_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin_init:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin_maint:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maker_fee:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taker_fee:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">info=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.instruments.crypto_perp.CryptoPerpetual" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.instruments.base.Instrument" title="nautilus_trader.model.instruments.base.Instrument"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.instruments.base.Instrument</span></code></a></p>
 <p>Represents a crypto perpetual swap instrument.</p>
 <dl class="field-list simple">
@@ -1056,7 +1056,7 @@ precision.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the instrument.</p>
 </dd>
-<dt><strong>local_symbol</strong><span class="classifier">Symbol</span></dt><dd><p>The local/native symbol on the exchange for the instrument.</p>
+<dt><strong>native_symbol</strong><span class="classifier">Symbol</span></dt><dd><p>The local/native symbol on the exchange for the instrument.</p>
 </dd>
 <dt><strong>base_currency</strong><span class="classifier">Currency, optional</span></dt><dd><p>The base currency.</p>
 </dd>
@@ -1293,17 +1293,6 @@ precision.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.instruments.crypto_perp.CryptoPerpetual.local_symbol">
-<span class="sig-name descname"><span class="pre">local_symbol</span></span><a class="headerlink" href="#nautilus_trader.model.instruments.crypto_perp.CryptoPerpetual.local_symbol" title="Permalink to this definition">¶</a></dt>
-<dd><p>The local/native symbol on the exchange for the instrument.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Symbol</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.instruments.crypto_perp.CryptoPerpetual.lot_size">
 <span class="sig-name descname"><span class="pre">lot_size</span></span><a class="headerlink" href="#nautilus_trader.model.instruments.crypto_perp.CryptoPerpetual.lot_size" title="Permalink to this definition">¶</a></dt>
 <dd><p>The rounded lot unit size (standard/board) for the instrument.</p>
@@ -1460,6 +1449,17 @@ precision.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>Quantity</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.instruments.crypto_perp.CryptoPerpetual.native_symbol">
+<span class="sig-name descname"><span class="pre">native_symbol</span></span><a class="headerlink" href="#nautilus_trader.model.instruments.crypto_perp.CryptoPerpetual.native_symbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>The local/native symbol on the exchange for the instrument.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>Symbol</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1701,7 +1701,7 @@ currency for inverse instruments.</p>
 <span id="currency"></span><h2>Currency<a class="headerlink" href="#module-nautilus_trader.model.instruments.currency" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.instruments.currency.CurrencySpot">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CurrencySpot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Symbol</span> <span class="pre">local_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">base_currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">quote_currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">price_precision</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">size_precision</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price_increment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">size_increment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">lot_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">max_quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">min_quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Money</span> <span class="pre">max_notional</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Money</span> <span class="pre">min_notional</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">max_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">min_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin_init:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin_maint:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maker_fee:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taker_fee:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">tick_scheme_name=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">info=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.instruments.currency.CurrencySpot" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CurrencySpot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Symbol</span> <span class="pre">native_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">base_currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">quote_currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">price_precision</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">size_precision</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price_increment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">size_increment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">lot_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">max_quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">min_quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Money</span> <span class="pre">max_notional</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Money</span> <span class="pre">min_notional</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">max_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">min_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin_init:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin_maint:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maker_fee:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taker_fee:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">tick_scheme_name=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">info=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.instruments.currency.CurrencySpot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.instruments.base.Instrument" title="nautilus_trader.model.instruments.base.Instrument"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.instruments.base.Instrument</span></code></a></p>
 <p>Represents a spot currency instrument.</p>
 <dl class="field-list simple">
@@ -1709,7 +1709,7 @@ currency for inverse instruments.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the instrument.</p>
 </dd>
-<dt><strong>local_symbol</strong><span class="classifier">Symbol</span></dt><dd><p>The local/native symbol on the exchange for the instrument.</p>
+<dt><strong>native_symbol</strong><span class="classifier">Symbol</span></dt><dd><p>The local/native symbol on the exchange for the instrument.</p>
 </dd>
 <dt><strong>base_currency</strong><span class="classifier">Currency, optional</span></dt><dd><p>The base currency.</p>
 </dd>
@@ -1937,17 +1937,6 @@ currency for inverse instruments.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.instruments.currency.CurrencySpot.local_symbol">
-<span class="sig-name descname"><span class="pre">local_symbol</span></span><a class="headerlink" href="#nautilus_trader.model.instruments.currency.CurrencySpot.local_symbol" title="Permalink to this definition">¶</a></dt>
-<dd><p>The local/native symbol on the exchange for the instrument.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Symbol</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.instruments.currency.CurrencySpot.lot_size">
 <span class="sig-name descname"><span class="pre">lot_size</span></span><a class="headerlink" href="#nautilus_trader.model.instruments.currency.CurrencySpot.lot_size" title="Permalink to this definition">¶</a></dt>
 <dd><p>The rounded lot unit size (standard/board) for the instrument.</p>
@@ -2104,6 +2093,17 @@ precision.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>Quantity</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.instruments.currency.CurrencySpot.native_symbol">
+<span class="sig-name descname"><span class="pre">native_symbol</span></span><a class="headerlink" href="#nautilus_trader.model.instruments.currency.CurrencySpot.native_symbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>The local/native symbol on the exchange for the instrument.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>Symbol</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2334,7 +2334,7 @@ currency for inverse instruments.</p>
 <span id="equity"></span><h2>Equity<a class="headerlink" href="#module-nautilus_trader.model.instruments.equity" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.instruments.equity.Equity">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Equity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Symbol</span> <span class="pre">local_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">price_precision</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price_increment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">multiplier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">lot_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">isin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.instruments.equity.Equity" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Equity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Symbol</span> <span class="pre">native_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">price_precision</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price_increment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">multiplier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">lot_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">isin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.instruments.equity.Equity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.instruments.base.Instrument" title="nautilus_trader.model.instruments.base.Instrument"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.instruments.base.Instrument</span></code></a></p>
 <p>Represents an Equity instrument.</p>
 <dl class="field-list simple">
@@ -2342,7 +2342,7 @@ currency for inverse instruments.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID.</p>
 </dd>
-<dt><strong>local_symbol</strong><span class="classifier">Symbol</span></dt><dd><p>The local/native symbol on the exchange for the instrument.</p>
+<dt><strong>native_symbol</strong><span class="classifier">Symbol</span></dt><dd><p>The local/native symbol on the exchange for the instrument.</p>
 </dd>
 <dt><strong>currency</strong><span class="classifier">Currency</span></dt><dd><p>The futures contract currency.</p>
 </dd>
@@ -2513,17 +2513,6 @@ currency for inverse instruments.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.instruments.equity.Equity.local_symbol">
-<span class="sig-name descname"><span class="pre">local_symbol</span></span><a class="headerlink" href="#nautilus_trader.model.instruments.equity.Equity.local_symbol" title="Permalink to this definition">¶</a></dt>
-<dd><p>The local/native symbol on the exchange for the instrument.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Symbol</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.instruments.equity.Equity.lot_size">
 <span class="sig-name descname"><span class="pre">lot_size</span></span><a class="headerlink" href="#nautilus_trader.model.instruments.equity.Equity.lot_size" title="Permalink to this definition">¶</a></dt>
 <dd><p>The rounded lot unit size (standard/board) for the instrument.</p>
@@ -2680,6 +2669,17 @@ precision.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>Quantity</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.instruments.equity.Equity.native_symbol">
+<span class="sig-name descname"><span class="pre">native_symbol</span></span><a class="headerlink" href="#nautilus_trader.model.instruments.equity.Equity.native_symbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>The local/native symbol on the exchange for the instrument.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>Symbol</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2910,7 +2910,7 @@ currency for inverse instruments.</p>
 <span id="future"></span><h2>Future<a class="headerlink" href="#module-nautilus_trader.model.instruments.future" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.instruments.future.Future">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Future</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Symbol</span> <span class="pre">local_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AssetClass</span> <span class="pre">asset_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">price_precision</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price_increment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">multiplier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">lot_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">underlying</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span> <span class="pre">expiry_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.instruments.future.Future" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Future</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Symbol</span> <span class="pre">native_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AssetClass</span> <span class="pre">asset_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">price_precision</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price_increment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">multiplier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">lot_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">underlying</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span> <span class="pre">expiry_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.instruments.future.Future" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.instruments.base.Instrument" title="nautilus_trader.model.instruments.base.Instrument"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.instruments.base.Instrument</span></code></a></p>
 <p>Represents a futures contract instrument.</p>
 <dl class="field-list simple">
@@ -2918,7 +2918,7 @@ currency for inverse instruments.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID.</p>
 </dd>
-<dt><strong>local_symbol</strong><span class="classifier">Symbol</span></dt><dd><p>The local/native symbol on the exchange for the instrument.</p>
+<dt><strong>native_symbol</strong><span class="classifier">Symbol</span></dt><dd><p>The local/native symbol on the exchange for the instrument.</p>
 </dd>
 <dt><strong>asset_class</strong><span class="classifier">AssetClass</span></dt><dd><p>The futures contract asset class.</p>
 </dd>
@@ -3093,17 +3093,6 @@ currency for inverse instruments.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.instruments.future.Future.local_symbol">
-<span class="sig-name descname"><span class="pre">local_symbol</span></span><a class="headerlink" href="#nautilus_trader.model.instruments.future.Future.local_symbol" title="Permalink to this definition">¶</a></dt>
-<dd><p>The local/native symbol on the exchange for the instrument.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Symbol</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.instruments.future.Future.lot_size">
 <span class="sig-name descname"><span class="pre">lot_size</span></span><a class="headerlink" href="#nautilus_trader.model.instruments.future.Future.lot_size" title="Permalink to this definition">¶</a></dt>
 <dd><p>The rounded lot unit size (standard/board) for the instrument.</p>
@@ -3260,6 +3249,17 @@ precision.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>Quantity</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.instruments.future.Future.native_symbol">
+<span class="sig-name descname"><span class="pre">native_symbol</span></span><a class="headerlink" href="#nautilus_trader.model.instruments.future.Future.native_symbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>The local/native symbol on the exchange for the instrument.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>Symbol</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -3490,7 +3490,7 @@ currency for inverse instruments.</p>
 <span id="option"></span><h2>Option<a class="headerlink" href="#module-nautilus_trader.model.instruments.option" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.instruments.option.Option">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Option</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Symbol</span> <span class="pre">local_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AssetClass</span> <span class="pre">asset_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">price_precision</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price_increment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">multiplier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">lot_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">strike_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">underlying</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span> <span class="pre">expiry_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OptionKind</span> <span class="pre">kind</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.instruments.option.Option" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Option</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Symbol</span> <span class="pre">native_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AssetClass</span> <span class="pre">asset_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">price_precision</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price_increment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">multiplier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">lot_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">strike_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">underlying</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span> <span class="pre">expiry_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OptionKind</span> <span class="pre">kind</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.instruments.option.Option" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.instruments.base.Instrument" title="nautilus_trader.model.instruments.base.Instrument"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.instruments.base.Instrument</span></code></a></p>
 <p>Represents an options instrument.</p>
 <dl class="field-list simple">
@@ -3498,7 +3498,7 @@ currency for inverse instruments.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID.</p>
 </dd>
-<dt><strong>local_symbol</strong><span class="classifier">Symbol</span></dt><dd><p>The local/native symbol on the exchange for the instrument.</p>
+<dt><strong>native_symbol</strong><span class="classifier">Symbol</span></dt><dd><p>The local/native symbol on the exchange for the instrument.</p>
 </dd>
 <dt><strong>asset_class</strong><span class="classifier">AssetClass</span></dt><dd><p>The futures contract asset class.</p>
 </dd>
@@ -3675,17 +3675,6 @@ currency for inverse instruments.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.instruments.option.Option.local_symbol">
-<span class="sig-name descname"><span class="pre">local_symbol</span></span><a class="headerlink" href="#nautilus_trader.model.instruments.option.Option.local_symbol" title="Permalink to this definition">¶</a></dt>
-<dd><p>The local/native symbol on the exchange for the instrument.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Symbol</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.instruments.option.Option.lot_size">
 <span class="sig-name descname"><span class="pre">lot_size</span></span><a class="headerlink" href="#nautilus_trader.model.instruments.option.Option.lot_size" title="Permalink to this definition">¶</a></dt>
 <dd><p>The rounded lot unit size (standard/board) for the instrument.</p>
@@ -3842,6 +3831,17 @@ precision.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>Quantity</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.instruments.option.Option.native_symbol">
+<span class="sig-name descname"><span class="pre">native_symbol</span></span><a class="headerlink" href="#nautilus_trader.model.instruments.option.Option.native_symbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>The local/native symbol on the exchange for the instrument.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>Symbol</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -4072,7 +4072,7 @@ currency for inverse instruments.</p>
 <span id="base"></span><h2>Base<a class="headerlink" href="#module-nautilus_trader.model.instruments.base" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.instruments.base.Instrument">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Instrument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Symbol</span> <span class="pre">local_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AssetClass</span> <span class="pre">asset_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AssetType</span> <span class="pre">asset_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">quote_currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">is_inverse</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">price_precision</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">size_precision</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price_increment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">size_increment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">multiplier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">lot_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">max_quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">min_quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Money</span> <span class="pre">max_notional</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Money</span> <span class="pre">min_notional</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">max_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">min_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin_init:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin_maint:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maker_fee:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taker_fee:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">tick_scheme_name=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">info=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.instruments.base.Instrument" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Instrument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Symbol</span> <span class="pre">native_symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AssetClass</span> <span class="pre">asset_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AssetType</span> <span class="pre">asset_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">quote_currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">is_inverse</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">price_precision</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">size_precision</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price_increment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">size_increment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">multiplier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">lot_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">max_quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">min_quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Money</span> <span class="pre">max_notional</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Money</span> <span class="pre">min_notional</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">max_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">min_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin_init:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin_maint:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maker_fee:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taker_fee:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">tick_scheme_name=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">info=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.instruments.base.Instrument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.data.Data</span></code></p>
 <p>The base class for all instruments.</p>
 <p>Represents a tradeable financial market instrument or trading pair.</p>
@@ -4081,7 +4081,7 @@ currency for inverse instruments.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the instrument.</p>
 </dd>
-<dt><strong>local_symbol</strong><span class="classifier">Symbol</span></dt><dd><p>The local/native symbol on the exchange for the instrument.</p>
+<dt><strong>native_symbol</strong><span class="classifier">Symbol</span></dt><dd><p>The local/native symbol on the exchange for the instrument.</p>
 </dd>
 <dt><strong>asset_class</strong><span class="classifier">AssetClass</span></dt><dd><p>The instrument asset class.</p>
 </dd>
@@ -4287,17 +4287,6 @@ currency for inverse instruments.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.instruments.base.Instrument.local_symbol">
-<span class="sig-name descname"><span class="pre">local_symbol</span></span><a class="headerlink" href="#nautilus_trader.model.instruments.base.Instrument.local_symbol" title="Permalink to this definition">¶</a></dt>
-<dd><p>The local/native symbol on the exchange for the instrument.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Symbol</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.instruments.base.Instrument.lot_size">
 <span class="sig-name descname"><span class="pre">lot_size</span></span><a class="headerlink" href="#nautilus_trader.model.instruments.base.Instrument.lot_size" title="Permalink to this definition">¶</a></dt>
 <dd><p>The rounded lot unit size (standard/board) for the instrument.</p>
@@ -4454,6 +4443,17 @@ precision.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>Quantity</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.instruments.base.Instrument.native_symbol">
+<span class="sig-name descname"><span class="pre">native_symbol</span></span><a class="headerlink" href="#nautilus_trader.model.instruments.base.Instrument.native_symbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>The local/native symbol on the exchange for the instrument.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>Symbol</cite></p>
 </dd>
 </dl>
 </dd></dl>
