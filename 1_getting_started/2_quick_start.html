@@ -623,30 +623,8 @@
 <p>For more details on how to load other data into Nautilus, see <a class="reference internal" href="../2_user_guide/2_backtest_example.html"><span class="doc std std-doc">Backtest Example</span></a></p>
 <div class="section" id="getting-the-sample-data">
 <h2>Getting the sample data<a class="headerlink" href="#getting-the-sample-data" title="Permalink to this headline">¶</a></h2>
-<p>We have prepared some sample data in the Nautilus parquet format for use with this example. First, download and load the data (this should take ~60s):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
-    <span class="kn">import</span> <span class="nn">requests</span> 
-    <span class="n">filename</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">maxsplit</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
-
-
-<span class="c1"># Download raw data</span>
-<span class="n">download</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/nautechsystems/nautilus_data/main/raw_data/fx_hist_data/DAT_ASCII_EURUSD_T_202001.csv.gz&quot;</span><span class="p">)</span>
-
-<span class="c1"># Download processing script</span>
-<span class="n">download</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/nautechsystems/nautilus_data/main/scripts/hist_data_to_catalog.py&quot;</span><span class="p">)</span>
-
-<span class="kn">from</span> <span class="nn">hist_data_to_catalog</span> <span class="kn">import</span> <span class="n">load_fx_hist_data</span><span class="p">,</span> <span class="n">os</span><span class="p">,</span> <span class="n">shutil</span>
-<span class="n">load_fx_hist_data</span><span class="p">(</span>
-    <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;DAT_ASCII_EURUSD_T_202001.csv.gz&quot;</span><span class="p">,</span>
-    <span class="n">currency</span><span class="o">=</span><span class="s2">&quot;EUR/USD&quot;</span><span class="p">,</span>
-    <span class="n">catalog_path</span><span class="o">=</span><span class="s2">&quot;EUDUSD202001&quot;</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="c1"># Cleanup files</span>
-<span class="n">os</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="s1">&#39;hist_data_to_catalog.py&#39;</span><span class="p">)</span>
-<span class="n">os</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="s2">&quot;DAT_ASCII_EURUSD_T_202001.csv.gz&quot;</span><span class="p">)</span>
+<p>We have prepared a script to load sample data into the Nautilus format for use with this example. First, download and load the data by running the next cell (this should take ~ 1-2 mins):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!curl https://raw.githubusercontent.com/nautechsystems/nautilus_data/main/scripts/hist_data_to_catalog.py | python - 
 </pre></div>
 </div>
 </div>
@@ -654,12 +632,9 @@
 <h2>Connecting to the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code><a class="headerlink" href="#connecting-to-the-datacatalog" title="Permalink to this headline">¶</a></h2>
 <p>If everything worked correctly, you should be able to see a single EURUSD instrument in the catalog</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.persistence.catalog</span> <span class="kn">import</span> <span class="n">DataCatalog</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">catalog</span> <span class="o">=</span> <span class="n">DataCatalog</span><span class="p">(</span><span class="s2">&quot;EUDUSD202001/&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">catalog</span><span class="o">.</span><span class="n">instruments</span><span class="p">()</span>
+
+<span class="n">catalog</span> <span class="o">=</span> <span class="n">DataCatalog</span><span class="p">(</span><span class="s2">&quot;EUDUSD202001/&quot;</span><span class="p">)</span>
+<span class="n">catalog</span><span class="o">.</span><span class="n">instruments</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -908,30 +883,8 @@
 <p>For more details on how to load other data into Nautilus, see <a class="reference internal" href="../2_user_guide/2_backtest_example.html"><span class="doc std std-doc">Backtest Example</span></a></p>
 <div class="section" id="getting-the-sample-data">
 <h2>Getting the sample data<a class="headerlink" href="#getting-the-sample-data" title="Permalink to this headline">¶</a></h2>
-<p>We have prepared some sample data in the Nautilus parquet format for use with this example. First, download and load the data (this should take ~60s):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
-    <span class="kn">import</span> <span class="nn">requests</span> 
-    <span class="n">filename</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">maxsplit</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
-
-
-<span class="c1"># Download raw data</span>
-<span class="n">download</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/nautechsystems/nautilus_data/main/raw_data/fx_hist_data/DAT_ASCII_EURUSD_T_202001.csv.gz&quot;</span><span class="p">)</span>
-
-<span class="c1"># Download processing script</span>
-<span class="n">download</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/nautechsystems/nautilus_data/main/scripts/hist_data_to_catalog.py&quot;</span><span class="p">)</span>
-
-<span class="kn">from</span> <span class="nn">hist_data_to_catalog</span> <span class="kn">import</span> <span class="n">load_fx_hist_data</span><span class="p">,</span> <span class="n">os</span><span class="p">,</span> <span class="n">shutil</span>
-<span class="n">load_fx_hist_data</span><span class="p">(</span>
-    <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;DAT_ASCII_EURUSD_T_202001.csv.gz&quot;</span><span class="p">,</span>
-    <span class="n">currency</span><span class="o">=</span><span class="s2">&quot;EUR/USD&quot;</span><span class="p">,</span>
-    <span class="n">catalog_path</span><span class="o">=</span><span class="s2">&quot;EUDUSD202001&quot;</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="c1"># Cleanup files</span>
-<span class="n">os</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="s1">&#39;hist_data_to_catalog.py&#39;</span><span class="p">)</span>
-<span class="n">os</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="s2">&quot;DAT_ASCII_EURUSD_T_202001.csv.gz&quot;</span><span class="p">)</span>
+<p>We have prepared a script to load sample data into the Nautilus format for use with this example. First, download and load the data by running the next cell (this should take ~ 1-2 mins):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!curl https://raw.githubusercontent.com/nautechsystems/nautilus_data/main/scripts/hist_data_to_catalog.py | python - 
 </pre></div>
 </div>
 </div>
@@ -939,12 +892,9 @@
 <h2>Connecting to the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code><a class="headerlink" href="#connecting-to-the-datacatalog" title="Permalink to this headline">¶</a></h2>
 <p>If everything worked correctly, you should be able to see a single EURUSD instrument in the catalog</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.persistence.catalog</span> <span class="kn">import</span> <span class="n">DataCatalog</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">catalog</span> <span class="o">=</span> <span class="n">DataCatalog</span><span class="p">(</span><span class="s2">&quot;EUDUSD202001/&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">catalog</span><span class="o">.</span><span class="n">instruments</span><span class="p">()</span>
+
+<span class="n">catalog</span> <span class="o">=</span> <span class="n">DataCatalog</span><span class="p">(</span><span class="s2">&quot;EUDUSD202001/&quot;</span><span class="p">)</span>
+<span class="n">catalog</span><span class="o">.</span><span class="n">instruments</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
