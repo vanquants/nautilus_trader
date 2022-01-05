@@ -218,18 +218,12 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#writing-the-parser-function">
-     Writing the
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       parser
-      </span>
-     </code>
-     function
+     Writing the parser function
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-a-data-catalog-if-one-does-not-exist">
-     Creating a Data Catalog if one does not exist
+    <a class="reference internal nav-link" href="#creating-a-datacatalog-if-one-does-not-exist">
+     Creating a DataCatalog if one does not exist
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -317,7 +311,7 @@ correctly into the data catalog.</p>
 <p>Each of the <code class="docutils literal notranslate"><span class="pre">Reader</span></code> classes takes a <code class="docutils literal notranslate"><span class="pre">line_parser</span></code> or <code class="docutils literal notranslate"><span class="pre">block_parser</span></code> function, a user defined function to convert a line or block (chunk / multiple rows) of data into nautilus object(s) (for example <code class="docutils literal notranslate"><span class="pre">QuoteTick</span></code> or <code class="docutils literal notranslate"><span class="pre">TradeTick</span></code>).</p>
 </div>
 <div class="section" id="writing-the-parser-function">
-<h3>Writing the <code class="docutils literal notranslate"><span class="pre">parser</span></code> function<a class="headerlink" href="#writing-the-parser-function" title="Permalink to this headline">¶</a></h3>
+<h3>Writing the parser function<a class="headerlink" href="#writing-the-parser-function" title="Permalink to this headline">¶</a></h3>
 <p>The Forex data from <code class="docutils literal notranslate"><span class="pre">histdata</span></code> is stored in csv/text format, with fields <code class="docutils literal notranslate"><span class="pre">timestamp,</span> <span class="pre">bid_price,</span> <span class="pre">ask_price</span></code>.</p>
 <p>For this example, we will use the <code class="docutils literal notranslate"><span class="pre">CSVReader</span></code> class, but we need to manually pass a header as the files do not contain one. The <code class="docutils literal notranslate"><span class="pre">CSVReader</span></code> has a couple of options, we’ll be setting and <code class="docutils literal notranslate"><span class="pre">chunked=False</span></code> to process the data line-by-line and <code class="docutils literal notranslate"><span class="pre">as_dataframe=False</span></code> to process the data as a string rather than DataFrame. See the <span class="xref myst">API Reference</span> for more details.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
@@ -342,8 +336,8 @@ correctly into the data catalog.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="creating-a-data-catalog-if-one-does-not-exist">
-<h3>Creating a Data Catalog if one does not exist<a class="headerlink" href="#creating-a-data-catalog-if-one-does-not-exist" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="creating-a-datacatalog-if-one-does-not-exist">
+<h3>Creating a DataCatalog if one does not exist<a class="headerlink" href="#creating-a-datacatalog-if-one-does-not-exist" title="Permalink to this headline">¶</a></h3>
 <p>Now that we have our parser function, we instantiate a <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code> (passing in a directory where to store the data, by default we will just use the current directory):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">shutil</span>
 <span class="n">CATALOG_PATH</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;/catalog&quot;</span>
