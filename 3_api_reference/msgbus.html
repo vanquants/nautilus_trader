@@ -23,13 +23,15 @@
 
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -44,9 +46,9 @@
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -65,41 +67,158 @@
     <div class="container-fluid" id="banner"></div>
 
     
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/nautilus-trader-docs.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../1_getting_started/0_index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../2_user_guide/0_index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="0_index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../4_integrations/0_index.html">
+  Integrations
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../5_developer_guide/0_index.html">
+  Developer Guide
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://nautilustrader.io">nautilustrader.io<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/nautechsystems/nautilus_trader" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
 
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
-      <img src="../_static/shell.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">NautilusTrader Docs</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../index.html">
-   Introduction
+  <a class="reference internal" href="accounting.html">
+   Accounting
   </a>
  </li>
-</ul>
-<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="analysis.html">
+   Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="backtest.html">
+   Backtest
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cache.html">
+   Cache
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="common.html">
+   Common
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="core.html">
+   Core
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data.html">
+   Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="execution.html">
+   Execution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="indicators.html">
+   Indicators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="infrastructure.html">
+   Infrastructure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="live.html">
+   Live
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../1_getting_started/0_index.html">
-   Getting Started
+  <a class="reference internal" href="model/0_index.html">
+   Model
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -108,408 +227,117 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../1_getting_started/1_installation.html">
-     Installation
+    <a class="reference internal" href="model/commands.html">
+     Commands
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../1_getting_started/2_quick_start.html">
-     Quick Start
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../2_user_guide/0_index.html">
-   User Guide
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2_user_guide/1_core_concepts.html">
-     Core Concepts
+    <a class="reference internal" href="model/currency.html">
+     Currency
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../2_user_guide/2_backtest_example.html">
-     Complete Backtest Example
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2_user_guide/3_loading_external_data.html">
-     Loading External Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2_user_guide/4_instruments.html">
-     Instruments
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="0_index.html">
-   API Reference
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="accounting.html">
-     Accounting
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="analysis.html">
-     Analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="backtest.html">
-     Backtest
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cache.html">
-     Cache
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="common.html">
-     Common
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="core.html">
-     Core
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="data.html">
+    <a class="reference internal" href="model/data.html">
      Data
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="execution.html">
-     Execution
+    <a class="reference internal" href="model/events.html">
+     Events
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="indicators.html">
-     Indicators
+    <a class="reference internal" href="model/identifiers.html">
+     Identifiers
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="infrastructure.html">
-     Infrastructure
+    <a class="reference internal" href="model/instruments.html">
+     Instruments
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="live.html">
-     Live
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="model/0_index.html">
-     Model
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-    <label for="toctree-checkbox-4">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/commands.html">
-       Commands
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/currency.html">
-       Currency
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/data.html">
-       Data
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/events.html">
-       Events
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/identifiers.html">
-       Identifiers
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/instruments.html">
-       Instruments
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/objects.html">
-       Objects
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/orderbook.html">
-       Order Book
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/orders.html">
-       Orders
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/position.html">
-       Position
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/tick_scheme.html">
-       Tick Scheme
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Message Bus
+    <a class="reference internal" href="model/objects.html">
+     Objects
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="network.html">
-     Network
+    <a class="reference internal" href="model/orderbook.html">
+     Order Book
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="persistence.html">
-     Persistence
+    <a class="reference internal" href="model/orders.html">
+     Orders
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="portfolio.html">
-     Portfolio
+    <a class="reference internal" href="model/position.html">
+     Position
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="risk.html">
-     Risk
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="serialization.html">
-     Serialization
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="trading.html">
-     Trading
+    <a class="reference internal" href="model/tick_scheme.html">
+     Tick Scheme
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../4_integrations/0_index.html">
-   Integrations
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../4_integrations/betfair.html">
-     Betfair
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../4_integrations/binance.html">
-     Binance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../4_integrations/ftx.html">
-     FTX
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../4_integrations/ib.html">
-     Interactive Brokers
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../5_developer_guide/0_index.html">
-   Developer Guide
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../5_developer_guide/1_environment_setup.html">
-     Environment Setup
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../5_developer_guide/2_coding_standards.html">
-     Coding Standards
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../5_developer_guide/3_cython.html">
-     Cython
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../5_developer_guide/4_testing.html">
-     Testing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../5_developer_guide/5_packaged_data.html">
-     Packaged Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://github.com/nautechsystems/nautilus_trader/blob/develop/CONTRIBUTING.md">
-     Contributing
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/3_api_reference/msgbus.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/nautechsystems/nautilus_trader"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/nautechsystems/nautilus_trader/issues/new?title=Issue%20on%20page%20%2F3_api_reference/msgbus.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Message Bus
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-nautilus_trader.msgbus.subscription">
-   Subscription
+ <li class="toctree-l1">
+  <a class="reference internal" href="network.html">
+   Network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="persistence.html">
+   Persistence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="portfolio.html">
+   Portfolio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="risk.html">
+   Risk
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="serialization.html">
+   Serialization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="trading.html">
+   Trading
   </a>
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
-</div>
-    <!-- Table of contents that is only displayed when printing the page -->
-    <div id="jb-print-docs-body" class="onlyprint">
-        <h1>Message Bus</h1>
-        <!-- Table of contents -->
-        <div id="print-main-content" class="row">
-            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-            <div id="jb-print-toc">
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
                 
-                <div>
-                    <h2> Contents </h2>
-                </div>
-                <nav aria-label="Page">
-                    <ul class="visible nav section-nav flex-column">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
    Message Bus
@@ -522,9 +350,23 @@
  </li>
 </ul>
 
-                </nav>
-            </div>
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
             
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.msgbus">
@@ -961,8 +803,8 @@ priority is not considered (and could change).</p>
     {
         requestKernel: true,
         binderOptions: {
-            repo: "nautechsystems/nautilus_trader",
-            ref: "dev",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -979,468 +821,8 @@ priority is not considered (and could change).</p>
 
               </div>
               
-            </div>
-        </div>
-    </div>
-    <div id="main-content" class="row noprint">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.msgbus">
-<span id="message-bus"></span><h1>Message Bus<a class="headerlink" href="#module-nautilus_trader.msgbus" title="Permalink to this headline">¶</a></h1>
-<p>The <cite>msgbus</cite> subpackage provides a universal message bus for connecting system components in a
-loosely coupled way.</p>
-<div class="section" id="id1">
-<h2>Message Bus<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="module-nautilus_trader.msgbus.bus"></span><dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MessageBus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">TraderId</span> <span class="pre">trader_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Clock</span> <span class="pre">clock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Logger</span> <span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">name=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Provides a generic message bus to facilitate various messaging patterns.</p>
-<p>The bus provides both a producer and consumer API for PUB/SUB, REQ/REP, as
-well as direct point-to-point messaging to registered endpoints.</p>
-<dl class="simple">
-<dt>PUB/SUB wildcard patterns for hierarchical topics are possible:</dt><dd><ul class="simple">
-<li><p><cite>*</cite> asterisk represents one or more characters in a pattern.</p></li>
-<li><p><cite>?</cite> question mark represents a single character in a pattern.</p></li>
-</ul>
-</dd>
-</dl>
-<p>The asterisk in a wildcard matches any character zero or more times. For
-example, <cite>comp*</cite> matches anything beginning with <cite>comp</cite> which means <cite>comp</cite>,
-<cite>complete</cite>, and <cite>computer</cite> are all matched.</p>
-<p>A question mark matches a single character once. For example, <cite>c?mp</cite> matches
-<cite>camp</cite> and <cite>comp</cite>. The question mark can also be used more than once.
-For example, <cite>c??p</cite> would match both of the above examples and <cite>coop</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>trader_id</strong><span class="classifier">TraderId</span></dt><dd><p>The trader ID associated with the message bus.</p>
-</dd>
-<dt><strong>clock</strong><span class="classifier">Clock</span></dt><dd><p>The clock for the message bus.</p>
-</dd>
-<dt><strong>logger</strong><span class="classifier">Logger</span></dt><dd><p>The logger for the message bus.</p>
-</dd>
-<dt><strong>name</strong><span class="classifier">str, optional</span></dt><dd><p>The custom name for the message bus.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><dl class="simple">
-<dt>ValueError</dt><dd><p>If <cite>name</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and not a valid string.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This message bus is not thread-safe and must be called from the same thread
-as the event loop.</p>
-</div>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.deregister">
-<span class="sig-name descname"><span class="pre">deregister</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">endpoint,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None]</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.deregister" title="Permalink to this definition">¶</a></dt>
-<dd><p>Deregister the given <cite>handler</cite> from the <cite>endpoint</cite> address.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>endpoint</strong><span class="classifier">str</span></dt><dd><p>The endpoint address to deregister.</p>
-</dd>
-<dt><strong>handler</strong><span class="classifier">Callable[[Any], None]</span></dt><dd><p>The handler to deregister.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><dl class="simple">
-<dt>ValueError</dt><dd><p>If <cite>endpoint</cite> is not a valid string.</p>
-</dd>
-<dt>ValueError</dt><dd><p>If <cite>handler</cite> is not of type <cite>Callable</cite>.</p>
-</dd>
-<dt>KeyError</dt><dd><p>If <cite>endpoint</cite> is not registered.</p>
-</dd>
-<dt>ValueError</dt><dd><p>If <cite>handler</cite> is not registered at the endpoint.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.endpoints">
-<span class="sig-name descname"><span class="pre">endpoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.endpoints" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return all endpoint addresses registered with the message bus.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>list[str]</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.has_subscribers">
-<span class="sig-name descname"><span class="pre">has_subscribers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">pattern=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.has_subscribers" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the message bus has subscribers for the give topic <cite>pattern</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>pattern</strong><span class="classifier">str, optional</span></dt><dd><p>The topic filter. May include wildcard characters <cite>*</cite> and <cite>?</cite>.
-If <code class="docutils literal notranslate"><span class="pre">None</span></code> then query is for <strong>all</strong> topics.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>bool</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.pub_count">
-<span class="sig-name descname"><span class="pre">pub_count</span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.pub_count" title="Permalink to this definition">¶</a></dt>
-<dd><p>The count of messages published by the bus.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.publish">
-<span class="sig-name descname"><span class="pre">publish</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">topic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg:</span> <span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.publish" title="Permalink to this definition">¶</a></dt>
-<dd><p>Publish the given message for the given <cite>topic</cite>.</p>
-<p>Subscription handlers will receive the message in priority order
-(highest first).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>topic</strong><span class="classifier">str</span></dt><dd><p>The topic to publish on.</p>
-</dd>
-<dt><strong>msg</strong><span class="classifier">object</span></dt><dd><p>The message to publish.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.register">
-<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">endpoint,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None]</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.register" title="Permalink to this definition">¶</a></dt>
-<dd><p>Register the given <cite>handler</cite> to receive messages at the <cite>endpoint</cite> address.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>endpoint</strong><span class="classifier">str</span></dt><dd><p>The endpoint address to register.</p>
-</dd>
-<dt><strong>handler</strong><span class="classifier">Callable[[Any], None]</span></dt><dd><p>The handler for the registration.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><dl class="simple">
-<dt>ValueError</dt><dd><p>If <cite>endpoint</cite> is not a valid string.</p>
-</dd>
-<dt>ValueError</dt><dd><p>If <cite>handler</cite> is not of type <cite>Callable</cite>.</p>
-</dd>
-<dt>KeyError</dt><dd><p>If <cite>endpoint</cite> already registered.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.req_count">
-<span class="sig-name descname"><span class="pre">req_count</span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.req_count" title="Permalink to this definition">¶</a></dt>
-<dd><p>The count of requests processed by the bus.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.request">
-<span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Request</span> <span class="pre">request</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.request" title="Permalink to this definition">¶</a></dt>
-<dd><p>Handle the given <cite>request</cite>.</p>
-<p>Will log an error if the correlation ID already exists.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>endpoint</strong><span class="classifier">str</span></dt><dd><p>The endpoint address to send the request to.</p>
-</dd>
-<dt><strong>request</strong><span class="classifier">Request</span></dt><dd><p>The request to handle.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.res_count">
-<span class="sig-name descname"><span class="pre">res_count</span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.res_count" title="Permalink to this definition">¶</a></dt>
-<dd><p>The count of responses processed by the bus.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.response">
-<span class="sig-name descname"><span class="pre">response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Response</span> <span class="pre">response</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.response" title="Permalink to this definition">¶</a></dt>
-<dd><p>Handle the given <cite>response</cite>.</p>
-<p>Will log an error if the correlation ID is not found.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>response</strong><span class="classifier">Response</span></dt><dd><p>The response to handle</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.send">
-<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg:</span> <span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.send" title="Permalink to this definition">¶</a></dt>
-<dd><p>Send the given message to the given <cite>endpoint</cite> address.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>endpoint</strong><span class="classifier">str</span></dt><dd><p>The endpoint address to send the message to.</p>
-</dd>
-<dt><strong>msg</strong><span class="classifier">object</span></dt><dd><p>The message to send.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.sent_count">
-<span class="sig-name descname"><span class="pre">sent_count</span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.sent_count" title="Permalink to this definition">¶</a></dt>
-<dd><p>The count of messages sent through the bus.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.subscribe">
-<span class="sig-name descname"><span class="pre">subscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">topic,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None],</span> <span class="pre">int</span> <span class="pre">priority=0</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.subscribe" title="Permalink to this definition">¶</a></dt>
-<dd><p>Subscribe to the given message <cite>topic</cite> with the given callback <cite>handler</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>topic</strong><span class="classifier">str</span></dt><dd><p>The topic for the subscription. May include wildcard characters
-<cite>*</cite> and <cite>?</cite>.</p>
-</dd>
-<dt><strong>handler</strong><span class="classifier">Callable[[Any], None]</span></dt><dd><p>The handler for the subscription.</p>
-</dd>
-<dt><strong>priority</strong><span class="classifier">int, optional</span></dt><dd><p>The priority for the subscription. Determines the ordering of
-handlers receiving messages being processed, higher priority
-handlers will receive messages prior to lower priority handlers.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><dl class="simple">
-<dt>ValueError</dt><dd><p>If <cite>topic</cite> is not a valid string.</p>
-</dd>
-<dt>ValueError</dt><dd><p>If <cite>handler</cite> is not of type <cite>Callable</cite>.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Assigning priority handling is an advanced feature which <em>shouldn’t
-normally be needed by most users</em>. <strong>Only assign a higher priority to the
-subscription if you are certain of what you’re doing</strong>. If an inappropriate
-priority is assigned then the handler may receive messages before core
-system components have been able to process necessary calculations and
-produce potential side effects for logically sound behaviour.</p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.subscriptions">
-<span class="sig-name descname"><span class="pre">subscriptions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">pattern=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.subscriptions" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return all subscriptions matching the given topic <cite>pattern</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>pattern</strong><span class="classifier">str, optional</span></dt><dd><p>The topic pattern filter. May include wildcard characters <cite>*</cite> and <cite>?</cite>.
-If <code class="docutils literal notranslate"><span class="pre">None</span></code> then query is for <strong>all</strong> topics.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>list[Subscription]</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.topics">
-<span class="sig-name descname"><span class="pre">topics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.topics" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return all topics with active subscribers.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>list[str]</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.trader_id">
-<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.trader_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The trader ID associated with the bus.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>TraderId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.bus.MessageBus.unsubscribe">
-<span class="sig-name descname"><span class="pre">unsubscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self,</span> <span class="pre">unicode</span> <span class="pre">topic,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None]</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.msgbus.bus.MessageBus.unsubscribe" title="Permalink to this definition">¶</a></dt>
-<dd><p>Unsubscribe the given callback <cite>handler</cite> from the given message <cite>topic</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>topic</strong><span class="classifier">str, optional</span></dt><dd><p>The topic to unsubscribe from. May include wildcard characters <cite>*</cite>
-and <cite>?</cite>.</p>
-</dd>
-<dt><strong>handler</strong><span class="classifier">Callable[[Any], None]</span></dt><dd><p>The handler for the subscription.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><dl class="simple">
-<dt>ValueError</dt><dd><p>If <cite>topic</cite> is not a valid string.</p>
-</dd>
-<dt>ValueError</dt><dd><p>If <cite>handler</cite> is not of type <cite>Callable</cite>.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-nautilus_trader.msgbus.subscription">
-<span id="subscription"></span><h2>Subscription<a class="headerlink" href="#module-nautilus_trader.msgbus.subscription" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.subscription.Subscription">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Subscription</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">unicode</span> <span class="pre">topic,</span> <span class="pre">handler:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None],</span> <span class="pre">int</span> <span class="pre">priority=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.msgbus.subscription.Subscription" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Represents a subscription to a particular topic.</p>
-<p>This is an internal class intended to be used by the message bus to organize
-topics and their subscribers.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>topic</strong><span class="classifier">str</span></dt><dd><p>The topic for the subscription. May include wildcard characters <cite>*</cite> and <cite>?</cite>.</p>
-</dd>
-<dt><strong>handler</strong><span class="classifier">Callable[[Message], None]</span></dt><dd><p>The handler for the subscription.</p>
-</dd>
-<dt><strong>priority</strong><span class="classifier">int</span></dt><dd><p>The priority for the subscription.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><dl class="simple">
-<dt>ValueError</dt><dd><p>If <cite>topic</cite> is not a valid string.</p>
-</dd>
-<dt>ValueError</dt><dd><p>If <cite>handler</cite> is not of type <cite>Callable</cite>.</p>
-</dd>
-<dt>ValueError</dt><dd><p>If <cite>priority</cite> is negative (&lt; 0).</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<p>The subscription equality is determined by the topic and handler,
-priority is not considered (and could change).</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.subscription.Subscription.handler">
-<span class="sig-name descname"><span class="pre">handler</span></span><a class="headerlink" href="#nautilus_trader.msgbus.subscription.Subscription.handler" title="Permalink to this definition">¶</a></dt>
-<dd><p>The handler for the subscription.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Callable</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.subscription.Subscription.priority">
-<span class="sig-name descname"><span class="pre">priority</span></span><a class="headerlink" href="#nautilus_trader.msgbus.subscription.Subscription.priority" title="Permalink to this definition">¶</a></dt>
-<dd><p>The priority for the subscription.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.msgbus.subscription.Subscription.topic">
-<span class="sig-name descname"><span class="pre">topic</span></span><a class="headerlink" href="#nautilus_trader.msgbus.subscription.Subscription.topic" title="Permalink to this definition">¶</a></dt>
-<dd><p>The topic for the subscription.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>str</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-</div>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "nautechsystems/nautilus_trader",
-            ref: "dev",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./3_api_reference"
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
               
-        
-            <!-- Previous / next buttons -->
+              <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="model/tick_scheme.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -1457,24 +839,30 @@ priority is not considered (and could change).</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Nautech Systems Pty Ltd.<br/>
-    
-        &copy; Copyright 2015-2022.<br/>
-  </p>
-</footer>
-</main>
-
+              
+          </main>
+          
 
       </div>
     </div>
   
   <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2015-2022.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.2.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
   </body>
 </html>

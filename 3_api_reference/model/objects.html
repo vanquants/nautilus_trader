@@ -23,13 +23,15 @@
 
     
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -44,9 +46,9 @@
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -65,430 +67,291 @@
     <div class="container-fluid" id="banner"></div>
 
     
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/nautilus-trader-docs.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../1_getting_started/0_index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../2_user_guide/0_index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../0_index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../4_integrations/0_index.html">
+  Integrations
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../5_developer_guide/0_index.html">
+  Developer Guide
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://nautilustrader.io">nautilustrader.io<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/nautechsystems/nautilus_trader" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
 
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
-      
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
-      <img src="../../_static/shell.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">NautilusTrader Docs</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../index.html">
-   Introduction
+  <a class="reference internal" href="../accounting.html">
+   Accounting
   </a>
  </li>
-</ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../1_getting_started/0_index.html">
-   Getting Started
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis.html">
+   Analysis
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../1_getting_started/1_installation.html">
-     Installation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../1_getting_started/2_quick_start.html">
-     Quick Start
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../2_user_guide/0_index.html">
-   User Guide
+ <li class="toctree-l1">
+  <a class="reference internal" href="../backtest.html">
+   Backtest
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2_user_guide/1_core_concepts.html">
-     Core Concepts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2_user_guide/2_backtest_example.html">
-     Complete Backtest Example
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2_user_guide/3_loading_external_data.html">
-     Loading External Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2_user_guide/4_instruments.html">
-     Instruments
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cache.html">
+   Cache
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../common.html">
+   Common
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../core.html">
+   Core
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data.html">
+   Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../execution.html">
+   Execution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../indicators.html">
+   Indicators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../infrastructure.html">
+   Infrastructure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../live.html">
+   Live
+  </a>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../0_index.html">
-   API Reference
+  <a class="reference internal" href="0_index.html">
+   Model
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../accounting.html">
-     Accounting
+    <a class="reference internal" href="commands.html">
+     Commands
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../analysis.html">
-     Analysis
+    <a class="reference internal" href="currency.html">
+     Currency
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../backtest.html">
-     Backtest
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cache.html">
-     Cache
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../common.html">
-     Common
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../core.html">
-     Core
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../data.html">
+    <a class="reference internal" href="data.html">
      Data
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../execution.html">
-     Execution
+    <a class="reference internal" href="events.html">
+     Events
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../indicators.html">
-     Indicators
+    <a class="reference internal" href="identifiers.html">
+     Identifiers
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../infrastructure.html">
-     Infrastructure
+    <a class="reference internal" href="instruments.html">
+     Instruments
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Objects
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../live.html">
-     Live
-    </a>
-   </li>
-   <li class="toctree-l2 current active has-children">
-    <a class="reference internal" href="0_index.html">
-     Model
-    </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-    <label for="toctree-checkbox-4">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul class="current">
-     <li class="toctree-l3">
-      <a class="reference internal" href="commands.html">
-       Commands
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="currency.html">
-       Currency
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="data.html">
-       Data
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="events.html">
-       Events
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="identifiers.html">
-       Identifiers
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="instruments.html">
-       Instruments
-      </a>
-     </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
-       Objects
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="orderbook.html">
-       Order Book
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="orders.html">
-       Orders
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="position.html">
-       Position
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="tick_scheme.html">
-       Tick Scheme
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../msgbus.html">
-     Message Bus
+    <a class="reference internal" href="orderbook.html">
+     Order Book
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../network.html">
-     Network
+    <a class="reference internal" href="orders.html">
+     Orders
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../persistence.html">
-     Persistence
+    <a class="reference internal" href="position.html">
+     Position
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../portfolio.html">
-     Portfolio
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../risk.html">
-     Risk
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../serialization.html">
-     Serialization
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../trading.html">
-     Trading
+    <a class="reference internal" href="tick_scheme.html">
+     Tick Scheme
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../4_integrations/0_index.html">
-   Integrations
+ <li class="toctree-l1">
+  <a class="reference internal" href="../msgbus.html">
+   Message Bus
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../4_integrations/betfair.html">
-     Betfair
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../4_integrations/binance.html">
-     Binance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../4_integrations/ftx.html">
-     FTX
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../4_integrations/ib.html">
-     Interactive Brokers
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../5_developer_guide/0_index.html">
-   Developer Guide
+ <li class="toctree-l1">
+  <a class="reference internal" href="../network.html">
+   Network
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../5_developer_guide/1_environment_setup.html">
-     Environment Setup
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../5_developer_guide/2_coding_standards.html">
-     Coding Standards
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../5_developer_guide/3_cython.html">
-     Cython
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../5_developer_guide/4_testing.html">
-     Testing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../5_developer_guide/5_packaged_data.html">
-     Packaged Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://github.com/nautechsystems/nautilus_trader/blob/develop/CONTRIBUTING.md">
-     Contributing
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../persistence.html">
+   Persistence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../portfolio.html">
+   Portfolio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../risk.html">
+   Risk
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../serialization.html">
+   Serialization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../trading.html">
+   Trading
+  </a>
  </li>
 </ul>
 
-    </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
+  </div>
+</nav>
+            </div>
+            
           
 
-
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/3_api_reference/model/objects.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/nautechsystems/nautilus_trader"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/nautechsystems/nautilus_trader/issues/new?title=Issue%20on%20page%20%2F3_api_reference/model/objects.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-        </div>
-    </div>
-</div>
-    <!-- Table of contents that is only displayed when printing the page -->
-    <div id="jb-print-docs-body" class="onlyprint">
-        <h1>Objects</h1>
-        <!-- Table of contents -->
-        <div id="print-main-content" class="row">
-            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-            <div id="jb-print-toc">
+</nav>
+              </div>
+              
+              <div class="toc-item">
                 
-            </div>
+              </div>
+              
             
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.model.objects">
@@ -1041,8 +904,8 @@ following the ‘.’ point (if no point then precision zero).</p>
     {
         requestKernel: true,
         binderOptions: {
-            repo: "nautechsystems/nautilus_trader",
-            ref: "dev",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -1059,584 +922,8 @@ following the ‘.’ point (if no point then precision zero).</p>
 
               </div>
               
-            </div>
-        </div>
-    </div>
-    <div id="main-content" class="row noprint">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.model.objects">
-<span id="objects"></span><h1>Objects<a class="headerlink" href="#module-nautilus_trader.model.objects" title="Permalink to this headline">¶</a></h1>
-<p>Defines fundamental value objects for the trading domain.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.AccountBalance">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AccountBalance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Money</span> <span class="pre">total</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Money</span> <span class="pre">locked</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Money</span> <span class="pre">free</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.objects.AccountBalance" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Represents an account balance in a particular currency.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>total</strong><span class="classifier">Money</span></dt><dd><p>The total account balance.</p>
-</dd>
-<dt><strong>locked</strong><span class="classifier">Money</span></dt><dd><p>The account balance locked (assigned to pending orders).</p>
-</dd>
-<dt><strong>free</strong><span class="classifier">Money</span></dt><dd><p>The account balance free for trading.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><dl class="simple">
-<dt>ValueError</dt><dd><p>If any money currency does not equal <cite>currency</cite>.</p>
-</dd>
-<dt>ValueError</dt><dd><p>If <cite>total</cite> - <cite>locked</cite> != <cite>free</cite>.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.AccountBalance.currency">
-<span class="sig-name descname"><span class="pre">currency</span></span><a class="headerlink" href="#nautilus_trader.model.objects.AccountBalance.currency" title="Permalink to this definition">¶</a></dt>
-<dd><p>The currency of the account .</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Currency</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.AccountBalance.free">
-<span class="sig-name descname"><span class="pre">free</span></span><a class="headerlink" href="#nautilus_trader.model.objects.AccountBalance.free" title="Permalink to this definition">¶</a></dt>
-<dd><p>The account balance free for trading.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Money</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.AccountBalance.from_dict">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">values</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#nautilus_trader.model.objects.AccountBalance" title="nautilus_trader.model.objects.AccountBalance"><span class="pre">AccountBalance</span></a></span></span><a class="headerlink" href="#nautilus_trader.model.objects.AccountBalance.from_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return an account balance from the given dict values.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>values</strong><span class="classifier">dict[str, object]</span></dt><dd><p>The values for initialization.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>AccountBalance</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.AccountBalance.locked">
-<span class="sig-name descname"><span class="pre">locked</span></span><a class="headerlink" href="#nautilus_trader.model.objects.AccountBalance.locked" title="Permalink to this definition">¶</a></dt>
-<dd><p>The account balance locked (assigned to pending orders).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Money</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.AccountBalance.to_dict">
-<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.model.objects.AccountBalance.to_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a dictionary representation of this object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>dict[str, object]</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.AccountBalance.total">
-<span class="sig-name descname"><span class="pre">total</span></span><a class="headerlink" href="#nautilus_trader.model.objects.AccountBalance.total" title="Permalink to this definition">¶</a></dt>
-<dd><p>The total account balance.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Money</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.BaseDecimal">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BaseDecimal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uint8_t</span> <span class="pre">precision</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.objects.BaseDecimal" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>The abstract base class for all domain value objects.</p>
-<p>Represents a decimal number with a specified precision and is intended to be
-used as the base class for fundamental domain model value types. The
-specification of precision is more explicit and straight forward than
-providing a decimal.Context. The <cite>BaseDecimal</cite> type and its subclasses are
-also able to be used as operands for mathematical operations with <cite>float</cite>
-objects. Return values are floats if one of the operands is a float, else
-a <cite>decimal.Decimal</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>value</strong><span class="classifier">integer, float, string or Decimal</span></dt><dd><p>The value of the decimal.</p>
-</dd>
-<dt><strong>precision</strong><span class="classifier">uint8</span></dt><dd><p>The precision for the decimal. Use a precision of 0 for whole numbers
-(no fractional units).</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><dl class="simple">
-<dt>OverflowError</dt><dd><p>If <cite>precision</cite> is negative (&lt; 0).</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This class should not be used directly, but through a concrete subclass.</p>
-</div>
-<p class="rubric">References</p>
-<p><a class="reference external" href="https://docs.python.org/3.9/library/decimal.html">https://docs.python.org/3.9/library/decimal.html</a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.BaseDecimal.as_decimal">
-<span class="sig-name descname"><span class="pre">as_decimal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.objects.BaseDecimal.as_decimal" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the value as a built-in <cite>Decimal</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>Decimal</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.BaseDecimal.as_double">
-<span class="sig-name descname"><span class="pre">as_double</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.model.objects.BaseDecimal.as_double" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the value as a <cite>double</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>double</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.BaseDecimal.precision">
-<span class="sig-name descname"><span class="pre">precision</span></span><a class="headerlink" href="#nautilus_trader.model.objects.BaseDecimal.precision" title="Permalink to this definition">¶</a></dt>
-<dd><p>The decimal precision.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>uint8</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.Money">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Money</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">currency</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.objects.Money" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.objects.BaseDecimal" title="nautilus_trader.model.objects.BaseDecimal"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.objects.BaseDecimal</span></code></a></p>
-<p>Represents an amount of money including currency type.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>value</strong><span class="classifier">integer, float, string or Decimal</span></dt><dd><p>The amount of money in the currency denomination.</p>
-</dd>
-<dt><strong>currency</strong><span class="classifier">Currency</span></dt><dd><p>The currency of the money.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.Money.as_decimal">
-<span class="sig-name descname"><span class="pre">as_decimal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.objects.Money.as_decimal" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the value as a built-in <cite>Decimal</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>Decimal</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.Money.as_double">
-<span class="sig-name descname"><span class="pre">as_double</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.model.objects.Money.as_double" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the value as a <cite>double</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>double</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.Money.currency">
-<span class="sig-name descname"><span class="pre">currency</span></span><a class="headerlink" href="#nautilus_trader.model.objects.Money.currency" title="Permalink to this definition">¶</a></dt>
-<dd><p>The currency of the money.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Currency</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.Money.from_str">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money"><span class="pre">Money</span></a></span></span><a class="headerlink" href="#nautilus_trader.model.objects.Money.from_str" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return money parsed from the given string.</p>
-<p>Must be correctly formatted with a value and currency separated by a
-whitespace delimiter.</p>
-<p>Example: “1000000.00 USD”.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>value</strong><span class="classifier">str</span></dt><dd><p>The value to parse.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>Money</dt><dd></dd>
-</dl>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>ValueError</dt><dd><p>If <cite>value</cite> is malformed.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.Money.precision">
-<span class="sig-name descname"><span class="pre">precision</span></span><a class="headerlink" href="#nautilus_trader.model.objects.Money.precision" title="Permalink to this definition">¶</a></dt>
-<dd><p>The decimal precision.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>uint8</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.Money.to_str">
-<span class="sig-name descname"><span class="pre">to_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.model.objects.Money.to_str" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the formatted string representation of the money.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>str</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.Price">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Price</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uint8_t</span> <span class="pre">precision</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.objects.Price" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.objects.BaseDecimal" title="nautilus_trader.model.objects.BaseDecimal"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.objects.BaseDecimal</span></code></a></p>
-<p>Represents a price in a financial market.</p>
-<p>The number of decimal places may vary. For certain asset classes prices may
-be negative values. For example, prices for options strategies can be
-negative under certain market conditions.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>value</strong><span class="classifier">integer, float, string or Decimal</span></dt><dd><p>The value of the price.</p>
-</dd>
-<dt><strong>precision</strong><span class="classifier">uint8</span></dt><dd><p>The precision for the price. Use a precision of 0 for whole numbers
-(no fractional units).</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><dl class="simple">
-<dt>OverflowError</dt><dd><p>If <cite>precision</cite> is negative (&lt; 0).</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">References</p>
-<p><a class="reference external" href="https://www.onixs.biz/fix-dictionary/5.0.SP2/index.html#Price">https://www.onixs.biz/fix-dictionary/5.0.SP2/index.html#Price</a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.Price.as_decimal">
-<span class="sig-name descname"><span class="pre">as_decimal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.objects.Price.as_decimal" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the value as a built-in <cite>Decimal</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>Decimal</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.Price.as_double">
-<span class="sig-name descname"><span class="pre">as_double</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.model.objects.Price.as_double" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the value as a <cite>double</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>double</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.Price.from_int">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><span class="pre">Price</span></a></span></span><a class="headerlink" href="#nautilus_trader.model.objects.Price.from_int" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a price from the given integer value.</p>
-<p>A precision of zero will be inferred.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>value</strong><span class="classifier">int</span></dt><dd><p>The value for the price.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>Price</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.Price.from_str">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#nautilus_trader.model.objects.Price" title="nautilus_trader.model.objects.Price"><span class="pre">Price</span></a></span></span><a class="headerlink" href="#nautilus_trader.model.objects.Price.from_str" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a price parsed from the given string.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>value</strong><span class="classifier">str</span></dt><dd><p>The value to parse.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>Price</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.Price.precision">
-<span class="sig-name descname"><span class="pre">precision</span></span><a class="headerlink" href="#nautilus_trader.model.objects.Price.precision" title="Permalink to this definition">¶</a></dt>
-<dd><p>The decimal precision.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>uint8</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.Quantity">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Quantity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uint8_t</span> <span class="pre">precision</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.objects.Quantity" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.objects.BaseDecimal" title="nautilus_trader.model.objects.BaseDecimal"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.objects.BaseDecimal</span></code></a></p>
-<p>Represents a quantity with a non-negative value.</p>
-<p>Capable of storing either a whole number (no decimal places) of “shares”
-(securities denominated in whole units) or a decimal value containing
-decimal places for non-share quantity asset classes (securities denominated
-in fractional units).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>value</strong><span class="classifier">integer, float, string, Decimal</span></dt><dd><p>The value of the quantity.</p>
-</dd>
-<dt><strong>precision</strong><span class="classifier">uint8</span></dt><dd><p>The precision for the quantity. Use a precision of 0 for whole numbers
-(no fractional units).</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><dl class="simple">
-<dt>ValueError</dt><dd><p>If <cite>value</cite> is negative (&lt; 0).</p>
-</dd>
-<dt>OverflowError</dt><dd><p>If <cite>precision</cite> is negative (&lt; 0).</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">References</p>
-<p><a class="reference external" href="https://www.onixs.biz/fix-dictionary/5.0.SP2/index.html#Qty">https://www.onixs.biz/fix-dictionary/5.0.SP2/index.html#Qty</a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.Quantity.as_decimal">
-<span class="sig-name descname"><span class="pre">as_decimal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.objects.Quantity.as_decimal" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the value as a built-in <cite>Decimal</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>Decimal</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.Quantity.as_double">
-<span class="sig-name descname"><span class="pre">as_double</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.model.objects.Quantity.as_double" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the value as a <cite>double</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>double</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.Quantity.from_int">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><span class="pre">Quantity</span></a></span></span><a class="headerlink" href="#nautilus_trader.model.objects.Quantity.from_int" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a quantity from the given integer value.</p>
-<p>A precision of zero will be inferred.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>value</strong><span class="classifier">int</span></dt><dd><p>The value for the quantity.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>Quantity</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.Quantity.from_str">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><span class="pre">Quantity</span></a></span></span><a class="headerlink" href="#nautilus_trader.model.objects.Quantity.from_str" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a quantity parsed from the given string.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>value</strong><span class="classifier">str</span></dt><dd><p>The value to parse.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>Quantity</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The decimal precision will be inferred from the number of digits
-following the ‘.’ point (if no point then precision zero).</p>
-</div>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.Quantity.precision">
-<span class="sig-name descname"><span class="pre">precision</span></span><a class="headerlink" href="#nautilus_trader.model.objects.Quantity.precision" title="Permalink to this definition">¶</a></dt>
-<dd><p>The decimal precision.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>uint8</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.Quantity.to_str">
-<span class="sig-name descname"><span class="pre">to_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.model.objects.Quantity.to_str" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the formatted string representation of the quantity.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>str</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.objects.Quantity.zero">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">zero</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uint8_t</span> <span class="pre">precision=0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#nautilus_trader.model.objects.Quantity" title="nautilus_trader.model.objects.Quantity"><span class="pre">Quantity</span></a></span></span><a class="headerlink" href="#nautilus_trader.model.objects.Quantity.zero" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a quantity with a value of zero.</p>
-<dl class="simple">
-<dt>precision<span class="classifier">uint8, default=0</span></dt><dd><p>The precision for the quantity.</p>
-</dd>
-</dl>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>Quantity</dt><dd></dd>
-</dl>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><dl class="simple">
-<dt>OverflowError</dt><dd><p>If <cite>precision</cite> is negative (&lt; 0).</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The default precision is zero.</p>
-</div>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "nautechsystems/nautilus_trader",
-            ref: "dev",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./3_api_reference/model"
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
               
-        
-            <!-- Previous / next buttons -->
+              <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="instruments.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -1653,24 +940,30 @@ following the ‘.’ point (if no point then precision zero).</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Nautech Systems Pty Ltd.<br/>
-    
-        &copy; Copyright 2015-2022.<br/>
-  </p>
-</footer>
-</main>
-
+              
+          </main>
+          
 
       </div>
     </div>
   
   <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2015-2022.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.2.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
   </body>
 </html>

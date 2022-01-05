@@ -23,13 +23,15 @@
 
     
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -44,9 +46,9 @@
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -65,446 +67,277 @@
     <div class="container-fluid" id="banner"></div>
 
     
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/nautilus-trader-docs.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../1_getting_started/0_index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../2_user_guide/0_index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../0_index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../4_integrations/0_index.html">
+  Integrations
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../5_developer_guide/0_index.html">
+  Developer Guide
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://nautilustrader.io">nautilustrader.io<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/nautechsystems/nautilus_trader" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
 
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
-      
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
-      <img src="../../_static/shell.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">NautilusTrader Docs</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../index.html">
-   Introduction
+  <a class="reference internal" href="../accounting.html">
+   Accounting
   </a>
  </li>
-</ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../1_getting_started/0_index.html">
-   Getting Started
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis.html">
+   Analysis
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../backtest.html">
+   Backtest
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cache.html">
+   Cache
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../common.html">
+   Common
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../core.html">
+   Core
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data.html">
+   Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../execution.html">
+   Execution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../indicators.html">
+   Indicators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../infrastructure.html">
+   Infrastructure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../live.html">
+   Live
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="0_index.html">
+   Model
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../1_getting_started/1_installation.html">
-     Installation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../1_getting_started/2_quick_start.html">
-     Quick Start
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../2_user_guide/0_index.html">
-   User Guide
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2_user_guide/1_core_concepts.html">
-     Core Concepts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2_user_guide/2_backtest_example.html">
-     Complete Backtest Example
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2_user_guide/3_loading_external_data.html">
-     Loading External Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2_user_guide/4_instruments.html">
-     Instruments
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../0_index.html">
-   API Reference
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
   <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../accounting.html">
-     Accounting
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Commands
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../analysis.html">
-     Analysis
+    <a class="reference internal" href="currency.html">
+     Currency
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../backtest.html">
-     Backtest
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cache.html">
-     Cache
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../common.html">
-     Common
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../core.html">
-     Core
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../data.html">
+    <a class="reference internal" href="data.html">
      Data
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../execution.html">
-     Execution
+    <a class="reference internal" href="events.html">
+     Events
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../indicators.html">
-     Indicators
+    <a class="reference internal" href="identifiers.html">
+     Identifiers
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../infrastructure.html">
-     Infrastructure
+    <a class="reference internal" href="instruments.html">
+     Instruments
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../live.html">
-     Live
-    </a>
-   </li>
-   <li class="toctree-l2 current active has-children">
-    <a class="reference internal" href="0_index.html">
-     Model
-    </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-    <label for="toctree-checkbox-4">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul class="current">
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
-       Commands
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="currency.html">
-       Currency
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="data.html">
-       Data
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="events.html">
-       Events
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="identifiers.html">
-       Identifiers
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="instruments.html">
-       Instruments
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="objects.html">
-       Objects
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="orderbook.html">
-       Order Book
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="orders.html">
-       Orders
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="position.html">
-       Position
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="tick_scheme.html">
-       Tick Scheme
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../msgbus.html">
-     Message Bus
+    <a class="reference internal" href="objects.html">
+     Objects
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../network.html">
-     Network
+    <a class="reference internal" href="orderbook.html">
+     Order Book
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../persistence.html">
-     Persistence
+    <a class="reference internal" href="orders.html">
+     Orders
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../portfolio.html">
-     Portfolio
+    <a class="reference internal" href="position.html">
+     Position
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../risk.html">
-     Risk
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../serialization.html">
-     Serialization
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../trading.html">
-     Trading
+    <a class="reference internal" href="tick_scheme.html">
+     Tick Scheme
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../4_integrations/0_index.html">
-   Integrations
+ <li class="toctree-l1">
+  <a class="reference internal" href="../msgbus.html">
+   Message Bus
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../4_integrations/betfair.html">
-     Betfair
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../4_integrations/binance.html">
-     Binance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../4_integrations/ftx.html">
-     FTX
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../4_integrations/ib.html">
-     Interactive Brokers
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../5_developer_guide/0_index.html">
-   Developer Guide
+ <li class="toctree-l1">
+  <a class="reference internal" href="../network.html">
+   Network
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../5_developer_guide/1_environment_setup.html">
-     Environment Setup
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../5_developer_guide/2_coding_standards.html">
-     Coding Standards
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../5_developer_guide/3_cython.html">
-     Cython
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../5_developer_guide/4_testing.html">
-     Testing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../5_developer_guide/5_packaged_data.html">
-     Packaged Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://github.com/nautechsystems/nautilus_trader/blob/develop/CONTRIBUTING.md">
-     Contributing
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../persistence.html">
+   Persistence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../portfolio.html">
+   Portfolio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../risk.html">
+   Risk
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../serialization.html">
+   Serialization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../trading.html">
+   Trading
+  </a>
  </li>
 </ul>
 
-    </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/3_api_reference/model/commands.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/nautechsystems/nautilus_trader"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/nautechsystems/nautilus_trader/issues/new?title=Issue%20on%20page%20%2F3_api_reference/model/commands.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+  </div>
+</nav>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-nautilus_trader.model.commands.trading">
-   Trading Commands
-  </a>
- </li>
-</ul>
+            
+          
 
-            </nav>
-        </div>
-    </div>
-</div>
-    <!-- Table of contents that is only displayed when printing the page -->
-    <div id="jb-print-docs-body" class="onlyprint">
-        <h1>Commands</h1>
-        <!-- Table of contents -->
-        <div id="print-main-content" class="row">
-            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-            <div id="jb-print-toc">
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
                 
-                <div>
-                    <h2> Contents </h2>
-                </div>
-                <nav aria-label="Page">
-                    <ul class="visible nav section-nav flex-column">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-nautilus_trader.model.commands.trading">
    Trading Commands
@@ -512,9 +345,23 @@
  </li>
 </ul>
 
-                </nav>
-            </div>
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
             
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.model.commands">
@@ -1364,8 +1211,8 @@ protocol.</p>
     {
         requestKernel: true,
         binderOptions: {
-            repo: "nautechsystems/nautilus_trader",
-            ref: "dev",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -1382,881 +1229,8 @@ protocol.</p>
 
               </div>
               
-            </div>
-        </div>
-    </div>
-    <div id="main-content" class="row noprint">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.model.commands">
-<span id="commands"></span><h1>Commands<a class="headerlink" href="#module-nautilus_trader.model.commands" title="Permalink to this headline">¶</a></h1>
-<p>Defines the domain specific command messages.</p>
-<div class="section" id="module-nautilus_trader.model.commands.trading">
-<span id="trading-commands"></span><h2>Trading Commands<a class="headerlink" href="#module-nautilus_trader.model.commands.trading" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.CancelAllOrders">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CancelAllOrders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">TraderId</span> <span class="pre">trader_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">command_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.CancelAllOrders" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.commands.trading.TradingCommand" title="nautilus_trader.model.commands.trading.TradingCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.commands.trading.TradingCommand</span></code></a></p>
-<p>Represents a command to cancel all orders for an instrument.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>trader_id</strong><span class="classifier">TraderId</span></dt><dd><p>The trader ID for the command.</p>
-</dd>
-<dt><strong>strategy_id</strong><span class="classifier">StrategyId</span></dt><dd><p>The strategy ID for the command.</p>
-</dd>
-<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the command.</p>
-</dd>
-<dt><strong>command_id</strong><span class="classifier">UUID4</span></dt><dd><p>The command ID.</p>
-</dd>
-<dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.CancelAllOrders.category">
-<span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.CancelAllOrders.category" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message category.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>MessageCategory</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.CancelAllOrders.from_dict">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">values</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#nautilus_trader.model.commands.trading.CancelAllOrders" title="nautilus_trader.model.commands.trading.CancelAllOrders"><span class="pre">CancelAllOrders</span></a></span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.CancelAllOrders.from_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a cancel order command from the given dict values.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>values</strong><span class="classifier">dict[str, object]</span></dt><dd><p>The values for initialization.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>CancelAllOrders</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.CancelAllOrders.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.CancelAllOrders.id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID4</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.CancelAllOrders.instrument_id">
-<span class="sig-name descname"><span class="pre">instrument_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.CancelAllOrders.instrument_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The instrument ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>InstrumentId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.CancelAllOrders.strategy_id">
-<span class="sig-name descname"><span class="pre">strategy_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.CancelAllOrders.strategy_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The strategy ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>StrategyId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.CancelAllOrders.to_dict">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">CancelAllOrders</span> <span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.CancelAllOrders.to_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a dictionary representation of this object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>dict[str, object]</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.CancelAllOrders.trader_id">
-<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.CancelAllOrders.trader_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The trader ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>TraderId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.CancelAllOrders.ts_init">
-<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.CancelAllOrders.ts_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int64</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.CancelOrder">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CancelOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">TraderId</span> <span class="pre">trader_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">command_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.CancelOrder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.commands.trading.TradingCommand" title="nautilus_trader.model.commands.trading.TradingCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.commands.trading.TradingCommand</span></code></a></p>
-<p>Represents a command to cancel an order.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>trader_id</strong><span class="classifier">TraderId</span></dt><dd><p>The trader ID for the command.</p>
-</dd>
-<dt><strong>strategy_id</strong><span class="classifier">StrategyId</span></dt><dd><p>The strategy ID for the command.</p>
-</dd>
-<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the command.</p>
-</dd>
-<dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID to cancel.</p>
-</dd>
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId, optional</span></dt><dd><p>The venue order ID to cancel.</p>
-</dd>
-<dt><strong>command_id</strong><span class="classifier">UUID4</span></dt><dd><p>The command ID.</p>
-</dd>
-<dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">References</p>
-<p><a class="reference external" href="https://www.onixs.biz/fix-dictionary/5.0.SP2/msgType_F_70.html">https://www.onixs.biz/fix-dictionary/5.0.SP2/msgType_F_70.html</a></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.CancelOrder.category">
-<span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.CancelOrder.category" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message category.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>MessageCategory</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.CancelOrder.client_order_id">
-<span class="sig-name descname"><span class="pre">client_order_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.CancelOrder.client_order_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The client order ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>ClientOrderId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.CancelOrder.from_dict">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">values</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#nautilus_trader.model.commands.trading.CancelOrder" title="nautilus_trader.model.commands.trading.CancelOrder"><span class="pre">CancelOrder</span></a></span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.CancelOrder.from_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a cancel order command from the given dict values.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>values</strong><span class="classifier">dict[str, object]</span></dt><dd><p>The values for initialization.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>CancelOrder</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.CancelOrder.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.CancelOrder.id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID4</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.CancelOrder.instrument_id">
-<span class="sig-name descname"><span class="pre">instrument_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.CancelOrder.instrument_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The instrument ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>InstrumentId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.CancelOrder.strategy_id">
-<span class="sig-name descname"><span class="pre">strategy_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.CancelOrder.strategy_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The strategy ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>StrategyId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.CancelOrder.to_dict">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">CancelOrder</span> <span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.CancelOrder.to_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a dictionary representation of this object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>dict[str, object]</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.CancelOrder.trader_id">
-<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.CancelOrder.trader_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The trader ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>TraderId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.CancelOrder.ts_init">
-<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.CancelOrder.ts_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int64</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.CancelOrder.venue_order_id">
-<span class="sig-name descname"><span class="pre">venue_order_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.CancelOrder.venue_order_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The venue order ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>VenueOrderId</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ModifyOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">TraderId</span> <span class="pre">trader_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">trigger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">command_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.commands.trading.TradingCommand" title="nautilus_trader.model.commands.trading.TradingCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.commands.trading.TradingCommand</span></code></a></p>
-<p>Represents a command to modify the properties of an existing order.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>trader_id</strong><span class="classifier">TraderId</span></dt><dd><p>The trader ID for the command.</p>
-</dd>
-<dt><strong>strategy_id</strong><span class="classifier">StrategyId</span></dt><dd><p>The strategy ID for the command.</p>
-</dd>
-<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the command.</p>
-</dd>
-<dt><strong>client_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The client order ID to update.</p>
-</dd>
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId, optional</span></dt><dd><p>The venue order ID to update.</p>
-</dd>
-<dt><strong>quantity</strong><span class="classifier">Quantity, optional</span></dt><dd><p>The quantity for the order update.</p>
-</dd>
-<dt><strong>price</strong><span class="classifier">Price, optional</span></dt><dd><p>The price for the order update.</p>
-</dd>
-<dt><strong>trigger</strong><span class="classifier">Price, optional</span></dt><dd><p>The trigger price for the order update.</p>
-</dd>
-<dt><strong>command_id</strong><span class="classifier">UUID4</span></dt><dd><p>The command ID.</p>
-</dd>
-<dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">References</p>
-<p><a class="reference external" href="https://www.onixs.biz/fix-dictionary/5.0.SP2/msgType_G_71.html">https://www.onixs.biz/fix-dictionary/5.0.SP2/msgType_G_71.html</a></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.category">
-<span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.category" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message category.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>MessageCategory</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.client_order_id">
-<span class="sig-name descname"><span class="pre">client_order_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.client_order_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The client order ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>ClientOrderId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.from_dict">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">values</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#nautilus_trader.model.commands.trading.ModifyOrder" title="nautilus_trader.model.commands.trading.ModifyOrder"><span class="pre">ModifyOrder</span></a></span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.from_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a modify order command from the given dict values.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>values</strong><span class="classifier">dict[str, object]</span></dt><dd><p>The values for initialization.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>ModifyOrder</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID4</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.instrument_id">
-<span class="sig-name descname"><span class="pre">instrument_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.instrument_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The instrument ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>InstrumentId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.price">
-<span class="sig-name descname"><span class="pre">price</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.price" title="Permalink to this definition">¶</a></dt>
-<dd><p>The updated price for the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Price</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.quantity">
-<span class="sig-name descname"><span class="pre">quantity</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.quantity" title="Permalink to this definition">¶</a></dt>
-<dd><p>The updated quantity for the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Quantity</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.strategy_id">
-<span class="sig-name descname"><span class="pre">strategy_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.strategy_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The strategy ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>StrategyId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.to_dict">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ModifyOrder</span> <span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.to_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a dictionary representation of this object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>dict[str, object]</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.trader_id">
-<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.trader_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The trader ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>TraderId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.trigger">
-<span class="sig-name descname"><span class="pre">trigger</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.trigger" title="Permalink to this definition">¶</a></dt>
-<dd><p>The updated trigger price for the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Price</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.ts_init">
-<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.ts_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int64</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.ModifyOrder.venue_order_id">
-<span class="sig-name descname"><span class="pre">venue_order_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.ModifyOrder.venue_order_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The venue order ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>VenueOrderId</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrder">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SubmitOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">TraderId</span> <span class="pre">trader_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PositionId</span> <span class="pre">position_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Order</span> <span class="pre">order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">command_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.commands.trading.TradingCommand" title="nautilus_trader.model.commands.trading.TradingCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.commands.trading.TradingCommand</span></code></a></p>
-<p>Represents a command to submit the given order.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>trader_id</strong><span class="classifier">TraderId</span></dt><dd><p>The trader ID for the command.</p>
-</dd>
-<dt><strong>strategy_id</strong><span class="classifier">StrategyId</span></dt><dd><p>The strategy ID for the command.</p>
-</dd>
-<dt><strong>position_id</strong><span class="classifier">PositionId, optional</span></dt><dd><p>The position ID for the command.</p>
-</dd>
-<dt><strong>order</strong><span class="classifier">Order</span></dt><dd><p>The order to submit.</p>
-</dd>
-<dt><strong>command_id</strong><span class="classifier">UUID4</span></dt><dd><p>The commands ID.</p>
-</dd>
-<dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">References</p>
-<p><a class="reference external" href="https://www.onixs.biz/fix-dictionary/5.0.SP2/msgType_D_68.html">https://www.onixs.biz/fix-dictionary/5.0.SP2/msgType_D_68.html</a></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrder.category">
-<span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrder.category" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message category.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>MessageCategory</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrder.from_dict">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">values</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#nautilus_trader.model.commands.trading.SubmitOrder" title="nautilus_trader.model.commands.trading.SubmitOrder"><span class="pre">SubmitOrder</span></a></span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrder.from_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a submit order command from the given dict values.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>values</strong><span class="classifier">dict[str, object]</span></dt><dd><p>The values for initialization.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>SubmitOrder</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrder.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrder.id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID4</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrder.instrument_id">
-<span class="sig-name descname"><span class="pre">instrument_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrder.instrument_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The instrument ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>InstrumentId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrder.order">
-<span class="sig-name descname"><span class="pre">order</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrder.order" title="Permalink to this definition">¶</a></dt>
-<dd><p>The order for the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Order</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrder.position_id">
-<span class="sig-name descname"><span class="pre">position_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrder.position_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The position ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>PositionId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrder.strategy_id">
-<span class="sig-name descname"><span class="pre">strategy_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrder.strategy_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The strategy ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>StrategyId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrder.to_dict">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">SubmitOrder</span> <span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrder.to_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a dictionary representation of this object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>dict[str, object]</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrder.trader_id">
-<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrder.trader_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The trader ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>TraderId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrder.ts_init">
-<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrder.ts_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int64</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrderList">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SubmitOrderList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">TraderId</span> <span class="pre">trader_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderList</span> <span class="pre">order_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">command_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrderList" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.commands.trading.TradingCommand" title="nautilus_trader.model.commands.trading.TradingCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.commands.trading.TradingCommand</span></code></a></p>
-<p>Represents a command to submit an order list consisting of bulk or related
-parent-child contingent orders.</p>
-<p>This command can correspond to a <cite>NewOrderList &lt;E&gt; message</cite> for the FIX
-protocol.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>trader_id</strong><span class="classifier">TraderId</span></dt><dd><p>The trader ID for the command.</p>
-</dd>
-<dt><strong>strategy_id</strong><span class="classifier">StrategyId</span></dt><dd><p>The strategy ID for the command.</p>
-</dd>
-<dt><strong>order_list</strong><span class="classifier">OrderList</span></dt><dd><p>The order list to submit.</p>
-</dd>
-<dt><strong>command_id</strong><span class="classifier">UUID4</span></dt><dd><p>The command ID.</p>
-</dd>
-<dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">References</p>
-<p><a class="reference external" href="https://www.onixs.biz/fix-dictionary/5.0.SP2/msgType_E_69.html">https://www.onixs.biz/fix-dictionary/5.0.SP2/msgType_E_69.html</a></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrderList.category">
-<span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrderList.category" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message category.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>MessageCategory</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrderList.from_dict">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">values</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#nautilus_trader.model.commands.trading.SubmitOrderList" title="nautilus_trader.model.commands.trading.SubmitOrderList"><span class="pre">SubmitOrderList</span></a></span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrderList.from_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a submit order list command from the given dict values.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>values</strong><span class="classifier">dict[str, object]</span></dt><dd><p>The values for initialization.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>SubmitOrderList</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrderList.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrderList.id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID4</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrderList.instrument_id">
-<span class="sig-name descname"><span class="pre">instrument_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrderList.instrument_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The instrument ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>InstrumentId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrderList.list">
-<span class="sig-name descname"><span class="pre">list</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrderList.list" title="Permalink to this definition">¶</a></dt>
-<dd><p>The order list for submission.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>OrderList</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrderList.strategy_id">
-<span class="sig-name descname"><span class="pre">strategy_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrderList.strategy_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The strategy ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>StrategyId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrderList.to_dict">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">SubmitOrderList</span> <span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrderList.to_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a dictionary representation of this object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>dict[str, object]</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrderList.trader_id">
-<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrderList.trader_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The trader ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>TraderId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.SubmitOrderList.ts_init">
-<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.SubmitOrderList.ts_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int64</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.TradingCommand">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TradingCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">TraderId</span> <span class="pre">trader_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">command_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.commands.trading.TradingCommand" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="../core.html#nautilus_trader.core.message.Command" title="nautilus_trader.core.message.Command"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Command</span></code></a></p>
-<p>The abstract base class for all trading related commands.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>trader_id</strong><span class="classifier">TraderId</span></dt><dd><p>The trader ID for the command.</p>
-</dd>
-<dt><strong>strategy_id</strong><span class="classifier">StrategyId</span></dt><dd><p>The strategy ID for the command.</p>
-</dd>
-<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the command.</p>
-</dd>
-<dt><strong>command_id</strong><span class="classifier">UUID4</span></dt><dd><p>The commands ID.</p>
-</dd>
-<dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This class should not be used directly, but through a concrete subclass.</p>
-</div>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.TradingCommand.category">
-<span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.TradingCommand.category" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message category.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>MessageCategory</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.TradingCommand.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.TradingCommand.id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID4</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.TradingCommand.instrument_id">
-<span class="sig-name descname"><span class="pre">instrument_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.TradingCommand.instrument_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The instrument ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>InstrumentId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.TradingCommand.strategy_id">
-<span class="sig-name descname"><span class="pre">strategy_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.TradingCommand.strategy_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The strategy ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>StrategyId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.TradingCommand.trader_id">
-<span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.TradingCommand.trader_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The trader ID associated with the command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>TraderId</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.commands.trading.TradingCommand.ts_init">
-<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.model.commands.trading.TradingCommand.ts_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int64</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-</div>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "nautechsystems/nautilus_trader",
-            ref: "dev",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./3_api_reference/model"
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
               
-        
-            <!-- Previous / next buttons -->
+              <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="0_index.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -2273,24 +1247,30 @@ protocol.</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Nautech Systems Pty Ltd.<br/>
-    
-        &copy; Copyright 2015-2022.<br/>
-  </p>
-</footer>
-</main>
-
+              
+          </main>
+          
 
       </div>
     </div>
   
   <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2015-2022.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.2.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
   </body>
 </html>

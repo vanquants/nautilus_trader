@@ -23,13 +23,15 @@
 
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -44,9 +46,9 @@
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -65,41 +67,158 @@
     <div class="container-fluid" id="banner"></div>
 
     
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/nautilus-trader-docs.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../1_getting_started/0_index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../2_user_guide/0_index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="0_index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../4_integrations/0_index.html">
+  Integrations
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../5_developer_guide/0_index.html">
+  Developer Guide
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://nautilustrader.io">nautilustrader.io<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/nautechsystems/nautilus_trader" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
 
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
-      <img src="../_static/shell.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">NautilusTrader Docs</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../index.html">
-   Introduction
+  <a class="reference internal" href="accounting.html">
+   Accounting
   </a>
  </li>
-</ul>
-<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="analysis.html">
+   Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="backtest.html">
+   Backtest
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cache.html">
+   Cache
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="common.html">
+   Common
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="core.html">
+   Core
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data.html">
+   Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="execution.html">
+   Execution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="indicators.html">
+   Indicators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="infrastructure.html">
+   Infrastructure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="live.html">
+   Live
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../1_getting_started/0_index.html">
-   Getting Started
+  <a class="reference internal" href="model/0_index.html">
+   Model
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -108,413 +227,117 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../1_getting_started/1_installation.html">
-     Installation
+    <a class="reference internal" href="model/commands.html">
+     Commands
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../1_getting_started/2_quick_start.html">
-     Quick Start
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../2_user_guide/0_index.html">
-   User Guide
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2_user_guide/1_core_concepts.html">
-     Core Concepts
+    <a class="reference internal" href="model/currency.html">
+     Currency
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../2_user_guide/2_backtest_example.html">
-     Complete Backtest Example
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2_user_guide/3_loading_external_data.html">
-     Loading External Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2_user_guide/4_instruments.html">
-     Instruments
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="0_index.html">
-   API Reference
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="accounting.html">
-     Accounting
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="analysis.html">
-     Analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="backtest.html">
-     Backtest
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cache.html">
-     Cache
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="common.html">
-     Common
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="core.html">
-     Core
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="data.html">
+    <a class="reference internal" href="model/data.html">
      Data
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="execution.html">
-     Execution
+    <a class="reference internal" href="model/events.html">
+     Events
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="indicators.html">
-     Indicators
+    <a class="reference internal" href="model/identifiers.html">
+     Identifiers
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="infrastructure.html">
-     Infrastructure
+    <a class="reference internal" href="model/instruments.html">
+     Instruments
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="live.html">
-     Live
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="model/0_index.html">
-     Model
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-    <label for="toctree-checkbox-4">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/commands.html">
-       Commands
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/currency.html">
-       Currency
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/data.html">
-       Data
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/events.html">
-       Events
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/identifiers.html">
-       Identifiers
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/instruments.html">
-       Instruments
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/objects.html">
-       Objects
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/orderbook.html">
-       Order Book
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/orders.html">
-       Orders
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/position.html">
-       Position
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/tick_scheme.html">
-       Tick Scheme
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="msgbus.html">
-     Message Bus
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Network
+    <a class="reference internal" href="model/objects.html">
+     Objects
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="persistence.html">
-     Persistence
+    <a class="reference internal" href="model/orderbook.html">
+     Order Book
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="portfolio.html">
-     Portfolio
+    <a class="reference internal" href="model/orders.html">
+     Orders
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="risk.html">
-     Risk
+    <a class="reference internal" href="model/position.html">
+     Position
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="serialization.html">
-     Serialization
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="trading.html">
-     Trading
+    <a class="reference internal" href="model/tick_scheme.html">
+     Tick Scheme
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../4_integrations/0_index.html">
-   Integrations
+ <li class="toctree-l1">
+  <a class="reference internal" href="msgbus.html">
+   Message Bus
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../4_integrations/betfair.html">
-     Betfair
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../4_integrations/binance.html">
-     Binance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../4_integrations/ftx.html">
-     FTX
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../4_integrations/ib.html">
-     Interactive Brokers
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../5_developer_guide/0_index.html">
-   Developer Guide
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Network
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../5_developer_guide/1_environment_setup.html">
-     Environment Setup
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../5_developer_guide/2_coding_standards.html">
-     Coding Standards
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../5_developer_guide/3_cython.html">
-     Cython
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../5_developer_guide/4_testing.html">
-     Testing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../5_developer_guide/5_packaged_data.html">
-     Packaged Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://github.com/nautechsystems/nautilus_trader/blob/develop/CONTRIBUTING.md">
-     Contributing
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="persistence.html">
+   Persistence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="portfolio.html">
+   Portfolio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="risk.html">
+   Risk
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="serialization.html">
+   Serialization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="trading.html">
+   Trading
+  </a>
  </li>
 </ul>
 
-    </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/3_api_reference/network.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/nautechsystems/nautilus_trader"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/nautechsystems/nautilus_trader/issues/new?title=Issue%20on%20page%20%2F3_api_reference/network.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+  </div>
+</nav>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-nautilus_trader.network.http">
-   HTTP Client
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-nautilus_trader.network.socket">
-   Socket
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-nautilus_trader.network.websocket">
-   WebSocket Client
-  </a>
- </li>
-</ul>
+            
+          
 
-            </nav>
-        </div>
-    </div>
-</div>
-    <!-- Table of contents that is only displayed when printing the page -->
-    <div id="jb-print-docs-body" class="onlyprint">
-        <h1>Network</h1>
-        <!-- Table of contents -->
-        <div id="print-main-content" class="row">
-            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-            <div id="jb-print-toc">
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
                 
-                <div>
-                    <h2> Contents </h2>
-                </div>
-                <nav aria-label="Page">
-                    <ul class="visible nav section-nav flex-column">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-nautilus_trader.network.http">
    HTTP Client
@@ -532,9 +355,23 @@
  </li>
 </ul>
 
-                </nav>
-            </div>
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
             
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.network">
@@ -806,8 +643,8 @@ connection related behaviour (sending other messages etc.).</p>
     {
         requestKernel: true,
         binderOptions: {
-            repo: "nautechsystems/nautilus_trader",
-            ref: "dev",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -824,303 +661,8 @@ connection related behaviour (sending other messages etc.).</p>
 
               </div>
               
-            </div>
-        </div>
-    </div>
-    <div id="main-content" class="row noprint">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.network">
-<span id="network"></span><h1>Network<a class="headerlink" href="#module-nautilus_trader.network" title="Permalink to this headline">¶</a></h1>
-<p>The <cite>network</cite> subpackage provides low-level base components for networking clients.</p>
-<p>The base classes can be inherited to assist with writing adapters for integrations with exchanges,
-brokerages, data providers/feeds and other venues or services.</p>
-<div class="section" id="module-nautilus_trader.network.http">
-<span id="http-client"></span><h2>HTTP Client<a class="headerlink" href="#module-nautilus_trader.network.http" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HttpClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loop:</span> <span class="pre">asyncio.AbstractEventLoop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Logger</span> <span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">addresses=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">nameservers=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">ttl_dns_cache=ONE_DAY</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssl:</span> <span class="pre">Union[None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Fingerprint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SSLContext]</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">connector_kwargs=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.http.HttpClient" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Provides an asynchronous HTTP client.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>loop</strong><span class="classifier">asyncio.AbstractEventLoop</span></dt><dd><p>The event loop for the client.</p>
-</dd>
-<dt><strong>logger</strong><span class="classifier">Logger</span></dt><dd><p>The logger for the client.</p>
-</dd>
-<dt><strong>ttl_dns_cache</strong><span class="classifier">int</span></dt><dd><p>The time to live for the DNS cache.</p>
-</dd>
-<dt><strong>ssl: Union[None, bool, Fingerprint, SSLContext], default=False</strong></dt><dd><p>The ssl context to use for HTTPS.</p>
-</dd>
-<dt><strong>connector_kwargs</strong><span class="classifier">dict, optional</span></dt><dd><p>The connector key word arguments.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><dl class="simple">
-<dt>ValueError</dt><dd><p>If <cite>ttl_dns_cache</cite> is not positive (&gt; 0).</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient.connect">
-<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.network.http.HttpClient.connect" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient.delete">
-<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">url:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers:</span> <span class="pre">Optional[Dict[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str]]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ClientResponse</span></span></span><a class="headerlink" href="#nautilus_trader.network.http.HttpClient.delete" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient.disconnect">
-<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.network.http.HttpClient.disconnect" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient.get">
-<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">url:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers:</span> <span class="pre">Optional[Dict[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str]]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ClientResponse</span></span></span><a class="headerlink" href="#nautilus_trader.network.http.HttpClient.get" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient.post">
-<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">url:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers:</span> <span class="pre">Optional[Dict[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str]]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ClientResponse</span></span></span><a class="headerlink" href="#nautilus_trader.network.http.HttpClient.post" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.http.HttpClient.request">
-<span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">method:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">url:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers:</span> <span class="pre">Optional[Dict[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str]]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json:</span> <span class="pre">Optional[Dict[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str]]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ClientResponse</span></span></span><a class="headerlink" href="#nautilus_trader.network.http.HttpClient.request" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-nautilus_trader.network.socket">
-<span id="socket"></span><h2>Socket<a class="headerlink" href="#module-nautilus_trader.network.socket" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SocketClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loop:</span> <span class="pre">asyncio.AbstractEventLoop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Logger</span> <span class="pre">logger:</span> <span class="pre">Logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler:</span> <span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">ssl=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytes</span> <span class="pre">crlf=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">encoding=u'utf-8'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Provides a low-level generic socket base client.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>loop</strong><span class="classifier">asyncio.AbstractEventLoop</span></dt><dd><p>The event loop for the client.</p>
-</dd>
-<dt><strong>logger</strong><span class="classifier">Logger</span></dt><dd><p>The logger for the client.</p>
-</dd>
-<dt><strong>host</strong><span class="classifier">str</span></dt><dd><p>The host for the client.</p>
-</dd>
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>The port for the client.</p>
-</dd>
-<dt><strong>handler</strong><span class="classifier">Callable</span></dt><dd><p>The handler to process the raw bytes read.</p>
-</dd>
-<dt><strong>ssl</strong><span class="classifier">bool</span></dt><dd><p>If SSL should be used for socket connection.</p>
-</dd>
-<dt><strong>crlf</strong><span class="classifier">bytes, optional</span></dt><dd><p>The carriage return, line feed delimiter on which to split messages.</p>
-</dd>
-<dt><strong>encoding</strong><span class="classifier">str, optional</span></dt><dd><p>The encoding to use when sending messages.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><dl class="simple">
-<dt>ValueError</dt><dd><p>If <cite>host</cite> is not a valid string.</p>
-</dd>
-<dt>ValueError</dt><dd><p>If <cite>port</cite> is not positive (&gt; 0).</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.connect">
-<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.connect" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.disconnect">
-<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.disconnect" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.host">
-<span class="sig-name descname"><span class="pre">host</span></span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.host" title="Permalink to this definition">¶</a></dt>
-<dd><p>The host for the socket client.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>str</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.is_connected">
-<span class="sig-name descname"><span class="pre">is_connected</span></span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.is_connected" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the socket is connected.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>bool</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.port">
-<span class="sig-name descname"><span class="pre">port</span></span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.port" title="Permalink to this definition">¶</a></dt>
-<dd><p>The port for the socket client.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.post_connection">
-<span class="sig-name descname"><span class="pre">post_connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.post_connection" title="Permalink to this definition">¶</a></dt>
-<dd><p>The actions to perform post-connection. i.e. sending further connection messages.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.reconnect">
-<span class="sig-name descname"><span class="pre">reconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.reconnect" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.send">
-<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytes</span> <span class="pre">raw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.send" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.ssl">
-<span class="sig-name descname"><span class="pre">ssl</span></span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.ssl" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the socket client is using SSL.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>bool</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.start">
-<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.start" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.socket.SocketClient.stop">
-<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.socket.SocketClient.stop" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-nautilus_trader.network.websocket">
-<span id="websocket-client"></span><h2>WebSocket Client<a class="headerlink" href="#module-nautilus_trader.network.websocket" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WebSocketClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">loop:</span> <span class="pre">asyncio.AbstractEventLoop,</span> <span class="pre">Logger</span> <span class="pre">logger:</span> <span class="pre">Logger,</span> <span class="pre">handler:</span> <span class="pre">Callable[[bytes],</span> <span class="pre">None],</span> <span class="pre">max_retry_connection=0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Provides a low-level web socket base client.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>loop</strong><span class="classifier">asyncio.AbstractEventLoop</span></dt><dd><p>The event loop for the client.</p>
-</dd>
-<dt><strong>logger</strong><span class="classifier">LoggerAdapter</span></dt><dd><p>The logger adapter for the client.</p>
-</dd>
-<dt><strong>handler</strong><span class="classifier">Callable[[bytes], None]</span></dt><dd><p>The handler for receiving raw data.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.close">
-<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.close" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.connect">
-<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">ws_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">start=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**ws_kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.connect" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.disconnect">
-<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.disconnect" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.is_connected">
-<span class="sig-name descname"><span class="pre">is_connected</span></span><a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.is_connected" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the client is connected.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>bool</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.post_connect">
-<span class="sig-name descname"><span class="pre">post_connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.post_connect" title="Permalink to this definition">¶</a></dt>
-<dd><p>Actions to be performed post connection.</p>
-<p>This method is called before start(), override to implement additional
-connection related behaviour (sending other messages etc.).</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.recv">
-<span class="sig-name descname"><span class="pre">recv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bytes</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.recv" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.send">
-<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytes</span> <span class="pre">raw:</span> <span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.send" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.send_json">
-<span class="sig-name descname"><span class="pre">send_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.send_json" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.network.websocket.WebSocketClient.start">
-<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.network.websocket.WebSocketClient.start" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</div>
-</div>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "nautechsystems/nautilus_trader",
-            ref: "dev",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./3_api_reference"
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
               
-        
-            <!-- Previous / next buttons -->
+              <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="msgbus.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -1137,24 +679,30 @@ connection related behaviour (sending other messages etc.).</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Nautech Systems Pty Ltd.<br/>
-    
-        &copy; Copyright 2015-2022.<br/>
-  </p>
-</footer>
-</main>
-
+              
+          </main>
+          
 
       </div>
     </div>
   
   <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2015-2022.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.2.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
   </body>
 </html>

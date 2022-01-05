@@ -23,13 +23,15 @@
 
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -44,9 +46,9 @@
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -65,41 +67,158 @@
     <div class="container-fluid" id="banner"></div>
 
     
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/nautilus-trader-docs.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../1_getting_started/0_index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../2_user_guide/0_index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="0_index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../4_integrations/0_index.html">
+  Integrations
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../5_developer_guide/0_index.html">
+  Developer Guide
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://nautilustrader.io">nautilustrader.io<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/nautechsystems/nautilus_trader" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
 
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
-      <img src="../_static/shell.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">NautilusTrader Docs</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../index.html">
-   Introduction
+  <a class="reference internal" href="accounting.html">
+   Accounting
   </a>
  </li>
-</ul>
-<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="analysis.html">
+   Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="backtest.html">
+   Backtest
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cache.html">
+   Cache
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="common.html">
+   Common
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Core
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data.html">
+   Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="execution.html">
+   Execution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="indicators.html">
+   Indicators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="infrastructure.html">
+   Infrastructure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="live.html">
+   Live
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../1_getting_started/0_index.html">
-   Getting Started
+  <a class="reference internal" href="model/0_index.html">
+   Model
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -108,433 +227,117 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../1_getting_started/1_installation.html">
-     Installation
+    <a class="reference internal" href="model/commands.html">
+     Commands
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../1_getting_started/2_quick_start.html">
-     Quick Start
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../2_user_guide/0_index.html">
-   User Guide
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2_user_guide/1_core_concepts.html">
-     Core Concepts
+    <a class="reference internal" href="model/currency.html">
+     Currency
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../2_user_guide/2_backtest_example.html">
-     Complete Backtest Example
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2_user_guide/3_loading_external_data.html">
-     Loading External Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2_user_guide/4_instruments.html">
-     Instruments
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="0_index.html">
-   API Reference
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="accounting.html">
-     Accounting
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="analysis.html">
-     Analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="backtest.html">
-     Backtest
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cache.html">
-     Cache
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="common.html">
-     Common
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Core
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="data.html">
+    <a class="reference internal" href="model/data.html">
      Data
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="execution.html">
-     Execution
+    <a class="reference internal" href="model/events.html">
+     Events
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="indicators.html">
-     Indicators
+    <a class="reference internal" href="model/identifiers.html">
+     Identifiers
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="infrastructure.html">
-     Infrastructure
+    <a class="reference internal" href="model/instruments.html">
+     Instruments
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="live.html">
-     Live
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="model/0_index.html">
-     Model
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-    <label for="toctree-checkbox-4">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/commands.html">
-       Commands
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/currency.html">
-       Currency
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/data.html">
-       Data
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/events.html">
-       Events
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/identifiers.html">
-       Identifiers
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/instruments.html">
-       Instruments
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/objects.html">
-       Objects
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/orderbook.html">
-       Order Book
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/orders.html">
-       Orders
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/position.html">
-       Position
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/tick_scheme.html">
-       Tick Scheme
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="msgbus.html">
-     Message Bus
+    <a class="reference internal" href="model/objects.html">
+     Objects
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="network.html">
-     Network
+    <a class="reference internal" href="model/orderbook.html">
+     Order Book
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="persistence.html">
-     Persistence
+    <a class="reference internal" href="model/orders.html">
+     Orders
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="portfolio.html">
-     Portfolio
+    <a class="reference internal" href="model/position.html">
+     Position
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="risk.html">
-     Risk
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="serialization.html">
-     Serialization
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="trading.html">
-     Trading
+    <a class="reference internal" href="model/tick_scheme.html">
+     Tick Scheme
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../4_integrations/0_index.html">
-   Integrations
+ <li class="toctree-l1">
+  <a class="reference internal" href="msgbus.html">
+   Message Bus
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../4_integrations/betfair.html">
-     Betfair
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../4_integrations/binance.html">
-     Binance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../4_integrations/ftx.html">
-     FTX
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../4_integrations/ib.html">
-     Interactive Brokers
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../5_developer_guide/0_index.html">
-   Developer Guide
+ <li class="toctree-l1">
+  <a class="reference internal" href="network.html">
+   Network
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../5_developer_guide/1_environment_setup.html">
-     Environment Setup
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../5_developer_guide/2_coding_standards.html">
-     Coding Standards
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../5_developer_guide/3_cython.html">
-     Cython
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../5_developer_guide/4_testing.html">
-     Testing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../5_developer_guide/5_packaged_data.html">
-     Packaged Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://github.com/nautechsystems/nautilus_trader/blob/develop/CONTRIBUTING.md">
-     Contributing
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="persistence.html">
+   Persistence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="portfolio.html">
+   Portfolio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="risk.html">
+   Risk
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="serialization.html">
+   Serialization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="trading.html">
+   Trading
+  </a>
  </li>
 </ul>
 
-    </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/3_api_reference/core.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/nautechsystems/nautilus_trader"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/nautechsystems/nautilus_trader/issues/new?title=Issue%20on%20page%20%2F3_api_reference/core.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+  </div>
+</nav>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-nautilus_trader.core.collections">
-   Collections
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-nautilus_trader.core.datetime">
-   Datetime
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-nautilus_trader.core.fsm">
-   Finite-State Machine (FSM)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-nautilus_trader.core.message">
-   Message
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-nautilus_trader.core.stats">
-   Stats
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-nautilus_trader.core.text">
-   Text
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-nautilus_trader.core.uuid">
-   UUID
-  </a>
- </li>
-</ul>
+            
+          
 
-            </nav>
-        </div>
-    </div>
-</div>
-    <!-- Table of contents that is only displayed when printing the page -->
-    <div id="jb-print-docs-body" class="onlyprint">
-        <h1>Core</h1>
-        <!-- Table of contents -->
-        <div id="print-main-content" class="row">
-            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-            <div id="jb-print-toc">
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
                 
-                <div>
-                    <h2> Contents </h2>
-                </div>
-                <nav aria-label="Page">
-                    <ul class="visible nav section-nav flex-column">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-nautilus_trader.core.collections">
    Collections
@@ -572,9 +375,23 @@
  </li>
 </ul>
 
-                </nav>
-            </div>
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
             
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.core">
@@ -1681,8 +1498,8 @@ this class vs the Python standard <cite>uuid.uuid4()</cite> function.</p>
     {
         requestKernel: true,
         binderOptions: {
-            repo: "nautechsystems/nautilus_trader",
-            ref: "dev",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -1699,1138 +1516,8 @@ this class vs the Python standard <cite>uuid.uuid4()</cite> function.</p>
 
               </div>
               
-            </div>
-        </div>
-    </div>
-    <div id="main-content" class="row noprint">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.core">
-<span id="core"></span><h1>Core<a class="headerlink" href="#module-nautilus_trader.core" title="Permalink to this headline">¶</a></h1>
-<p>The <cite>core</cite> subpackage groups core constants, functions and low-level components used throughout the framework.</p>
-<p>The main focus here is on efficiency and re-usability as this forms the base
-layer of the entire framework. Message passing is a core design philosophy and
-the message base types are contained here.</p>
-<p>A generic <cite>FiniteStateMachine</cite> operates with C-level enums, ensuring correct
-state transitions for both domain entities and more complex components.</p>
-<div class="section" id="module-nautilus_trader.core.collections">
-<span id="collections"></span><h2>Collections<a class="headerlink" href="#module-nautilus_trader.core.collections" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.collections.bisect_left">
-<span class="sig-name descname"><span class="pre">bisect_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">lo=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hi=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#nautilus_trader.core.collections.bisect_left" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the index where to insert item x in list a, assuming a is sorted.
-The return value i is such that all e in a[:i] have e &lt;= x, and all e in
-a[i:] have e &gt; x.  So if x already appears in the list, a.insert(i, x) will
-insert just after the rightmost x already there.
-Optional args lo (default 0) and hi (default len(a)) bound the
-slice of a to be searched.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>int</dt><dd></dd>
-</dl>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><dl class="simple">
-<dt>ValueError</dt><dd><p>If lo is negative (&lt; 0).</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.collections.bisect_right">
-<span class="sig-name descname"><span class="pre">bisect_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">lo=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hi=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#nautilus_trader.core.collections.bisect_right" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the index where to insert item x in list a, assuming a is sorted.
-The return value i is such that all e in a[:i] have e &lt;= x, and all e in
-a[i:] have e &gt; x.  So if x already appears in the list, a.insert(i, x) will
-insert just after the rightmost x already there.
-Optional args lo (default 0) and hi (default len(a)) bound the
-slice of a to be searched.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>int</dt><dd></dd>
-</dl>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><dl class="simple">
-<dt>ValueError</dt><dd><p>If lo is negative (&lt; 0).</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-</div>
-<div class="section" id="module-nautilus_trader.core.datetime">
-<span id="datetime"></span><h2>Datetime<a class="headerlink" href="#module-nautilus_trader.core.datetime" title="Permalink to this headline">¶</a></h2>
-<p>This module provides efficient functions for performing standard datetime related operations.</p>
-<p>Functions include awareness/tz checks and conversions, as well as ISO 8601 conversion.</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.as_utc_index">
-<span class="sig-name descname"><span class="pre">as_utc_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pd.DataFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.datetime.as_utc_index" title="Permalink to this definition">¶</a></dt>
-<dd><p>Ensure the given data has a DateTimeIndex which is tz-aware UTC.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>data</strong><span class="classifier">pd.Series or pd.DataFrame.</span></dt><dd><p>The object to ensure is UTC.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>pd.Series, pd.DataFrame or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.as_utc_timestamp">
-<span class="sig-name descname"><span class="pre">as_utc_timestamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">dt</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">datetime</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.as_utc_timestamp" title="Permalink to this definition">¶</a></dt>
-<dd><p>Ensure the given timestamp is tz-aware UTC.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>dt</strong><span class="classifier">datetime</span></dt><dd><p>The timestamp to check.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>datetime</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.dt_to_unix_nanos">
-<span class="sig-name descname"><span class="pre">dt_to_unix_nanos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pd.Timestamp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.datetime.dt_to_unix_nanos" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the UNIX time (nanoseconds) from the given datetime (UTC).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>dt</strong><span class="classifier">pd.Timestamp, optional</span></dt><dd><p>The datetime to convert.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>int64 or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
-</dl>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This function expects a pandas <cite>Timestamp</cite> as standard Python <cite>datetime</cite>
-objects are only accurate to 1 microsecond (μs).</p>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.format_iso8601">
-<span class="sig-name descname"><span class="pre">format_iso8601</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">dt</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.format_iso8601" title="Permalink to this definition">¶</a></dt>
-<dd><p>Format the given string to millisecond accuracy ISO 8601 specification.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>dt</strong><span class="classifier">datetime</span></dt><dd><p>The input datetime to format.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>str</dt><dd><p>The formatted string.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.format_iso8601_ns">
-<span class="sig-name descname"><span class="pre">format_iso8601_ns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">dt</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.format_iso8601_ns" title="Permalink to this definition">¶</a></dt>
-<dd><p>Format the given string to nanosecond accuracy ISO 8601 specification.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>dt</strong><span class="classifier">datetime</span></dt><dd><p>The input datetime to format.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>str</dt><dd><p>The formatted string.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.is_datetime_utc">
-<span class="sig-name descname"><span class="pre">is_datetime_utc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">dt</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.is_datetime_utc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a value indicating whether the given timestamp is timezone aware UTC.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>dt</strong><span class="classifier">datetime</span></dt><dd><p>The datetime to check.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>bool</dt><dd><p>True if timezone aware UTC, else False.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.is_tz_aware">
-<span class="sig-name descname"><span class="pre">is_tz_aware</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_object</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.is_tz_aware" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a value indicating whether the given object is timezone aware.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>time_object</strong><span class="classifier">datetime, pd.Timestamp, pd.Series, pd.DataFrame</span></dt><dd><p>The time object to check.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>bool</dt><dd><p>True if timezone aware, else False.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.is_tz_naive">
-<span class="sig-name descname"><span class="pre">is_tz_naive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_object</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.is_tz_naive" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a value indicating whether the given object is timezone naive.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>time_object</strong><span class="classifier">datetime, pd.Timestamp, pd.DataFrame</span></dt><dd><p>The time object to check.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>bool</dt><dd><p>True if object timezone naive, else False.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.maybe_dt_to_unix_nanos">
-<span class="sig-name descname"><span class="pre">maybe_dt_to_unix_nanos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pd.Timestamp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.datetime.maybe_dt_to_unix_nanos" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the UNIX time (nanoseconds) from the given datetime, or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
-<p>If dt is <code class="docutils literal notranslate"><span class="pre">None</span></code>, then will return None.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>dt</strong><span class="classifier">pd.Timestamp, optional</span></dt><dd><p>The datetime to convert.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>int64 or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
-</dl>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If the input is not <code class="docutils literal notranslate"><span class="pre">None</span></code> then this function expects a pandas <cite>Timestamp</cite>
-as standard Python <cite>datetime</cite> objects are only accurate to 1 microsecond (μs).</p>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.maybe_unix_nanos_to_dt">
-<span class="sig-name descname"><span class="pre">maybe_unix_nanos_to_dt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nanos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.datetime.maybe_unix_nanos_to_dt" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the datetime (UTC) from the given UNIX time (nanoseconds), or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
-<p>If nanos is <code class="docutils literal notranslate"><span class="pre">None</span></code>, then will return None.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>nanos</strong><span class="classifier">int, optional</span></dt><dd><p>The UNIX time (nanoseconds) to convert.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>pd.Timestamp or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.micros_to_nanos">
-<span class="sig-name descname"><span class="pre">micros_to_nanos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">micros</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.micros_to_nanos" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return round nanoseconds (ns) converted from the given microseconds (μs).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>micros</strong><span class="classifier">double</span></dt><dd><p>The microseconds to convert.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>int64</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.millis_to_nanos">
-<span class="sig-name descname"><span class="pre">millis_to_nanos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">millis</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.millis_to_nanos" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return round nanoseconds (ns) converted from the given milliseconds (ms).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>millis</strong><span class="classifier">double</span></dt><dd><p>The milliseconds to convert.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>int64</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.nanos_to_micros">
-<span class="sig-name descname"><span class="pre">nanos_to_micros</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">nanos</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.nanos_to_micros" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return round microseconds (μs) converted from the given nanoseconds (ns).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>nanos</strong><span class="classifier">int64</span></dt><dd><p>The nanoseconds to convert.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>int64</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.nanos_to_millis">
-<span class="sig-name descname"><span class="pre">nanos_to_millis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">nanos</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.nanos_to_millis" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return round milliseconds (ms) converted from the given nanoseconds (ns).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>nanos</strong><span class="classifier">int64</span></dt><dd><p>The nanoseconds to convert.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>int64</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.nanos_to_secs">
-<span class="sig-name descname"><span class="pre">nanos_to_secs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">nanos</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.nanos_to_secs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return seconds converted from the given nanoseconds (ns).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>nanos</strong><span class="classifier">double</span></dt><dd><p>The nanoseconds to convert.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>double</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.secs_to_nanos">
-<span class="sig-name descname"><span class="pre">secs_to_nanos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">secs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int64_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.datetime.secs_to_nanos" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return round nanoseconds (ns) converted from the given seconds.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>secs</strong><span class="classifier">double</span></dt><dd><p>The seconds to convert.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>int64</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.datetime.unix_nanos_to_dt">
-<span class="sig-name descname"><span class="pre">unix_nanos_to_dt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">nanos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.datetime.unix_nanos_to_dt" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the datetime (UTC) from the given UNIX time (nanoseconds).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>nanos</strong><span class="classifier">int64</span></dt><dd><p>The UNIX time (nanoseconds) to convert.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>pd.Timestamp</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-</div>
-<div class="section" id="module-nautilus_trader.core.fsm">
-<span id="finite-state-machine-fsm"></span><h2>Finite-State Machine (FSM)<a class="headerlink" href="#module-nautilus_trader.core.fsm" title="Permalink to this headline">¶</a></h2>
-<p>Defines a generic <cite>Finite-State Machine</cite> (FSM).</p>
-<p>The FSM operates with a state-transition table of tuples and C-level enums. The
-intended use case is to ensure correct state transitions, as well as holding a
-deterministic state value.</p>
-<p class="rubric">References</p>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Finite-state_machine">https://en.wikipedia.org/wiki/Finite-state_machine</a></p>
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.core.fsm.FiniteStateMachine">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FiniteStateMachine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dict</span> <span class="pre">state_transition_table,</span> <span class="pre">int</span> <span class="pre">initial_state,</span> <span class="pre">trigger_parser:</span> <span class="pre">Callable[[int],</span> <span class="pre">str]</span> <span class="pre">=</span> <span class="pre">str,</span> <span class="pre">state_parser:</span> <span class="pre">Callable[[int],</span> <span class="pre">str]</span> <span class="pre">=</span> <span class="pre">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.fsm.FiniteStateMachine" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Provides a generic finite state machine.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>state_transition_table</strong><span class="classifier">dict of tuples and states</span></dt><dd><p>The state-transition table for the FSM consisting of a tuple of
-starting state and trigger as keys, and resulting states as values.</p>
-</dd>
-<dt><strong>initial_state</strong><span class="classifier">int / C Enum</span></dt><dd><p>The initial state for the FSM.</p>
-</dd>
-<dt><strong>trigger_parser</strong><span class="classifier">Callable[[int], str], optional</span></dt><dd><p>The trigger parser needed to convert C Enum ints into strings.
-If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will just print the integer.</p>
-</dd>
-<dt><strong>state_parser</strong><span class="classifier">Callable[[int], str], optional</span></dt><dd><p>The state parser needed to convert C Enum ints into strings.
-If <code class="docutils literal notranslate"><span class="pre">None</span></code> then will just print the integer.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><dl class="simple">
-<dt>ValueError</dt><dd><p>If <cite>state_transition_table</cite> is empty.</p>
-</dd>
-<dt>ValueError</dt><dd><p>If <cite>state_transition_table</cite> key not tuple.</p>
-</dd>
-<dt>ValueError</dt><dd><p>If <cite>trigger_parser</cite> not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
-</dd>
-<dt>ValueError</dt><dd><p>If <cite>state_parser</cite> not of type <cite>Callable</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.fsm.FiniteStateMachine.state">
-<span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#nautilus_trader.core.fsm.FiniteStateMachine.state" title="Permalink to this definition">¶</a></dt>
-<dd><p>The current state of the FSM.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int / C Enum</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.core.fsm.FiniteStateMachine.trigger">
-<span class="sig-name descname"><span class="pre">trigger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">trigger</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.core.fsm.FiniteStateMachine.trigger" title="Permalink to this definition">¶</a></dt>
-<dd><p>Process the FSM with the given trigger. The trigger must be valid for
-the FSMs current state.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>trigger</strong><span class="classifier">int / C Enum</span></dt><dd><p>The trigger to combine with the current state providing the key for
-the transition table lookup.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><dl class="simple">
-<dt>InvalidStateTrigger</dt><dd><p>If the state and <cite>trigger</cite> combination is not found in the transition table.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="nautilus_trader.core.fsm.InvalidStateTrigger">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">InvalidStateTrigger</span></span><a class="headerlink" href="#nautilus_trader.core.fsm.InvalidStateTrigger" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>Represents an invalid trigger for the current state.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.core.fsm.InvalidStateTrigger.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.fsm.InvalidStateTrigger.with_traceback" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exception.with_traceback(tb) –
-set self.__traceback__ to tb and return self.</p>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-nautilus_trader.core.message">
-<span id="message"></span><h2>Message<a class="headerlink" href="#module-nautilus_trader.core.message" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Command">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">command_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Command" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
-<p>The abstract base class for all commands.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>command_id</strong><span class="classifier">UUID4</span></dt><dd><p>The command ID.</p>
-</dd>
-<dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This class should not be used directly, but through a concrete subclass.</p>
-</div>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Command.category">
-<span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.core.message.Command.category" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message category.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>MessageCategory</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Command.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.core.message.Command.id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID4</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Command.ts_init">
-<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.core.message.Command.ts_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int64</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Document">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Document</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">document_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Document" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
-<p>The abstract base class for all documents.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>document_id</strong><span class="classifier">UUID4</span></dt><dd><p>The document ID.</p>
-</dd>
-<dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This class should not be used directly, but through a concrete subclass.</p>
-</div>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Document.category">
-<span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.core.message.Document.category" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message category.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>MessageCategory</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Document.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.core.message.Document.id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID4</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Document.ts_init">
-<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.core.message.Document.ts_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int64</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Event">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">event_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Event" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
-<p>The abstract base class for all events.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>event_id</strong><span class="classifier">UUID4</span></dt><dd><p>The event ID.</p>
-</dd>
-<dt><strong>ts_event</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the event occurred.</p>
-</dd>
-<dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This class should not be used directly, but through a concrete subclass.</p>
-</div>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Event.category">
-<span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.core.message.Event.category" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message category.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>MessageCategory</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Event.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.core.message.Event.id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID4</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Event.ts_event">
-<span class="sig-name descname"><span class="pre">ts_event</span></span><a class="headerlink" href="#nautilus_trader.core.message.Event.ts_event" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UNIX timestamp (nanoseconds) when the event occurred.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int64</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Event.ts_init">
-<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.core.message.Event.ts_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int64</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Message">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MessageCategory</span> <span class="pre">category</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">message_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Message" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>The abstract base class for all messages.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>category</strong><span class="classifier">MessageCategory</span></dt><dd><p>The message category.</p>
-</dd>
-<dt><strong>message_id</strong><span class="classifier">UUID4</span></dt><dd><p>The message ID.</p>
-</dd>
-<dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This class should not be used directly, but through a concrete subclass.</p>
-</div>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Message.category">
-<span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.core.message.Message.category" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message category.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>MessageCategory</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Message.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.core.message.Message.id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID4</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Message.ts_init">
-<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.core.message.Message.ts_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int64</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Request">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">callback:</span> <span class="pre">Callable[[Any],</span> <span class="pre">None],</span> <span class="pre">UUID4</span> <span class="pre">request_id,</span> <span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Request" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
-<p>The abstract base class for all requests.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>callback</strong><span class="classifier">Callable[[Any], None]</span></dt><dd><p>The delegate to call with the response.</p>
-</dd>
-<dt><strong>request_id</strong><span class="classifier">UUID4</span></dt><dd><p>The request ID.</p>
-</dd>
-<dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This class should not be used directly, but through a concrete subclass.</p>
-</div>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Request.callback">
-<span class="sig-name descname"><span class="pre">callback</span></span><a class="headerlink" href="#nautilus_trader.core.message.Request.callback" title="Permalink to this definition">¶</a></dt>
-<dd><p>The callback for the response.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>Callable</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Request.category">
-<span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.core.message.Request.category" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message category.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>MessageCategory</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Request.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.core.message.Request.id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID4</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Request.ts_init">
-<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.core.message.Request.ts_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int64</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Response">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">correlation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">response_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.message.Response" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.core.message.Message" title="nautilus_trader.core.message.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Message</span></code></a></p>
-<p>The abstract base class for all responses.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>correlation_id</strong><span class="classifier">UUID4</span></dt><dd><p>The correlation ID.</p>
-</dd>
-<dt><strong>response_id</strong><span class="classifier">UUID4</span></dt><dd><p>The response ID.</p>
-</dd>
-<dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This class should not be used directly, but through a concrete subclass.</p>
-</div>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Response.category">
-<span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#nautilus_trader.core.message.Response.category" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message category.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>MessageCategory</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Response.correlation_id">
-<span class="sig-name descname"><span class="pre">correlation_id</span></span><a class="headerlink" href="#nautilus_trader.core.message.Response.correlation_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The response correlation ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID4</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Response.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#nautilus_trader.core.message.Response.id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The message ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>UUID4</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.message.Response.ts_init">
-<span class="sig-name descname"><span class="pre">ts_init</span></span><a class="headerlink" href="#nautilus_trader.core.message.Response.ts_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>int64</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-nautilus_trader.core.stats">
-<span id="stats"></span><h2>Stats<a class="headerlink" href="#module-nautilus_trader.core.stats" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.stats.basis_points_as_percentage">
-<span class="sig-name descname"><span class="pre">basis_points_as_percentage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">basis_points</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.core.stats.basis_points_as_percentage" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the given basis points expressed as a percentage where 100% = 1.0.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>basis_points</strong><span class="classifier">double</span></dt><dd><p>The basis points to convert to percentage.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>double</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<p>1 basis point = 0.01%.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.stats.fast_mean">
-<span class="sig-name descname"><span class="pre">fast_mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ndarray</span> <span class="pre">values</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.core.stats.fast_mean" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the average value for numpy.ndarray values.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>values</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The array to evaluate.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>double</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<p>&gt; 10x faster than <cite>np.mean</cite> if the array length &lt; ~200.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.stats.fast_mean_iterated">
-<span class="sig-name descname"><span class="pre">fast_mean_iterated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ndarray</span> <span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">next_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">current_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">expected_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">drop_left=True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.core.stats.fast_mean_iterated" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the calculated average from the given inputs.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>values</strong><span class="classifier">list[double]</span></dt><dd><p>The values for the calculation.</p>
-</dd>
-<dt><strong>next_value</strong><span class="classifier">double</span></dt><dd><p>The next input value for the average.</p>
-</dd>
-<dt><strong>current_value</strong><span class="classifier">double</span></dt><dd><p>The current value for the average.</p>
-</dd>
-<dt><strong>expected_length</strong><span class="classifier">int</span></dt><dd><p>The expected length of the inputs.</p>
-</dd>
-<dt><strong>drop_left</strong><span class="classifier">bool</span></dt><dd><p>If the value to be dropped should be from the left side of the inputs
-(index 0).</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>double</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<p>&gt; 10x faster than <cite>np.mean</cite>.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.stats.fast_std">
-<span class="sig-name descname"><span class="pre">fast_std</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ndarray</span> <span class="pre">values</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.core.stats.fast_std" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the standard deviation from the given values.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>values</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The array for the calculation.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>double</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<p>&gt; 10x faster than <cite>np.std</cite>.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.stats.fast_std_with_mean">
-<span class="sig-name descname"><span class="pre">fast_std_with_mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ndarray</span> <span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">mean</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">double</span></span></span><a class="headerlink" href="#nautilus_trader.core.stats.fast_std_with_mean" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the standard deviation from the given values and mean.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>values</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The array for the calculation.</p>
-</dd>
-<dt><strong>mean</strong><span class="classifier">double</span></dt><dd><p>The pre-calculated mean of the given values.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>double</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<p>&gt; 25x faster than <cite>np.std</cite> if the array length &lt; ~200.</p>
-</dd></dl>
-
-</div>
-<div class="section" id="module-nautilus_trader.core.text">
-<span id="text"></span><h2>Text<a class="headerlink" href="#module-nautilus_trader.core.text" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.text.format_bytes">
-<span class="sig-name descname"><span class="pre">format_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">size</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.core.text.format_bytes" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the formatted bytes size.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>size</strong><span class="classifier">double</span></dt><dd><p>The size in bytes.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>str</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.text.pad_string">
-<span class="sig-name descname"><span class="pre">pad_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">final_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">pad=u'</span> <span class="pre">'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">unicode</span></span></span><a class="headerlink" href="#nautilus_trader.core.text.pad_string" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the given string front padded.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>string</strong><span class="classifier">str</span></dt><dd><p>The string to pad.</p>
-</dd>
-<dt><strong>final_length</strong><span class="classifier">int</span></dt><dd><p>The final length to pad to.</p>
-</dd>
-<dt><strong>pad</strong><span class="classifier">str</span></dt><dd><p>The padding character.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>str</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.core.text.precision_from_str">
-<span class="sig-name descname"><span class="pre">precision_from_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">uint8_t</span></span></span><a class="headerlink" href="#nautilus_trader.core.text.precision_from_str" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the decimal precision inferred from the given string.</p>
-<p>Can accept scientific notation strings including an ‘e’ character.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>value</strong><span class="classifier">str</span></dt><dd><p>The string value to parse.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>uint8</dt><dd></dd>
-</dl>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>ValueError</dt><dd><p>If value is not a valid string.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<p>If not scientific notation and no decimal point ‘.’, then precision will be
-inferred as zero.</p>
-</dd></dl>
-
-</div>
-<div class="section" id="module-nautilus_trader.core.uuid">
-<span id="uuid"></span><h2>UUID<a class="headerlink" href="#module-nautilus_trader.core.uuid" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID4">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UUID4</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">value=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID4" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Represents a pseudo-random UUID (universally unique identifier) version 4
-based on a 128-bit label as specified in RFC 4122.</p>
-<p>Implemented under the hood with the <cite>fastuuid</cite> library which provides
-CPython bindings to Rusts UUID library. Benched ~3x faster to instantiate
-this class vs the Python standard <cite>uuid.uuid4()</cite> function.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>value</strong><span class="classifier">str, optional</span></dt><dd><p>The UUID value. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then a value will be generated.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><dl class="simple">
-<dt>ValueError</dt><dd><p>If <cite>value</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and not a valid UUID.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">References</p>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Universally_unique_identifier">https://en.wikipedia.org/wiki/Universally_unique_identifier</a></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.core.uuid.UUID4.value">
-<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#nautilus_trader.core.uuid.UUID4.value" title="Permalink to this definition">¶</a></dt>
-<dd><p>The UUID string value.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>str</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-</div>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "nautechsystems/nautilus_trader",
-            ref: "dev",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./3_api_reference"
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
               
-        
-            <!-- Previous / next buttons -->
+              <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="common.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -2847,24 +1534,30 @@ this class vs the Python standard <cite>uuid.uuid4()</cite> function.</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Nautech Systems Pty Ltd.<br/>
-    
-        &copy; Copyright 2015-2022.<br/>
-  </p>
-</footer>
-</main>
-
+              
+          </main>
+          
 
       </div>
     </div>
   
   <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2015-2022.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.2.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
   </body>
 </html>

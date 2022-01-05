@@ -23,13 +23,15 @@
 
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -44,9 +46,9 @@
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -65,41 +67,158 @@
     <div class="container-fluid" id="banner"></div>
 
     
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/nautilus-trader-docs.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../1_getting_started/0_index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../2_user_guide/0_index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="0_index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../4_integrations/0_index.html">
+  Integrations
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../5_developer_guide/0_index.html">
+  Developer Guide
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://nautilustrader.io">nautilustrader.io<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/nautechsystems/nautilus_trader" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
 
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
-      <img src="../_static/shell.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">NautilusTrader Docs</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../index.html">
-   Introduction
+  <a class="reference internal" href="accounting.html">
+   Accounting
   </a>
  </li>
-</ul>
-<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="analysis.html">
+   Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="backtest.html">
+   Backtest
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cache.html">
+   Cache
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="common.html">
+   Common
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="core.html">
+   Core
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data.html">
+   Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="execution.html">
+   Execution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="indicators.html">
+   Indicators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="infrastructure.html">
+   Infrastructure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="live.html">
+   Live
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../1_getting_started/0_index.html">
-   Getting Started
+  <a class="reference internal" href="model/0_index.html">
+   Model
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -108,418 +227,117 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../1_getting_started/1_installation.html">
-     Installation
+    <a class="reference internal" href="model/commands.html">
+     Commands
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../1_getting_started/2_quick_start.html">
-     Quick Start
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../2_user_guide/0_index.html">
-   User Guide
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2_user_guide/1_core_concepts.html">
-     Core Concepts
+    <a class="reference internal" href="model/currency.html">
+     Currency
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../2_user_guide/2_backtest_example.html">
-     Complete Backtest Example
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2_user_guide/3_loading_external_data.html">
-     Loading External Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2_user_guide/4_instruments.html">
-     Instruments
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="0_index.html">
-   API Reference
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="accounting.html">
-     Accounting
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="analysis.html">
-     Analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="backtest.html">
-     Backtest
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cache.html">
-     Cache
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="common.html">
-     Common
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="core.html">
-     Core
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="data.html">
+    <a class="reference internal" href="model/data.html">
      Data
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="execution.html">
-     Execution
+    <a class="reference internal" href="model/events.html">
+     Events
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="indicators.html">
-     Indicators
+    <a class="reference internal" href="model/identifiers.html">
+     Identifiers
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="infrastructure.html">
-     Infrastructure
+    <a class="reference internal" href="model/instruments.html">
+     Instruments
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="live.html">
-     Live
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="model/0_index.html">
-     Model
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-    <label for="toctree-checkbox-4">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/commands.html">
-       Commands
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/currency.html">
-       Currency
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/data.html">
-       Data
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/events.html">
-       Events
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/identifiers.html">
-       Identifiers
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/instruments.html">
-       Instruments
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/objects.html">
-       Objects
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/orderbook.html">
-       Order Book
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/orders.html">
-       Orders
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/position.html">
-       Position
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model/tick_scheme.html">
-       Tick Scheme
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="msgbus.html">
-     Message Bus
+    <a class="reference internal" href="model/objects.html">
+     Objects
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="network.html">
-     Network
+    <a class="reference internal" href="model/orderbook.html">
+     Order Book
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="persistence.html">
-     Persistence
+    <a class="reference internal" href="model/orders.html">
+     Orders
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="portfolio.html">
-     Portfolio
+    <a class="reference internal" href="model/position.html">
+     Position
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="risk.html">
-     Risk
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Serialization
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="trading.html">
-     Trading
+    <a class="reference internal" href="model/tick_scheme.html">
+     Tick Scheme
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../4_integrations/0_index.html">
-   Integrations
+ <li class="toctree-l1">
+  <a class="reference internal" href="msgbus.html">
+   Message Bus
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../4_integrations/betfair.html">
-     Betfair
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../4_integrations/binance.html">
-     Binance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../4_integrations/ftx.html">
-     FTX
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../4_integrations/ib.html">
-     Interactive Brokers
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../5_developer_guide/0_index.html">
-   Developer Guide
+ <li class="toctree-l1">
+  <a class="reference internal" href="network.html">
+   Network
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../5_developer_guide/1_environment_setup.html">
-     Environment Setup
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../5_developer_guide/2_coding_standards.html">
-     Coding Standards
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../5_developer_guide/3_cython.html">
-     Cython
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../5_developer_guide/4_testing.html">
-     Testing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../5_developer_guide/5_packaged_data.html">
-     Packaged Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://github.com/nautechsystems/nautilus_trader/blob/develop/CONTRIBUTING.md">
-     Contributing
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="persistence.html">
+   Persistence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="portfolio.html">
+   Portfolio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="risk.html">
+   Risk
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Serialization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="trading.html">
+   Trading
+  </a>
  </li>
 </ul>
 
-    </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/3_api_reference/serialization.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/nautechsystems/nautilus_trader"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/nautechsystems/nautilus_trader/issues/new?title=Issue%20on%20page%20%2F3_api_reference/serialization.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+  </div>
+</nav>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-nautilus_trader.serialization.msgpack.serializer">
-   MsgPack
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-nautilus_trader.serialization.arrow.serializer">
-   Arrow
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-nautilus_trader.serialization.json.default">
-   JSON
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-nautilus_trader.serialization.base">
-   Base
-  </a>
- </li>
-</ul>
+            
+          
 
-            </nav>
-        </div>
-    </div>
-</div>
-    <!-- Table of contents that is only displayed when printing the page -->
-    <div id="jb-print-docs-body" class="onlyprint">
-        <h1>Serialization</h1>
-        <!-- Table of contents -->
-        <div id="print-main-content" class="row">
-            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-            <div id="jb-print-toc">
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
                 
-                <div>
-                    <h2> Contents </h2>
-                </div>
-                <nav aria-label="Page">
-                    <ul class="visible nav section-nav flex-column">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-nautilus_trader.serialization.msgpack.serializer">
    MsgPack
@@ -542,9 +360,23 @@
  </li>
 </ul>
 
-                </nav>
-            </div>
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
             
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.serialization">
@@ -825,8 +657,8 @@ its own. (for example, <cite>OrderBookSnapshots</cite> are stored as
     {
         requestKernel: true,
         binderOptions: {
-            repo: "nautechsystems/nautilus_trader",
-            ref: "dev",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -843,312 +675,8 @@ its own. (for example, <cite>OrderBookSnapshots</cite> are stored as
 
               </div>
               
-            </div>
-        </div>
-    </div>
-    <div id="main-content" class="row noprint">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.serialization">
-<span id="serialization"></span><h1>Serialization<a class="headerlink" href="#module-nautilus_trader.serialization" title="Permalink to this headline">¶</a></h1>
-<p>The <cite>serialization</cite> subpackage groups all serialization components and serializer implementations.</p>
-<p>Base classes are defined which can allow for other serialization implementations
-beside the built-in specification serializers.</p>
-<div class="section" id="module-nautilus_trader.serialization.msgpack.serializer">
-<span id="msgpack"></span><h2>MsgPack<a class="headerlink" href="#module-nautilus_trader.serialization.msgpack.serializer" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MsgPackSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">timestamps_as_str=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.serialization.base.Serializer" title="nautilus_trader.serialization.base.Serializer"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.serialization.base.Serializer</span></code></a></p>
-<p>Provides a serializer for the <cite>MessagePack</cite> specification.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>timestamps_as_str</strong><span class="classifier">bool</span></dt><dd><p>If the serializer converts timestamp int64_t to str on serialization,
-and back to int64_t on deserialization.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.deserialize">
-<span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytes</span> <span class="pre">obj_bytes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.deserialize" title="Permalink to this definition">¶</a></dt>
-<dd><p>Deserialize the given <cite>MessagePack</cite> specification bytes to an object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>obj_bytes</strong><span class="classifier">bytes</span></dt><dd><p>The object bytes to deserialize.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>Instrument</dt><dd></dd>
-</dl>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>RuntimeError</dt><dd><p>If <cite>obj_bytes</cite> cannot be deserialized.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.serialize">
-<span class="sig-name descname"><span class="pre">serialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.serialize" title="Permalink to this definition">¶</a></dt>
-<dd><p>Serialize the given object to <cite>MessagePack</cite> specification bytes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>obj</strong><span class="classifier">object</span></dt><dd><p>The object to serialize.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>bytes</dt><dd></dd>
-</dl>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>RuntimeError</dt><dd><p>If <cite>obj</cite> cannot be serialized.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.timestamps_as_str">
-<span class="sig-name descname"><span class="pre">timestamps_as_str</span></span><a class="headerlink" href="#nautilus_trader.serialization.msgpack.serializer.MsgPackSerializer.timestamps_as_str" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the serializer converts timestamp int64_t to str.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>bool</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-nautilus_trader.serialization.arrow.serializer">
-<span id="arrow"></span><h2>Arrow<a class="headerlink" href="#module-nautilus_trader.serialization.arrow.serializer" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.serialization.arrow.serializer.ParquetSerializer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ParquetSerializer</span></span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.ParquetSerializer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Provides an object serializer for the <cite>Parquet</cite> specification.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.serialization.arrow.serializer.ParquetSerializer.deserialize">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span> <span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.ParquetSerializer.deserialize" title="Permalink to this definition">¶</a></dt>
-<dd><p>Deserialize the given <cite>Parquet</cite> specification bytes to an object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>cls</strong><span class="classifier">type</span></dt><dd><p>The type to deserialize to.</p>
-</dd>
-<dt><strong>chunk</strong><span class="classifier">bytes</span></dt><dd><p>The chunk to deserialize.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>object</dt><dd></dd>
-</dl>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>TypeError</dt><dd><p>If <cite>chunk</cite> cannot be deserialized.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.serialization.arrow.serializer.ParquetSerializer.serialize">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">serialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.ParquetSerializer.serialize" title="Permalink to this definition">¶</a></dt>
-<dd><p>Serialize the given instrument to <cite>Parquet</cite> specification bytes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>obj</strong><span class="classifier">object</span></dt><dd><p>The object to serialize.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>bytes</dt><dd></dd>
-</dl>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>TypeError</dt><dd><p>If <cite>obj</cite> cannot be serialized.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.serialization.arrow.serializer.get_cls_table">
-<span class="sig-name descname"><span class="pre">get_cls_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span> <span class="pre">cls:</span> <span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.get_cls_table" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.serialization.arrow.serializer.get_partition_keys">
-<span class="sig-name descname"><span class="pre">get_partition_keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span> <span class="pre">cls:</span> <span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.get_partition_keys" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.serialization.arrow.serializer.get_schema">
-<span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span> <span class="pre">cls:</span> <span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.get_schema" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.serialization.arrow.serializer.list_schemas">
-<span class="sig-name descname"><span class="pre">list_schemas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.list_schemas" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.serialization.arrow.serializer.register_parquet">
-<span class="sig-name descname"><span class="pre">register_parquet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span> <span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serializer:</span> <span class="pre">Optional[Callable]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deserializer:</span> <span class="pre">Optional[Callable]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema:</span> <span class="pre">Optional[pa.Schema]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">chunk=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span> <span class="pre">table=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.arrow.serializer.register_parquet" title="Permalink to this definition">¶</a></dt>
-<dd><p>Register a new class for serialization to parquet.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>cls</strong><span class="classifier">type</span></dt><dd><p>The type to register serialization for.</p>
-</dd>
-<dt><strong>serializer</strong><span class="classifier">Callable, optional</span></dt><dd><p>The callable to serialize instances of type <cite>cls_type</cite> to something
-parquet can write.</p>
-</dd>
-<dt><strong>deserializer</strong><span class="classifier">Callable, optional</span></dt><dd><p>The callable to deserialize rows from parquet into <cite>cls_type</cite>.</p>
-</dd>
-<dt><strong>schema</strong><span class="classifier">pa.Schema, optional</span></dt><dd><p>If the schema cannot be correctly inferred from a subset of the data
-(i.e. if certain values may be missing in the first chunk).</p>
-</dd>
-<dt><strong>chunk</strong><span class="classifier">bool, optional</span></dt><dd><p>Whether to group objects by timestamp and operate together (Used for
-complex objects where we write each object as multiple rows in parquet,
-i.e. <cite>OrderBook</cite> or <cite>AccountState</cite>).</p>
-</dd>
-<dt><strong>table</strong><span class="classifier">type, optional</span></dt><dd><p>Optional table override for <cite>cls</cite>. Used if <cite>cls</cite> is going to be
-transformed and stored in a table other than
-its own. (for example, <cite>OrderBookSnapshots</cite> are stored as
-<cite>OrderBookDeltas</cite>, so we use <cite>table=OrderBookDeltas</cite>).</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-</div>
-<div class="section" id="module-nautilus_trader.serialization.json.default">
-<span id="json"></span><h2>JSON<a class="headerlink" href="#module-nautilus_trader.serialization.json.default" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.serialization.json.default.Default">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Default</span></span><a class="headerlink" href="#nautilus_trader.serialization.json.default.Default" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Serialization extensions for orjson.dumps.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.serialization.json.default.Default.register_serializer">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register_serializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serializer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.json.default.Default.register_serializer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Register a new type <cite>type_</cite> for serialization in orjson.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.serialization.json.default.Default.serialize">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">serialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.json.default.Default.serialize" title="Permalink to this definition">¶</a></dt>
-<dd><p>Serialize for types orjson.dumps can’t understand.</p>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-nautilus_trader.serialization.base">
-<span id="base"></span><h2>Base<a class="headerlink" href="#module-nautilus_trader.serialization.base" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.serialization.base.Serializer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Serializer</span></span><a class="headerlink" href="#nautilus_trader.serialization.base.Serializer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>The abstract base class for all serializers.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This class should not be used directly, but through a concrete subclass.</p>
-</div>
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.serialization.base.Serializer.deserialize">
-<span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytes</span> <span class="pre">obj_bytes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.serialization.base.Serializer.deserialize" title="Permalink to this definition">¶</a></dt>
-<dd><p>Abstract method (implement in subclass).</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.serialization.base.Serializer.serialize">
-<span class="sig-name descname"><span class="pre">serialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#nautilus_trader.serialization.base.Serializer.serialize" title="Permalink to this definition">¶</a></dt>
-<dd><p>Abstract method (implement in subclass).</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="nautilus_trader.serialization.base.register_serializable_object">
-<span class="sig-name descname"><span class="pre">register_serializable_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.serialization.base.register_serializable_object" title="Permalink to this definition">¶</a></dt>
-<dd><p>Register the given object with the global serialization object maps.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>obj</strong><span class="classifier">object</span></dt><dd><p>The object to register.</p>
-</dd>
-<dt><strong>to_dict</strong><span class="classifier">Callable[[Any], Dict[str, Any]]</span></dt><dd><p>The delegate to instantiate a dict of primitive types from the object.</p>
-</dd>
-<dt><strong>from_dict</strong><span class="classifier">Callable[[Dict[str, Any]], Any]</span></dt><dd><p>The delegate to instantiate the object from a dict of primitive types.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><dl class="simple">
-<dt>TypeError</dt><dd><p>If <cite>to_dict</cite> or <cite>from_dict</cite> are not of type <cite>Callable</cite>.</p>
-</dd>
-<dt>KeyError</dt><dd><p>If obj already registered with the global object maps.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-</div>
-</div>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "nautechsystems/nautilus_trader",
-            ref: "dev",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./3_api_reference"
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
               
-        
-            <!-- Previous / next buttons -->
+              <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="risk.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -1165,24 +693,30 @@ its own. (for example, <cite>OrderBookSnapshots</cite> are stored as
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Nautech Systems Pty Ltd.<br/>
-    
-        &copy; Copyright 2015-2022.<br/>
-  </p>
-</footer>
-</main>
-
+              
+          </main>
+          
 
       </div>
     </div>
   
   <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2015-2022.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.2.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
   </body>
 </html>
