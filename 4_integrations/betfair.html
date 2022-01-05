@@ -41,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe,.cell"
@@ -112,6 +112,11 @@
      Installation
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1_getting_started/2_quick_start.html">
+     Quick Start
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -130,8 +135,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../2_user_guide/3_backtest_example.html">
+    <a class="reference internal" href="../2_user_guide/2_backtest_example.html">
      Complete Backtest Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_user_guide/3_loading_external_data.html">
+     Loading External Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_user_guide/4_instruments.html">
+     Instruments
     </a>
    </li>
   </ul>
@@ -425,7 +440,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -459,12 +474,95 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Betfair</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="betfair">
+<h1>Betfair<a class="headerlink" href="#betfair" title="Permalink to this headline">¶</a></h1>
+<p>NautilusTrader offers adapters for integrating with the Betfair REST API and
+Exchange Streaming API. Under the hood it leverages the excellent <a class="reference external" href="https://github.com/liampauling/betfair">betfairlightweight</a> library to handle some of the formatting of requests to Betfair.</p>
+<p>The following integration classes are available:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BetfairInstrumentProvider</span></code> which allows querying the Betfair market catalogue for betting markets, which are then converted into Nautilus “instruments”.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BetfairDataClient</span></code> which connects to the Exchange Stream API and streams market data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BetfairExecutionClient</span></code> which allows the retrieval of account information and execution and updates for orders (or bets).</p></li>
+</ul>
+<p>The Betfair adapter currently uses environment variables for authentication. To use the adapter,
+simply pass the following config to the TradingNode, indicating the names of the environment variables
+to look for when connecting:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="o">...</span> <span class="c1"># Omitted </span>
+    <span class="s2">&quot;data_clients&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;BETFAIR&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BETFAIR_USERNAME&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BETFAIR_PASSWORD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;app_key&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BETFAIR_APP_KEY&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;cert_dir&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BETFAIR_CERT_DIR&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;exec_clients&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;BETFAIR&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BETFAIR_USERNAME&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BETFAIR_PASSWORD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;app_key&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BETFAIR_APP_KEY&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;cert_dir&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BETFAIR_CERT_DIR&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;base_currency&quot;</span><span class="p">:</span> <span class="s2">&quot;AUD&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>Then, create a <code class="docutils literal notranslate"><span class="pre">TradingNode</span></code> and add the factory clients:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instantiate the node passing a list of strategies and configuration</span>
+<span class="n">node</span> <span class="o">=</span> <span class="n">TradingNode</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
+<span class="n">node</span><span class="o">.</span><span class="n">trader</span><span class="o">.</span><span class="n">add_strategies</span><span class="p">([</span><span class="n">strategy</span><span class="p">])</span>
+
+<span class="c1"># Register your client factories with the node (can also take user defined factories)</span>
+<span class="n">node</span><span class="o">.</span><span class="n">add_data_client_factory</span><span class="p">(</span><span class="s2">&quot;BETFAIR&quot;</span><span class="p">,</span> <span class="n">BetfairLiveDataClientFactory</span><span class="p">)</span>
+<span class="n">node</span><span class="o">.</span><span class="n">add_exec_client_factory</span><span class="p">(</span><span class="s2">&quot;BETFAIR&quot;</span><span class="p">,</span> <span class="n">BetfairLiveExecutionClientFactory</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "nautechsystems/nautilus_trader",
+            ref: "dev",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./4_integrations"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         
               <div>
@@ -559,15 +657,13 @@ to look for when connecting:</p>
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Nautech Systems Pty Ltd.<br/>
-        
-            &copy; Copyright 2015-2022.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Nautech Systems Pty Ltd.<br/>
+    
+        &copy; Copyright 2015-2022.<br/>
+  </p>
+</footer>
 </main>
 
 

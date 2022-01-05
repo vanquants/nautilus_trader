@@ -41,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe,.cell"
@@ -52,7 +52,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Accounting" href="accounting.html" />
-    <link rel="prev" title="Complete Backtest Example" href="../2_user_guide/3_backtest_example.html" />
+    <link rel="prev" title="Instruments" href="../2_user_guide/4_instruments.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -112,6 +112,11 @@
      Installation
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1_getting_started/2_quick_start.html">
+     Quick Start
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -130,8 +135,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../2_user_guide/3_backtest_example.html">
+    <a class="reference internal" href="../2_user_guide/2_backtest_example.html">
      Complete Backtest Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_user_guide/3_loading_external_data.html">
+     Loading External Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_user_guide/4_instruments.html">
+     Instruments
     </a>
    </li>
   </ul>
@@ -425,7 +440,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -459,7 +474,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -504,7 +519,162 @@
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>API Reference</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#type-safety">
+   Type Safety
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#framework-organization">
+   Framework Organization
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#core-low-level">
+     Core / Low-Level
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#system-components">
+     System Components
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#system-implementations">
+     System Implementations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#errors-and-exceptions">
+   Errors and Exceptions
+  </a>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="api-reference">
+<h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to the API reference for the Python/Cython implementation of NautilusTrader!</p>
+<p>The API reference is automatically generated from the latest NautilusTrader source
+code from the repositories <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch, using a combination of <a class="reference external" href="https://www.sphinx-doc.org/en/master/">sphinx</a>
+and <a class="reference external" href="https://jupyterbook.org/intro.html">jupyter-book</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Given the platforms development is still within an extended <strong>beta</strong> phase, at
+a future time we may separate the documentation between the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch, and
+more stable releases on <code class="docutils literal notranslate"><span class="pre">master</span></code>.</p>
+</div>
+<div class="section" id="type-safety">
+<h2>Type Safety<a class="headerlink" href="#type-safety" title="Permalink to this headline">¶</a></h2>
+<p>The design of the platform holds software correctness and safety at the highest level.
+Given most of the core production code is written in Cython, type safety is often provided
+at the C level.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a function or methods parameter is not explicitly typed as allowing
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, then you can assume you will receive a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> when passing <code class="docutils literal notranslate"><span class="pre">None</span></code>
+as an argument (this is not explicitly documented).</p>
+</div>
+</div>
+<div class="section" id="framework-organization">
+<h2>Framework Organization<a class="headerlink" href="#framework-organization" title="Permalink to this headline">¶</a></h2>
+<p>The codebase is organized around both layering of abstraction levels, and generally
+grouped into logical subpackages of cohesive concepts. You can navigate to the documentation
+for each of these subpackages from the left menu.</p>
+<div class="section" id="core-low-level">
+<h3>Core / Low-Level<a class="headerlink" href="#core-low-level" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">core</span></code>: constants, functions and low-level components used throughout the framework.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">common</span></code>: common parts for assembling the frameworks various components.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">network</span></code>: low-level base components for networking clients.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">serialization</span></code>: serialization base components and serializer implementations.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">model</span></code>: defines a rich trading domain model.</p></li>
+</ul>
+</div>
+<div class="section" id="system-components">
+<h3>System Components<a class="headerlink" href="#system-components" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">accounting</span></code>: different account types and account management machinery.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">analysis</span></code>: components relating to trading performance statistics and analysis.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cache</span></code>: provides common caching infrastructure.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code>: the data stack and data tooling for the platform.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">execution</span></code>: the execution stack for the platform.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">indicators</span></code>: a set of efficient indicators and analyzers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">infrastructure</span></code>: technology specific infrastructure implementations.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msgbus</span></code>: a universal message bus for connecting system components.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">persistence</span></code>: data storage, cataloging and retrieval, mainly to support backtesting.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">portfolio</span></code>: portfolio management functionality.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">risk</span></code>: risk specific components and tooling.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trading</span></code>: trading domain specific components and tooling.</p></li>
+</ul>
+</div>
+<div class="section" id="system-implementations">
+<h3>System Implementations<a class="headerlink" href="#system-implementations" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">backtest</span></code>: backtesting componentry as well as a backtest engine implementation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">live</span></code>: engine and client implementations as well as a node for live trading.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="errors-and-exceptions">
+<h2>Errors and Exceptions<a class="headerlink" href="#errors-and-exceptions" title="Permalink to this headline">¶</a></h2>
+<p>Every attempt has been made to accurately document the possible exceptions which
+can be raised from NautilusTrader code, and the conditions which will trigger them.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>There may be other undocumented exceptions which can be raised by Pythons standard
+library, or from third party library dependencies.</p>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "nautechsystems/nautilus_trader",
+            ref: "dev",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./3_api_reference"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         
               <div>
@@ -612,11 +782,11 @@ library, or from third party library dependencies.</p>
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../2_user_guide/3_backtest_example.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../2_user_guide/4_instruments.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Complete Backtest Example</p>
+            <p class="prev-next-title">Instruments</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="accounting.html" title="next page">
@@ -631,15 +801,13 @@ library, or from third party library dependencies.</p>
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Nautech Systems Pty Ltd.<br/>
-        
-            &copy; Copyright 2015-2022.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Nautech Systems Pty Ltd.<br/>
+    
+        &copy; Copyright 2015-2022.<br/>
+  </p>
+</footer>
 </main>
 
 

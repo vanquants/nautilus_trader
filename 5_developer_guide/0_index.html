@@ -41,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe,.cell"
@@ -112,6 +112,11 @@
      Installation
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1_getting_started/2_quick_start.html">
+     Quick Start
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -130,8 +135,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../2_user_guide/3_backtest_example.html">
+    <a class="reference internal" href="../2_user_guide/2_backtest_example.html">
      Complete Backtest Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_user_guide/3_loading_external_data.html">
+     Loading External Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_user_guide/4_instruments.html">
+     Instruments
     </a>
    </li>
   </ul>
@@ -425,7 +440,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -459,12 +474,78 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Developer Guide</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="developer-guide">
+<h1>Developer Guide<a class="headerlink" href="#developer-guide" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to the developer guide for NautilusTrader!</p>
+<p>Here you will find information related to developing and extending the NautilusTrader codebase.
+These guides will assist you in both adding functionality for your own trading operation, and/or
+acting as a guide to assist with valuable contributions.</p>
+<p>We believe in using the right tool for the job. The overall design philosophy is to fully utilize
+the high level power of Python, with its rich eco-system of frameworks and libraries, whilst
+overcoming some of its inherent shortcomings in performance and lack of built-in type safety
+(with it being an interpreted dynamic language).</p>
+<p>One of the advantages of Cython is that allocation and freeing of memory is handled by the C code
+generator during the ‘cythonization’ step of the build (unless you’re specifically utilizing some of
+its lower level features).</p>
+<p>So we get the best of both worlds - with Pythons clean straight forward syntax, and a lot of
+potential to extract several orders of magnitude greater runtime performance through compiled C
+dynamic libraries.</p>
+<p>The main development and runtime environment we are working in is of course Python. However with the
+introduction of Cython syntax throughout the production codebase in <code class="docutils literal notranslate"><span class="pre">.pyx</span></code> and <code class="docutils literal notranslate"><span class="pre">.pxd</span></code> files - it’s
+important to be aware of how the CPython implementation of Python interacts with the underlying
+CPython API, and the NautilusTrader C extension modules which Cython produces.</p>
+<p>We recommend a thorough review of the <a class="reference external" href="https://cython.readthedocs.io/en/latest/">Cython docs</a> to familiarize yourself with some of its core
+concepts, and where C typing is being introduced.</p>
+<p>It’s not necessary to become a C language expert, however it’s helpful to understand how Cython C
+syntax is used in function and method definitions, in local code blocks, and the common primitive C
+types and how these map to their corresponding <code class="docutils literal notranslate"><span class="pre">PyObject</span></code> types.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "nautechsystems/nautilus_trader",
+            ref: "dev",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./5_developer_guide"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         
               <div>
@@ -542,15 +623,13 @@ types and how these map to their corresponding <code class="docutils literal not
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Nautech Systems Pty Ltd.<br/>
-        
-            &copy; Copyright 2015-2022.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Nautech Systems Pty Ltd.<br/>
+    
+        &copy; Copyright 2015-2022.<br/>
+  </p>
+</footer>
 </main>
 
 

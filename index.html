@@ -41,7 +41,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe,.cell"
@@ -111,6 +111,11 @@
      Installation
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1_getting_started/2_quick_start.html">
+     Quick Start
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -129,8 +134,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="2_user_guide/3_backtest_example.html">
+    <a class="reference internal" href="2_user_guide/2_backtest_example.html">
      Complete Backtest Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2_user_guide/3_loading_external_data.html">
+     Loading External Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2_user_guide/4_instruments.html">
+     Instruments
     </a>
    </li>
   </ul>
@@ -424,7 +439,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -458,7 +473,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -496,7 +511,161 @@
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Introduction</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#features">
+   Features
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-nautilustrader">
+   Why NautilusTrader?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-python">
+   Why Python?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-cython">
+   What is Cython?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#architecture-quality-attributes">
+   Architecture Quality Attributes
+  </a>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to the documentation for NautilusTrader!</p>
+<p>NautilusTrader is an open-source, high-performance, production-grade algorithmic trading platform,
+providing quantitative traders with the ability to backtest portfolios of automated trading strategies
+on historical data with an event-driven engine, and also deploy those same strategies live.</p>
+<p>The platform is ‘AI-first’, designed to deploy models for algorithmic trading strategies developed
+using the Python ecosystem - within a highly performant and robust Python native environment.
+This helps to address the challenge of keeping the research/backtest environment consistent with the production
+live trading environment.</p>
+<p>NautilusTraders design, architecture and implementation philosophy holds software correctness and safety at the
+highest level, with the aim of supporting Python native, mission-critical, trading system backtesting
+and live deployment workloads.</p>
+<p>The platform is also universal and asset class agnostic - with any REST, WebSocket or FIX API able to be integrated via modular
+adapters. Thus, it can handle high-frequency trading operations for any asset classes
+including FX, Equities, Futures, Options, CFDs, Crypto and Betting - across multiple venues simultaneously.</p>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Fast:</strong> C-level speed through Cython. Asynchronous networking with <code class="docutils literal notranslate"><span class="pre">uvloop</span></code>.</p></li>
+<li><p><strong>Reliable:</strong> Type safety through Cython. Redis backed performant state persistence.</p></li>
+<li><p><strong>Flexible:</strong> OS independent, runs on Linux, macOS, Windows. Deploy using Docker.</p></li>
+<li><p><strong>Integrated:</strong> Modular adapters mean any REST, WebSocket, or FIX API can be integrated.</p></li>
+<li><p><strong>Advanced:</strong> Time-in-force options <code class="docutils literal notranslate"><span class="pre">GTD</span></code>, <code class="docutils literal notranslate"><span class="pre">IOC</span></code>, <code class="docutils literal notranslate"><span class="pre">FOK</span></code> etc, advanced order types and triggers, <code class="docutils literal notranslate"><span class="pre">post-only</span></code>, <code class="docutils literal notranslate"><span class="pre">reduce-only</span></code>, and icebergs. Contingency order lists including <code class="docutils literal notranslate"><span class="pre">OCO</span></code>, <code class="docutils literal notranslate"><span class="pre">OTO</span></code> etc.</p></li>
+<li><p><strong>Backtesting:</strong> Run with multiple venues, instruments and strategies simultaneously using historical quote tick, trade tick, bar, order book and custom data with nanosecond resolution.</p></li>
+<li><p><strong>Live:</strong> Use identical strategy implementations between backtesting and live deployments.</p></li>
+<li><p><strong>Multi-venue:</strong> Multiple venue capabilities facilitate market making and statistical arbitrage strategies.</p></li>
+<li><p><strong>AI Agent Training:</strong> Backtest engine fast enough to be used to train AI trading agents (RL/ES).</p></li>
+<li><p><strong>Distributed:</strong> Run backtests synchronously or as a graph distributed across a <code class="docutils literal notranslate"><span class="pre">dask</span></code> cluster.</p></li>
+</ul>
+<p><img alt="Nautilus" src="https://github.com/nautechsystems/nautilus_trader/blob/develop/docs/artwork/nautilus-art.png?raw=true" /></p>
+<blockquote>
+<div><p><em>nautilus - from ancient Greek ‘sailor’ and naus ‘ship’.</em></p>
+<p><em>The nautilus shell consists of modular chambers with a growth factor which approximates a logarithmic spiral.
+The idea is that this can be translated to the aesthetics of design and architecture.</em></p>
+</div></blockquote>
+</div>
+<div class="section" id="why-nautilustrader">
+<h2>Why NautilusTrader?<a class="headerlink" href="#why-nautilustrader" title="Permalink to this headline">¶</a></h2>
+<p>Traditionally, trading strategy research and backtesting might be conducted in Python (or other suitable language), with
+the models and/or strategies then needing to be reimplemented in C, C++, C#, Java or other statically
+typed language(s). The reasoning here is to utilize the performance and type safety a compiled language can offer,
+which has historically made these languages more suitable for large trading systems.</p>
+<p>The value of NautilusTrader here is that this reimplementation step is circumvented - as the critical core components of the platform
+have all been written entirely in Cython. Because Cython can generate efficient C code (which then compiles to C extension modules as native binaries),
+Python can effectively be used as a high-performance systems programming language - with the benefit being that a Python native environment can be offered which is suitable for
+professional quantitative traders and trading firms.</p>
+</div>
+<div class="section" id="why-python">
+<h2>Why Python?<a class="headerlink" href="#why-python" title="Permalink to this headline">¶</a></h2>
+<p>Python was originally created decades ago as a simple scripting language with a clean straight
+forward syntax. It has since evolved into a fully fledged general purpose object-oriented
+programming language. Based on the TIOBE index, Python is currently the most popular programming language in the world.
+Not only that, Python has become the <em>de facto lingua franca</em> of data science, machine learning, and artificial intelligence.</p>
+<p>The language out of the box is not without its drawbacks however, especially in the context of
+implementing large performance-critical systems. Cython has addressed a lot of these issues, offering all the advantages
+of a statically typed language, embedded into Pythons rich ecosystem of software libraries and
+developer/user communities.</p>
+</div>
+<div class="section" id="what-is-cython">
+<h2>What is Cython?<a class="headerlink" href="#what-is-cython" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://cython.org">Cython</a> is a compiled programming language that aims to be a superset of the Python programming
+language, designed to give C-like performance with code that is written mostly in Python with
+optional additional C-inspired syntax.</p>
+<p>The project heavily utilizes Cython to provide static type safety and increased performance
+for Python through <a class="reference external" href="https://docs.python.org/3/extending/extending.html">C extension modules</a>. The vast majority of the production code is actually
+written in Cython, however the libraries can be accessed from both pure Python and Cython.</p>
+</div>
+<div class="section" id="architecture-quality-attributes">
+<h2>Architecture Quality Attributes<a class="headerlink" href="#architecture-quality-attributes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Reliability</p></li>
+<li><p>Performance</p></li>
+<li><p>Testability</p></li>
+<li><p>Modularity</p></li>
+<li><p>Maintainability</p></li>
+<li><p>Deployability</p></li>
+</ul>
+<p><img alt="Architecture" src="https://github.com/nautechsystems/nautilus_trader/blob/develop/docs/artwork/architecture-overview.png?raw=true" /></p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "nautechsystems/nautilus_trader",
+            ref: "dev",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         
               <div>
@@ -622,15 +791,13 @@ written in Cython, however the libraries can be accessed from both pure Python a
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Nautech Systems Pty Ltd.<br/>
-        
-            &copy; Copyright 2015-2022.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Nautech Systems Pty Ltd.<br/>
+    
+        &copy; Copyright 2015-2022.<br/>
+  </p>
+</footer>
 </main>
 
 

@@ -41,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe,.cell"
@@ -112,6 +112,11 @@
      Installation
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1_getting_started/2_quick_start.html">
+     Quick Start
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -130,8 +135,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../2_user_guide/3_backtest_example.html">
+    <a class="reference internal" href="../2_user_guide/2_backtest_example.html">
      Complete Backtest Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_user_guide/3_loading_external_data.html">
+     Loading External Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_user_guide/4_instruments.html">
+     Instruments
     </a>
    </li>
   </ul>
@@ -425,7 +440,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -459,12 +474,57 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Cython</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="cython">
+<h1>Cython<a class="headerlink" href="#cython" title="Permalink to this headline">¶</a></h1>
+<p>Here you will find guidance and tips for working on NautilusTrader using the Cython language.</p>
+<p>Ensure that all functions and methods returning <code class="docutils literal notranslate"><span class="pre">void</span></code> or a primitive C type (such as <code class="docutils literal notranslate"><span class="pre">bint</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>) include the <code class="docutils literal notranslate"><span class="pre">except</span> <span class="pre">*</span></code> keyword in the signature.</p>
+<p>This will ensure Python exceptions are not ignored, but instead are “bubbled up” to the caller as expected.</p>
+<p>More information on Cython syntax and conventions can be found by reading the <a class="reference external" href="https://cython.readthedocs.io/en/latest/index.html">Cython docs</a>.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "nautechsystems/nautilus_trader",
+            ref: "dev",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./5_developer_guide"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         
               <div>
@@ -521,15 +581,13 @@
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Nautech Systems Pty Ltd.<br/>
-        
-            &copy; Copyright 2015-2022.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Nautech Systems Pty Ltd.<br/>
+    
+        &copy; Copyright 2015-2022.<br/>
+  </p>
+</footer>
 </main>
 
 

@@ -41,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe,.cell"
@@ -51,7 +51,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Complete Backtest Example" href="3_backtest_example.html" />
+    <link rel="next" title="Complete Backtest Example" href="2_backtest_example.html" />
     <link rel="prev" title="User Guide" href="0_index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -112,6 +112,11 @@
      Installation
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1_getting_started/2_quick_start.html">
+     Quick Start
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -130,8 +135,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="3_backtest_example.html">
+    <a class="reference internal" href="2_backtest_example.html">
      Complete Backtest Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3_loading_external_data.html">
+     Loading External Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_instruments.html">
+     Instruments
     </a>
    </li>
   </ul>
@@ -425,7 +440,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -459,7 +474,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -497,7 +512,163 @@
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Core Concepts</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#backtesting">
+   Backtesting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trading-live">
+   Trading Live
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-types">
+   Data Types
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#account-types">
+   Account Types
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#order-types">
+   Order Types
+  </a>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="core-concepts">
+<h1>Core Concepts<a class="headerlink" href="#core-concepts" title="Permalink to this headline">¶</a></h1>
+<p>NautilusTrader has been built from the ground up to deliver the highest quality
+performance and user experience. There are two main use cases for this software package.</p>
+<ul class="simple">
+<li><p>Backtesting trading strategies.</p></li>
+<li><p>Deploying trading strategies live.</p></li>
+</ul>
+<div class="section" id="backtesting">
+<h2>Backtesting<a class="headerlink" href="#backtesting" title="Permalink to this headline">¶</a></h2>
+<p>In our opinion, are two main reasons for conducting backtests on historical data;
+Verify the logic of trading strategy implementations.
+Getting an indication of likely performance if the alpha of the strategy remains into the future.
+Backtesting with an event-driven engine such as NautilusTrader is not intended to be the primary research method for alpha discovery, however it can facilitate this.
+One of the primary benefits of this platform is that the core machinery used inside the BacktestEngine is identical to the live trading system. This helps to ensure consistency between backtesting and live trading performance, when seeking to capitalize on alpha signals through a large sample size of trades, as expressed in the logic of the trading strategies.
+Only a small amount of example data is available in the tests/test_kit/data directory of the repository - as used in the examples. There are many sources of financial market and other data, and it is left to the user to source this for backtesting purposes.
+The platform is extremely flexible and open ended, you could inject dozens of different datasets into a BacktestEngine and run them simultaneously - with time being accurately simulated to nanosecond precision.</p>
+</div>
+<div class="section" id="trading-live">
+<h2>Trading Live<a class="headerlink" href="#trading-live" title="Permalink to this headline">¶</a></h2>
+<p>A TradingNode hosts a fleet of trading strategies, with data able to be ingested from multiple data clients, and order execution through multiple execution clients.
+Live deployments can use both demo/paper trading accounts, or real accounts.
+Coming soon there will be further discussion of core concepts…</p>
+</div>
+<div class="section" id="data-types">
+<h2>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h2>
+<p>The following market data types can be requested historically, and also subscribed to as live streams when available from a data publisher, and implemented in an integrations adapter.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">OrderBookDelta</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OrderBookDeltas</span></code> (L1/L2/L3)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OrderBookSnapshot</span></code> (L1/L2/L3)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QuoteTick</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TradeTick</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Bar</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Instrument</span></code></p></li>
+</ul>
+<p>The following PriceType options can be used for bar aggregations;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BID</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ASK</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MID</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LAST</span></code></p></li>
+</ul>
+<p>The following BarAggregation options are possible;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SECOND</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MINUTE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HOUR</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DAY</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TICK</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VOLUME</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VALUE</span></code> (a.k.a Dollar bars)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TICK_IMBALANCE</span></code> (TBA)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TICK_RUNS</span></code> (TBA)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VOLUME_IMBALANCE</span></code> (TBA)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VOLUME_RUNS</span></code> (TBA)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VALUE_IMBALANCE</span></code> (TBA)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VALUE_RUNS</span></code> (TBA)</p></li>
+</ul>
+<p>The price types and bar aggregations can be combined with step sizes &gt;= 1 in any way through <code class="docutils literal notranslate"><span class="pre">BarSpecification</span></code>.
+This enables maximum flexibility and now allows alternative bars to be produced for live trading.</p>
+</div>
+<div class="section" id="account-types">
+<h2>Account Types<a class="headerlink" href="#account-types" title="Permalink to this headline">¶</a></h2>
+<p>The following account types are available for both live and backtest environments;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Cash</span></code> single-currency (base currency).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Cash</span></code> multi-currency.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Margin</span></code> single-currency (base currency).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Margin</span></code> multi-currency.</p></li>
+</ul>
+</div>
+<div class="section" id="order-types">
+<h2>Order Types<a class="headerlink" href="#order-types" title="Permalink to this headline">¶</a></h2>
+<p>The following order types are available (when possible on an exchange);</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Market</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Limit</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">StopMarket</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">StopLimit</span></code></p></li>
+</ul>
+<p>More will be added in due course including <code class="docutils literal notranslate"><span class="pre">MarketIfTouched</span></code>, and <code class="docutils literal notranslate"><span class="pre">LimitIfTouched</span></code>.
+Users are invited to open discussion issues to request specific order types or features.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "nautechsystems/nautilus_trader",
+            ref: "dev",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./2_user_guide"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         
               <div>
@@ -620,7 +791,7 @@ Users are invited to open discussion issues to request specific order types or f
             <p class="prev-next-title">User Guide</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="3_backtest_example.html" title="next page">
+    <a class='right-next' id="next-link" href="2_backtest_example.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Complete Backtest Example</p>
@@ -632,15 +803,13 @@ Users are invited to open discussion issues to request specific order types or f
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Nautech Systems Pty Ltd.<br/>
-        
-            &copy; Copyright 2015-2022.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Nautech Systems Pty Ltd.<br/>
+    
+        &copy; Copyright 2015-2022.<br/>
+  </p>
+</footer>
 </main>
 
 

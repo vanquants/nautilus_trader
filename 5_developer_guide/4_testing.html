@@ -41,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe,.cell"
@@ -112,6 +112,11 @@
      Installation
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1_getting_started/2_quick_start.html">
+     Quick Start
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -130,8 +135,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../2_user_guide/3_backtest_example.html">
+    <a class="reference internal" href="../2_user_guide/2_backtest_example.html">
      Complete Backtest Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_user_guide/3_loading_external_data.html">
+     Loading External Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_user_guide/4_instruments.html">
+     Instruments
     </a>
    </li>
   </ul>
@@ -425,7 +440,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -459,7 +474,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -492,7 +507,133 @@
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Testing</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nox">
+   Nox
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mocks">
+   Mocks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-coverage">
+   Code Coverage
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#excluded-code-coverage">
+   Excluded code coverage
+  </a>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="testing">
+<h1>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h1>
+<p>The test suite is divided into broad categories of tests including:</p>
+<ul class="simple">
+<li><p>Unit tests</p></li>
+<li><p>Integration tests</p></li>
+<li><p>Acceptance tests</p></li>
+<li><p>Performance tests</p></li>
+</ul>
+<p>The performance tests are not run as part of the CI pipeline, but exist to aid development of performance-critical components.</p>
+<p>Tests can be run using either <a class="reference external" href="https://docs.pytest.org">Pytest</a> or the <a class="reference external" href="https://nox.thea.codes/en/stable/">Nox</a> tool.</p>
+<p>If you’re using PyCharm then tests should run directly by right clicking on the respective folder (or top-level tests folder) and clicking ‘Run pytest’.</p>
+<p>Alternatively you can use the <code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">.</span></code> command from the root level tests directory, or the other subdirectories.</p>
+<div class="section" id="nox">
+<h2>Nox<a class="headerlink" href="#nox" title="Permalink to this headline">¶</a></h2>
+<p>Nox sessions are defined within the <code class="docutils literal notranslate"><span class="pre">noxfile.py</span></code>, to run various test collections.</p>
+<p>To run unit tests with nox:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>nox -s tests
+</pre></div>
+</div>
+<p>If you have a redis-server up you can run integration tests with nox:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>nox -s integration_tests
+</pre></div>
+</div>
+<p>Or both unit and integration tests:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>nox -s tests_with_integration
+</pre></div>
+</div>
+</div>
+<div class="section" id="mocks">
+<h2>Mocks<a class="headerlink" href="#mocks" title="Permalink to this headline">¶</a></h2>
+<p>Unit tests will often include other components acting as mocks. The intent of this is to simplify
+the test suite to avoid extensive use of a mocking framework, although <code class="docutils literal notranslate"><span class="pre">MagicMock</span></code> objects are
+currently used in particular cases.</p>
+</div>
+<div class="section" id="code-coverage">
+<h2>Code Coverage<a class="headerlink" href="#code-coverage" title="Permalink to this headline">¶</a></h2>
+<p>Code coverage output is generated using <code class="docutils literal notranslate"><span class="pre">coverage</span></code> and reported using <a class="reference external" href="https://about.codecov.io/">codecov</a>.</p>
+<p>High test coverage is a goal for the project however not at the expense of appropriate error
+handling, or causing “test induced damage” to the architecture.</p>
+<p>There are currently areas of the codebase which are impossible to test unless there is a change to
+the production code. For example the last condition check of an if-else block which would catch an
+unrecognized value, these should be left in place in case there is a change to the production code - which these checks could then catch.</p>
+<p>Other design-time exceptions may also be impossible to test for, and so 100% test coverage is not
+the ultimate goal.</p>
+</div>
+<div class="section" id="excluded-code-coverage">
+<h2>Excluded code coverage<a class="headerlink" href="#excluded-code-coverage" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">pragma:</span> <span class="pre">no</span> <span class="pre">cover</span></code> comments found throughout the codebase <a class="reference external" href="https://coverage.readthedocs.io/en/coverage-4.3.3/excluding.html">exclude code from test coverage</a>.
+The reason for their use is to reduce redundant/needless tests just to keep coverage high, such as:</p>
+<ul class="simple">
+<li><p>Asserting an abstract method raises <code class="docutils literal notranslate"><span class="pre">NotImplementedError</span></code> when called.</p></li>
+<li><p>Asserting the final condition check of an if-else block when impossible to test (as above).</p></li>
+</ul>
+<p>These tests are expensive to maintain (as they must be kept in line with any refactorings), and
+offer little to no benefit in return. However, the intention is for all abstract method
+implementations to be fully covered by tests. Therefore <code class="docutils literal notranslate"><span class="pre">pragma:</span> <span class="pre">no</span> <span class="pre">cover</span></code> should be judiciously
+removed when no longer appropriate, and its use <em>restricted</em> to the above cases.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "nautechsystems/nautilus_trader",
+            ref: "dev",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./5_developer_guide"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         
               <div>
@@ -602,15 +743,13 @@ removed when no longer appropriate, and its use <em>restricted</em> to the above
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Nautech Systems Pty Ltd.<br/>
-        
-            &copy; Copyright 2015-2022.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Nautech Systems Pty Ltd.<br/>
+    
+        &copy; Copyright 2015-2022.<br/>
+  </p>
+</footer>
 </main>
 
 

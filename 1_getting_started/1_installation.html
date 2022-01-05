@@ -41,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe,.cell"
@@ -51,7 +51,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="User Guide" href="../2_user_guide/0_index.html" />
+    <link rel="next" title="Quick Start" href="2_quick_start.html" />
     <link rel="prev" title="Getting Started" href="0_index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -112,6 +112,11 @@
      Installation
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2_quick_start.html">
+     Quick Start
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -130,8 +135,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../2_user_guide/3_backtest_example.html">
+    <a class="reference internal" href="../2_user_guide/2_backtest_example.html">
      Complete Backtest Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_user_guide/3_loading_external_data.html">
+     Loading External Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_user_guide/4_instruments.html">
+     Instruments
     </a>
    </li>
   </ul>
@@ -425,7 +440,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -459,7 +474,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -492,7 +507,132 @@
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Installation</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#from-pypi">
+   From PyPI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extras">
+   Extras
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#from-source">
+   From Source
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#from-github-release">
+   From GitHub Release
+  </a>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>The package is tested against Python 3.8 - 3.9 on 64-bit Windows, macOS and Linux.
+We recommend running the platform with the latest stable version of Python, and
+in a virtual environment to isolate the dependencies.</p>
+<div class="section" id="from-pypi">
+<h2>From PyPI<a class="headerlink" href="#from-pypi" title="Permalink to this headline">¶</a></h2>
+<p>To install the latest binary wheel (or sdist package) from PyPI:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install -U nautilus_trader
+</pre></div>
+</div>
+</div>
+<div class="section" id="extras">
+<h2>Extras<a class="headerlink" href="#extras" title="Permalink to this headline">¶</a></h2>
+<p>Also, the following optional dependency ‘extras’ are separately available for installation.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">distributed</span></code> - packages for using Dask distributed in backtests.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ib</span></code>  - packages required for the Interactive Brokers adapter.</p></li>
+</ul>
+<p>For example, to install including the <code class="docutils literal notranslate"><span class="pre">distributed</span></code> extras using pip:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install -U nautilus_trader[distributed]
+</pre></div>
+</div>
+</div>
+<div class="section" id="from-source">
+<h2>From Source<a class="headerlink" href="#from-source" title="Permalink to this headline">¶</a></h2>
+<p>It’s possible to install from sourcing using <code class="docutils literal notranslate"><span class="pre">pip</span></code> if you first install the build dependencies
+as specified in the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>. However, we highly recommend installing using <a class="reference external" href="https://python-poetry.org/">poetry</a>.</p>
+<ol>
+<li><p>First install poetry (or follow the installation guide on their site):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+</pre></div>
+</div>
+</li>
+<li><p>Clone the source with <code class="docutils literal notranslate"><span class="pre">git</span></code>, and install from the projects root directory:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/nautechsystems/nautilus_trader
+cd nautilus_trader
+poetry install --no-dev
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Because of <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code>, the project requires a large number of development dependencies (which is the
+reason for passing the <code class="docutils literal notranslate"><span class="pre">--no-dev</span></code> option above). If you’ll be running tests, or developing with the codebase
+in general then remove that option flag when installing. It’s also possible to simply run <code class="docutils literal notranslate"><span class="pre">make</span></code> from the
+top-level directory.</p>
+</div>
+</div>
+<div class="section" id="from-github-release">
+<h2>From GitHub Release<a class="headerlink" href="#from-github-release" title="Permalink to this headline">¶</a></h2>
+<p>To install a binary wheel from GitHub, first navigate to the <a class="reference external" href="https://github.com/nautechsystems/nautilus_trader/releases/latest">latest release</a>.
+Download the appropriate <code class="docutils literal notranslate"><span class="pre">.whl</span></code> for your operating system and Python version, then run:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install &lt;file-name&gt;.whl
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "nautechsystems/nautilus_trader",
+            ref: "dev",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./1_getting_started"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         
               <div>
@@ -589,10 +729,10 @@ Download the appropriate <code class="docutils literal notranslate"><span class=
             <p class="prev-next-title">Getting Started</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../2_user_guide/0_index.html" title="next page">
+    <a class='right-next' id="next-link" href="2_quick_start.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">User Guide</p>
+        <p class="prev-next-title">Quick Start</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -601,15 +741,13 @@ Download the appropriate <code class="docutils literal notranslate"><span class=
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Nautech Systems Pty Ltd.<br/>
-        
-            &copy; Copyright 2015-2022.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Nautech Systems Pty Ltd.<br/>
+    
+        &copy; Copyright 2015-2022.<br/>
+  </p>
+</footer>
 </main>
 
 

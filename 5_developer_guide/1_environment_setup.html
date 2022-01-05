@@ -41,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe,.cell"
@@ -112,6 +112,11 @@
      Installation
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1_getting_started/2_quick_start.html">
+     Quick Start
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -130,8 +135,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../2_user_guide/3_backtest_example.html">
+    <a class="reference internal" href="../2_user_guide/2_backtest_example.html">
      Complete Backtest Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_user_guide/3_loading_external_data.html">
+     Loading External Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_user_guide/4_instruments.html">
+     Instruments
     </a>
    </li>
   </ul>
@@ -425,7 +440,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -459,7 +474,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -482,7 +497,106 @@
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Environment Setup</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#builds">
+   Builds
+  </a>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="environment-setup">
+<h1>Environment Setup<a class="headerlink" href="#environment-setup" title="Permalink to this headline">¶</a></h1>
+<p>For development we recommend using the PyCharm <em>Professional</em> edition IDE, as it interprets Cython syntax. Alternatively, you could use Visual Studio Code with a Cython extension.</p>
+<p><a class="reference external" href="https://github.com/pyenv/pyenv">pyenv</a> is the recommended tool for handling Python installations and virtual environments.</p>
+<p><a class="reference external" href="https://python-poetry.org/">poetry</a> is the preferred tool for handling all Python package and dev dependencies.</p>
+<p><a class="reference external" href="https://pre-commit.com/">pre-commit</a> is used to automatically run various checks, auto-formatters and linting tools at commit.</p>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>The following steps are for UNIX-like systems, and only need to be completed once.</p>
+<ol>
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">poetry</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+</pre></div>
+</div>
+</li>
+<li><p>Then install all Python package dependencies, and compile the C extensions:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> poetry install
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> make
+</pre></div>
+</div>
+</li>
+<li><p>Setup the pre-commit hook which will then run automatically at commit:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> pre-commit install
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="builds">
+<h2>Builds<a class="headerlink" href="#builds" title="Permalink to this headline">¶</a></h2>
+<p>Following any changes to <code class="docutils literal notranslate"><span class="pre">.pyx</span></code> or <code class="docutils literal notranslate"><span class="pre">.pxd</span></code> files, you can re-compile by running:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>poetry run python build.py
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>make build
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "nautechsystems/nautilus_trader",
+            ref: "dev",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./5_developer_guide"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         
               <div>
@@ -575,15 +689,13 @@
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Nautech Systems Pty Ltd.<br/>
-        
-            &copy; Copyright 2015-2022.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Nautech Systems Pty Ltd.<br/>
+    
+        &copy; Copyright 2015-2022.<br/>
+  </p>
+</footer>
 </main>
 
 
