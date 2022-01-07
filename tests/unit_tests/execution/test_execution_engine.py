@@ -2017,3 +2017,57 @@ class TestExecutionEngine:
         # Order should have new venue_order_id
         cached_order = self.cache.order(order.client_order_id)
         assert cached_order.venue_order_id == new_venue_id
+
+    def test_multiple_venues_same_position_id(self):
+        # Setup Venue2
+        venue2 = Venue("SIM2")
+        account2 = AccountId("SIM2", "000")
+        instrument2 = TestInstrumentProvider.default_fx_ccy("AUD/USD", venue2)
+        self.cache.add_instrument(instrument2)
+
+        self.portfolio.update_account(TestStubs.event_margin_account_state(account_id=account2))
+
+        exec_client2 = MockExecutionClient(
+            client_id=ClientId(venue2.value),
+            account_id=account2,
+            account_type=AccountType.MARGIN,
+            base_currency=USD,
+            msgbus=self.msgbus,
+            cache=self.cache,
+            clock=self.clock,
+            logger=self.logger,
+        )
+        self.exec_engine.register_client(exec_client2)
+
+        # Arrange
+        self.exec_engine.start()
+
+        strategy = TradingStrategy()
+        strategy.register(
+            trader_id=self.trader_id,
+            portfolio=self.portfolio,
+            msgbus=self.msgbus,
+            cache=self.cache,
+            clock=self.clock,
+            logger=self.logger,
+        )
+
+        order1 = strategy.order_factory.market(
+            instrument_id=AUDUSD_SIM.id,
+            order_side=OrderSide.BUY,
+            quantity=Quantity.from_int(100000),
+        )
+        order2 = strategy.order_factory.market(
+            instrument_id=instrument2.id,
+            order_side=OrderSide.BUY,
+            quantity=Quantity.from_int(100000),
+        )
+        instruments = {AUDUSD_SIM.id: AUDUSD_SIM, instrument2.id: instrument2}
+        # Fill both orders
+        for order in (order1, order2):
+            strategy.submit_order(order)
+            self.exec_engine.process(TestStubs.event_order_submitted(order))
+            self.exec_engine.process(TestStubs.event_order_accepted(order))
+            self.exec_engine.process(
+                TestStubs.event_order_filled(order, instruments[order.instrument_id])
+            )
