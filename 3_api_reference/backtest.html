@@ -3120,15 +3120,13 @@ to the end of the data.</p>
 <span id="execution"></span><h2>Execution<a class="headerlink" href="#module-nautilus_trader.backtest.execution_client" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.execution_client.BacktestExecClient">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BacktestExecClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">SimulatedExchange</span> <span class="pre">exchange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AccountId</span> <span class="pre">account_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Cache</span> <span class="pre">cache</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TestClock</span> <span class="pre">clock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Logger</span> <span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">routing=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">is_frozen_account=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BacktestExecClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">SimulatedExchange</span> <span class="pre">exchange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Cache</span> <span class="pre">cache</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TestClock</span> <span class="pre">clock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Logger</span> <span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">routing=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">is_frozen_account=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.execution_client.BacktestExecClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="execution.html#nautilus_trader.execution.client.ExecutionClient" title="nautilus_trader.execution.client.ExecutionClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.execution.client.ExecutionClient</span></code></a></p>
 <p>Provides an execution client for the <cite>BacktestEngine</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>exchange</strong><span class="classifier">SimulatedExchange</span></dt><dd><p>The simulated exchange for the backtest.</p>
-</dd>
-<dt><strong>account_id</strong><span class="classifier">AccountId</span></dt><dd><p>The account ID for the client.</p>
 </dd>
 <dt><strong>msgbus</strong><span class="classifier">MessageBus</span></dt><dd><p>The message bus for the client.</p>
 </dd>
@@ -3151,7 +3149,7 @@ to the end of the data.</p>
 <dd><p>The clients account ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>AccountId</cite></p>
+<dd class="field-odd"><p><cite>AccountId</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>

@@ -2084,7 +2084,7 @@ running on.</p>
 API which may be presented directly by an exchange, or broker intermediary.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LiveExecutionClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loop:</span> <span class="pre">asyncio.AbstractEventLoop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientId</span> <span class="pre">client_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentProvider</span> <span class="pre">instrument_provider</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AccountId</span> <span class="pre">account_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AccountType</span> <span class="pre">account_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">base_currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Cache</span> <span class="pre">cache</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">LiveClock</span> <span class="pre">clock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Logger</span> <span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">config=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LiveExecutionClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loop:</span> <span class="pre">asyncio.AbstractEventLoop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientId</span> <span class="pre">client_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentProvider</span> <span class="pre">instrument_provider</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AccountType</span> <span class="pre">account_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">base_currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Cache</span> <span class="pre">cache</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">LiveClock</span> <span class="pre">clock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Logger</span> <span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">config=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="execution.html#nautilus_trader.execution.client.ExecutionClient" title="nautilus_trader.execution.client.ExecutionClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.execution.client.ExecutionClient</span></code></a></p>
 <p>The abstract base class for all live execution clients.</p>
 <dl class="field-list simple">
@@ -2095,8 +2095,6 @@ API which may be presented directly by an exchange, or broker intermediary.</p>
 <dt><strong>client_id</strong><span class="classifier">ClientId</span></dt><dd><p>The client ID.</p>
 </dd>
 <dt><strong>instrument_provider</strong><span class="classifier">InstrumentProvider</span></dt><dd><p>The instrument provider for the client.</p>
-</dd>
-<dt><strong>account_id</strong><span class="classifier">AccountId</span></dt><dd><p>The account ID for the client.</p>
 </dd>
 <dt><strong>account_type</strong><span class="classifier">AccountType</span></dt><dd><p>The account type for the client.</p>
 </dd>
@@ -2125,7 +2123,7 @@ API which may be presented directly by an exchange, or broker intermediary.</p>
 <dd><p>The clients account ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>AccountId</cite></p>
+<dd class="field-odd"><p><cite>AccountId</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
