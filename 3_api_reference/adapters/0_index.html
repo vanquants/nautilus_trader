@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Model &#8212; NautilusTrader Docs</title>
+    <title>Adapters &#8212; NautilusTrader Docs</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Commands" href="commands.html" />
-    <link rel="prev" title="Live" href="../live.html" />
+    <link rel="next" title="Betfair" href="betfair.html" />
+    <link rel="prev" title="Accounting" href="../accounting.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -166,33 +166,33 @@
    Accounting
   </a>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../adapters/0_index.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
    Adapters
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../adapters/betfair.html">
+    <a class="reference internal" href="betfair.html">
      Betfair
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../adapters/binance.html">
+    <a class="reference internal" href="binance.html">
      Binance
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../adapters/ftx.html">
+    <a class="reference internal" href="ftx.html">
      FTX
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../adapters/ib.html">
+    <a class="reference internal" href="ib.html">
      Interactive Brokers
     </a>
    </li>
@@ -248,68 +248,68 @@
    Live
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../model/0_index.html">
    Model
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="commands.html">
+    <a class="reference internal" href="../model/commands.html">
      Commands
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="currency.html">
+    <a class="reference internal" href="../model/currency.html">
      Currency
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="data.html">
+    <a class="reference internal" href="../model/data.html">
      Data
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="events.html">
+    <a class="reference internal" href="../model/events.html">
      Events
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="identifiers.html">
+    <a class="reference internal" href="../model/identifiers.html">
      Identifiers
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="instruments.html">
+    <a class="reference internal" href="../model/instruments.html">
      Instruments
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="objects.html">
+    <a class="reference internal" href="../model/objects.html">
      Objects
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="orderbook.html">
+    <a class="reference internal" href="../model/orderbook.html">
      Order Book
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="orders.html">
+    <a class="reference internal" href="../model/orders.html">
      Orders
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="position.html">
+    <a class="reference internal" href="../model/position.html">
      Position
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="tick_scheme.html">
+    <a class="reference internal" href="../model/tick_scheme.html">
      Tick Scheme
     </a>
    </li>
@@ -386,12 +386,11 @@
               
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.model">
-<span id="model"></span><h1>Model<a class="headerlink" href="#module-nautilus_trader.model" title="Permalink to this headline">¶</a></h1>
-<p>The <cite>model</cite> subpackage defines a rich trading domain model.</p>
-<p>The domain model is agnostic of any system design, seeking to represent the logic
-and state transitions of trading in a generic way. Many system implementations could
-be built around this domain model.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.adapters">
+<span id="adapters"></span><h1>Adapters<a class="headerlink" href="#module-nautilus_trader.adapters" title="Permalink to this headline">¶</a></h1>
+<p>The <cite>adapters</cite> subpackage provides integrations for data providers, brokerages, and exchanges.</p>
+<p>Generally each integration will implement lower level HTTP REST and/or WebSocket clients for the
+exchange/venue API, which the rest of the components can then be built on top of.</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -409,7 +408,7 @@ be built around this domain model.</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./3_api_reference/model"
+            path: "./3_api_reference/adapters"
         },
         predefinedOutput: true
     }
@@ -421,17 +420,17 @@ be built around this domain model.</p>
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../live.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../accounting.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Live</p>
+            <p class="prev-next-title">Accounting</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="commands.html" title="next page">
+    <a class='right-next' id="next-link" href="betfair.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Commands</p>
+        <p class="prev-next-title">Betfair</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
