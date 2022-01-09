@@ -381,7 +381,7 @@
 <span id="account-events"></span><h2>Account Events<a class="headerlink" href="#module-nautilus_trader.model.events.account" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.events.account.AccountState">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AccountState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">AccountId</span> <span class="pre">account_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AccountType</span> <span class="pre">account_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">base_currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">reported</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">balances</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">event_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.account.AccountState" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AccountState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">AccountId</span> <span class="pre">account_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AccountType</span> <span class="pre">account_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">base_currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">reported</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">balances</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">margins</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">event_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.account.AccountState" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../core.html#nautilus_trader.core.message.Event" title="nautilus_trader.core.message.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Event</span></code></a></p>
 <p>Represents an event which includes information on the state of the account.</p>
 <dl class="field-list simple">
@@ -395,7 +395,9 @@
 </dd>
 <dt><strong>reported</strong><span class="classifier">bool</span></dt><dd><p>If the state is reported from the exchange (otherwise system calculated).</p>
 </dd>
-<dt><strong>balances</strong><span class="classifier">list[AccountBalance]</span></dt><dd><p>The account balances</p>
+<dt><strong>balances</strong><span class="classifier">list[AccountBalance]</span></dt><dd><p>The account balances.</p>
+</dd>
+<dt><strong>margins</strong><span class="classifier">list[MarginBalance]</span></dt><dd><p>The margin balances.</p>
 </dd>
 <dt><strong>info</strong><span class="classifier">dict [str, object]</span></dt><dd><p>The additional implementation specific account information.</p>
 </dd>
@@ -511,6 +513,17 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>bool</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.events.account.AccountState.margins">
+<span class="sig-name descname"><span class="pre">margins</span></span><a class="headerlink" href="#nautilus_trader.model.events.account.AccountState.margins" title="Permalink to this definition">¶</a></dt>
+<dd><p>The margin balances.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>list[MarginBalance]</cite></p>
 </dd>
 </dl>
 </dd></dl>

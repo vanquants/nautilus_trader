@@ -1460,6 +1460,8 @@
 </li>
       <li><a href="3_api_reference/cache.html#nautilus_trader.cache.cache.Cache.clear_index">clear_index() (Cache method)</a>
 </li>
+      <li><a href="3_api_reference/accounting.html#nautilus_trader.accounting.accounts.margin.MarginAccount.clear_margin">clear_margin() (MarginAccount method)</a>
+</li>
       <li><a href="3_api_reference/accounting.html#nautilus_trader.accounting.accounts.margin.MarginAccount.clear_margin_init">clear_margin_init() (MarginAccount method)</a>
 </li>
       <li><a href="3_api_reference/accounting.html#nautilus_trader.accounting.accounts.margin.MarginAccount.clear_margin_maint">clear_margin_maint() (MarginAccount method)</a>
@@ -1850,9 +1852,11 @@
 </li>
       <li><a href="3_api_reference/model/currency.html#nautilus_trader.model.currency.Currency">Currency (class in nautilus_trader.model.currency)</a>
 </li>
-      <li><a href="3_api_reference/model/objects.html#nautilus_trader.model.objects.Money.currency">currency (Money attribute)</a>
+      <li><a href="3_api_reference/model/objects.html#nautilus_trader.model.objects.MarginBalance.currency">currency (MarginBalance attribute)</a>
 
       <ul>
+        <li><a href="3_api_reference/model/objects.html#nautilus_trader.model.objects.Money.currency">(Money attribute)</a>
+</li>
         <li><a href="3_api_reference/trading.html#nautilus_trader.trading.filters.NewsEvent.currency">(NewsEvent attribute)</a>
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderFilled.currency">(OrderFilled attribute)</a>
@@ -2556,6 +2560,8 @@
         <li><a href="3_api_reference/model/data.html#nautilus_trader.model.data.venue.InstrumentClosePrice.from_dict">(InstrumentClosePrice static method)</a>
 </li>
         <li><a href="3_api_reference/model/data.html#nautilus_trader.model.data.venue.InstrumentStatusUpdate.from_dict">(InstrumentStatusUpdate static method)</a>
+</li>
+        <li><a href="3_api_reference/model/objects.html#nautilus_trader.model.objects.MarginBalance.from_dict">(MarginBalance static method)</a>
 </li>
         <li><a href="3_api_reference/model/commands.html#nautilus_trader.model.commands.trading.ModifyOrder.from_dict">(ModifyOrder static method)</a>
 </li>
@@ -3660,6 +3666,8 @@
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.init_id">(StopMarketOrder attribute)</a>
 </li>
       </ul></li>
+      <li><a href="3_api_reference/model/objects.html#nautilus_trader.model.objects.MarginBalance.initial">initial (MarginBalance attribute)</a>
+</li>
       <li><a href="3_api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.initialize_account">initialize_account() (SimulatedExchange method)</a>
 </li>
       <li><a href="3_api_reference/portfolio.html#nautilus_trader.portfolio.portfolio.Portfolio.initialize_orders">initialize_orders() (Portfolio method)</a>
@@ -3778,6 +3786,8 @@
         <li><a href="3_api_reference/model/orderbook.html#nautilus_trader.model.orderbook.book.L3OrderBook.instrument_id">(L3OrderBook attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.limit.LimitOrder.instrument_id">(LimitOrder attribute)</a>
+</li>
+        <li><a href="3_api_reference/model/objects.html#nautilus_trader.model.objects.MarginBalance.instrument_id">(MarginBalance attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.market.MarketOrder.instrument_id">(MarketOrder attribute)</a>
 </li>
@@ -3984,10 +3994,10 @@
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_child_order">(StopMarketOrder attribute)</a>
 </li>
       </ul></li>
-      <li><a href="3_api_reference/model/position.html#nautilus_trader.model.position.Position.is_closed">is_closed (Position attribute)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="3_api_reference/model/position.html#nautilus_trader.model.position.Position.is_closed">is_closed (Position attribute)</a>
+</li>
       <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.limit.LimitOrder.is_completed">is_completed (LimitOrder attribute)</a>
 
       <ul>
@@ -5002,6 +5012,8 @@
         <li><a href="3_api_reference/common.html#nautilus_trader.common.logging.LoggerAdapter.machine_id">(LoggerAdapter attribute)</a>
 </li>
       </ul></li>
+      <li><a href="3_api_reference/model/objects.html#nautilus_trader.model.objects.MarginBalance.maintenance">maintenance (MarginBalance attribute)</a>
+</li>
       <li><a href="3_api_reference/model/instruments.html#nautilus_trader.model.instruments.betting.BettingInstrument.make_price">make_price() (BettingInstrument method)</a>
 
       <ul>
@@ -5052,6 +5064,8 @@
         <li><a href="3_api_reference/model/instruments.html#nautilus_trader.model.instruments.option.Option.maker_fee">(Option attribute)</a>
 </li>
       </ul></li>
+      <li><a href="3_api_reference/accounting.html#nautilus_trader.accounting.accounts.margin.MarginAccount.margin">margin() (MarginAccount method)</a>
+</li>
       <li><a href="3_api_reference/model/instruments.html#nautilus_trader.model.instruments.betting.BettingInstrument.margin_init">margin_init (BettingInstrument attribute)</a>
 
       <ul>
@@ -5089,6 +5103,12 @@
       <li><a href="3_api_reference/accounting.html#nautilus_trader.accounting.accounts.margin.MarginAccount.margin_maint">margin_maint() (MarginAccount method)</a>
 </li>
       <li><a href="3_api_reference/accounting.html#nautilus_trader.accounting.accounts.margin.MarginAccount">MarginAccount (class in nautilus_trader.accounting.accounts.margin)</a>
+</li>
+      <li><a href="3_api_reference/model/objects.html#nautilus_trader.model.objects.MarginBalance">MarginBalance (class in nautilus_trader.model.objects)</a>
+</li>
+      <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.account.AccountState.margins">margins (AccountState attribute)</a>
+</li>
+      <li><a href="3_api_reference/accounting.html#nautilus_trader.accounting.accounts.margin.MarginAccount.margins">margins() (MarginAccount method)</a>
 </li>
       <li><a href="3_api_reference/accounting.html#nautilus_trader.accounting.accounts.margin.MarginAccount.margins_init">margins_init() (MarginAccount method)</a>
 
@@ -9743,6 +9763,8 @@
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.limit.LimitOrder.to_dict">(LimitOrder method)</a>
 </li>
+        <li><a href="3_api_reference/model/objects.html#nautilus_trader.model.objects.MarginBalance.to_dict">(MarginBalance method)</a>
+</li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.market.MarketOrder.to_dict">(MarketOrder method)</a>
 </li>
         <li><a href="3_api_reference/model/commands.html#nautilus_trader.model.commands.trading.ModifyOrder.to_dict">(ModifyOrder static method)</a>
@@ -10685,6 +10707,8 @@
 </li>
       </ul></li>
       <li><a href="3_api_reference/backtest.html#nautilus_trader.backtest.models.LatencyModel.update_latency_nanos">update_latency_nanos (LatencyModel attribute)</a>
+</li>
+      <li><a href="3_api_reference/accounting.html#nautilus_trader.accounting.accounts.margin.MarginAccount.update_margin">update_margin() (MarginAccount method)</a>
 </li>
       <li><a href="3_api_reference/accounting.html#nautilus_trader.accounting.accounts.margin.MarginAccount.update_margin_init">update_margin_init() (MarginAccount method)</a>
 </li>

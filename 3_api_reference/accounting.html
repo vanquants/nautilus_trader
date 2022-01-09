@@ -1300,6 +1300,24 @@ currency for inverse instruments.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.margin.MarginAccount.clear_margin">
+<span class="sig-name descname"><span class="pre">clear_margin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.margin.MarginAccount.clear_margin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the maintenance (position) margins for the given instrument ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument for the maintenance margin to clear.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.margin.MarginAccount.clear_margin_init">
 <span class="sig-name descname"><span class="pre">clear_margin_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.margin.MarginAccount.clear_margin_init" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clear the initial (order) margins for the given instrument ID.</p>
@@ -1311,6 +1329,10 @@ currency for inverse instruments.</p>
 </dl>
 </dd>
 </dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -1325,6 +1347,10 @@ currency for inverse instruments.</p>
 </dl>
 </dd>
 </dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -1459,10 +1485,33 @@ currency for inverse instruments.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.margin.MarginAccount.margin">
+<span class="sig-name descname"><span class="pre">margin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">MarginBalance</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.margin.MarginAccount.margin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the current margin balance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID for the query.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>MarginBalance or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">None</span></code> if there is no applicable information for the query,
+rather than <cite>MarginBalance</cite> with zero amounts.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.margin.MarginAccount.margin_init">
 <span class="sig-name descname"><span class="pre">margin_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Money</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.margin.MarginAccount.margin_init" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the current initial (order) margin.</p>
-<p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1487,7 +1536,6 @@ rather than <cite>Money</cite> of zero amount.</p>
 <dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.margin.MarginAccount.margin_maint">
 <span class="sig-name descname"><span class="pre">margin_maint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Money</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.margin.MarginAccount.margin_maint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the current maintenance (position) margin.</p>
-<p>For multi-currency accounts, specify the currency for the query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1506,6 +1554,19 @@ rather than <cite>Money</cite> of zero amount.</p>
 <p>Returns <code class="docutils literal notranslate"><span class="pre">None</span></code> if there is no applicable information for the query,
 rather than <cite>Money</cite> of zero amount.</p>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.margin.MarginAccount.margins">
+<span class="sig-name descname"><span class="pre">margins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.margin.MarginAccount.margins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the initial (order) margins for the account.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>dict[InstrumentId, Money]</dt><dd></dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1638,6 +1699,23 @@ given balances, therefore we only update included balances.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>commission</strong><span class="classifier">Money</span></dt><dd><p>The commission to update with.</p>
 </dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>System method (not intended to be called by user code).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.accounting.accounts.margin.MarginAccount.update_margin">
+<span class="sig-name descname"><span class="pre">update_margin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">MarginBalance</span> <span class="pre">margin</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.accounting.accounts.margin.MarginAccount.update_margin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the margin balance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>margin</strong><span class="classifier">MarginBalance</span></dt><dd></dd>
 </dl>
 </dd>
 </dl>
