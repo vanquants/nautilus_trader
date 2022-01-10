@@ -305,7 +305,7 @@
 <div class="section" id="getting-some-raw-data">
 <h2>Getting some raw data<a class="headerlink" href="#getting-some-raw-data" title="Permalink to this headline">¶</a></h2>
 <p>Before we start the notebook - as a once off we need to download some sample data for backtesting</p>
-<p>For this notebook we will use Forex data from <code class="docutils literal notranslate"><span class="pre">histdata.com</span></code>, simply go to <a class="reference external" href="https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/">https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/</a> and select a Forex pair and one or more months of data to download.</p>
+<p>For this notebook we will use FX data from <code class="docutils literal notranslate"><span class="pre">histdata.com</span></code>, simply go to <a class="reference external" href="https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/">https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/</a> and select an FX pair, and one or more months of data to download.</p>
 <p>Once you have downloaded the data, set the variable <code class="docutils literal notranslate"><span class="pre">DATA_DIR</span></code> below to the directory containing the data. By default it will use the users <code class="docutils literal notranslate"><span class="pre">Downloads</span></code> directory.</p>
 <!-- #endregion -->
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">DATA_DIR</span> <span class="o">=</span> <span class="s2">&quot;~/Downloads/&quot;</span>
@@ -326,17 +326,17 @@
 <p>Next we will load this raw data into the data catalog. The data catalog is a central store for Nautilus data, persisted in the <a class="reference external" href="https://parquet.apache.org">Parquet</a> file format.</p>
 <p>We have chosen parquet as the storage format for the following reasons:</p>
 <ul class="simple">
-<li><p>It performs much better than CSV/JSON/HDF5/etc in terms of compression (storage size) and read performance.</p></li>
-<li><p>It does not require any separate running components (for example a database).</p></li>
-<li><p>It is quick and simple for someone to get up and running with.</p></li>
+<li><p>It performs much better than CSV/JSON/HDF5/etc in terms of compression (storage size) and read performance</p></li>
+<li><p>It does not require any separate running components (for example a database)</p></li>
+<li><p>It is quick and simple for someone to get up and running with</p></li>
 </ul>
 <!-- #endregion -->
 </div>
 <div class="section" id="loading-data-into-the-catalog">
 <h2>Loading data into the catalog<a class="headerlink" href="#loading-data-into-the-catalog" title="Permalink to this headline">¶</a></h2>
 <p>We can load data from various sources into the data catalog using helper methods in the <code class="docutils literal notranslate"><span class="pre">nautilus_trader.persistence.external.readers</span></code> module. The module contains methods for reading various data formats (csv, json, txt), minimising the amount of code required to get data loaded correctly into the data catalog.</p>
-<p>The Forex data from <code class="docutils literal notranslate"><span class="pre">histdata</span></code> is stored in csv/text format, with fields <code class="docutils literal notranslate"><span class="pre">timestamp,</span> <span class="pre">bid_price,</span> <span class="pre">ask_price</span></code>. To load the data into the catalog, we simply write a function that converts each row into a Nautilus object (in this case, a <code class="docutils literal notranslate"><span class="pre">QuoteTick</span></code>). For this example, we will use the <code class="docutils literal notranslate"><span class="pre">TextReader</span></code> helper, which allows reading and applying a parsing function line by line.</p>
-<p>Then, we simply instantiate a data catalog (passing in a directory where to store the data, by default we will just use the current directory) and pass our parsing function wrapping in the Reader class to <code class="docutils literal notranslate"><span class="pre">process_files</span></code>. We also need to know about which instrument this data is for; in this example, we will simply use one of the Nautilus test helpers to create a Forex instrument.</p>
+<p>The FX data from <code class="docutils literal notranslate"><span class="pre">histdata</span></code> is stored in csv/text format, with fields <code class="docutils literal notranslate"><span class="pre">timestamp,</span> <span class="pre">bid_price,</span> <span class="pre">ask_price</span></code>. To load the data into the catalog, we simply write a function that converts each row into a Nautilus object (in this case, a <code class="docutils literal notranslate"><span class="pre">QuoteTick</span></code>). For this example, we will use the <code class="docutils literal notranslate"><span class="pre">TextReader</span></code> helper, which allows reading and applying a parsing function line by line.</p>
+<p>Then, we simply instantiate a data catalog (passing in a directory where to store the data, by default we will just use the current directory) and pass our parsing function wrapping in the Reader class to <code class="docutils literal notranslate"><span class="pre">process_files</span></code>. We also need to know about which instrument this data is for; in this example, we will simply use one of the Nautilus test helpers to create a FX instrument.</p>
 <p>It should only take a couple of minutes to load the data (depending on how many months).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -457,7 +457,7 @@
 </div>
 <div class="section" id="finally-add-strategy-instances">
 <h3>Finally, add Strategy instances<a class="headerlink" href="#finally-add-strategy-instances" title="Permalink to this headline">¶</a></h3>
-<p>We can perform a grid-search of some parameters by using the <code class="docutils literal notranslate"><span class="pre">replace</span></code> method, which returns a new copy of the config. We use the <code class="docutils literal notranslate"><span class="pre">ImportableStrategyConfig</span></code> object to tell nautilus where the <code class="docutils literal notranslate"><span class="pre">TradingStrategy</span></code> class exists, and add some config</p>
+<p>We can perform a grid-search of some parameters by using the <code class="docutils literal notranslate"><span class="pre">replace</span></code> method, which returns a new copy of the config. We use the <code class="docutils literal notranslate"><span class="pre">ImportableStrategyConfig</span></code> object to tell Nautilus where the <code class="docutils literal notranslate"><span class="pre">TradingStrategy</span></code> class exists, and add some config.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span>
 <span class="kn">from</span> <span class="nn">nautilus_trader.trading.config</span> <span class="kn">import</span> <span class="n">ImportableStrategyConfig</span>
 <span class="kn">from</span> <span class="nn">nautilus_trader.examples.strategies.ema_cross</span> <span class="kn">import</span> <span class="n">EMACrossConfig</span>
@@ -499,7 +499,7 @@
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="run-the-backtest">
 <h1>Run the backtest<a class="headerlink" href="#run-the-backtest" title="Permalink to this headline">¶</a></h1>
-<p>Finally, we can create a BacktestNode and run the backtest</p>
+<p>Finally, we can create a BacktestNode and run the backtest:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.backtest.node</span> <span class="kn">import</span> <span class="n">BacktestNode</span>
 <span class="n">node</span> <span class="o">=</span> <span class="n">BacktestNode</span><span class="p">()</span>
 </pre></div>
@@ -513,7 +513,7 @@
 <span class="c1"># task.visualize(rankdir=&#39;LR&#39;) </span>
 </pre></div>
 </div>
-<p>^ Notice because our configs share the same data that only one instance of <code class="docutils literal notranslate"><span class="pre">load</span></code> is required</p>
+<p>^ Notice because our configs share the same data, that only one instance of <code class="docutils literal notranslate"><span class="pre">load</span></code> is required.</p>
 <div class="section" id="start-up-a-local-dask-cluster-to-execute-the-graph">
 <h2>Start up a local dask cluster to execute the graph<a class="headerlink" href="#start-up-a-local-dask-cluster-to-execute-the-graph" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a local dask client - not a requirement, but allows parallelising the runs</span>

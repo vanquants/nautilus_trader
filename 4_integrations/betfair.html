@@ -230,9 +230,9 @@ Exchange Streaming API. Under the hood it leverages the excellent <a class="refe
 <p>The Betfair adapter currently uses environment variables for authentication. To use the adapter,
 simply pass the following config to the TradingNode, indicating the names of the environment variables
 to look for when connecting:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="o">...</span> <span class="c1"># Omitted </span>
-    <span class="s2">&quot;data_clients&quot;</span><span class="p">:</span> <span class="p">{</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="o">=</span> <span class="n">TradingNodeConfig</span><span class="p">(</span>
+    <span class="o">...</span><span class="p">,</span>  <span class="c1"># Omitted </span>
+    <span class="n">data_clients</span><span class="o">=</span><span class="p">{</span>
         <span class="s2">&quot;BETFAIR&quot;</span><span class="p">:</span> <span class="p">{</span>
             <span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BETFAIR_USERNAME&quot;</span><span class="p">,</span>
             <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BETFAIR_PASSWORD&quot;</span><span class="p">,</span>
@@ -240,7 +240,7 @@ to look for when connecting:</p>
             <span class="s2">&quot;cert_dir&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BETFAIR_CERT_DIR&quot;</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">},</span>
-    <span class="s2">&quot;exec_clients&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="n">exec_clients</span><span class="o">=</span><span class="p">{</span>
         <span class="s2">&quot;BETFAIR&quot;</span><span class="p">:</span> <span class="p">{</span>
             <span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BETFAIR_USERNAME&quot;</span><span class="p">,</span>
             <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BETFAIR_PASSWORD&quot;</span><span class="p">,</span>
@@ -249,6 +249,7 @@ to look for when connecting:</p>
             <span class="s2">&quot;base_currency&quot;</span><span class="p">:</span> <span class="s2">&quot;AUD&quot;</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">}</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 <p>Then, create a <code class="docutils literal notranslate"><span class="pre">TradingNode</span></code> and add the factory clients:</p>

@@ -280,7 +280,7 @@
 <div class="section" id="getting-some-sample-raw-data">
 <h3>Getting some sample raw data<a class="headerlink" href="#getting-some-sample-raw-data" title="Permalink to this headline">¶</a></h3>
 <p>Before we start the notebook - as a once off we need to download some sample data for loading.</p>
-<p>For this notebook we will use Forex data from <code class="docutils literal notranslate"><span class="pre">histdata.com</span></code>, simply go to <a class="reference external" href="https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/">https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/</a> and select a Forex pair and one or more months of data to download.</p>
+<p>For this notebook we will use FX data from <code class="docutils literal notranslate"><span class="pre">histdata.com</span></code>, simply go to <a class="reference external" href="https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/">https://www.histdata.com/download-free-forex-historical-data/?/ascii/tick-data-quotes/</a> and select a Forex pair and one or more months of data to download.</p>
 <p>Once you have downloaded the data, set the variable <code class="docutils literal notranslate"><span class="pre">input_files</span></code> below to the path containing the
 data. You can also use a glob to select multiple files, for example <code class="docutils literal notranslate"><span class="pre">&quot;~/Downloads/HISTDATA_COM_ASCII_AUDUSD_*.zip&quot;</span></code>.</p>
 <!-- #endregion -->
@@ -312,7 +312,7 @@ correctly into the data catalog.</p>
 </div>
 <div class="section" id="writing-the-parser-function">
 <h3>Writing the parser function<a class="headerlink" href="#writing-the-parser-function" title="Permalink to this headline">¶</a></h3>
-<p>The Forex data from <code class="docutils literal notranslate"><span class="pre">histdata</span></code> is stored in csv/text format, with fields <code class="docutils literal notranslate"><span class="pre">timestamp,</span> <span class="pre">bid_price,</span> <span class="pre">ask_price</span></code>.</p>
+<p>The FX data from <code class="docutils literal notranslate"><span class="pre">histdata</span></code> is stored in csv/text format, with fields <code class="docutils literal notranslate"><span class="pre">timestamp,</span> <span class="pre">bid_price,</span> <span class="pre">ask_price</span></code>.</p>
 <p>For this example, we will use the <code class="docutils literal notranslate"><span class="pre">CSVReader</span></code> class, but we need to manually pass a header as the files do not contain one. The <code class="docutils literal notranslate"><span class="pre">CSVReader</span></code> has a couple of options, we’ll be setting and <code class="docutils literal notranslate"><span class="pre">chunked=False</span></code> to process the data line-by-line and <code class="docutils literal notranslate"><span class="pre">as_dataframe=False</span></code> to process the data as a string rather than DataFrame. See the <a class="reference internal" href="../3_api_reference/persistence.html"><span class="doc std std-doc">API Reference</span></a> for more details.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -359,7 +359,7 @@ correctly into the data catalog.</p>
 <p>Nautilus needs to link market data to an <code class="docutils literal notranslate"><span class="pre">instrument_id</span></code>, and an <code class="docutils literal notranslate"><span class="pre">instrument_id</span></code> to an <code class="docutils literal notranslate"><span class="pre">Instrument</span></code>
 definition. This can be done at any time, but typically it makes sense to do it when you are loading
 market data into the catalog.</p>
-<p>For our example, Nautilus contains some helpers for creating Forex pairs, which we will use. If,
+<p>For our example, Nautilus contains some helpers for creating FX pairs, which we will use. If,
 however, you were adding data for financial or crypto markets, you could need to create (and add to
 the catalog) an instrument corresponding to that instrument_id. Definitions for various other
 instruments can be found in <code class="docutils literal notranslate"><span class="pre">nautilus_trader.model.instruments</span></code>.</p>
@@ -367,7 +367,7 @@ instruments can be found in <code class="docutils literal notranslate"><span cla
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.persistence.external.core</span> <span class="kn">import</span> <span class="n">process_files</span><span class="p">,</span> <span class="n">write_objects</span>
 <span class="kn">from</span> <span class="nn">nautilus_trader.backtest.data.providers</span> <span class="kn">import</span> <span class="n">TestInstrumentProvider</span>
 
-<span class="c1"># Use nautilus test helpers to create a EUR/USD Forex instrument for our purposes</span>
+<span class="c1"># Use nautilus test helpers to create a EUR/USD FX instrument for our purposes</span>
 <span class="n">instrument</span> <span class="o">=</span> <span class="n">TestInstrumentProvider</span><span class="o">.</span><span class="n">default_fx_ccy</span><span class="p">(</span><span class="s2">&quot;EUR/USD&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -387,14 +387,14 @@ instruments can be found in <code class="docutils literal notranslate"><span cla
 <h3>Loading the files<a class="headerlink" href="#loading-the-files" title="Permalink to this headline">¶</a></h3>
 <p>One final note, our parsing function takes an <code class="docutils literal notranslate"><span class="pre">instrument_id</span></code> argument, as in our case with
 hist_data, the actual file does not contain information about the instrument, only the file name
-does. In our instance, we would likely need to split our loading per Forex pair, so we can determine
+does. In our instance, we would likely need to split our loading per FX pair, so we can determine
 which instrument we are loading. We will use a simple lambda function to pass our <code class="docutils literal notranslate"><span class="pre">instrument_id</span></code> to
 the parsing function.</p>
 <p>We can now use the <code class="docutils literal notranslate"><span class="pre">process_files</span></code> function to load one or more files using our <code class="docutils literal notranslate"><span class="pre">Reader</span></code> class and
 <code class="docutils literal notranslate"><span class="pre">parsing</span></code> function as shown below. This function will loop over many files, as well as breaking up
 large files into chunks (protecting us from out of memory errors when reading large files) and save
 the results to the <code class="docutils literal notranslate"><span class="pre">DataCatalog</span></code>.</p>
-<p>For the hist_data, it should take less than a minute or two to load each Forex file (a progress bar
+<p>For the hist_data, it should take less than a minute or two to load each FX file (a progress bar
 will appear below):</p>
 <!-- #endregion -->
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.persistence.external.core</span> <span class="kn">import</span> <span class="n">process_files</span>

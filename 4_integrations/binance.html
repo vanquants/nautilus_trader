@@ -195,9 +195,41 @@
               
               <div class="toc-item">
                 
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
-    
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#binance-data-types">
+   Binance data types
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configuration">
+   Configuration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#api-credentials">
+     API credentials
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#binance-us">
+     Binance US
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
 </nav>
               </div>
               
@@ -219,7 +251,86 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="binance">
 <h1>Binance<a class="headerlink" href="#binance" title="Permalink to this headline">¶</a></h1>
-<p>In progress…</p>
+<p>Founded in 2017, Binance is one of the largest cryptocurrency exchanges in terms
+of daily trading volume, and open interest of crypto assets and crypto
+derivative products. This integration supports live market data ingest and order
+execution with Binance.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This integration is still under construction. Please consider it to be in an
+unstable beta phase and exercise caution.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Binance offers different account types including <code class="docutils literal notranslate"><span class="pre">spot</span></code>, <code class="docutils literal notranslate"><span class="pre">margin</span></code> and
+<code class="docutils literal notranslate"><span class="pre">futures</span></code>. NautilusTrader currently supports <code class="docutils literal notranslate"><span class="pre">spot</span></code> account trading, with
+support for the other account types on the way.</p>
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The following documentation assumes a trader is setting up for both live market
+data feeds, and trade execution. The Binance integration consists of several
+main components, which can be used together or separately depending on the users
+needs.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BinanceHttpClient</span></code> provides low-level HTTP API connectivity</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BinanceWebSocketClient</span></code> provides low-level WebSocket API connectivity</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BinanceInstrumentProvider</span></code> provides instrument parsing and loading functionality</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BinanceDataClient</span></code> provides a market data feed manager</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BinanceExecutionClient</span></code> provides an account management and trade execution gateway</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BinanceLiveDataClientFactory</span></code> creation factory for Binance data clients (used by the trading node builder)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BinanceLiveExecutionClientFactory</span></code> creation factory for Binance execution clients (used by the trading node builder)</p></li>
+</ul>
+</div>
+<div class="section" id="binance-data-types">
+<h2>Binance data types<a class="headerlink" href="#binance-data-types" title="Permalink to this headline">¶</a></h2>
+<p>To provide complete API functionality to traders, the integration includes several
+custom data types:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BinanceTicker</span></code> returned when subscribing to Binance tickers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BinanceBar</span></code> returned when requesting historical or subscribing to Binance bars.</p></li>
+</ul>
+<p>See the Binance <a class="reference internal" href="../3_api_reference/adapters/binance.html"><span class="doc std std-doc">API Reference</span></a> for full definitions.</p>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>The most common use case is to configure a live <code class="docutils literal notranslate"><span class="pre">TradingNode</span></code> to include Binance
+data and execution clients. To achieve this, add a <code class="docutils literal notranslate"><span class="pre">BINANCE</span></code> section to your client
+configuration:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="o">=</span> <span class="n">TradingNodeConfig</span><span class="p">(</span>
+    <span class="o">...</span><span class="p">,</span>  <span class="c1"># Omitted</span>
+    <span class="n">data_clients</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;BINANCE&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;api_key&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BINANCE_API_KEY&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;api_secret&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BINANCE_API_SECRET&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;us&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="n">exec_clients</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;BINANCE&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;api_key&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BINANCE_API_KEY&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;api_secret&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BINANCE_API_SECRET&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;us&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="api-credentials">
+<h3>API credentials<a class="headerlink" href="#api-credentials" title="Permalink to this headline">¶</a></h3>
+<p>There are two options for supplying your credentials to the Binance clients.
+Either pass the corresponding <code class="docutils literal notranslate"><span class="pre">api_key</span></code> and <code class="docutils literal notranslate"><span class="pre">api_secret</span></code> values to the config dictionaries, or
+set the <code class="docutils literal notranslate"><span class="pre">BINANCE_API_KEY</span></code> and <code class="docutils literal notranslate"><span class="pre">BINANCE_API_SECRET</span></code> environment variables.
+You’ll receive immediate confirmation that your credentials are valid with trading
+permissions when starting a trading node.</p>
+</div>
+<div class="section" id="binance-us">
+<h3>Binance US<a class="headerlink" href="#binance-us" title="Permalink to this headline">¶</a></h3>
+<p>There is support for Binance US accounts by setting the <code class="docutils literal notranslate"><span class="pre">us</span></code> option in the configs
+to <code class="docutils literal notranslate"><span class="pre">True</span></code> (this is <code class="docutils literal notranslate"><span class="pre">False</span></code> by default). All functionality available to US accounts
+should behave identically to standard Binance.</p>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

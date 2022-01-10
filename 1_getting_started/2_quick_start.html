@@ -265,7 +265,7 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="quick-start">
 <h1>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h1>
 <p>This section explains how to get up and running with NautilusTrader by running some backtests on
-Forex data. The Nautilus maintainers have pre-loaded some existing data into the Nautilus storage
+FX data. The Nautilus maintainers have pre-loaded some existing data into the Nautilus storage
 format (parquet) for this guide.</p>
 <p>For more details on how to load other data into Nautilus, see <a class="reference internal" href="../2_user_guide/2_backtest_example.html"><span class="doc std std-doc">Backtest Example</span></a></p>
 <div class="section" id="getting-the-sample-data">
@@ -278,7 +278,7 @@ First, download and load the data by running the next cell (this should take ~ 1
 </div>
 <div class="section" id="connecting-to-the-datacatalog">
 <h2>Connecting to the DataCatalog<a class="headerlink" href="#connecting-to-the-datacatalog" title="Permalink to this headline">¶</a></h2>
-<p>If everything worked correctly, you should be able to see a single EURUSD instrument in the catalog:</p>
+<p>If everything worked correctly, you should be able to see a single EUR/USD instrument in the catalog:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.persistence.catalog</span> <span class="kn">import</span> <span class="n">DataCatalog</span>
 
 <span class="n">catalog</span> <span class="o">=</span> <span class="n">DataCatalog</span><span class="p">(</span><span class="s2">&quot;EUDUSD202001/&quot;</span><span class="p">)</span>
@@ -288,10 +288,12 @@ First, download and load the data by running the next cell (this should take ~ 1
 </div>
 <div class="section" id="writing-a-trading-strategy">
 <h2>Writing a trading strategy<a class="headerlink" href="#writing-a-trading-strategy" title="Permalink to this headline">¶</a></h2>
-<p>Nautilus includes a handful of indicators built-in, in this example we will use a MACD indicator to
+<p>NautilusTrader includes a handful of indicators built-in, in this example we will use a MACD indicator to
 build a simple trading strategy.
 You can read more about <a class="reference external" href="https://www.investopedia.com/terms/m/macd.asp">MACD here</a>, so this
-indicator merely serves as an example without any expected alpha.</p>
+indicator merely serves as an example without any expected alpha. There is also a way of
+registering indicators to receive certain data types, however in this example we manually pass the received
+<code class="docutils literal notranslate"><span class="pre">QuoteTick</span></code> to the indicator in the <code class="docutils literal notranslate"><span class="pre">on_quote_tick</span></code> method.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.trading.strategy</span> <span class="kn">import</span> <span class="n">TradingStrategy</span><span class="p">,</span> <span class="n">TradingStrategyConfig</span>
 <span class="kn">from</span> <span class="nn">nautilus_trader.indicators.macd</span> <span class="kn">import</span> <span class="n">MovingAverageConvergenceDivergence</span>
 <span class="kn">from</span> <span class="nn">nautilus_trader.model.data.tick</span> <span class="kn">import</span> <span class="n">QuoteTick</span>
@@ -402,11 +404,11 @@ following (minimal) aspects of the backtest:</p>
 <h2>Venue<a class="headerlink" href="#venue" title="Permalink to this headline">¶</a></h2>
 <p>First, we create a venue. For this example we will create a simulated FX ECN venue.
 A venue needs a name which acts as an ID, as well as some basic configuration;
-the account type (cash vs margin), the base currency and starting balance.</p>
+the account type (cash vs margin), an optional base currency, and starting balance.</p>
 <!-- #endregion -->
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.backtest.config</span> <span class="kn">import</span> <span class="n">BacktestVenueConfig</span>
 
-<span class="n">oanda_venue</span> <span class="o">=</span> <span class="n">BacktestVenueConfig</span><span class="p">(</span>
+<span class="n">venue</span> <span class="o">=</span> <span class="n">BacktestVenueConfig</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;SIM&quot;</span><span class="p">,</span>
     <span class="n">oms_type</span><span class="o">=</span><span class="s1">&#39;NETTING&#39;</span><span class="p">,</span>
     <span class="n">account_type</span><span class="o">=</span><span class="s1">&#39;CASH&#39;</span><span class="p">,</span>
@@ -432,7 +434,7 @@ the account type (cash vs margin), the base currency and starting balance.</p>
 <p>Next, we need to configure the data for the backtest. Nautilus is built to be very flexible when it
 comes to loading data for backtests, however this also means some configuration is required.</p>
 <p>For each tick type (and instrument), we add a <code class="docutils literal notranslate"><span class="pre">BacktestDataConfig</span></code>. In this instance we are simply
-adding the <code class="docutils literal notranslate"><span class="pre">QuoteTick</span></code>(s) for our <code class="docutils literal notranslate"><span class="pre">EURUSD</span></code> instrument:</p>
+adding the <code class="docutils literal notranslate"><span class="pre">QuoteTick</span></code>(s) for our EUR/USD instrument:</p>
 <!-- #endregion -->
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nautilus_trader.model.data.tick</span> <span class="kn">import</span> <span class="n">QuoteTick</span>
 <span class="kn">from</span> <span class="nn">nautilus_trader.backtest.config</span> <span class="kn">import</span> <span class="n">BacktestDataConfig</span>
@@ -485,7 +487,7 @@ parameters or batches of data), as well as parallelisation via the excellent <a 
 <span class="kn">from</span> <span class="nn">nautilus_trader.trading.config</span> <span class="kn">import</span> <span class="n">ImportableStrategyConfig</span>
 
 <span class="n">config</span> <span class="o">=</span> <span class="n">BacktestRunConfig</span><span class="p">(</span>
-    <span class="n">venues</span><span class="o">=</span><span class="p">[</span><span class="n">oanda_venue</span><span class="p">],</span>
+    <span class="n">venues</span><span class="o">=</span><span class="p">[</span><span class="n">venue</span><span class="p">],</span>
     <span class="n">strategies</span><span class="o">=</span><span class="p">[</span><span class="n">macd_strategy</span><span class="p">],</span>
     <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
     <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span>

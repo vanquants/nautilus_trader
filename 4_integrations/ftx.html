@@ -195,9 +195,46 @@
               
               <div class="toc-item">
                 
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
-    
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ftx-data-types">
+   FTX data types
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configuration">
+   Configuration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#api-credentials">
+     API credentials
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sub-accounts">
+     Sub-accounts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ftx-us">
+     FTX US
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
 </nav>
               </div>
               
@@ -219,7 +256,86 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="ftx">
 <h1>FTX<a class="headerlink" href="#ftx" title="Permalink to this headline">¶</a></h1>
-<p>In progress…</p>
+<p>FTX is one of the highest volume exchanges for crypto futures and derivatives markets.
+This integration supports live market data ingest and order execution with FTX.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This integration is still under construction. Please consider it to be in an
+unstable beta phase and exercise caution.</p>
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The following documentation assumes a trader is setting up for both live market
+data feeds, and trade execution. The FTX integration consists of several
+main components, which can be used together or separately depending on the users
+needs.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FTXHttpClient</span></code> provides low-level HTTP API connectivity</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FTXWebSocketClient</span></code> provides low-level WebSocket API connectivity</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FTXInstrumentProvider</span></code> provides instrument parsing and loading functionality</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FTXDataClient</span></code> provides a market data feed manager</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FTXExecutionClient</span></code> provides an account management and trade execution gateway</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FTXLiveDataClientFactory</span></code> creation factory for FTX data clients (used by the trading node builder)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FTXLiveExecutionClientFactory</span></code> creation factory for FTX execution clients (used by the trading node builder)</p></li>
+</ul>
+</div>
+<div class="section" id="ftx-data-types">
+<h2>FTX data types<a class="headerlink" href="#ftx-data-types" title="Permalink to this headline">¶</a></h2>
+<p>To provide complete API functionality to traders, the integration includes several
+custom data types:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FTXTicker</span></code> returned when subscribing to FTX tickers (like a <code class="docutils literal notranslate"><span class="pre">QuoteTick</span></code> which
+also includes <code class="docutils literal notranslate"><span class="pre">last_price</span></code>).</p></li>
+</ul>
+<p>See the FTX <a class="reference internal" href="../3_api_reference/adapters/ftx.html"><span class="doc std std-doc">API Reference</span></a> for full definitions.</p>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>The most common use case is to configure a live <code class="docutils literal notranslate"><span class="pre">TradingNode</span></code> to include FTX
+data and execution clients. To achieve this, add an <code class="docutils literal notranslate"><span class="pre">FTX</span></code> section to your client
+configuration:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="o">=</span> <span class="n">TradingNodeConfig</span><span class="p">(</span>
+    <span class="o">...</span><span class="p">,</span>  <span class="c1"># Omitted</span>
+    <span class="n">data_clients</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;FTX&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;api_key&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_FTX_API_KEY&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;api_secret&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_FTX_API_SECRET&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;subaccount&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_FTX_SUBACCOUNT&quot;</span><span class="p">,</span>  <span class="c1"># optional</span>
+            <span class="s2">&quot;us&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="n">exec_clients</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;FTX&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;api_key&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_FTX_API_KEY&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;api_secret&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_FTX_API_SECRET&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;subaccount&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_FTX_SUBACCOUNT&quot;</span><span class="p">,</span>  <span class="c1"># optional</span>
+            <span class="s2">&quot;us&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="api-credentials">
+<h3>API credentials<a class="headerlink" href="#api-credentials" title="Permalink to this headline">¶</a></h3>
+<p>There are two options for supplying your credentials to the FTX clients.
+Either pass the corresponding <code class="docutils literal notranslate"><span class="pre">api_key</span></code> and <code class="docutils literal notranslate"><span class="pre">api_secret</span></code> values to the config dictionaries, or
+set the <code class="docutils literal notranslate"><span class="pre">FTX_API_KEY</span></code> and <code class="docutils literal notranslate"><span class="pre">FTX_API_SECRET</span></code> environment variables.
+You’ll receive immediate confirmation that your credentials are valid with trading
+permissions when starting a trading node.</p>
+</div>
+<div class="section" id="sub-accounts">
+<h3>Sub-accounts<a class="headerlink" href="#sub-accounts" title="Permalink to this headline">¶</a></h3>
+<p>There are two options to enable trading through a sub-account, by setting the
+<code class="docutils literal notranslate"><span class="pre">subaccount</span></code> value in the config dictionary, or set the <code class="docutils literal notranslate"><span class="pre">FTX_SUBACCOUNT</span></code>
+environment variable.</p>
+</div>
+<div class="section" id="ftx-us">
+<h3>FTX US<a class="headerlink" href="#ftx-us" title="Permalink to this headline">¶</a></h3>
+<p>There is support for FTX US accounts by setting the <code class="docutils literal notranslate"><span class="pre">us</span></code> option in the configs
+to <code class="docutils literal notranslate"><span class="pre">True</span></code> (this is <code class="docutils literal notranslate"><span class="pre">False</span></code> by default). All functionality available to US accounts
+should behave identically to standard FTX.</p>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
