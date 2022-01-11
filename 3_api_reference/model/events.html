@@ -429,7 +429,7 @@
 </dd>
 <dt><strong>balances</strong><span class="classifier">list[AccountBalance]</span></dt><dd><p>The account balances.</p>
 </dd>
-<dt><strong>margins</strong><span class="classifier">list[MarginBalance]</span></dt><dd><p>The margin balances.</p>
+<dt><strong>margins</strong><span class="classifier">list[MarginBalance]</span></dt><dd><p>The margin balances (can be empty).</p>
 </dd>
 <dt><strong>info</strong><span class="classifier">dict [str, object]</span></dt><dd><p>The additional implementation specific account information.</p>
 </dd>
@@ -438,6 +438,12 @@
 <dt><strong>ts_event</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the account state event occurred.</p>
 </dd>
 <dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>balances</cite> is empty.</p>
 </dd>
 </dl>
 </dd>
