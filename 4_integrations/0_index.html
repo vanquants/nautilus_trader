@@ -202,8 +202,13 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementation-goals">
+   Implementation goals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#api-unification">
-   API Unification
+   API unification
   </a>
  </li>
 </ul>
@@ -229,30 +234,81 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="integrations">
 <h1>Integrations<a class="headerlink" href="#integrations" title="Permalink to this headline">¶</a></h1>
-<p>NautilusTrader is designed to work with modular adapters which provide integrations
-with data publishers and/or trading venues (exchanges/brokers).</p>
+<p>NautilusTrader is designed to work with modular adapters which provide integrations with data
+publishers and/or trading venues (exchanges/brokers). The following integrations are currently supported:</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The initial integrations for the project are currently under heavy construction.
 It’s advised to conduct some of your own testing with small amounts of capital before
 running strategies which are able to access larger capital allocations.</p>
 </div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Name</p></th>
+<th class="text-align:left head"><p>ID</p></th>
+<th class="text-align:left head"><p>Type</p></th>
+<th class="text-align:left head"><p>Status</p></th>
+<th class="text-align:left head"><p>Docs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><a class="reference external" href="https://betfair.com">Betfair</a></p></td>
+<td class="text-align:left"><p>BETFAIR</p></td>
+<td class="text-align:left"><p>Sports Betting Exchange</p></td>
+<td class="text-align:left"><p><img alt="status" src="https://img.shields.io/badge/beta-yellow" /></p></td>
+<td class="text-align:left"><p><a class="reference external" href="https://docs.nautilustrader.io/4_integrations/betfair.html">Guide</a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><a class="reference external" href="https://binance.com">Binance</a></p></td>
+<td class="text-align:left"><p>BINANCE</p></td>
+<td class="text-align:left"><p>Crypto Exchange</p></td>
+<td class="text-align:left"><p><img alt="status" src="https://img.shields.io/badge/beta-yellow" /></p></td>
+<td class="text-align:left"><p><a class="reference external" href="https://docs.nautilustrader.io/4_integrations/binance.html">Guide</a></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><a class="reference external" href="https://binance.us">Binance US</a></p></td>
+<td class="text-align:left"><p>BINANCE</p></td>
+<td class="text-align:left"><p>Crypto Exchange</p></td>
+<td class="text-align:left"><p><img alt="status" src="https://img.shields.io/badge/beta-yellow" /></p></td>
+<td class="text-align:left"><p><a class="reference external" href="https://docs.nautilustrader.io/4_integrations/binance.html">Guide</a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><a class="reference external" href="https://ftx.com">FTX</a></p></td>
+<td class="text-align:left"><p>FTX</p></td>
+<td class="text-align:left"><p>Crypto Exchange</p></td>
+<td class="text-align:left"><p><img alt="status" src="https://img.shields.io/badge/beta-yellow" /></p></td>
+<td class="text-align:left"><p><a class="reference external" href="https://docs.nautilustrader.io/4_integrations/ftx.html">Guide</a></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><a class="reference external" href="https://ftx.us">FTX US</a></p></td>
+<td class="text-align:left"><p>FTX</p></td>
+<td class="text-align:left"><p>Crypto Exchange</p></td>
+<td class="text-align:left"><p><img alt="status" src="https://img.shields.io/badge/beta-yellow" /></p></td>
+<td class="text-align:left"><p><a class="reference external" href="https://docs.nautilustrader.io/4_integrations/ftx.html">Guide</a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><a class="reference external" href="https://www.interactivebrokers.com">Interactive Brokers</a></p></td>
+<td class="text-align:left"><p>IB</p></td>
+<td class="text-align:left"><p>Brokerage (multi-venue)</p></td>
+<td class="text-align:left"><p><img alt="status" src="https://img.shields.io/badge/planning-gray" /></p></td>
+<td class="text-align:left"><p><a class="reference external" href="https://docs.nautilustrader.io/4_integrations/ib.html">Guide</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="implementation-goals">
+<h2>Implementation goals<a class="headerlink" href="#implementation-goals" title="Permalink to this headline">¶</a></h2>
 <p>The implementation of each integration aims to meet the following criteria:</p>
 <ul class="simple">
-<li><p>Low-level client components should match the exchange API as closely as possible.</p></li>
-<li><p>The full range of an exchanges functionality (where applicable to NautilusTrader), should <em>eventually</em> be supported.</p></li>
+<li><p>Low-level client components should match the exchange API as closely as possible</p></li>
+<li><p>The full range of an exchanges functionality (where applicable to NautilusTrader), should <em>eventually</em> be supported</p></li>
 <li><p>Exchange specific data types will be added to support the functionality and return
-types which are reasonably expected by a user.</p></li>
+types which are reasonably expected by a user</p></li>
 <li><p>Actions which are unsupported by either the exchange or NautilusTrader, will be explicitly logged as
-a warning or error when a user attempts to perform said action.</p></li>
+a warning or error when a user attempts to perform said action</p></li>
 </ul>
+</div>
 <div class="section" id="api-unification">
-<h2>API Unification<a class="headerlink" href="#api-unification" title="Permalink to this headline">¶</a></h2>
+<h2>API unification<a class="headerlink" href="#api-unification" title="Permalink to this headline">¶</a></h2>
 <p>All integrations must be compatible with the NautilusTrader API at the system boundary,
-this means there is some unification and standardization needed.</p>
+this means there is some normalization and standardization needed.</p>
 <ul class="simple">
-<li><p>All symbols will match the native/local symbol for the exchange.</p></li>
-<li><p>All timestamps will be normalized to UNIX nanoseconds.</p></li>
+<li><p>All symbols will match the native/local symbol for the exchange</p></li>
+<li><p>All timestamps will be normalized to UNIX nanoseconds</p></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
