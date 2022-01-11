@@ -234,8 +234,9 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="integrations">
 <h1>Integrations<a class="headerlink" href="#integrations" title="Permalink to this headline">¶</a></h1>
-<p>NautilusTrader is designed to work with modular adapters which provide integrations with data
-publishers and/or trading venues (exchanges/brokers). The following integrations are currently supported:</p>
+<p>NautilusTrader is designed in a modular way to work with ‘adapters’ which provide
+connectivity to data publishers and/or trading venues - converting their raw API
+into a unified interface. The following integrations are currently supported:</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The initial integrations for the project are currently under heavy construction.
@@ -292,6 +293,17 @@ running strategies which are able to access larger capital allocations.</p>
 </table>
 <div class="section" id="implementation-goals">
 <h2>Implementation goals<a class="headerlink" href="#implementation-goals" title="Permalink to this headline">¶</a></h2>
+<p>The primary goal of NautilusTrader is to provide a unified trading system for
+use with a variety of integrations. To support the widest range of trading
+strategies, priority will be given to ‘standard’ functionality:</p>
+<ul class="simple">
+<li><p>Requesting historical market data</p></li>
+<li><p>Streaming live market data</p></li>
+<li><p>Reconciling execution state</p></li>
+<li><p>Submitting standard order types with standard execution instructions</p></li>
+<li><p>Modifying existing orders (if possible on an exchange)</p></li>
+<li><p>Canceling orders</p></li>
+</ul>
 <p>The implementation of each integration aims to meet the following criteria:</p>
 <ul class="simple">
 <li><p>Low-level client components should match the exchange API as closely as possible</p></li>
