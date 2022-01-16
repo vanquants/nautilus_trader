@@ -614,38 +614,6 @@ submitted to a broker as waves of a larger program trade.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="nautilus_trader.model.identifiers.ExecutionId">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExecutionId</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.identifiers.ExecutionId" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.identifiers.Identifier" title="nautilus_trader.model.identifiers.Identifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.identifiers.Identifier</span></code></a></p>
-<p>Represents a valid execution ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>value</strong><span class="classifier">str</span></dt><dd><p>The execution ID value.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><dl class="simple">
-<dt>ValueError</dt><dd><p>If <cite>value</cite> is not a valid string.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.identifiers.ExecutionId.value">
-<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#nautilus_trader.model.identifiers.ExecutionId.value" title="Permalink to this definition">¶</a></dt>
-<dd><p>The identifier (ID) value.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>str</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.Identifier">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Identifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.identifiers.Identifier" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
@@ -894,6 +862,43 @@ instrument.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.identifiers.Symbol.value">
 <span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#nautilus_trader.model.identifiers.Symbol.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>The identifier (ID) value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>str</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="nautilus_trader.model.identifiers.TradeId">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TradeId</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.identifiers.TradeId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.identifiers.Identifier" title="nautilus_trader.model.identifiers.Identifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.identifiers.Identifier</span></code></a></p>
+<p>Represents a valid trade ID (assigned by a trading venue).</p>
+<p>Can correspond to the <cite>TradeID &lt;1003&gt; field</cite> of the FIX protocol.</p>
+<p>The unique ID assigned to the trade entity once it is received or matched by
+the exchange or central counterparty.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>value</strong><span class="classifier">str</span></dt><dd><p>The trade ID value.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>value</cite> is not a valid string.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://www.onixs.biz/fix-dictionary/5.0/tagnum_1003.html">https://www.onixs.biz/fix-dictionary/5.0/tagnum_1003.html</a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.identifiers.TradeId.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#nautilus_trader.model.identifiers.TradeId.value" title="Permalink to this definition">¶</a></dt>
 <dd><p>The identifier (ID) value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>

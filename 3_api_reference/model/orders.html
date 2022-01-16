@@ -518,7 +518,7 @@ contain any arbitrary delimiter if required.</p>
 </dd>
 <dt>InvalidStateTrigger</dt><dd><p>If <cite>event</cite> is not a valid trigger from the current order status.</p>
 </dd>
-<dt>KeyError</dt><dd><p>If <cite>event</cite> is <cite>OrderFilled</cite> and <cite>event.execution_id</cite> already applied to the order.</p>
+<dt>KeyError</dt><dd><p>If <cite>event</cite> is <cite>OrderFilled</cite> and <cite>event.trade_id</cite> already applied to the order.</p>
 </dd>
 </dl>
 </dd>
@@ -607,30 +607,6 @@ contain any arbitrary delimiter if required.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.execution_id">
-<span class="sig-name descname"><span class="pre">execution_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.execution_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The orders last execution ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>ExecutionId</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.execution_ids">
-<span class="sig-name descname"><span class="pre">execution_ids</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.execution_ids" title="Permalink to this definition">¶</a></dt>
-<dd><p>The execution IDs.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>list[ExecutionId]</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.filled_qty">
 <span class="sig-name descname"><span class="pre">filled_qty</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.filled_qty" title="Permalink to this definition">¶</a></dt>
 <dd><p>The order total filled quantity.</p>
@@ -645,10 +621,10 @@ contain any arbitrary delimiter if required.</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.flatten_side">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flatten_side</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">PositionSide</span> <span class="pre">side</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">OrderSide</span></span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.flatten_side" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the order side needed to flatten a position from the given side.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>side</strong><span class="classifier">PositionSide</span></dt><dd><p>The position side to flatten.</p>
+<dd class="field-odd"><dl>
+<dt><strong>side</strong><span class="classifier">PositionSide {<code class="docutils literal notranslate"><span class="pre">LONG</span></code>, <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>}</span></dt><dd><p>The position side to flatten.</p>
 </dd>
 </dl>
 </dd>
@@ -943,6 +919,17 @@ The possible states of completed orders include;</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.last_trade_id">
+<span class="sig-name descname"><span class="pre">last_trade_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.last_trade_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The orders last trade ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>TradeId</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.leaves_qty">
 <span class="sig-name descname"><span class="pre">leaves_qty</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.leaves_qty" title="Permalink to this definition">¶</a></dt>
 <dd><p>The order total leaves quantity.</p>
@@ -957,10 +944,10 @@ The possible states of completed orders include;</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.opposite_side">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">opposite_side</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">side</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">OrderSide</span></span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.opposite_side" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the opposite order side from the given side.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>side</strong><span class="classifier">OrderSide</span></dt><dd><p>The original order side.</p>
+<dd class="field-odd"><dl>
+<dt><strong>side</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The original order side.</p>
 </dd>
 </dl>
 </dd>
@@ -1111,6 +1098,19 @@ The possible states of completed orders include;</p>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt>dict[str, object]</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.market.MarketOrder.trade_ids">
+<span class="sig-name descname"><span class="pre">trade_ids</span></span><a class="headerlink" href="#nautilus_trader.model.orders.market.MarketOrder.trade_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>The trade IDs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>list[TradeId]</dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -1285,7 +1285,7 @@ contain any arbitrary delimiter if required.</p>
 </dd>
 <dt>InvalidStateTrigger</dt><dd><p>If <cite>event</cite> is not a valid trigger from the current order status.</p>
 </dd>
-<dt>KeyError</dt><dd><p>If <cite>event</cite> is <cite>OrderFilled</cite> and <cite>event.execution_id</cite> already applied to the order.</p>
+<dt>KeyError</dt><dd><p>If <cite>event</cite> is <cite>OrderFilled</cite> and <cite>event.trade_id</cite> already applied to the order.</p>
 </dd>
 </dl>
 </dd>
@@ -1385,30 +1385,6 @@ contain any arbitrary delimiter if required.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.execution_id">
-<span class="sig-name descname"><span class="pre">execution_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.execution_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The orders last execution ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>ExecutionId</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.execution_ids">
-<span class="sig-name descname"><span class="pre">execution_ids</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.execution_ids" title="Permalink to this definition">¶</a></dt>
-<dd><p>The execution IDs.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>list[ExecutionId]</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.expire_time">
 <span class="sig-name descname"><span class="pre">expire_time</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.expire_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>The order expire time.</p>
@@ -1445,10 +1421,10 @@ contain any arbitrary delimiter if required.</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.flatten_side">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flatten_side</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">PositionSide</span> <span class="pre">side</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">OrderSide</span></span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.flatten_side" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the order side needed to flatten a position from the given side.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>side</strong><span class="classifier">PositionSide</span></dt><dd><p>The position side to flatten.</p>
+<dd class="field-odd"><dl>
+<dt><strong>side</strong><span class="classifier">PositionSide {<code class="docutils literal notranslate"><span class="pre">LONG</span></code>, <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>}</span></dt><dd><p>The position side to flatten.</p>
 </dd>
 </dl>
 </dd>
@@ -1754,6 +1730,17 @@ The possible states of completed orders include;</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.last_trade_id">
+<span class="sig-name descname"><span class="pre">last_trade_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.last_trade_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The orders last trade ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>TradeId</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.leaves_qty">
 <span class="sig-name descname"><span class="pre">leaves_qty</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.leaves_qty" title="Permalink to this definition">¶</a></dt>
 <dd><p>The order total leaves quantity.</p>
@@ -1779,10 +1766,10 @@ The possible states of completed orders include;</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.opposite_side">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">opposite_side</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">side</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">OrderSide</span></span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.opposite_side" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the opposite order side from the given side.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>side</strong><span class="classifier">OrderSide</span></dt><dd><p>The original order side.</p>
+<dd class="field-odd"><dl>
+<dt><strong>side</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The original order side.</p>
 </dd>
 </dl>
 </dd>
@@ -1944,6 +1931,19 @@ The possible states of completed orders include;</p>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt>dict[str, object]</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.limit.LimitOrder.trade_ids">
+<span class="sig-name descname"><span class="pre">trade_ids</span></span><a class="headerlink" href="#nautilus_trader.model.orders.limit.LimitOrder.trade_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>The trade IDs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>list[TradeId]</dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -2129,7 +2129,7 @@ contain any arbitrary delimiter if required.</p>
 </dd>
 <dt>InvalidStateTrigger</dt><dd><p>If <cite>event</cite> is not a valid trigger from the current order status.</p>
 </dd>
-<dt>KeyError</dt><dd><p>If <cite>event</cite> is <cite>OrderFilled</cite> and <cite>event.execution_id</cite> already applied to the order.</p>
+<dt>KeyError</dt><dd><p>If <cite>event</cite> is <cite>OrderFilled</cite> and <cite>event.trade_id</cite> already applied to the order.</p>
 </dd>
 </dl>
 </dd>
@@ -2218,30 +2218,6 @@ contain any arbitrary delimiter if required.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.execution_id">
-<span class="sig-name descname"><span class="pre">execution_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.execution_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The orders last execution ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>ExecutionId</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.execution_ids">
-<span class="sig-name descname"><span class="pre">execution_ids</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.execution_ids" title="Permalink to this definition">¶</a></dt>
-<dd><p>The execution IDs.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>list[ExecutionId]</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.expire_time">
 <span class="sig-name descname"><span class="pre">expire_time</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.expire_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>The order expire time.</p>
@@ -2278,10 +2254,10 @@ contain any arbitrary delimiter if required.</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.flatten_side">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flatten_side</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">PositionSide</span> <span class="pre">side</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">OrderSide</span></span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.flatten_side" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the order side needed to flatten a position from the given side.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>side</strong><span class="classifier">PositionSide</span></dt><dd><p>The position side to flatten.</p>
+<dd class="field-odd"><dl>
+<dt><strong>side</strong><span class="classifier">PositionSide {<code class="docutils literal notranslate"><span class="pre">LONG</span></code>, <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>}</span></dt><dd><p>The position side to flatten.</p>
 </dd>
 </dl>
 </dd>
@@ -2576,6 +2552,17 @@ The possible states of completed orders include;</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.last_trade_id">
+<span class="sig-name descname"><span class="pre">last_trade_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.last_trade_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The orders last trade ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>TradeId</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.leaves_qty">
 <span class="sig-name descname"><span class="pre">leaves_qty</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.leaves_qty" title="Permalink to this definition">¶</a></dt>
 <dd><p>The order total leaves quantity.</p>
@@ -2601,10 +2588,10 @@ The possible states of completed orders include;</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.opposite_side">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">opposite_side</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">side</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">OrderSide</span></span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.opposite_side" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the opposite order side from the given side.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>side</strong><span class="classifier">OrderSide</span></dt><dd><p>The original order side.</p>
+<dd class="field-odd"><dl>
+<dt><strong>side</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The original order side.</p>
 </dd>
 </dl>
 </dd>
@@ -2766,6 +2753,19 @@ The possible states of completed orders include;</p>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt>dict[str, object]</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_market.StopMarketOrder.trade_ids">
+<span class="sig-name descname"><span class="pre">trade_ids</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_market.StopMarketOrder.trade_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>The trade IDs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>list[TradeId]</dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -2961,7 +2961,7 @@ contain any arbitrary delimiter if required.</p>
 </dd>
 <dt>InvalidStateTrigger</dt><dd><p>If <cite>event</cite> is not a valid trigger from the current order status.</p>
 </dd>
-<dt>KeyError</dt><dd><p>If <cite>event</cite> is <cite>OrderFilled</cite> and <cite>event.execution_id</cite> already applied to the order.</p>
+<dt>KeyError</dt><dd><p>If <cite>event</cite> is <cite>OrderFilled</cite> and <cite>event.trade_id</cite> already applied to the order.</p>
 </dd>
 </dl>
 </dd>
@@ -3061,30 +3061,6 @@ contain any arbitrary delimiter if required.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.execution_id">
-<span class="sig-name descname"><span class="pre">execution_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.execution_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The orders last execution ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>ExecutionId</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.execution_ids">
-<span class="sig-name descname"><span class="pre">execution_ids</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.execution_ids" title="Permalink to this definition">¶</a></dt>
-<dd><p>The execution IDs.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>list[ExecutionId]</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.expire_time">
 <span class="sig-name descname"><span class="pre">expire_time</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.expire_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>The order expire time.</p>
@@ -3121,10 +3097,10 @@ contain any arbitrary delimiter if required.</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.flatten_side">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flatten_side</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">PositionSide</span> <span class="pre">side</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">OrderSide</span></span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.flatten_side" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the order side needed to flatten a position from the given side.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>side</strong><span class="classifier">PositionSide</span></dt><dd><p>The position side to flatten.</p>
+<dd class="field-odd"><dl>
+<dt><strong>side</strong><span class="classifier">PositionSide {<code class="docutils literal notranslate"><span class="pre">LONG</span></code>, <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>}</span></dt><dd><p>The position side to flatten.</p>
 </dd>
 </dl>
 </dd>
@@ -3441,6 +3417,17 @@ The possible states of completed orders include;</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.last_trade_id">
+<span class="sig-name descname"><span class="pre">last_trade_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.last_trade_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The orders last trade ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>TradeId</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.leaves_qty">
 <span class="sig-name descname"><span class="pre">leaves_qty</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.leaves_qty" title="Permalink to this definition">¶</a></dt>
 <dd><p>The order total leaves quantity.</p>
@@ -3466,10 +3453,10 @@ The possible states of completed orders include;</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.opposite_side">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">opposite_side</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">side</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">OrderSide</span></span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.opposite_side" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the opposite order side from the given side.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>side</strong><span class="classifier">OrderSide</span></dt><dd><p>The original order side.</p>
+<dd class="field-odd"><dl>
+<dt><strong>side</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The original order side.</p>
 </dd>
 </dl>
 </dd>
@@ -3631,6 +3618,19 @@ The possible states of completed orders include;</p>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt>dict[str, object]</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.stop_limit.StopLimitOrder.trade_ids">
+<span class="sig-name descname"><span class="pre">trade_ids</span></span><a class="headerlink" href="#nautilus_trader.model.orders.stop_limit.StopLimitOrder.trade_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>The trade IDs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>list[TradeId]</dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -3864,7 +3864,7 @@ The possible states of completed orders include;</p>
 </dd>
 <dt>InvalidStateTrigger</dt><dd><p>If <cite>event</cite> is not a valid trigger from the current order status.</p>
 </dd>
-<dt>KeyError</dt><dd><p>If <cite>event</cite> is <cite>OrderFilled</cite> and <cite>event.execution_id</cite> already applied to the order.</p>
+<dt>KeyError</dt><dd><p>If <cite>event</cite> is <cite>OrderFilled</cite> and <cite>event.trade_id</cite> already applied to the order.</p>
 </dd>
 </dl>
 </dd>
@@ -3953,30 +3953,6 @@ The possible states of completed orders include;</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.base.Order.execution_id">
-<span class="sig-name descname"><span class="pre">execution_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.base.Order.execution_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The orders last execution ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>ExecutionId</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.base.Order.execution_ids">
-<span class="sig-name descname"><span class="pre">execution_ids</span></span><a class="headerlink" href="#nautilus_trader.model.orders.base.Order.execution_ids" title="Permalink to this definition">¶</a></dt>
-<dd><p>The execution IDs.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>list[ExecutionId]</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.base.Order.filled_qty">
 <span class="sig-name descname"><span class="pre">filled_qty</span></span><a class="headerlink" href="#nautilus_trader.model.orders.base.Order.filled_qty" title="Permalink to this definition">¶</a></dt>
 <dd><p>The order total filled quantity.</p>
@@ -3991,10 +3967,10 @@ The possible states of completed orders include;</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.base.Order.flatten_side">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flatten_side</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">PositionSide</span> <span class="pre">side</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">OrderSide</span></span></span><a class="headerlink" href="#nautilus_trader.model.orders.base.Order.flatten_side" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the order side needed to flatten a position from the given side.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>side</strong><span class="classifier">PositionSide</span></dt><dd><p>The position side to flatten.</p>
+<dd class="field-odd"><dl>
+<dt><strong>side</strong><span class="classifier">PositionSide {<code class="docutils literal notranslate"><span class="pre">LONG</span></code>, <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>}</span></dt><dd><p>The position side to flatten.</p>
 </dd>
 </dl>
 </dd>
@@ -4289,6 +4265,17 @@ The possible states of completed orders include;</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.base.Order.last_trade_id">
+<span class="sig-name descname"><span class="pre">last_trade_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.base.Order.last_trade_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The orders last trade ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>TradeId</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.base.Order.leaves_qty">
 <span class="sig-name descname"><span class="pre">leaves_qty</span></span><a class="headerlink" href="#nautilus_trader.model.orders.base.Order.leaves_qty" title="Permalink to this definition">¶</a></dt>
 <dd><p>The order total leaves quantity.</p>
@@ -4303,10 +4290,10 @@ The possible states of completed orders include;</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.base.Order.opposite_side">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">opposite_side</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">side</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">OrderSide</span></span></span><a class="headerlink" href="#nautilus_trader.model.orders.base.Order.opposite_side" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the opposite order side from the given side.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>side</strong><span class="classifier">OrderSide</span></dt><dd><p>The original order side.</p>
+<dd class="field-odd"><dl>
+<dt><strong>side</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The original order side.</p>
 </dd>
 </dl>
 </dd>
@@ -4463,6 +4450,19 @@ The possible states of completed orders include;</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.base.Order.trade_ids">
+<span class="sig-name descname"><span class="pre">trade_ids</span></span><a class="headerlink" href="#nautilus_trader.model.orders.base.Order.trade_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>The trade IDs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>list[TradeId]</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.base.Order.trader_id">
 <span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.base.Order.trader_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>The trader ID associated with the position.</p>
@@ -4571,7 +4571,7 @@ The possible states of completed orders include;</p>
 </dd>
 <dt>InvalidStateTrigger</dt><dd><p>If <cite>event</cite> is not a valid trigger from the current order status.</p>
 </dd>
-<dt>KeyError</dt><dd><p>If <cite>event</cite> is <cite>OrderFilled</cite> and <cite>event.execution_id</cite> already applied to the order.</p>
+<dt>KeyError</dt><dd><p>If <cite>event</cite> is <cite>OrderFilled</cite> and <cite>event.trade_id</cite> already applied to the order.</p>
 </dd>
 </dl>
 </dd>
@@ -4660,30 +4660,6 @@ The possible states of completed orders include;</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.base.PassiveOrder.execution_id">
-<span class="sig-name descname"><span class="pre">execution_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.base.PassiveOrder.execution_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The orders last execution ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>ExecutionId</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.orders.base.PassiveOrder.execution_ids">
-<span class="sig-name descname"><span class="pre">execution_ids</span></span><a class="headerlink" href="#nautilus_trader.model.orders.base.PassiveOrder.execution_ids" title="Permalink to this definition">¶</a></dt>
-<dd><p>The execution IDs.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>list[ExecutionId]</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.base.PassiveOrder.expire_time">
 <span class="sig-name descname"><span class="pre">expire_time</span></span><a class="headerlink" href="#nautilus_trader.model.orders.base.PassiveOrder.expire_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>The order expire time.</p>
@@ -4720,10 +4696,10 @@ The possible states of completed orders include;</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.base.PassiveOrder.flatten_side">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flatten_side</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">PositionSide</span> <span class="pre">side</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">OrderSide</span></span></span><a class="headerlink" href="#nautilus_trader.model.orders.base.PassiveOrder.flatten_side" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the order side needed to flatten a position from the given side.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>side</strong><span class="classifier">PositionSide</span></dt><dd><p>The position side to flatten.</p>
+<dd class="field-odd"><dl>
+<dt><strong>side</strong><span class="classifier">PositionSide {<code class="docutils literal notranslate"><span class="pre">LONG</span></code>, <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>}</span></dt><dd><p>The position side to flatten.</p>
 </dd>
 </dl>
 </dd>
@@ -5018,6 +4994,17 @@ The possible states of completed orders include;</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.base.PassiveOrder.last_trade_id">
+<span class="sig-name descname"><span class="pre">last_trade_id</span></span><a class="headerlink" href="#nautilus_trader.model.orders.base.PassiveOrder.last_trade_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The orders last trade ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>TradeId</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.base.PassiveOrder.leaves_qty">
 <span class="sig-name descname"><span class="pre">leaves_qty</span></span><a class="headerlink" href="#nautilus_trader.model.orders.base.PassiveOrder.leaves_qty" title="Permalink to this definition">¶</a></dt>
 <dd><p>The order total leaves quantity.</p>
@@ -5043,10 +5030,10 @@ The possible states of completed orders include;</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.orders.base.PassiveOrder.opposite_side">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">opposite_side</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">side</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">OrderSide</span></span></span><a class="headerlink" href="#nautilus_trader.model.orders.base.PassiveOrder.opposite_side" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the opposite order side from the given side.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>side</strong><span class="classifier">OrderSide</span></dt><dd><p>The original order side.</p>
+<dd class="field-odd"><dl>
+<dt><strong>side</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The original order side.</p>
 </dd>
 </dl>
 </dd>
@@ -5208,6 +5195,19 @@ The possible states of completed orders include;</p>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt>dict[str, object]</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.orders.base.PassiveOrder.trade_ids">
+<span class="sig-name descname"><span class="pre">trade_ids</span></span><a class="headerlink" href="#nautilus_trader.model.orders.base.PassiveOrder.trade_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>The trade IDs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>list[TradeId]</dt><dd></dd>
 </dl>
 </dd>
 </dl>

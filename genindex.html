@@ -239,7 +239,7 @@
 </li>
         <li><a href="3_api_reference/execution.html#nautilus_trader.execution.client.ExecutionClient.account_id">(ExecutionClient attribute)</a>
 </li>
-        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionMassStatus.account_id">(ExecutionMassStatus attribute)</a>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.ExecutionMassStatus.account_id">(ExecutionMassStatus attribute)</a>
 </li>
         <li><a href="3_api_reference/adapters/ftx.html#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.account_id">(FTXExecutionClient attribute)</a>
 </li>
@@ -454,8 +454,6 @@
         <li><a href="3_api_reference/live.html#nautilus_trader.live.node_builder.TradingNodeBuilder.add_exec_client_factory">(TradingNodeBuilder method)</a>
 </li>
       </ul></li>
-      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionMassStatus.add_exec_reports">add_exec_reports() (ExecutionMassStatus method)</a>
-</li>
       <li><a href="3_api_reference/backtest.html#nautilus_trader.backtest.engine.BacktestEngine.add_generic_data">add_generic_data() (BacktestEngine method)</a>
 </li>
       <li><a href="3_api_reference/backtest.html#nautilus_trader.backtest.engine.BacktestEngine.add_instrument">add_instrument() (BacktestEngine method)</a>
@@ -482,7 +480,7 @@
 </li>
       <li><a href="3_api_reference/backtest.html#nautilus_trader.backtest.engine.BacktestEngine.add_order_book_data">add_order_book_data() (BacktestEngine method)</a>
 </li>
-      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionMassStatus.add_order_report">add_order_report() (ExecutionMassStatus method)</a>
+      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.ExecutionMassStatus.add_order_report">add_order_report() (ExecutionMassStatus method)</a>
 </li>
       <li><a href="3_api_reference/cache.html#nautilus_trader.cache.cache.Cache.add_position">add_position() (Cache method)</a>
 
@@ -492,11 +490,11 @@
         <li><a href="3_api_reference/infrastructure.html#nautilus_trader.infrastructure.cache.RedisCacheDatabase.add_position">(RedisCacheDatabase method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="3_api_reference/cache.html#nautilus_trader.cache.cache.Cache.add_position_id">add_position_id() (Cache method)</a>
 </li>
-      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionMassStatus.add_position_report">add_position_report() (ExecutionMassStatus method)</a>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.ExecutionMassStatus.add_position_report">add_position_report() (ExecutionMassStatus method)</a>
 </li>
       <li><a href="3_api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.add_positions">add_positions() (PerformanceAnalyzer method)</a>
 </li>
@@ -525,6 +523,8 @@
       <li><a href="3_api_reference/backtest.html#nautilus_trader.backtest.engine.BacktestEngine.add_ticks">add_ticks() (BacktestEngine method)</a>
 </li>
       <li><a href="3_api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.add_trade">add_trade() (PerformanceAnalyzer method)</a>
+</li>
+      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.ExecutionMassStatus.add_trade_reports">add_trade_reports() (ExecutionMassStatus method)</a>
 </li>
       <li><a href="3_api_reference/cache.html#nautilus_trader.cache.cache.Cache.add_trade_tick">add_trade_tick() (Cache method)</a>
 </li>
@@ -732,6 +732,8 @@
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.market.MarketOrder.avg_px">(MarketOrder attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.Order.avg_px">(Order attribute)</a>
+</li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.avg_px">(OrderStatusReport attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.PassiveOrder.avg_px">(PassiveOrder attribute)</a>
 </li>
@@ -1579,7 +1581,7 @@
 </li>
         <li><a href="3_api_reference/data.html#nautilus_trader.data.messages.DataResponse.client_id">(DataResponse attribute)</a>
 </li>
-        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionMassStatus.client_id">(ExecutionMassStatus attribute)</a>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.ExecutionMassStatus.client_id">(ExecutionMassStatus attribute)</a>
 </li>
         <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.batching.FileMeta.client_id">(FileMeta attribute)</a>
 </li>
@@ -1591,8 +1593,6 @@
       <li><a href="3_api_reference/model/commands.html#nautilus_trader.model.commands.trading.CancelOrder.client_order_id">client_order_id (CancelOrder attribute)</a>
 
       <ul>
-        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionReport.client_order_id">(ExecutionReport attribute)</a>
-</li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.limit.LimitOrder.client_order_id">(LimitOrder attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.market.MarketOrder.client_order_id">(MarketOrder attribute)</a>
@@ -1625,7 +1625,7 @@
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderRejected.client_order_id">(OrderRejected attribute)</a>
 </li>
-        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.OrderStatusReport.client_order_id">(OrderStatusReport attribute)</a>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.client_order_id">(OrderStatusReport attribute)</a>
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderSubmitted.client_order_id">(OrderSubmitted attribute)</a>
 </li>
@@ -1638,6 +1638,8 @@
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.client_order_id">(StopLimitOrder attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.client_order_id">(StopMarketOrder attribute)</a>
+</li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.TradeReport.client_order_id">(TradeReport attribute)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -1724,10 +1726,10 @@
         <li><a href="3_api_reference/risk.html#nautilus_trader.risk.engine.RiskEngine.command_count">(RiskEngine attribute)</a>
 </li>
       </ul></li>
-      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionReport.commission">commission (ExecutionReport attribute)</a>
+      <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderFilled.commission">commission (OrderFilled attribute)</a>
 
       <ul>
-        <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderFilled.commission">(OrderFilled attribute)</a>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.TradeReport.commission">(TradeReport attribute)</a>
 </li>
       </ul></li>
       <li><a href="3_api_reference/accounting.html#nautilus_trader.accounting.accounts.cash.CashAccount.commission">commission() (CashAccount method)</a>
@@ -1828,6 +1830,8 @@
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.Order.contingency">(Order attribute)</a>
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderInitialized.contingency">(OrderInitialized attribute)</a>
+</li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.contingency">(OrderStatusReport attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.PassiveOrder.contingency">(PassiveOrder attribute)</a>
 </li>
@@ -2311,6 +2315,8 @@
       <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.limit.LimitOrder.display_qty">display_qty (LimitOrder attribute)</a>
 
       <ul>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.display_qty">(OrderStatusReport attribute)</a>
+</li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.display_qty">(StopLimitOrder attribute)</a>
 </li>
       </ul></li>
@@ -2486,15 +2492,13 @@
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.events">(StopMarketOrder attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="3_api_reference/common.html#nautilus_trader.common.logging.LoggerAdapter.exception">exception() (LoggerAdapter method)</a>
 </li>
       <li><a href="3_api_reference/accounting.html#nautilus_trader.accounting.calculators.ExchangeRateCalculator">ExchangeRateCalculator (class in nautilus_trader.accounting.calculators)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="3_api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.exec_client">exec_client (SimulatedExchange attribute)</a>
-</li>
-      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionMassStatus.exec_reports">exec_reports() (ExecutionMassStatus method)</a>
 </li>
       <li><a href="3_api_reference/execution.html#nautilus_trader.execution.config.ExecEngineConfig">ExecEngineConfig (class in nautilus_trader.execution.config)</a>
 </li>
@@ -2512,47 +2516,11 @@
         <li><a href="3_api_reference/risk.html#nautilus_trader.risk.engine.RiskEngine.execute">(RiskEngine method)</a>
 </li>
       </ul></li>
-      <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.limit.LimitOrder.execution_id">execution_id (LimitOrder attribute)</a>
-
-      <ul>
-        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.market.MarketOrder.execution_id">(MarketOrder attribute)</a>
-</li>
-        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.Order.execution_id">(Order attribute)</a>
-</li>
-        <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderFilled.execution_id">(OrderFilled attribute)</a>
-</li>
-        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.PassiveOrder.execution_id">(PassiveOrder attribute)</a>
-</li>
-        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.execution_id">(StopLimitOrder attribute)</a>
-</li>
-        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.execution_id">(StopMarketOrder attribute)</a>
-</li>
-      </ul></li>
-      <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.limit.LimitOrder.execution_ids">execution_ids (LimitOrder attribute)</a>
-
-      <ul>
-        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.market.MarketOrder.execution_ids">(MarketOrder attribute)</a>
-</li>
-        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.Order.execution_ids">(Order attribute)</a>
-</li>
-        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.PassiveOrder.execution_ids">(PassiveOrder attribute)</a>
-</li>
-        <li><a href="3_api_reference/model/position.html#nautilus_trader.model.position.Position.execution_ids">(Position attribute)</a>
-</li>
-        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.execution_ids">(StopLimitOrder attribute)</a>
-</li>
-        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.execution_ids">(StopMarketOrder attribute)</a>
-</li>
-      </ul></li>
       <li><a href="3_api_reference/execution.html#nautilus_trader.execution.client.ExecutionClient">ExecutionClient (class in nautilus_trader.execution.client)</a>
 </li>
       <li><a href="3_api_reference/execution.html#nautilus_trader.execution.engine.ExecutionEngine">ExecutionEngine (class in nautilus_trader.execution.engine)</a>
 </li>
-      <li><a href="3_api_reference/model/identifiers.html#nautilus_trader.model.identifiers.ExecutionId">ExecutionId (class in nautilus_trader.model.identifiers)</a>
-</li>
-      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionMassStatus">ExecutionMassStatus (class in nautilus_trader.execution.messages)</a>
-</li>
-      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionReport">ExecutionReport (class in nautilus_trader.execution.messages)</a>
+      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.ExecutionMassStatus">ExecutionMassStatus (class in nautilus_trader.execution.reports)</a>
 </li>
       <li><a href="3_api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.expectancy">expectancy() (PerformanceAnalyzer method)</a>
 </li>
@@ -2679,7 +2647,7 @@
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.Order.filled_qty">(Order attribute)</a>
 </li>
-        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.OrderStatusReport.filled_qty">(OrderStatusReport attribute)</a>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.filled_qty">(OrderStatusReport attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.PassiveOrder.filled_qty">(PassiveOrder attribute)</a>
 </li>
@@ -2948,16 +2916,6 @@
         <li><a href="3_api_reference/live.html#nautilus_trader.live.execution_client.LiveExecutionClient.generate_account_state">(LiveExecutionClient method)</a>
 </li>
       </ul></li>
-      <li><a href="3_api_reference/adapters/betfair.html#nautilus_trader.adapters.betfair.execution.BetfairExecutionClient.generate_exec_reports">generate_exec_reports() (BetfairExecutionClient method)</a>
-
-      <ul>
-        <li><a href="3_api_reference/adapters/binance.html#nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_exec_reports">(BinanceSpotExecutionClient method)</a>
-</li>
-        <li><a href="3_api_reference/adapters/ftx.html#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.generate_exec_reports">(FTXExecutionClient method)</a>
-</li>
-        <li><a href="3_api_reference/live.html#nautilus_trader.live.execution_client.LiveExecutionClient.generate_exec_reports">(LiveExecutionClient method)</a>
-</li>
-      </ul></li>
       <li><a href="3_api_reference/adapters/betfair.html#nautilus_trader.adapters.betfair.execution.BetfairExecutionClient.generate_mass_status">generate_mass_status() (BetfairExecutionClient method)</a>
 
       <ul>
@@ -3162,6 +3120,16 @@
 
       <ul>
         <li><a href="3_api_reference/trading.html#nautilus_trader.trading.trader.Trader.generate_positions_report">(Trader method)</a>
+</li>
+      </ul></li>
+      <li><a href="3_api_reference/adapters/betfair.html#nautilus_trader.adapters.betfair.execution.BetfairExecutionClient.generate_trade_reports">generate_trade_reports() (BetfairExecutionClient method)</a>
+
+      <ul>
+        <li><a href="3_api_reference/adapters/binance.html#nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_trade_reports">(BinanceSpotExecutionClient method)</a>
+</li>
+        <li><a href="3_api_reference/adapters/ftx.html#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.generate_trade_reports">(FTXExecutionClient method)</a>
+</li>
+        <li><a href="3_api_reference/live.html#nautilus_trader.live.execution_client.LiveExecutionClient.generate_trade_reports">(LiveExecutionClient method)</a>
 </li>
       </ul></li>
       <li><a href="3_api_reference/model/data.html#nautilus_trader.model.data.base.GenericData">GenericData (class in nautilus_trader.model.data.base)</a>
@@ -3881,8 +3849,6 @@
 </li>
         <li><a href="3_api_reference/execution.html#nautilus_trader.execution.engine.ExecutionEngine.id">(ExecutionEngine attribute)</a>
 </li>
-        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionReport.id">(ExecutionReport attribute)</a>
-</li>
         <li><a href="3_api_reference/adapters/ftx.html#nautilus_trader.adapters.ftx.data.FTXDataClient.id">(FTXDataClient attribute)</a>
 </li>
         <li><a href="3_api_reference/adapters/ftx.html#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.id">(FTXExecutionClient attribute)</a>
@@ -4241,6 +4207,8 @@
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderRejected.instrument_id">(OrderRejected attribute)</a>
 </li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.instrument_id">(OrderStatusReport attribute)</a>
+</li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderSubmitted.instrument_id">(OrderSubmitted attribute)</a>
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderTriggered.instrument_id">(OrderTriggered attribute)</a>
@@ -4259,7 +4227,7 @@
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.position.PositionOpened.instrument_id">(PositionOpened attribute)</a>
 </li>
-        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.PositionStatusReport.instrument_id">(PositionStatusReport attribute)</a>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.PositionStatusReport.instrument_id">(PositionStatusReport attribute)</a>
 </li>
         <li><a href="3_api_reference/model/data.html#nautilus_trader.model.data.tick.QuoteTick.instrument_id">(QuoteTick attribute)</a>
 </li>
@@ -4282,6 +4250,8 @@
         <li><a href="3_api_reference/model/data.html#nautilus_trader.model.data.tick.Tick.instrument_id">(Tick attribute)</a>
 </li>
         <li><a href="3_api_reference/model/data.html#nautilus_trader.model.data.ticker.Ticker.instrument_id">(Ticker attribute)</a>
+</li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.TradeReport.instrument_id">(TradeReport attribute)</a>
 </li>
         <li><a href="3_api_reference/model/data.html#nautilus_trader.model.data.tick.TradeTick.instrument_id">(TradeTick attribute)</a>
 </li>
@@ -4883,6 +4853,8 @@
       <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.limit.LimitOrder.is_post_only">is_post_only (LimitOrder attribute)</a>
 
       <ul>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.is_post_only">(OrderStatusReport attribute)</a>
+</li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_post_only">(StopLimitOrder attribute)</a>
 </li>
       </ul></li>
@@ -4894,6 +4866,8 @@
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.market.MarketOrder.is_reduce_only">(MarketOrder attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.Order.is_reduce_only">(Order attribute)</a>
+</li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.is_reduce_only">(OrderStatusReport attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.PassiveOrder.is_reduce_only">(PassiveOrder attribute)</a>
 </li>
@@ -5186,13 +5160,9 @@
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.last_event">(StopMarketOrder attribute)</a>
 </li>
       </ul></li>
-      <li><a href="3_api_reference/model/position.html#nautilus_trader.model.position.Position.last_execution_id">last_execution_id (Position attribute)</a>
-</li>
-      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionReport.last_px">last_px (ExecutionReport attribute)</a>
+      <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderFilled.last_px">last_px (OrderFilled attribute)</a>
 
       <ul>
-        <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderFilled.last_px">(OrderFilled attribute)</a>
-</li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.position.PositionChanged.last_px">(PositionChanged attribute)</a>
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.position.PositionClosed.last_px">(PositionClosed attribute)</a>
@@ -5201,12 +5171,12 @@
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.position.PositionOpened.last_px">(PositionOpened attribute)</a>
 </li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.TradeReport.last_px">(TradeReport attribute)</a>
+</li>
       </ul></li>
-      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionReport.last_qty">last_qty (ExecutionReport attribute)</a>
+      <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderFilled.last_qty">last_qty (OrderFilled attribute)</a>
 
       <ul>
-        <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderFilled.last_qty">(OrderFilled attribute)</a>
-</li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.position.PositionChanged.last_qty">(PositionChanged attribute)</a>
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.position.PositionClosed.last_qty">(PositionClosed attribute)</a>
@@ -5214,6 +5184,24 @@
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.position.PositionEvent.last_qty">(PositionEvent attribute)</a>
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.position.PositionOpened.last_qty">(PositionOpened attribute)</a>
+</li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.TradeReport.last_qty">(TradeReport attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.limit.LimitOrder.last_trade_id">last_trade_id (LimitOrder attribute)</a>
+
+      <ul>
+        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.market.MarketOrder.last_trade_id">(MarketOrder attribute)</a>
+</li>
+        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.Order.last_trade_id">(Order attribute)</a>
+</li>
+        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.PassiveOrder.last_trade_id">(PassiveOrder attribute)</a>
+</li>
+        <li><a href="3_api_reference/model/position.html#nautilus_trader.model.position.Position.last_trade_id">(Position attribute)</a>
+</li>
+        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.last_trade_id">(StopLimitOrder attribute)</a>
+</li>
+        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.last_trade_id">(StopMarketOrder attribute)</a>
 </li>
       </ul></li>
       <li><a href="3_api_reference/model/orderbook.html#nautilus_trader.model.orderbook.book.L1OrderBook.last_update_id">last_update_id (L1OrderBook attribute)</a>
@@ -5242,6 +5230,8 @@
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.market.MarketOrder.leaves_qty">(MarketOrder attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.Order.leaves_qty">(Order attribute)</a>
+</li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.leaves_qty">(OrderStatusReport attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.PassiveOrder.leaves_qty">(PassiveOrder attribute)</a>
 </li>
@@ -5272,11 +5262,9 @@
 </li>
       <li><a href="3_api_reference/persistence.html#nautilus_trader.persistence.external.readers.LinePreprocessor">LinePreprocessor (class in nautilus_trader.persistence.external.readers)</a>
 </li>
-      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionReport.liquidity_side">liquidity_side (ExecutionReport attribute)</a>
+      <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.limit.LimitOrder.liquidity_side">liquidity_side (LimitOrder attribute)</a>
 
       <ul>
-        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.limit.LimitOrder.liquidity_side">(LimitOrder attribute)</a>
-</li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderFilled.liquidity_side">(OrderFilled attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.PassiveOrder.liquidity_side">(PassiveOrder attribute)</a>
@@ -5284,6 +5272,8 @@
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.liquidity_side">(StopLimitOrder attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.liquidity_side">(StopMarketOrder attribute)</a>
+</li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.TradeReport.liquidity_side">(TradeReport attribute)</a>
 </li>
       </ul></li>
       <li><a href="3_api_reference/model/commands.html#nautilus_trader.model.commands.trading.SubmitOrderList.list">list (SubmitOrderList attribute)</a>
@@ -5324,6 +5314,8 @@
 </li>
       <li><a href="3_api_reference/live.html#nautilus_trader.live.risk_engine.LiveRiskEngine">LiveRiskEngine (class in nautilus_trader.live.risk_engine)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="3_api_reference/live.html#nautilus_trader.live.config.LiveRiskEngineConfig">LiveRiskEngineConfig (class in nautilus_trader.live.config)</a>
 </li>
       <li><a href="3_api_reference/common.html#nautilus_trader.common.timer.LiveTimer">LiveTimer (class in nautilus_trader.common.timer)</a>
@@ -5354,8 +5346,6 @@
         <li><a href="3_api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.load">(TradingStrategy method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="3_api_reference/cache.html#nautilus_trader.cache.cache.Cache.load_account">load_account() (Cache method)</a>
 
       <ul>
@@ -6052,7 +6042,7 @@
 </li>
         <li><a href="3_api_reference/execution.html#module-nautilus_trader.execution.engine">nautilus_trader.execution.engine</a>
 </li>
-        <li><a href="3_api_reference/execution.html#module-nautilus_trader.execution.messages">nautilus_trader.execution.messages</a>
+        <li><a href="3_api_reference/execution.html#module-nautilus_trader.execution.reports">nautilus_trader.execution.reports</a>
 </li>
         <li><a href="3_api_reference/indicators.html#module-nautilus_trader.indicators">nautilus_trader.indicators</a>
 </li>
@@ -7050,10 +7040,10 @@
 </li>
       </ul></li>
       <li>
-    nautilus_trader.execution.messages
+    nautilus_trader.execution.reports
 
       <ul>
-        <li><a href="3_api_reference/execution.html#module-nautilus_trader.execution.messages">module</a>
+        <li><a href="3_api_reference/execution.html#module-nautilus_trader.execution.reports">module</a>
 </li>
       </ul></li>
       <li>
@@ -8212,14 +8202,14 @@
 </li>
       <li><a href="3_api_reference/adapters/betfair.html#nautilus_trader.adapters.betfair.parsing.order_cancel_to_betfair">order_cancel_to_betfair() (in module nautilus_trader.adapters.betfair.parsing)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="3_api_reference/cache.html#nautilus_trader.cache.cache.Cache.order_exists">order_exists() (Cache method)</a>
 
       <ul>
         <li><a href="3_api_reference/cache.html#nautilus_trader.cache.base.CacheFacade.order_exists">(CacheFacade method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="3_api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.order_factory">order_factory (TradingStrategy attribute)</a>
 </li>
       <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.limit.LimitOrder.order_list_id">order_list_id (LimitOrder attribute)</a>
@@ -8231,6 +8221,8 @@
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderInitialized.order_list_id">(OrderInitialized attribute)</a>
 </li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.order_list_id">(OrderStatusReport attribute)</a>
+</li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.PassiveOrder.order_list_id">(PassiveOrder attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.order_list_id">(StopLimitOrder attribute)</a>
@@ -8238,16 +8230,26 @@
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.order_list_id">(StopMarketOrder attribute)</a>
 </li>
       </ul></li>
-      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionMassStatus.order_reports">order_reports() (ExecutionMassStatus method)</a>
+      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.ExecutionMassStatus.order_reports">order_reports() (ExecutionMassStatus method)</a>
 </li>
       <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderFilled.order_side">order_side (OrderFilled attribute)</a>
+
+      <ul>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.order_side">(OrderStatusReport attribute)</a>
 </li>
-      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.OrderStatusReport.order_status">order_status (OrderStatusReport attribute)</a>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.TradeReport.order_side">(TradeReport attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.order_status">order_status (OrderStatusReport attribute)</a>
 </li>
       <li><a href="3_api_reference/adapters/betfair.html#nautilus_trader.adapters.betfair.parsing.order_submit_to_betfair">order_submit_to_betfair() (in module nautilus_trader.adapters.betfair.parsing)</a>
 </li>
       <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderFilled.order_type">order_type (OrderFilled attribute)</a>
+
+      <ul>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.order_type">(OrderStatusReport attribute)</a>
 </li>
+      </ul></li>
       <li><a href="3_api_reference/adapters/betfair.html#nautilus_trader.adapters.betfair.parsing.order_update_to_betfair">order_update_to_betfair() (in module nautilus_trader.adapters.betfair.parsing)</a>
 </li>
       <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderAccepted">OrderAccepted (class in nautilus_trader.model.events.order)</a>
@@ -8362,7 +8364,7 @@
         <li><a href="3_api_reference/cache.html#nautilus_trader.cache.base.CacheFacade.orders_working_count">(CacheFacade method)</a>
 </li>
       </ul></li>
-      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.OrderStatusReport">OrderStatusReport (class in nautilus_trader.execution.messages)</a>
+      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport">OrderStatusReport (class in nautilus_trader.execution.reports)</a>
 </li>
       <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderSubmitted">OrderSubmitted (class in nautilus_trader.model.events.order)</a>
 </li>
@@ -8594,7 +8596,9 @@
         <li><a href="3_api_reference/cache.html#nautilus_trader.cache.base.CacheFacade.position_open_ids">(CacheFacade method)</a>
 </li>
       </ul></li>
-      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionMassStatus.position_reports">position_reports() (ExecutionMassStatus method)</a>
+      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.ExecutionMassStatus.position_reports">position_reports() (ExecutionMassStatus method)</a>
+</li>
+      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.PositionStatusReport.position_side">position_side (PositionStatusReport attribute)</a>
 </li>
       <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.position.PositionChanged">PositionChanged (class in nautilus_trader.model.events.position)</a>
 </li>
@@ -8648,7 +8652,7 @@
       </ul></li>
       <li><a href="3_api_reference/risk.html#nautilus_trader.risk.sizing.PositionSizer">PositionSizer (class in nautilus_trader.risk.sizing)</a>
 </li>
-      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.PositionStatusReport">PositionStatusReport (class in nautilus_trader.execution.messages)</a>
+      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.PositionStatusReport">PositionStatusReport (class in nautilus_trader.execution.reports)</a>
 </li>
       <li><a href="3_api_reference/network.html#nautilus_trader.network.http.HttpClient.post">post() (HttpClient method)</a>
 </li>
@@ -8712,6 +8716,8 @@
         <li><a href="3_api_reference/model/commands.html#nautilus_trader.model.commands.trading.ModifyOrder.price">(ModifyOrder attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orderbook.html#nautilus_trader.model.orderbook.data.Order.price">(Order attribute)</a>
+</li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.price">(OrderStatusReport attribute)</a>
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderUpdated.price">(OrderUpdated attribute)</a>
 </li>
@@ -8880,8 +8886,6 @@
         <li><a href="3_api_reference/common.html#nautilus_trader.common.queue.Queue.qsize">(Queue method)</a>
 </li>
       </ul></li>
-      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.PositionStatusReport.qty">qty (PositionStatusReport attribute)</a>
-</li>
       <li><a href="3_api_reference/model/objects.html#nautilus_trader.model.objects.Quantity">Quantity (class in nautilus_trader.model.objects)</a>
 </li>
       <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.limit.LimitOrder.quantity">quantity (LimitOrder attribute)</a>
@@ -8894,6 +8898,8 @@
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.Order.quantity">(Order attribute)</a>
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderInitialized.quantity">(OrderInitialized attribute)</a>
+</li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.quantity">(OrderStatusReport attribute)</a>
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderUpdated.quantity">(OrderUpdated attribute)</a>
 </li>
@@ -8908,6 +8914,8 @@
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.position.PositionEvent.quantity">(PositionEvent attribute)</a>
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.position.PositionOpened.quantity">(PositionOpened attribute)</a>
+</li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.PositionStatusReport.quantity">(PositionStatusReport attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.quantity">(StopLimitOrder attribute)</a>
 </li>
@@ -9151,6 +9159,8 @@
 </li>
       </ul></li>
       <li><a href="3_api_reference/trading.html#nautilus_trader.trading.strategy.TradingStrategy.registered_indicators">registered_indicators (TradingStrategy attribute)</a>
+</li>
+      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.reject_reason">reject_reason (OrderStatusReport attribute)</a>
 </li>
       <li><a href="3_api_reference/backtest.html#nautilus_trader.backtest.exchange.SimulatedExchange.reject_stop_orders">reject_stop_orders (SimulatedExchange attribute)</a>
 </li>
@@ -9682,8 +9692,6 @@
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.position.PositionEvent.side">(PositionEvent attribute)</a>
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.position.PositionOpened.side">(PositionOpened attribute)</a>
-</li>
-        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.PositionStatusReport.side">(PositionStatusReport attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.side">(StopLimitOrder attribute)</a>
 </li>
@@ -10793,6 +10801,8 @@
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderInitialized.time_in_force">(OrderInitialized attribute)</a>
 </li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.time_in_force">(OrderStatusReport attribute)</a>
+</li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.PassiveOrder.time_in_force">(PassiveOrder attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.time_in_force">(StopLimitOrder attribute)</a>
@@ -10998,7 +11008,31 @@
       </ul></li>
       <li><a href="3_api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.total_pnl_percentage">total_pnl_percentage() (PerformanceAnalyzer method)</a>
 </li>
-      <li><a href="3_api_reference/model/data.html#nautilus_trader.model.data.tick.TradeTick.trade_id">trade_id (TradeTick attribute)</a>
+      <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderFilled.trade_id">trade_id (OrderFilled attribute)</a>
+
+      <ul>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.TradeReport.trade_id">(TradeReport attribute)</a>
+</li>
+        <li><a href="3_api_reference/model/data.html#nautilus_trader.model.data.tick.TradeTick.trade_id">(TradeTick attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.limit.LimitOrder.trade_ids">trade_ids (LimitOrder attribute)</a>
+
+      <ul>
+        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.market.MarketOrder.trade_ids">(MarketOrder attribute)</a>
+</li>
+        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.Order.trade_ids">(Order attribute)</a>
+</li>
+        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.PassiveOrder.trade_ids">(PassiveOrder attribute)</a>
+</li>
+        <li><a href="3_api_reference/model/position.html#nautilus_trader.model.position.Position.trade_ids">(Position attribute)</a>
+</li>
+        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.trade_ids">(StopLimitOrder attribute)</a>
+</li>
+        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.trade_ids">(StopMarketOrder attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.ExecutionMassStatus.trade_reports">trade_reports() (ExecutionMassStatus method)</a>
 </li>
       <li><a href="3_api_reference/model/orderbook.html#nautilus_trader.model.orderbook.book.L1OrderBook.trade_side">trade_side() (L1OrderBook method)</a>
 
@@ -11034,6 +11068,8 @@
         <li><a href="3_api_reference/cache.html#nautilus_trader.cache.base.CacheFacade.trade_ticks">(CacheFacade method)</a>
 </li>
       </ul></li>
+      <li><a href="3_api_reference/model/identifiers.html#nautilus_trader.model.identifiers.TradeId">TradeId (class in nautilus_trader.model.identifiers)</a>
+</li>
       <li><a href="3_api_reference/backtest.html#nautilus_trader.backtest.engine.BacktestEngine.trader">trader (BacktestEngine attribute)</a>
 </li>
       <li><a href="3_api_reference/trading.html#nautilus_trader.trading.trader.Trader">Trader (class in nautilus_trader.trading.trader)</a>
@@ -11168,6 +11204,8 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.TradeReport">TradeReport (class in nautilus_trader.execution.reports)</a>
+</li>
       <li><a href="3_api_reference/model/identifiers.html#nautilus_trader.model.identifiers.TraderId">TraderId (class in nautilus_trader.model.identifiers)</a>
 </li>
       <li><a href="3_api_reference/model/data.html#nautilus_trader.model.data.tick.TradeTick">TradeTick (class in nautilus_trader.model.data.tick)</a>
@@ -11195,12 +11233,16 @@
       <li><a href="3_api_reference/model/commands.html#nautilus_trader.model.commands.trading.ModifyOrder.trigger">trigger (ModifyOrder attribute)</a>
 
       <ul>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.trigger">(OrderStatusReport attribute)</a>
+</li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderUpdated.trigger">(OrderUpdated attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.trigger">(StopLimitOrder attribute)</a>
 </li>
       </ul></li>
       <li><a href="3_api_reference/core.html#nautilus_trader.core.fsm.FiniteStateMachine.trigger">trigger() (FiniteStateMachine method)</a>
+</li>
+      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.ts_accepted">ts_accepted (OrderStatusReport attribute)</a>
 </li>
       <li><a href="3_api_reference/model/position.html#nautilus_trader.model.position.Position.ts_closed">ts_closed (Position attribute)</a>
 
@@ -11236,8 +11278,6 @@
         <li><a href="3_api_reference/model/instruments.html#nautilus_trader.model.instruments.equity.Equity.ts_event">(Equity attribute)</a>
 </li>
         <li><a href="3_api_reference/core.html#nautilus_trader.core.message.Event.ts_event">(Event attribute)</a>
-</li>
-        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionReport.ts_event">(ExecutionReport attribute)</a>
 </li>
         <li><a href="3_api_reference/adapters/ftx.html#nautilus_trader.adapters.ftx.data_types.FTXTicker.ts_event">(FTXTicker attribute)</a>
 </li>
@@ -11313,6 +11353,8 @@
 </li>
         <li><a href="3_api_reference/common.html#nautilus_trader.common.timer.TimeEvent.ts_event">(TimeEvent attribute)</a>
 </li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.TradeReport.ts_event">(TradeReport attribute)</a>
+</li>
         <li><a href="3_api_reference/model/data.html#nautilus_trader.model.data.tick.TradeTick.ts_event">(TradeTick attribute)</a>
 </li>
         <li><a href="3_api_reference/model/data.html#nautilus_trader.model.data.venue.VenueStatusUpdate.ts_event">(VenueStatusUpdate attribute)</a>
@@ -11355,9 +11397,7 @@
 </li>
         <li><a href="3_api_reference/core.html#nautilus_trader.core.message.Event.ts_init">(Event attribute)</a>
 </li>
-        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionMassStatus.ts_init">(ExecutionMassStatus attribute)</a>
-</li>
-        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionReport.ts_init">(ExecutionReport attribute)</a>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.ExecutionMassStatus.ts_init">(ExecutionMassStatus attribute)</a>
 </li>
         <li><a href="3_api_reference/adapters/ftx.html#nautilus_trader.adapters.ftx.data_types.FTXTicker.ts_init">(FTXTicker attribute)</a>
 </li>
@@ -11421,7 +11461,7 @@
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderRejected.ts_init">(OrderRejected attribute)</a>
 </li>
-        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.OrderStatusReport.ts_init">(OrderStatusReport attribute)</a>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.ts_init">(OrderStatusReport attribute)</a>
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderSubmitted.ts_init">(OrderSubmitted attribute)</a>
 </li>
@@ -11441,7 +11481,7 @@
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.position.PositionOpened.ts_init">(PositionOpened attribute)</a>
 </li>
-        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.PositionStatusReport.ts_init">(PositionStatusReport attribute)</a>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.PositionStatusReport.ts_init">(PositionStatusReport attribute)</a>
 </li>
         <li><a href="3_api_reference/model/data.html#nautilus_trader.model.data.tick.QuoteTick.ts_init">(QuoteTick attribute)</a>
 </li>
@@ -11466,6 +11506,8 @@
         <li><a href="3_api_reference/model/data.html#nautilus_trader.model.data.ticker.Ticker.ts_init">(Ticker attribute)</a>
 </li>
         <li><a href="3_api_reference/common.html#nautilus_trader.common.timer.TimeEvent.ts_init">(TimeEvent attribute)</a>
+</li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.TradeReport.ts_init">(TradeReport attribute)</a>
 </li>
         <li><a href="3_api_reference/model/data.html#nautilus_trader.model.data.tick.TradeTick.ts_init">(TradeTick attribute)</a>
 </li>
@@ -11493,9 +11535,13 @@
 </li>
         <li><a href="3_api_reference/model/orderbook.html#nautilus_trader.model.orderbook.book.OrderBook.ts_last">(OrderBook attribute)</a>
 </li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.ts_last">(OrderStatusReport attribute)</a>
+</li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.PassiveOrder.ts_last">(PassiveOrder attribute)</a>
 </li>
         <li><a href="3_api_reference/model/position.html#nautilus_trader.model.position.Position.ts_last">(Position attribute)</a>
+</li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.PositionStatusReport.ts_last">(PositionStatusReport attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orderbook.html#nautilus_trader.model.orderbook.simulated.SimulatedL1OrderBook.ts_last">(SimulatedL1OrderBook attribute)</a>
 </li>
@@ -12105,8 +12151,6 @@
 </li>
         <li><a href="3_api_reference/indicators.html#nautilus_trader.indicators.efficiency_ratio.EfficiencyRatio.value">(EfficiencyRatio attribute)</a>
 </li>
-        <li><a href="3_api_reference/model/identifiers.html#nautilus_trader.model.identifiers.ExecutionId.value">(ExecutionId attribute)</a>
-</li>
         <li><a href="3_api_reference/indicators.html#nautilus_trader.indicators.average.ema.ExponentialMovingAverage.value">(ExponentialMovingAverage attribute)</a>
 </li>
         <li><a href="3_api_reference/indicators.html#nautilus_trader.indicators.fuzzy_candlesticks.FuzzyCandlesticks.value">(FuzzyCandlesticks attribute)</a>
@@ -12144,6 +12188,8 @@
         <li><a href="3_api_reference/model/identifiers.html#nautilus_trader.model.identifiers.StrategyId.value">(StrategyId attribute)</a>
 </li>
         <li><a href="3_api_reference/model/identifiers.html#nautilus_trader.model.identifiers.Symbol.value">(Symbol attribute)</a>
+</li>
+        <li><a href="3_api_reference/model/identifiers.html#nautilus_trader.model.identifiers.TradeId.value">(TradeId attribute)</a>
 </li>
         <li><a href="3_api_reference/model/identifiers.html#nautilus_trader.model.identifiers.TraderId.value">(TraderId attribute)</a>
 </li>
@@ -12229,8 +12275,6 @@
       <li><a href="3_api_reference/model/commands.html#nautilus_trader.model.commands.trading.CancelOrder.venue_order_id">venue_order_id (CancelOrder attribute)</a>
 
       <ul>
-        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionReport.venue_order_id">(ExecutionReport attribute)</a>
-</li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.limit.LimitOrder.venue_order_id">(LimitOrder attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.market.MarketOrder.venue_order_id">(MarketOrder attribute)</a>
@@ -12263,7 +12307,7 @@
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderRejected.venue_order_id">(OrderRejected attribute)</a>
 </li>
-        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.OrderStatusReport.venue_order_id">(OrderStatusReport attribute)</a>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.venue_order_id">(OrderStatusReport attribute)</a>
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderSubmitted.venue_order_id">(OrderSubmitted attribute)</a>
 </li>
@@ -12276,6 +12320,8 @@
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.venue_order_id">(StopLimitOrder attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.venue_order_id">(StopMarketOrder attribute)</a>
+</li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.TradeReport.venue_order_id">(TradeReport attribute)</a>
 </li>
       </ul></li>
       <li><a href="3_api_reference/cache.html#nautilus_trader.cache.cache.Cache.venue_order_id">venue_order_id() (Cache method)</a>
@@ -12296,8 +12342,12 @@
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.venue_order_ids">(StopMarketOrder attribute)</a>
 </li>
       </ul></li>
-      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.messages.ExecutionReport.venue_position_id">venue_position_id (ExecutionReport attribute)</a>
+      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.PositionStatusReport.venue_position_id">venue_position_id (PositionStatusReport attribute)</a>
+
+      <ul>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.TradeReport.venue_position_id">(TradeReport attribute)</a>
 </li>
+      </ul></li>
       <li><a href="3_api_reference/model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId">VenueOrderId (class in nautilus_trader.model.identifiers)</a>
 </li>
       <li><a href="3_api_reference/model/data.html#nautilus_trader.model.data.venue.VenueStatusUpdate">VenueStatusUpdate (class in nautilus_trader.model.data.venue)</a>

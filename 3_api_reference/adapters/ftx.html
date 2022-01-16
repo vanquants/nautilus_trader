@@ -1227,7 +1227,7 @@ called after faulting.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.adapters.ftx.execution.FTXExecutionClient.generate_order_status_report">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_order_status_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../model/orders.html#nautilus_trader.model.orders.base.Order" title="nautilus_trader.model.orders.base.Order"><span class="pre">nautilus_trader.model.orders.base.Order</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../execution.html#nautilus_trader.execution.messages.OrderStatusReport" title="nautilus_trader.execution.messages.OrderStatusReport"><span class="pre">nautilus_trader.execution.messages.OrderStatusReport</span></a></span></span><a class="headerlink" href="#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.generate_order_status_report" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_order_status_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../model/orders.html#nautilus_trader.model.orders.base.Order" title="nautilus_trader.model.orders.base.Order"><span class="pre">nautilus_trader.model.orders.base.Order</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../execution.html#nautilus_trader.execution.reports.OrderStatusReport" title="nautilus_trader.execution.reports.OrderStatusReport"><span class="pre">nautilus_trader.execution.reports.OrderStatusReport</span></a></span></span><a class="headerlink" href="#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.generate_order_status_report" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate an order status report for the given order.</p>
 <p>If an error occurs then logs and returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <dl class="field-list simple">
@@ -1246,14 +1246,14 @@ called after faulting.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.adapters.ftx.execution.FTXExecutionClient.generate_exec_reports">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_exec_reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">venue_order_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><span class="pre">nautilus_trader.model.identifiers.VenueOrderId</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.Symbol" title="nautilus_trader.model.identifiers.Symbol"><span class="pre">nautilus_trader.model.identifiers.Symbol</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">since</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime.datetime</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../execution.html#nautilus_trader.execution.messages.ExecutionReport" title="nautilus_trader.execution.messages.ExecutionReport"><span class="pre">nautilus_trader.execution.messages.ExecutionReport</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.generate_exec_reports" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate a list of execution reports.</p>
+<dt class="sig sig-object py" id="nautilus_trader.adapters.ftx.execution.FTXExecutionClient.generate_trade_reports">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_trade_reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">venue_order_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><span class="pre">nautilus_trader.model.identifiers.VenueOrderId</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.Symbol" title="nautilus_trader.model.identifiers.Symbol"><span class="pre">nautilus_trader.model.identifiers.Symbol</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">since</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime.datetime</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../execution.html#nautilus_trader.execution.reports.TradeReport" title="nautilus_trader.execution.reports.TradeReport"><span class="pre">nautilus_trader.execution.reports.TradeReport</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.generate_trade_reports" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a list of trade reports.</p>
 <p>The returned list may be empty if no trades match the given parameters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID for the trades.</p>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID (assigned by the venue) for the trades.</p>
 </dd>
 <dt><strong>symbol</strong><span class="classifier">Symbol</span></dt><dd><p>The symbol for the trades.</p>
 </dd>
@@ -1263,7 +1263,7 @@ called after faulting.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>list[ExecutionReport]</dt><dd></dd>
+<dt>list[TradeReport]</dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -1387,18 +1387,12 @@ called after faulting.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.adapters.ftx.execution.FTXExecutionClient.generate_mass_status">
-<span class="sig-name descname"><span class="pre">generate_mass_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">active_orders</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.generate_mass_status" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">generate_mass_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.generate_mass_status" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate an execution state report based on the given list of active
 orders.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>active_orders</strong><span class="classifier">list[Order]</span></dt><dd><p>The orders which currently have an ‘active’ status.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
 <dt>ExecutionMassStatus</dt><dd></dd>
 </dl>
 </dd>
@@ -1418,7 +1412,7 @@ orders.</p>
 </dd>
 <dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID.</p>
 </dd>
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID.</p>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID (assigned by the venue).</p>
 </dd>
 <dt><strong>ts_event</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the order accepted event occurred.</p>
 </dd>
@@ -1440,11 +1434,11 @@ orders.</p>
 </dd>
 <dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID.</p>
 </dd>
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID.</p>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID (assigned by the venue).</p>
 </dd>
 <dt><strong>reason</strong><span class="classifier">str</span></dt><dd><p>The order cancel rejected reason.</p>
 </dd>
-<dt><strong>ts_event</strong><span class="classifier">datetime</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the order cancel rejected event occurred.</p>
+<dt><strong>ts_event</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the order cancel rejected event occurred.</p>
 </dd>
 </dl>
 </dd>
@@ -1464,7 +1458,7 @@ orders.</p>
 </dd>
 <dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID.</p>
 </dd>
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID.</p>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID (assigned by the venue).</p>
 </dd>
 <dt><strong>ts_event</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when order canceled event occurred.</p>
 </dd>
@@ -1486,7 +1480,7 @@ orders.</p>
 </dd>
 <dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID.</p>
 </dd>
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID.</p>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID (assigned by the venue).</p>
 </dd>
 <dt><strong>ts_event</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the order expired event occurred.</p>
 </dd>
@@ -1497,27 +1491,27 @@ orders.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.adapters.ftx.execution.FTXExecutionClient.generate_order_filled">
-<span class="sig-name descname"><span class="pre">generate_order_filled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PositionId</span> <span class="pre">venue_position_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ExecutionId</span> <span class="pre">execution_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">order_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderType</span> <span class="pre">order_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">last_qty</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">last_px</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">quote_currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Money</span> <span class="pre">commission</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">LiquiditySide</span> <span class="pre">liquidity_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.generate_order_filled" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">generate_order_filled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PositionId</span> <span class="pre">venue_position_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TradeId</span> <span class="pre">trade_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">order_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderType</span> <span class="pre">order_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">last_qty</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">last_px</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">quote_currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Money</span> <span class="pre">commission</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">LiquiditySide</span> <span class="pre">liquidity_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.generate_order_filled" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate an <cite>OrderFilled</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>strategy_id</strong><span class="classifier">StrategyId</span></dt><dd><p>The strategy ID associated with the event.</p>
 </dd>
 <dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The instrument ID.</p>
 </dd>
 <dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID.</p>
 </dd>
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID.</p>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID (assigned by the venue).</p>
 </dd>
-<dt><strong>execution_id</strong><span class="classifier">ExecutionId</span></dt><dd><p>The execution ID.</p>
+<dt><strong>trade_id</strong><span class="classifier">TradeId</span></dt><dd><p>The trade ID.</p>
 </dd>
 <dt><strong>venue_position_id</strong><span class="classifier">PositionId, optional</span></dt><dd><p>The venue position ID associated with the order. If the trading
 venue has assigned a position ID / ticket then pass that here,
 otherwise pass <code class="docutils literal notranslate"><span class="pre">None</span></code> and the execution engine OMS will handle
 position ID resolution.</p>
 </dd>
-<dt><strong>order_side</strong><span class="classifier">OrderSide</span></dt><dd><p>The execution order side.</p>
+<dt><strong>order_side</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The execution order side.</p>
 </dd>
 <dt><strong>order_type</strong><span class="classifier">OrderType</span></dt><dd><p>The execution order type.</p>
 </dd>
@@ -1529,7 +1523,7 @@ position ID resolution.</p>
 </dd>
 <dt><strong>commission</strong><span class="classifier">Money</span></dt><dd><p>The fill commission.</p>
 </dd>
-<dt><strong>liquidity_side</strong><span class="classifier">LiquiditySide</span></dt><dd><p>The execution liquidity side.</p>
+<dt><strong>liquidity_side</strong><span class="classifier">LiquiditySide {<code class="docutils literal notranslate"><span class="pre">NONE</span></code>, <code class="docutils literal notranslate"><span class="pre">MAKER</span></code>, <code class="docutils literal notranslate"><span class="pre">TAKER</span></code>}</span></dt><dd><p>The execution liquidity side.</p>
 </dd>
 <dt><strong>ts_event</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the order filled event occurred.</p>
 </dd>
@@ -1551,11 +1545,11 @@ position ID resolution.</p>
 </dd>
 <dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID.</p>
 </dd>
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID.</p>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID (assigned by the venue).</p>
 </dd>
 <dt><strong>reason</strong><span class="classifier">str</span></dt><dd><p>The order update rejected reason.</p>
 </dd>
-<dt><strong>ts_event</strong><span class="classifier">datetime</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the order update rejection event occurred.</p>
+<dt><strong>ts_event</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the order update rejection event occurred.</p>
 </dd>
 </dl>
 </dd>
@@ -1575,9 +1569,9 @@ position ID resolution.</p>
 </dd>
 <dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID.</p>
 </dd>
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID.</p>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID (assigned by the venue).</p>
 </dd>
-<dt><strong>ts_event</strong><span class="classifier">datetime</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the order pending cancel event occurred.</p>
+<dt><strong>ts_event</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the order pending cancel event occurred.</p>
 </dd>
 </dl>
 </dd>
@@ -1597,9 +1591,9 @@ position ID resolution.</p>
 </dd>
 <dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID.</p>
 </dd>
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID.</p>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID (assigned by the venue).</p>
 </dd>
-<dt><strong>ts_event</strong><span class="classifier">datetime</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the order pending update event occurred.</p>
+<dt><strong>ts_event</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the order pending update event occurred.</p>
 </dd>
 </dl>
 </dd>
@@ -1661,7 +1655,7 @@ position ID resolution.</p>
 </dd>
 <dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID.</p>
 </dd>
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID.</p>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID (assigned by the venue).</p>
 </dd>
 <dt><strong>ts_event</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the order triggered event occurred.</p>
 </dd>
@@ -1683,7 +1677,7 @@ position ID resolution.</p>
 </dd>
 <dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID.</p>
 </dd>
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID.</p>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID (assigned by the venue).</p>
 </dd>
 <dt><strong>quantity</strong><span class="classifier">Quantity</span></dt><dd><p>The orders current quantity.</p>
 </dd>
@@ -1815,7 +1809,7 @@ position ID resolution.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.adapters.ftx.execution.FTXExecutionClient.reconcile_state">
-<span class="sig-name descname"><span class="pre">reconcile_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderStatusReport</span> <span class="pre">report</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Order</span> <span class="pre">order=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">exec_reports=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.reconcile_state" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reconcile_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderStatusReport</span> <span class="pre">report</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Order</span> <span class="pre">order=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">trade_reports=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.reconcile_state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconcile the given orders state based on the given report.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1825,7 +1819,7 @@ position ID resolution.</p>
 <dt><strong>order</strong><span class="classifier">Order, optional</span></dt><dd><p>The order for reconciliation. If not supplied then will try to be
 fetched from cache.</p>
 </dd>
-<dt><strong>exec_reports</strong><span class="classifier">list[ExecutionReport]</span></dt><dd><p>The list of execution reports relating to the order.</p>
+<dt><strong>trade_reports</strong><span class="classifier">list[TradeReport]</span></dt><dd><p>The list of trade reports relating to the order.</p>
 </dd>
 </dl>
 </dd>

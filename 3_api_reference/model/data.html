@@ -928,14 +928,14 @@ internally aggregated.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Bet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">side</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.data.bet.Bet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Represents a bet “order” or “trade” in price space (not probability).</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>price</strong><span class="classifier">Price or decimal.Decimal</span></dt><dd><p>The price of the bet.</p>
 </dd>
 <dt><strong>quantity</strong><span class="classifier">Quantity</span></dt><dd><p>The size of the bet.</p>
 </dd>
-<dt><strong>side</strong><span class="classifier">OrderSide</span></dt><dd><p>The side ( OrderSide.BUY = BACK, OrderSide.SELL = LAY ) of the bet.</p>
+<dt><strong>side</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The side ( OrderSide.BUY = BACK, OrderSide.SELL = LAY ) of the bet.</p>
 </dd>
 </dl>
 </dd>
@@ -1252,7 +1252,7 @@ internally aggregated.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.data.tick.TradeTick">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TradeTick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AggressorSide</span> <span class="pre">aggressor_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">trade_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.data.tick.TradeTick" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TradeTick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AggressorSide</span> <span class="pre">aggressor_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TradeId</span> <span class="pre">trade_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.data.tick.TradeTick" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.data.tick.Tick" title="nautilus_trader.model.data.tick.Tick"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.data.tick.Tick</span></code></a></p>
 <p>Represents a single trade tick in a financial market.</p>
 <p>Contains information about a single unique trade which matched buyer and
@@ -1268,7 +1268,7 @@ seller counterparties.</p>
 </dd>
 <dt><strong>aggressor_side</strong><span class="classifier">AggressorSide</span></dt><dd><p>The trade aggressor side.</p>
 </dd>
-<dt><strong>trade_id</strong><span class="classifier">str</span></dt><dd><p>The trade match ID.</p>
+<dt><strong>trade_id</strong><span class="classifier">TradeId</span></dt><dd><p>The trade match ID.</p>
 </dd>
 <dt><strong>ts_event: int64</strong></dt><dd><p>The UNIX timestamp (nanoseconds) when the tick event occurred.</p>
 </dd>

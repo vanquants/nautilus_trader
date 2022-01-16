@@ -3511,7 +3511,7 @@ IDs generated.</p>
 <dd class="field-odd"><dl>
 <dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The orders instrument ID.</p>
 </dd>
-<dt><strong>order_side</strong><span class="classifier">OrderSide</span></dt><dd><p>The entry orders side.</p>
+<dt><strong>order_side</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The entry orders side.</p>
 </dd>
 <dt><strong>quantity</strong><span class="classifier">Quantity</span></dt><dd><p>The entry orders quantity (&gt; 0).</p>
 </dd>
@@ -3564,7 +3564,7 @@ IDs generated.</p>
 <dd class="field-odd"><dl>
 <dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The orders instrument ID.</p>
 </dd>
-<dt><strong>order_side</strong><span class="classifier">OrderSide</span></dt><dd><p>The entry orders side.</p>
+<dt><strong>order_side</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The entry orders side.</p>
 </dd>
 <dt><strong>quantity</strong><span class="classifier">Quantity</span></dt><dd><p>The entry orders quantity (&gt; 0).</p>
 </dd>
@@ -3616,12 +3616,12 @@ IDs generated.</p>
 <span class="sig-name descname"><span class="pre">limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">order_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TimeInForce</span> <span class="pre">time_in_force=TimeInForce.GTC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">expire_time=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">post_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">display_qty=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">tags=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LimitOrder</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.limit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new limit order.</p>
 <p>If the time-in-force is <code class="docutils literal notranslate"><span class="pre">GTD</span></code> then a valid expire time must be given.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The orders instrument ID.</p>
 </dd>
-<dt><strong>order_side</strong><span class="classifier">OrderSide</span></dt><dd><p>The orders side.</p>
+<dt><strong>order_side</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The orders side.</p>
 </dd>
 <dt><strong>quantity</strong><span class="classifier">Quantity</span></dt><dd><p>The orders quantity (&gt; 0).</p>
 </dd>
@@ -3664,12 +3664,12 @@ contain any arbitrary delimiter if required.</p>
 <dt class="sig sig-object py" id="nautilus_trader.common.factories.OrderFactory.market">
 <span class="sig-name descname"><span class="pre">market</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">order_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TimeInForce</span> <span class="pre">time_in_force=TimeInForce.GTC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">tags=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">MarketOrder</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.market" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new market order.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The orders instrument ID.</p>
 </dd>
-<dt><strong>order_side</strong><span class="classifier">OrderSide</span></dt><dd><p>The orders side.</p>
+<dt><strong>order_side</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The orders side.</p>
 </dd>
 <dt><strong>quantity</strong><span class="classifier">Quantity</span></dt><dd><p>The orders quantity (&gt; 0).</p>
 </dd>
@@ -3725,12 +3725,12 @@ given count.</p>
 <span class="sig-name descname"><span class="pre">stop_limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">order_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">trigger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TimeInForce</span> <span class="pre">time_in_force=TimeInForce.GTC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">expire_time=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">post_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">display_qty=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">tags=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">StopLimitOrder</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.stop_limit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new stop-limit order.</p>
 <p>If the time-in-force is <code class="docutils literal notranslate"><span class="pre">GTD</span></code> then a valid expire time must be given.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The orders instrument ID.</p>
 </dd>
-<dt><strong>order_side</strong><span class="classifier">OrderSide</span></dt><dd><p>The orders side.</p>
+<dt><strong>order_side</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The orders side.</p>
 </dd>
 <dt><strong>quantity</strong><span class="classifier">Quantity</span></dt><dd><p>The orders quantity (&gt; 0).</p>
 </dd>
@@ -3776,12 +3776,12 @@ contain any arbitrary delimiter if required.</p>
 <span class="sig-name descname"><span class="pre">stop_market</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">order_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TimeInForce</span> <span class="pre">time_in_force=TimeInForce.GTC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">expire_time=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">tags=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">StopMarketOrder</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.stop_market" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new stop-market order.</p>
 <p>If the time-in-force is <code class="docutils literal notranslate"><span class="pre">GTD</span></code> then a valid expire time must be given.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The orders instrument ID.</p>
 </dd>
-<dt><strong>order_side</strong><span class="classifier">OrderSide</span></dt><dd><p>The orders side.</p>
+<dt><strong>order_side</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The orders side.</p>
 </dd>
 <dt><strong>quantity</strong><span class="classifier">Quantity</span></dt><dd><p>The orders quantity (&gt; 0).</p>
 </dd>

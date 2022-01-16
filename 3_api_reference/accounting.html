@@ -689,12 +689,12 @@ rather than <cite>Money</cite> of zero amount.</p>
 <dd><p>Calculate the locked balance from the given parameters.</p>
 <p>Result will be in quote currency for standard instruments, or base
 currency for inverse instruments.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument for the calculation.</p>
 </dd>
-<dt><strong>side</strong><span class="classifier">OrderSide</span></dt><dd><p>The order side.</p>
+<dt><strong>side</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The order side.</p>
 </dd>
 <dt><strong>quantity</strong><span class="classifier">Quantity</span></dt><dd><p>The order quantity.</p>
 </dd>
@@ -719,16 +719,16 @@ currency for inverse instruments.</p>
 parameters.</p>
 <p>Result will be in quote currency for standard instruments, or base
 currency for inverse instruments.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument for the calculation.</p>
 </dd>
 <dt><strong>last_qty</strong><span class="classifier">Quantity</span></dt><dd><p>The transaction quantity.</p>
 </dd>
 <dt><strong>last_px</strong><span class="classifier">Decimal or Price</span></dt><dd><p>The transaction price.</p>
 </dd>
-<dt><strong>liquidity_side</strong><span class="classifier">LiquiditySide</span></dt><dd><p>The liquidity side for the transaction.</p>
+<dt><strong>liquidity_side</strong><span class="classifier">LiquiditySide {<code class="docutils literal notranslate"><span class="pre">MAKER</span></code>, <code class="docutils literal notranslate"><span class="pre">TAKER</span></code>}</span></dt><dd><p>The liquidity side for the transaction.</p>
 </dd>
 <dt><strong>inverse_as_quote</strong><span class="classifier">bool</span></dt><dd><p>If inverse instrument calculations use quote currency (instead of base).</p>
 </dd>
@@ -1229,16 +1229,16 @@ rather than <cite>Money</cite> of zero amount.</p>
 parameters.</p>
 <p>Result will be in quote currency for standard instruments, or base
 currency for inverse instruments.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument for the calculation.</p>
 </dd>
 <dt><strong>last_qty</strong><span class="classifier">Quantity</span></dt><dd><p>The transaction quantity.</p>
 </dd>
 <dt><strong>last_px</strong><span class="classifier">Decimal or Price</span></dt><dd><p>The transaction price.</p>
 </dd>
-<dt><strong>liquidity_side</strong><span class="classifier">LiquiditySide</span></dt><dd><p>The liquidity side for the transaction.</p>
+<dt><strong>liquidity_side</strong><span class="classifier">LiquiditySide {<code class="docutils literal notranslate"><span class="pre">MAKER</span></code>, <code class="docutils literal notranslate"><span class="pre">TAKER</span></code>}</span></dt><dd><p>The liquidity side for the transaction.</p>
 </dd>
 <dt><strong>inverse_as_quote</strong><span class="classifier">bool</span></dt><dd><p>If inverse instrument calculations use quote currency (instead of base).</p>
 </dd>
@@ -1291,12 +1291,12 @@ currency for inverse instruments.</p>
 <dd><p>Calculate the maintenance (position) margin from the given parameters.</p>
 <p>Result will be in quote currency for standard instruments, or base
 currency for inverse instruments.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>instrument</strong><span class="classifier">Instrument</span></dt><dd><p>The instrument for the calculation.</p>
 </dd>
-<dt><strong>side</strong><span class="classifier">PositionSide</span></dt><dd><p>The currency position side.</p>
+<dt><strong>side</strong><span class="classifier">PositionSide {<code class="docutils literal notranslate"><span class="pre">LONG</span></code>, <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>}</span></dt><dd><p>The currency position side.</p>
 </dd>
 <dt><strong>quantity</strong><span class="classifier">Quantity</span></dt><dd><p>The currency position quantity.</p>
 </dd>

@@ -443,7 +443,7 @@ generated depending on a strategies OMS (Order Management System) settings.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><dl class="simple">
-<dt>KeyError</dt><dd><p>If <cite>fill.execution_id</cite> already applied to the position.</p>
+<dt>KeyError</dt><dd><p>If <cite>fill.trade_id</cite> already applied to the position.</p>
 </dd>
 </dl>
 </dd>
@@ -596,19 +596,6 @@ currency for inverse instruments.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.position.Position.execution_ids">
-<span class="sig-name descname"><span class="pre">execution_ids</span></span><a class="headerlink" href="#nautilus_trader.model.position.Position.execution_ids" title="Permalink to this definition">¶</a></dt>
-<dd><p>The execution IDs associated with the position.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>list[ExecutionId]</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.from_order">
 <span class="sig-name descname"><span class="pre">from_order</span></span><a class="headerlink" href="#nautilus_trader.model.position.Position.from_order" title="Permalink to this definition">¶</a></dt>
 <dd><p>The client order ID for the order which initially opened the position.</p>
@@ -709,10 +696,10 @@ currency for inverse instruments.</p>
 <span class="sig-name descname"><span class="pre">is_opposite_side</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">side</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.model.position.Position.is_opposite_side" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a value indicating whether the given order side is opposite to
 the current position side.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>side</strong><span class="classifier">OrderSide</span></dt><dd></dd>
+<dd class="field-odd"><dl>
+<dt><strong>side</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd></dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -751,13 +738,13 @@ the current position side.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.position.Position.last_execution_id">
-<span class="sig-name descname"><span class="pre">last_execution_id</span></span><a class="headerlink" href="#nautilus_trader.model.position.Position.last_execution_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The last execution ID for the position.</p>
+<dt class="sig sig-object py" id="nautilus_trader.model.position.Position.last_trade_id">
+<span class="sig-name descname"><span class="pre">last_trade_id</span></span><a class="headerlink" href="#nautilus_trader.model.position.Position.last_trade_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The last trade ID for the position.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt>ExecutionId</dt><dd></dd>
+<dt>TradeId</dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -897,10 +884,10 @@ the current position side.</p>
 <dt class="sig sig-object py" id="nautilus_trader.model.position.Position.side_from_order_side">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">side_from_order_side</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">side</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.position.Position.side_from_order_side" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the position side resulting from the given order side (from <code class="docutils literal notranslate"><span class="pre">FLAT</span></code>).</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>side</strong><span class="classifier">OrderSide</span></dt><dd><p>The order side</p>
+<dd class="field-odd"><dl>
+<dt><strong>side</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The order side</p>
 </dd>
 </dl>
 </dd>
@@ -976,6 +963,19 @@ currency for inverse instruments.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt>Money</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.position.Position.trade_ids">
+<span class="sig-name descname"><span class="pre">trade_ids</span></span><a class="headerlink" href="#nautilus_trader.model.position.Position.trade_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>The trade IDs associated with the position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>list[TradeId]</dt><dd></dd>
 </dl>
 </dd>
 </dl>

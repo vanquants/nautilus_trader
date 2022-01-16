@@ -618,7 +618,7 @@
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.events.order.OrderEvent" title="nautilus_trader.model.events.order.OrderEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.events.order.OrderEvent</span></code></a></p>
 <p>Represents an event where an order has been accepted by the trading venue.</p>
 <p>This event often corresponds to a <cite>NEW</cite> OrdStatus &lt;39&gt; field in FIX
-execution reports.</p>
+trade reports.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -632,7 +632,7 @@ execution reports.</p>
 </dd>
 <dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID.</p>
 </dd>
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID.</p>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID (assigned by the venue).</p>
 </dd>
 <dt><strong>event_id</strong><span class="classifier">UUID4</span></dt><dd><p>The event ID.</p>
 </dd>
@@ -808,13 +808,13 @@ trading venue.</p>
 </dd>
 <dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID.</p>
 </dd>
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID.</p>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID (assigned by the venue).</p>
 </dd>
 <dt><strong>reason</strong><span class="classifier">str</span></dt><dd><p>The order cancel rejected reason.</p>
 </dd>
 <dt><strong>event_id</strong><span class="classifier">UUID4</span></dt><dd><p>The event ID.</p>
 </dd>
-<dt><strong>ts_event</strong><span class="classifier">datetime</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the order cancel rejected event occurred.</p>
+<dt><strong>ts_event</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the order cancel rejected event occurred.</p>
 </dd>
 <dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
 </dd>
@@ -1000,7 +1000,7 @@ trading venue.</p>
 </dd>
 <dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID.</p>
 </dd>
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID.</p>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID (assigned by the venue).</p>
 </dd>
 <dt><strong>event_id</strong><span class="classifier">UUID4</span></dt><dd><p>The event ID.</p>
 </dd>
@@ -1361,7 +1361,7 @@ any other reason that an otherwise valid order is not able to be submitted.</p>
 </dd>
 <dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID.</p>
 </dd>
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId, optional</span></dt><dd><p>The venue order ID.</p>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId, optional</span></dt><dd><p>The venue order ID (assigned by the venue).</p>
 </dd>
 <dt><strong>event_id</strong><span class="classifier">UUID4</span></dt><dd><p>The event ID.</p>
 </dd>
@@ -1506,7 +1506,7 @@ any other reason that an otherwise valid order is not able to be submitted.</p>
 </dd>
 <dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID.</p>
 </dd>
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID.</p>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID (assigned by the venue).</p>
 </dd>
 <dt><strong>event_id</strong><span class="classifier">UUID4</span></dt><dd><p>The event ID.</p>
 </dd>
@@ -1663,12 +1663,12 @@ any other reason that an otherwise valid order is not able to be submitted.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderFilled">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OrderFilled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">TraderId</span> <span class="pre">trader_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AccountId</span> <span class="pre">account_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ExecutionId</span> <span class="pre">execution_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PositionId</span> <span class="pre">position_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">order_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderType</span> <span class="pre">order_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">last_qty</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">last_px</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Money</span> <span class="pre">commission</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">LiquiditySide</span> <span class="pre">liquidity_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">event_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">info=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderFilled" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OrderFilled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">TraderId</span> <span class="pre">trader_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AccountId</span> <span class="pre">account_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TradeId</span> <span class="pre">trade_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PositionId</span> <span class="pre">position_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">order_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderType</span> <span class="pre">order_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">last_qty</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">last_px</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Money</span> <span class="pre">commission</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">LiquiditySide</span> <span class="pre">liquidity_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">event_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">info=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderFilled" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.events.order.OrderEvent" title="nautilus_trader.model.events.order.OrderEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.events.order.OrderEvent</span></code></a></p>
 <p>Represents an event where an order has been filled at the exchange.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>trader_id</strong><span class="classifier">TraderId</span></dt><dd><p>The trader ID.</p>
 </dd>
 <dt><strong>strategy_id</strong><span class="classifier">StrategyId</span></dt><dd><p>The strategy ID.</p>
@@ -1679,13 +1679,13 @@ any other reason that an otherwise valid order is not able to be submitted.</p>
 </dd>
 <dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID.</p>
 </dd>
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID.</p>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID (assigned by the venue).</p>
 </dd>
-<dt><strong>execution_id</strong><span class="classifier">ExecutionId</span></dt><dd><p>The execution ID.</p>
+<dt><strong>trade_id</strong><span class="classifier">TradeId</span></dt><dd><p>The trade ID.</p>
 </dd>
 <dt><strong>position_id</strong><span class="classifier">PositionId, optional</span></dt><dd><p>The position ID associated with the order fill.</p>
 </dd>
-<dt><strong>order_side</strong><span class="classifier">OrderSide</span></dt><dd><p>The execution order side.</p>
+<dt><strong>order_side</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The execution order side.</p>
 </dd>
 <dt><strong>order_side</strong><span class="classifier">OrderType</span></dt><dd><p>The execution order type.</p>
 </dd>
@@ -1697,7 +1697,7 @@ any other reason that an otherwise valid order is not able to be submitted.</p>
 </dd>
 <dt><strong>commission</strong><span class="classifier">Money</span></dt><dd><p>The fill commission.</p>
 </dd>
-<dt><strong>liquidity_side</strong><span class="classifier">LiquiditySide</span></dt><dd><p>The execution liquidity side.</p>
+<dt><strong>liquidity_side</strong><span class="classifier">LiquiditySide {<code class="docutils literal notranslate"><span class="pre">NONE</span></code>, <code class="docutils literal notranslate"><span class="pre">MAKER</span></code>, <code class="docutils literal notranslate"><span class="pre">TAKER</span></code>}</span></dt><dd><p>The execution liquidity side.</p>
 </dd>
 <dt><strong>event_id</strong><span class="classifier">UUID4</span></dt><dd><p>The event ID.</p>
 </dd>
@@ -1767,17 +1767,6 @@ any other reason that an otherwise valid order is not able to be submitted.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>Currency</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderFilled.execution_id">
-<span class="sig-name descname"><span class="pre">execution_id</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderFilled.execution_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The execution ID associated with the event.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>ExecutionId</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1951,6 +1940,17 @@ any other reason that an otherwise valid order is not able to be submitted.</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderFilled.trade_id">
+<span class="sig-name descname"><span class="pre">trade_id</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderFilled.trade_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The trade ID associated with the event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>TradeId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.model.events.order.OrderFilled.trader_id">
 <span class="sig-name descname"><span class="pre">trader_id</span></span><a class="headerlink" href="#nautilus_trader.model.events.order.OrderFilled.trader_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>The trader ID associated with the event.</p>
@@ -2005,9 +2005,9 @@ any other reason that an otherwise valid order is not able to be submitted.</p>
 method. This event should contain enough information to be able to send it
 ‘over the wire’ and have a valid order created with exactly the same
 properties as if it had been instantiated locally.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>trader_id</strong><span class="classifier">TraderId</span></dt><dd><p>The trader ID.</p>
 </dd>
 <dt><strong>strategy_id</strong><span class="classifier">StrategyId</span></dt><dd><p>The strategy ID.</p>
@@ -2016,7 +2016,7 @@ properties as if it had been instantiated locally.</p>
 </dd>
 <dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID.</p>
 </dd>
-<dt><strong>order_side</strong><span class="classifier">OrderSide</span></dt><dd><p>The order side.</p>
+<dt><strong>order_side</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The order side.</p>
 </dd>
 <dt><strong>order_type</strong><span class="classifier">OrderType</span></dt><dd><p>The order type.</p>
 </dd>
@@ -2344,13 +2344,13 @@ trading venue.</p>
 </dd>
 <dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID.</p>
 </dd>
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId, optional</span></dt><dd><p>The venue order ID.</p>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId, optional</span></dt><dd><p>The venue order ID (assigned by the venue).</p>
 </dd>
 <dt><strong>reason</strong><span class="classifier">str</span></dt><dd><p>The order update rejected reason.</p>
 </dd>
 <dt><strong>event_id</strong><span class="classifier">UUID4</span></dt><dd><p>The event ID.</p>
 </dd>
-<dt><strong>ts_event</strong><span class="classifier">datetime</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the order update rejected event occurred.</p>
+<dt><strong>ts_event</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the order update rejected event occurred.</p>
 </dd>
 <dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
 </dd>
@@ -2537,11 +2537,11 @@ trading venue.</p>
 </dd>
 <dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID.</p>
 </dd>
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId, optional</span></dt><dd><p>The venue order ID.</p>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId, optional</span></dt><dd><p>The venue order ID (assigned by the venue).</p>
 </dd>
 <dt><strong>event_id</strong><span class="classifier">UUID4</span></dt><dd><p>The event ID.</p>
 </dd>
-<dt><strong>ts_event</strong><span class="classifier">datetime</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the order pending cancel event occurred.</p>
+<dt><strong>ts_event</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the order pending cancel event occurred.</p>
 </dd>
 <dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
 </dd>
@@ -2711,11 +2711,11 @@ trading venue.</p>
 </dd>
 <dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID.</p>
 </dd>
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId, optional</span></dt><dd><p>The venue order ID.</p>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId, optional</span></dt><dd><p>The venue order ID (assigned by the venue).</p>
 </dd>
 <dt><strong>event_id</strong><span class="classifier">UUID4</span></dt><dd><p>The event ID.</p>
 </dd>
-<dt><strong>ts_event</strong><span class="classifier">datetime</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the order pending update event occurred.</p>
+<dt><strong>ts_event</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the order pending update event occurred.</p>
 </dd>
 <dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
 </dd>
@@ -3246,7 +3246,7 @@ trading venue.</p>
 </dd>
 <dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID.</p>
 </dd>
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID.</p>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID (assigned by the venue).</p>
 </dd>
 <dt><strong>event_id</strong><span class="classifier">UUID4</span></dt><dd><p>The event ID.</p>
 </dd>
@@ -3419,7 +3419,7 @@ trading venue.</p>
 </dd>
 <dt><strong>client_order_id</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID.</p>
 </dd>
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID.</p>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID (assigned by the venue).</p>
 </dd>
 <dt><strong>quantity</strong><span class="classifier">Quantity</span></dt><dd><p>The orders current quantity.</p>
 </dd>
@@ -3627,9 +3627,9 @@ trading venue.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PositionChanged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id,</span> <span class="pre">StrategyId</span> <span class="pre">strategy_id,</span> <span class="pre">InstrumentId</span> <span class="pre">instrument_id,</span> <span class="pre">PositionId</span> <span class="pre">position_id,</span> <span class="pre">AccountId</span> <span class="pre">account_id,</span> <span class="pre">ClientOrderId</span> <span class="pre">from_order,</span> <span class="pre">OrderSide</span> <span class="pre">entry,</span> <span class="pre">PositionSide</span> <span class="pre">side,</span> <span class="pre">net_qty:</span> <span class="pre">Decimal,</span> <span class="pre">Quantity</span> <span class="pre">quantity,</span> <span class="pre">Quantity</span> <span class="pre">peak_qty,</span> <span class="pre">Quantity</span> <span class="pre">last_qty,</span> <span class="pre">Price</span> <span class="pre">last_px,</span> <span class="pre">Currency</span> <span class="pre">currency,</span> <span class="pre">avg_px_open:</span> <span class="pre">Decimal,</span> <span class="pre">avg_px_close:</span> <span class="pre">Optional[Decimal],</span> <span class="pre">realized_points:</span> <span class="pre">Decimal,</span> <span class="pre">realized_return:</span> <span class="pre">Decimal,</span> <span class="pre">Money</span> <span class="pre">realized_pnl,</span> <span class="pre">Money</span> <span class="pre">unrealized_pnl,</span> <span class="pre">UUID4</span> <span class="pre">event_id,</span> <span class="pre">int64_t</span> <span class="pre">ts_opened,</span> <span class="pre">int64_t</span> <span class="pre">ts_event,</span> <span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.position.PositionChanged" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.events.position.PositionEvent" title="nautilus_trader.model.events.position.PositionEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.events.position.PositionEvent</span></code></a></p>
 <p>Represents an event where a position has changed.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>trader_id</strong><span class="classifier">TraderId</span></dt><dd><p>The trader ID.</p>
 </dd>
 <dt><strong>strategy_id</strong><span class="classifier">StrategyId</span></dt><dd><p>The strategy ID.</p>
@@ -3644,9 +3644,9 @@ trading venue.</p>
 </dd>
 <dt><strong>strategy_id</strong><span class="classifier">StrategyId</span></dt><dd><p>The strategy ID associated with the event.</p>
 </dd>
-<dt><strong>entry</strong><span class="classifier">OrderSide</span></dt><dd><p>The position entry order side.</p>
+<dt><strong>entry</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The position entry order side.</p>
 </dd>
-<dt><strong>side</strong><span class="classifier">PositionSide</span></dt><dd><p>The current position side.</p>
+<dt><strong>side</strong><span class="classifier">PositionSide {<code class="docutils literal notranslate"><span class="pre">FLAT</span></code>, <code class="docutils literal notranslate"><span class="pre">LONG</span></code>, <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>}</span></dt><dd><p>The current position side.</p>
 </dd>
 <dt><strong>net_qty</strong><span class="classifier">Decimal</span></dt><dd><p>The current net quantity (positive for <code class="docutils literal notranslate"><span class="pre">LONG</span></code>, negative for <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>).</p>
 </dd>
@@ -4044,9 +4044,9 @@ trading venue.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PositionClosed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">TraderId</span> <span class="pre">trader_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PositionId</span> <span class="pre">position_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AccountId</span> <span class="pre">account_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientOrderId</span> <span class="pre">from_order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">entry</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PositionSide</span> <span class="pre">side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_qty:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">peak_qty</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">last_qty</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">last_px</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avg_px_open:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avg_px_close:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">realized_points:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">realized_return:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Money</span> <span class="pre">realized_pnl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">event_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_opened</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_closed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">duration_ns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.position.PositionClosed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.events.position.PositionEvent" title="nautilus_trader.model.events.position.PositionEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.events.position.PositionEvent</span></code></a></p>
 <p>Represents an event where a position has been closed.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>trader_id</strong><span class="classifier">TraderId</span></dt><dd><p>The trader ID.</p>
 </dd>
 <dt><strong>strategy_id</strong><span class="classifier">StrategyId</span></dt><dd><p>The strategy ID.</p>
@@ -4061,9 +4061,9 @@ trading venue.</p>
 </dd>
 <dt><strong>strategy_id</strong><span class="classifier">StrategyId</span></dt><dd><p>The strategy ID associated with the event.</p>
 </dd>
-<dt><strong>entry</strong><span class="classifier">OrderSide</span></dt><dd><p>The position entry order side.</p>
+<dt><strong>entry</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The position entry order side.</p>
 </dd>
-<dt><strong>side</strong><span class="classifier">PositionSide</span></dt><dd><p>The current position side.</p>
+<dt><strong>side</strong><span class="classifier">PositionSide {<code class="docutils literal notranslate"><span class="pre">FLAT</span></code>}</span></dt><dd><p>The current position side.</p>
 </dd>
 <dt><strong>net_qty</strong><span class="classifier">Decimal</span></dt><dd><p>The current net quantity (positive for <code class="docutils literal notranslate"><span class="pre">LONG</span></code>, negative for <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>).</p>
 </dd>
@@ -4461,9 +4461,9 @@ trading venue.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PositionEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">TraderId</span> <span class="pre">trader_id,</span> <span class="pre">StrategyId</span> <span class="pre">strategy_id,</span> <span class="pre">InstrumentId</span> <span class="pre">instrument_id,</span> <span class="pre">PositionId</span> <span class="pre">position_id,</span> <span class="pre">AccountId</span> <span class="pre">account_id,</span> <span class="pre">ClientOrderId</span> <span class="pre">from_order,</span> <span class="pre">OrderSide</span> <span class="pre">entry,</span> <span class="pre">PositionSide</span> <span class="pre">side,</span> <span class="pre">net_qty:</span> <span class="pre">Decimal,</span> <span class="pre">Quantity</span> <span class="pre">quantity,</span> <span class="pre">Quantity</span> <span class="pre">peak_qty,</span> <span class="pre">Quantity</span> <span class="pre">last_qty,</span> <span class="pre">Price</span> <span class="pre">last_px,</span> <span class="pre">Currency</span> <span class="pre">currency,</span> <span class="pre">avg_px_open:</span> <span class="pre">Decimal,</span> <span class="pre">avg_px_close:</span> <span class="pre">Optional[Decimal],</span> <span class="pre">realized_points:</span> <span class="pre">Decimal,</span> <span class="pre">realized_return:</span> <span class="pre">Decimal,</span> <span class="pre">Money</span> <span class="pre">realized_pnl,</span> <span class="pre">Money</span> <span class="pre">unrealized_pnl,</span> <span class="pre">UUID4</span> <span class="pre">event_id,</span> <span class="pre">int64_t</span> <span class="pre">ts_opened,</span> <span class="pre">int64_t</span> <span class="pre">ts_closed,</span> <span class="pre">int64_t</span> <span class="pre">duration_ns,</span> <span class="pre">int64_t</span> <span class="pre">ts_event,</span> <span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.position.PositionEvent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../core.html#nautilus_trader.core.message.Event" title="nautilus_trader.core.message.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.core.message.Event</span></code></a></p>
 <p>The abstract base class for all position events.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>trader_id</strong><span class="classifier">TraderId</span></dt><dd><p>The trader ID.</p>
 </dd>
 <dt><strong>strategy_id</strong><span class="classifier">StrategyId</span></dt><dd><p>The strategy ID.</p>
@@ -4476,9 +4476,9 @@ trading venue.</p>
 </dd>
 <dt><strong>from_order</strong><span class="classifier">ClientOrderId</span></dt><dd><p>The client order ID for the order which initially opened the position.</p>
 </dd>
-<dt><strong>entry</strong><span class="classifier">OrderSide</span></dt><dd><p>The position entry order side.</p>
+<dt><strong>entry</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The position entry order side.</p>
 </dd>
-<dt><strong>side</strong><span class="classifier">PositionSide</span></dt><dd><p>The current position side.</p>
+<dt><strong>side</strong><span class="classifier">PositionSide {<code class="docutils literal notranslate"><span class="pre">FLAT</span></code>, <code class="docutils literal notranslate"><span class="pre">LONG</span></code>, <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>}</span></dt><dd><p>The current position side.</p>
 </dd>
 <dt><strong>net_qty</strong><span class="classifier">Decimal</span></dt><dd><p>The current net quantity (positive for <code class="docutils literal notranslate"><span class="pre">LONG</span></code>, negative for <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>).</p>
 </dd>
@@ -4827,9 +4827,9 @@ trading venue.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PositionOpened</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">TraderId</span> <span class="pre">trader_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PositionId</span> <span class="pre">position_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AccountId</span> <span class="pre">account_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientOrderId</span> <span class="pre">from_order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">entry</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PositionSide</span> <span class="pre">side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_qty:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">peak_qty</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">last_qty</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">last_px</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avg_px_open:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Money</span> <span class="pre">realized_pnl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">UUID4</span> <span class="pre">event_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_init</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.model.events.position.PositionOpened" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.model.events.position.PositionEvent" title="nautilus_trader.model.events.position.PositionEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.model.events.position.PositionEvent</span></code></a></p>
 <p>Represents an event where a position has been opened.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>trader_id</strong><span class="classifier">TraderId</span></dt><dd><p>The trader ID.</p>
 </dd>
 <dt><strong>strategy_id</strong><span class="classifier">StrategyId</span></dt><dd><p>The strategy ID.</p>
@@ -4844,9 +4844,9 @@ trading venue.</p>
 </dd>
 <dt><strong>strategy_id</strong><span class="classifier">StrategyId</span></dt><dd><p>The strategy ID associated with the event.</p>
 </dd>
-<dt><strong>entry</strong><span class="classifier">OrderSide</span></dt><dd><p>The position entry order side.</p>
+<dt><strong>entry</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The position entry order side.</p>
 </dd>
-<dt><strong>side</strong><span class="classifier">PositionSide</span></dt><dd><p>The current position side.</p>
+<dt><strong>side</strong><span class="classifier">PositionSide {<code class="docutils literal notranslate"><span class="pre">LONG</span></code>, <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>}</span></dt><dd><p>The current position side.</p>
 </dd>
 <dt><strong>net_qty</strong><span class="classifier">Decimal</span></dt><dd><p>The current net quantity (positive for <code class="docutils literal notranslate"><span class="pre">LONG</span></code>, negative for <code class="docutils literal notranslate"><span class="pre">SHORT</span></code>).</p>
 </dd>
