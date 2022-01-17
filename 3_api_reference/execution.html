@@ -1741,13 +1741,19 @@ orders, trades for those orders and open positions.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.execution.reports.ExecutionMassStatus.add_order_report">
-<span class="sig-name descname"><span class="pre">add_order_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderStatusReport</span> <span class="pre">report</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.reports.ExecutionMassStatus.add_order_report" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add the order status report.</p>
+<dt class="sig sig-object py" id="nautilus_trader.execution.reports.ExecutionMassStatus.add_order_reports">
+<span class="sig-name descname"><span class="pre">add_order_reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">reports</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.reports.ExecutionMassStatus.add_order_reports" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the order reports to the mass status.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>report</strong><span class="classifier">OrderStatusReport</span></dt><dd><p>The report to add.</p>
+<dt><strong>reports</strong><span class="classifier">list[OrderStatusReport]</span></dt><dd><p>The list of reports to add.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><dl class="simple">
+<dt>TypeError</dt><dd><p>If <cite>reports</cite> contains a type other than <cite>TradeReport</cite>.</p>
 </dd>
 </dl>
 </dd>
@@ -1755,13 +1761,13 @@ orders, trades for those orders and open positions.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.execution.reports.ExecutionMassStatus.add_position_report">
-<span class="sig-name descname"><span class="pre">add_position_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PositionStatusReport</span> <span class="pre">report</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.reports.ExecutionMassStatus.add_position_report" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add the position status report.</p>
+<dt class="sig sig-object py" id="nautilus_trader.execution.reports.ExecutionMassStatus.add_position_reports">
+<span class="sig-name descname"><span class="pre">add_position_reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">reports</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.reports.ExecutionMassStatus.add_position_reports" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the position status reports to the mass status.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>report</strong><span class="classifier">PositionStatusReport</span></dt><dd><p>The report to add.</p>
+<dt><strong>reports</strong><span class="classifier">list[PositionStatusReport]</span></dt><dd><p>The reports to add.</p>
 </dd>
 </dl>
 </dd>
@@ -1770,24 +1776,18 @@ orders, trades for those orders and open positions.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.reports.ExecutionMassStatus.add_trade_reports">
-<span class="sig-name descname"><span class="pre">add_trade_reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">reports</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.reports.ExecutionMassStatus.add_trade_reports" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add the list of trade reports for the given order ID.</p>
+<span class="sig-name descname"><span class="pre">add_trade_reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">reports</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.reports.ExecutionMassStatus.add_trade_reports" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the trade reports to the mass status.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID (assigned by the venue) for the reports.</p>
-</dd>
 <dt><strong>reports</strong><span class="classifier">list[TradeReport]</span></dt><dd><p>The list of reports to add.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><dl class="simple">
-<dt>TypeError</dt><dd><p>If <cite>trades</cite> contains a type other than <cite>TradeReport</cite>.</p>
-</dd>
-<dt>ValueError</dt><dd><p>If <cite>reports</cite> is empty.</p>
-</dd>
-<dt>ValueError</dt><dd><p>If <cite>reports</cite> contains a type other than <cite>TradeReport</cite>.</p>
+<dt>TypeError</dt><dd><p>If <cite>reports</cite> contains a type other than <cite>TradeReport</cite>.</p>
 </dd>
 </dl>
 </dd>
@@ -1825,7 +1825,7 @@ orders, trades for those orders and open positions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt>dict[InstrumentId, PositionStatusReport]</dt><dd></dd>
+<dt>dict[InstrumentId, list[PositionStatusReport]]</dt><dd></dd>
 </dl>
 </dd>
 </dl>

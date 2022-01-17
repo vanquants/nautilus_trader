@@ -833,12 +833,12 @@ called after faulting.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.data.BinanceDataClient.run_after_delay">
-<span class="sig-name descname"><span class="pre">run_after_delay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coro</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.adapters.binance.data.BinanceDataClient.run_after_delay" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">run_after_delay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coro</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.adapters.binance.data.BinanceDataClient.run_after_delay" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.data.BinanceDataClient.sleep0">
-<span class="sig-name descname"><span class="pre">sleep0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.adapters.binance.data.BinanceDataClient.sleep0" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">sleep0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.adapters.binance.data.BinanceDataClient.sleep0" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1827,6 +1827,32 @@ position ID resolution.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_order_status_reports">
+<span class="sig-name descname"><span class="pre">generate_order_status_reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">start=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">end=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">open_only=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_order_status_reports" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a list of order status reports with optional query filters.</p>
+<p>The returned list may be empty if no orders match the given parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>start</strong><span class="classifier">datetime, optional</span></dt><dd><p>The start datetime query filter.</p>
+</dd>
+<dt><strong>end</strong><span class="classifier">datetime, optional</span></dt><dd><p>The end datetime query filter.</p>
+</dd>
+<dt><strong>open_only</strong><span class="classifier">bool, default False</span></dt><dd><p>If the query is for open orders only.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>list[OrderStatusReport]</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_order_submitted">
 <span class="sig-name descname"><span class="pre">generate_order_submitted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_order_submitted" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate an <cite>OrderSubmitted</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
@@ -1893,6 +1919,30 @@ position ID resolution.</p>
 </dd>
 <dt><strong>venue_order_id_modified</strong><span class="classifier">bool</span></dt><dd><p>If the ID was modified for this event.</p>
 </dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_position_status_reports">
+<span class="sig-name descname"><span class="pre">generate_position_status_reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">start=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">end=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_position_status_reports" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a list of position status reports with optional query filters.</p>
+<p>The returned list may be empty if no positions match the given parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>start</strong><span class="classifier">datetime, optional</span></dt><dd><p>The start datetime query filter.</p>
+</dd>
+<dt><strong>end</strong><span class="classifier">datetime, optional</span></dt><dd><p>The end datetime query filter.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>list[PositionStatusReport]</dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -2012,39 +2062,6 @@ position ID resolution.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.reconcile_state">
-<span class="sig-name descname"><span class="pre">reconcile_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderStatusReport</span> <span class="pre">report</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Order</span> <span class="pre">order=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">trade_reports=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.reconcile_state" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reconcile the given orders state based on the given report.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>report</strong><span class="classifier">OrderStatusReport</span></dt><dd><p>The order status report for reconciliation.</p>
-</dd>
-<dt><strong>order</strong><span class="classifier">Order, optional</span></dt><dd><p>The order for reconciliation. If not supplied then will try to be
-fetched from cache.</p>
-</dd>
-<dt><strong>trade_reports</strong><span class="classifier">list[TradeReport]</span></dt><dd><p>The list of trade reports relating to the order.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>bool</dt><dd><p>True if reconciliation event generation succeeded, else False.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>ValueError</dt><dd><p>If <cite>report.client_order_id</cite> is not equal to <cite>order.client_order_id</cite>.</p>
-</dd>
-<dt>ValueError</dt><dd><p>If <cite>report.venue_order_id</cite> is not equal to <cite>order.venue_order_id</cite>.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.reset">
 <span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.reset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reset the component.</p>
@@ -2085,12 +2102,12 @@ fetched from cache.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.run_after_delay">
-<span class="sig-name descname"><span class="pre">run_after_delay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coro</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.run_after_delay" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">run_after_delay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">delay:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coro</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.run_after_delay" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.sleep0">
-<span class="sig-name descname"><span class="pre">sleep0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.sleep0" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">sleep0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.sleep0" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
