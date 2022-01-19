@@ -1445,7 +1445,7 @@ to the <cite>ExecutionEngine</cite> via a <cite>SubmitOrder</cite> command.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.trading.strategy.TradingStrategy.modify_order">
-<span class="sig-name descname"><span class="pre">modify_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PassiveOrder</span> <span class="pre">order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">quantity=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">trigger_price=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.modify_order" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">modify_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Order</span> <span class="pre">order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">quantity=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">trigger_price=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.trading.strategy.TradingStrategy.modify_order" title="Permalink to this definition">¶</a></dt>
 <dd><p>Modify the given order with optional parameters and routing instructions.</p>
 <p>An <cite>ModifyOrder</cite> command is created and then sent to the
 <cite>ExecutionEngine</cite>. Either one or both values must differ from the
@@ -1457,13 +1457,13 @@ original <cite>ClientOrderId</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>order</strong><span class="classifier">PassiveOrder</span></dt><dd><p>The order to update.</p>
+<dt><strong>order</strong><span class="classifier">Order</span></dt><dd><p>The order to update.</p>
 </dd>
 <dt><strong>quantity</strong><span class="classifier">Quantity, optional</span></dt><dd><p>The updated quantity for the given order.</p>
 </dd>
-<dt><strong>price</strong><span class="classifier">Price, optional</span></dt><dd><p>The updated price for the given order.</p>
+<dt><strong>price</strong><span class="classifier">Price, optional</span></dt><dd><p>The updated price for the given order (if applicable).</p>
 </dd>
-<dt><strong>trigger_price</strong><span class="classifier">Price, optional</span></dt><dd><p>The updated trigger price for the given order.</p>
+<dt><strong>trigger_price</strong><span class="classifier">Price, optional</span></dt><dd><p>The updated trigger price for the given order (if applicable).</p>
 </dd>
 </dl>
 </dd>
