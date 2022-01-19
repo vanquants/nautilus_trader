@@ -462,7 +462,7 @@ be executed.</p>
 </dd>
 <dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
 </dd>
-<dt><strong>reduce_only</strong><span class="classifier">bool</span></dt><dd><p>If the order carries the ‘reduce-only’ execution instruction.</p>
+<dt><strong>reduce_only</strong><span class="classifier">bool, optional</span></dt><dd><p>If the order carries the ‘reduce-only’ execution instruction.</p>
 </dd>
 <dt><strong>order_list_id</strong><span class="classifier">OrderListId, optional</span></dt><dd><p>The order list ID associated with the order.</p>
 </dd>
@@ -1258,9 +1258,9 @@ market.</p>
 </dd>
 <dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
 </dd>
-<dt><strong>post_only</strong><span class="classifier">bool</span></dt><dd><p>If the order will only provide liquidity (make a market).</p>
+<dt><strong>post_only</strong><span class="classifier">bool, optional</span></dt><dd><p>If the order will only provide liquidity (make a market).</p>
 </dd>
-<dt><strong>reduce_only</strong><span class="classifier">bool</span></dt><dd><p>If the order carries the ‘reduce-only’ execution instruction.</p>
+<dt><strong>reduce_only</strong><span class="classifier">bool, optional</span></dt><dd><p>If the order carries the ‘reduce-only’ execution instruction.</p>
 </dd>
 <dt><strong>display_qty</strong><span class="classifier">Quantity, optional</span></dt><dd><p>The quantity of the order to display on the public book (iceberg).</p>
 </dd>
@@ -2110,7 +2110,7 @@ or help protect a profit on a short sale.</p>
 </dd>
 <dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
 </dd>
-<dt><strong>reduce_only</strong><span class="classifier">bool</span></dt><dd><p>If the order carries the ‘reduce-only’ execution instruction.</p>
+<dt><strong>reduce_only</strong><span class="classifier">bool, optional</span></dt><dd><p>If the order carries the ‘reduce-only’ execution instruction.</p>
 </dd>
 <dt><strong>order_list_id</strong><span class="classifier">OrderListId, optional</span></dt><dd><p>The order list ID associated with the order.</p>
 </dd>
@@ -2960,9 +2960,9 @@ trader could “miss the market” altogether.</p>
 </dd>
 <dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
 </dd>
-<dt><strong>post_only</strong><span class="classifier">bool</span></dt><dd><p>If the <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> order will only provide liquidity (once triggered).</p>
+<dt><strong>post_only</strong><span class="classifier">bool, optional</span></dt><dd><p>If the <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> order will only provide liquidity (once triggered).</p>
 </dd>
-<dt><strong>reduce_only</strong><span class="classifier">bool</span></dt><dd><p>If the <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> order carries the ‘reduce-only’ execution instruction.</p>
+<dt><strong>reduce_only</strong><span class="classifier">bool, optional</span></dt><dd><p>If the <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> order carries the ‘reduce-only’ execution instruction.</p>
 </dd>
 <dt><strong>display_qty</strong><span class="classifier">Quantity, optional</span></dt><dd><p>The quantity of the <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> order to display on the public book (iceberg).</p>
 </dd>

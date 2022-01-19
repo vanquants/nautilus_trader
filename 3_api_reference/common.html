@@ -3527,7 +3527,7 @@ IDs generated.</p>
 </dd>
 <dt><strong>tif_bracket</strong><span class="classifier">TimeInForce {<code class="docutils literal notranslate"><span class="pre">DAY</span></code>, <code class="docutils literal notranslate"><span class="pre">GTC</span></code>}, optional</span></dt><dd><p>The bracket orders time-in-force.</p>
 </dd>
-<dt><strong>post_only</strong><span class="classifier">bool</span></dt><dd><p>If the entry order will only provide liquidity (make a market).</p>
+<dt><strong>post_only</strong><span class="classifier">bool, optional</span></dt><dd><p>If the entry order will only provide liquidity (make a market).</p>
 </dd>
 </dl>
 </dd>
@@ -3631,9 +3631,9 @@ IDs generated.</p>
 </dd>
 <dt><strong>expire_time</strong><span class="classifier">datetime, optional</span></dt><dd><p>The order expire time (for <code class="docutils literal notranslate"><span class="pre">GTD</span></code> orders).</p>
 </dd>
-<dt><strong>post_only</strong><span class="classifier">bool</span></dt><dd><p>If the order will only provide liquidity (make a market).</p>
+<dt><strong>post_only</strong><span class="classifier">bool, optional</span></dt><dd><p>If the order will only provide liquidity (make a market).</p>
 </dd>
-<dt><strong>reduce_only</strong><span class="classifier">bool</span></dt><dd><p>If the order carries the ‘reduce-only’ execution instruction.</p>
+<dt><strong>reduce_only</strong><span class="classifier">bool, optional</span></dt><dd><p>If the order carries the ‘reduce-only’ execution instruction.</p>
 </dd>
 <dt><strong>display_qty</strong><span class="classifier">Quantity, optional</span></dt><dd><p>The quantity of the order to display on the public book (iceberg).</p>
 </dd>
@@ -3675,7 +3675,7 @@ contain any arbitrary delimiter if required.</p>
 </dd>
 <dt><strong>time_in_force</strong><span class="classifier">TimeInForce, optional</span></dt><dd><p>The orders time-in-force. Often not applicable for market orders.</p>
 </dd>
-<dt><strong>reduce_only</strong><span class="classifier">bool</span></dt><dd><p>If the order carries the ‘reduce-only’ execution instruction.</p>
+<dt><strong>reduce_only</strong><span class="classifier">bool, optional</span></dt><dd><p>If the order carries the ‘reduce-only’ execution instruction.</p>
 </dd>
 <dt><strong>tags</strong><span class="classifier">str, optional</span></dt><dd><p>The custom user tags for the order. These are optional and can
 contain any arbitrary delimiter if required.</p>
@@ -3744,9 +3744,9 @@ given count.</p>
 </dd>
 <dt><strong>expire_time</strong><span class="classifier">datetime, optional</span></dt><dd><p>The order expire time (for <code class="docutils literal notranslate"><span class="pre">GTD</span></code> orders).</p>
 </dd>
-<dt><strong>post_only</strong><span class="classifier">bool</span></dt><dd><p>If the order will only provide liquidity (make a market).</p>
+<dt><strong>post_only</strong><span class="classifier">bool, optional</span></dt><dd><p>If the order will only provide liquidity (make a market).</p>
 </dd>
-<dt><strong>reduce_only</strong><span class="classifier">bool</span></dt><dd><p>If the order carries the ‘reduce-only’ execution instruction.</p>
+<dt><strong>reduce_only</strong><span class="classifier">bool, optional</span></dt><dd><p>If the order carries the ‘reduce-only’ execution instruction.</p>
 </dd>
 <dt><strong>display_qty</strong><span class="classifier">Quantity, optional</span></dt><dd><p>The quantity of the order to display on the public book (iceberg).</p>
 </dd>
@@ -3795,7 +3795,7 @@ contain any arbitrary delimiter if required.</p>
 </dd>
 <dt><strong>expire_time</strong><span class="classifier">datetime, optional</span></dt><dd><p>The order expire time (for <code class="docutils literal notranslate"><span class="pre">GTD</span></code> orders).</p>
 </dd>
-<dt><strong>reduce_only</strong><span class="classifier">bool,</span></dt><dd><p>If the order carries the ‘reduce-only’ execution instruction.</p>
+<dt><strong>reduce_only</strong><span class="classifier">bool, optional</span></dt><dd><p>If the order carries the ‘reduce-only’ execution instruction.</p>
 </dd>
 <dt><strong>tags</strong><span class="classifier">str, optional</span></dt><dd><p>The custom user tags for the order. These are optional and can
 contain any arbitrary delimiter if required.</p>
