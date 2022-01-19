@@ -2506,20 +2506,20 @@
 </li>
       <li><a href="3_api_reference/analysis.html#nautilus_trader.analysis.performance.PerformanceAnalyzer.expectancy">expectancy() (PerformanceAnalyzer method)</a>
 </li>
-      <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.limit.LimitOrder.expire_time">expire_time (LimitOrder attribute)</a>
+      <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.limit.LimitOrder.expiration">expiration (LimitOrder attribute)</a>
 
       <ul>
-        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.expire_time">(StopLimitOrder attribute)</a>
+        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.expiration">(StopLimitOrder attribute)</a>
 </li>
-        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.expire_time">(StopMarketOrder attribute)</a>
+        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.expiration">(StopMarketOrder attribute)</a>
 </li>
       </ul></li>
-      <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.limit.LimitOrder.expire_time_ns">expire_time_ns (LimitOrder attribute)</a>
+      <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.limit.LimitOrder.expiration_ns">expiration_ns (LimitOrder attribute)</a>
 
       <ul>
-        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.expire_time_ns">(StopLimitOrder attribute)</a>
+        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.expiration_ns">(StopLimitOrder attribute)</a>
 </li>
-        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.expire_time_ns">(StopMarketOrder attribute)</a>
+        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.expiration_ns">(StopMarketOrder attribute)</a>
 </li>
       </ul></li>
       <li><a href="3_api_reference/indicators.html#nautilus_trader.indicators.average.ema.ExponentialMovingAverage">ExponentialMovingAverage (class in nautilus_trader.indicators.average.ema)</a>
@@ -4821,8 +4821,6 @@
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.Order.is_post_only">(Order attribute)</a>
 </li>
-        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.is_post_only">(OrderStatusReport attribute)</a>
-</li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_post_only">(StopLimitOrder attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_market.StopMarketOrder.is_post_only">(StopMarketOrder attribute)</a>
@@ -4836,8 +4834,6 @@
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.market.MarketOrder.is_reduce_only">(MarketOrder attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.base.Order.is_reduce_only">(Order attribute)</a>
-</li>
-        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.is_reduce_only">(OrderStatusReport attribute)</a>
 </li>
         <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.is_reduce_only">(StopLimitOrder attribute)</a>
 </li>
@@ -8619,7 +8615,11 @@
 </li>
       </ul></li>
       <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderInitialized.post_only">post_only (OrderInitialized attribute)</a>
+
+      <ul>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.post_only">(OrderStatusReport attribute)</a>
 </li>
+      </ul></li>
       <li><a href="3_api_reference/model/orderbook.html#nautilus_trader.model.orderbook.book.L1OrderBook.pprint">pprint() (L1OrderBook method)</a>
 
       <ul>
@@ -8993,7 +8993,11 @@
       <li><a href="3_api_reference/infrastructure.html#nautilus_trader.infrastructure.cache.RedisCacheDatabase">RedisCacheDatabase (class in nautilus_trader.infrastructure.cache)</a>
 </li>
       <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderInitialized.reduce_only">reduce_only (OrderInitialized attribute)</a>
+
+      <ul>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.reduce_only">(OrderStatusReport attribute)</a>
 </li>
+      </ul></li>
       <li><a href="3_api_reference/model/currency.html#nautilus_trader.model.currency.Currency.register">register() (Currency static method)</a>
 
       <ul>
@@ -11488,8 +11492,12 @@
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.position.PositionOpened.ts_opened">(PositionOpened attribute)</a>
 </li>
       </ul></li>
-      <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.ts_triggered">ts_triggered (StopLimitOrder attribute)</a>
+      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.ts_triggered">ts_triggered (OrderStatusReport attribute)</a>
+
+      <ul>
+        <li><a href="3_api_reference/model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder.ts_triggered">(StopLimitOrder attribute)</a>
 </li>
+      </ul></li>
       <li><a href="3_api_reference/common.html#nautilus_trader.common.actor.Actor.type">type (Actor attribute)</a>
 
       <ul>

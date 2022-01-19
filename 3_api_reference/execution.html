@@ -1859,7 +1859,7 @@ orders, trades for those orders and open positions.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.execution.reports.OrderStatusReport">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OrderStatusReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id,</span> <span class="pre">ClientOrderId</span> <span class="pre">client_order_id,</span> <span class="pre">OrderListId</span> <span class="pre">order_list_id,</span> <span class="pre">VenueOrderId</span> <span class="pre">venue_order_id,</span> <span class="pre">OrderSide</span> <span class="pre">order_side,</span> <span class="pre">OrderType</span> <span class="pre">order_type,</span> <span class="pre">ContingencyType</span> <span class="pre">contingency,</span> <span class="pre">TimeInForce</span> <span class="pre">time_in_force,</span> <span class="pre">OrderStatus</span> <span class="pre">order_status,</span> <span class="pre">Price</span> <span class="pre">price,</span> <span class="pre">Price</span> <span class="pre">trigger_price,</span> <span class="pre">TriggerMethod</span> <span class="pre">trigger,</span> <span class="pre">Quantity</span> <span class="pre">quantity,</span> <span class="pre">Quantity</span> <span class="pre">filled_qty,</span> <span class="pre">Quantity</span> <span class="pre">display_qty,</span> <span class="pre">avg_px:</span> <span class="pre">Optional[Decimal],</span> <span class="pre">bool</span> <span class="pre">is_post_only,</span> <span class="pre">bool</span> <span class="pre">is_reduce_only,</span> <span class="pre">unicode</span> <span class="pre">reject_reason,</span> <span class="pre">int64_t</span> <span class="pre">ts_accepted,</span> <span class="pre">int64_t</span> <span class="pre">ts_last,</span> <span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.reports.OrderStatusReport" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OrderStatusReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">InstrumentId</span> <span class="pre">instrument_id,</span> <span class="pre">ClientOrderId</span> <span class="pre">client_order_id,</span> <span class="pre">OrderListId</span> <span class="pre">order_list_id,</span> <span class="pre">VenueOrderId</span> <span class="pre">venue_order_id,</span> <span class="pre">OrderSide</span> <span class="pre">order_side,</span> <span class="pre">OrderType</span> <span class="pre">order_type,</span> <span class="pre">ContingencyType</span> <span class="pre">contingency,</span> <span class="pre">TimeInForce</span> <span class="pre">time_in_force,</span> <span class="pre">OrderStatus</span> <span class="pre">order_status,</span> <span class="pre">Price</span> <span class="pre">price,</span> <span class="pre">Price</span> <span class="pre">trigger_price,</span> <span class="pre">TriggerMethod</span> <span class="pre">trigger,</span> <span class="pre">Quantity</span> <span class="pre">quantity,</span> <span class="pre">Quantity</span> <span class="pre">filled_qty,</span> <span class="pre">Quantity</span> <span class="pre">display_qty,</span> <span class="pre">avg_px:</span> <span class="pre">Optional[Decimal],</span> <span class="pre">bool</span> <span class="pre">post_only,</span> <span class="pre">bool</span> <span class="pre">reduce_only,</span> <span class="pre">unicode</span> <span class="pre">reject_reason,</span> <span class="pre">int64_t</span> <span class="pre">ts_accepted,</span> <span class="pre">int64_t</span> <span class="pre">ts_triggered,</span> <span class="pre">int64_t</span> <span class="pre">ts_last,</span> <span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.reports.OrderStatusReport" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Represents an order status at a point in time.</p>
 <dl class="field-list">
@@ -1883,9 +1883,11 @@ orders, trades for those orders and open positions.</p>
 </dd>
 <dt><strong>order_status</strong><span class="classifier">OrderStatus</span></dt><dd><p>The reported order status at the exchange.</p>
 </dd>
-<dt><strong>price</strong><span class="classifier">Price, optional</span></dt><dd><p>The reported order price (STOP or LIMIT).</p>
+<dt><strong>price</strong><span class="classifier">Price, optional</span></dt><dd><p>The reported order price (LIMIT).</p>
 </dd>
 <dt><strong>trigger_price</strong><span class="classifier">Price, optional</span></dt><dd><p>The reported order trigger price (STOP).</p>
+</dd>
+<dt><strong>trigger</strong><span class="classifier">TriggerMethod</span></dt><dd><p>The reported order trigger method.</p>
 </dd>
 <dt><strong>quantity</strong><span class="classifier">Quantity</span></dt><dd><p>The reported order original quantity.</p>
 </dd>
@@ -1895,9 +1897,9 @@ orders, trades for those orders and open positions.</p>
 </dd>
 <dt><strong>avg_px</strong><span class="classifier">Decimal, optional</span></dt><dd><p>The reported order average fill price.</p>
 </dd>
-<dt><strong>is_post_only</strong><span class="classifier">bool</span></dt><dd><p>If the reported order will only provide liquidity (make a market).</p>
+<dt><strong>post_only</strong><span class="classifier">bool</span></dt><dd><p>If the reported order will only provide liquidity (make a market).</p>
 </dd>
-<dt><strong>is_reduce_only</strong><span class="classifier">bool</span></dt><dd><p>If the reported order carries the ‘reduce-only’ execution instruction.</p>
+<dt><strong>reduce_only</strong><span class="classifier">bool</span></dt><dd><p>If the reported order carries the ‘reduce-only’ execution instruction.</p>
 </dd>
 <dt><strong>reject_reason</strong><span class="classifier">str, optional</span></dt><dd><p>The reported reason for order rejection.</p>
 </dd>
@@ -1977,28 +1979,6 @@ orders, trades for those orders and open positions.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.execution.reports.OrderStatusReport.is_post_only">
-<span class="sig-name descname"><span class="pre">is_post_only</span></span><a class="headerlink" href="#nautilus_trader.execution.reports.OrderStatusReport.is_post_only" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the reported order will only provide liquidity (make a market).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>bool</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="nautilus_trader.execution.reports.OrderStatusReport.is_reduce_only">
-<span class="sig-name descname"><span class="pre">is_reduce_only</span></span><a class="headerlink" href="#nautilus_trader.execution.reports.OrderStatusReport.is_reduce_only" title="Permalink to this definition">¶</a></dt>
-<dd><p>If the reported order carries the ‘reduce-only’ execution instruction.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><cite>bool</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.reports.OrderStatusReport.leaves_qty">
 <span class="sig-name descname"><span class="pre">leaves_qty</span></span><a class="headerlink" href="#nautilus_trader.execution.reports.OrderStatusReport.leaves_qty" title="Permalink to this definition">¶</a></dt>
 <dd><p>The reported order total leaves quantity.</p>
@@ -2054,6 +2034,17 @@ orders, trades for those orders and open positions.</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.execution.reports.OrderStatusReport.post_only">
+<span class="sig-name descname"><span class="pre">post_only</span></span><a class="headerlink" href="#nautilus_trader.execution.reports.OrderStatusReport.post_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the reported order will only provide liquidity (make a market).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>bool</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.reports.OrderStatusReport.price">
 <span class="sig-name descname"><span class="pre">price</span></span><a class="headerlink" href="#nautilus_trader.execution.reports.OrderStatusReport.price" title="Permalink to this definition">¶</a></dt>
 <dd><p>The reported order price (LIMIT).</p>
@@ -2071,6 +2062,17 @@ orders, trades for those orders and open positions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>Quantity</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.execution.reports.OrderStatusReport.reduce_only">
+<span class="sig-name descname"><span class="pre">reduce_only</span></span><a class="headerlink" href="#nautilus_trader.execution.reports.OrderStatusReport.reduce_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the reported order carries the ‘reduce-only’ execution instruction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>bool</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2145,6 +2147,17 @@ orders, trades for those orders and open positions.</p>
 <dt class="sig sig-object py" id="nautilus_trader.execution.reports.OrderStatusReport.ts_last">
 <span class="sig-name descname"><span class="pre">ts_last</span></span><a class="headerlink" href="#nautilus_trader.execution.reports.OrderStatusReport.ts_last" title="Permalink to this definition">¶</a></dt>
 <dd><p>The UNIX timestamp (nanoseconds) of the last order status change.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>int64</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.execution.reports.OrderStatusReport.ts_triggered">
+<span class="sig-name descname"><span class="pre">ts_triggered</span></span><a class="headerlink" href="#nautilus_trader.execution.reports.OrderStatusReport.ts_triggered" title="Permalink to this definition">¶</a></dt>
+<dd><p>The UNIX timestamp (nanoseconds) when the order was triggered (0 if not triggered).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>int64</cite></p>
