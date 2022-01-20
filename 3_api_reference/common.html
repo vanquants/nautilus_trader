@@ -3517,9 +3517,9 @@ IDs generated.</p>
 </dd>
 <dt><strong>entry</strong><span class="classifier">Price</span></dt><dd><p>The entry LIMIT order price.</p>
 </dd>
-<dt><strong>stop_loss</strong><span class="classifier">Price</span></dt><dd><p>The stop-loss child order stop price.</p>
+<dt><strong>stop_loss</strong><span class="classifier">Price</span></dt><dd><p>The stop-loss child order trigger (STOP) price.</p>
 </dd>
-<dt><strong>take_profit</strong><span class="classifier">Price</span></dt><dd><p>The take-profit child order limit price.</p>
+<dt><strong>take_profit</strong><span class="classifier">Price</span></dt><dd><p>The take-profit child order (LIMIT) price.</p>
 </dd>
 <dt><strong>tif</strong><span class="classifier">TimeInForce {<code class="docutils literal notranslate"><span class="pre">DAY</span></code>, <code class="docutils literal notranslate"><span class="pre">GTC</span></code>}, optional</span></dt><dd><p>The entry orders time-in-force .</p>
 </dd>
@@ -3568,9 +3568,9 @@ IDs generated.</p>
 </dd>
 <dt><strong>quantity</strong><span class="classifier">Quantity</span></dt><dd><p>The entry orders quantity (&gt; 0).</p>
 </dd>
-<dt><strong>stop_loss</strong><span class="classifier">Price</span></dt><dd><p>The stop-loss child order stop price.</p>
+<dt><strong>stop_loss</strong><span class="classifier">Price</span></dt><dd><p>The stop-loss child order trigger (STOP) price.</p>
 </dd>
-<dt><strong>take_profit</strong><span class="classifier">Price</span></dt><dd><p>The take-profit child order limit price.</p>
+<dt><strong>take_profit</strong><span class="classifier">Price</span></dt><dd><p>The take-profit child order (LIMIT) price.</p>
 </dd>
 <dt><strong>tif_bracket</strong><span class="classifier">TimeInForce {<code class="docutils literal notranslate"><span class="pre">DAY</span></code>, <code class="docutils literal notranslate"><span class="pre">GTC</span></code>}, optional</span></dt><dd><p>The bracket orders time-in-force .</p>
 </dd>
@@ -3722,8 +3722,8 @@ given count.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.factories.OrderFactory.stop_limit">
-<span class="sig-name descname"><span class="pre">stop_limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">order_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">trigger_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TriggerMethod</span> <span class="pre">trigger=TriggerMethod.DEFAULT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TimeInForce</span> <span class="pre">time_in_force=TimeInForce.GTC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">expiration=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">post_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">display_qty=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">tags=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder" title="nautilus_trader.model.orders.stop_limit.StopLimitOrder"><span class="pre">StopLimitOrder</span></a></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.stop_limit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a new stop-limit order.</p>
+<span class="sig-name descname"><span class="pre">stop_limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">order_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">trigger_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TriggerType</span> <span class="pre">trigger_type=TriggerType.DEFAULT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TimeInForce</span> <span class="pre">time_in_force=TimeInForce.GTC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">expiration=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">post_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">display_qty=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">tags=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="model/orders.html#nautilus_trader.model.orders.stop_limit.StopLimitOrder" title="nautilus_trader.model.orders.stop_limit.StopLimitOrder"><span class="pre">StopLimitOrder</span></a></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.stop_limit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new stop-limit trigger order.</p>
 <p>If the time-in-force is <code class="docutils literal notranslate"><span class="pre">GTD</span></code> then a valid expire time must be given.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -3738,7 +3738,7 @@ given count.</p>
 </dd>
 <dt><strong>trigger_price</strong><span class="classifier">Price</span></dt><dd><p>The orders trigger stop price.</p>
 </dd>
-<dt><strong>trigger</strong><span class="classifier">TriggerMethod</span></dt><dd><p>The order trigger method.</p>
+<dt><strong>trigger_type</strong><span class="classifier">TriggerType</span></dt><dd><p>The order trigger type.</p>
 </dd>
 <dt><strong>time_in_force</strong><span class="classifier">TimeInForce, optional</span></dt><dd><p>The orders time-in-force.</p>
 </dd>
@@ -3775,8 +3775,8 @@ contain any arbitrary delimiter if required.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.common.factories.OrderFactory.stop_market">
-<span class="sig-name descname"><span class="pre">stop_market</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">order_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">trigger_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TriggerMethod</span> <span class="pre">trigger=TriggerMethod.DEFAULT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TimeInForce</span> <span class="pre">time_in_force=TimeInForce.GTC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">expiration=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">tags=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="model/orders.html#nautilus_trader.model.orders.stop_market.StopMarketOrder" title="nautilus_trader.model.orders.stop_market.StopMarketOrder"><span class="pre">StopMarketOrder</span></a></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.stop_market" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a new stop-market order.</p>
+<span class="sig-name descname"><span class="pre">stop_market</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">order_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">trigger_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TriggerType</span> <span class="pre">trigger_type=TriggerType.DEFAULT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TimeInForce</span> <span class="pre">time_in_force=TimeInForce.GTC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">expiration=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">tags=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="model/orders.html#nautilus_trader.model.orders.stop_market.StopMarketOrder" title="nautilus_trader.model.orders.stop_market.StopMarketOrder"><span class="pre">StopMarketOrder</span></a></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.stop_market" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new stop-market trigger order.</p>
 <p>If the time-in-force is <code class="docutils literal notranslate"><span class="pre">GTD</span></code> then a valid expire time must be given.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -3789,7 +3789,7 @@ contain any arbitrary delimiter if required.</p>
 </dd>
 <dt><strong>trigger_price</strong><span class="classifier">Price</span></dt><dd><p>The orders trigger price (STOP).</p>
 </dd>
-<dt><strong>trigger</strong><span class="classifier">TriggerMethod</span></dt><dd><p>The order trigger method.</p>
+<dt><strong>trigger_type</strong><span class="classifier">TriggerType</span></dt><dd><p>The order trigger type.</p>
 </dd>
 <dt><strong>time_in_force</strong><span class="classifier">TimeInForce, optional</span></dt><dd><p>The orders time-in-force.</p>
 </dd>
@@ -3836,6 +3836,114 @@ contain any arbitrary delimiter if required.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>TraderId</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.factories.OrderFactory.trailing_stop_limit">
+<span class="sig-name descname"><span class="pre">trailing_stop_limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">order_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">trigger_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit_offset:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trailing_offset:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TriggerType</span> <span class="pre">trigger_type=TriggerType.DEFAULT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TrailingOffsetType</span> <span class="pre">offset_type=TrailingOffsetType.PRICE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TimeInForce</span> <span class="pre">time_in_force=TimeInForce.GTC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">expiration=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">post_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">display_qty=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">tags=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">TrailingStopLimitOrder</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.trailing_stop_limit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new trailing stop-limit trigger order.</p>
+<p>If the time-in-force is <code class="docutils literal notranslate"><span class="pre">GTD</span></code> then a valid expire time must be given.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The orders instrument ID.</p>
+</dd>
+<dt><strong>order_side</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The orders side.</p>
+</dd>
+<dt><strong>quantity</strong><span class="classifier">Quantity</span></dt><dd><p>The orders quantity (&gt; 0).</p>
+</dd>
+<dt><strong>price</strong><span class="classifier">Price</span></dt><dd><p>The orders limit price.</p>
+</dd>
+<dt><strong>trigger_price</strong><span class="classifier">Price</span></dt><dd><p>The orders trigger stop price.</p>
+</dd>
+<dt><strong>trailing_offset</strong><span class="classifier">Decimal</span></dt><dd><p>The trailing offset for the trigger (STOP) price.</p>
+</dd>
+<dt><strong>limit_offset</strong><span class="classifier">Decimal</span></dt><dd><p>The trailing offset for the order (LIMIT) price.</p>
+</dd>
+<dt><strong>trigger_type</strong><span class="classifier">TriggerType, optional</span></dt><dd><p>The order trigger type.</p>
+</dd>
+<dt><strong>offset_type</strong><span class="classifier">TrailingOffsetType, optional</span></dt><dd><p>The order trailing offset type.</p>
+</dd>
+<dt><strong>time_in_force</strong><span class="classifier">TimeInForce, optional</span></dt><dd><p>The orders time-in-force.</p>
+</dd>
+<dt><strong>expiration</strong><span class="classifier">datetime, optional</span></dt><dd><p>The order expiration (for <code class="docutils literal notranslate"><span class="pre">GTD</span></code> orders).</p>
+</dd>
+<dt><strong>post_only</strong><span class="classifier">bool, optional</span></dt><dd><p>If the order will only provide liquidity (make a market).</p>
+</dd>
+<dt><strong>reduce_only</strong><span class="classifier">bool, optional</span></dt><dd><p>If the order carries the ‘reduce-only’ execution instruction.</p>
+</dd>
+<dt><strong>display_qty</strong><span class="classifier">Quantity, optional</span></dt><dd><p>The quantity of the order to display on the public book (iceberg).</p>
+</dd>
+<dt><strong>tags</strong><span class="classifier">str, optional</span></dt><dd><p>The custom user tags for the order. These are optional and can
+contain any arbitrary delimiter if required.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>TrailingStopLimitOrder</dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>quantity</cite> is not positive (&gt; 0).</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>time_in_force</cite> is <code class="docutils literal notranslate"><span class="pre">GTD</span></code> and <cite>expiration</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> or &lt;= UNIX epoch.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>display_qty</cite> is negative (&lt; 0) or greater than <cite>quantity</cite>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.common.factories.OrderFactory.trailing_stop_market">
+<span class="sig-name descname"><span class="pre">trailing_stop_market</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OrderSide</span> <span class="pre">order_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quantity</span> <span class="pre">quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">trigger_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trailing_offset:</span> <span class="pre">Decimal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TriggerType</span> <span class="pre">trigger_type=TriggerType.DEFAULT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TrailingOffsetType</span> <span class="pre">offset_type=TrailingOffsetType.PRICE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TimeInForce</span> <span class="pre">time_in_force=TimeInForce.GTC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">expiration=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">reduce_only=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode</span> <span class="pre">tags=None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">TrailingStopMarketOrder</span></span></span><a class="headerlink" href="#nautilus_trader.common.factories.OrderFactory.trailing_stop_market" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new trailing stop-market trigger order.</p>
+<p>If the time-in-force is <code class="docutils literal notranslate"><span class="pre">GTD</span></code> then a valid expire time must be given.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId</span></dt><dd><p>The orders instrument ID.</p>
+</dd>
+<dt><strong>order_side</strong><span class="classifier">OrderSide {<code class="docutils literal notranslate"><span class="pre">BUY</span></code>, <code class="docutils literal notranslate"><span class="pre">SELL</span></code>}</span></dt><dd><p>The orders side.</p>
+</dd>
+<dt><strong>quantity</strong><span class="classifier">Quantity</span></dt><dd><p>The orders quantity (&gt; 0).</p>
+</dd>
+<dt><strong>trigger_price</strong><span class="classifier">Price</span></dt><dd><p>The orders trigger price (STOP).</p>
+</dd>
+<dt><strong>trailing_offset</strong><span class="classifier">Decimal</span></dt><dd><p>The trailing offset for the trigger (STOP) price.</p>
+</dd>
+<dt><strong>trigger_type</strong><span class="classifier">TriggerType, optional</span></dt><dd><p>The order trigger type.</p>
+</dd>
+<dt><strong>offset_type</strong><span class="classifier">TrailingOffsetType, optional</span></dt><dd><p>The order trailing offset type.</p>
+</dd>
+<dt><strong>time_in_force</strong><span class="classifier">TimeInForce, optional</span></dt><dd><p>The orders time-in-force.</p>
+</dd>
+<dt><strong>expiration</strong><span class="classifier">datetime, optional</span></dt><dd><p>The order expiration (for <code class="docutils literal notranslate"><span class="pre">GTD</span></code> orders).</p>
+</dd>
+<dt><strong>reduce_only</strong><span class="classifier">bool, optional</span></dt><dd><p>If the order carries the ‘reduce-only’ execution instruction.</p>
+</dd>
+<dt><strong>tags</strong><span class="classifier">str, optional</span></dt><dd><p>The custom user tags for the order. These are optional and can
+contain any arbitrary delimiter if required.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>TrailingStopMarketOrder</dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>quantity</cite> is not positive (&gt; 0).</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>time_in_force</cite> is <code class="docutils literal notranslate"><span class="pre">GTD</span></code> and <cite>expiration</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> or &lt;= UNIX epoch.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
