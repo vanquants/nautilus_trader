@@ -1355,6 +1355,8 @@
 </li>
         <li><a href="3_api_reference/core.html#nautilus_trader.core.message.Event.category">(Event attribute)</a>
 </li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.ExecutionMassStatus.category">(ExecutionMassStatus attribute)</a>
+</li>
         <li><a href="3_api_reference/core.html#nautilus_trader.core.message.Message.category">(Message attribute)</a>
 </li>
         <li><a href="3_api_reference/model/commands.html#nautilus_trader.model.commands.trading.ModifyOrder.category">(ModifyOrder attribute)</a>
@@ -1383,6 +1385,8 @@
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderRejected.category">(OrderRejected attribute)</a>
 </li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.category">(OrderStatusReport attribute)</a>
+</li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderSubmitted.category">(OrderSubmitted attribute)</a>
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderTriggered.category">(OrderTriggered attribute)</a>
@@ -1397,6 +1401,8 @@
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.position.PositionOpened.category">(PositionOpened attribute)</a>
 </li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.PositionStatusReport.category">(PositionStatusReport attribute)</a>
+</li>
         <li><a href="3_api_reference/core.html#nautilus_trader.core.message.Request.category">(Request attribute)</a>
 </li>
         <li><a href="3_api_reference/core.html#nautilus_trader.core.message.Response.category">(Response attribute)</a>
@@ -1408,6 +1414,8 @@
         <li><a href="3_api_reference/data.html#nautilus_trader.data.messages.Subscribe.category">(Subscribe attribute)</a>
 </li>
         <li><a href="3_api_reference/common.html#nautilus_trader.common.timer.TimeEvent.category">(TimeEvent attribute)</a>
+</li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.TradeReport.category">(TradeReport attribute)</a>
 </li>
         <li><a href="3_api_reference/model/commands.html#nautilus_trader.model.commands.trading.TradingCommand.category">(TradingCommand attribute)</a>
 </li>
@@ -3843,6 +3851,8 @@
 </li>
         <li><a href="3_api_reference/execution.html#nautilus_trader.execution.engine.ExecutionEngine.id">(ExecutionEngine attribute)</a>
 </li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.ExecutionMassStatus.id">(ExecutionMassStatus attribute)</a>
+</li>
         <li><a href="3_api_reference/adapters/ftx.html#nautilus_trader.adapters.ftx.data.FTXDataClient.id">(FTXDataClient attribute)</a>
 </li>
         <li><a href="3_api_reference/adapters/ftx.html#nautilus_trader.adapters.ftx.execution.FTXExecutionClient.id">(FTXExecutionClient attribute)</a>
@@ -3901,6 +3911,8 @@
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderRejected.id">(OrderRejected attribute)</a>
 </li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.OrderStatusReport.id">(OrderStatusReport attribute)</a>
+</li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderSubmitted.id">(OrderSubmitted attribute)</a>
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderTriggered.id">(OrderTriggered attribute)</a>
@@ -3916,6 +3928,8 @@
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.position.PositionEvent.id">(PositionEvent attribute)</a>
 </li>
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.position.PositionOpened.id">(PositionOpened attribute)</a>
+</li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.PositionStatusReport.id">(PositionStatusReport attribute)</a>
 </li>
         <li><a href="3_api_reference/core.html#nautilus_trader.core.message.Request.id">(Request attribute)</a>
 </li>
@@ -3934,6 +3948,8 @@
         <li><a href="3_api_reference/common.html#nautilus_trader.common.timer.TimeEvent.id">(TimeEvent attribute)</a>
 </li>
         <li><a href="3_api_reference/trading.html#nautilus_trader.trading.trader.Trader.id">(Trader attribute)</a>
+</li>
+        <li><a href="3_api_reference/execution.html#nautilus_trader.execution.reports.TradeReport.id">(TradeReport attribute)</a>
 </li>
         <li><a href="3_api_reference/model/commands.html#nautilus_trader.model.commands.trading.TradingCommand.id">(TradingCommand attribute)</a>
 </li>
@@ -8978,6 +8994,12 @@
         <li><a href="3_api_reference/model/events.html#nautilus_trader.model.events.order.OrderRejected.reason">(OrderRejected attribute)</a>
 </li>
       </ul></li>
+      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.engine.ExecutionEngine.reconcile">reconcile() (ExecutionEngine method)</a>
+
+      <ul>
+        <li><a href="3_api_reference/live.html#nautilus_trader.live.execution_engine.LiveExecutionEngine.reconcile">(LiveExecutionEngine method)</a>
+</li>
+      </ul></li>
       <li><a href="3_api_reference/live.html#nautilus_trader.live.execution_engine.LiveExecutionEngine.reconcile_state">reconcile_state() (LiveExecutionEngine method)</a>
 </li>
       <li><a href="3_api_reference/adapters/betfair.html#nautilus_trader.adapters.betfair.sockets.BetfairMarketStreamClient.reconnect">reconnect() (BetfairMarketStreamClient method)</a>
@@ -9126,6 +9148,12 @@
         <li><a href="3_api_reference/backtest.html#nautilus_trader.backtest.config.BacktestVenueConfig.replace">(BacktestVenueConfig method)</a>
 </li>
         <li><a href="3_api_reference/backtest.html#nautilus_trader.backtest.config.Partialable.replace">(Partialable method)</a>
+</li>
+      </ul></li>
+      <li><a href="3_api_reference/execution.html#nautilus_trader.execution.engine.ExecutionEngine.report_count">report_count (ExecutionEngine attribute)</a>
+
+      <ul>
+        <li><a href="3_api_reference/live.html#nautilus_trader.live.execution_engine.LiveExecutionEngine.report_count">(LiveExecutionEngine attribute)</a>
 </li>
       </ul></li>
       <li><a href="3_api_reference/analysis.html#nautilus_trader.analysis.reports.ReportProvider">ReportProvider (class in nautilus_trader.analysis.reports)</a>
