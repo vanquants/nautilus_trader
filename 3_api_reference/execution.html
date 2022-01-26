@@ -1518,7 +1518,7 @@ called after faulting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>report</strong><span class="classifier">Document</span></dt><dd><p>The execution report to reconcile.</p>
+<dt><strong>report</strong><span class="classifier">Document</span></dt><dd><p>The execution mass status report to reconcile.</p>
 </dd>
 </dl>
 </dd>
@@ -1528,11 +1528,11 @@ called after faulting.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.execution.engine.ExecutionEngine.reconcile_report">
 <span class="sig-name descname"><span class="pre">reconcile_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ExecutionReport</span> <span class="pre">report</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.engine.ExecutionEngine.reconcile_report" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reconcile the given execution report.</p>
+<dd><p>Check the given execution report.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>report</strong><span class="classifier">Document</span></dt><dd><p>The execution report to reconcile.</p>
+<dt><strong>report</strong><span class="classifier">Document</span></dt><dd><p>The execution report to check.</p>
 </dd>
 </dl>
 </dd>
@@ -1997,7 +1997,7 @@ including status of all orders, trades for those orders and open positions.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.execution.reports.OrderStatusReport">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OrderStatusReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">AccountId</span> <span class="pre">account_id,</span> <span class="pre">InstrumentId</span> <span class="pre">instrument_id,</span> <span class="pre">ClientOrderId</span> <span class="pre">client_order_id,</span> <span class="pre">OrderListId</span> <span class="pre">order_list_id,</span> <span class="pre">VenueOrderId</span> <span class="pre">venue_order_id,</span> <span class="pre">OrderSide</span> <span class="pre">order_side,</span> <span class="pre">OrderType</span> <span class="pre">order_type,</span> <span class="pre">ContingencyType</span> <span class="pre">contingency,</span> <span class="pre">TimeInForce</span> <span class="pre">time_in_force,</span> <span class="pre">OrderStatus</span> <span class="pre">order_status,</span> <span class="pre">Price</span> <span class="pre">price,</span> <span class="pre">Price</span> <span class="pre">trigger_price,</span> <span class="pre">TriggerType</span> <span class="pre">trigger_type,</span> <span class="pre">limit_offset:</span> <span class="pre">Optional[Decimal],</span> <span class="pre">trailing_offset:</span> <span class="pre">Optional[Decimal],</span> <span class="pre">TrailingOffsetType</span> <span class="pre">offset_type,</span> <span class="pre">Quantity</span> <span class="pre">quantity,</span> <span class="pre">Quantity</span> <span class="pre">filled_qty,</span> <span class="pre">Quantity</span> <span class="pre">display_qty,</span> <span class="pre">avg_px:</span> <span class="pre">Optional[Decimal],</span> <span class="pre">bool</span> <span class="pre">post_only,</span> <span class="pre">bool</span> <span class="pre">reduce_only,</span> <span class="pre">unicode</span> <span class="pre">reject_reason,</span> <span class="pre">UUID4</span> <span class="pre">report_id,</span> <span class="pre">int64_t</span> <span class="pre">ts_accepted,</span> <span class="pre">int64_t</span> <span class="pre">ts_triggered,</span> <span class="pre">int64_t</span> <span class="pre">ts_last,</span> <span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.reports.OrderStatusReport" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OrderStatusReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">AccountId</span> <span class="pre">account_id,</span> <span class="pre">InstrumentId</span> <span class="pre">instrument_id,</span> <span class="pre">ClientOrderId</span> <span class="pre">client_order_id,</span> <span class="pre">OrderListId</span> <span class="pre">order_list_id,</span> <span class="pre">VenueOrderId</span> <span class="pre">venue_order_id,</span> <span class="pre">OrderSide</span> <span class="pre">order_side,</span> <span class="pre">OrderType</span> <span class="pre">order_type,</span> <span class="pre">ContingencyType</span> <span class="pre">contingency,</span> <span class="pre">TimeInForce</span> <span class="pre">time_in_force,</span> <span class="pre">datetime</span> <span class="pre">expiration,</span> <span class="pre">OrderStatus</span> <span class="pre">order_status,</span> <span class="pre">Price</span> <span class="pre">price,</span> <span class="pre">Price</span> <span class="pre">trigger_price,</span> <span class="pre">TriggerType</span> <span class="pre">trigger_type,</span> <span class="pre">limit_offset:</span> <span class="pre">Optional[Decimal],</span> <span class="pre">trailing_offset:</span> <span class="pre">Optional[Decimal],</span> <span class="pre">TrailingOffsetType</span> <span class="pre">offset_type,</span> <span class="pre">Quantity</span> <span class="pre">quantity,</span> <span class="pre">Quantity</span> <span class="pre">filled_qty,</span> <span class="pre">Quantity</span> <span class="pre">display_qty,</span> <span class="pre">avg_px:</span> <span class="pre">Optional[Decimal],</span> <span class="pre">bool</span> <span class="pre">post_only,</span> <span class="pre">bool</span> <span class="pre">reduce_only,</span> <span class="pre">unicode</span> <span class="pre">reject_reason,</span> <span class="pre">UUID4</span> <span class="pre">report_id,</span> <span class="pre">int64_t</span> <span class="pre">ts_accepted,</span> <span class="pre">int64_t</span> <span class="pre">ts_triggered,</span> <span class="pre">int64_t</span> <span class="pre">ts_last,</span> <span class="pre">int64_t</span> <span class="pre">ts_init</span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.reports.OrderStatusReport" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.execution.reports.ExecutionReport" title="nautilus_trader.execution.reports.ExecutionReport"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.execution.reports.ExecutionReport</span></code></a></p>
 <p>Represents an order status at a point in time.</p>
 <dl class="field-list">
@@ -2020,6 +2020,8 @@ including status of all orders, trades for those orders and open positions.</p>
 <dt><strong>contingency</strong><span class="classifier">ContingencyType</span></dt><dd><p>The reported order contingency type.</p>
 </dd>
 <dt><strong>time_in_force</strong><span class="classifier">TimeInForce</span></dt><dd><p>The reported order time in force.</p>
+</dd>
+<dt><strong>expiration</strong><span class="classifier">datetime, optional</span></dt><dd><p>The order expiration.</p>
 </dd>
 <dt><strong>order_status</strong><span class="classifier">OrderStatus</span></dt><dd><p>The reported order status at the exchange.</p>
 </dd>
@@ -2116,6 +2118,17 @@ including status of all orders, trades for those orders and open positions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><cite>Quantity</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.execution.reports.OrderStatusReport.expiration">
+<span class="sig-name descname"><span class="pre">expiration</span></span><a class="headerlink" href="#nautilus_trader.execution.reports.OrderStatusReport.expiration" title="Permalink to this definition">¶</a></dt>
+<dd><p>The order expiration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>datetime</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
