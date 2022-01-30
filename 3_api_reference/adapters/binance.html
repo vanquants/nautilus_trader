@@ -1400,6 +1400,106 @@ called after faulting.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_order_status_report">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_order_status_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_order_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.ClientOrderId" title="nautilus_trader.model.identifiers.ClientOrderId"><span class="pre">nautilus_trader.model.identifiers.ClientOrderId</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">venue_order_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><span class="pre">nautilus_trader.model.identifiers.VenueOrderId</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../execution.html#nautilus_trader.execution.reports.OrderStatusReport" title="nautilus_trader.execution.reports.OrderStatusReport"><span class="pre">nautilus_trader.execution.reports.OrderStatusReport</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_order_status_report" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate an order status report for the given order identifier parameter(s).</p>
+<p>Either one or both of the identifiers must be provided.</p>
+<p>If the order is not found, or an error occurs, then logs and returns
+<code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client_order_id</strong><span class="classifier">ClientOrderId, optional</span></dt><dd><p>The client order ID query filter.</p>
+</dd>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId, optional</span></dt><dd><p>The venue order ID (assigned by the venue) query filter.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>OrderStatusReport or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_order_status_reports">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_order_status_reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instrument_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><span class="pre">nautilus_trader.model.identifiers.InstrumentId</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime.datetime</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime.datetime</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_only</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../execution.html#nautilus_trader.execution.reports.OrderStatusReport" title="nautilus_trader.execution.reports.OrderStatusReport"><span class="pre">nautilus_trader.execution.reports.OrderStatusReport</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_order_status_reports" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a list of order status reports with optional query filters.</p>
+<p>The returned list may be empty if no orders match the given parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>start</strong><span class="classifier">datetime, optional</span></dt><dd><p>The start datetime query filter.</p>
+</dd>
+<dt><strong>end</strong><span class="classifier">datetime, optional</span></dt><dd><p>The end datetime query filter.</p>
+</dd>
+<dt><strong>open_only</strong><span class="classifier">bool, default False</span></dt><dd><p>If the query is for open orders only.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>list[OrderStatusReport]</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_trade_reports">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_trade_reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instrument_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><span class="pre">nautilus_trader.model.identifiers.InstrumentId</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">venue_order_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><span class="pre">nautilus_trader.model.identifiers.VenueOrderId</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime.datetime</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime.datetime</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../execution.html#nautilus_trader.execution.reports.TradeReport" title="nautilus_trader.execution.reports.TradeReport"><span class="pre">nautilus_trader.execution.reports.TradeReport</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_trade_reports" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a list of trade reports with optional query filters.</p>
+<p>The returned list may be empty if no trades match the given parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId, optional</span></dt><dd><p>The venue order ID (assigned by the venue) query filter.</p>
+</dd>
+<dt><strong>start</strong><span class="classifier">datetime, optional</span></dt><dd><p>The start datetime query filter.</p>
+</dd>
+<dt><strong>end</strong><span class="classifier">datetime, optional</span></dt><dd><p>The end datetime query filter.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>list[TradeReport]</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_position_status_reports">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_position_status_reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instrument_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.InstrumentId" title="nautilus_trader.model.identifiers.InstrumentId"><span class="pre">nautilus_trader.model.identifiers.InstrumentId</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime.datetime</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime.datetime</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../execution.html#nautilus_trader.execution.reports.PositionStatusReport" title="nautilus_trader.execution.reports.PositionStatusReport"><span class="pre">nautilus_trader.execution.reports.PositionStatusReport</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_position_status_reports" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a list of position status reports with optional query filters.</p>
+<p>The returned list may be empty if no positions match the given parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
+</dd>
+<dt><strong>start</strong><span class="classifier">datetime, optional</span></dt><dd><p>The start datetime query filter.</p>
+</dd>
+<dt><strong>end</strong><span class="classifier">datetime, optional</span></dt><dd><p>The end datetime query filter.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>list[PositionStatusReport]</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.submit_order">
 <span class="sig-name descname"><span class="pre">submit_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SubmitOrder</span> <span class="pre">command</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.submit_order" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
@@ -1427,50 +1527,6 @@ called after faulting.</p>
 <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.cancel_all_orders">
 <span class="sig-name descname"><span class="pre">cancel_all_orders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CancelAllOrders</span> <span class="pre">command</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.cancel_all_orders" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_order_status_report">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_order_status_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../model/orders.html#nautilus_trader.model.orders.base.Order" title="nautilus_trader.model.orders.base.Order"><span class="pre">nautilus_trader.model.orders.base.Order</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../execution.html#nautilus_trader.execution.reports.OrderStatusReport" title="nautilus_trader.execution.reports.OrderStatusReport"><span class="pre">nautilus_trader.execution.reports.OrderStatusReport</span></a></span></span><a class="headerlink" href="#nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_order_status_report" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate an order status report for the given order.</p>
-<p>If an error occurs then logs and returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>order</strong><span class="classifier">Order</span></dt><dd><p>The order for the report.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>OrderStatusReport or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_trade_reports">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_trade_reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">venue_order_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.VenueOrderId" title="nautilus_trader.model.identifiers.VenueOrderId"><span class="pre">nautilus_trader.model.identifiers.VenueOrderId</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../model/identifiers.html#nautilus_trader.model.identifiers.Symbol" title="nautilus_trader.model.identifiers.Symbol"><span class="pre">nautilus_trader.model.identifiers.Symbol</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">since</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime.datetime</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../execution.html#nautilus_trader.execution.reports.TradeReport" title="nautilus_trader.execution.reports.TradeReport"><span class="pre">nautilus_trader.execution.reports.TradeReport</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_trade_reports" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate a list of trade reports.</p>
-<p>The returned list may be empty if no trades match the given parameters.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId</span></dt><dd><p>The venue order ID (assigned by the venue) for the trades.</p>
-</dd>
-<dt><strong>symbol</strong><span class="classifier">Symbol</span></dt><dd><p>The symbol for the trades.</p>
-</dd>
-<dt><strong>since</strong><span class="classifier">datetime, optional</span></dt><dd><p>The timestamp to filter trades on.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>list[TradeReport]</dt><dd></dd>
-</dl>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py attribute">
@@ -1827,32 +1883,6 @@ position ID resolution.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_order_status_reports">
-<span class="sig-name descname"><span class="pre">generate_order_status_reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">start=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">end=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">open_only=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_order_status_reports" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate a list of order status reports with optional query filters.</p>
-<p>The returned list may be empty if no orders match the given parameters.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
-</dd>
-<dt><strong>start</strong><span class="classifier">datetime, optional</span></dt><dd><p>The start datetime query filter.</p>
-</dd>
-<dt><strong>end</strong><span class="classifier">datetime, optional</span></dt><dd><p>The end datetime query filter.</p>
-</dd>
-<dt><strong>open_only</strong><span class="classifier">bool, default False</span></dt><dd><p>If the query is for open orders only.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>list[OrderStatusReport]</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_order_submitted">
 <span class="sig-name descname"><span class="pre">generate_order_submitted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrategyId</span> <span class="pre">strategy_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int64_t</span> <span class="pre">ts_event</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_order_submitted" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate an <cite>OrderSubmitted</cite> event and send it to the <cite>ExecutionEngine</cite>.</p>
@@ -1919,30 +1949,6 @@ position ID resolution.</p>
 </dd>
 <dt><strong>venue_order_id_modified</strong><span class="classifier">bool</span></dt><dd><p>If the ID was modified for this event.</p>
 </dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_position_status_reports">
-<span class="sig-name descname"><span class="pre">generate_position_status_reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InstrumentId</span> <span class="pre">instrument_id=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">start=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime</span> <span class="pre">end=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.adapters.binance.execution.BinanceSpotExecutionClient.generate_position_status_reports" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate a list of position status reports with optional query filters.</p>
-<p>The returned list may be empty if no positions match the given parameters.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>instrument_id</strong><span class="classifier">InstrumentId, optional</span></dt><dd><p>The instrument ID query filter.</p>
-</dd>
-<dt><strong>start</strong><span class="classifier">datetime, optional</span></dt><dd><p>The start datetime query filter.</p>
-</dd>
-<dt><strong>end</strong><span class="classifier">datetime, optional</span></dt><dd><p>The end datetime query filter.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>list[PositionStatusReport]</dt><dd></dd>
 </dl>
 </dd>
 </dl>
