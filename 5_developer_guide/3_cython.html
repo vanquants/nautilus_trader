@@ -226,6 +226,18 @@
   <a class="reference internal nav-link" href="#debugging">
    Debugging
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ide-support">
+     IDE Support
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tips">
+     Tips
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -255,27 +267,35 @@ More information on Cython syntax and conventions can be found by reading the <a
 <div class="section" id="function-and-method-signatures">
 <h2>Function and method signatures<a class="headerlink" href="#function-and-method-signatures" title="Permalink to this headline">¶</a></h2>
 <p>Ensure that all functions and methods returning <code class="docutils literal notranslate"><span class="pre">void</span></code> or a primitive C type (such as <code class="docutils literal notranslate"><span class="pre">bint</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>) include the <code class="docutils literal notranslate"><span class="pre">except</span> <span class="pre">*</span></code> keyword in the signature.</p>
-<p>This will ensure Python exceptions are not ignored, but instead are “bubbled up” to the caller as expected.</p>
+<p>This will ensure Python exceptions are not ignored, but instead are <em>‘bubbled up’</em> to the caller as expected.</p>
 </div>
 <div class="section" id="debugging">
 <h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h2>
-<p>For PyCharm there has been a highly up-voted feature request for better debugging support for Cython,
-however it hasn’t received any traction for nearly a decade. So unfortunately it’s safe to assume that for
+<div class="section" id="ide-support">
+<h3>IDE Support<a class="headerlink" href="#ide-support" title="Permalink to this headline">¶</a></h3>
+<p>For PyCharm, there has been a highly up-voted feature request for better debugging support for Cython.
+Unfortunately, it hasn’t received any traction for nearly a decade. So it’s safe to assume that for
 PyCharm at least, it will not be receiving first class support for Cython debugging
 <a class="reference external" href="https://youtrack.jetbrains.com/issue/PY-9476">https://youtrack.jetbrains.com/issue/PY-9476</a>.</p>
-<p>The following recommendations are contained in the Cython docs:
-<a class="reference external" href="https://cython.readthedocs.io/en/latest/src/userguide/debugging.html">https://cython.readthedocs.io/en/latest/src/userguide/debugging.html</a></p>
-<p>The summary is it involves manually running a specialized version of <code class="docutils literal notranslate"><span class="pre">gdb</span></code> from the command line.
-We don’t recommend this workflow.</p>
+<p>For VS Code, there are some Cython extensions, however these are fairly unmaintained compared to
+PyCharm Professional. Also, to our knowledge they don’t contain any additional debugging support.</p>
+<p>The following debugging recommendations are contained in the Cython docs:
+<a class="reference external" href="https://cython.readthedocs.io/en/latest/src/userguide/debugging.html">https://cython.readthedocs.io/en/latest/src/userguide/debugging.html</a>.</p>
+<p>The summary of which, is to manually run a specialized version of <code class="docutils literal notranslate"><span class="pre">gdb</span></code> from the command line. We don’t recommend this workflow.
+If any users have figured out a better way to debug Cython, then please let us know!</p>
+</div>
+<div class="section" id="tips">
+<h3>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h3>
 <p>When debugging and seeking to understand a complex system such as NautilusTrader, it can be
-quite helpful to step through the code with a debugger, however with this not being available
-for the Cython part of the codebase, there are a few things we can recommend to help:</p>
+quite helpful to step through the code with a debugger. However, with this not being available in a reasonable way
+for the Cython part of the codebase - there are a few things we can recommend to help:</p>
 <ul class="simple">
 <li><p>Ensure <code class="docutils literal notranslate"><span class="pre">LogLevel.DEBUG</span></code> is configured for the backtesting or live system you are debugging. This is available on <code class="docutils literal notranslate"><span class="pre">BacktestEngineConfig(log_level=&quot;DEBUG&quot;)</span></code> or <code class="docutils literal notranslate"><span class="pre">TradingNodeConfig(log_level=&quot;DEBUG&quot;)</span></code>.
 With <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> mode active you will see more granular and verbose log traces which could be what you need to understand the flow.</p></li>
 <li><p>Beyond this, if you still require more granular visibility around a part of the system, we recommend some well-placed calls
-to a components logger (normally <code class="docutils literal notranslate"><span class="pre">self._log.debug(f&quot;HERE</span> <span class="pre">{variable}&quot;</span></code> is enough).</p></li>
+to a components logger (normally <code class="docutils literal notranslate"><span class="pre">self._log.debug(f&quot;HERE</span> <span class="pre">{variable}&quot;</span></code> is enough). You would then need to recompile.</p></li>
 </ul>
+</div>
 </div>
 </div>
 
