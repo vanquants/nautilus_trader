@@ -2297,9 +2297,13 @@ called after faulting.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.generate_mass_status">
-<span class="sig-name descname"><span class="pre">generate_mass_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.generate_mass_status" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">generate_mass_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lookback_mins</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.generate_mass_status" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate an execution state report based on the given list of active
 orders.</p>
+<dl class="simple">
+<dt>lookback_mins<span class="classifier">int, optional</span></dt><dd><p>The maximum lookback for querying closed orders, trades and positions.</p>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
@@ -3375,6 +3379,28 @@ running on.</p>
 <dd class="field-odd"><dl class="simple">
 <dt>int</dt><dd></dd>
 </dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.live.execution_engine.LiveExecutionEngine.recon_auto">
+<span class="sig-name descname"><span class="pre">recon_auto</span></span><a class="headerlink" href="#nautilus_trader.live.execution_engine.LiveExecutionEngine.recon_auto" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the execution engine will generate reconciliation events to align state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>bool</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.live.execution_engine.LiveExecutionEngine.recon_lookback_mins">
+<span class="sig-name descname"><span class="pre">recon_lookback_mins</span></span><a class="headerlink" href="#nautilus_trader.live.execution_engine.LiveExecutionEngine.recon_lookback_mins" title="Permalink to this definition">¶</a></dt>
+<dd><p>The lookback window for reconciliation on start-up (zero for max lookback).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>int</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -4540,9 +4566,22 @@ the new model: you should trust this data</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.live.config.LiveExecEngineConfig">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LiveExecEngineConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pydantic.types.PositiveInt</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.config.LiveExecEngineConfig" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LiveExecEngineConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recon_auto</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recon_lookback_mins</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pydantic.types.PositiveInt</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2880</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pydantic.types.PositiveInt</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.config.LiveExecEngineConfig" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="execution.html#nautilus_trader.execution.config.ExecEngineConfig" title="nautilus_trader.execution.config.ExecEngineConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.execution.config.ExecEngineConfig</span></code></a></p>
 <p>Configuration for <code class="docutils literal notranslate"><span class="pre">LiveExecEngine</span></code> instances.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>recon_auto</strong><span class="classifier">bool</span></dt><dd><p>If reconciliation should automatically generate events to align state.</p>
+</dd>
+<dt><strong>recon_lookback_mins</strong><span class="classifier">int, optional</span></dt><dd><p>The maximum lookback minutes to reconcile state for. If None then will
+use the maximum lookback available from the venues.</p>
+</dd>
+<dt><strong>qsize</strong><span class="classifier">PositiveInt</span></dt><dd><p>The queue size for the engines internal queue buffers.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.live.config.LiveExecEngineConfig.construct">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_fields_set</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">SetStr</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Model</span></span></span><a class="headerlink" href="#nautilus_trader.live.config.LiveExecEngineConfig.construct" title="Permalink to this definition">¶</a></dt>

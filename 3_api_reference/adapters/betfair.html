@@ -1627,9 +1627,13 @@ called after faulting.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.adapters.betfair.execution.BetfairExecutionClient.generate_mass_status">
-<span class="sig-name descname"><span class="pre">generate_mass_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.adapters.betfair.execution.BetfairExecutionClient.generate_mass_status" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">generate_mass_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lookback_mins</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.adapters.betfair.execution.BetfairExecutionClient.generate_mass_status" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate an execution state report based on the given list of active
 orders.</p>
+<dl class="simple">
+<dt>lookback_mins<span class="classifier">int, optional</span></dt><dd><p>The maximum lookback for querying closed orders, trades and positions.</p>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
