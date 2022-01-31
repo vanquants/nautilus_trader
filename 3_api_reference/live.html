@@ -2534,15 +2534,12 @@ position ID resolution.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.live.execution_client.LiveExecutionClient.generate_order_status_report">
-<span class="sig-name descname"><span class="pre">generate_order_status_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientOrderId</span> <span class="pre">client_order_id=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.generate_order_status_report" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">generate_order_status_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">VenueOrderId</span> <span class="pre">venue_order_id=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.live.execution_client.LiveExecutionClient.generate_order_status_report" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate an order status report for the given order identifier parameter(s).</p>
-<p>Either one or both of the identifiers must be provided.</p>
 <p>If the order is not found, or an error occurs, then logs and returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>client_order_id</strong><span class="classifier">ClientOrderId, optional</span></dt><dd><p>The client order ID query filter.</p>
-</dd>
 <dt><strong>venue_order_id</strong><span class="classifier">VenueOrderId, optional</span></dt><dd><p>The venue order ID (assigned by the venue) query filter.</p>
 </dd>
 </dl>
