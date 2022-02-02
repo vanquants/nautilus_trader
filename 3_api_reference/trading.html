@@ -28,8 +28,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     
@@ -831,6 +831,8 @@ A trading strategy can configure its own order management system type, which
 determines how positions are handled by the <cite>ExecutionEngine</cite>.</p>
 <dl class="simple">
 <dt>Strategy OMS (Order Management System) types:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: No specific type has been configured, will therefore default to
+the native OMS type for each venue.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">HEDGING</span></code>: A position ID will be assigned for each new position which
 is opened per instrument.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">NETTING</span></code>: There will only ever be a single position for the strategy
@@ -3192,7 +3194,7 @@ called after faulting.</p>
 <span id="config"></span><h2>Config<a class="headerlink" href="#module-nautilus_trader.trading.config" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.trading.config.TradingStrategyConfig">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TradingStrategyConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_id_tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'000'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oms_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'HEDGING'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.config.TradingStrategyConfig" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TradingStrategyConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_id_tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'000'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oms_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.trading.config.TradingStrategyConfig" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="common.html#nautilus_trader.common.config.ActorConfig" title="nautilus_trader.common.config.ActorConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.config.ActorConfig</span></code></a></p>
 <p>The base model for all trading strategy configurations.</p>
 <dl class="field-list simple">
@@ -3203,7 +3205,7 @@ called after faulting.</p>
 <dt><strong>order_id_tag</strong><span class="classifier">str</span></dt><dd><p>The unique order ID tag for the strategy. Must be unique
 amongst all running strategies for a particular trader ID.</p>
 </dd>
-<dt><strong>oms_type</strong><span class="classifier">OMSType</span></dt><dd><p>The order management system type for the strategy. This will determine
+<dt><strong>oms_type</strong><span class="classifier">OMSType, optional</span></dt><dd><p>The order management system type for the strategy. This will determine
 how the <cite>ExecutionEngine</cite> handles position IDs (see docs).</p>
 </dd>
 </dl>

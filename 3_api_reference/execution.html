@@ -28,8 +28,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     
@@ -430,13 +430,15 @@ trading operations.</p>
 <span id="client"></span><h2>Client<a class="headerlink" href="#module-nautilus_trader.execution.client" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExecutionClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ClientId</span> <span class="pre">client_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AccountType</span> <span class="pre">account_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">base_currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Cache</span> <span class="pre">cache</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Clock</span> <span class="pre">clock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Logger</span> <span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">config=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExecutionClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ClientId</span> <span class="pre">client_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OMSType</span> <span class="pre">oms_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AccountType</span> <span class="pre">account_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">base_currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">MessageBus</span> <span class="pre">msgbus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Cache</span> <span class="pre">cache</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Clock</span> <span class="pre">clock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Logger</span> <span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict</span> <span class="pre">config=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="common.html#nautilus_trader.common.component.Component" title="nautilus_trader.common.component.Component"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.common.component.Component</span></code></a></p>
 <p>The abstract base class for all execution clients.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>client_id</strong><span class="classifier">ClientId</span></dt><dd><p>The client ID.</p>
+</dd>
+<dt><strong>oms_type</strong><span class="classifier">OMSType</span></dt><dd><p>The venues order management system type.</p>
 </dd>
 <dt><strong>account_type</strong><span class="classifier">AccountType</span></dt><dd><p>The account type for the client.</p>
 </dd>
@@ -457,6 +459,8 @@ trading operations.</p>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><dl class="simple">
 <dt>ValueError</dt><dd><p>If <cite>client_id</cite> is not equal to <cite>account_id.issuer</cite>.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>oms_type</cite> is <code class="docutils literal notranslate"><span class="pre">NONE</span></code> value (must be defined).</p>
 </dd>
 </dl>
 </dd>
@@ -1005,6 +1009,17 @@ position ID resolution.</p>
 <dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.modify_order">
 <span class="sig-name descname"><span class="pre">modify_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ModifyOrder</span> <span class="pre">command</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">void</span></span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.modify_order" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract method (implement in subclass).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nautilus_trader.execution.client.ExecutionClient.oms_type">
+<span class="sig-name descname"><span class="pre">oms_type</span></span><a class="headerlink" href="#nautilus_trader.execution.client.ExecutionClient.oms_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>The venues order management system type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>OMSType</cite></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
