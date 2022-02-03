@@ -597,13 +597,13 @@ be known ahead of parsing).</p>
 </dd>
 <dt><strong>instrument_provider_update</strong></dt><dd><p>Optional hook to call before <cite>parser</cite> for the purpose of loading instruments into an InstrumentProvider</p>
 </dd>
-<dt><strong>header: List[str], default=None</strong></dt><dd><p>If first row contains names of columns, header has to be set to <cite>None</cite>.
+<dt><strong>header: List[str], default None</strong></dt><dd><p>If first row contains names of columns, header has to be set to <cite>None</cite>.
 If data starts right at the first row, header has to be provided the list of column names.</p>
 </dd>
-<dt><strong>chunked: bool, default=True</strong></dt><dd><p>If chunked=False, each CSV line will be passed to <cite>block_parser</cite> individually, if chunked=True, the data
+<dt><strong>chunked: bool, default True</strong></dt><dd><p>If chunked=False, each CSV line will be passed to <cite>block_parser</cite> individually, if chunked=True, the data
 passed will potentially contain many lines (a block).</p>
 </dd>
-<dt><strong>as_dataframe: bool, default=False</strong></dt><dd><p>If as_dataframe=True, the passes block will be parsed into a DataFrame before passing to <cite>block_parser</cite>.</p>
+<dt><strong>as_dataframe: bool, default False</strong></dt><dd><p>If as_dataframe=True, the passes block will be parsed into a DataFrame before passing to <cite>block_parser</cite>.</p>
 </dd>
 </dl>
 </dd>

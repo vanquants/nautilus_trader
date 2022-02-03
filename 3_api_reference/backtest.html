@@ -4300,9 +4300,17 @@ graph for execution by a dask executor.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.config.BacktestVenueConfig">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BacktestVenueConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oms_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">account_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_currency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">starting_balances</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">book_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'L1_TBBO'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">routing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.config.BacktestVenueConfig" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BacktestVenueConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oms_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">account_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_currency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">starting_balances</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">book_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'L1_TBBO'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">routing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bar_execution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.config.BacktestVenueConfig" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#nautilus_trader.backtest.config.Partialable" title="nautilus_trader.backtest.config.Partialable"><code class="xref py py-class docutils literal notranslate"><span class="pre">nautilus_trader.backtest.config.Partialable</span></code></a></p>
 <p>Represents a venue configuration for one specific backtest engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bar_execution</strong><span class="classifier">bool, default False</span></dt><dd><p>If the simulated exchange should be configured for bar execution mode.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="nautilus_trader.backtest.config.BacktestVenueConfig.replace">
 <span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nautilus_trader.backtest.config.BacktestVenueConfig.replace" title="Permalink to this definition">¶</a></dt>
@@ -4344,9 +4352,9 @@ graph for execution by a dask executor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>trader_id</strong><span class="classifier">str, default=”BACKTESTER-000”</span></dt><dd><p>The trader ID.</p>
+<dt><strong>trader_id</strong><span class="classifier">str, default “BACKTESTER-000”</span></dt><dd><p>The trader ID.</p>
 </dd>
-<dt><strong>log_level</strong><span class="classifier">str, default=”INFO”</span></dt><dd><p>The minimum log level for logging messages to stdout.</p>
+<dt><strong>log_level</strong><span class="classifier">str, default “INFO”</span></dt><dd><p>The minimum log level for logging messages to stdout.</p>
 </dd>
 <dt><strong>cache</strong><span class="classifier">CacheConfig, optional</span></dt><dd><p>The configuration for the cache.</p>
 </dd>
@@ -4358,9 +4366,9 @@ graph for execution by a dask executor.</p>
 </dd>
 <dt><strong>exec_engine</strong><span class="classifier">ExecEngineConfig, optional</span></dt><dd><p>The configuration for the execution engine.</p>
 </dd>
-<dt><strong>bypass_logging</strong><span class="classifier">bool, default=False</span></dt><dd><p>If logging should be bypassed.</p>
+<dt><strong>bypass_logging</strong><span class="classifier">bool, default False</span></dt><dd><p>If logging should be bypassed.</p>
 </dd>
-<dt><strong>run_analysis</strong><span class="classifier">bool, default=True</span></dt><dd><p>If post backtest performance analysis should be run.</p>
+<dt><strong>run_analysis</strong><span class="classifier">bool, default True</span></dt><dd><p>If post backtest performance analysis should be run.</p>
 </dd>
 </dl>
 </dd>
