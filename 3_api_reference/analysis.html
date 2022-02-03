@@ -377,12 +377,12 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#performance">
+  <a class="reference internal nav-link" href="#module-nautilus_trader.analysis.performance">
    Performance
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reports">
+  <a class="reference internal nav-link" href="#module-nautilus_trader.analysis.reports">
    Reports
   </a>
  </li>
@@ -410,11 +410,617 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="module-nautilus_trader.analysis">
 <span id="analysis"></span><h1>Analysis<a class="headerlink" href="#module-nautilus_trader.analysis" title="Permalink to this headline">¶</a></h1>
 <p>The <cite>analysis</cite> subpackage groups components relating to trading performance statistics and analysis.</p>
-<div class="section" id="performance">
-<h2>Performance<a class="headerlink" href="#performance" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-nautilus_trader.analysis.performance">
+<span id="performance"></span><h2>Performance<a class="headerlink" href="#module-nautilus_trader.analysis.performance" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PerformanceAnalyzer</span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides a performance analyzer for tracking and generating performance
+metrics and statistics.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.currencies">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">currencies</span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.currencies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the analyzed currencies.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>list[Currency]</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.calculate_statistics">
+<span class="sig-name descname"><span class="pre">calculate_statistics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">nautilus_trader.accounting.accounts.base.Account</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">positions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="model/position.html#nautilus_trader.model.position.Position" title="nautilus_trader.model.position.Position"><span class="pre">nautilus_trader.model.position.Position</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.calculate_statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate performance metrics from the given data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>account</strong><span class="classifier">Account</span></dt><dd><p>The account for the calculations.</p>
+</dd>
+<dt><strong>positions</strong><span class="classifier">dict[PositionId, Position]</span></dt><dd><p>The positions for the calculations.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.add_positions">
+<span class="sig-name descname"><span class="pre">add_positions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">positions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="model/position.html#nautilus_trader.model.position.Position" title="nautilus_trader.model.position.Position"><span class="pre">nautilus_trader.model.position.Position</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.add_positions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add positions data to the analyzer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>positions</strong><span class="classifier">list[Position]</span></dt><dd><p>The positions for analysis.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.add_trade">
+<span class="sig-name descname"><span class="pre">add_trade</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="model/identifiers.html#nautilus_trader.model.identifiers.PositionId" title="nautilus_trader.model.identifiers.PositionId"><span class="pre">nautilus_trader.model.identifiers.PositionId</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">realized_pnl</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="model/objects.html#nautilus_trader.model.objects.Money" title="nautilus_trader.model.objects.Money"><span class="pre">nautilus_trader.model.objects.Money</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.add_trade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add trade data to the analyzer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position_id</strong><span class="classifier">PositionId</span></dt><dd><p>The position ID for the trade.</p>
+</dd>
+<dt><strong>realized_pnl</strong><span class="classifier">Money</span></dt><dd><p>The realized PnL for the trade.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.add_return">
+<span class="sig-name descname"><span class="pre">add_return</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime.datetime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.add_return" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add return data to the analyzer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timestamp</strong><span class="classifier">datetime</span></dt><dd><p>The timestamp for the returns entry.</p>
+</dd>
+<dt><strong>value</strong><span class="classifier">double</span></dt><dd><p>The return value to add.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the analyzer.</p>
+<p>All stateful fields are reset to their initial value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.realized_pnls">
+<span class="sig-name descname"><span class="pre">realized_pnls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="model/currency.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><span class="pre">nautilus_trader.model.currency.Currency</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">pandas.core.series.Series</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.realized_pnls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the realized PnL for the portfolio.</p>
+<p>For multi-currency portfolios, specify the currency for the result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency, optional</span></dt><dd><p>The currency for the result.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>pd.Series or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> when analyzing multi-currency portfolios.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.total_pnl">
+<span class="sig-name descname"><span class="pre">total_pnl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="model/currency.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><span class="pre">nautilus_trader.model.currency.Currency</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.total_pnl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the total PnL for the portfolio.</p>
+<p>For multi-currency portfolios, specify the currency for the result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency, optional</span></dt><dd><p>The currency for the result.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>float</dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> when analyzing multi-currency portfolios.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>currency</cite> is not contained in the tracked account balances.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.total_pnl_percentage">
+<span class="sig-name descname"><span class="pre">total_pnl_percentage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="model/currency.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><span class="pre">nautilus_trader.model.currency.Currency</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.total_pnl_percentage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the percentage change of the total PnL for the portfolio.</p>
+<p>For multi-currency accounts, specify the currency for the result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency, optional</span></dt><dd><p>The currency for the result.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>float</dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>currency</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> when analyzing multi-currency portfolios.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>currency</cite> is not contained in the tracked account balances.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.max_winner">
+<span class="sig-name descname"><span class="pre">max_winner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="model/currency.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><span class="pre">nautilus_trader.model.currency.Currency</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.max_winner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the maximum winner for the portfolio.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency, optional</span></dt><dd><p>The currency for the analysis.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>float</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.max_loser">
+<span class="sig-name descname"><span class="pre">max_loser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="model/currency.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><span class="pre">nautilus_trader.model.currency.Currency</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.max_loser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the maximum loser for the portfolio.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency, optional</span></dt><dd><p>The currency for the analysis.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>float</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.min_winner">
+<span class="sig-name descname"><span class="pre">min_winner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="model/currency.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><span class="pre">nautilus_trader.model.currency.Currency</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.min_winner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the minimum winner for the portfolio.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency, optional</span></dt><dd><p>The currency for the analysis.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>float</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.min_loser">
+<span class="sig-name descname"><span class="pre">min_loser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="model/currency.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><span class="pre">nautilus_trader.model.currency.Currency</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.min_loser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the minimum loser for the portfolio.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency, optional</span></dt><dd><p>The currency for the analysis.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>float</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.avg_winner">
+<span class="sig-name descname"><span class="pre">avg_winner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="model/currency.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><span class="pre">nautilus_trader.model.currency.Currency</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.avg_winner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the average winner for the portfolio.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency, optional</span></dt><dd><p>The currency for the analysis.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>float</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.avg_loser">
+<span class="sig-name descname"><span class="pre">avg_loser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="model/currency.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><span class="pre">nautilus_trader.model.currency.Currency</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.avg_loser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the average loser for the portfolio.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency, optional</span></dt><dd><p>The currency for the analysis.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>float</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.win_rate">
+<span class="sig-name descname"><span class="pre">win_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="model/currency.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><span class="pre">nautilus_trader.model.currency.Currency</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.win_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the win rate (after commission) for the portfolio.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency, optional</span></dt><dd><p>The currency for the analysis.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>float</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.expectancy">
+<span class="sig-name descname"><span class="pre">expectancy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="model/currency.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><span class="pre">nautilus_trader.model.currency.Currency</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.expectancy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the expectancy for the portfolio.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency, optional</span></dt><dd><p>The currency for the analysis.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>float</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.returns">
+<span class="sig-name descname"><span class="pre">returns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.core.series.Series</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.returns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return raw the returns data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>pd.Series</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.returns_avg">
+<span class="sig-name descname"><span class="pre">returns_avg</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.returns_avg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the average of the returns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.returns_avg_win">
+<span class="sig-name descname"><span class="pre">returns_avg_win</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.returns_avg_win" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the average win of the returns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.returns_avg_loss">
+<span class="sig-name descname"><span class="pre">returns_avg_loss</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.returns_avg_loss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the average loss of the returns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.returns_annual_volatility">
+<span class="sig-name descname"><span class="pre">returns_annual_volatility</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.returns_annual_volatility" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the mean annual growth rate of the returns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This is equivalent to the compound annual growth rate.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.sharpe_ratio">
+<span class="sig-name descname"><span class="pre">sharpe_ratio</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.sharpe_ratio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the Sharpe ratio of the returns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.sortino_ratio">
+<span class="sig-name descname"><span class="pre">sortino_ratio</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.sortino_ratio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the Sortino ratio of the returns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.profit_factor">
+<span class="sig-name descname"><span class="pre">profit_factor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.profit_factor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the profit ratio (win ratio / loss ratio).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.profit_ratio">
+<span class="sig-name descname"><span class="pre">profit_ratio</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.profit_ratio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the profit ratio (win ratio / loss ratio).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.risk_return_ratio">
+<span class="sig-name descname"><span class="pre">risk_return_ratio</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.risk_return_ratio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the return / risk ratio (sharpe ratio without factoring in the risk-free rate).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.get_performance_stats_pnls">
+<span class="sig-name descname"><span class="pre">get_performance_stats_pnls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="model/currency.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><span class="pre">nautilus_trader.model.currency.Currency</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.get_performance_stats_pnls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the performance statistics for PnL from the last backtest run.</p>
+<p>Money objects are converted to floats.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency</span></dt><dd><p>The currency for the performance.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>dict[str, float]</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.get_performance_stats_returns">
+<span class="sig-name descname"><span class="pre">get_performance_stats_returns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.get_performance_stats_returns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the performance statistics from the last backtest run.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>dict[str, double]</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.get_performance_stats_pnls_formatted">
+<span class="sig-name descname"><span class="pre">get_performance_stats_pnls_formatted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="model/currency.html#nautilus_trader.model.currency.Currency" title="nautilus_trader.model.currency.Currency"><span class="pre">nautilus_trader.model.currency.Currency</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.get_performance_stats_pnls_formatted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the performance statistics from the last backtest run formatted
+for printing in the backtest run footer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>currency</strong><span class="classifier">Currency</span></dt><dd><p>The currency for the performance.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>list[str]</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.performance.PerformanceAnalyzer.get_performance_stats_returns_formatted">
+<span class="sig-name descname"><span class="pre">get_performance_stats_returns_formatted</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#nautilus_trader.analysis.performance.PerformanceAnalyzer.get_performance_stats_returns_formatted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the performance statistics for returns from the last backtest run
+formatted for printing in the backtest run footer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>list[str]</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="reports">
-<h2>Reports<a class="headerlink" href="#reports" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-nautilus_trader.analysis.reports">
+<span id="reports"></span><h2>Reports<a class="headerlink" href="#module-nautilus_trader.analysis.reports" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.reports.ReportProvider">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ReportProvider</span></span><a class="headerlink" href="#nautilus_trader.analysis.reports.ReportProvider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides various trading reports.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.reports.ReportProvider.generate_orders_report">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_orders_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orders</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="model/orders.html#nautilus_trader.model.orders.base.Order" title="nautilus_trader.model.orders.base.Order"><span class="pre">nautilus_trader.model.orders.base.Order</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.core.frame.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.reports.ReportProvider.generate_orders_report" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an orders report dataframe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>orders</strong><span class="classifier">list[Order]</span></dt><dd><p>The orders for the report.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>pd.DataFrame</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.reports.ReportProvider.generate_order_fills_report">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_order_fills_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orders</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="model/orders.html#nautilus_trader.model.orders.base.Order" title="nautilus_trader.model.orders.base.Order"><span class="pre">nautilus_trader.model.orders.base.Order</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.core.frame.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.reports.ReportProvider.generate_order_fills_report" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an order fills report dataframe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>orders</strong><span class="classifier">list[Order]</span></dt><dd><p>The orders for the report.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>pd.DataFrame</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.reports.ReportProvider.generate_positions_report">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_positions_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">positions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="model/position.html#nautilus_trader.model.position.Position" title="nautilus_trader.model.position.Position"><span class="pre">nautilus_trader.model.position.Position</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.core.frame.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.reports.ReportProvider.generate_positions_report" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a positions report dataframe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>positions</strong><span class="classifier">list[Position]</span></dt><dd><p>The positions for the report.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>pd.DataFrame</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nautilus_trader.analysis.reports.ReportProvider.generate_account_report">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_account_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">nautilus_trader.accounting.accounts.base.Account</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.core.frame.DataFrame</span></span></span><a class="headerlink" href="#nautilus_trader.analysis.reports.ReportProvider.generate_account_report" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate an account report for the given optional time range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>account</strong><span class="classifier">Account</span></dt><dd><p>The account for the report.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>pd.DataFrame</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 </div>
 
