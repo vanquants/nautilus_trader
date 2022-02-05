@@ -2050,6 +2050,18 @@ including status of all orders, trades for those orders and open positions.</p>
 </dd>
 </dl>
 </dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>quantity</cite> is not positive (&gt; 0).</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>filled_qty</cite> is negative (&lt; 0).</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>trigger_price</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>trigger_price</cite> is equal to <code class="docutils literal notranslate"><span class="pre">TriggerType.NONE</span></code>.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If <cite>limit_offset</cite> or <cite>trailing_offset</cite> is not <code class="docutils literal notranslate"><span class="pre">None</span></code> and offset_type is equal to <code class="docutils literal notranslate"><span class="pre">TrailingOffsetType.NONE</span></code>.</p>
+</dd>
+</dl>
+</dd>
 </dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.reports.OrderStatusReport.account_id">
@@ -2423,6 +2435,12 @@ position ID resolution.</p>
 </dd>
 </dl>
 </dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>quantity</cite> is not positive (&gt; 0).</p>
+</dd>
+</dl>
+</dd>
 </dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="nautilus_trader.execution.reports.PositionStatusReport.account_id">
@@ -2574,6 +2592,12 @@ position ID resolution.</p>
 <dt><strong>ts_event</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the trade occurred.</p>
 </dd>
 <dt><strong>ts_init</strong><span class="classifier">int64</span></dt><dd><p>The UNIX timestamp (nanoseconds) when the object was initialized.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <cite>last_qty</cite> is not positive (&gt; 0).</p>
 </dd>
 </dl>
 </dd>
