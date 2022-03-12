@@ -53,9 +53,12 @@ from nautilus_trader.portfolio.portfolio import Portfolio
 from nautilus_trader.risk.engine import RiskEngine
 from nautilus_trader.trading.config import TradingStrategyConfig
 from nautilus_trader.trading.strategy import TradingStrategy
-from tests.test_kit.mocks import KaboomStrategy
-from tests.test_kit.mocks import MockStrategy
-from tests.test_kit.stubs import TestStubs
+from tests.test_kit.mocks.strategies import KaboomStrategy
+from tests.test_kit.mocks.strategies import MockStrategy
+from tests.test_kit.stubs.component import TestComponentStubs
+from tests.test_kit.stubs.data import TestDataStubs
+from tests.test_kit.stubs.events import TestEventStubs
+from tests.test_kit.stubs.identifiers import TestIdStubs
 
 
 AUDUSD_SIM = TestInstrumentProvider.default_fx_ccy("AUD/USD")
@@ -73,7 +76,7 @@ class TestTradingStrategy:
             level_stdout=LogLevel.DEBUG,
         )
 
-        self.trader_id = TestStubs.trader_id()
+        self.trader_id = TestIdStubs.trader_id()
 
         self.msgbus = MessageBus(
             trader_id=self.trader_id,
@@ -81,7 +84,7 @@ class TestTradingStrategy:
             logger=self.logger,
         )
 
-        self.cache = TestStubs.cache()
+        self.cache = TestComponentStubs.cache()
 
         self.portfolio = Portfolio(
             msgbus=self.msgbus,
@@ -160,7 +163,9 @@ class TestTradingStrategy:
         self.cache.add_instrument(GBPUSD_SIM)
         self.cache.add_instrument(USDJPY_SIM)
 
-        self.exchange.process_tick(TestStubs.quote_tick_3decimal(USDJPY_SIM.id))  # Prepare market
+        self.exchange.process_tick(
+            TestDataStubs.quote_tick_3decimal(USDJPY_SIM.id)
+        )  # Prepare market
 
         self.data_engine.start()
         self.exec_engine.start()
@@ -284,7 +289,7 @@ class TestTradingStrategy:
 
     def test_reset(self):
         # Arrange
-        bar_type = TestStubs.bartype_audusd_1min_bid()
+        bar_type = TestDataStubs.bartype_audusd_1min_bid()
         strategy = MockStrategy(bar_type)
         strategy.register(
             trader_id=self.trader_id,
@@ -319,7 +324,7 @@ class TestTradingStrategy:
 
     def test_dispose(self):
         # Arrange
-        bar_type = TestStubs.bartype_audusd_1min_bid()
+        bar_type = TestDataStubs.bartype_audusd_1min_bid()
         strategy = MockStrategy(bar_type)
         strategy.register(
             trader_id=self.trader_id,
@@ -341,7 +346,7 @@ class TestTradingStrategy:
 
     def test_save_load(self):
         # Arrange
-        bar_type = TestStubs.bartype_audusd_1min_bid()
+        bar_type = TestDataStubs.bartype_audusd_1min_bid()
         strategy = MockStrategy(bar_type)
         strategy.register(
             trader_id=self.trader_id,
@@ -423,7 +428,7 @@ class TestTradingStrategy:
 
         ema1 = ExponentialMovingAverage(10)
         ema2 = ExponentialMovingAverage(10)
-        bar_type = TestStubs.bartype_audusd_1min_bid()
+        bar_type = TestDataStubs.bartype_audusd_1min_bid()
 
         # Act
         strategy.register_indicator_for_bars(bar_type, ema1)
@@ -447,7 +452,7 @@ class TestTradingStrategy:
         )
 
         ema = ExponentialMovingAverage(10)
-        bar_type = TestStubs.bartype_audusd_1min_bid()
+        bar_type = TestDataStubs.bartype_audusd_1min_bid()
 
         # Act
         strategy.register_indicator_for_quote_ticks(AUDUSD_SIM.id, ema)
@@ -473,7 +478,7 @@ class TestTradingStrategy:
         ema = ExponentialMovingAverage(10, price_type=PriceType.MID)
         strategy.register_indicator_for_quote_ticks(AUDUSD_SIM.id, ema)
 
-        tick = TestStubs.quote_tick_5decimal(AUDUSD_SIM.id)
+        tick = TestDataStubs.quote_tick_5decimal(AUDUSD_SIM.id)
 
         # Act
         strategy.handle_quote_tick(tick)
@@ -518,7 +523,7 @@ class TestTradingStrategy:
         ema = ExponentialMovingAverage(10, price_type=PriceType.MID)
         strategy.register_indicator_for_quote_ticks(AUDUSD_SIM.id, ema)
 
-        tick = TestStubs.quote_tick_5decimal(AUDUSD_SIM.id)
+        tick = TestDataStubs.quote_tick_5decimal(AUDUSD_SIM.id)
 
         # Act
         strategy.handle_quote_ticks([tick])
@@ -541,7 +546,7 @@ class TestTradingStrategy:
         ema = ExponentialMovingAverage(10)
         strategy.register_indicator_for_trade_ticks(AUDUSD_SIM.id, ema)
 
-        tick = TestStubs.trade_tick_5decimal(AUDUSD_SIM.id)
+        tick = TestDataStubs.trade_tick_5decimal(AUDUSD_SIM.id)
 
         # Act
         strategy.handle_trade_tick(tick)
@@ -565,7 +570,7 @@ class TestTradingStrategy:
         ema = ExponentialMovingAverage(10)
         strategy.register_indicator_for_trade_ticks(AUDUSD_SIM.id, ema)
 
-        tick = TestStubs.trade_tick_5decimal(AUDUSD_SIM.id)
+        tick = TestDataStubs.trade_tick_5decimal(AUDUSD_SIM.id)
 
         # Act
         strategy.handle_trade_ticks([tick])
@@ -596,7 +601,7 @@ class TestTradingStrategy:
 
     def test_handle_bar_updates_indicator_registered_for_bars(self):
         # Arrange
-        bar_type = TestStubs.bartype_audusd_1min_bid()
+        bar_type = TestDataStubs.bartype_audusd_1min_bid()
         strategy = TradingStrategy()
         strategy.register(
             trader_id=self.trader_id,
@@ -609,7 +614,7 @@ class TestTradingStrategy:
 
         ema = ExponentialMovingAverage(10)
         strategy.register_indicator_for_bars(bar_type, ema)
-        bar = TestStubs.bar_5decimal()
+        bar = TestDataStubs.bar_5decimal()
 
         # Act
         strategy.handle_bar(bar)
@@ -620,7 +625,7 @@ class TestTradingStrategy:
 
     def test_handle_bars_updates_indicator_registered_for_bars(self):
         # Arrange
-        bar_type = TestStubs.bartype_audusd_1min_bid()
+        bar_type = TestDataStubs.bartype_audusd_1min_bid()
         strategy = TradingStrategy()
         strategy.register(
             trader_id=self.trader_id,
@@ -633,7 +638,7 @@ class TestTradingStrategy:
 
         ema = ExponentialMovingAverage(10)
         strategy.register_indicator_for_bars(bar_type, ema)
-        bar = TestStubs.bar_5decimal()
+        bar = TestDataStubs.bar_5decimal()
 
         # Act
         strategy.handle_bars([bar])
@@ -643,7 +648,7 @@ class TestTradingStrategy:
 
     def test_handle_bars_with_no_bars_logs_and_continues(self):
         # Arrange
-        bar_type = TestStubs.bartype_gbpusd_1sec_mid()
+        bar_type = TestDataStubs.bartype_gbpusd_1sec_mid()
         strategy = TradingStrategy()
         strategy.register(
             trader_id=self.trader_id,
@@ -665,7 +670,7 @@ class TestTradingStrategy:
 
     def test_stop_cancels_a_running_time_alert(self):
         # Arrange
-        bar_type = TestStubs.bartype_audusd_1min_bid()
+        bar_type = TestDataStubs.bartype_audusd_1min_bid()
         strategy = MockStrategy(bar_type)
         strategy.register(
             trader_id=self.trader_id,
@@ -688,7 +693,7 @@ class TestTradingStrategy:
 
     def test_stop_cancels_a_running_timer(self):
         # Arrange
-        bar_type = TestStubs.bartype_audusd_1min_bid()
+        bar_type = TestDataStubs.bartype_audusd_1min_bid()
         strategy = MockStrategy(bar_type)
         strategy.register(
             trader_id=self.trader_id,
@@ -736,9 +741,9 @@ class TestTradingStrategy:
         # Assert
         assert order in strategy.cache.orders()
         assert strategy.cache.orders()[0].status == OrderStatus.FILLED
-        assert order.client_order_id not in strategy.cache.orders_working()
-        assert not strategy.cache.is_order_working(order.client_order_id)
-        assert strategy.cache.is_order_completed(order.client_order_id)
+        assert order.client_order_id not in strategy.cache.orders_open()
+        assert not strategy.cache.is_order_open(order.client_order_id)
+        assert strategy.cache.is_order_closed(order.client_order_id)
 
     def test_submit_order_list_with_valid_order_successfully_submits(self):
         # Arrange
@@ -769,9 +774,9 @@ class TestTradingStrategy:
         assert bracket.orders[2] in strategy.cache.orders()
         # TODO: Implement
         # assert bracket.orders[0].status == OrderStatus.ACCEPTED
-        # assert entry in strategy.cache.orders_working()
-        # assert strategy.cache.is_order_working(entry.client_order_id)
-        # assert not strategy.cache.is_order_completed(entry.client_order_id)
+        # assert entry in strategy.cache.orders_open()
+        # assert strategy.cache.is_order_open(entry.client_order_id)
+        # assert not strategy.cache.is_order_closed(entry.client_order_id)
 
     def test_cancel_order(self):
         # Arrange
@@ -802,11 +807,11 @@ class TestTradingStrategy:
         # Assert
         assert order in strategy.cache.orders()
         assert strategy.cache.orders()[0].status == OrderStatus.CANCELED
-        assert order.client_order_id == strategy.cache.orders_completed()[0].client_order_id
-        assert order not in strategy.cache.orders_working()
+        assert order.client_order_id == strategy.cache.orders_closed()[0].client_order_id
+        assert order not in strategy.cache.orders_open()
         assert strategy.cache.order_exists(order.client_order_id)
-        assert not strategy.cache.is_order_working(order.client_order_id)
-        assert strategy.cache.is_order_completed(order.client_order_id)
+        assert not strategy.cache.is_order_open(order.client_order_id)
+        assert strategy.cache.is_order_closed(order.client_order_id)
 
     def test_cancel_order_when_pending_cancel_does_not_submit_command(self):
         # Arrange
@@ -829,7 +834,7 @@ class TestTradingStrategy:
 
         strategy.submit_order(order)
         self.exchange.process(0)
-        self.exec_engine.process(TestStubs.event_order_pending_cancel(order))
+        self.exec_engine.process(TestEventStubs.order_pending_cancel(order))
 
         # Act
         strategy.cancel_order(order)
@@ -837,12 +842,12 @@ class TestTradingStrategy:
 
         # Assert
         assert strategy.cache.orders()[0].status == OrderStatus.PENDING_CANCEL
-        assert order in strategy.cache.orders_working()
+        assert order in strategy.cache.orders_open()
         assert strategy.cache.order_exists(order.client_order_id)
-        assert strategy.cache.is_order_working(order.client_order_id)
-        assert not strategy.cache.is_order_completed(order.client_order_id)
+        assert strategy.cache.is_order_open(order.client_order_id)
+        assert not strategy.cache.is_order_closed(order.client_order_id)
 
-    def test_cancel_order_when_completed_does_not_submit_command(self):
+    def test_cancel_order_when_closed_does_not_submit_command(self):
         # Arrange
         strategy = TradingStrategy()
         strategy.register(
@@ -863,7 +868,7 @@ class TestTradingStrategy:
 
         strategy.submit_order(order)
         self.exchange.process(0)
-        self.exec_engine.process(TestStubs.event_order_expired(order))
+        self.exec_engine.process(TestEventStubs.order_expired(order))
 
         # Act
         strategy.cancel_order(order)
@@ -871,10 +876,10 @@ class TestTradingStrategy:
 
         # Assert
         assert strategy.cache.orders()[0].status == OrderStatus.EXPIRED
-        assert order not in strategy.cache.orders_working()
+        assert order not in strategy.cache.orders_open()
         assert strategy.cache.order_exists(order.client_order_id)
-        assert not strategy.cache.is_order_working(order.client_order_id)
-        assert strategy.cache.is_order_completed(order.client_order_id)
+        assert not strategy.cache.is_order_open(order.client_order_id)
+        assert strategy.cache.is_order_closed(order.client_order_id)
 
     def test_modify_order_when_pending_update_does_not_submit_command(self):
         # Arrange
@@ -897,7 +902,7 @@ class TestTradingStrategy:
 
         strategy.submit_order(order)
         self.exchange.process(0)
-        self.exec_engine.process(TestStubs.event_order_pending_update(order))
+        self.exec_engine.process(TestEventStubs.order_pending_update(order))
 
         # Act
         strategy.modify_order(
@@ -931,7 +936,7 @@ class TestTradingStrategy:
 
         strategy.submit_order(order)
         self.exchange.process(0)
-        self.exec_engine.process(TestStubs.event_order_pending_cancel(order))
+        self.exec_engine.process(TestEventStubs.order_pending_cancel(order))
 
         # Act
         strategy.modify_order(
@@ -944,7 +949,7 @@ class TestTradingStrategy:
         # Assert
         assert self.exec_engine.command_count == 1
 
-    def test_modify_order_when_completed_does_not_submit_command(self):
+    def test_modify_order_when_closed_does_not_submit_command(self):
         # Arrange
         strategy = TradingStrategy()
         strategy.register(
@@ -965,7 +970,7 @@ class TestTradingStrategy:
 
         strategy.submit_order(order)
         self.exchange.process(0)
-        self.exec_engine.process(TestStubs.event_order_expired(order))
+        self.exec_engine.process(TestEventStubs.order_expired(order))
 
         # Act
         strategy.modify_order(
@@ -1045,8 +1050,8 @@ class TestTradingStrategy:
         assert strategy.cache.orders()[0].quantity == Quantity.from_int(110000)
         assert strategy.cache.orders()[0].price == Price.from_str("90.001")
         assert strategy.cache.order_exists(order.client_order_id)
-        assert strategy.cache.is_order_working(order.client_order_id)
-        assert not strategy.cache.is_order_completed(order.client_order_id)
+        assert strategy.cache.is_order_open(order.client_order_id)
+        assert not strategy.cache.is_order_closed(order.client_order_id)
         assert strategy.portfolio.is_flat(order.instrument_id)
 
     def test_cancel_all_orders(self):
@@ -1089,8 +1094,8 @@ class TestTradingStrategy:
         assert order2 in self.cache.orders()
         assert self.cache.orders()[0].status == OrderStatus.CANCELED
         assert self.cache.orders()[1].status == OrderStatus.CANCELED
-        assert order1 in self.cache.orders_completed()
-        assert order2 in strategy.cache.orders_completed()
+        assert order1 in self.cache.orders_closed()
+        assert order2 in strategy.cache.orders_closed()
 
     def test_flatten_position_when_position_already_flat_does_nothing(self):
         # Arrange

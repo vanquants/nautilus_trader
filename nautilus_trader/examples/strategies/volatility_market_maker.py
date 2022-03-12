@@ -30,6 +30,7 @@ from nautilus_trader.model.events.order import OrderFilled
 from nautilus_trader.model.identifiers import InstrumentId
 from nautilus_trader.model.instruments.base import Instrument
 from nautilus_trader.model.orderbook.book import OrderBook
+from nautilus_trader.model.orderbook.data import OrderBookDelta
 from nautilus_trader.model.orders.limit import LimitOrder
 from nautilus_trader.trading.config import TradingStrategyConfig
 from nautilus_trader.trading.strategy import TradingStrategy
@@ -116,6 +117,11 @@ class VolatilityMarketMaker(TradingStrategy):
         # Subscribe to live data
         self.subscribe_bars(self.bar_type)
         self.subscribe_quote_ticks(self.instrument_id)
+        # self.subscribe_trade_ticks(self.instrument_id)
+        # self.subscribe_order_book_deltas(self.instrument_id)
+        # self.subscribe_ticker(self.instrument_id)  # For debugging
+        # self.subscribe_order_book_deltas(self.instrument_id, depth=20)  # For debugging
+        # self.subscribe_order_book_snapshots(self.instrument_id, depth=20)  # For debugging
 
     def on_instrument(self, instrument: Instrument):
         """
@@ -141,6 +147,19 @@ class VolatilityMarketMaker(TradingStrategy):
 
         """
         # self.log.info(str(order_book))  # For debugging (must add a subscription)
+        pass
+
+    def on_order_book_delta(self, delta: OrderBookDelta):
+        """
+        Actions to be performed when the strategy is running and receives an order book delta.
+
+        Parameters
+        ----------
+        delta : OrderBookDelta
+            The order book delta received.
+
+        """
+        # self.log.info(str(delta), LogColor.GREEN)  # For debugging (must add a subscription)
         pass
 
     def on_quote_tick(self, tick: QuoteTick):
@@ -195,12 +214,12 @@ class VolatilityMarketMaker(TradingStrategy):
             return
 
         # Maintain buy orders
-        if self.buy_order and self.buy_order.is_working:
+        if self.buy_order and self.buy_order.is_open:
             self.cancel_order(self.buy_order)
         self.create_buy_order(last)
 
         # Maintain sell orders
-        if self.sell_order and self.sell_order.is_working:
+        if self.sell_order and self.sell_order.is_open:
             self.cancel_order(self.sell_order)
         self.create_sell_order(last)
 
@@ -216,7 +235,7 @@ class VolatilityMarketMaker(TradingStrategy):
             price=self.instrument.make_price(price),
             time_in_force=TimeInForce.GTC,
             post_only=True,  # default value is True
-            display_qty=self.instrument.make_qty(self.trade_size / 2),  # iceberg
+            # display_qty=self.instrument.make_qty(self.trade_size / 2),  # iceberg
         )
 
         self.buy_order = order
@@ -234,7 +253,7 @@ class VolatilityMarketMaker(TradingStrategy):
             price=self.instrument.make_price(price),
             time_in_force=TimeInForce.GTC,
             post_only=True,  # default value is True
-            display_qty=self.instrument.make_qty(self.trade_size / 2),  # iceberg
+            # display_qty=self.instrument.make_qty(self.trade_size / 2),  # iceberg
         )
 
         self.sell_order = order
@@ -270,10 +289,10 @@ class VolatilityMarketMaker(TradingStrategy):
         # If order filled then replace order at atr multiple distance from the market
         if isinstance(event, OrderFilled):
             if event.order_side == OrderSide.BUY:
-                if self.buy_order.is_completed:
+                if self.buy_order.is_closed:
                     self.create_buy_order(last)
             elif event.order_side == OrderSide.SELL:
-                if self.sell_order.is_completed:
+                if self.sell_order.is_closed:
                     self.create_sell_order(last)
 
     def on_stop(self):

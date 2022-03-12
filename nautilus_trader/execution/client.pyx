@@ -18,17 +18,18 @@ from nautilus_trader.common.clock cimport Clock
 from nautilus_trader.common.component cimport Component
 from nautilus_trader.common.logging cimport Logger
 from nautilus_trader.core.correctness cimport Condition
+from nautilus_trader.execution.messages cimport CancelAllOrders
+from nautilus_trader.execution.messages cimport CancelOrder
+from nautilus_trader.execution.messages cimport ModifyOrder
+from nautilus_trader.execution.messages cimport SubmitOrder
+from nautilus_trader.execution.messages cimport SubmitOrderList
+from nautilus_trader.execution.reports cimport ExecutionMassStatus
 from nautilus_trader.execution.reports cimport OrderStatusReport
 from nautilus_trader.execution.reports cimport TradeReport
 from nautilus_trader.model.c_enums.account_type cimport AccountType
 from nautilus_trader.model.c_enums.liquidity_side cimport LiquiditySide
 from nautilus_trader.model.c_enums.order_side cimport OrderSide
 from nautilus_trader.model.c_enums.order_type cimport OrderType
-from nautilus_trader.model.commands.trading cimport CancelAllOrders
-from nautilus_trader.model.commands.trading cimport CancelOrder
-from nautilus_trader.model.commands.trading cimport ModifyOrder
-from nautilus_trader.model.commands.trading cimport SubmitOrder
-from nautilus_trader.model.commands.trading cimport SubmitOrderList
 from nautilus_trader.model.currency cimport Currency
 from nautilus_trader.model.events.account cimport AccountState
 from nautilus_trader.model.events.order cimport OrderAccepted
@@ -65,6 +66,8 @@ cdef class ExecutionClient(Component):
     ----------
     client_id : ClientId
         The client ID.
+    venue : Venue, optional
+        The client venue. If multi-venue then can be ``None``.
     oms_type : OMSType
         The venues order management system type.
     account_type : AccountType
@@ -97,6 +100,7 @@ cdef class ExecutionClient(Component):
     def __init__(
         self,
         ClientId client_id not None,
+        Venue venue,  # Can be None
         OMSType oms_type,
         AccountType account_type,
         Currency base_currency,  # Can be None
@@ -122,7 +126,7 @@ cdef class ExecutionClient(Component):
         self._account = None  # Initialized on connection
 
         self.trader_id = msgbus.trader_id
-        self.venue = Venue(client_id.value) if not config.get("routing") else None
+        self.venue = venue
         self.oms_type = oms_type
         self.account_id = None  # Initialized on connection
         self.account_type = account_type
@@ -790,6 +794,12 @@ cdef class ExecutionClient(Component):
         self._msgbus.send(
             endpoint="ExecEngine.process",
             msg=event,
+        )
+
+    cpdef void _send_mass_status_report(self, ExecutionMassStatus report) except *:
+        self._msgbus.send(
+            endpoint="ExecEngine.reconcile_mass_status",
+            msg=report,
         )
 
     cpdef void _send_order_status_report(self, OrderStatusReport report) except *:

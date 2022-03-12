@@ -18,6 +18,12 @@ from libc.stdint cimport int64_t
 from nautilus_trader.accounting.accounts.base cimport Account
 from nautilus_trader.cache.cache cimport Cache
 from nautilus_trader.common.component cimport Component
+from nautilus_trader.execution.messages cimport CancelAllOrders
+from nautilus_trader.execution.messages cimport CancelOrder
+from nautilus_trader.execution.messages cimport ModifyOrder
+from nautilus_trader.execution.messages cimport SubmitOrder
+from nautilus_trader.execution.messages cimport SubmitOrderList
+from nautilus_trader.execution.reports cimport ExecutionMassStatus
 from nautilus_trader.execution.reports cimport OrderStatusReport
 from nautilus_trader.execution.reports cimport TradeReport
 from nautilus_trader.model.c_enums.account_type cimport AccountType
@@ -25,11 +31,6 @@ from nautilus_trader.model.c_enums.liquidity_side cimport LiquiditySide
 from nautilus_trader.model.c_enums.oms_type cimport OMSType
 from nautilus_trader.model.c_enums.order_side cimport OrderSide
 from nautilus_trader.model.c_enums.order_type cimport OrderType
-from nautilus_trader.model.commands.trading cimport CancelAllOrders
-from nautilus_trader.model.commands.trading cimport CancelOrder
-from nautilus_trader.model.commands.trading cimport ModifyOrder
-from nautilus_trader.model.commands.trading cimport SubmitOrder
-from nautilus_trader.model.commands.trading cimport SubmitOrderList
 from nautilus_trader.model.currency cimport Currency
 from nautilus_trader.model.events.account cimport AccountState
 from nautilus_trader.model.events.order cimport OrderEvent
@@ -201,5 +202,6 @@ cdef class ExecutionClient(Component):
 
     cpdef void _send_account_state(self, AccountState account_state) except *
     cpdef void _send_order_event(self, OrderEvent event) except *
+    cpdef void _send_mass_status_report(self, ExecutionMassStatus report) except *
     cpdef void _send_order_status_report(self, OrderStatusReport report) except *
     cpdef void _send_trade_report(self, TradeReport report) except *

@@ -45,10 +45,12 @@ from nautilus_trader.model.identifiers cimport TraderId
 
 # ANSI color constants
 cdef str _HEADER = "\033[95m"
-cdef str _BLUE = "\033[94m"
 cdef str _GREEN = "\033[92m"
+cdef str _BLUE = "\033[94m"
+cdef str _MAGENTA = "\033[35m"
+cdef str _CYAN = "\033[36m"
 cdef str _YELLOW = "\033[1;33m"
-cdef str _RED = "\033[01;31m"
+cdef str _RED = "\033[1;31m"
 cdef str _ENDC = "\033[0m"
 cdef str _BOLD = "\033[1m"
 cdef str _UNDERLINE = "\033[4m"
@@ -161,7 +163,7 @@ cdef class Logger:
 
         """
         Condition.not_none(handler, "handler")
-        Condition.not_in(handler, self._sinks, "handler", "self._sinks")
+        Condition.not_in(handler, self._sinks, "handler", "_sinks")
 
         self._sinks.append(handler)
 
@@ -239,12 +241,16 @@ cdef class Logger:
         cdef str color_cmd = ""
         if color == LogColor.NORMAL:
             pass
-        elif color == LogColor.YELLOW:
-            color_cmd = _YELLOW
+        if color == LogColor.BLUE:
+            color_cmd = _BLUE
         elif color == LogColor.GREEN:
             color_cmd = _GREEN
-        elif color == LogColor.BLUE:
-            color_cmd = _BLUE
+        elif color == LogColor.MAGENTA:
+            color_cmd = _MAGENTA
+        elif color == LogColor.CYAN:
+            color_cmd = _CYAN
+        elif color == LogColor.YELLOW:
+            color_cmd = _YELLOW
         elif color == LogColor.RED:
             color_cmd = _RED
 
@@ -464,21 +470,28 @@ cdef class LoggerAdapter:
 
         self._logger.log_c(record)
 
-    cpdef void exception(self, ex, dict annotations=None) except *:
+    cpdef void exception(
+        self,
+        str msg,
+        ex,
+        dict annotations=None,
+    ) except *:
         """
         Log the given exception including stack trace information.
 
         Parameters
         ----------
-        ex : Exception
+        msg : str
             The message to log.
+        ex : Exception
+            The exception to log.
         annotations : dict[str, object], optional
             The annotations for the log record.
 
         """
         Condition.not_none(ex, "ex")
 
-        cdef str ex_string = f"{type(ex).__name__}({ex})\n"
+        cdef str ex_string = f"{type(ex).__name__}({ex})"
         ex_type, ex_value, ex_traceback = sys.exc_info()
         stack_trace = traceback.format_exception(ex_type, ex_value, ex_traceback)
 
@@ -487,7 +500,7 @@ cdef class LoggerAdapter:
         for line in stack_trace[:len(stack_trace) - 1]:
             stack_trace_lines += line
 
-        self.error(f"{ex_string} {stack_trace_lines}", annotations=annotations)
+        self.error(f"{msg}\n{ex_string}\n{stack_trace_lines}", annotations=annotations)
 
 
 cpdef void nautilus_header(LoggerAdapter logger) except *:
