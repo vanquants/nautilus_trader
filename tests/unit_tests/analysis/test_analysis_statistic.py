@@ -13,19 +13,23 @@
 #  limitations under the License.
 # -------------------------------------------------------------------------------------------------
 
-from nautilus_trader.model.enums import OrderType
-from nautilus_trader.model.enums import TimeInForce
+from nautilus_trader.analysis.statistic import PortfolioStatistic
 
 
-BINANCE_SPOT_VALID_TIF = (
-    TimeInForce.GTC,
-    TimeInForce.FOK,
-    TimeInForce.IOC,
-)
+class TestPortfolioStatistic:
+    def test_fully_qualified_name_returns_expected(self):
+        # Arrange, Act
+        result = PortfolioStatistic.fully_qualified_name()
 
-BINANCE_SPOT_VALID_ORDER_TYPES = (
-    OrderType.MARKET,
-    OrderType.LIMIT,
-    OrderType.STOP_LIMIT,
-    OrderType.LIMIT_IF_TOUCHED,
-)
+        # Assert
+        assert result == "nautilus_trader.analysis.statistic:PortfolioStatistic"
+
+    def test_name_returns_expected_returns_expected(self):
+        # Arrange
+        stat = PortfolioStatistic()
+
+        # Act
+        result = stat.name
+
+        # Assert
+        assert result == "Portfolio Statistic"

@@ -138,7 +138,7 @@ into a unified interface. The following integrations are currently supported:
 [Betfair](https://betfair.com)                            | BETFAIR | Sports Betting Exchange | ![status](https://img.shields.io/badge/beta-yellow)     | [Guide](https://docs.nautilustrader.io/integrations/betfair.html) |
 [Binance](https://binance.com)                            | BINANCE | Crypto Exchange (CEX)   | ![status](https://img.shields.io/badge/beta-yellow)     | [Guide](https://docs.nautilustrader.io/integrations/binance.html) |
 [Binance US](https://binance.us)                          | BINANCE | Crypto Exchange (CEX)   | ![status](https://img.shields.io/badge/beta-yellow)     | [Guide](https://docs.nautilustrader.io/integrations/binance.html) |
-[Binance Futures](https://www.binance.com/en/futures)     | BINANCE | Crypto Exchange (CEX)   | ![status](https://img.shields.io/badge/building-orange) | [Guide](https://docs.nautilustrader.io/integrations/binance.html) |
+[Binance Futures](https://www.binance.com/en/futures)     | BINANCE | Crypto Exchange (CEX)   | ![status](https://img.shields.io/badge/beta-yellow)     | [Guide](https://docs.nautilustrader.io/integrations/binance.html) |
 [FTX](https://ftx.com)                                    | FTX     | Crypto Exchange (CEX)   | ![status](https://img.shields.io/badge/beta-yellow)     | [Guide](https://docs.nautilustrader.io/integrations/ftx.html)     |
 [FTX US](https://ftx.us)                                  | FTX     | Crypto Exchange (CEX)   | ![status](https://img.shields.io/badge/beta-yellow)     | [Guide](https://docs.nautilustrader.io/integrations/ftx.html)     |
 [Interactive Brokers](https://www.interactivebrokers.com) | IB      | Brokerage (multi-venue) | ![status](https://img.shields.io/badge/beta-yellow)     | [Guide](https://docs.nautilustrader.io/integrations/ib.html)      |
@@ -351,6 +351,7 @@ Please make all pull requests to the `develop` branch.
 
 ## Community
 Chat with contributors and active users of NautilusTrader on our [Discord](https://discord.gg/AUWVs3XaCS) server!
+This is also the best place to monitor announcements, and learn about the latest features as they become available.
 
 ## License
 

@@ -46,11 +46,24 @@ async def test_binance_spot_account_http_client():
     ############################################################################
     # ACCOUNT STATUS
     ############################################################################
-    # response = await http_account.account(recv_window=5000)
-    # print(json.dumps(response, indent=4))
+    response = await http_account.account(recv_window=5000)
+    print(response)
 
     ############################################################################
-    # NEW ORDER
+    # NEW ORDER (MARKET)
+    ############################################################################
+    # response = await http_account.new_order(
+    #     symbol="ETHUSDT",
+    #     side="SELL",
+    #     type="MARKET",
+    #     quantity="0.02",
+    #     # stop_price="4200",
+    #     # new_client_order_id="O-20211120-021300-001-001-1",
+    #     # recv_window=5000,
+    # )
+
+    ############################################################################
+    # NEW ORDER (LIMIT)
     ############################################################################
     # response = await http_account.new_order(
     #     symbol="ETHUSDT",
@@ -58,7 +71,7 @@ async def test_binance_spot_account_http_client():
     #     type="LIMIT",
     #     quantity="0.01",
     #     time_in_force="GTC",
-    #     price="2000",
+    #     price="1000",
     #     # stop_price="4200",
     #     # new_client_order_id="O-20211120-021300-001-001-1",
     #     # recv_window=5000,
@@ -76,9 +89,21 @@ async def test_binance_spot_account_http_client():
     # print(json.dumps(response, indent=4))
 
     ############################################################################
+    # CANCEL ALL ORDERS
+    ############################################################################
+    # response = await http_account.cancel_open_orders(symbol="ETHUSDT")
+    # print(json.dumps(response, indent=4))
+
+    ############################################################################
     # OPEN ORDERS
     ############################################################################
-    orders = await http_account.get_open_orders(symbol="ETHUSDT")
+    orders = await http_account.get_open_orders()
     print(orders)
+
+    ############################################################################
+    # POSITIONS
+    ############################################################################
+    positions = await http_account.get_position_risk()
+    print(positions)
 
     await client.disconnect()

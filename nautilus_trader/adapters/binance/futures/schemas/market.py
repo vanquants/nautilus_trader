@@ -26,6 +26,11 @@ from nautilus_trader.adapters.binance.futures.enums import BinanceFuturesOrderTy
 from nautilus_trader.adapters.binance.futures.enums import BinanceFuturesTimeInForce
 
 
+################################################################################
+# HTTP responses
+################################################################################
+
+
 class BinanceExchangeFilter(msgspec.Struct):
     """HTTP response 'inner struct' from `Binance Futures` GET /fapi/v1/exchangeInfo."""
 
@@ -85,7 +90,7 @@ class BinanceFuturesSymbolInfo(msgspec.Struct):
     contractType: str  # Can be '' empty string
     deliveryDate: int
     onboardDate: int
-    status: BinanceFuturesContractStatus
+    status: Optional[BinanceFuturesContractStatus] = None
     maintMarginPercent: str
     requiredMarginPercent: str
     baseAsset: str
@@ -97,7 +102,7 @@ class BinanceFuturesSymbolInfo(msgspec.Struct):
     quotePrecision: int
     underlyingType: str
     underlyingSubType: List[str]
-    settlePlan: int
+    settlePlan: Optional[int] = None
     triggerProtect: str
     liquidationFee: str
     marketTakeBound: str
@@ -113,7 +118,7 @@ class BinanceFuturesExchangeInfo(msgspec.Struct):
     serverTime: int
     rateLimits: List[BinanceRateLimit]
     exchangeFilters: List[BinanceExchangeFilter]
-    assets: List[BinanceFuturesAsset]
+    assets: Optional[List[BinanceFuturesAsset]] = None
     symbols: List[BinanceFuturesSymbolInfo]
 
 
@@ -136,3 +141,28 @@ class BinanceFuturesFundRate(msgspec.Struct):
     symbol: str
     fundingRate: str
     fundingTime: str
+
+
+################################################################################
+# WebSocket messages
+################################################################################
+
+
+class BinanceFuturesMarkPriceData(msgspec.Struct):
+    """WebSocket message 'inner struct' for `Binance Futures` Mark Price Update events."""
+
+    e: str  # Event type
+    E: int  # Event time
+    s: str  # Symbol
+    p: str  # Mark price
+    i: str  # Index price
+    P: str  # Estimated Settle Price, only useful in the last hour before the settlement starts
+    r: str  # Funding rate
+    T: int  # Next funding time
+
+
+class BinanceFuturesMarkPriceMsg(msgspec.Struct):
+    """WebSocket message from `Binance Futures` Mark Price Update events."""
+
+    stream: str
+    data: BinanceFuturesMarkPriceData

@@ -13,19 +13,13 @@
 #  limitations under the License.
 # -------------------------------------------------------------------------------------------------
 
-from nautilus_trader.model.enums import OrderType
-from nautilus_trader.model.enums import TimeInForce
+from nautilus_trader.common.component import Component
 
 
-BINANCE_SPOT_VALID_TIF = (
-    TimeInForce.GTC,
-    TimeInForce.FOK,
-    TimeInForce.IOC,
-)
+class TestCommonComponent:
+    def test_fully_qualified_name_returns_expected(self):
+        # Arrange, Act
+        result = Component.fully_qualified_name()
 
-BINANCE_SPOT_VALID_ORDER_TYPES = (
-    OrderType.MARKET,
-    OrderType.LIMIT,
-    OrderType.STOP_LIMIT,
-    OrderType.LIMIT_IF_TOUCHED,
-)
+        # Assert
+        assert result == "nautilus_trader.common.component:Component"

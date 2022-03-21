@@ -1,3 +1,43 @@
+# NautilusTrader 1.141.0 Beta
+
+Released on TBD (UTC).
+TODO(cs): Update version badge
+TODO(cs): Ensure versions are correct
+
+### Breaking Changes
+- Tighten requirement for `DataType` types to be subclasses of `Data`.
+- `NAUTILUS_CATALOG` env var changed to `NAUTILUS_PATH`.
+- `DataCatalog` root path now located under `$OLD_PATH/catalog/` from the Nautilus path.
+
+### Enhancements
+- Added `BinanceFuturesMarkPriceUpdate` type and data stream.
+- Added generic `subscribe` and `unsubscribe` to template.
+- Added Binance Futures COIN_M testnet.
+
+### Fixes
+None
+
+---
+
+# NautilusTrader 1.140.0 Beta
+
+## Release Notes
+
+Released on 13th March 2022 (UTC).
+
+This is a patch release which fixes a moderate severity security vulnerability in
+pillow < 9.0.1:
+
+    If the path to the temporary directory on Linux or macOS contained a space, 
+    this would break removal of the temporary image file after im.show() (and related actions), 
+    and potentially remove an unrelated file. This been present since PIL.
+
+This release upgrades to pillow 9.0.1.
+
+Note the minor version was incremented in error.
+
+---
+
 # NautilusTrader 1.139.0 Beta
 
 ## Release Notes

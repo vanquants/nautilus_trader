@@ -117,7 +117,7 @@ class TestActor:
 
     def test_actor_fully_qualified_name(self):
         # Arrange, Act, Assert
-        assert Actor.fully_qualified_name() == "nautilus_trader.common.actor.Actor"
+        assert Actor.fully_qualified_name() == "nautilus_trader.common.actor:Actor"
 
     def test_id(self):
         # Arrange, Act
@@ -1117,14 +1117,17 @@ class TestActor:
             logger=self.logger,
         )
 
-        data_type = DataType(str, {"type": "NEWS_WIRE", "topic": "Earthquake"})
+        data_type = DataType(NewsEvent, {"type": "NEWS_WIRE", "topic": "Earthquake"})
 
         # Act
         actor.subscribe_data(data_type)
 
         # Assert
         assert self.data_engine.command_count == 0
-        assert actor.msgbus.subscriptions()[0].topic == "data.str.type=NEWS_WIRE.topic=Earthquake"
+        assert (
+            actor.msgbus.subscriptions()[0].topic
+            == "data.NewsEvent.type=NEWS_WIRE.topic=Earthquake"
+        )
 
     def test_subscribe_custom_data_with_client_id(self):
         # Arrange
@@ -1137,14 +1140,17 @@ class TestActor:
             logger=self.logger,
         )
 
-        data_type = DataType(str, {"type": "NEWS_WIRE", "topic": "Earthquake"})
+        data_type = DataType(NewsEvent, {"type": "NEWS_WIRE", "topic": "Earthquake"})
 
         # Act
         actor.subscribe_data(data_type, ClientId("QUANDL"))
 
         # Assert
         assert self.data_engine.command_count == 1
-        assert actor.msgbus.subscriptions()[0].topic == "data.str.type=NEWS_WIRE.topic=Earthquake"
+        assert (
+            actor.msgbus.subscriptions()[0].topic
+            == "data.NewsEvent.type=NEWS_WIRE.topic=Earthquake"
+        )
 
     def test_unsubscribe_custom_data(self):
         # Arrange
@@ -1157,7 +1163,7 @@ class TestActor:
             logger=self.logger,
         )
 
-        data_type = DataType(str, {"type": "NEWS_WIRE", "topic": "Earthquake"})
+        data_type = DataType(NewsEvent, {"type": "NEWS_WIRE", "topic": "Earthquake"})
         actor.subscribe_data(data_type)
 
         # Act
@@ -1178,7 +1184,7 @@ class TestActor:
             logger=self.logger,
         )
 
-        data_type = DataType(str, {"type": "NEWS_WIRE", "topic": "Earthquake"})
+        data_type = DataType(NewsEvent, {"type": "NEWS_WIRE", "topic": "Earthquake"})
         actor.subscribe_data(data_type, ClientId("QUANDL"))
 
         # Act
@@ -1552,7 +1558,7 @@ class TestActor:
             logger=self.logger,
         )
 
-        data_type = DataType(str, {"type": "NEWS_WIRE", "topic": "Earthquakes"})
+        data_type = DataType(NewsEvent, {"type": "NEWS_WIRE", "topic": "Earthquakes"})
 
         # Act
         actor.request_data(ClientId("BLOOMBERG-01"), data_type)

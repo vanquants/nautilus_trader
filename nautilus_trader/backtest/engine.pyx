@@ -46,6 +46,7 @@ from nautilus_trader.common.timer cimport TimeEventHandler
 from nautilus_trader.common.uuid cimport UUIDFactory
 from nautilus_trader.core.correctness cimport Condition
 from nautilus_trader.core.data cimport Data
+from nautilus_trader.core.datetime cimport maybe_dt_to_unix_nanos
 from nautilus_trader.core.datetime cimport unix_nanos_to_dt
 from nautilus_trader.execution.engine cimport ExecutionEngine
 from nautilus_trader.infrastructure.cache cimport RedisCacheDatabase
@@ -109,15 +110,15 @@ cdef class BacktestEngine:
         self._index = 0
 
         # Run IDs
-        self.run_config_id = None
-        self.run_id = None
+        self.run_config_id: Optional[str] = None
+        self.run_id: Optional[UUID4] = None
         self.iteration = 0
 
         # Timing
-        self.run_started = None
-        self.run_finished = None
-        self.backtest_start = None
-        self.backtest_end = None
+        self.run_started: Optional[datetime] = None
+        self.run_finished: Optional[datetime] = None
+        self.backtest_start: Optional[datetime] = None
+        self.backtest_end: Optional[datetime] = None
 
         self._logger = Logger(
             clock=LiveClock(),
@@ -820,11 +821,11 @@ cdef class BacktestEngine:
             machine_id=self.machine_id,
             run_config_id=self.run_config_id,
             instance_id=self.instance_id.value,
-            run_id=self.run_id.value,
-            run_started=self.run_started,
-            run_finished=self.run_finished,
-            backtest_start=self.backtest_start,
-            backtest_end=self.backtest_end,
+            run_id=self.run_id.value if self.run_id is not None else None,
+            run_started=maybe_dt_to_unix_nanos(self.run_started),
+            run_finished=maybe_dt_to_unix_nanos(self.run_finished),
+            backtest_start=maybe_dt_to_unix_nanos(self.backtest_start),
+            backtest_end=maybe_dt_to_unix_nanos(self.backtest_end),
             elapsed_time=(self.backtest_end - self.backtest_start).total_seconds(),
             iterations=self.iteration,
             total_events=self._exec_engine.event_count,
@@ -1080,7 +1081,6 @@ cdef class BacktestEngine:
             self._data_engine.register_client(client)
 
     def _add_market_data_client_if_not_exists(self, Venue venue) -> None:
-        # TODO(cs): Assumption that client_id = venue
         cdef ClientId client_id = ClientId(venue.value)
         if client_id not in self._data_engine.registered_clients:
             client = BacktestMarketDataClient(

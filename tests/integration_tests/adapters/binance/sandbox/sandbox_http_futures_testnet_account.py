@@ -14,7 +14,6 @@
 # -------------------------------------------------------------------------------------------------
 
 import asyncio
-import json
 import os
 
 import pytest
@@ -35,18 +34,20 @@ async def test_binance_spot_account_http_client():
         loop=loop,
         clock=clock,
         logger=Logger(clock=clock),
-        key=os.getenv("BINANCE_TESTNET_API_KEY"),
-        secret=os.getenv("BINANCE_TESTNET_API_SECRET"),
+        key=os.getenv("BINANCE_FUTURES_TESTNET_API_KEY"),
+        secret=os.getenv("BINANCE_FUTURES_TESTNET_API_SECRET"),
         base_url="https://testnet.binancefuture.com",
     )
     await client.connect()
 
-    account = BinanceFuturesAccountHttpAPI(
+    http_account = BinanceFuturesAccountHttpAPI(
         client=client,
         account_type=BinanceAccountType.FUTURES_USDT,
     )
 
-    response = await account.get_account_trades(symbol="ETHUSDT")
+    info = await http_account.account()
+    print(info)
+    trades = await http_account.get_account_trades(symbol="ETHUSDT")
 
     ############################################################################
     # NEW ORDER
@@ -92,6 +93,6 @@ async def test_binance_spot_account_http_client():
     #     recv_window=5000,
     # )
 
-    print(json.dumps(response, indent=4))
+    print(trades)
 
     await client.disconnect()

@@ -493,7 +493,10 @@ cdef class LiveExecutionEngine(ExecutionEngine):
             fill = self._generate_inferred_fill(order, report, instrument)
             self._handle_event(fill)
             assert report.filled_qty == order.filled_qty
-            assert report.avg_px == order.avg_px
+            if report.avg_px != order.avg_px:
+                self._log.warning(
+                    f"report.avg_px {report.avg_px} != order.avg_px {order.avg_px}",
+                )
 
         return True  # Reconciled
 
@@ -655,6 +658,7 @@ cdef class LiveExecutionEngine(ExecutionEngine):
             options["offset_type"] =  TrailingOffsetTypeParser.to_str(report.offset_type)
         if report.trailing_offset is not None:
             options["trailing_offset"] = str(report.trailing_offset)
+            options["offset_type"] = TrailingOffsetTypeParser.to_str(report.offset_type)
         if report.display_qty is not None:
             options["display_qty"] = str(report.display_qty)
         if report.expire_time is not None:
