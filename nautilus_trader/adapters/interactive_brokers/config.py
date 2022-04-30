@@ -16,8 +16,8 @@
 import os
 from typing import Optional
 
-from nautilus_trader.live.config import LiveDataClientConfig
-from nautilus_trader.live.config import LiveExecClientConfig
+from nautilus_trader.config import LiveDataClientConfig
+from nautilus_trader.config import LiveExecClientConfig
 
 
 class InteractiveBrokersDataClientConfig(LiveDataClientConfig):

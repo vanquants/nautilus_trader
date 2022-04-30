@@ -64,7 +64,7 @@ from tests.test_kit.stubs.identifiers import TestIdStubs
 INSTRUMENTS = []
 
 
-@pytest.mark.skipif(sys.platform == "win32", reason="failing on windows")
+@pytest.mark.skipif(sys.platform == "win32", reason="failing on Windows")
 @pytest.fixture(scope="session", autouse=True)
 @patch("nautilus_trader.adapters.betfair.providers.load_markets_metadata")
 def instrument_list(mock_load_markets_metadata, loop: asyncio.AbstractEventLoop):
@@ -95,7 +95,7 @@ def instrument_list(mock_load_markets_metadata, loop: asyncio.AbstractEventLoop)
     assert INSTRUMENTS
 
 
-@pytest.mark.skipif(sys.platform == "win32", reason="failing on windows")
+@pytest.mark.skipif(sys.platform == "win32", reason="failing on Windows")
 class TestBetfairDataClient:
     def setup(self):
         # Fixture Setup
@@ -315,8 +315,8 @@ class TestBetfairDataClient:
             instruments = make_instruments(market_definition=market_def, currency="GBP")
             provider.add_bulk(instruments)
 
-        for update in update:
-            self.client._on_market_update(update)
+        for u in update:
+            self.client._on_market_update(u)
         result = Counter([type(event).__name__ for event in self.messages])
         expected = {
             "TradeTick": 95,

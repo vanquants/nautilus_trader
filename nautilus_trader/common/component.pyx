@@ -183,7 +183,7 @@ cdef class Component:
     @classmethod
     def fully_qualified_name(cls) -> str:
         """
-        Return the fully qualified name for the component object.
+        Return the fully qualified name for the `Component` class.
 
         Returns
         -------
@@ -325,7 +325,7 @@ cdef class Component:
         self._msgbus = msgbus
         self._initialize()
 
-# -- ABSTRACT METHODS ------------------------------------------------------------------------------
+# -- ABSTRACT METHODS -----------------------------------------------------------------------------
 
     cpdef void _start(self) except *:
         # Optionally override in subclass
@@ -355,7 +355,7 @@ cdef class Component:
         # Optionally override in subclass
         pass
 
-# -- COMMANDS --------------------------------------------------------------------------------------
+# -- COMMANDS -------------------------------------------------------------------------------------
 
     cdef void _initialize(self) except *:
         # This is a protected method dependent on registration of a message bus

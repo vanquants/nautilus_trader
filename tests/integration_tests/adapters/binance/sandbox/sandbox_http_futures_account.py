@@ -25,7 +25,7 @@ from nautilus_trader.common.logging import Logger
 
 
 @pytest.mark.asyncio
-async def test_binance_spot_account_http_client():
+async def test_binance_futures_account_http_client():
     loop = asyncio.get_event_loop()
     clock = LiveClock()
 
@@ -34,7 +34,6 @@ async def test_binance_spot_account_http_client():
         clock=clock,
         logger=Logger(clock=clock),
         account_type=BinanceAccountType.FUTURES_USDT,
-        base_url="https://fapi.binance.com",
     )
     await client.connect()
 
@@ -54,13 +53,14 @@ async def test_binance_spot_account_http_client():
     ############################################################################
     # response = await http_account.new_order(
     #     symbol="ETHUSDT",
-    #     side="SELL",
+    #     side="BUY",
     #     type="MARKET",
-    #     quantity="0.02",
+    #     quantity="0.01",
     #     # stop_price="4200",
     #     # new_client_order_id="O-20211120-021300-001-001-1",
     #     # recv_window=5000,
     # )
+    # print(json.dumps(response, indent=4))
 
     ############################################################################
     # NEW ORDER (LIMIT)
@@ -76,6 +76,7 @@ async def test_binance_spot_account_http_client():
     #     # new_client_order_id="O-20211120-021300-001-001-1",
     #     # recv_window=5000,
     # )
+    # print(json.dumps(response, indent=4))
 
     ############################################################################
     # CANCEL ORDER

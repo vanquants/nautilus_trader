@@ -12,7 +12,7 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 # -------------------------------------------------------------------------------------------------
-
+import tempfile
 from decimal import Decimal
 
 import pandas as pd
@@ -51,8 +51,11 @@ from nautilus_trader.model.orderbook.data import Order
 from nautilus_trader.model.orderbook.data import OrderBookDelta
 from nautilus_trader.model.orderbook.data import OrderBookDeltas
 from nautilus_trader.model.orderbook.data import OrderBookSnapshot
-from nautilus_trader.trading.strategy import TradingStrategy
+from nautilus_trader.persistence.catalog import DataCatalog
+from nautilus_trader.trading.strategy import Strategy
 from tests.test_kit.stubs import MyData
+from tests.test_kit.stubs.component import TestComponentStubs
+from tests.test_kit.stubs.config import TestConfigStubs
 from tests.test_kit.stubs.data import TestDataStubs
 
 
@@ -77,7 +80,7 @@ class TestBacktestEngine:
             ask_data=provider.read_csv_bars("fxcm-usdjpy-m1-ask-2013.csv")[:2000],
         )
         self.engine.add_instrument(USDJPY_SIM)
-        self.engine.add_ticks(ticks)
+        self.engine.add_data(ticks)
 
         self.engine.add_venue(
             venue=Venue("SIM"),
@@ -127,7 +130,7 @@ class TestBacktestEngine:
 
     def test_run(self):
         # Arrange, Act
-        self.engine.add_strategy(TradingStrategy())
+        self.engine.add_strategy(Strategy())
         self.engine.run()
 
         # Assert
@@ -151,6 +154,22 @@ class TestBacktestEngine:
         # Assert
         assert len(report) == 1
         assert report.index[0] == start
+
+    def test_persistence_files_cleaned_up(self):
+        # Arrange
+        temp_dir = tempfile.mkdtemp()
+        catalog = DataCatalog(
+            path=str(temp_dir),
+            fs_protocol="file",
+        )
+        config = TestConfigStubs.backtest_engine_config(persist=True, catalog=catalog)
+        engine = TestComponentStubs.backtest_engine(
+            config=config, instrument=self.usdjpy, ticks=TestDataStubs.quote_ticks_usdjpy()
+        )
+        engine.run()
+        engine.dispose()
+
+        assert all([f.closed for f in engine.kernel.writer._files.values()])
 
 
 class TestBacktestEngineData:
@@ -348,7 +367,7 @@ class TestBacktestEngineData:
         ticks = wrangler.process(provider.read_csv_ticks("truefx-audusd-ticks.csv"))
 
         # Act
-        engine.add_ticks(ticks)
+        engine.add_data(ticks)
 
         # Assert
         log = "".join(capsys.readouterr())
@@ -364,7 +383,7 @@ class TestBacktestEngineData:
         ticks = wrangler.process(provider.read_csv_ticks("binance-ethusdt-trades.csv"))
 
         # Act
-        engine.add_ticks(ticks)
+        engine.add_data(ticks)
 
         # Assert
         log = "".join(capsys.readouterr())
@@ -508,12 +527,12 @@ class TestBacktestWithAddedBars:
         assert strategy.fast_ema.count == 30117
         assert self.engine.iteration == 60234
         assert self.engine.portfolio.account(self.venue).balance_total(USD) == Money(
-            1001736.86, USD
+            1001736.78, USD
         )
 
     def test_dump_pickled_data(self):
         # Arrange, # Act, # Assert
-        assert len(self.engine.dump_pickled_data()) == 13013060
+        assert len(self.engine.dump_pickled_data()) == 7229731
 
     def test_load_pickled_data(self):
         # Arrange
@@ -542,5 +561,5 @@ class TestBacktestWithAddedBars:
         assert strategy.fast_ema.count == 30117
         assert self.engine.iteration == 60234
         assert self.engine.portfolio.account(self.venue).balance_total(USD) == Money(
-            1001736.86, USD
+            1001736.78, USD
         )

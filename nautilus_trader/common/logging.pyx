@@ -13,10 +13,6 @@
 #  limitations under the License.
 # -------------------------------------------------------------------------------------------------
 
-from typing import Optional
-
-from cpython.datetime cimport timedelta
-
 import asyncio
 import platform
 import socket
@@ -25,12 +21,21 @@ import traceback
 from asyncio import Task
 from collections import defaultdict
 from platform import python_version
+from typing import Optional
 
+import aiohttp
+import msgspec
 import numpy as np
+import orjson
 import pandas as pd
 import psutil
+import pyarrow
+import pydantic
+import pytz
 
 from nautilus_trader import __version__
+
+from cpython.datetime cimport timedelta
 
 from nautilus_trader.common.clock cimport Clock
 from nautilus_trader.common.clock cimport LiveClock
@@ -207,7 +212,7 @@ cdef class Logger:
             "color": color,
             "trader_id": self.trader_id.value,
             "machine_id": self.machine_id,
-            "instance_id": self.instance_id.value,
+            "instance_id": self.instance_id.to_str(),
             "component": component,
             "msg": msg,
         }
@@ -543,9 +548,9 @@ cpdef void nautilus_header(LoggerAdapter logger) except *:
     logger.info("\033[36m=================================================================")
     logger.info("\033[36m IDENTIFIERS")
     logger.info("\033[36m=================================================================")
-    logger.info(f"trader_id: {logger.trader_id.value}")
+    logger.info(f"trader_id: {logger.trader_id}")
     logger.info(f"machine_id: {logger.machine_id}")
-    logger.info(f"instance_id: {logger.instance_id.value}")
+    logger.info(f"instance_id: {logger.instance_id}")
     logger.info("\033[36m=================================================================")
     logger.info("\033[36m VERSIONING")
     logger.info("\033[36m=================================================================")
@@ -553,7 +558,30 @@ cpdef void nautilus_header(LoggerAdapter logger) except *:
     logger.info(f"python {python_version()}")
     logger.info(f"numpy {np.__version__}")
     logger.info(f"pandas {pd.__version__}")
+    logger.info(f"aiohttp {aiohttp.__version__}")
+    logger.info(f"msgspec {msgspec.__version__}")
+    logger.info(f"orjson {orjson.__version__}")
+    logger.info(f"psutil {psutil.__version__}")
+    logger.info(f"pyarrow {pyarrow.__version__}")
+    logger.info(f"pydantic {pydantic.__version__}")
+    logger.info(f"pytz {pytz.__version__}")  # type: ignore
+    try:
+        import redis
+        logger.info(f"redis {redis.__version__}")
+    except ImportError:  # pragma: no cover
+        redis = None
+    try:
+        import hiredis
+        logger.info(f"hiredis {hiredis.__version__}")
+    except ImportError:  # pragma: no cover
+        hiredis = None
+    try:
+        import uvloop
+        logger.info(f"uvloop {uvloop.__version__}")
+    except ImportError:  # pragma: no cover
+        uvloop = None
 
+    logger.info("\033[36m=================================================================")
 
 cpdef void log_memory(LoggerAdapter logger) except *:
     logger.info("\033[36m=================================================================")

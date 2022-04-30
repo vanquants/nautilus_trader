@@ -23,12 +23,12 @@ import msgspec
 from nautilus_trader.accounting.accounts.margin import MarginAccount
 from nautilus_trader.adapters.binance.common.constants import BINANCE_VENUE
 from nautilus_trader.adapters.binance.common.enums import BinanceAccountType
+from nautilus_trader.adapters.binance.common.enums import BinanceExecutionType
 from nautilus_trader.adapters.binance.common.enums import BinanceOrderSide
 from nautilus_trader.adapters.binance.common.functions import format_symbol
 from nautilus_trader.adapters.binance.common.functions import parse_symbol
 from nautilus_trader.adapters.binance.common.schemas import BinanceListenKey
 from nautilus_trader.adapters.binance.futures.enums import BinanceFuturesEventType
-from nautilus_trader.adapters.binance.futures.enums import BinanceFuturesExecutionType
 from nautilus_trader.adapters.binance.futures.enums import BinanceFuturesTimeInForce
 from nautilus_trader.adapters.binance.futures.http.account import BinanceFuturesAccountHttpAPI
 from nautilus_trader.adapters.binance.futures.http.market import BinanceFuturesMarketHttpAPI
@@ -63,7 +63,9 @@ from nautilus_trader.cache.cache import Cache
 from nautilus_trader.common.clock import LiveClock
 from nautilus_trader.common.logging import LogColor
 from nautilus_trader.common.logging import Logger
+from nautilus_trader.core.correctness import PyCondition
 from nautilus_trader.core.datetime import millis_to_nanos
+from nautilus_trader.core.datetime import secs_to_millis
 from nautilus_trader.execution.messages import CancelAllOrders
 from nautilus_trader.execution.messages import CancelOrder
 from nautilus_trader.execution.messages import ModifyOrder
@@ -230,6 +232,7 @@ class BinanceFuturesExecutionClient(LiveExecutionClient):
 
         self._listen_key = msg.listenKey
         self._ping_listen_keys_task = self._loop.create_task(self._ping_listen_keys())
+        self._log.info(f"Listen key {self._listen_key}")
 
         # Connect WebSocket client
         self._ws_client.subscribe(key=self._listen_key)
@@ -294,12 +297,13 @@ class BinanceFuturesExecutionClient(LiveExecutionClient):
         self._set_connected(False)
         self._log.info("Disconnected.")
 
-    # -- EXECUTION REPORTS -------------------------------------------------------------------------
+    # -- EXECUTION REPORTS ------------------------------------------------------------------------
 
     async def generate_order_status_report(
         self,
         instrument_id: InstrumentId,
-        venue_order_id: VenueOrderId,
+        client_order_id: Optional[ClientOrderId] = None,
+        venue_order_id: Optional[VenueOrderId] = None,
     ) -> Optional[OrderStatusReport]:
         """
         Generate an order status report for the given venue order ID.
@@ -311,21 +315,43 @@ class BinanceFuturesExecutionClient(LiveExecutionClient):
         ----------
         instrument_id : InstrumentId
             The instrument ID for the query.
-        venue_order_id : VenueOrderId
+        client_order_id : ClientOrderId, optional
+            The client order ID for the report.
+        venue_order_id : VenueOrderId, optional
             The venue order ID for the query.
 
         Returns
         -------
         OrderStatusReport or ``None``
 
+        Raises
+        ------
+        ValueError
+            If both the `client_order_id` and `venue_order_id` are ``None``.
+
         """
-        self._log.warning("Cannot generate OrderStatusReport: not yet implemented.")
+        PyCondition.true(
+            client_order_id is not None or venue_order_id is not None,
+            "both `client_order_id` and `venue_order_id` were `None`",
+        )
+
+        self._log.info(
+            f"Generating OrderStatusReport for "
+            f"{repr(client_order_id) if client_order_id else ''} "
+            f"{repr(venue_order_id) if venue_order_id else ''}..."
+        )
 
         try:
-            binance_order: Optional[BinanceFuturesOrder] = await self._http_account.get_order(
-                symbol=instrument_id.symbol.value,
-                order_id=venue_order_id.value,
-            )
+            if client_order_id is not None:
+                binance_order: Optional[BinanceFuturesOrder] = await self._http_account.get_order(
+                    symbol=instrument_id.symbol.value,
+                    orig_client_order_id=client_order_id.value,
+                )
+            else:
+                binance_order = await self._http_account.get_order(
+                    symbol=instrument_id.symbol.value,
+                    order_id=venue_order_id.value,
+                )
         except BinanceError as ex:
             self._log.exception(
                 f"Cannot generate order status report for {venue_order_id}.",
@@ -411,8 +437,8 @@ class BinanceFuturesExecutionClient(LiveExecutionClient):
             for symbol in active_symbols:
                 response = await self._http_account.get_orders(
                     symbol=symbol,
-                    start_time=int(start.timestamp() * 1000) if start is not None else None,
-                    end_time=int(end.timestamp() * 1000) if end is not None else None,
+                    start_time=secs_to_millis(start.timestamp()) if start is not None else None,
+                    end_time=secs_to_millis(end.timestamp()) if end is not None else None,
                 )
                 binance_orders.extend(response)
         except BinanceError as ex:
@@ -495,8 +521,8 @@ class BinanceFuturesExecutionClient(LiveExecutionClient):
             for symbol in active_symbols:
                 symbol_trades = await self._http_account.get_account_trades(
                     symbol=symbol,
-                    start_time=int(start.timestamp() * 1000) if start is not None else None,
-                    end_time=int(end.timestamp() * 1000) if end is not None else None,
+                    start_time=secs_to_millis(start.timestamp()) if start is not None else None,
+                    end_time=secs_to_millis(end.timestamp()) if end is not None else None,
                 )
                 binance_trades.extend(symbol_trades)
         except BinanceError as ex:
@@ -584,7 +610,7 @@ class BinanceFuturesExecutionClient(LiveExecutionClient):
 
         return reports
 
-    # -- COMMAND HANDLERS --------------------------------------------------------------------------
+    # -- COMMAND HANDLERS -------------------------------------------------------------------------
 
     def submit_order(self, command: SubmitOrder) -> None:
         order: Order = command.order
@@ -680,7 +706,7 @@ class BinanceFuturesExecutionClient(LiveExecutionClient):
         await self._http_account.new_order(
             symbol=format_symbol(order.instrument_id.symbol.value),
             side=OrderSideParser.to_str_py(order.side),
-            type=binance_order_type(order),
+            type=binance_order_type(order).value,
             time_in_force=time_in_force,
             quantity=str(order.quantity),
             price=str(order.price),
@@ -704,7 +730,7 @@ class BinanceFuturesExecutionClient(LiveExecutionClient):
         await self._http_account.new_order(
             symbol=format_symbol(order.instrument_id.symbol.value),
             side=OrderSideParser.to_str_py(order.side),
-            type=binance_order_type(order),
+            type=binance_order_type(order).value,
             time_in_force=TimeInForceParser.to_str_py(order.time_in_force),
             quantity=str(order.quantity),
             stop_price=str(order.trigger_price),
@@ -729,7 +755,7 @@ class BinanceFuturesExecutionClient(LiveExecutionClient):
         await self._http_account.new_order(
             symbol=format_symbol(order.instrument_id.symbol.value),
             side=OrderSideParser.to_str_py(order.side),
-            type=binance_order_type(order),
+            type=binance_order_type(order).value,
             time_in_force=TimeInForceParser.to_str_py(order.time_in_force),
             quantity=str(order.quantity),
             price=str(order.price),
@@ -763,7 +789,7 @@ class BinanceFuturesExecutionClient(LiveExecutionClient):
         await self._http_account.new_order(
             symbol=format_symbol(order.instrument_id.symbol.value),
             side=OrderSideParser.to_str_py(order.side),
-            type=binance_order_type(order),
+            type=binance_order_type(order).value,
             time_in_force=TimeInForceParser.to_str_py(order.time_in_force),
             quantity=str(order.quantity),
             activation_price=str(order.trigger_price),
@@ -870,17 +896,19 @@ class BinanceFuturesExecutionClient(LiveExecutionClient):
             elif wrapper.data.e == BinanceFuturesEventType.ORDER_TRADE_UPDATE:
                 msg = msgspec.json.decode(raw, type=BinanceFuturesOrderUpdateWrapper)
                 self._handle_order_trade_update(msg.data)
-            else:
-                self._log.error(
-                    f"Cannot handle websocket msg: unrecognized type {wrapper.data.e}",
-                )
+            elif wrapper.data.e == BinanceFuturesEventType.MARGIN_CALL:
+                self._log.warning("MARGIN CALL received.")  # Implement
+            elif wrapper.data.e == BinanceFuturesEventType.ACCOUNT_CONFIG_UPDATE:
+                self._log.info("Account config updated.", LogColor.BLUE)  # Implement
+            elif wrapper.data.e == BinanceFuturesEventType.LISTEN_KEY_EXPIRED:
+                self._log.warning("Listen key expired.")  # Implement
         except Exception as ex:
             self._log.exception(f"Error on handling {repr(raw)}", ex)
 
     def _handle_account_update(self, msg: BinanceFuturesAccountUpdateMsg):
         self.generate_account_state(
             balances=parse_account_balances_ws(raw_balances=msg.a.B),
-            margins=[],  # TODO(cs): Implement or remove
+            margins=[],
             reported=True,
             ts_event=millis_to_nanos(msg.T),
         )
@@ -896,7 +924,7 @@ class BinanceFuturesExecutionClient(LiveExecutionClient):
         strategy_id: StrategyId = self._cache.strategy_id_for_order(client_order_id)
         if strategy_id is None:
             if strategy_id is None:
-                self._generate_external_order_status(
+                self._generate_external_order_report(
                     instrument_id,
                     client_order_id,
                     venue_order_id,
@@ -905,7 +933,7 @@ class BinanceFuturesExecutionClient(LiveExecutionClient):
                 )
                 return
 
-        if data.x == BinanceFuturesExecutionType.NEW:
+        if data.x == BinanceExecutionType.NEW:
             self.generate_order_accepted(
                 strategy_id=strategy_id,
                 instrument_id=instrument_id,
@@ -913,7 +941,7 @@ class BinanceFuturesExecutionClient(LiveExecutionClient):
                 venue_order_id=venue_order_id,
                 ts_event=ts_event,
             )
-        elif data.x == BinanceFuturesExecutionType.TRADE:
+        elif data.x == BinanceExecutionType.TRADE:
             instrument: Instrument = self._instrument_provider.find(instrument_id=instrument_id)
 
             # Determine commission
@@ -939,7 +967,7 @@ class BinanceFuturesExecutionClient(LiveExecutionClient):
                 liquidity_side=LiquiditySide.MAKER if data.m else LiquiditySide.TAKER,
                 ts_event=ts_event,
             )
-        elif data.x == BinanceFuturesExecutionType.CANCELED:
+        elif data.x == BinanceExecutionType.CANCELED:
             self.generate_order_canceled(
                 strategy_id=strategy_id,
                 instrument_id=instrument_id,
@@ -947,7 +975,7 @@ class BinanceFuturesExecutionClient(LiveExecutionClient):
                 venue_order_id=venue_order_id,
                 ts_event=ts_event,
             )
-        elif data.x == BinanceFuturesExecutionType.EXPIRED:
+        elif data.x == BinanceExecutionType.EXPIRED:
             self.generate_order_expired(
                 strategy_id=strategy_id,
                 instrument_id=instrument_id,
@@ -955,8 +983,12 @@ class BinanceFuturesExecutionClient(LiveExecutionClient):
                 venue_order_id=venue_order_id,
                 ts_event=ts_event,
             )
+        else:
+            self._log.error(
+                f"Cannot handle ORDER_TRADE_UPDATE: unrecognized type {data.x.value}",
+            )
 
-    def _generate_external_order_status(
+    def _generate_external_order_report(
         self,
         instrument_id: InstrumentId,
         client_order_id: ClientOrderId,

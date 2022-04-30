@@ -30,7 +30,6 @@ including FX, Equities, Futures, Options, CFDs, Crypto and Betting - across mult
 - **Live:** Use identical strategy implementations between backtesting and live deployments.
 - **Multi-venue:** Multiple venue capabilities facilitate market making and statistical arbitrage strategies.
 - **AI Agent Training:** Backtest engine fast enough to be used to train AI trading agents (RL/ES).
-- **Distributed:** Run backtests synchronously or as a graph distributed across a [dask](https://dask.org/) cluster.
 
 ![Nautilus](https://github.com/nautechsystems/nautilus_trader/blob/develop/docs/_images/nautilus-art.png?raw=true "nautilus")
 > *nautilus - from ancient Greek 'sailor' and naus 'ship'.*
@@ -72,12 +71,27 @@ The project heavily utilizes Cython to provide static type safety and increased 
 for Python through [C extension modules](https://docs.python.org/3/extending/extending.html). The vast majority of the production code is actually
 written in Cython, however the libraries can be accessed from both pure Python and Cython.
 
+## What is Rust?
+
+[Rust](https://www.rust-lang.org/) is a multi-paradigm programming language designed for performance and safety, especially safe
+concurrency. Rust is blazingly fast and memory-efficient (comparable to C and C++) with no runtime or
+garbage collector. It can power mission-critical systems, run on embedded devices, and easily
+integrates with other languages.
+
+Rust’s rich type system and ownership model guarantees memory-safety and thread-safety deterministically —
+eliminating many classes of bugs at compile-time.
+
+The project increasingly utilizes Rust for core performance-critical components. Python language binding is handled through
+Cython, with static libraries linked at compile-time before the wheel binaries are packaged, so a user
+does not need to have Rust installed to run NautilusTrader. In the future as more Rust code is introduced,
+[PyO3](https://pyo3.rs/v0.15.1/) will be leveraged for easier Python bindings.
+
 ## Architecture Quality Attributes
 
 - Reliability
 - Performance
-- Testability
 - Modularity
+- Testability
 - Maintainability
 - Deployability
 
@@ -93,7 +107,7 @@ written in Cython, however the libraries can be accessed from both pure Python a
 
    getting_started/index.md
    user_guide/index.md
-   api_reference/index.md
    integrations/index.md
+   api_reference/index.md
    developer_guide/index.md
 ```

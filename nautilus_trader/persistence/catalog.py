@@ -15,7 +15,7 @@
 
 import os
 import pathlib
-from typing import Dict, List, Optional, Union
+from typing import Callable, Dict, List, Optional, Union
 
 import fsspec
 import pandas as pd
@@ -34,9 +34,8 @@ from nautilus_trader.model.data.ticker import Ticker
 from nautilus_trader.model.data.venue import InstrumentStatusUpdate
 from nautilus_trader.model.instruments.base import Instrument
 from nautilus_trader.model.orderbook.data import OrderBookData
+from nautilus_trader.persistence.base import Singleton
 from nautilus_trader.persistence.external.metadata import load_mappings
-from nautilus_trader.persistence.streaming import read_feather
-from nautilus_trader.persistence.util import Singleton
 from nautilus_trader.serialization.arrow.serializer import ParquetSerializer
 from nautilus_trader.serialization.arrow.serializer import list_schemas
 from nautilus_trader.serialization.arrow.util import GENERIC_DATA_PREFIX
@@ -48,14 +47,14 @@ from nautilus_trader.serialization.arrow.util import dict_of_lists_to_list_of_di
 
 class DataCatalog(metaclass=Singleton):
     """
-    Provides a queryable data catalogue.
+    Provides a queryable data catalog.
 
     Parameters
     ----------
     path : str
         The root path to the data.
-    fs_protocol : str
-        The file system protocol to use.
+    fs_protocol : str, default 'file'
+        The fsspec filesystem protocol to use.
     fs_storage_options : Dict, optional
         The fs storage options.
     """
@@ -84,21 +83,21 @@ class DataCatalog(metaclass=Singleton):
         protocol, path = uri.split("://")
         return cls(path=path, fs_protocol=protocol)
 
-    # ---- QUERIES ---------------------------------------------------------------------------------------- #
+    # -- QUERIES -----------------------------------------------------------------------------------
 
     def _query(
         self,
-        cls,
-        filter_expr=None,
+        cls: type,
+        filter_expr: Optional[Callable] = None,
         instrument_ids=None,
         start=None,
         end=None,
         ts_column="ts_init",
-        raise_on_empty=True,
+        raise_on_empty: bool = True,
         instrument_id_column="instrument_id",
         table_kwargs: Optional[Dict] = None,
-        clean_instrument_keys=True,
-        as_dataframe=True,
+        clean_instrument_keys: bool = True,
+        as_dataframe: bool = True,
         projections: Optional[Dict] = None,
         **kwargs,
     ):
@@ -190,14 +189,14 @@ class DataCatalog(metaclass=Singleton):
     def query(
         self,
         cls: type,
-        filter_expr=None,
+        filter_expr: Optional[Callable] = None,
         instrument_ids=None,
-        as_nautilus=False,
+        as_nautilus: bool = False,
         sort_columns: Optional[List[str]] = None,
         as_type: Optional[Dict] = None,
         **kwargs,
     ):
-        if not is_nautilus_class(cls=cls):
+        if not is_nautilus_class(cls):
             # Special handling for generic data
             return self.generic_data(
                 cls=cls,
@@ -219,9 +218,9 @@ class DataCatalog(metaclass=Singleton):
     def _query_subclasses(
         self,
         base_cls: type,
-        filter_expr=None,
+        filter_expr: Optional[Callable] = None,
         instrument_ids=None,
-        as_nautilus=False,
+        as_nautilus: bool = False,
         **kwargs,
     ):
         subclasses = [base_cls] + base_cls.__subclasses__()
@@ -239,8 +238,9 @@ class DataCatalog(metaclass=Singleton):
                 )
                 dfs.append(df)
             except ArrowInvalid as ex:
-                # If we're using a `filter_expr` here, there's a good chance this error is using a filter that is
-                # specific to one set of instruments and not the others, so we ignore it. If not; raise
+                # If we're using a `filter_expr` here, there's a good chance
+                # this error is using a filter that is specific to one set of
+                # instruments and not to others, so we ignore it (if not; raise).
                 if filter_expr is not None:
                     continue
                 else:
@@ -254,10 +254,10 @@ class DataCatalog(metaclass=Singleton):
 
     def instruments(
         self,
-        instrument_type=None,
+        instrument_type: Optional[type] = None,
         instrument_ids=None,
-        filter_expr=None,
-        as_nautilus=False,
+        filter_expr: Optional[Callable] = None,
+        as_nautilus: bool = False,
         **kwargs,
     ):
         if instrument_type is not None:
@@ -277,7 +277,11 @@ class DataCatalog(metaclass=Singleton):
         )
 
     def instrument_status_updates(
-        self, instrument_ids=None, filter_expr=None, as_nautilus=False, **kwargs
+        self,
+        instrument_ids=None,
+        filter_expr: Optional[Callable] = None,
+        as_nautilus: bool = False,
+        **kwargs,
     ):
         return self.query(
             cls=InstrumentStatusUpdate,
@@ -288,7 +292,13 @@ class DataCatalog(metaclass=Singleton):
             **kwargs,
         )
 
-    def trade_ticks(self, instrument_ids=None, filter_expr=None, as_nautilus=False, **kwargs):
+    def trade_ticks(
+        self,
+        instrument_ids=None,
+        filter_expr: Optional[Callable] = None,
+        as_nautilus: bool = False,
+        **kwargs,
+    ):
         return self.query(
             cls=TradeTick,
             filter_expr=filter_expr,
@@ -298,7 +308,13 @@ class DataCatalog(metaclass=Singleton):
             **kwargs,
         )
 
-    def quote_ticks(self, instrument_ids=None, filter_expr=None, as_nautilus=False, **kwargs):
+    def quote_ticks(
+        self,
+        instrument_ids=None,
+        filter_expr: Optional[Callable] = None,
+        as_nautilus: bool = False,
+        **kwargs,
+    ):
         return self.query(
             cls=QuoteTick,
             filter_expr=filter_expr,
@@ -307,7 +323,13 @@ class DataCatalog(metaclass=Singleton):
             **kwargs,
         )
 
-    def tickers(self, instrument_ids=None, filter_expr=None, as_nautilus=False, **kwargs):
+    def tickers(
+        self,
+        instrument_ids=None,
+        filter_expr: Optional[Callable] = None,
+        as_nautilus: bool = False,
+        **kwargs,
+    ):
         return self._query_subclasses(
             base_cls=Ticker,
             filter_expr=filter_expr,
@@ -316,7 +338,13 @@ class DataCatalog(metaclass=Singleton):
             **kwargs,
         )
 
-    def bars(self, instrument_ids=None, filter_expr=None, as_nautilus=False, **kwargs):
+    def bars(
+        self,
+        instrument_ids=None,
+        filter_expr: Optional[Callable] = None,
+        as_nautilus: bool = False,
+        **kwargs,
+    ):
         return self._query_subclasses(
             base_cls=Bar,
             filter_expr=filter_expr,
@@ -325,7 +353,13 @@ class DataCatalog(metaclass=Singleton):
             **kwargs,
         )
 
-    def order_book_deltas(self, instrument_ids=None, filter_expr=None, as_nautilus=False, **kwargs):
+    def order_book_deltas(
+        self,
+        instrument_ids=None,
+        filter_expr: Optional[Callable] = None,
+        as_nautilus: bool = False,
+        **kwargs,
+    ):
         return self.query(
             cls=OrderBookData,
             filter_expr=filter_expr,
@@ -334,8 +368,19 @@ class DataCatalog(metaclass=Singleton):
             **kwargs,
         )
 
-    def generic_data(self, cls, filter_expr=None, as_nautilus=False, **kwargs):
-        data = self._query(cls=cls, filter_expr=filter_expr, as_dataframe=not as_nautilus, **kwargs)
+    def generic_data(
+        self,
+        cls: type,
+        filter_expr: Optional[Callable] = None,
+        as_nautilus: bool = False,
+        **kwargs,
+    ):
+        data = self._query(
+            cls=cls,
+            filter_expr=filter_expr,
+            as_dataframe=not as_nautilus,
+            **kwargs,
+        )
         if as_nautilus:
             if data is None:
                 return []
@@ -362,12 +407,24 @@ class DataCatalog(metaclass=Singleton):
             partitions[level.name] = level.keys
         return partitions
 
+    def list_backtests(self) -> List[str]:
+        return [p.stem for p in map(pathlib.Path, self.fs.glob(f"{self.path}/backtest/*.feather"))]
+
+    def list_live_runs(self) -> List[str]:
+        return [p.stem for p in map(pathlib.Path, self.fs.glob(f"{self.path}/live/*.feather"))]
+
+    def read_live_run(self, live_run_id: str, **kwargs):
+        return self._read_feather(kind="live", run_id=live_run_id, **kwargs)
+
+    def read_backtest(self, backtest_run_id: str, **kwargs):
+        return self._read_feather(kind="backtest", run_id=backtest_run_id, **kwargs)
+
     def _read_feather(self, kind: str, run_id: str, raise_on_failed_deserialize: bool = False):
         class_mapping: Dict[str, type] = {class_to_filename(cls): cls for cls in list_schemas()}
         data = {}
         for path in [p for p in self.fs.glob(f"{self.path}/{kind}/{run_id}.feather/*.feather")]:
             cls_name = camel_to_snake_case(pathlib.Path(path).stem).replace("__", "_")
-            df = read_feather(path=path, fs=self.fs)
+            df = read_feather_file(self, path=path, fs=self.fs)
             if df is None:
                 print(f"No data for {cls_name}")
                 continue
@@ -383,11 +440,17 @@ class DataCatalog(metaclass=Singleton):
                 print(f"Failed to deserialize {cls_name}: {ex}")
         return sorted(sum(data.values(), list()), key=lambda x: x.ts_init)
 
-    def read_live_run(self, live_run_id: str, **kwargs):
-        return self._read_feather(kind="live", run_id=live_run_id, **kwargs)
 
-    def read_backtest(self, backtest_run_id: str, **kwargs):
-        return self._read_feather(kind="backtest", run_id=backtest_run_id, **kwargs)
+def read_feather_file(self, path: str, fs: fsspec.AbstractFileSystem = None):
+    fs = fs or fsspec.filesystem("file")
+    if not fs.exists(path):
+        return
+    try:
+        with fs.open(path) as f:
+            reader = pa.ipc.open_stream(f)
+            return reader.read_pandas()
+    except (pa.ArrowInvalid, FileNotFoundError):
+        return
 
 
 def combine_filters(*filters):

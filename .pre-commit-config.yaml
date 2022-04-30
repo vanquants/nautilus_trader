@@ -1,13 +1,15 @@
 repos:
-
+  ##############################################################################
+  #  General checks
+  ##############################################################################
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.1.0
+    rev: v4.2.0
     hooks:
       - id: forbid-new-submodules
       - id: fix-encoding-pragma
         args: [--remove]
       - id: end-of-file-fixer
-        types_or: [python, cython]
+        types_or: [python, cython, rust]
       - id: trailing-whitespace
         types_or: [python, cython]
       - id: debug-statements
@@ -22,23 +24,37 @@ repos:
       - id: check-xml
       - id: check-yaml
 
-#  - repo: https://github.com/codespell-project/codespell
-#    rev: v2.1.0
-#    hooks:
-#      - id: codespell
-#        description: Checks for common misspellings.
-#        types_or: [python, cython, rst, markdown]
-#        exclude: "nautilus_trader/adapters/betfair/parsing.py|nautilus_trader/adapters/betfair/execution.py|tests/integration_tests/adapters/betfair/test_kit.py"
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.1.0
+    hooks:
+      - id: codespell
+        description: Checks for common misspellings.
+        types_or: [python, cython, rst, markdown]
+        exclude: "nautilus_trader/adapters/betfair/parsing.py|nautilus_trader/adapters/betfair/execution.py|tests/integration_tests/adapters/betfair/test_kit.py|nautilus_trader/adapters/binance/futures/schemas/user.py"
 
+  ##############################################################################
+  #  Rust checks
+  ##############################################################################
+  - repo: https://github.com/doublify/pre-commit-rust
+    rev: v1.0
+    hooks:
+      - id: cargo-check
+        args: ["--manifest-path", "nautilus_core/Cargo.toml"]
+      - id: clippy
+        args: ["--manifest-path", "nautilus_core/Cargo.toml"]
+
+  ##############################################################################
+  #  Python/Cython checks
+  ##############################################################################
   - repo: https://github.com/hadialqattan/pycln
-    rev: v1.2.4
+    rev: v1.3.1
     hooks:
       - id: pycln
         name: pycln (Python unused imports)
         exclude: "nautilus_trader/live/node.py|nautilus_trader/adapters/betfair/execution.py"
 
   - repo: https://github.com/psf/black
-    rev: 22.1.0
+    rev: 22.3.0
     hooks:
       - id: black
         args: [
@@ -61,9 +77,10 @@ repos:
             --lines-after-imports=2,
             --use-parentheses,
         ]
+        exclude: "nautilus_trader/core/rust"
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v0.931
+    rev: v0.942
     hooks:
       - id: mypy
         args: [
@@ -105,7 +122,8 @@ repos:
             --max-complexity=10,
             --max-line-length=150,
             --statistics,
-            --ignore=C101 E203 E252 E402 D100 D101 D102 S101 S403 W503,
+            --ignore=C101 E203 E252 E402 D100 D101 D102 S101 S403 S404 W503,
+            --min-python-version=3.8.0
         ]
       - id: flake8
         name: flake8 (Cython)
@@ -142,11 +160,10 @@ repos:
         additional_dependencies:
           - toml
 
-#  - repo: https://github.com/kynan/nbstripout
-#    rev: 0.5.0
-#    hooks:
-#      - id: nbstripout
-
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.5.0
+    hooks:
+      - id: nbstripout
 
 # flake8 ignore justifications
 # ----------------------------
