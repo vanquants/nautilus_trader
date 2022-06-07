@@ -14,7 +14,7 @@
 # -------------------------------------------------------------------------------------------------
 
 import pandas as pd
-from libc.stdint cimport int64_t
+from libc.stdint cimport uint64_t
 
 from decimal import Decimal
 
@@ -58,8 +58,8 @@ cdef class BettingInstrument(Instrument):
         str selection_name not None,
         str selection_handicap not None,
         str currency not None,
-        int64_t ts_event,
-        int64_t ts_init,
+        uint64_t ts_event,
+        uint64_t ts_init,
         str tick_scheme_name="BETFAIR",
         int price_precision=7,  # TODO(bm): pending refactor
         Price min_price=None,
@@ -140,8 +140,8 @@ cdef class BettingInstrument(Instrument):
         Condition.not_none(obj, "obj")
         return {
             "type": "BettingInstrument",
-            "id": obj.id.value,
-            "venue_name": obj.id.venue.value,
+            "id": obj.id.to_str(),
+            "venue_name": obj.id.venue.to_str(),
             "event_type_id": obj.event_type_id,
             "event_type_name": obj.event_type_name,
             "competition_id": obj.competition_id,
@@ -203,9 +203,11 @@ cdef class BettingInstrument(Instrument):
         def _clean(s):
             return str(s).replace(' ', '').replace(':', '')
 
-        return Symbol(value="-".join([_clean(getattr(self, k)) for k in keys]))
+        value: str = "".join([_clean(getattr(self, k)) for k in keys])
+        assert len(value) <= 32, f"Symbol too long ({len(value)}): '{value}'"
+        return Symbol(value)
 
-    cpdef Money notional_value(self, Quantity quantity, double price, bint inverse_as_quote=False):
+    cpdef Money notional_value(self, Quantity quantity, Price price, bint inverse_as_quote=False):
         Condition.not_none(quantity, "quantity")
-        cdef double bet_price = 1.0 / price
+        cdef double bet_price = 1.0 / price.as_f64_c()
         return Money(quantity.as_f64_c() * float(self.multiplier) * bet_price, self.quote_currency)

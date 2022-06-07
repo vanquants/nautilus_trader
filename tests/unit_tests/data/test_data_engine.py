@@ -13,16 +13,13 @@
 #  limitations under the License.
 # -------------------------------------------------------------------------------------------------
 
-import pytest
-
 from nautilus_trader.backtest.data.providers import TestInstrumentProvider
 from nautilus_trader.backtest.data_client import BacktestMarketDataClient
 from nautilus_trader.common.clock import TestClock
 from nautilus_trader.common.enums import LogLevel
 from nautilus_trader.common.logging import Logger
-from nautilus_trader.common.uuid import UUIDFactory
 from nautilus_trader.core.data import Data
-from nautilus_trader.core.fsm import InvalidStateTrigger
+from nautilus_trader.core.uuid import UUID4
 from nautilus_trader.data.engine import DataEngine
 from nautilus_trader.data.engine import DataEngineConfig
 from nautilus_trader.data.messages import DataCommand
@@ -73,7 +70,6 @@ class TestDataEngine:
     def setup(self):
         # Fixture Setup
         self.clock = TestClock()
-        self.uuid_factory = UUIDFactory()
         self.logger = Logger(
             clock=self.clock,
             level_stdout=LogLevel.DEBUG,
@@ -264,22 +260,6 @@ class TestDataEngine:
         # Assert
         assert not result
 
-    def test_reset_when_already_disposed_raises_invalid_state_trigger(self):
-        # Arrange
-        self.data_engine.dispose()
-
-        # Act, Assert
-        with pytest.raises(InvalidStateTrigger):
-            self.data_engine.reset()
-
-    def test_dispose_when_already_disposed_raises_invalid_state_trigger(self):
-        # Arrange
-        self.data_engine.dispose()
-
-        # Act, Assert
-        with pytest.raises(InvalidStateTrigger):
-            self.data_engine.dispose()
-
     def test_execute_unrecognized_message_logs_and_does_nothing(self):
         # Arrange
         self.data_engine.register_client(self.binance_client)
@@ -289,7 +269,7 @@ class TestDataEngine:
             client_id=None,
             venue=BINANCE,
             data_type=DataType(Data),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -315,7 +295,7 @@ class TestDataEngine:
                 },
             ),
             callback=handler.append,
-            request_id=self.uuid_factory.generate(),
+            request_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -343,7 +323,7 @@ class TestDataEngine:
                 },
             ),
             callback=handler.append,
-            request_id=self.uuid_factory.generate(),
+            request_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -359,7 +339,7 @@ class TestDataEngine:
         self.data_engine.start()
 
         handler = []
-        uuid = self.uuid_factory.generate()  # We'll use this as a duplicate
+        uuid = UUID4()  # We'll use this as a duplicate
 
         request1 = DataRequest(
             client_id=None,
@@ -410,7 +390,7 @@ class TestDataEngine:
             client_id=None,
             venue=BINANCE,
             data_type=DataType(NewsEvent),  # NewsEvent data not recognized
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -430,7 +410,7 @@ class TestDataEngine:
             client_id=ClientId("QUANDL"),
             venue=None,
             data_type=DataType(Data, metadata={"Type": "news"}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -455,7 +435,7 @@ class TestDataEngine:
             client_id=ClientId("QUANDL"),
             venue=None,
             data_type=DataType(Data, metadata={"Type": "news"}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -466,7 +446,7 @@ class TestDataEngine:
             client_id=ClientId("QUANDL"),
             venue=None,
             data_type=DataType(Data, metadata={"Type": "news"}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -487,7 +467,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(Data),  # str data type is invalid
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -506,7 +486,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(QuoteTick, metadata={"instrument_id": ETHUSDT_BINANCE.id}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -523,8 +503,8 @@ class TestDataEngine:
             venue=BINANCE,
             data_type=DataType(QuoteTick),
             data=[],
-            correlation_id=self.uuid_factory.generate(),
-            response_id=self.uuid_factory.generate(),
+            correlation_id=UUID4(),
+            response_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -563,7 +543,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(Instrument),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -582,7 +562,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(Instrument),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -592,7 +572,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(Instrument),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -611,7 +591,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(Instrument, metadata={"instrument_id": ETHUSDT_BINANCE.id}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -631,7 +611,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(Instrument, metadata={"instrument_id": ETHUSDT_BINANCE.id}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -641,7 +621,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(Instrument, metadata={"instrument_id": ETHUSDT_BINANCE.id}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -663,7 +643,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(Instrument, metadata={"instrument_id": ETHUSDT_BINANCE.id}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -691,7 +671,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(Instrument, metadata={"instrument_id": ETHUSDT_BINANCE.id}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -699,7 +679,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(Instrument, metadata={"instrument_id": ETHUSDT_BINANCE.id}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -730,7 +710,7 @@ class TestDataEngine:
                     "interval_ms": 1000,
                 },
             ),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -757,7 +737,7 @@ class TestDataEngine:
                     "interval_ms": 1000,
                 },
             ),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -784,7 +764,7 @@ class TestDataEngine:
                     "interval_ms": 1000,
                 },
             ),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -811,7 +791,7 @@ class TestDataEngine:
                     "interval_ms": 1000,
                 },
             ),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -827,7 +807,7 @@ class TestDataEngine:
                     "interval_ms": 1000,
                 },
             ),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -854,7 +834,7 @@ class TestDataEngine:
                     "interval_ms": 1000,
                 },
             ),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -870,7 +850,7 @@ class TestDataEngine:
                     "interval_ms": 1000,
                 },
             ),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -897,7 +877,7 @@ class TestDataEngine:
                     "interval_ms": 1000,
                 },
             ),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -913,7 +893,7 @@ class TestDataEngine:
                     "interval_ms": 1000,
                 },
             ),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -947,7 +927,7 @@ class TestDataEngine:
                     "interval_ms": 1000,  # Streaming
                 },
             ),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -986,7 +966,7 @@ class TestDataEngine:
                     "interval_ms": 1000,  # Streaming
                 },
             ),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1031,7 +1011,7 @@ class TestDataEngine:
                     "depth": 5,
                 },
             ),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1082,7 +1062,7 @@ class TestDataEngine:
                     "interval_ms": 1000,
                 },
             ),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1098,7 +1078,7 @@ class TestDataEngine:
                     "interval_ms": 1000,
                 },
             ),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1140,7 +1120,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(Ticker, metadata={"instrument_id": ETHUSDT_BINANCE.id}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1161,7 +1141,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(Ticker, metadata={"instrument_id": ETHUSDT_BINANCE.id}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1171,7 +1151,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(Ticker, metadata={"instrument_id": ETHUSDT_BINANCE.id}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1193,7 +1173,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(QuoteTick, metadata={"instrument_id": ETHUSDT_BINANCE.id}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1215,7 +1195,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(QuoteTick, metadata={"instrument_id": ETHUSDT_BINANCE.id}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1225,7 +1205,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(QuoteTick, metadata={"instrument_id": ETHUSDT_BINANCE.id}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1247,7 +1227,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(QuoteTick, metadata={"instrument_id": ETHUSDT_BINANCE.id}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1286,7 +1266,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(QuoteTick, metadata={"instrument_id": ETHUSDT_BINANCE.id}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1294,7 +1274,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(QuoteTick, metadata={"instrument_id": ETHUSDT_BINANCE.id}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1327,7 +1307,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(TradeTick, metadata={"instrument_id": ETHUSDT_BINANCE.id}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1349,7 +1329,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(TradeTick, metadata={"instrument_id": ETHUSDT_BINANCE.id}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1359,7 +1339,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(TradeTick, metadata={"instrument_id": ETHUSDT_BINANCE.id}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1381,7 +1361,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(TradeTick, metadata={"instrument_id": ETHUSDT_BINANCE.id}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1419,7 +1399,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(TradeTick, metadata={"instrument_id": ETHUSDT_BINANCE.id}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1427,7 +1407,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(TradeTick, metadata={"instrument_id": ETHUSDT_BINANCE.id}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1466,7 +1446,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(Bar, metadata={"bar_type": bar_type}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1492,7 +1472,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(Bar, metadata={"bar_type": bar_type}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1503,7 +1483,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(Bar, metadata={"bar_type": bar_type}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1529,7 +1509,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(Bar, metadata={"bar_type": bar_type}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1569,7 +1549,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(Bar, metadata={"bar_type": bar_type}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1577,7 +1557,7 @@ class TestDataEngine:
             client_id=ClientId(BINANCE.value),
             venue=BINANCE,
             data_type=DataType(Bar, metadata={"bar_type": bar_type}),
-            command_id=self.uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 
@@ -1617,7 +1597,7 @@ class TestDataEngine:
                 },
             ),
             callback=handler.append,
-            request_id=self.uuid_factory.generate(),
+            request_id=UUID4(),
             ts_init=self.clock.timestamp_ns(),
         )
 

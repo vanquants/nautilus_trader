@@ -122,13 +122,13 @@ class TestBacktestAcceptanceTestsUSDJPY:
         self.engine.add_strategy(strategy)
 
         self.engine.run()
-        result1 = self.engine.trader.analyzer.get_performance_stats_pnls()
+        result1 = self.engine.portfolio.analyzer.get_performance_stats_pnls()
 
         # Act
         self.engine.reset()
         self.engine.add_instrument(self.usdjpy)  # TODO(cs): Having to replace instrument
         self.engine.run()
-        result2 = self.engine.trader.analyzer.get_performance_stats_pnls()
+        result2 = self.engine.portfolio.analyzer.get_performance_stats_pnls()
 
         # Assert
         assert all(result2) == all(result1)
@@ -268,8 +268,8 @@ class TestBacktestAcceptanceTestsGBPUSDBarsExternal:
         )
 
         self.engine.add_instrument(self.gbpusd)
-        self.engine.add_bars(bid_bars)
-        self.engine.add_bars(ask_bars)
+        self.engine.add_data(bid_bars)
+        self.engine.add_data(ask_bars)
 
         interest_rate_data = pd.read_csv(
             os.path.join(PACKAGE_ROOT, "data", "short-term-interest.csv")
@@ -350,7 +350,7 @@ class TestBacktestAcceptanceTestsBTCPERPTradeBars:
             data=provider.read_csv_bars("ftx-btc-perp-20211231-20220201_1m.csv")[:10000],
         )
 
-        self.engine.add_bars(bars)
+        self.engine.add_data(bars)
 
         config = EMACrossConfig(
             instrument_id=str(self.btcusdt.id),
@@ -563,7 +563,7 @@ class TestBacktestAcceptanceTestsOrderBookImbalance:
             ]
             self.engine.add_instrument(instrument)
             self.engine.add_data(trade_ticks)
-            self.engine.add_order_book_data(order_book_deltas)
+            self.engine.add_data(order_book_deltas)
             self.instrument = instrument
         self.engine.add_venue(
             venue=self.venue,
@@ -620,7 +620,7 @@ class TestBacktestAcceptanceTestsMarketMaking:
             ]
             self.engine.add_instrument(instrument)
             self.engine.add_data(trade_ticks)
-            self.engine.add_order_book_data(order_book_deltas)
+            self.engine.add_data(order_book_deltas)
             self.instrument = instrument
         self.engine.add_venue(
             venue=self.venue,

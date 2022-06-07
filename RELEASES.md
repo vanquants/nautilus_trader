@@ -1,24 +1,104 @@
+# NautilusTrader 1.147.1 Beta
+
+Released on 6th June 2022.
+
+### Breaking Changes
+None
+
+### Enhancements
+None
+
+### Fixes
+- Fixed incorrect backtest log timestamps (was using actual time)
+- Fixed formatting of timestamps for nanoseconds zulu as per RFC3339
+
+---
+
+# NautilusTrader 1.147.0 Beta
+
+Released on 4th June 2022.
+
+### Breaking Changes
+None
+
+### Enhancements
+- Improved error handling for invalid state triggers
+- Improved component state transition behaviour and logging
+- Improved `TradingNode` disposal flow
+- Implemented core monotonic clock
+- Implemented logging in Rust
+- Added `CommodityChannelIndex` indicator thanks @graceyangfan
+
+### Fixes
+None
+
+---
+
+# NautilusTrader 1.146.0 Beta
+
+Released on 22nd May 2022 (UTC).
+
+### Breaking Changes
+- `AccountId` constructor now takes single value string
+- Removed redundant `UUIDFactory` and all associated backing fields and calls
+- Removed `ClientOrderLinkId` (not in use)
+
+### Enhancements
+- Refinements and improvements to Rust core
+
+### Fixes
+- Fixed pre-trade notional risk checks incorrectly applied to `MARGIN` accounts
+- Fixed `net_qty` in `PositionStatusReport` thanks to @sidnvy
+- Fixed `LinearRegression` indicator thanks to @graceyangfan
+
+---
+
+# NautilusTrader 1.145.0 Beta
+
+Released on 15th May 2022 (UTC).
+
+This is an early release due to the build error in the sdist for `1.144.0`.
+The error is due to the `nautilus_core` Rust source not being included in the sdist package.
+
+### Breaking Changes
+- All raw order constructors now take `expire_time_ns` int64 rather than a datetime
+- All order serializations due to `expire_time_ns` option handling
+- `PortfolioAnalyzer` moved from `Trader` to `Portfolio`
+
+### Enhancements
+- `PortfolioAnalyzer` now available to strategies via `self.portfolio.analyzer`
+
+### Fixes
+None
+
+---
+
 # NautilusTrader 1.144.0 Beta
 
-Released on TBD.
+Released on 10th May 2022 (UTC).
 
 ### Breaking Changes
 - Removed `BacktestEngine.add_ticks()` as redundant with `.add_data()`
+- Removed `BacktestEngine.add_bars()` as redundant with `.add_data()`
+- Removed `BacktestEngine.add_generic_data()` as redundant with `.add_data()`
+- Removed `BacktestEngine.add_order_book_data()` as redundant with `.add_data()`
 - Renamed `Position.from_order` to `Position.opening_order_id`
 - Renamed `StreamingPersistence` to `StreamingFeatherWriter`
 - Renamed `PersistenceConfig` to `StreamingConfig`
 - Renamed `PersistenceConfig.flush_interval` to `flush_interval_ms`
-- Replaced `UUID4.value` property with `UUID4.to_str()` method
 
 ### Enhancements
+- Added `Actor.publish_signal` for generic dynamic signal data
+- Added `WEEK` and `MONTH` bar aggregation options
 - Added `Position.closing_order_id` property
 - Added `tags` param to `Strategy.submit_order`
 - Added optional `check_positon_exists` flag to `Strategy.submit_order`
-- Eliminated all use of `unsafe` Rust and nul byte terminated C strings.
+- Eliminated all use of `unsafe` Rust and C null-terminated byte strings
 - The `bypass_logging` config option will also now bypass the `BacktestEngine` logger
 
 ### Fixes
-None
+- Fixed behaviour of `IOC` and `FOK` time in force instructions
+- Fixed Binance bar resolution parsing
 
 ---
 

@@ -14,24 +14,27 @@
 # -------------------------------------------------------------------------------------------------
 
 """
-The `Strategy` class allows traders to implement their own customized trading strategies.
+The `Actor` class allows traders to implement their own customized components.
 
-A user can inherit from `Strategy` and optionally override any of the
+A user can inherit from `Actor` and optionally override any of the
 "on" named event methods. The class is not entirely initialized in a stand-alone
-way, the intended usage is to pass strategies to a `Trader` so that they can be
-fully "wired" into the platform. Exceptions will be raised if a `Strategy`
+way, the intended usage is to pass actors to a `Trader` so that they can be
+fully "wired" into the platform. Exceptions will be raised if an `Actor`
 attempts to operate without a managing `Trader` instance.
 
 """
 
 import warnings
-from typing import Optional
+from typing import Dict, Optional, Set
 
 import cython
 
 from nautilus_trader.config import ActorConfig
+from nautilus_trader.config import ImportableActorConfig
+from nautilus_trader.persistence.streaming import generate_signal_class
 
 from cpython.datetime cimport datetime
+from libc.stdint cimport uint64_t
 
 from nautilus_trader.cache.base cimport CacheFacade
 from nautilus_trader.common.clock cimport Clock
@@ -44,6 +47,7 @@ from nautilus_trader.common.logging cimport Logger
 from nautilus_trader.core.correctness cimport Condition
 from nautilus_trader.core.data cimport Data
 from nautilus_trader.core.message cimport Event
+from nautilus_trader.core.uuid cimport UUID4
 from nautilus_trader.data.messages cimport DataRequest
 from nautilus_trader.data.messages cimport DataResponse
 from nautilus_trader.data.messages cimport Subscribe
@@ -71,7 +75,7 @@ from nautilus_trader.msgbus.bus cimport MessageBus
 
 cdef class Actor(Component):
     """
-    The abstract base class for all actor components.
+    The base class for all actor components.
 
     Parameters
     ----------
@@ -106,7 +110,10 @@ cdef class Actor(Component):
             config=config.dict(),
         )
 
-        self._warning_events = set()
+        self._warning_events: Set[type] = set()
+        self._signal_classes: Dict[str, type] = {}
+
+        self.config = config
 
         self.trader_id = None  # Initialized when registered
         self.msgbus = None     # Initialized when registered
@@ -114,16 +121,31 @@ cdef class Actor(Component):
         self.clock = None      # Initialized when registered
         self.log = self._log
 
+    def to_importable_config(self) -> ImportableActorConfig:
+        """
+        Returns an importable configuration for this actor.
+
+        Returns
+        -------
+        ImportableActorConfig
+
+        """
+        return ImportableActorConfig(
+            actor_path=self.fully_qualified_name(),
+            config_path=self.config.fully_qualified_name(),
+            config=self.config.dict(),
+        )
+
 # -- ABSTRACT METHODS -----------------------------------------------------------------------------
 
     cpdef void on_start(self) except *:
         """
         Actions to be performed on start.
 
-        The intent is that this method is called once per fresh trading session
-        when the component is initially started.
+        The intent is that this method is called once per trading session,
+        when initially starting.
 
-        It is recommended to subscribe/request data here.
+        It is recommended to subscribe/request for data here.
 
         Warnings
         --------
@@ -137,10 +159,9 @@ cdef class Actor(Component):
 
     cpdef void on_stop(self) except *:
         """
-        Actions to be performed on stopped.
+        Actions to be performed on stop.
 
-        The intent is that this method is called every time the strategy is
-        paused, and also when it is done for day.
+        The intent is that this method is called to pause, or when done for day.
 
         Warnings
         --------
@@ -181,7 +202,7 @@ cdef class Actor(Component):
         """
         Actions to be performed on dispose.
 
-        Cleanup any resources used by the strategy here.
+        Cleanup any resources used here.
 
         Warnings
         --------
@@ -428,7 +449,7 @@ cdef class Actor(Component):
         Logger logger,
     ) except *:
         """
-        Register the component with a trader.
+        Register with a trader.
 
         Parameters
         ----------
@@ -558,7 +579,7 @@ cdef class Actor(Component):
             client_id=client_id,
             venue=None,
             data_type=data_type,
-            command_id=self._uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -591,7 +612,7 @@ cdef class Actor(Component):
             client_id=client_id,
             venue=instrument_id.venue,
             data_type=DataType(Instrument, metadata={"instrument_id": instrument_id}),
-            command_id=self._uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -622,7 +643,7 @@ cdef class Actor(Component):
             client_id=client_id,
             venue=venue,
             data_type=DataType(Instrument),
-            command_id=self._uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -674,7 +695,7 @@ cdef class Actor(Component):
                 "depth": depth,
                 "kwargs": kwargs,
             }),
-            command_id=self._uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -750,7 +771,7 @@ cdef class Actor(Component):
                 "interval_ms": interval_ms,
                 "kwargs": kwargs,
             }),
-            command_id=self._uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -783,7 +804,7 @@ cdef class Actor(Component):
             client_id=client_id,
             venue=instrument_id.venue,
             data_type=DataType(Ticker, metadata={"instrument_id": instrument_id}),
-            command_id=self._uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -816,7 +837,7 @@ cdef class Actor(Component):
             client_id=client_id,
             venue=instrument_id.venue,
             data_type=DataType(QuoteTick, metadata={"instrument_id": instrument_id}),
-            command_id=self._uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -849,7 +870,7 @@ cdef class Actor(Component):
             client_id=client_id,
             venue=instrument_id.venue,
             data_type=DataType(TradeTick, metadata={"instrument_id": instrument_id}),
-            command_id=self._uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -880,7 +901,7 @@ cdef class Actor(Component):
             client_id=client_id,
             venue=bar_type.instrument_id.venue,
             data_type=DataType(Bar, metadata={"bar_type": bar_type}),
-            command_id=self._uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -932,7 +953,7 @@ cdef class Actor(Component):
             client_id=client_id,
             venue=instrument_id.venue,
             data_type=DataType(InstrumentStatusUpdate, metadata={"instrument_id": instrument_id}),
-            command_id=self._uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -955,7 +976,7 @@ cdef class Actor(Component):
         Condition.true(self.trader_id is not None, "The actor has not been registered")
 
         self._msgbus.subscribe(
-            topic=f"data.venue.close_price.{instrument_id.value}",
+            topic=f"data.venue.close_price.{instrument_id.to_str()}",
             handler=self.handle_instrument_close_price,
         )
 
@@ -963,7 +984,7 @@ cdef class Actor(Component):
             client_id=client_id,
             venue=instrument_id.venue,
             data_type=DataType(InstrumentClosePrice, metadata={"instrument_id": instrument_id}),
-            command_id=self._uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -997,7 +1018,7 @@ cdef class Actor(Component):
             client_id=client_id,
             venue=None,
             data_type=data_type,
-            command_id=self._uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -1028,7 +1049,7 @@ cdef class Actor(Component):
             client_id=client_id,
             venue=venue,
             data_type=DataType(Instrument),
-            command_id=self._uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -1061,7 +1082,7 @@ cdef class Actor(Component):
             client_id=client_id,
             venue=instrument_id.venue,
             data_type=DataType(Instrument, metadata={"instrument_id": instrument_id}),
-            command_id=self._uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -1094,7 +1115,7 @@ cdef class Actor(Component):
             client_id=client_id,
             venue=instrument_id.venue,
             data_type=DataType(OrderBookData, metadata={"instrument_id": instrument_id}),
-            command_id=self._uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -1140,7 +1161,7 @@ cdef class Actor(Component):
                 "instrument_id": instrument_id,
                 "interval_ms": interval_ms,
             }),
-            command_id=self._uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -1173,7 +1194,7 @@ cdef class Actor(Component):
             client_id=client_id,
             venue=instrument_id.venue,
             data_type=DataType(Ticker, metadata={"instrument_id": instrument_id}),
-            command_id=self._uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -1206,7 +1227,7 @@ cdef class Actor(Component):
             client_id=client_id,
             venue=instrument_id.venue,
             data_type=DataType(QuoteTick, metadata={"instrument_id": instrument_id}),
-            command_id=self._uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -1239,7 +1260,7 @@ cdef class Actor(Component):
             client_id=client_id,
             venue=instrument_id.venue,
             data_type=DataType(TradeTick, metadata={"instrument_id": instrument_id}),
-            command_id=self._uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -1270,7 +1291,7 @@ cdef class Actor(Component):
             client_id=client_id,
             venue=bar_type.instrument_id.venue,
             data_type=DataType(Bar, metadata={"bar_type": bar_type}),
-            command_id=self._uuid_factory.generate(),
+            command_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -1317,6 +1338,41 @@ cdef class Actor(Component):
 
         self._msgbus.publish_c(topic=f"data.{data_type.topic}", msg=data)
 
+    cpdef void publish_signal(self, str name, value, uint64_t ts_event = 0, bint stream = False) except *:
+        """
+        Publish the given value as a signal to the message bus. Optionally setup persistence for this `signal`.
+
+        Parameters
+        ----------
+        name : str
+            The name of the signal being published.
+        value : object
+            The signal data to publish.
+        ts_event : uint64_t, optional
+            The UNIX timestamp (nanoseconds) when the signal event occurred.
+            If ``None`` then will timestamp current time.
+        stream : bool, default False
+            If the signal should also be streamed for persistence.
+
+        """
+        Condition.not_none(name, "name")
+        Condition.not_none(value, "value")
+        Condition.is_in(type(value), (int, float, str), "value", "int, float, str")
+        Condition.true(self.trader_id is not None, "The actor has not been registered")
+
+        cdef type cls = self._signal_classes.get(name)
+        if cls is None:
+            cls = generate_signal_class(name=name)
+            self._signal_classes[name] = cls
+
+        cdef uint64_t now = self.clock.timestamp_ns()
+        cdef Data data = cls(
+            value=value,
+            ts_event=ts_event or now,
+            ts_init=now,
+        )
+        self.publish_data(data_type=DataType(cls), data=data)
+
 # -- REQUESTS -------------------------------------------------------------------------------------
 
     cpdef void request_data(self, ClientId client_id, DataType data_type) except *:
@@ -1340,7 +1396,7 @@ cdef class Actor(Component):
             venue=None,
             data_type=data_type,
             callback=self._handle_data_response,
-            request_id=self._uuid_factory.generate(),
+            request_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -1348,7 +1404,7 @@ cdef class Actor(Component):
 
     cpdef void request_instrument(self, InstrumentId instrument_id, ClientId client_id=None) except *:
         """
-        Request an instrument for the given parameters.
+        Request a `Instrument` data for the given instrument ID.
 
         Parameters
         ----------
@@ -1368,7 +1424,7 @@ cdef class Actor(Component):
                 "instrument_id": instrument_id,
             }),
             callback=self._handle_instrument_response,
-            request_id=self._uuid_factory.generate(),
+            request_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -1382,7 +1438,7 @@ cdef class Actor(Component):
         ClientId client_id=None,
     ) except *:
         """
-        Request historical quote ticks for the given parameters.
+        Request historical `QuoteTick` data.
 
         If `to_datetime` is ``None`` then will request up to the most recent data.
 
@@ -1418,7 +1474,7 @@ cdef class Actor(Component):
                 "to_datetime": to_datetime,
             }),
             callback=self._handle_quote_ticks_response,
-            request_id=self._uuid_factory.generate(),
+            request_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -1432,7 +1488,7 @@ cdef class Actor(Component):
         ClientId client_id=None,
     ) except *:
         """
-        Request historical trade ticks for the given parameters.
+        Request historical `TradeTick` data.
 
         If `to_datetime` is ``None`` then will request up to the most recent data.
 
@@ -1468,7 +1524,7 @@ cdef class Actor(Component):
                 "to_datetime": to_datetime,
             }),
             callback=self._handle_trade_ticks_response,
-            request_id=self._uuid_factory.generate(),
+            request_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -1482,7 +1538,7 @@ cdef class Actor(Component):
         ClientId client_id=None,
     ) except *:
         """
-        Request historical bars for the given parameters.
+        Request historical `Bar` data.
 
         If `to_datetime` is ``None`` then will request up to the most recent data.
 
@@ -1524,7 +1580,7 @@ cdef class Actor(Component):
                 "limit": self.cache.bar_capacity,
             }),
             callback=self._handle_bars_response,
-            request_id=self._uuid_factory.generate(),
+            request_id=UUID4(),
             ts_init=self._clock.timestamp_ns(),
         )
 
@@ -1813,7 +1869,7 @@ cdef class Actor(Component):
             self._log.info(f"Received <Bar[{length}]> data for {first.type}.")
         else:
             self._log.error(f"Received <Bar[{length}]> data for unknown bar type.")
-            return  # TODO: Strategy shouldn't receive zero bars
+            return
 
         if length > 0 and first.ts_init > last.ts_init:
             raise RuntimeError(f"cannot handle <Bar[{length}]> data: incorrectly sorted")

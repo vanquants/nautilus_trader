@@ -13,14 +13,16 @@
 #  limitations under the License.
 # -------------------------------------------------------------------------------------------------
 
+from libc.stdint cimport uint64_t
+
 from nautilus_trader.accounting.accounts.base cimport Account
 from nautilus_trader.accounting.accounts.cash cimport CashAccount
 from nautilus_trader.accounting.accounts.margin cimport MarginAccount
 from nautilus_trader.cache.base cimport CacheFacade
 from nautilus_trader.common.clock cimport Clock
 from nautilus_trader.common.logging cimport LoggerAdapter
-from nautilus_trader.common.uuid cimport UUIDFactory
 from nautilus_trader.core.correctness cimport Condition
+from nautilus_trader.core.uuid cimport UUID4
 from nautilus_trader.model.c_enums.order_side cimport OrderSide
 from nautilus_trader.model.c_enums.price_type cimport PriceType
 from nautilus_trader.model.currency cimport Currency
@@ -52,7 +54,6 @@ cdef class AccountsManager:
         Clock clock not None,
     ):
         self._clock = clock
-        self._uuid_factory = UUIDFactory()
         self._log = log
         self._cache = cache
 
@@ -133,7 +134,7 @@ cdef class AccountsManager:
         Account account,
         Instrument instrument,
         list orders_open,
-        int64_t ts_event,
+        uint64_t ts_event,
     ):
         """
         Update the account states based on the given orders.
@@ -146,7 +147,7 @@ cdef class AccountsManager:
             The instrument for the update.
         orders_open : list[Order]
             The open orders for the update.
-        ts_event : int64
+        ts_event : uint64_t
             The UNIX timestamp (nanoseconds) when the account event occurred.
 
         Returns
@@ -180,7 +181,7 @@ cdef class AccountsManager:
         CashAccount account,
         Instrument instrument,
         list orders_open,
-        int64_t ts_event,
+        uint64_t ts_event,
     ):
         if not orders_open:
             account.clear_balance_locked(instrument.id)
@@ -204,7 +205,7 @@ cdef class AccountsManager:
                 instrument,
                 order.side,
                 order.quantity,
-                order.price,
+                order.price if order.has_price_c() else order.trigger_price,
             ).as_f64_c()
 
             if account.base_currency is not None:
@@ -246,7 +247,7 @@ cdef class AccountsManager:
         MarginAccount account,
         Instrument instrument,
         list orders_open,
-        int64_t ts_event,
+        uint64_t ts_event,
     ):
         """
         Update the initial (order) margin for margin accounts or locked balance
@@ -262,7 +263,7 @@ cdef class AccountsManager:
             The instrument for the update.
         orders_open : list[Order]
             The open orders for the update.
-        ts_event : int64
+        ts_event : uint64_t
             The UNIX timestamp (nanoseconds) when the account event occurred.
 
         Returns
@@ -338,7 +339,7 @@ cdef class AccountsManager:
         MarginAccount account,
         Instrument instrument,
         list positions_open,
-        int64_t ts_event,
+        uint64_t ts_event,
     ):
         """
         Update the maintenance (position) margin.
@@ -353,7 +354,7 @@ cdef class AccountsManager:
             The instrument for the update.
         positions_open : list[Position]
             The open positions for the update.
-        ts_event : int64
+        ts_event : uint64_t
             The UNIX timestamp (nanoseconds) when the account event occurred.
 
         Returns
@@ -388,7 +389,7 @@ cdef class AccountsManager:
                 instrument,
                 position.side,
                 position.quantity,
-                position.avg_px_open,
+                instrument.make_price(position.avg_px_open),  # TODO(cs): Temporary pending refactor
             ).as_f64_c()
 
             if account.base_currency is not None:
@@ -545,7 +546,7 @@ cdef class AccountsManager:
         # Finally update balances
         account.update_balances(balances)
 
-    cdef AccountState _generate_account_state(self, Account account, int64_t ts_event):
+    cdef AccountState _generate_account_state(self, Account account, uint64_t ts_event):
         # Generate event
         return AccountState(
             account_id=account.id,
@@ -555,7 +556,7 @@ cdef class AccountsManager:
             balances=list(account.balances().values()),
             margins=list(account.margins().values()) if account.is_margin_account else [],
             info={},
-            event_id=self._uuid_factory.generate(),
+            event_id=UUID4(),
             ts_event=ts_event,
             ts_init=self._clock.timestamp_ns(),
         )

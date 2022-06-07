@@ -29,7 +29,7 @@ from nautilus_trader.config import ExecEngineConfig
 from nautilus_trader.config import RiskEngineConfig
 
 from cpython.datetime cimport datetime
-from libc.stdint cimport int64_t
+from libc.stdint cimport uint64_t
 
 from nautilus_trader.backtest.data_client cimport BacktestDataClient
 from nautilus_trader.backtest.data_client cimport BacktestMarketDataClient
@@ -46,11 +46,11 @@ from nautilus_trader.common.logging cimport LoggerAdapter
 from nautilus_trader.common.logging cimport LogLevelParser
 from nautilus_trader.common.logging cimport log_memory
 from nautilus_trader.common.timer cimport TimeEventHandler
-from nautilus_trader.common.uuid cimport UUIDFactory
 from nautilus_trader.core.correctness cimport Condition
 from nautilus_trader.core.data cimport Data
 from nautilus_trader.core.datetime cimport maybe_dt_to_unix_nanos
 from nautilus_trader.core.datetime cimport unix_nanos_to_dt
+from nautilus_trader.core.uuid cimport UUID4
 from nautilus_trader.model.c_enums.account_type cimport AccountType
 from nautilus_trader.model.c_enums.aggregation_source cimport AggregationSource
 from nautilus_trader.model.c_enums.book_type cimport BookType
@@ -96,7 +96,6 @@ cdef class BacktestEngine:
 
         # Setup components
         self._clock = LiveClock()  # Real-time for the engine
-        self._uuid_factory = UUIDFactory()
 
         # Run IDs
         self.run_config_id: Optional[str] = None
@@ -207,6 +206,13 @@ cdef class BacktestEngine:
         return self.kernel.cache
 
     @property
+    def data(self) -> List[Data]:
+        """
+        The engines internal data stream.
+        """
+        return self._data.copy()
+
+    @property
     def portfolio(self) -> PortfolioFacade:
         """
         The engines internal read-only portfolio.
@@ -229,38 +235,6 @@ cdef class BacktestEngine:
         """
         return list(self._exchanges)
 
-    def add_generic_data(self, ClientId client_id, list data) -> None:
-        """
-        Add the generic data to the container.
-
-        Parameters
-        ----------
-        client_id : ClientId
-            The data client ID to associate with the generic data.
-        data : list[GenericData]
-            The data to add.
-
-        Raises
-        ------
-        ValueError
-            If `data` is empty.
-
-        """
-        Condition.not_none(client_id, "client_id")
-        Condition.not_empty(data, "data")
-        Condition.list_type(data, GenericData, "data")
-
-        # Check client has been registered
-        self._add_data_client_if_not_exists(client_id)
-
-        # Add data
-        self._data = sorted(self._data + data, key=lambda x: x.ts_init)
-
-        self._log.info(
-            f"Added {len(data)} {type(data[0].data).__name__} "
-            f"GenericData element{'' if len(data) == 1 else 's'}.",
-        )
-
     def add_instrument(self, Instrument instrument) -> None:
         """
         Add the instrument to the backtest engine.
@@ -281,51 +255,16 @@ cdef class BacktestEngine:
 
         self._log.info(f"Added {instrument.id} Instrument.")
 
-    def add_order_book_data(self, list data) -> None:
+    def add_data(self, list data, ClientId client_id=None) -> None:
         """
-        Add the order book data to the backtest engine.
-
-        Parameters
-        ----------
-        data : list[OrderBookData]
-            The order book data to add.
-
-        Raises
-        ------
-        ValueError
-            If `data` is empty.
-        ValueError
-            If `instrument_id` for the data is not found in the cache.
-
-        """
-        Condition.not_empty(data, "data")
-        Condition.list_type(data, OrderBookData, "data")
-        cdef OrderBookData first = data[0]
-        Condition.true(
-            first.instrument_id in self.kernel.cache.instrument_ids(),
-            f"Instrument {first.instrument_id} for the given data not found in the cache. "
-            "Please add the instrument through `add_instrument()` prior to adding related data.",
-        )
-
-        # Check client has been registered
-        self._add_market_data_client_if_not_exists(first.instrument_id.venue)
-
-        # Add data
-        self._data = sorted(self._data + data, key=lambda x: x.ts_init)
-
-        self._log.info(
-            f"Added {len(data):,} {first.instrument_id} "
-            f"OrderBookData element{'' if len(data) == 1 else 's'}.",
-        )
-
-    def add_data(self, list data) -> None:
-        """
-        Add the data to the backtest engine.
+        Add the given data to the backtest engine.
 
         Parameters
         ----------
         data : list[Data]
             The data to add.
+        client_id : ClientId, optional
+            The data client ID to associate with generic data.
 
         Raises
         ------
@@ -333,73 +272,55 @@ cdef class BacktestEngine:
             If `data` is empty.
         ValueError
             If `instrument_id` for the data is not found in the cache.
+        ValueError
+            If `data` elements do not have an `instrument_id` and `client_id` is ``None``.
+
+        Warnings
+        --------
+        Assumes all data elements are of the same type. Adding lists of varying
+        data types could result in incorrect backtest logic.
 
         """
         Condition.not_empty(data, "data")
-        cdef Data first = data[0]
-        assert hasattr(first, 'instrument_id'), "added data must have an `instrument_id` property"
-        Condition.true(
-            first.instrument_id in self.kernel.cache.instrument_ids(),
-            f"Instrument {first.instrument_id} for the given data not found in the cache. "
-            "Please add the instrument through `add_instrument()` prior to adding related data.",
-        )
 
-        # Check client has been registered
-        self._add_market_data_client_if_not_exists(first.instrument_id.venue)
+        first = data[0]
+
+        cdef str data_prepend_str = ""
+        if hasattr(first, "instrument_id"):
+            Condition.true(
+                first.instrument_id in self.kernel.cache.instrument_ids(),
+                f"Instrument {first.instrument_id} for the given data not found in the cache. "
+                "Please add the instrument through `add_instrument()` prior to adding related data.",
+            )
+            # Check client has been registered
+            self._add_market_data_client_if_not_exists(first.instrument_id.venue)
+            data_prepend_str = f"{first.instrument_id} "
+        elif isinstance(first, Bar):
+            Condition.true(
+                first.type.instrument_id in self.kernel.cache.instrument_ids(),
+                f"Instrument {first.type.instrument_id} for the given data not found in the cache. "
+                "Please add the instrument through `add_instrument()` prior to adding related data.",
+            )
+            Condition.equal(
+                first.type.aggregation_source,
+                AggregationSource.EXTERNAL,
+                "bar_type.aggregation_source",
+                "required source",
+            )
+            data_prepend_str = f"{first.type} "
+        else:
+            Condition.not_none(client_id, "client_id")
+            # Check client has been registered
+            self._add_data_client_if_not_exists(client_id)
+            if isinstance(first, GenericData):
+                data_prepend_str = f"{type(data[0].data).__name__} "
 
         # Add data
         self._data = sorted(self._data + data, key=lambda x: x.ts_init)
 
         self._log.info(
-            f"Added {len(data):,} {first.instrument_id} "
+            f"Added {len(data):,} {data_prepend_str}"
             f"{type(first).__name__} element{'' if len(data) == 1 else 's'}.",
-        )
-
-    def add_bars(self, list data) -> None:
-        """
-        Add the built bar data objects to the backtest engines. Suitable for
-        running externally aggregated bar subscriptions (bar type aggregation
-        source must be ``EXTERNAL``).
-
-        Parameters
-        ----------
-        data : list[Bar]
-            The bars to add.
-
-        Raises
-        ------
-        ValueError
-            If `bar_type.aggregation_source` is not equal to ``EXTERNAL``.
-        ValueError
-            If `data` is empty.
-        ValueError
-            If `instrument_id` for the data is not found in the cache.
-
-        """
-        Condition.not_empty(data, "data")
-        Condition.list_type(data, Bar, "data")
-        cdef Bar first = data[0]
-        Condition.true(
-            first.type.instrument_id in self.kernel.cache.instrument_ids(),
-            f"Instrument {first.type.instrument_id} for the given data not found in the cache. "
-            "Please add the instrument through `add_instrument()` prior to adding related data.",
-        )
-        Condition.equal(
-            first.type.aggregation_source,
-            AggregationSource.EXTERNAL,
-            "bar_type.aggregation_source",
-            "required source",
-        )
-
-        # Check client has been registered
-        self._add_market_data_client_if_not_exists(first.type.instrument_id.venue)
-
-        # Add data
-        self._data = sorted(self._data + data, key=lambda x: x.ts_init)
-
-        self._log.info(
-            f"Added {len(data):,} {first.type} "
-            f"Bar element{'' if len(data) == 1 else 's'}.",
         )
 
     def dump_pickled_data(self) -> bytes:
@@ -761,14 +682,14 @@ cdef class BacktestEngine:
         """
         stats_pnls: Dict[str, Dict[str, float]] = {}
 
-        for currency in self.kernel.trader.analyzer.currencies:
-            stats_pnls[currency.code] = self.kernel.trader.analyzer.get_performance_stats_pnls(currency)
+        for currency in self.kernel.portfolio.analyzer.currencies:
+            stats_pnls[currency.code] = self.kernel.portfolio.analyzer.get_performance_stats_pnls(currency)
 
         return BacktestResult(
-            trader_id=self.trader_id.value,
+            trader_id=self.kernel.trader_id.to_str(),
             machine_id=self.machine_id,
             run_config_id=self.run_config_id,
-            instance_id=self.instance_id.to_str(),
+            instance_id=self.kernel.instance_id.to_str(),
             run_id=self.run_id.to_str() if self.run_id is not None else None,
             run_started=maybe_dt_to_unix_nanos(self.run_started),
             run_finished=maybe_dt_to_unix_nanos(self.run_finished),
@@ -780,7 +701,7 @@ cdef class BacktestEngine:
             total_orders=self.kernel.cache.orders_total_count(),
             total_positions=self.kernel.cache.positions_total_count(),
             stats_pnls=stats_pnls,
-            stats_returns=self.kernel.trader.analyzer.get_performance_stats_returns(),
+            stats_returns=self.kernel.portfolio.analyzer.get_performance_stats_returns(),
         )
 
     def _run(
@@ -789,8 +710,8 @@ cdef class BacktestEngine:
         end: Union[datetime, str, int]=None,
         run_config_id: str=None,
     ):
-        cdef int64_t start_ns
-        cdef int64_t end_ns
+        cdef uint64_t start_ns
+        cdef uint64_t end_ns
         # Time range check and set
         if start is None:
             # Set `start` to start of data
@@ -820,7 +741,7 @@ cdef class BacktestEngine:
         if self.iteration == 0:
             # Initialize run
             self.run_config_id = run_config_id  # Can be None
-            self.run_id = self._uuid_factory.generate()
+            self.run_id = UUID4()
             self.run_started = self._clock.utc_now()
             self.backtest_start = start
             for exchange in self._exchanges.values():
@@ -838,7 +759,7 @@ cdef class BacktestEngine:
         self._data_len = len(self._data)
 
         # Set starting index
-        cdef int i
+        cdef uint64_t i
         for i in range(self._data_len):
             if start_ns <= self._data[i].ts_init:
                 self._index = i
@@ -881,12 +802,12 @@ cdef class BacktestEngine:
         self._log_post_run()
 
     cdef Data _next(self):
-        cdef int64_t cursor = self._index
+        cdef uint64_t cursor = self._index
         self._index += 1
         if cursor < self._data_len:
             return self._data[cursor]
 
-    cdef void _advance_time(self, int64_t now_ns) except *:
+    cdef void _advance_time(self, uint64_t now_ns) except *:
         cdef list time_events = []  # type: list[TimeEventHandler]
         cdef:
             Actor actor
@@ -1003,25 +924,25 @@ cdef class BacktestEngine:
                     exchange_positions.append(position)
 
             # Calculate statistics
-            self.kernel.trader.analyzer.calculate_statistics(account, exchange_positions)
+            self.kernel.portfolio.analyzer.calculate_statistics(account, exchange_positions)
 
             # Present PnL performance stats per asset
             for currency in account.currencies():
                 self._log.info(f" PnL Statistics ({str(currency)})")
                 self._log.info("\033[36m-----------------------------------------------------------------")
-                for stat in self.kernel.trader.analyzer.get_stats_pnls_formatted(currency):
+                for stat in self.kernel.portfolio.analyzer.get_stats_pnls_formatted(currency):
                     self._log.info(stat)
                 self._log.info("\033[36m-----------------------------------------------------------------")
 
             self._log.info(" Returns Statistics")
             self._log.info("\033[36m-----------------------------------------------------------------")
-            for stat in self.kernel.trader.analyzer.get_stats_returns_formatted():
+            for stat in self.kernel.portfolio.analyzer.get_stats_returns_formatted():
                 self._log.info(stat)
             self._log.info("\033[36m-----------------------------------------------------------------")
 
             self._log.info(" General Statistics")
             self._log.info("\033[36m-----------------------------------------------------------------")
-            for stat in self.kernel.trader.analyzer.get_stats_general_formatted():
+            for stat in self.kernel.portfolio.analyzer.get_stats_general_formatted():
                 self._log.info(stat)
             self._log.info("\033[36m-----------------------------------------------------------------")
 
@@ -1037,7 +958,7 @@ cdef class BacktestEngine:
             self.kernel.data_engine.register_client(client)
 
     def _add_market_data_client_if_not_exists(self, Venue venue) -> None:
-        cdef ClientId client_id = ClientId(venue.value)
+        cdef ClientId client_id = ClientId(venue.to_str())
         if client_id not in self.kernel.data_engine.registered_clients:
             client = BacktestMarketDataClient(
                 client_id=client_id,

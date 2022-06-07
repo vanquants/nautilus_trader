@@ -13,8 +13,35 @@
 #  limitations under the License.
 # -------------------------------------------------------------------------------------------------
 
-from nautilus_trader.core.uuid cimport UUID4
+import asyncio
+import json
+import os
+
+import pytest
+
+from nautilus_trader.adapters.deribit.http.client import DeribitHttpClient
+from nautilus_trader.common.clock import LiveClock
+from nautilus_trader.common.logging import Logger
 
 
-cdef class UUIDFactory:
-    cpdef UUID4 generate(self)
+@pytest.mark.asyncio
+async def test_deribit_http_client():
+    loop = asyncio.get_event_loop()
+    clock = LiveClock()
+
+    client: DeribitHttpClient = DeribitHttpClient(
+        loop=loop,
+        clock=clock,
+        logger=Logger(clock=clock),
+        key=os.getenv("DERIBIT_API_KEY"),
+        secret=os.getenv("DERIBIT_API_SECRET"),
+    )
+
+    await client.connect()
+
+    # Test authentication works with account info
+    response = await client.access_log()
+
+    print(json.dumps(response, indent=4))
+
+    await client.disconnect()

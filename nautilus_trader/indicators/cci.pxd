@@ -13,20 +13,23 @@
 #  limitations under the License.
 # -------------------------------------------------------------------------------------------------
 
-from nautilus_trader.common.uuid import UUIDFactory
-from nautilus_trader.core.uuid import UUID4
+from nautilus_trader.indicators.average.moving_average cimport MovingAverage
+from nautilus_trader.indicators.base.indicator cimport Indicator
+from nautilus_trader.model.data.bar cimport Bar
 
 
-class TestUUIDFactory:
-    def test_factory_returns_unique_uuids(self):
-        # Arrange
-        factory = UUIDFactory()
+cdef class CommodityChannelIndex(Indicator):
+    cdef MovingAverage _ma
+    cdef object _prices
 
-        # Act
-        result1 = factory.generate()
-        result2 = factory.generate()
-        result3 = factory.generate()
+    cdef readonly int period
+    """The window period.\n\n:returns: `int`"""
+    cdef readonly double scalar
+    """The positive float to scale the bands.\n\n:returns: `double`"""
+    cdef readonly double _mad
+    """The current price mean absolute deviation.\n\n:returns: `double`"""
+    cdef readonly double value
+    """The current value.\n\n:returns: `double`"""
 
-        assert isinstance(result1, UUID4)
-        assert result1 != result2
-        assert result2 != result3
+    cpdef void handle_bar(self, Bar bar) except *
+    cpdef void update_raw(self, double high, double low, double close) except *

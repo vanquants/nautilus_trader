@@ -40,7 +40,6 @@ from nautilus_trader.adapters.betfair.data_types import BetfairTicker
 from nautilus_trader.adapters.betfair.data_types import BSPOrderBookDelta
 from nautilus_trader.adapters.betfair.util import hash_market_trade
 from nautilus_trader.adapters.betfair.util import one
-from nautilus_trader.common.uuid import UUIDFactory
 from nautilus_trader.core.datetime import dt_to_unix_nanos
 from nautilus_trader.execution.messages import CancelOrder
 from nautilus_trader.execution.messages import ModifyOrder
@@ -84,7 +83,6 @@ from nautilus_trader.model.orders.limit import LimitOrder
 from nautilus_trader.model.orders.market import MarketOrder
 
 
-uuid_factory = UUIDFactory()
 MILLIS_TO_NANOS = 1_000_000
 
 
@@ -168,7 +166,6 @@ def _make_market_order(order: Union[LimitOrder, MarketOrder]):
             quantity=order.quantity,
             price=MAX_BET_PROB if order.side == OrderSide.BUY else MIN_BET_PROB,
             time_in_force=TimeInForce.FOK,
-            expire_time=None,
             init_id=order.init_id,
             ts_init=order.ts_init,
         )
@@ -197,7 +194,7 @@ def order_submit_to_betfair(command: SubmitOrder, instrument: BettingInstrument)
     place_order = {
         "market_id": instrument.market_id,
         # Used to de-dupe orders on betfair server side
-        "customer_ref": command.id.to_str().replace("-", ""),
+        "customer_ref": command.id.value.replace("-", ""),
         "customer_strategy_ref": command.strategy_id.value[:15],
         "instructions": [
             {
@@ -228,7 +225,7 @@ def order_update_to_betfair(
     """
     return {
         "market_id": instrument.market_id,
-        "customer_ref": command.id.to_str().replace("-", ""),
+        "customer_ref": command.id.value.replace("-", ""),
         "instructions": [
             {
                 "betId": venue_order_id.value,
@@ -244,7 +241,7 @@ def order_cancel_to_betfair(command: CancelOrder, instrument: BettingInstrument)
     """
     return {
         "market_id": instrument.market_id,
-        "customer_ref": command.id.to_str().replace("-", ""),
+        "customer_ref": command.id.value.replace("-", ""),
         "instructions": [{"betId": command.venue_order_id.value}],
     }
 
@@ -271,7 +268,7 @@ def betfair_account_to_account_state(
     locked = -float(account_funds["exposure"]) if account_funds["exposure"] else 0.0
     free = balance - locked
     return AccountState(
-        account_id=AccountId(issuer=BETFAIR_VENUE.value, number=account_id),
+        account_id=AccountId(f"{BETFAIR_VENUE.value}-{account_id}"),
         account_type=AccountType.BETTING,
         base_currency=currency,
         reported=False,

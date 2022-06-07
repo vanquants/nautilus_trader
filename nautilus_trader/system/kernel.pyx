@@ -15,7 +15,7 @@
 
 import asyncio
 import concurrent.futures
-import os
+import pathlib
 import platform
 import signal
 import socket
@@ -37,6 +37,7 @@ from nautilus_trader.config import LiveRiskEngineConfig
 from nautilus_trader.config import RiskEngineConfig
 from nautilus_trader.config import StrategyFactory
 from nautilus_trader.config import StreamingConfig
+from nautilus_trader.persistence.catalog import resolve_path
 from nautilus_trader.persistence.streaming import StreamingFeatherWriter
 
 from nautilus_trader.cache.cache cimport Cache
@@ -356,7 +357,7 @@ cdef class NautilusKernel:
             strategy: Strategy = StrategyFactory.create(config)
             self.trader.add_strategy(strategy)
 
-        cdef int64_t build_time_ms = nanos_to_millis(unix_timestamp_ns() - self.ts_created)
+        cdef uint64_t build_time_ms = nanos_to_millis(unix_timestamp_ns() - self.ts_created)
         self.log.info(f"Initialized in {build_time_ms}ms.")
 
     def _setup_loop(self) -> None:
@@ -379,15 +380,17 @@ cdef class NautilusKernel:
     def _setup_streaming(self, config: StreamingConfig) -> None:
         # Setup persistence
         catalog = config.as_catalog()
-        persistence_dir = os.path.join(config.catalog_path, self.environment.value)
-        if not catalog.fs.exists(persistence_dir):
-            catalog.fs.mkdir(persistence_dir)
+        persistence_dir = pathlib.Path(config.catalog_path) / self.environment.value
+        parent_path = resolve_path(persistence_dir, fs=config.fs)
+        if not catalog.fs.exists(parent_path):
+            catalog.fs.mkdir(parent_path)
 
-        path = os.path.join(persistence_dir, self.instance_id.to_str() + ".feather")
+        path = resolve_path(persistence_dir / f"{self.instance_id}.feather", fs=config.fs)
         self.writer = StreamingFeatherWriter(
             path=path,
             fs_protocol=config.fs_protocol,
             flush_interval_ms=config.flush_interval_ms,
+            include_types=config.include_types,
             logger=self.log
         )
         self.trader.subscribe("*", self.writer.write)

@@ -13,7 +13,7 @@
 #  limitations under the License.
 # -------------------------------------------------------------------------------------------------
 
-from libc.stdint cimport int64_t
+from libc.stdint cimport uint64_t
 
 from nautilus_trader.accounting.accounts.base cimport Account
 from nautilus_trader.backtest.execution_client cimport BacktestExecClient
@@ -23,7 +23,6 @@ from nautilus_trader.cache.cache cimport Cache
 from nautilus_trader.common.clock cimport Clock
 from nautilus_trader.common.logging cimport LoggerAdapter
 from nautilus_trader.common.queue cimport Queue
-from nautilus_trader.common.uuid cimport UUIDFactory
 from nautilus_trader.execution.messages cimport TradingCommand
 from nautilus_trader.model.c_enums.account_type cimport AccountType
 from nautilus_trader.model.c_enums.book_type cimport BookType
@@ -55,7 +54,6 @@ from nautilus_trader.model.position cimport Position
 
 cdef class SimulatedExchange:
     cdef Clock _clock
-    cdef UUIDFactory _uuid_factory
     cdef LoggerAdapter _log
 
     cdef readonly Venue id
@@ -135,7 +133,7 @@ cdef class SimulatedExchange:
     cpdef void process_bar(self, Bar bar) except *
     cdef void _process_trade_ticks_from_bar(self, OrderBook book, Bar bar) except *
     cdef void _process_quote_ticks_from_bar(self, OrderBook book) except *
-    cpdef void process(self, int64_t now_ns) except *
+    cpdef void process(self, uint64_t now_ns) except *
     cpdef void reset(self) except *
 
 # -- COMMAND HANDLING -----------------------------------------------------------------------------
@@ -162,8 +160,8 @@ cdef class SimulatedExchange:
 
     cdef void _add_order(self, Order order) except *
     cdef void _delete_order(self, Order order) except *
-    cdef void _iterate_matching_engine(self, InstrumentId instrument_id, int64_t timestamp_ns) except *
-    cdef void _iterate_side(self, list orders, int64_t timestamp_ns) except *
+    cdef void _iterate_matching_engine(self, InstrumentId instrument_id, uint64_t timestamp_ns) except *
+    cdef void _iterate_side(self, list orders, uint64_t timestamp_ns) except *
     cdef void _match_order(self, Order order) except *
     cdef void _match_limit_order(self, LimitOrder order) except *
     cdef void _match_stop_market_order(self, Order order) except *

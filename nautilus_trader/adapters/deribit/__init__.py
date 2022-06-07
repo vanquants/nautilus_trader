@@ -12,22 +12,3 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 # -------------------------------------------------------------------------------------------------
-
-from nautilus_trader.core.uuid cimport UUID4
-
-
-cdef class UUIDFactory:
-    """
-    Provides a factory which generates UUID's.
-    """
-
-    cpdef UUID4 generate(self):
-        """
-        Return a generated UUID4.
-
-        Returns
-        -------
-        UUID4
-
-        """
-        return UUID4()

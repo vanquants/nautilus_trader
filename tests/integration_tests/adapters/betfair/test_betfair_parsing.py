@@ -14,7 +14,6 @@
 # -------------------------------------------------------------------------------------------------
 
 import asyncio
-import sys
 from unittest.mock import patch
 
 import pytest
@@ -54,7 +53,6 @@ from tests.test_kit.stubs.execution import TestExecStubs
 from tests.test_kit.stubs.identifiers import TestIdStubs
 
 
-@pytest.mark.skipif(sys.platform == "win32", reason="failing on Windows")
 class TestBetfairParsing:
     def setup(self):
         # Fixture Setup
@@ -90,7 +88,7 @@ class TestBetfairParsing:
         )
         result = order_submit_to_betfair(command=command, instrument=self.instrument)
         expected = {
-            "customer_ref": command.id.to_str().replace("-", ""),
+            "customer_ref": command.id.value.replace("-", ""),
             "customer_strategy_ref": "S-001",
             "instructions": [
                 {
@@ -162,7 +160,7 @@ class TestBetfairParsing:
             ts_init=0,
         )
         expected = AccountState(
-            account_id=AccountId(issuer="BETFAIR", number="Testy-McTest"),
+            account_id=AccountId("BETFAIR-Testy-McTest"),
             account_type=AccountType.CASH,
             base_currency=GBP,
             reported=True,  # reported

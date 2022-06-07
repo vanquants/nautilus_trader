@@ -14,12 +14,11 @@
 # -------------------------------------------------------------------------------------------------
 
 from cpython.datetime cimport datetime
-from libc.stdint cimport int64_t
+from libc.stdint cimport uint64_t
 
 from nautilus_trader.common.clock cimport Clock
 from nautilus_trader.common.logging cimport Logger
 from nautilus_trader.common.logging cimport LoggerAdapter
-from nautilus_trader.common.uuid cimport UUIDFactory
 from nautilus_trader.core.data cimport Data
 from nautilus_trader.core.uuid cimport UUID4
 from nautilus_trader.system.kernel cimport NautilusKernel
@@ -28,15 +27,14 @@ from nautilus_trader.system.kernel cimport NautilusKernel
 cdef class BacktestEngine:
     cdef object _config
     cdef Clock _clock
-    cdef UUIDFactory _uuid_factory
 
     cdef readonly LoggerAdapter _log
     cdef Logger _logger
 
     cdef dict _exchanges
     cdef list _data
-    cdef int64_t _data_len
-    cdef int64_t _index
+    cdef uint64_t _data_len
+    cdef uint64_t _index
 
     cdef readonly NautilusKernel kernel
     """The internal kernel for the engine.\n\n:returns: `NautilusKernel`"""
@@ -56,4 +54,4 @@ cdef class BacktestEngine:
     """The last backtest run time range end (if run).\n\n:returns: `datetime` or ``None``"""
 
     cdef Data _next(self)
-    cdef void _advance_time(self, int64_t now_ns) except *
+    cdef void _advance_time(self, uint64_t now_ns) except *

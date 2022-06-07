@@ -15,8 +15,9 @@
 
 import importlib
 import importlib.util
-from typing import Any, Dict, FrozenSet, List, Optional
+from typing import Any, Dict, FrozenSet, List, Optional, Tuple
 
+import fsspec
 import pydantic
 from frozendict import frozendict
 from pydantic import ConstrainedStr
@@ -36,7 +37,29 @@ def resolve_path(path: str):
     return cls
 
 
-class CacheConfig(pydantic.BaseModel):
+class NautilusConfig(pydantic.BaseModel):
+    """
+    The base class for all Nautilus configuration objects.
+    """
+
+    @classmethod
+    def fully_qualified_name(cls) -> str:
+        """
+        Return the fully qualified name for the `NautilusConfig` class.
+
+        Returns
+        -------
+        str
+
+        References
+        ----------
+        https://www.python.org/dev/peps/pep-3155/
+
+        """
+        return cls.__module__ + ":" + cls.__qualname__
+
+
+class CacheConfig(NautilusConfig):
     """
     Configuration for ``Cache`` instances.
 
@@ -52,7 +75,7 @@ class CacheConfig(pydantic.BaseModel):
     bar_capacity: PositiveInt = 1000
 
 
-class CacheDatabaseConfig(pydantic.BaseModel):
+class CacheDatabaseConfig(NautilusConfig):
     """
     Configuration for ``CacheDatabase`` instances.
 
@@ -74,7 +97,7 @@ class CacheDatabaseConfig(pydantic.BaseModel):
     flush: bool = False
 
 
-class InstrumentProviderConfig(pydantic.BaseModel):
+class InstrumentProviderConfig(NautilusConfig):
     """
     Configuration for ``InstrumentProvider`` instances.
 
@@ -112,7 +135,7 @@ class InstrumentProviderConfig(pydantic.BaseModel):
     filters: Optional[Dict[str, Any]] = None
 
 
-class DataEngineConfig(pydantic.BaseModel):
+class DataEngineConfig(NautilusConfig):
     """
     Configuration for ``DataEngine`` instances.
 
@@ -125,7 +148,7 @@ class DataEngineConfig(pydantic.BaseModel):
     debug: bool = False
 
 
-class RiskEngineConfig(pydantic.BaseModel):
+class RiskEngineConfig(NautilusConfig):
     """
     Configuration for ``RiskEngine`` instances.
 
@@ -148,7 +171,7 @@ class RiskEngineConfig(pydantic.BaseModel):
     debug: bool = False
 
 
-class ExecEngineConfig(pydantic.BaseModel):
+class ExecEngineConfig(NautilusConfig):
     """
     Configuration for ``ExecutionEngine`` instances.
 
@@ -167,7 +190,7 @@ class ExecEngineConfig(pydantic.BaseModel):
     debug: bool = False
 
 
-class StreamingConfig(pydantic.BaseModel):
+class StreamingConfig(NautilusConfig):
     """
     Configuration for streaming live or backtest runs to the catalog in feather format.
 
@@ -190,6 +213,11 @@ class StreamingConfig(pydantic.BaseModel):
     fs_storage_options: Optional[Dict] = None
     flush_interval_ms: Optional[int] = None
     replace_existing: bool = False
+    include_types: Optional[Tuple[type]] = None
+
+    @property
+    def fs(self):
+        return fsspec.filesystem(protocol=self.fs_protocol, **(self.fs_storage_options or {}))
 
     @classmethod
     def from_catalog(cls, catalog: DataCatalog, **kwargs):
@@ -203,7 +231,7 @@ class StreamingConfig(pydantic.BaseModel):
         )
 
 
-class ActorConfig(pydantic.BaseModel):
+class ActorConfig(NautilusConfig):
     """
     The base model for all actor configurations.
 
@@ -218,7 +246,7 @@ class ActorConfig(pydantic.BaseModel):
     component_id: Optional[str] = None
 
 
-class ImportableActorConfig(pydantic.BaseModel):
+class ImportableActorConfig(NautilusConfig):
     """
     Represents an actor configuration for one specific backtest run.
 
@@ -268,7 +296,7 @@ class ActorFactory:
         return strategy_cls(config=config_cls(**config.config))
 
 
-class StrategyConfig(pydantic.BaseModel):
+class StrategyConfig(NautilusConfig):
     """
     The base model for all trading strategy configurations.
 
@@ -290,7 +318,7 @@ class StrategyConfig(pydantic.BaseModel):
     oms_type: Optional[str] = None
 
 
-class ImportableStrategyConfig(pydantic.BaseModel):
+class ImportableStrategyConfig(NautilusConfig):
     """
     Represents a trading strategy configuration for one specific backtest run.
 
@@ -340,7 +368,7 @@ class StrategyFactory:
         return strategy_cls(config=config_cls(**config.config))
 
 
-class NautilusKernelConfig(pydantic.BaseModel):
+class NautilusKernelConfig(NautilusConfig):
     """
     Configuration for core system ``NautilusKernel`` instances.
 

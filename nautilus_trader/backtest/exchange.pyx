@@ -31,7 +31,6 @@ from nautilus_trader.cache.base cimport CacheFacade
 from nautilus_trader.common.clock cimport TestClock
 from nautilus_trader.common.logging cimport Logger
 from nautilus_trader.common.queue cimport Queue
-from nautilus_trader.common.uuid cimport UUIDFactory
 from nautilus_trader.core.correctness cimport Condition
 from nautilus_trader.execution.messages cimport CancelAllOrders
 from nautilus_trader.execution.messages cimport CancelOrder
@@ -53,6 +52,7 @@ from nautilus_trader.model.c_enums.order_status cimport OrderStatus
 from nautilus_trader.model.c_enums.order_type cimport OrderType
 from nautilus_trader.model.c_enums.order_type cimport OrderTypeParser
 from nautilus_trader.model.c_enums.price_type cimport PriceType
+from nautilus_trader.model.c_enums.time_in_force cimport TimeInForce
 from nautilus_trader.model.data.tick cimport QuoteTick
 from nautilus_trader.model.data.tick cimport TradeTick
 from nautilus_trader.model.identifiers cimport ClientOrderId
@@ -160,7 +160,6 @@ cdef class SimulatedExchange:
             Condition.true(len(starting_balances) == 1, "single-currency account has multiple starting currencies")
 
         self._clock = clock
-        self._uuid_factory = UUIDFactory()
         self._log = LoggerAdapter(
             component_name=f"{type(self).__name__}({venue})",
             logger=logger,
@@ -206,7 +205,7 @@ cdef class SimulatedExchange:
             self.instruments[instrument.id] = instrument
             index = len(self._instrument_indexer) + 1
             self._instrument_indexer[instrument.id] = index
-            self._log.info(f"Loaded instrument {instrument.id.value}.")
+            self._log.info(f"Loaded instrument {instrument.id}.")
 
         # Markets
         self._books = {}          # type: dict[InstrumentId, OrderBook]
@@ -304,7 +303,7 @@ cdef class SimulatedExchange:
             instrument = self.instruments.get(instrument_id)
             if instrument is None:
                 raise RuntimeError(
-                    f"cannot create OrderBook: no instrument for {instrument_id.value}"
+                    f"cannot create OrderBook: no instrument for {instrument_id}"
                 )
             # Create order book
             book = OrderBook.create(
@@ -657,7 +656,7 @@ cdef class SimulatedExchange:
             self._log.debug(f"Processed {bar}")
 
     cdef void _process_trade_ticks_from_bar(self, OrderBook book, Bar bar) except *:
-        cdef Quantity size = Quantity(bar.volume.as_f64_c() / 4.0, bar.volume.precision)
+        cdef Quantity size = Quantity(bar.volume.as_f64_c() / 4.0, bar.volume._mem.precision)
         cdef Price last = self._last.get(book.instrument_id)
 
         # Create reusable tick
@@ -684,7 +683,7 @@ cdef class SimulatedExchange:
         if bar.high._mem.raw > last._mem.raw:  # Direct memory comparison
             tick._mem.price = bar.high._mem  # Direct memory assignment
             tick._mem.aggressor_side = <OrderSide>AggressorSide.BUY  # Direct memory assignment
-            tick.trade_id = self._generate_trade_id()
+            tick._mem.trade_id = self._generate_trade_id()._mem
             book.update_trade_tick(tick)
             self._iterate_matching_engine(
                 tick.instrument_id,
@@ -696,7 +695,7 @@ cdef class SimulatedExchange:
         if bar.low._mem.raw < last._mem.raw:  # Direct memory comparison
             tick._mem.price = bar.low._mem  # Direct memory assignment
             tick._mem.aggressor_side = <OrderSide>AggressorSide.SELL
-            tick.trade_id = self._generate_trade_id()
+            tick._mem.trade_id = self._generate_trade_id()._mem
             book.update_trade_tick(tick)
             self._iterate_matching_engine(
                 tick.instrument_id,
@@ -708,7 +707,7 @@ cdef class SimulatedExchange:
         if bar.close._mem.raw != last._mem.raw:  # Direct memory comparison
             tick._mem.price = bar.close._mem  # Direct memory assignment
             tick._mem.aggressor_side = <OrderSide>AggressorSide.BUY if bar.close._mem.raw > last._mem.raw else <OrderSide>AggressorSide.SELL
-            tick.trade_id = self._generate_trade_id()
+            tick._mem.trade_id = self._generate_trade_id()._mem
             book.update_trade_tick(tick)
             self._iterate_matching_engine(
                 tick.instrument_id,
@@ -728,8 +727,8 @@ cdef class SimulatedExchange:
         if last_bid_bar.ts_event != last_ask_bar.ts_event:
             return  # Wait for next bar
 
-        cdef Quantity bid_size = Quantity(last_bid_bar.volume.as_f64_c() / 4.0, last_bid_bar.volume.precision)
-        cdef Quantity ask_size = Quantity(last_ask_bar.volume.as_f64_c() / 4.0, last_ask_bar.volume.precision)
+        cdef Quantity bid_size = Quantity(last_bid_bar.volume.as_f64_c() / 4.0, last_bid_bar.volume._mem.precision)
+        cdef Quantity ask_size = Quantity(last_ask_bar.volume.as_f64_c() / 4.0, last_ask_bar.volume._mem.precision)
 
         # Create reusable tick
         cdef QuoteTick tick = QuoteTick(
@@ -776,7 +775,7 @@ cdef class SimulatedExchange:
             tick.ts_init,
         )
 
-    cpdef void process(self, int64_t now_ns) except *:
+    cpdef void process(self, uint64_t now_ns) except *:
         """
         Process the exchange to the gives time.
 
@@ -784,14 +783,14 @@ cdef class SimulatedExchange:
 
         Parameters
         ----------
-        now_ns : int64
+        now_ns : uint64_t
             The UNIX timestamp (nanoseconds) now.
 
         """
         self._clock.set_time(now_ns)
 
         cdef:
-            int64_t ts
+            uint64_t ts
         while self._inflight_queue:
             # Peek at timestamp of next inflight message
             ts = self._inflight_queue[0][0][0]
@@ -1233,7 +1232,7 @@ cdef class SimulatedExchange:
 
     cdef void _iterate_matching_engine(
         self, InstrumentId instrument_id,
-        int64_t timestamp_ns,
+        uint64_t timestamp_ns,
     ) except *:
         # Iterate bids
         cdef list orders_bid = self._orders_bid.get(instrument_id)
@@ -1245,12 +1244,12 @@ cdef class SimulatedExchange:
         if orders_ask is not None:
             self._iterate_side(orders_ask.copy(), timestamp_ns)  # Copy list for safe loop
 
-    cdef void _iterate_side(self, list orders, int64_t timestamp_ns) except *:
+    cdef void _iterate_side(self, list orders, uint64_t timestamp_ns) except *:
         cdef Order order
         for order in orders:
             if not order.is_open_c():
                 continue  # Orders state has changed since the loop started
-            elif order.expire_time and timestamp_ns >= order.expire_time_ns:
+            elif order.expire_time_ns > 0 and timestamp_ns >= order.expire_time_ns:
                 self._delete_order(order)
                 self._expire_order(order)
                 continue
@@ -1491,6 +1490,16 @@ cdef class SimulatedExchange:
             Quantity fill_qty
             Quantity updated_qty
         for fill_px, fill_qty in fills:
+            if order.filled_qty._mem.raw == 0:
+                if order.time_in_force == TimeInForce.FOK and fill_qty._mem.raw < order.quantity._mem.raw:
+                    # FOK order cannot fill the entire quantity - cancel
+                    self._cancel_order(order)
+                    return
+            elif order.time_in_force == TimeInForce.IOC:
+                # IOC order has already filled at one price - cancel remaining
+                self._cancel_order(order)
+                return
+
             if order.is_reduce_only and order.leaves_qty._mem.raw == 0:
                 return  # Done early
             if order.type == OrderType.STOP_MARKET:
@@ -1506,8 +1515,8 @@ cdef class SimulatedExchange:
                 # Adjust fill to honor reduce only execution
                 raw_org_qty = fill_qty._mem.raw
                 raw_adj_qty = fill_qty._mem.raw - (fill_qty._mem.raw - position.quantity._mem.raw)
-                fill_qty = Quantity.from_raw_c(raw_adj_qty, fill_qty.precision)
-                updated_qty = Quantity.from_raw_c(order.quantity._mem.raw - (raw_org_qty - raw_adj_qty), fill_qty.precision)
+                fill_qty = Quantity.from_raw_c(raw_adj_qty, fill_qty._mem.precision)
+                updated_qty = Quantity.from_raw_c(order.quantity._mem.raw - (raw_org_qty - raw_adj_qty), fill_qty._mem.precision)
                 if updated_qty._mem.raw > 0:
                     self._generate_order_updated(
                         order=order,
@@ -1532,6 +1541,11 @@ cdef class SimulatedExchange:
             and self.book_type == BookType.L1_TBBO
             and (order.type == OrderType.MARKET or order.type == OrderType.STOP_MARKET)
         ):
+            if order.time_in_force == TimeInForce.IOC:
+                # IOC order has already filled at one price - cancel remaining
+                self._cancel_order(order)
+                return
+
             # Exhausted simulated book volume (continue aggressive filling into next level)
             fill_px = fills[-1][0]
             if order.side == OrderSide.BUY:
